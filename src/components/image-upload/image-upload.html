@@ -1,0 +1,13 @@
+<div class="mbg-image-upload"
+     ng-if="$ctrl.config"
+     ng-style="$ctrl.config.size">
+    <div class="mbg-image-upload-wrapper"
+         ng-class="{ [$ctrl.config.children.position.toLowerCase()]: true }">
+        <div class="mbg-image-upload-main-wrapper">
+            <mbg-image-upload-main></mbg-image-upload-main>
+        </div>
+        <div class="mbg-image-upload-children-wrapper">
+            <mbg-image-upload-children></mbg-image-upload-children>
+        </div>
+    </div>
+</div>

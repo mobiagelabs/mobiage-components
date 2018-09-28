@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true,
+        "declaration": false,
+        "types": ["node"],
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [
+            "dom",
+            "es2015"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es5"
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "globals": {
+        "require": true
+      },
+    "exclude": [
+        "node_modules"
+    ],
+    "compileOnSave": false,
+    "atom": {
+        "rewriteTsconfig": false
+    }
+}
