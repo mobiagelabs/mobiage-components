@@ -2,7 +2,7 @@
   "name": "mobiage-components",
   "version": "1.0.0",
   "description": "mobiage-components",
-  "main": "src/index.ts",
+  "main": "src/components/index.ts",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.dev.js --hot --open",
     "prod": "rm -rf dist && webpack --config webpack.config.prod.js --progress --colors"
