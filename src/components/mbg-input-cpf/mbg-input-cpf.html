@@ -1,0 +1,11 @@
+<div class="mbg-input-wrapper mb-input-cpf-wrapper"
+     ng-if="$ctrl.props">
+    <input type="text"
+           ng-model="$ctrl.ngModel"
+           ng-blur="$ctrl.ngBlur({ $event })"
+           ng-focus="$ctrl.ngFocus({ $event })"
+           ng-keyup="$ctrl.ngKeyup({ $event })"
+           ng-keypress="$ctrl.ngKeypress({ $event })"
+           ng-keydown="$ctrl.ngKeydown({ $event })"
+           ui-br-cpf-mask />
+</div>
