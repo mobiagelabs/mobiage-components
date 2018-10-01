@@ -21,43 +21,46 @@ class MbgInputCpfCnpjController {
         this.valid = this.isValidCPFCNPJ(evt.$event.target.value)
     }
 
-    isValidCPFCNPJ(cpf: string) {
-        let soma = 0
-        let resto
-        let strCPF = cpf
-        strCPF = strCPF.replace('.', '')
-        strCPF = strCPF.replace('.', '')
-        strCPF = strCPF.replace('.', '')
-        strCPF = strCPF.replace('-', '')
-        strCPF = strCPF.replace('/', '')
-        if (strCPF === '00000000000') {
-            return false
-        }
+    isValidCPFCNPJ(cpfcnpj: string) {
+        if (cpfcnpj.length <= 14) {
+            let soma = 0
+            let resto
+            let strCPF = cpfcnpj
+            strCPF = strCPF.replace('.', '')
+            strCPF = strCPF.replace('.', '')
+            strCPF = strCPF.replace('.', '')
+            strCPF = strCPF.replace('-', '')
+            strCPF = strCPF.replace('/', '')
+            if (strCPF === '00000000000') {
+                return false
+            }
 
-        for (let i = 1; i <= 9; i++) {
-            soma = soma + parseInt(strCPF.substring(i - 1, i), 10) * (11 - i)
-        }
-        resto = (soma * 10) % 11
+            for (let i = 1; i <= 9; i++) {
+                soma = soma + parseInt(strCPF.substring(i - 1, i), 10) * (11 - i)
+            }
+            resto = (soma * 10) % 11
 
-        if ((resto === 10) || (resto === 11)) {
-            resto = 0
-        }
-        if (resto !== parseInt(strCPF.substring(9, 10), 10)) {
-            return false
-        }
-        soma = 0
-        for (let i = 1; i <= 10; i++) {
-            soma = soma + parseInt(strCPF.substring(i - 1, i), 10) * (12 - i)
-        }
-        resto = (soma * 10) % 11
+            if ((resto === 10) || (resto === 11)) {
+                resto = 0
+            }
+            if (resto !== parseInt(strCPF.substring(9, 10), 10)) {
+                return false
+            }
+            soma = 0
+            for (let i = 1; i <= 10; i++) {
+                soma = soma + parseInt(strCPF.substring(i - 1, i), 10) * (12 - i)
+            }
+            resto = (soma * 10) % 11
 
-        if ((resto === 10) || (resto === 11)) {
-            resto = 0
+            if ((resto === 10) || (resto === 11)) {
+                resto = 0
+            }
+            if (resto !== parseInt(strCPF.substring(10, 11), 10)) {
+                return false
+            }
+            return true
         }
-        if (resto !== parseInt(strCPF.substring(10, 11), 10)) {
-            return false
-        }
-        return true
+        // if()
     }
 
     onChange() {
