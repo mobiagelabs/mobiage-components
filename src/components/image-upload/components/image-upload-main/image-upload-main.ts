@@ -53,8 +53,10 @@ class ImageUploadMainController {
     }
 
     openImageChoice() {
-        if (!this.enableImageContent()) {
-            this.inputElement.click()
+        if (!this.enableImageContent() || (Array.isArray(this.ngModel) && this.ngModel.length === 1)) {
+            this.$timeout(() => {
+                this.inputElement.click()
+            })
         }
     }
 

@@ -23,3 +23,5 @@ export default angular
     mbgInputMoneyModule,
   ])
   .name
+
+export * from './image-upload'

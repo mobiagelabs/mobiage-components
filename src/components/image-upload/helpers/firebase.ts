@@ -4,7 +4,7 @@ export namespace ImageUploadFirebase {
     const URL_FIREBASE = 'https://firebasestorage.googleapis.com/v0/b/bucket/o/id?alt=media'
 
     export function getStorage(): any {
-        return window['firebase'] ? window['firebase'].storage() : storage()  
+        return window['firebase'] ? window['firebase'].storage() : storage()
     }
 
     export function guid() {

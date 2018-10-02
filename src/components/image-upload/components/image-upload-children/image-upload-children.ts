@@ -37,7 +37,9 @@ class ImageUploadChildrenController {
         const inputFile: any = angular
             .element(this.$element[0].parentNode.parentNode)
             .find('input[type="file"]')
-            inputFile.click()
+        this.$timeout(() => {
+            inputFile[0].click()
+        })
     }
 
 }
