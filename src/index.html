@@ -29,27 +29,26 @@
       </div>
       <div class="col-md-4">
         <mbg-input-cpf-cnpj ng-model="cnpfcnpj"></mbg-input-cpf-cnpj>
-        
-        
-        <mbg-input-name ng-model="name" ></mbg-input-name>
+        <mbg-input-cpf ng-model="cpf"></mbg-input-cpf>
+        <mbg-input-cnpj ng-model="cnpj"></mbg-input-cnpj>
+        <mbg-input-name ng-model="name"></mbg-input-name>
         <mbg-input-money ng-model="money"></mbg-input-money>
+        <mbg-input-phone ng-model="phone"></mbg-input-phone>
+        <mbg-input-text ng-model="text"></mbg-input-text>
 
-
-        <mbg-image-upload ng-model="myData" config="config"></mbg-image-upload>
-
-
-        
+        <mbg-image-upload ng-model="myData"
+                          config="config"></mbg-image-upload>
         <br><br><br>
         <br><br><br>
         <br><br><br>
-        
+
       </div>
     </div>
-    
-    
+
+
     <div class="row">
       <div class="col-md-12">
-          <pre>{{myData|json}}</pre>
+        <pre>{{myData|json}}</pre>
       </div>
     </div>
 

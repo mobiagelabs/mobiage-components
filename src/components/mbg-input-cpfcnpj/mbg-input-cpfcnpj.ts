@@ -22,52 +22,52 @@ class MbgInputCpfCnpjController {
         this.valid = this.valid.toString()
         this.valid = this.valid.replace(/[^0-9]/g, '')
         if (this.valid.length === 11) {
-            this.validaCpf(this.valid)
-            console.log(this.validaCpf(this.valid), 'CPF')
+            this.validCpf(this.valid)
+            console.log(this.validCpf(this.valid), 'CPF')
         }
         if (this.valid.length === 14) {
-            this.validaCnpj(this.valid)
-            console.log(this.validaCnpj(this.valid), 'CNPJ')
+            this.validCnpj(this.valid)
+            console.log(this.validCnpj(this.valid), 'CNPJ')
         } else {
             return false
         }
     }
 
-    CalcDigitos(digitos, posicoes = 10, somaDigitos = 0) {
-        digitos = digitos.toString()
-        for (let i = 0; i < digitos.length; i++) {
-            somaDigitos = somaDigitos + (digitos[i] * posicoes)
-            posicoes--
-            if (posicoes < 2) {
-                posicoes = 9
+    CalcDigits(digits, positions = 10, sumDigits = 0) {
+        digits = digits.toString()
+        for (let i = 0; i < digits.length; i++) {
+            sumDigits = sumDigits + (digits[i] * positions)
+            positions--
+            if (positions < 2) {
+                positions = 9
             }
         }
-        somaDigitos = somaDigitos % 11
-        if (somaDigitos < 2) {
-            somaDigitos = 0
+        sumDigits = sumDigits % 11
+        if (sumDigits < 2) {
+            sumDigits = 0
         } else {
-            somaDigitos = 11 - somaDigitos
+            sumDigits = 11 - sumDigits
         }
-        let cpf = digitos + somaDigitos
-        return cpf
+        let cnpj = digits + sumDigits
+        return cnpj
     }
 
-    validaCpf(valor) {
-        let digitos = valor.substr(0, 9)
-        let firstCalc = this.CalcDigitos(digitos)
-        let novoCpf = this.CalcDigitos(firstCalc, 11)
-        if (novoCpf === valor) {
+    validCpf(value) {
+        let digits = value.substr(0, 9)
+        let firstCalc = this.CalcDigits(digits)
+        let newCpf = this.CalcDigits(firstCalc, 11)
+        if (newCpf === value) {
             return true
         } else {
             return false
         }
     }
 
-    validaCnpj(valor) {
-        let original = valor
-        let primeirosNumeros = valor.substr(0, 12)
-        let firstCalc = this.CalcDigitos(primeirosNumeros, 5)
-        let secondCalc = this.CalcDigitos(firstCalc, 6)
+    validCnpj(value) {
+        let original = value
+        let firstNumbers = value.substr(0, 12)
+        let firstCalc = this.CalcDigits(firstNumbers, 5)
+        let secondCalc = this.CalcDigits(firstCalc, 6)
         if (secondCalc === original) {
             return true
         }
