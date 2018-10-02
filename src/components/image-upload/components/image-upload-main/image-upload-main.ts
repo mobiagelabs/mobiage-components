@@ -30,7 +30,7 @@ class ImageUploadMainController {
     }
 
     showAlert(message: string) {
-        this.$scope.$apply(() => {
+        this.$timeout(() => {
             this.showAlertMessage = message
             this.$timeout(() => this.showAlertMessage = null, 3000)
         })
@@ -43,10 +43,10 @@ class ImageUploadMainController {
     }
 
     async uploadFiles(files: Array<string>) {
-        this.$scope.$apply(() => this.loading = true)
+        this.$timeout(() => this.loading = true)
         this.removeCurrentFiles()
         const uploadedFiles = await ImageUploadFirebase.upload(files)
-        this.$scope.$apply(() => {
+        this.$timeout(() => {
             this.setNgModel(uploadedFiles)
             this.loading = false
         })

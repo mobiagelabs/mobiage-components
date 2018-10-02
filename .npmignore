@@ -1,0 +1,7 @@
+.editorconfig
+.gitignore
+README.md
+tsconfig.json
+tslint.json
+webpack.config.dev.js
+webpack.config.prod.js
