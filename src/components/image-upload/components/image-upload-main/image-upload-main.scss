@@ -1,8 +1,48 @@
 mbg-image-upload-main {
     display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
     width: 100%;
     height: 100%;
+    svg.camera {
+        width: 34px;
+        position: absolute;
+        z-index: 1;
+        right: 18px;
+        bottom: 18px;
+        background: #000;
+        fill: #fff;
+        opacity: .5;
+        border-radius: 50%;
+        padding: 5px;
+        cursor: pointer;
+        transition: all 350ms ease;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .mbg-image-upload-main-label {
+        font-size: 10px;
+        position: absolute;
+        width: 100px;
+        padding: 0 12px;
+        z-index: 1;
+        height: 20px;
+        background: #000;
+        color: #FFF;
+        border-radius: 18px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        top: 24px;
+        opacity: .5;
+    }
     .mbg-image-upload-main {
+        flex: 1;
         border-radius: 8px;
         width: 100%;
         height: auto;
@@ -13,7 +53,9 @@ mbg-image-upload-main {
         justify-content: center;
         position: relative;
         overflow: hidden;
-        cursor: pointer;
+        &.empty {
+            cursor: pointer;
+        }
         input[type="file"] {
             display: none;
         }
@@ -34,7 +76,7 @@ mbg-image-upload-main {
             background: #ee7983;
             color: #FFF;
             transition: transform 500ms ease;
-            transform: translateY(100%);
+            transform: translateY(102%);
             &.active {
                 transform: translateY(0);
             }

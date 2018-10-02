@@ -1,7 +1,7 @@
 {
-  "name": "mobiage-components",
+  "name": "@mobiage/components",
   "version": "1.0.0",
-  "description": "mobiage-components",
+  "description": "@mobiage/components",
   "main": "src/components/index.ts",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.dev.js --hot --open",

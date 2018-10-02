@@ -53,7 +53,9 @@ class ImageUploadMainController {
     }
 
     openImageChoice() {
-        this.inputElement.click()
+        if (!this.enableImageContent()) {
+            this.inputElement.click()
+        }
     }
 
     async onFilesChoice(evt) {

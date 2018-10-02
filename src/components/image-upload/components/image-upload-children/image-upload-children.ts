@@ -1,8 +1,11 @@
+import * as angular from 'angular'
 import './image-upload-children.scss'
 import template from './image-upload-children.html'
 
 class ImageUploadChildrenController {
     private ngModel: any
+
+    constructor(public $scope, public $element, public $timeout) { }
 
     getImageChilds() {
         const arr = Array.isArray(this.ngModel) ? this.ngModel : [this.ngModel]
@@ -23,7 +26,23 @@ class ImageUploadChildrenController {
         this.ngModel[index] = currentMain
     }
 
+    removeChild(index, evt?) {
+        if (evt) {
+            evt.stopPropagation()
+        }
+        this.ngModel.splice(index + 1, 1)
+    }
+
+    handleCreateClick() {
+        const inputFile: any = angular
+            .element(this.$element[0].parentNode.parentNode)
+            .find('input[type="file"]')
+            inputFile.click()
+    }
+
 }
+
+ImageUploadChildrenController.$inject = ['$scope', '$element', '$timeout']
 
 const imageUploadChildren = {
     bindings: {
