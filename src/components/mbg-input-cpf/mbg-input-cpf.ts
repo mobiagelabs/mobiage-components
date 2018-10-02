@@ -3,11 +3,11 @@ import template from './mbg-input-cpf.html'
 
 class MbgInputCpfController {
     private ngChange
-    privatengModel
+    private ngModel
     private ngRequired
     private ngDisabled
     private props
-    public valid = true
+    public valid
 
     constructor($scope, $element, $attrs) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
@@ -19,10 +19,12 @@ class MbgInputCpfController {
 
     ngBlur(evt) {
         this.valid = this.validCpf(evt.$event.target.value)
+        if (!this.valid) {
+            this.ngModel = null
+        }
     }
 
-
-    CalcDigits(digits, positions = 10, sumDigits = 0) {
+    calcDigits(digits, positions = 10, sumDigits = 0) {
         digits = digits.toString()
         for (let i = 0; i < digits.length; i++) {
             sumDigits = sumDigits + (digits[i] * positions)
@@ -43,8 +45,8 @@ class MbgInputCpfController {
 
     validCpf(value) {
         let digits = value.substr(0, 9)
-        let firstCalc = this.CalcDigits(digits)
-        let newCpf = this.CalcDigits(firstCalc, 11)
+        let firstCalc = this.calcDigits(digits)
+        let newCpf = this.calcDigits(firstCalc, 11)
         if (newCpf === value) {
             return true
         } else {
