@@ -24,9 +24,15 @@ mbg-image-upload-children {
             position: relative;
             .mbg-image-upload-child {
                 width: 90%;
-                height: 60px; // aqui
+                height: 60px;
                 border: 1px solid #ddd;
                 border-radius: 5px;
+                cursor: pointer;
+                transition: all 350ms ease;
+                will-change: transform, transition;
+                &:hover {
+                    transform: scale(1.08);
+                }
             }
         }
     }

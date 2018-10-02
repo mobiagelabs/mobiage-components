@@ -17,6 +17,12 @@ class ImageUploadChildrenController {
         return image
     }
 
+    handleClick(child, index) {
+        const currentMain = this.ngModel[0]
+        this.ngModel[0] = child
+        this.ngModel[index] = currentMain
+    }
+
 }
 
 const imageUploadChildren = {

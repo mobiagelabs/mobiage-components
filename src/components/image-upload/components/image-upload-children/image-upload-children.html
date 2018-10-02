@@ -1,6 +1,7 @@
 <div class="mbg-image-upload-children">
     <div class="mbg-image-upload-children-content"
-         ng-repeat="children in $ctrl.getImageChilds()">
+         ng-repeat="children in $ctrl.getImageChilds()"
+         ng-click="$ctrl.handleClick(children, $index + 1)">
         <div class="mbg-image-upload-child"
              ng-style="$ctrl.getImageContent(children)">
 

@@ -1,16 +1,16 @@
 import './image-upload-main.scss'
 import template from './image-upload-main.html'
 import { ImageUploadConfig } from '../../interfaces'
-import { storage } from 'firebase'
+import { ImageUploadFirebase } from '../../helpers/firebase'
 
 class ImageUploadMainController {
-    private URL_FIREBASE = 'https://firebasestorage.googleapis.com/v0/b/bucket/o/id?alt=media'
     private inputElement: HTMLInputElement
     private config: ImageUploadConfig
     private ngModel: any
     private loading: boolean
+    private showAlert: boolean
 
-    constructor(public $scope, public $element) { }
+    constructor(public $scope, public $element, public $timeout) { }
 
     $onInit() {
         this.inputElement = this.$element.find('input')[0]
@@ -20,36 +20,36 @@ class ImageUploadMainController {
         }
     }
 
-    guid() {
-        const s4 = () => Math.floor((1 + Math.random()) * 0x10000)
-            .toString(16)
-            .substring(1)
-        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4()
+    setNgModel(files) {
+        if (this.config.maxImages > 1) {
+            this.ngModel = this.ngModel || []
+            this.ngModel = this.ngModel.concat(files)
+        } else {
+            this.ngModel = files[0]
+        }
+    }
+
+    showAlertMaxImages() {
+        this.$scope.$apply(() => {
+            this.showAlert = true
+            this.$timeout(() => {
+                this.showAlert = false
+            }, 3000)
+        })
     }
 
     removeCurrentFiles() {
         const files = Array.isArray(this.ngModel) ? this.ngModel : [this.ngModel]
-        files.forEach((file) => {
-            if (file) {
-                const storageRef = storage().ref().child(file.idStorage)
-                storageRef.delete()
-            }
-        })
+        // console.log(files)
+        // ImageUploadFirebase.removeFiles(files)
     }
 
     async uploadFiles(files: Array<string>) {
         this.$scope.$apply(() => this.loading = true)
         this.removeCurrentFiles()
-        const uploadedFiles = await Promise.all(files.map(async (base64) => {
-            const imageID = this.guid()
-            const storageRef = storage().ref().child(imageID)
-            const response = await storageRef.putString(base64, 'data_url')
-            const imageURL = this.URL_FIREBASE.replace(/bucket/g, response.metadata.bucket).replace(/id/g, response.metadata.name)
-            const image = { url: imageURL, idStorage: imageID }
-            return image
-        }))
+        const uploadedFiles = await ImageUploadFirebase.upload(files)
         this.$scope.$apply(() => {
-            this.ngModel = uploadedFiles
+            this.setNgModel(uploadedFiles)
             this.loading = false
         })
     }
@@ -60,6 +60,10 @@ class ImageUploadMainController {
 
     async onFilesChoice(evt) {
         const files: Array<File> = Array.from(evt.target.files)
+        if (files.length > this.config.maxImages) {
+            this.showAlertMaxImages()
+            return
+        }
         const data = await Promise.all(files.map(async (file) => this.getBase64(file)))
         this.uploadFiles(data)
         this.inputElement.value = null
@@ -95,7 +99,7 @@ class ImageUploadMainController {
 
 }
 
-ImageUploadMainController.$inject = ['$scope', '$element']
+ImageUploadMainController.$inject = ['$scope', '$element', '$timeout']
 
 const imageUploadMain = {
     bindings: {
