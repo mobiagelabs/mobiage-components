@@ -11,12 +11,32 @@ mbg-image-upload-main {
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
         input[type="file"] {
             display: none;
         }
         .mbg-image-upload-content {
             width: 95%;
             height: 95%;
+        }
+        .mbg-image-upload-max-files {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: 0;
+            background: #ee7983;
+            color: #FFF;
+            transition: transform 500ms ease;
+            transform: translateY(100%);
+            &.active {
+                transform: translateY(0);
+            }
         }
     }
 }

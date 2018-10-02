@@ -14,7 +14,7 @@ class ImageUploadController {
             maxImages: 1,
             size: {
                 width: '290px',
-                height: '374px',
+                height: '290px',
             },
             children: {
                 position: ImageUploadPosition.BOTTOM,
