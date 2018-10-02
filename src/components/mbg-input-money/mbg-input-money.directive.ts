@@ -1,5 +1,3 @@
-
-
 const mbgInputMoneyDirective = ($filter, $timeout) => {
     return {
         require: 'ngModel',
@@ -9,10 +7,8 @@ const mbgInputMoneyDirective = ($filter, $timeout) => {
         },
         restrict: 'A',
         link: function (scope, elem, attr, ngModel) {
-            console.log('ma oeeeeeeeeeeeeee')
             $timeout(() => {
-                // $(elem).maskMoney()
-
+                window['jQuery'](elem).maskMoney()
                 function decimalRex(dChar) {
                     return RegExp('\\d|\\-|\\' + dChar, 'g')
                 }
