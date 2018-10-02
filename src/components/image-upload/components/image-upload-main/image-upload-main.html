@@ -17,11 +17,14 @@
     </svg> -->
     <input type="file"
            onchange="angular.element(this).scope().$ctrl.onFilesChoice(event)" />
-    <mbg-image-upload-loading ng-if="$ctrl.loading"></mbg-image-upload-loading>
+    <mbg-image-upload-loading ng-if="$ctrl.loading"
+                              disable-animate></mbg-image-upload-loading>
     <mbg-image-upload-no-image width="64px"
+                               disable-animate
                                ng-if="!$ctrl.enableImageContent() && !$ctrl.loading"></mbg-image-upload-no-image>
     <div class="mbg-image-upload-content"
          ng-if="$ctrl.enableImageContent() && !$ctrl.loading"
+         disable-animate
          ng-style="$ctrl.getImageContent()">
     </div>
     <div class="mbg-image-upload-max-files"
