@@ -2,11 +2,11 @@
      ng-click="$ctrl.openImageChoice()">
     <input type="file"
            onchange="angular.element(this).scope().$ctrl.onFilesChoice(event)" />
+    <mbg-image-upload-loading ng-if="$ctrl.loading"></mbg-image-upload-loading>
     <mbg-image-upload-no-image width="64px"
-                               ng-if="!$ctrl.ngModel || $ctrl.ngModel.length === 0"></mbg-image-upload-no-image>
+                               ng-if="!$ctrl.enableImageContent() && !$ctrl.loading"></mbg-image-upload-no-image>
     <div class="mbg-image-upload-content"
-         ng-if="$ctrl.enableImageContent()"
+         ng-if="$ctrl.enableImageContent() && !$ctrl.loading"
          ng-style="$ctrl.getImageContent()">
-
     </div>
 </div>

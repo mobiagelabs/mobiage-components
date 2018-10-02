@@ -1,4 +1,9 @@
-<div class="mbg-image-upload-children"
-     ng-class="{ 'empty': $ctrl.ngModel.length < 1 }">
+<div class="mbg-image-upload-children">
+    <div class="mbg-image-upload-children-content"
+         ng-repeat="children in $ctrl.getImageChilds()">
+        <div class="mbg-image-upload-child"
+             ng-style="$ctrl.getImageContent(children)">
 
+        </div>
+    </div>
 </div>

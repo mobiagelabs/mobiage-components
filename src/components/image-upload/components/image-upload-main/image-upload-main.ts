@@ -8,6 +8,7 @@ class ImageUploadMainController {
     private inputElement: HTMLInputElement
     private config: ImageUploadConfig
     private ngModel: any
+    private loading: boolean
 
     constructor(public $scope, public $element) { }
 
@@ -37,6 +38,7 @@ class ImageUploadMainController {
     }
 
     async uploadFiles(files: Array<string>) {
+        this.$scope.$apply(() => this.loading = true)
         this.removeCurrentFiles()
         const uploadedFiles = await Promise.all(files.map(async (base64) => {
             const imageID = this.guid()
@@ -48,6 +50,7 @@ class ImageUploadMainController {
         }))
         this.$scope.$apply(() => {
             this.ngModel = uploadedFiles
+            this.loading = false
         })
     }
 
