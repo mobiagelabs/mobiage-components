@@ -20,6 +20,7 @@ mbg-image-upload-main {
         .mbg-image-upload-content {
             width: 95%;
             height: 95%;
+            transition: all 500ms ease;
         }
         .mbg-image-upload-max-files {
             position: absolute;

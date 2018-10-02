@@ -8,7 +8,7 @@ class ImageUploadMainController {
     private config: ImageUploadConfig
     private ngModel: any
     private loading: boolean
-    private showAlert: boolean
+    private showAlertMessage: string
 
     constructor(public $scope, public $element, public $timeout) { }
 
@@ -29,12 +29,10 @@ class ImageUploadMainController {
         }
     }
 
-    showAlertMaxImages() {
+    showAlert(message: string) {
         this.$scope.$apply(() => {
-            this.showAlert = true
-            this.$timeout(() => {
-                this.showAlert = false
-            }, 3000)
+            this.showAlertMessage = message
+            this.$timeout(() => this.showAlertMessage = null, 3000)
         })
     }
 
@@ -60,8 +58,14 @@ class ImageUploadMainController {
 
     async onFilesChoice(evt) {
         const files: Array<File> = Array.from(evt.target.files)
-        if (files.length > this.config.maxImages) {
-            this.showAlertMaxImages()
+        const totalFiles = files.length + (Array.isArray(this.ngModel) ? this.ngModel.length : 0)
+        if (totalFiles > this.config.maxImages) {
+            const remaing = this.config.maxImages - (Array.isArray(this.ngModel) ? this.ngModel.length : 0)
+            if (remaing > 0) {
+                this.showAlert(`Permitido adicionar mais ${remaing} ${remaing > 1 ? 'imagens' : 'imagem'}.`)
+            } else {
+                this.showAlert(`Permitido no máximo ${this.config.maxImages} ${this.config.maxImages > 1 ? 'imagens' : 'imagem'}.`)
+            }
             return
         }
         const data = await Promise.all(files.map(async (file) => this.getBase64(file)))

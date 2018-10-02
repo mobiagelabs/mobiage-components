@@ -17,7 +17,7 @@ const module = angular
   ])
   .controller('demoCtrl', ['$scope', ($scope) => {
     $scope.config = {
-      maxImages: 3
+      maxImages: 15
     }
   }])
 angular.bootstrap(document, [module.name])

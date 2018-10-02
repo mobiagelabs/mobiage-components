@@ -10,7 +10,7 @@
          ng-style="$ctrl.getImageContent()">
     </div>
     <div class="mbg-image-upload-max-files"
-         ng-class="{ 'active': $ctrl.showAlert }">
-        Permitido no maximo {{ config.maxImages + config.maxImages > 1 ? ' imagens' : ' imagem' }}.
+         ng-class="{ 'active': $ctrl.showAlertMessage }">
+        {{ $ctrl.showAlertMessage }}
     </div>
 </div>

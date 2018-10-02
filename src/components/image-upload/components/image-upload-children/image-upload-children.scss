@@ -28,7 +28,7 @@ mbg-image-upload-children {
                 border: 1px solid #ddd;
                 border-radius: 5px;
                 cursor: pointer;
-                transition: all 350ms ease;
+                transition: transform, transition 350ms ease, background 350ms ease;
                 will-change: transform, transition;
                 &:hover {
                     transform: scale(1.08);
