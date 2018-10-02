@@ -4,10 +4,13 @@
     <div class="mbg-image-upload-wrapper"
          ng-class="{ [$ctrl.config.children.position.toLowerCase()]: true }">
         <div class="mbg-image-upload-main-wrapper">
-            <mbg-image-upload-main></mbg-image-upload-main>
+            <mbg-image-upload-main ng-model="$ctrl.ngModel"
+                                   config="$ctrl.config"></mbg-image-upload-main>
         </div>
-        <div class="mbg-image-upload-children-wrapper">
-            <mbg-image-upload-children></mbg-image-upload-children>
+        <div class="mbg-image-upload-children-wrapper"
+             ng-if="$ctrl.config.maxImages > 1">
+            <mbg-image-upload-children ng-model="$ctrl.ngModel"
+                                       config="$ctrl.config"></mbg-image-upload-children>
         </div>
     </div>
 </div>

@@ -8,5 +8,15 @@ mbg-image-upload-main {
         height: auto;
         border: 1px solid #eee;
         background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input[type="file"] {
+            display: none;
+        }
+        .mbg-image-upload-content {
+            width: 95%;
+            height: 95%;
+        }
     }
 }

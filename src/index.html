@@ -20,11 +20,13 @@
         content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body ng-controller="demoCtrl">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <mbg-input-cpf-cnpj ng-model="cpfcnpj"></mbg-input-cpf-cnpj>
+
+        <mbg-image-upload ng-model="myData" config="config"></mbg-image-upload>
+
       </div>
     </div>
   </div>

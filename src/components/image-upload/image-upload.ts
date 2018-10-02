@@ -6,6 +6,7 @@ import { ImageUploadPosition } from './interfaces/image-upload-position'
 class ImageUploadController {
     private config: ImageUploadConfig
     private defaultConfig: ImageUploadConfig
+    private ngModel: any
 
     constructor() {
         this.defaultConfig = {
@@ -23,6 +24,9 @@ class ImageUploadController {
 
     $onInit() {
         this.config = Object.assign(this.defaultConfig, this.config)
+        if (this.config.maxImages > 1) {
+            this.ngModel = this.ngModel || []
+        }
     }
 
 }
@@ -30,6 +34,7 @@ class ImageUploadController {
 const imageUpload = {
     bindings: {
         config: '=?',
+        ngModel: '='
     },
     controller: ImageUploadController,
     template,

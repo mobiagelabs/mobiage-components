@@ -8,5 +8,9 @@ mbg-image-upload-children {
         height: 100%;
         border: 1px solid #eee;
         background: #fff;
+        &.empty {
+            opacity: .6;
+            cursor: not-allowed;
+        }
     }
 }
