@@ -5,6 +5,10 @@ import { imageUploadModule } from './image-upload'
 import { mbgInputCnpjModule } from './mbg-input-cnpj'
 import { mbgInputCpfModule } from './mbg-input-cpf'
 import { mbgInputCpfCnpjModule } from './mbg-input-cpfcnpj'
+import { mbgInputNameModule } from './mbg-input-name'
+import { mbgInputPhoneModule } from './mbg-input-phone'
+import { mbgInputTextModule } from './mbg-input-text'
+import { mbgInputMoneyModule } from './mbg-input-money'
 
 export default angular
   .module('mbg.components', [
@@ -13,5 +17,9 @@ export default angular
     mbgInputCnpjModule,
     mbgInputCpfModule,
     mbgInputCpfCnpjModule,
+    mbgInputNameModule,
+    mbgInputPhoneModule,
+    mbgInputTextModule,
+    mbgInputMoneyModule,
   ])
   .name
