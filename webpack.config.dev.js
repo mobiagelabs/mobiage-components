@@ -106,6 +106,10 @@ module.exports = {
       allChunks: true
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery'
+    })
   ],
   resolve: {
     extensions: ['.js', '.ts', '.less', '.scss', '.css'], //后缀名自动补全
