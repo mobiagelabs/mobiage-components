@@ -16,7 +16,8 @@
   "dependencies": {
     "@types/node": "^10.10.1",
     "angular": "1.7.4",
-    "angular-input-masks": "^4.2.1"
+    "angular-input-masks": "^4.2.1",
+    "firebase": "^5.5.2"
   },
   "devDependencies": {
     "@types/angular": "^1.6.27",
