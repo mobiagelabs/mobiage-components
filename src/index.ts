@@ -1,6 +1,4 @@
 import * as angular from 'angular'
-import $ from 'jquery'
-window['jQuery'] = $
 import components from './components'
 import { initializeApp } from 'firebase/app'
 

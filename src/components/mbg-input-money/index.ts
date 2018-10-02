@@ -1,6 +1,6 @@
 import 'jquery'
-import * as angular from 'angular'
 import 'jquery-maskmoney/dist/jquery.maskMoney'
+import * as angular from 'angular'
 import { mbgInputMoney } from './mbg-input-money'
 import { mbgInputMoneyDirective } from './mbg-input-money.directive'
 
