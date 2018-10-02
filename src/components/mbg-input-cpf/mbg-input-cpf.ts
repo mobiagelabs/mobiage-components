@@ -18,46 +18,38 @@ class MbgInputCpfController {
     }
 
     ngBlur(evt) {
-        this.valid = this.isValidCPF(evt.$event.target.value)
+        this.valid = this.validCpf(evt.$event.target.value)
     }
 
-    isValidCPF(cpf: string) {
-        let soma = 0
-        let resto
-        let strCPF = cpf
-        strCPF = strCPF.replace('.', '')
-        strCPF = strCPF.replace('.', '')
-        strCPF = strCPF.replace('.', '')
-        strCPF = strCPF.replace('-', '')
-        strCPF = strCPF.replace('/', '')
-        if (strCPF === '00000000000') {
+
+    CalcDigits(digits, positions = 10, sumDigits = 0) {
+        digits = digits.toString()
+        for (let i = 0; i < digits.length; i++) {
+            sumDigits = sumDigits + (digits[i] * positions)
+            positions--
+            if (positions < 2) {
+                positions = 9
+            }
+        }
+        sumDigits = sumDigits % 11
+        if (sumDigits < 2) {
+            sumDigits = 0
+        } else {
+            sumDigits = 11 - sumDigits
+        }
+        let cpf = digits + sumDigits
+        return cpf
+    }
+
+    validCpf(value) {
+        let digits = value.substr(0, 9)
+        let firstCalc = this.CalcDigits(digits)
+        let newCpf = this.CalcDigits(firstCalc, 11)
+        if (newCpf === value) {
+            return true
+        } else {
             return false
         }
-
-        for (let i = 1; i <= 9; i++) {
-            soma = soma + parseInt(strCPF.substring(i - 1, i), 10) * (11 - i)
-        }
-        resto = (soma * 10) % 11
-
-        if ((resto === 10) || (resto === 11)) {
-            resto = 0
-        }
-        if (resto !== parseInt(strCPF.substring(9, 10), 10)) {
-            return false
-        }
-        soma = 0
-        for (let i = 1; i <= 10; i++) {
-            soma = soma + parseInt(strCPF.substring(i - 1, i), 10) * (12 - i)
-        }
-        resto = (soma * 10) % 11
-
-        if ((resto === 10) || (resto === 11)) {
-            resto = 0
-        }
-        if (resto !== parseInt(strCPF.substring(10, 11), 10)) {
-            return false
-        }
-        return true
     }
 
     onChange() {

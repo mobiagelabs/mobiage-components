@@ -22,58 +22,37 @@ class MbgInputCnpjController {
     }
 
     ngBlur(evt) {
-        this.valid = this.isValidCNPJ(evt.$event.target.value)
+        this.valid = this.validaCnpj(evt.$event.target.value)
     }
 
-    isValidCNPJ(cnpj: string) {
-        let tamanho
-        let numeros
-        let digitos
-        let soma
-        let pos
-        let resultado
-        let i
-        if (cnpj === '') {
+    validaCnpj(value) {
+        let original = value
+        let firstNumbers = value.substr(0, 12)
+        let firstCalc = this.CalcDigits(firstNumbers, 5)
+        let secondCalc = this.CalcDigits(firstCalc, 6)
+        if (secondCalc === original) {
             return true
         }
-        cnpj = cnpj.replace(/[^\d]+/g, '')
-        if (cnpj === '') {
-            return false
-        }
-        if (cnpj.length !== 14) {
-            return false
-        }
-        tamanho = cnpj.length - 2
-        numeros = cnpj.substring(0, tamanho)
-        digitos = cnpj.substring(tamanho)
-        soma = 0
-        pos = tamanho - 7
-        for (i = tamanho; i >= 1; i--) {
-            soma += numeros.charAt(tamanho - i) * pos--
-            if (pos < 2) {
-                pos = 9
-            }
-        }
-        resultado = soma % 11 < 2 ? 0 : 11 - soma % 11
-        if (resultado !== parseInt(digitos.charAt(0))) {
-            return false
-        }
+        return false
+    }
 
-        tamanho += 1
-        numeros = cnpj.substring(0, tamanho)
-        soma = 0
-        pos = tamanho - 7
-        for (i = tamanho; i >= 1; i--) {
-            soma += numeros.charAt(tamanho - i) * pos--
-            if (pos < 2) {
-                pos = 9
+    CalcDigits(digits, positions = 10, sumDigits = 0) {
+        digits = digits.toString()
+        for (let i = 0; i < digits.length; i++) {
+            sumDigits = sumDigits + (digits[i] * positions)
+            positions--
+            if (positions < 2) {
+                positions = 9
             }
         }
-        resultado = soma % 11 < 2 ? 0 : 11 - soma % 11
-        if (resultado !== parseInt(digitos.charAt(1))) {
-            return false
+        sumDigits = sumDigits % 11
+        if (sumDigits < 2) {
+            sumDigits = 0
+        } else {
+            sumDigits = 11 - sumDigits
         }
-        return true
+        let cnpj = digits + sumDigits
+        return cnpj
     }
 
     onChange() {

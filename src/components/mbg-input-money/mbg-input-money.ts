@@ -14,6 +14,11 @@ class MbgInputMoneyController {
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
         this.props = {
             placeholder: $attrs.placeholder || '',
+            prefix: $attrs.prefix || 'R$ ',
+            decimal: $attrs.decimal || ',',
+            thousands: $attrs.decimal || '.',
+            precision: $attrs.precision || 2,
+            allowNegative: $attrs.allowNegative ? JSON.parse($attrs.allowNegative) : true,
         }
     }
     onChange() {
