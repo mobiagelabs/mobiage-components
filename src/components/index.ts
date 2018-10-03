@@ -9,6 +9,7 @@ import { mbgInputNameModule } from './mbg-input-name'
 import { mbgInputPhoneModule } from './mbg-input-phone'
 import { mbgInputTextModule } from './mbg-input-text'
 import { mbgInputMoneyModule } from './mbg-input-money'
+import { mbgInputStepModule } from './mbg-input-step'
 
 export default angular
   .module('mbg.components', [
@@ -21,6 +22,7 @@ export default angular
     mbgInputPhoneModule,
     mbgInputTextModule,
     mbgInputMoneyModule,
+    mbgInputStepModule,
   ])
   .name
 

@@ -1,0 +1,19 @@
+
+
+
+$scope.getTipoProduto = function..... [{name: 'Camiseta'}]
+
+$scope.getMarca = function.....
+
+$scope.getModelo = function.....
+
+<mbg-autocomplete-foda placeholder="Ex: Camiseta, Adidas, Underground, P-M-G, Roxo">
+    <mbg-autocomplete-step ng-model="entity.tipo" list="getTipoProduto" label="name" order="3"></mbg-autocomplete-step>
+    <mbg-autocomplete-step ng-model="entity.modelo" list="getModelo" label="name" order="2"></mbg-autocomplete-step>
+    <mbg-autocomplete-step ng-model="entity.marca" list="getTipoProduto" label="name" order="1"></mbg-autocomplete-step>
+</mbg-autocomplete-foda>
+
+
+
+
+

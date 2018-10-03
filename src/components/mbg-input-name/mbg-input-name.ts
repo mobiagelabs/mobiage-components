@@ -46,6 +46,7 @@ class MbgInputNameController {
         }
     }
 }
+
 MbgInputNameController.$inject = ['$scope', '$element', '$attrs']
 
 const mbgInputName = {

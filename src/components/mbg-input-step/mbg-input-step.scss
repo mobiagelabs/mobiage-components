@@ -1,0 +1,26 @@
+.mb-input-step-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 44px;
+    background: #FFF;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-width: 0;
+    > label {
+        color: #666;
+        margin: 0;
+        font-weight: 100;
+        position: absolute;
+        left: 14px;
+    }
+    > ng-transclude {
+        display: flex;
+        max-width: 100%;
+    }
+}

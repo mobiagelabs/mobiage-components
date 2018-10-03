@@ -23,43 +23,16 @@
 <body ng-controller="demoCtrl">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
-        <mbg-image-upload ng-model="myData"
-                          config="config"></mbg-image-upload>
-      </div>
-      <div class="col-md-4">
-        <mbg-input-cpf-cnpj ng-model="cnpfcnpj"
-                            placeholder="CPF ou CNPJ"></mbg-input-cpf-cnpj>
-        <mbg-input-cpf ng-model="cpf"
-                       placeholder="CPF"></mbg-input-cpf>
-        <mbg-input-cnpj ng-model="cnpj"
-                        placeholder="CNPJ"></mbg-input-cnpj>
-        <mbg-input-name ng-model="name"
-                        placeholder="Nome completo"></mbg-input-name>
-        <mbg-input-money ng-model="money"
-                         placeholder="Informe o valor"></mbg-input-money>
-        <mbg-input-phone ng-model="phone"
-                         placeholder="Digite seu telefone"></mbg-input-phone>
-        <mbg-input-text ng-model="text"
-                        placeholder="Um texto qualquer"></mbg-input-text>
+      <div class="col-md-6">
 
-        <mbg-image-upload ng-model="myData"
-                          config="config"></mbg-image-upload>
-        <br><br><br>
-        <br><br><br>
-        <br><br><br>
+
+        <mbg-input-step placeholder="Ex. Camiseta, Adidas, Underground, P-M-G, Roxo">
+          <mbg-input-step-item ng-model="entity.tipo" fetch="getTipoProduto(query)" label="name"></mbg-input-step-item>
+        </mbg-input-step>
 
       </div>
+
     </div>
-
-
-    <div class="row">
-      <div class="col-md-12">
-        <pre>{{myData|json}}</pre>
-      </div>
-    </div>
-
-  </div>
 
 </body>
 

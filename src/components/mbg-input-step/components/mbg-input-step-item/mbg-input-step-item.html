@@ -1,0 +1,10 @@
+<div class="mbg-input-step-item">
+    <input type="text"
+           ng-model="$ctrl.inputValue"
+           ng-change="$ctrl.onInputChange()" />
+    <ul class="mbg-input-step-list">
+        <li ng-repeat="item in $ctrl.data">
+            {{ item[$ctrl.label] }}
+        </li>
+    </ul>
+</div>

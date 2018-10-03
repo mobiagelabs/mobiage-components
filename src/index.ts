@@ -19,5 +19,21 @@ const module = angular
     $scope.config = {
       maxImages: 15
     }
+
+    $scope.getTipoProduto = (param = '') => {
+     return new Promise((resolve) => {
+        resolve([
+          {
+            name: 'Camiseta'
+          },
+          {
+            name: 'Calça'
+          }
+        ].filter((obj) => {
+          return obj.name.toLowerCase().indexOf(param.toLowerCase()) !== -1
+        }))
+      })
+    }
+
   }])
 angular.bootstrap(document, [module.name])
