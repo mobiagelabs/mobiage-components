@@ -7,12 +7,15 @@
            ng-model="$ctrl.inputValue"
            ng-change="$ctrl.onInputChange()"
            pu-elastic-input
-           pu-elastic-input-maxwidth="none" />
+           pu-elastic-input-maxwidth="none"
+           placeholder="{{ $ctrl.hasFocus ? $ctrl.$attrs.placeholder : '' }}" />
     <ul class="mbg-input-step-list"
-        ng-class="{'active': $ctrl.hasFocus && $ctrl.data.length > 0}">
-        <li ng-repeat="item in $ctrl.data"
-            ng-value="item">
+        ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
+        <li ng-repeat="item in $ctrl.data">
             {{ item[$ctrl.label] }}
+        </li>
+        <li ng-if="$ctrl.enableAdd && $ctrl.inputValue">
+            {{ $ctrl.inputValue }} <span>(novo)</span>
         </li>
     </ul>
 </div>

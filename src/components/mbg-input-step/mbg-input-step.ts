@@ -20,13 +20,12 @@ class MbgInputStepController {
         this.items = items
     }
 
-    setFocusNextItem(currentItem) {
-        const nextItem = currentItem.next()
-        if (nextItem[0]) {
-            nextItem.find('input').focus()
-        } else {
-            this.$element.nextAll('input').first().focus()
-        }
+    focusNextInput() {
+        this.$element.nextAll('input').first().focus()
+    }
+
+    handleClick() {
+        // console.log(this)
     }
 
 }

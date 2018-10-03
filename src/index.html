@@ -26,16 +26,32 @@
       <div class="col-md-6">
 
         <mbg-input-step placeholder="Ex. Camiseta, Adidas, Underground, P-M-G, Roxo">
-          <mbg-input-step-item ng-model="entity.tipo" fetch="getTipoProduto(query)" label="name"></mbg-input-step-item>
-          <mbg-input-step-item ng-model="entity.tipo2" fetch="getTipoProduto(query)" label="name"></mbg-input-step-item>
-          <mbg-input-step-item ng-model="entity.tipo3" fetch="getTipoProduto(query)" label="name"></mbg-input-step-item>
-          <mbg-input-step-item ng-model="entity.modelo" fetch="getTipoProduto(query)" label="name"></mbg-input-step-item>
+          <mbg-input-step-item ng-model="entity.tipo"
+                               fetch="getTipoProduto(query)"
+                               placeholder="Qual tipo de produto?"
+                               label="name"></mbg-input-step-item>
+          <mbg-input-step-item ng-model="entity.marca"
+                               fetch="getMarca(query)"
+                               placeholder="Qual a marca?"
+                               enable-add="true"
+                               label="name"></mbg-input-step-item>
+          <mbg-input-step-item ng-model="entity.nome"
+                               placeholder="Agora, qual seu nome?"></mbg-input-step-item>
+          <mbg-input-step-item ng-model="entity.modelo"
+                               placeholder="Por fim, qual o modelo?"
+                               fetch="getModelo(query)"
+                               label="name"></mbg-input-step-item>
         </mbg-input-step>
 
 
         <br><br><br><br>
 
-        <input type="text" ng-model="entity.tipo.name"/>
+        <input type="text"
+               ng-model="entity.tipo.name" />
+
+        <br><br><br><br><br><br><br><br>
+
+        <pre>{{entity|json}}</pre>
 
       </div>
 

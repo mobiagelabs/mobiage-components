@@ -10,23 +10,35 @@ class MbgInputStepItemController {
     private label: string
     private ngModel: any
     private mbgInputStep
+    private enableAdd: boolean
 
-    constructor(public $scope, public $element, public $attrs, public $timeout) {}
+    constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
     $onInit() {
-        // autosizeInput(this.$element.find('input')[0], { minWidth: 54 })
+        this.hasFocus = false
+        this.enableAdd = this.enableAdd || false
+        this.inputValue = ''
     }
 
     onInputFocus() {
         this.hasFocus = true
-        this.onInputChange()
+        this.onInputChange(true)
     }
 
     onInputBlur() {
         this.hasFocus = false
     }
 
-    onInputChange() {
+    onInputChange(ignoreClearModel?: boolean) {
+        if (!ignoreClearModel) {
+            delete this.ngModel
+        }
+        if (this.fetch) {
+            this.executeFetch()
+        }
+    }
+
+    executeFetch() {
         const response = this.fetch({ query: this.inputValue })
         if (response instanceof Promise) {
             response.then((data) => this.afterFetchData(data))
@@ -36,7 +48,9 @@ class MbgInputStepItemController {
     }
 
     afterFetchData(data) {
-        this.$timeout(() => this.data = data)
+        this.$timeout(() => {
+            this.data = data
+        })
         this.$timeout(() => {
             this.focusFirstOption()
         }, 100)
@@ -45,12 +59,12 @@ class MbgInputStepItemController {
     onInputKeydown(evt) {
         switch (evt.keyCode) {
             case 13: // ENTER
-                this.setModelFromOptionFocused()
+                this.setModel()
                 break
             case 188: // VIRGULA
                 evt.stopPropagation()
                 evt.preventDefault()
-                this.setModelFromOptionFocused()
+                this.setModel()
                 break
             case 38: // SETA CIMA
                 this.moveToUp()
@@ -58,6 +72,28 @@ class MbgInputStepItemController {
             case 40: // SETA BAIXO
                 this.moveToDown()
                 break
+            case 8: // BACKSPACE
+                if (!this.ngModel && this.inputValue === '') {
+                    this.movePointerPrevItem()
+                }
+                break
+            case 9: // TAB
+                this.setModel(true)
+                break
+        }
+    }
+
+    movePointerPrevItem() {
+        const prevItem = this.$element.prev()
+        prevItem.find('input').focus()
+    }
+
+    movePointerNextItem() {
+        const nextItem = this.$element.next()
+        if (nextItem[0]) {
+            nextItem.find('input').focus()
+        } else {
+            this.mbgInputStep.focusNextInput()
         }
     }
 
@@ -111,12 +147,22 @@ class MbgInputStepItemController {
         }
     }
 
-    setModelFromOptionFocused() {
-        const currentOption = this.getOptionFocused()
-        if (currentOption[0]) {
-            this.ngModel = currentOption.scope().item
-            this.inputValue = this.ngModel[this.label]
-            this.mbgInputStep.setFocusNextItem(this.$element)
+    setModel(ignoreFocusNext?: boolean) {
+        if (this.fetch) {
+            const currentOption = this.getOptionFocused()
+            if (currentOption[0]) {
+                let item = currentOption.scope().item
+                if (!item && this.enableAdd) {
+                    item = { [this.label]: this.inputValue }
+                }
+                this.ngModel = item
+                this.inputValue = this.ngModel[this.label]
+            }
+        } else {
+            this.ngModel = this.inputValue
+        }
+        if (!ignoreFocusNext) {
+            this.movePointerNextItem()
         }
     }
 
@@ -128,7 +174,8 @@ const mbgInputStepItem = {
     bindings: {
         ngModel: '=',
         fetch: '&?',
-        label: '@?'
+        label: '@?',
+        enableAdd: '=?'
     },
     require: {
         mbgInputStep: '^mbgInputStep'

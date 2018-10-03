@@ -5,6 +5,7 @@ mbg-input-step-item {
         position: relative;
         display: flex;
         align-items: center;
+        padding-right: 5px;
         &.active {
             &::after {
                 content: ',';
@@ -17,14 +18,14 @@ mbg-input-step-item {
         }
         input {
             height: 44px;
-            min-width: 44px;
+            min-width: 20px;
             border: none;
             background: transparent;
             outline: none;
         }
         .mbg-input-step-list {
+            min-width: 250px;
             top: 100%;
-            min-width: fit-content;
             z-index: 999999999;
             list-style: none;
             margin: 0;
@@ -33,8 +34,8 @@ mbg-input-step-item {
             background: #FFF;
             position: absolute;
             box-shadow: 0 0 15px rgba(0,0,0,.1), 0 0 70px rgba(0,0,0, .15);
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
             transform-origin: top center;
             transition: transform .5s ease,opacity .2s linear;
             transform: translate3d(0,-15%,0);

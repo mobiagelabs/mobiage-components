@@ -27,7 +27,7 @@ const module = angular
     // }
 
     $scope.getTipoProduto = (param = '') => {
-     return new Promise((resolve) => {
+      return new Promise((resolve) => {
         resolve([
           {
             name: 'Camiseta'
@@ -37,6 +37,43 @@ const module = angular
           },
           {
             name: 'Calça'
+          }
+        ].filter((obj) => {
+          return obj.name.toLowerCase().indexOf(param.toLowerCase()) !== -1
+        }))
+      })
+    }
+
+    $scope.getMarca = (param = '') => {
+      return new Promise((resolve) => {
+        resolve([
+          {
+            name: 'Adidas'
+          },
+          {
+            name: 'Nike'
+          },
+          {
+            name: 'Puma'
+          }
+        ].filter((obj) => {
+          return obj.name.toLowerCase().indexOf(param.toLowerCase()) !== -1
+        }))
+      })
+    }
+
+
+    $scope.getModelo = (param = '') => {
+      return new Promise((resolve) => {
+        resolve([
+          {
+            name: 'Futebol'
+          },
+          {
+            name: 'Casual'
+          },
+          {
+            name: 'Corrida'
           }
         ].filter((obj) => {
           return obj.name.toLowerCase().indexOf(param.toLowerCase()) !== -1
