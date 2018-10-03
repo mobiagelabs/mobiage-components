@@ -23,4 +23,13 @@
         display: flex;
         max-width: 100%;
     }
+    mbg-input-step-item:last-child {
+        .mbg-input-step-item {
+            &.active {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
 }

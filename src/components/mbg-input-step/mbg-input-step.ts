@@ -20,6 +20,15 @@ class MbgInputStepController {
         this.items = items
     }
 
+    setFocusNextItem(currentItem) {
+        const nextItem = currentItem.next()
+        if (nextItem[0]) {
+            nextItem.find('input').focus()
+        } else {
+            this.$element.nextAll('input').first().focus()
+        }
+    }
+
 }
 
 MbgInputStepController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$compile']

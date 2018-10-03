@@ -16,6 +16,7 @@
   "dependencies": {
     "@types/node": "^10.10.1",
     "angular": "1.7.4",
+    "angular-elastic-input": "^2.4.0",
     "angular-input-masks": "^4.2.1",
     "firebase": "^5.5.2",
     "jquery": "^3.3.1",

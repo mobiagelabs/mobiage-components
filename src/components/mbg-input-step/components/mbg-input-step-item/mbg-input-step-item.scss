@@ -3,23 +3,54 @@ mbg-input-step-item {
     z-index: 1;
     .mbg-input-step-item {
         position: relative;
+        display: flex;
+        align-items: center;
+        &.active {
+            &::after {
+                content: ',';
+            }
+        }
+        input, label {
+            margin: 0;
+            font-weight: 100;
+            color: #666;
+        }
         input {
             height: 44px;
+            min-width: 44px;
             border: none;
-            // border-right: 1px solid #ccc;
             background: transparent;
             outline: none;
         }
         .mbg-input-step-list {
+            top: 100%;
+            min-width: fit-content;
+            z-index: 999999999;
             list-style: none;
             margin: 0;
             padding: 0;
             width: 100%;
-            background: #f5f5f5;
+            background: #FFF;
             position: absolute;
+            box-shadow: 0 0 15px rgba(0,0,0,.1), 0 0 70px rgba(0,0,0, .15);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            transform-origin: top center;
+            transition: transform .5s ease,opacity .2s linear;
+            transform: translate3d(0,-15%,0);
+            opacity: 0;
+            pointer-events: none;
+            &.active {
+                transform: translateZ(0);
+                opacity: 1;
+                pointer-events: all;
+            }
             li {
                 padding: 12px 12px;
                 color: #666;
+                &.focused {
+                    background: #f5f5f5;
+                }
             }
         }
     }

@@ -20,11 +20,20 @@ const module = angular
       maxImages: 15
     }
 
+    // $scope.entity = {
+    //   tipo: {
+    //     name: 'Camiseta'
+    //   }
+    // }
+
     $scope.getTipoProduto = (param = '') => {
      return new Promise((resolve) => {
         resolve([
           {
             name: 'Camiseta'
+          },
+          {
+            name: 'Sapato'
           },
           {
             name: 'Calça'

@@ -1,9 +1,17 @@
-<div class="mbg-input-step-item">
+<div class="mbg-input-step-item"
+     ng-class="{'active': $ctrl.ngModel}">
     <input type="text"
+           ng-focus="$ctrl.onInputFocus()"
+           ng-blur="$ctrl.onInputBlur()"
+           ng-keydown="$ctrl.onInputKeydown($event)"
            ng-model="$ctrl.inputValue"
-           ng-change="$ctrl.onInputChange()" />
-    <ul class="mbg-input-step-list">
-        <li ng-repeat="item in $ctrl.data">
+           ng-change="$ctrl.onInputChange()"
+           pu-elastic-input
+           pu-elastic-input-maxwidth="none" />
+    <ul class="mbg-input-step-list"
+        ng-class="{'active': $ctrl.hasFocus && $ctrl.data.length > 0}">
+        <li ng-repeat="item in $ctrl.data"
+            ng-value="item">
             {{ item[$ctrl.label] }}
         </li>
     </ul>
