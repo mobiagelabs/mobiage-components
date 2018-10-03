@@ -20,13 +20,23 @@ class MbgInputStepItemController {
         this.inputValue = ''
     }
 
+    updateElasticInput() {
+        this.$timeout(() => {
+            const event = new Event('change')
+            const input = this.$element.find('input')
+            input[0].dispatchEvent(event)
+        })
+    }
+
     onInputFocus() {
         this.hasFocus = true
         this.onInputChange(true)
+        this.updateElasticInput()
     }
 
     onInputBlur() {
         this.hasFocus = false
+        this.updateElasticInput()
     }
 
     onInputChange(ignoreClearModel?: boolean) {

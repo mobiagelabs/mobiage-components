@@ -8,7 +8,7 @@
            ng-change="$ctrl.onInputChange()"
            pu-elastic-input
            pu-elastic-input-maxwidth="none"
-           placeholder="{{ $ctrl.hasFocus ? $ctrl.$attrs.placeholder : '' }}" />
+           ng-attr-placeholder="{{ $ctrl.hasFocus ? $ctrl.$attrs.placeholder : '' }}" />
     <ul class="mbg-input-step-list"
         ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
         <li ng-repeat="item in $ctrl.data">
