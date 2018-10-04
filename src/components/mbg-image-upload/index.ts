@@ -5,7 +5,7 @@ import { imageUploadChildren } from './components/image-upload-children/image-up
 import { imageUploadNoImage } from './components/image-upload-no-image/image-upload-no-image'
 import { imageUploadLoading } from './components/image-upload-loading/image-upload-loading'
 
-const imageUploadModule = angular
+const mbgImageUploadModule = angular
     .module('mbg.components.imageUpload', [])
     .component('mbgImageUpload', imageUpload)
     .component('mbgImageUploadMain', imageUploadMain)
@@ -15,4 +15,4 @@ const imageUploadModule = angular
     .name
 
 export * from './interfaces'
-export { imageUploadModule }
+export { mbgImageUploadModule }

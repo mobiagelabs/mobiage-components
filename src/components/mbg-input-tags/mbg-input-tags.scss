@@ -1,0 +1,41 @@
+.mb-input-tags-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+   .mbg-input-tags-content {
+       margin-top: 8px;
+        > div {
+            padding: 0;
+            width: fit-content;
+            float: left;
+            padding: 0px 5px 8px 0;
+            position: relative;
+            margin-right: 16px;
+            svg {
+                width: 11px;
+                position: absolute;
+                right: 8px;
+                fill: #666;
+                cursor: pointer;
+                &.arrow {
+                    width: 38px;
+                    transform: rotate(-90deg);
+                    top: -10px;
+                    right: -23px;
+                    fill: #ccc;
+                }
+            }
+            .mbg-input-tags-value {
+                padding: 4px 10px;
+                background: #ccc;
+                border-radius: 5px;
+                color: #666;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: center;
+                align-items: center;
+                padding-right: 18px;
+            }
+        }
+   }
+}

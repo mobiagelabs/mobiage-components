@@ -1,0 +1,44 @@
+<div class="mbg-input-wrapper mb-input-tags-wrapper"
+     ng-if="$ctrl.props">
+    <input type="text"
+           ng-model="$ctrl.inputValue"
+           ng-change="$ctrl.onChange()"
+           ng-required="$ctrl.ngRequired"
+           ng-disabled="$ctrl.ngDisabled"
+           ng-blur="$ctrl.ngBlur({ $event })"
+           ng-focus="$ctrl.ngFocus({ $event })"
+           ng-keyup="$ctrl.onKeyUp({ $event })"
+           ng-keypress="$ctrl.ngKeypress({ $event })"
+           ng-keydown="$ctrl.ngKeydown({ $event })"
+           placeholder="{{ $ctrl.props.placeholder }}" />
+    <div class="mbg-input-tags-content">
+        <div ng-repeat="tag in $ctrl.ngModel track by $index">
+            <div class="mbg-input-tags-value">
+                <span>{{ tag }}</span>
+                <svg xmlns:dc="http://purl.org/dc/elements/1.1/"
+                     xmlns:cc="http://creativecommons.org/ns#"
+                     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                     xmlns:svg="http://www.w3.org/2000/svg"
+                     xmlns="http://www.w3.org/2000/svg"
+                     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                     viewBox="0 0 24 30"
+                     version="1.1"
+                     x="0px"
+                     class="arrow"
+                     ng-click="$ctrl.removeTag($index)"
+                     y="0px">
+                    <path style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+                          d="m 3.9975605,8.1676949 c 0.007,0.2380601 0.0981,0.4659101 0.2578095,0.6425801 l 7.00195,7.722649 c 0.396981,0.438242 1.085451,0.438241 1.48243,10e-7 l 7.001949,-7.72265 c 0.582578,-0.6425129 0.12707,-1.6713205 -0.74024,-1.6718803 l -14.0058483,0 C 4.4324702,7.1393049 3.9811209,7.6047945 3.9975605,8.1676949 Z" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     data-name="Layer 1"
+                     ng-click="$ctrl.removeTag($index)"
+                     viewBox="0 0 1024 1024"
+                     x="0px"
+                     y="0px">
+                    <path d="M602.5 512L941 173.4c25-25 25-65.5 0-90.5s-65.5-25-90.5 0L512 421.5 173.4 83c-25-25-65.5-25-90.5 0s-25 65.5 0 90.5L421.5 512 83 850.6c-25 25-25 65.5 0 90.5 12.5 12.5 28.9 18.7 45.2 18.7s32.7-6.2 45.2-18.7L512 602.5 850.6 941c25 25 65.5 25 90.5 0 12.5-12.5 18.7-28.9 18.7-45.2s-6.2-32.7-18.7-45.2L602.5 512z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>

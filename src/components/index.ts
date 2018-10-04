@@ -1,7 +1,7 @@
 import * as angular from 'angular'
 import 'angular-input-masks'
 import './common.scss'
-import { imageUploadModule } from './image-upload'
+import { mbgImageUploadModule } from './mbg-image-upload'
 import { mbgInputCnpjModule } from './mbg-input-cnpj'
 import { mbgInputCpfModule } from './mbg-input-cpf'
 import { mbgInputCpfCnpjModule } from './mbg-input-cpfcnpj'
@@ -10,11 +10,12 @@ import { mbgInputPhoneModule } from './mbg-input-phone'
 import { mbgInputTextModule } from './mbg-input-text'
 import { mbgInputMoneyModule } from './mbg-input-money'
 import { mbgInputStepModule } from './mbg-input-step'
+import { mbgInputTagsModule } from './mbg-input-tags'
 
-export default angular
+const mbgComponentsModule = angular
   .module('mbg.components', [
     'ui.utils.masks',
-    imageUploadModule,
+    mbgImageUploadModule,
     mbgInputCnpjModule,
     mbgInputCpfModule,
     mbgInputCpfCnpjModule,
@@ -23,7 +24,9 @@ export default angular
     mbgInputTextModule,
     mbgInputMoneyModule,
     mbgInputStepModule,
+    mbgInputTagsModule,
   ])
   .name
 
-export * from './image-upload'
+export * from './mbg-image-upload'
+export default mbgComponentsModule
