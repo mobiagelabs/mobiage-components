@@ -12,6 +12,7 @@
         flex: 1;
         background: transparent;
         outline: none;
+        width: inherit;
         &.ng-touched.ng-invalid {
             border: 1px solid #b00020;
         }
