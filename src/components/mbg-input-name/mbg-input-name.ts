@@ -1,5 +1,6 @@
 import './mbg-input-name.scss'
 import template from './mbg-input-name.html'
+import { Capitalize } from '../../helpers/capitalize'
 
 class MbgInputNameController {
     private ngChange
@@ -7,7 +8,6 @@ class MbgInputNameController {
     private ngRequired
     private ngDisabled
     private props
-    public prepositions
 
     constructor($scope, $element, $attrs) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
@@ -15,13 +15,6 @@ class MbgInputNameController {
         this.props = {
             placeholder: $attrs.placeholder || '',
         }
-
-        this.prepositions = [
-            'de', 'da', 'do', 'dos', 'de',
-            'a', 'ante', 'após', 'até', 'com', 'contra', 'desde',
-            'em', 'entre', 'para', 'per', 'perante', 'por', 'sem',
-            'sob', 'sobre', 'trás'
-        ]
     }
 
     onInit() {
@@ -30,13 +23,7 @@ class MbgInputNameController {
 
 
     capitalize(str) {
-        return (str || '')
-            .replace(/  /g, '')
-            .split(' ')
-            .map((w) => this.prepositions.filter((e) => e.toLowerCase() === w.toLowerCase()).length === 0
-                ? w.charAt(0).toUpperCase() + w.slice(1)
-                : w.toLowerCase())
-            .join(' ')
+        return Capitalize.format(str)
     }
 
     onChange() {

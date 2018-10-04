@@ -1,6 +1,7 @@
 import * as angular from 'angular'
 import './mbg-input-step-item.scss'
 import template from './mbg-input-step-item.html'
+import { Capitalize } from '../../../../helpers/capitalize'
 
 class MbgInputStepItemController {
     private inputValue: string
@@ -12,6 +13,7 @@ class MbgInputStepItemController {
     private mbgInputStep
     private enableAdd: boolean
     private oldInputValue: string
+    private capitalize: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -32,6 +34,12 @@ class MbgInputStepItemController {
                 }
             })
         }
+
+        this.$scope.$watch(`$ctrl.inputValue`, () => {
+            if (this.capitalize) {
+                this.inputValue = Capitalize.format(this.inputValue)
+            }
+        })
     }
 
     updateInputValue() {
@@ -65,6 +73,7 @@ class MbgInputStepItemController {
     }
 
     onInputChange(ignoreClearModel?: boolean) {
+        this.inputValue = (this.inputValue || '').replace(',', '')
         if (!ignoreClearModel) {
             delete this.ngModel
         }
@@ -91,32 +100,32 @@ class MbgInputStepItemController {
 
     onInputKeydown(evt) {
         this.oldInputValue = this.inputValue
-        this.$timeout(() => {
-            switch (evt.keyCode) {
-                case 13: // ENTER
-                    this.setModel()
-                    break
-                case 188: // VIRGULA
-                    evt.stopPropagation()
-                    evt.preventDefault()
-                    this.setModel()
-                    break
-                case 38: // SETA CIMA
-                    this.moveToUp()
-                    break
-                case 40: // SETA BAIXO
-                    this.moveToDown()
-                    break
-                case 8: // BACKSPACE
+        switch (evt.keyCode) {
+            case 188: // VIRGULA
+                evt.preventDefault()
+                evt.stopPropagation()
+                this.setModel()
+                break
+            case 13: // ENTER
+                this.setModel()
+                break
+            case 38: // SETA CIMA
+                this.moveToUp()
+                break
+            case 40: // SETA BAIXO
+                this.moveToDown()
+                break
+            case 8: // BACKSPACE
+                this.$timeout(() => {
                     if (!this.ngModel && !this.inputValue && !this.oldInputValue) {
                         this.movePointerPrevItem()
                     }
-                    break
-                case 9: // TAB
-                    this.setModel(true)
-                    break
-            }
-        })
+                })
+                break
+            case 9: // TAB
+                this.setModel(true)
+                break
+        }
     }
 
     movePointerPrevItem() {
@@ -227,7 +236,8 @@ const mbgInputStepItem = {
         ngModel: '=',
         fetch: '&?',
         label: '@?',
-        enableAdd: '=?'
+        enableAdd: '=?',
+        capitalize: '=?',
     },
     require: {
         mbgInputStep: '^mbgInputStep'

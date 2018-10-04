@@ -20,18 +20,18 @@ const module = angular
       maxImages: 15
     }
 
-    $scope.entity = {
-      tipo: {
-        name: 'Sapato'
-      },
-      marca: {
-        name: 'Puma'
-      },
-      nome: 'Miranda',
-      modelo: {
-        name: 'Casual'
-      }
-    }
+    // $scope.entity = {
+    //   tipo: {
+    //     name: 'Sapato'
+    //   },
+    //   marca: {
+    //     name: 'Puma'
+    //   },
+    //   nome: 'Miranda',
+    //   modelo: {
+    //     name: 'Casual'
+    //   }
+    // }
 
     $scope.getTipoProduto = (param = '') => {
       return new Promise((resolve) => {
@@ -46,7 +46,7 @@ const module = angular
             name: 'Calça'
           }
         ].filter((obj) => {
-          return obj.name.toLowerCase().indexOf(param.toLowerCase()) !== -1
+          return obj.name.toLowerCase().startsWith(param.toLowerCase())
         }))
       })
     }
