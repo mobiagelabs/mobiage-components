@@ -1,6 +1,9 @@
 <div class="mbg-input-step-item"
+     disable-animate
      ng-class="{'active': $ctrl.hasData()}">
     <input type="text"
+           data-ignore-tab
+           disable-animate
            ng-focus="$ctrl.onInputFocus()"
            ng-blur="$ctrl.onInputBlur()"
            ng-keydown="$ctrl.onInputKeydown($event)"
@@ -12,10 +15,12 @@
     <ul class="mbg-input-step-list"
         ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
         <li ng-repeat="item in $ctrl.data"
+            disable-animate
             ng-click="$ctrl.selectOption(item)">
             {{ item[$ctrl.label] }}
         </li>
         <li ng-if="$ctrl.enableAdd && $ctrl.inputValue"
+            disable-animate
             ng-click="$ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue })">
             {{ $ctrl.inputValue }} <span>(novo)</span>
         </li>

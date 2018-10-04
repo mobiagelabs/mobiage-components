@@ -107,6 +107,8 @@ class MbgInputStepItemController {
                 this.setModel()
                 break
             case 13: // ENTER
+                evt.preventDefault()
+                evt.stopPropagation()
                 this.setModel()
                 break
             case 38: // SETA CIMA
