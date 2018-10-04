@@ -24,8 +24,33 @@ class MbgInputStepController {
         this.$element.nextAll('input').first().focus()
     }
 
-    handleClick() {
-        // console.log(this)
+    handleClick(evt) {
+        if (evt.target.nodeName === 'INPUT') {
+            const scope: any = angular.element(evt.target).scope()
+            if (scope.$ctrl.ngModel) {
+                return
+            }
+        }
+        evt.preventDefault()
+        evt.stopPropagation()
+        const itemsEmpty = Array.from(this.items).filter((item) => {
+            const scope: any = angular.element(item).find('input').scope()
+            return !scope.$ctrl.ngModel
+        })
+        if (itemsEmpty.length > 0) {
+            const lastEmpty: any = angular.element(itemsEmpty[0])
+            lastEmpty.find('input').focus()
+        } else {
+            const lastItem: any = angular.element(Array.from(this.items)[this.items.length - 1])
+            lastItem.find('input').focus()
+        }
+    }
+
+    showPlaceholder() {
+        return Array.from((this.items || [])).filter((item) => {
+            const scope: any = angular.element(item).find('input').scope()
+            return scope.$ctrl.ngModel || scope.$ctrl.hasFocus
+        }).length === 0
     }
 
 }

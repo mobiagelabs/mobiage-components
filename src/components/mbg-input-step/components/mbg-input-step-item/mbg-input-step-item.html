@@ -1,5 +1,5 @@
 <div class="mbg-input-step-item"
-     ng-class="{'active': $ctrl.ngModel}">
+     ng-class="{'active': $ctrl.hasData()}">
     <input type="text"
            ng-focus="$ctrl.onInputFocus()"
            ng-blur="$ctrl.onInputBlur()"
@@ -11,10 +11,12 @@
            ng-attr-placeholder="{{ $ctrl.hasFocus ? $ctrl.$attrs.placeholder : '' }}" />
     <ul class="mbg-input-step-list"
         ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
-        <li ng-repeat="item in $ctrl.data">
+        <li ng-repeat="item in $ctrl.data"
+            ng-click="$ctrl.selectOption(item)">
             {{ item[$ctrl.label] }}
         </li>
-        <li ng-if="$ctrl.enableAdd && $ctrl.inputValue">
+        <li ng-if="$ctrl.enableAdd && $ctrl.inputValue"
+            ng-click="$ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue })">
             {{ $ctrl.inputValue }} <span>(novo)</span>
         </li>
     </ul>

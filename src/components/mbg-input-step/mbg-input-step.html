@@ -1,5 +1,5 @@
 <div class="mb-input-step-wrapper"
-     ng-click="$ctrl.handleClick()">
-    <!-- <label>{{ $ctrl.$attrs.placeholder }}</label> -->
+     ng-click="$ctrl.handleClick($event)">
+    <label ng-show="$ctrl.showPlaceholder()">{{ $ctrl.$attrs.placeholder }}</label>
     <ng-transclude></ng-transclude>
 </div>

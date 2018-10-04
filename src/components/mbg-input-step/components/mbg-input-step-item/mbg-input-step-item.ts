@@ -11,6 +11,7 @@ class MbgInputStepItemController {
     private ngModel: any
     private mbgInputStep
     private enableAdd: boolean
+    private oldInputValue: string
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -18,6 +19,27 @@ class MbgInputStepItemController {
         this.hasFocus = false
         this.enableAdd = this.enableAdd || false
         this.inputValue = ''
+        this.updateInputValue()
+        this.$scope.$watch(`$ctrl.ngModel`, (value) => {
+            if (!angular.equals(value, this.ngModel)) {
+                this.updateInputValue()
+            }
+        })
+        if (this.label) {
+            this.$scope.$watch(`$ctrl.ngModel.${this.label}`, (value) => {
+                if (!angular.equals(value, this.ngModel)) {
+                    this.updateInputValue()
+                }
+            })
+        }
+    }
+
+    updateInputValue() {
+        if (this.label && this.ngModel) {
+            this.inputValue = this.ngModel[this.label]
+        } else {
+            this.inputValue = this.ngModel
+        }
     }
 
     updateElasticInput() {
@@ -32,11 +54,14 @@ class MbgInputStepItemController {
         this.hasFocus = true
         this.onInputChange(true)
         this.updateElasticInput()
+        this.$element.find('input').select()
     }
 
     onInputBlur() {
-        this.hasFocus = false
-        this.updateElasticInput()
+        this.$timeout(() => {
+            this.hasFocus = false
+            this.updateElasticInput()
+        }, 150)
     }
 
     onInputChange(ignoreClearModel?: boolean) {
@@ -61,36 +86,37 @@ class MbgInputStepItemController {
         this.$timeout(() => {
             this.data = data
         })
-        this.$timeout(() => {
-            this.focusFirstOption()
-        }, 100)
+        this.$timeout(() => this.focusFirstOption(), 150)
     }
 
     onInputKeydown(evt) {
-        switch (evt.keyCode) {
-            case 13: // ENTER
-                this.setModel()
-                break
-            case 188: // VIRGULA
-                evt.stopPropagation()
-                evt.preventDefault()
-                this.setModel()
-                break
-            case 38: // SETA CIMA
-                this.moveToUp()
-                break
-            case 40: // SETA BAIXO
-                this.moveToDown()
-                break
-            case 8: // BACKSPACE
-                if (!this.ngModel && this.inputValue === '') {
-                    this.movePointerPrevItem()
-                }
-                break
-            case 9: // TAB
-                this.setModel(true)
-                break
-        }
+        this.oldInputValue = this.inputValue
+        this.$timeout(() => {
+            switch (evt.keyCode) {
+                case 13: // ENTER
+                    this.setModel()
+                    break
+                case 188: // VIRGULA
+                    evt.stopPropagation()
+                    evt.preventDefault()
+                    this.setModel()
+                    break
+                case 38: // SETA CIMA
+                    this.moveToUp()
+                    break
+                case 40: // SETA BAIXO
+                    this.moveToDown()
+                    break
+                case 8: // BACKSPACE
+                    if (!this.ngModel && !this.inputValue && !this.oldInputValue) {
+                        this.movePointerPrevItem()
+                    }
+                    break
+                case 9: // TAB
+                    this.setModel(true)
+                    break
+            }
+        })
     }
 
     movePointerPrevItem() {
@@ -158,21 +184,37 @@ class MbgInputStepItemController {
     }
 
     setModel(ignoreFocusNext?: boolean) {
-        if (this.fetch) {
-            const currentOption = this.getOptionFocused()
-            if (currentOption[0]) {
-                let item = currentOption.scope().item
-                if (!item && this.enableAdd) {
-                    item = { [this.label]: this.inputValue }
+        this.$timeout(() => {
+            if (this.fetch) {
+                const currentOption = this.getOptionFocused()
+                if (currentOption[0]) {
+                    let item = currentOption.scope().item
+                    if (!item && this.enableAdd) {
+                        item = { [this.label]: this.inputValue }
+                    }
+                    this.ngModel = item
+                    this.inputValue = this.ngModel[this.label]
                 }
-                this.ngModel = item
-                this.inputValue = this.ngModel[this.label]
+            } else {
+                this.ngModel = this.inputValue
             }
+            if (!ignoreFocusNext) {
+                this.movePointerNextItem()
+            }
+        })
+    }
+
+    selectOption(item) {
+        this.ngModel = item
+        this.inputValue = this.ngModel[this.label]
+        this.movePointerNextItem()
+    }
+
+    hasData() {
+        if (this.label) {
+            return this.ngModel && this.ngModel[this.label]
         } else {
-            this.ngModel = this.inputValue
-        }
-        if (!ignoreFocusNext) {
-            this.movePointerNextItem()
+            return this.ngModel ? true : false
         }
     }
 

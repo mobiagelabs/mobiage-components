@@ -18,10 +18,11 @@ mbg-input-step-item {
         }
         input {
             height: 44px;
-            min-width: 2px;
+            min-width: 0px;
             border: none;
             background: transparent;
             outline: none;
+            font-weight: 400;
         }
         .mbg-input-step-list {
             min-width: 250px;
@@ -49,7 +50,8 @@ mbg-input-step-item {
             li {
                 padding: 12px 12px;
                 color: #666;
-                &.focused {
+                cursor: pointer;
+                &:hover, &.focused {
                     background: #f5f5f5;
                 }
             }

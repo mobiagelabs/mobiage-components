@@ -12,12 +12,15 @@
     align-items: center;
     position: relative;
     min-width: 0;
+    cursor: text;
     > label {
         color: #666;
         margin: 0;
         font-weight: 100;
         position: absolute;
         left: 14px;
+        cursor: text;
+        pointer-events: none;
     }
     > ng-transclude {
         display: flex;
