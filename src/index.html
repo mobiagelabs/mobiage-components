@@ -25,9 +25,9 @@
 <body ng-controller="demoCtrl">
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-6">
 
-        <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Underground, P-M-G, Roxo">
+        <mbg-input-step placeholder="Ex. Camiseta, Adidas, Underground, P-M-G, Roxo">
           <mbg-input-step-item ng-model="entity.tipo"
                                fetch="getTipoProduto(query)"
                                placeholder="Qual tipo de produto?"
@@ -44,10 +44,11 @@
                                placeholder="Por fim, qual o modelo?"
                                fetch="getModelo(query)"
                                label="name"></mbg-input-step-item>
-        </mbg-input-step> -->
+        </mbg-input-step>
 
+        <pre>{{ entity | json }}</pre>
 
-        <mbg-input-tags ng-model="tags"></mbg-input-tags>
+        <!-- <mbg-input-tags ng-model="tags"></mbg-input-tags> -->
 
       </div>
 

@@ -69,6 +69,9 @@ class MbgInputStepItemController {
         this.$timeout(() => {
             this.hasFocus = false
             this.updateElasticInput()
+            if (!this.label && this.inputValue) {
+                this.setModel(true)
+            }
         }, 150)
     }
 
@@ -182,6 +185,9 @@ class MbgInputStepItemController {
         } else {
             this.focusLastOption()
         }
+        this.$timeout(() => {
+            this.scrollMove()
+        })
     }
 
     moveToDown() {
@@ -191,6 +197,22 @@ class MbgInputStepItemController {
             this.setFocusOption(nextOption)
         } else {
             this.focusFirstOption()
+        }
+        this.$timeout(() => {
+            this.scrollMove()
+        })
+    }
+
+    scrollMove() {
+        const li = this.getOptionFocused()[0]
+        const ul = li.parentNode
+        const fudge = 4
+        const bottom = (ul.scrollTop + (ul.offsetHeight - fudge) - li.offsetHeight)
+        const top = ul.scrollTop + fudge
+        if (li.offsetTop <= top) {
+            ul.scrollTop = li.offsetTop - fudge
+        } else if (li.offsetTop >= bottom) {
+            ul.scrollTop = li.offsetTop - ((ul.offsetHeight - fudge) - li.offsetHeight)
         }
     }
 

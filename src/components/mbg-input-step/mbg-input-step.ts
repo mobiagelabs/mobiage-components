@@ -4,6 +4,7 @@ import template from './mbg-input-step.html'
 
 class MbgInputStepController {
     private items: Array<HTMLElement>
+    private onFinishFocusElement: string
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile) {
         this.$timeout(() => this.fetchItems())
@@ -21,7 +22,12 @@ class MbgInputStepController {
     }
 
     focusNextInput() {
-        this.$element.nextAll('input').first().focus()
+        if (this.onFinishFocusElement) {
+            const elementToFocus: any = angular.element(this.onFinishFocusElement)
+            elementToFocus.focus()
+        } else {
+            this.$element.nextAll('input').first().focus()
+        }
     }
 
     handleClick(evt) {
@@ -59,6 +65,7 @@ MbgInputStepController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$
 
 const mbgInputStep = {
     bindings: {
+        onFinishFocusElement: '@?',
     },
     transclude: true,
     controller: MbgInputStepController,

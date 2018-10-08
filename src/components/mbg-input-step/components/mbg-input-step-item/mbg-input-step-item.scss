@@ -42,6 +42,8 @@ mbg-input-step-item {
             transform: translate3d(0,-15%,0);
             opacity: 0;
             pointer-events: none;
+            max-height: 250px;
+            overflow: auto;
             &.active {
                 transform: translateZ(0);
                 opacity: 1;
