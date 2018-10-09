@@ -8,6 +8,7 @@ import { mbgInputCpfCnpjModule } from './mbg-input-cpfcnpj'
 import { mbgInputNameModule } from './mbg-input-name'
 import { mbgInputPhoneModule } from './mbg-input-phone'
 import { mbgInputTextModule } from './mbg-input-text'
+import { mbgInputNumberModule } from './mbg-input-number'
 import { mbgInputMoneyModule } from './mbg-input-money'
 import { mbgInputStepModule } from './mbg-input-step'
 import { mbgInputTagsModule } from './mbg-input-tags'
@@ -22,6 +23,7 @@ const mbgComponentsModule = angular
     mbgInputNameModule,
     mbgInputPhoneModule,
     mbgInputTextModule,
+    mbgInputNumberModule,
     mbgInputMoneyModule,
     mbgInputStepModule,
     mbgInputTagsModule,
