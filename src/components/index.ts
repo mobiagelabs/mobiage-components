@@ -10,6 +10,7 @@ import { mbgInputPhoneModule } from './mbg-input-phone'
 import { mbgInputTextModule } from './mbg-input-text'
 import { mbgInputNumberModule } from './mbg-input-number'
 import { mbgInputMoneyModule } from './mbg-input-money'
+import { mbgInputPercentageModule } from './mbg-input-percentage'
 import { mbgInputStepModule } from './mbg-input-step'
 import { mbgInputTagsModule } from './mbg-input-tags'
 
@@ -25,6 +26,7 @@ const mbgComponentsModule = angular
     mbgInputTextModule,
     mbgInputNumberModule,
     mbgInputMoneyModule,
+    mbgInputPercentageModule,
     mbgInputStepModule,
     mbgInputTagsModule,
   ])
