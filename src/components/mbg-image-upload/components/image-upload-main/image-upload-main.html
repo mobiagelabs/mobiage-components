@@ -1,5 +1,6 @@
 <label class="mbg-image-upload-main-label"
-       ng-if="$ctrl.enableImageContent()">Foto principal</label>
+       ng-if="$ctrl.enableImageContent()"
+       ng-hide="$ctrl.config.maxImages == 1">Foto principal</label>
 <div class="mbg-image-upload-main"
      ng-class="{'empty': !$ctrl.enableImageContent()}"
      ng-click="$ctrl.openImageChoice()">

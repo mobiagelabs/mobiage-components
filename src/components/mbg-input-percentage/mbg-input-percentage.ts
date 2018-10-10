@@ -20,7 +20,7 @@ class MbgInputPercentageController {
             placeholder: $attrs.placeholder || '',
         }
     }
-    
+
 }
 MbgInputPercentageController.$inject = ['$scope', '$element', '$attrs']
 
