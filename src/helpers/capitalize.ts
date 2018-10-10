@@ -8,6 +8,7 @@ export namespace Capitalize {
 
     export function format(str: string) {
         return (str || '')
+            .toLowerCase()
             .replace(/  /g, '')
             .split(' ')
             .map((w) => prepositions.filter((e) => e.toLowerCase() === w.toLowerCase()).length === 0
