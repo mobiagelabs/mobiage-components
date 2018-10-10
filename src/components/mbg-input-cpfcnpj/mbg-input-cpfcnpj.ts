@@ -23,11 +23,9 @@ class MbgInputCpfCnpjController {
         this.valid = this.valid.replace(/[^0-9]/g, '')
         if (this.valid.length === 11) {
             this.validCpf(this.valid)
-            console.log(this.validCpf(this.valid), 'CPF')
         }
         if (this.valid.length === 14) {
             this.validCnpj(this.valid)
-            console.log(this.validCnpj(this.valid), 'CNPJ')
         } else {
             return false
         }

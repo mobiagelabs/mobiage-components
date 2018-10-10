@@ -1,0 +1,15 @@
+<div class="mbg-input-wrapper mb-input-email-wrapper"
+     ng-if="$ctrl.props">
+    <input type="email"
+           ng-model="$ctrl.inputValue"
+           ng-change="$ctrl.onChange()"
+           ng-required="$ctrl.ngRequired"
+           ng-disabled="$ctrl.ngDisabled"
+           ng-blur="$ctrl.ngBlur({ $event })"
+           ng-focus="$ctrl.ngFocus({ $event })"
+           ng-keyup="$ctrl.ngKeyup({ $event })"
+           ng-keypress="$ctrl.ngKeypress({ $event })"
+           ng-keydown="$ctrl.ngKeydown({ $event })"
+           placeholder="{{ $ctrl.props.placeholder }}"
+           email/>
+</div>
