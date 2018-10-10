@@ -1,0 +1,15 @@
+<div class="mbg-text-wrapper mb-text-area-wrapper"
+     ng-if="$ctrl.props">
+    <textarea type="text"
+           ng-model="$ctrl.ngModel"
+           ng-change="$ctrl.onChange()"
+           ng-required="$ctrl.ngRequired"
+           ng-disabled="$ctrl.ngDisabled"
+           ng-blur="$ctrl.ngBlur({ $event })"
+           ng-focus="$ctrl.ngFocus({ $event })"
+           ng-keyup="$ctrl.ngKeyup({ $event })"
+           ng-keypress="$ctrl.ngKeypress({ $event })"
+           ng-keydown="$ctrl.ngKeydown({ $event })"
+           placeholder="{{ $ctrl.props.placeholder }}" >
+    </textarea>
+</div>
