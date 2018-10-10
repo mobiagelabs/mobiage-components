@@ -14,6 +14,7 @@ import { mbgInputPercentageModule } from './mbg-input-percentage'
 import { mbgInputStepModule } from './mbg-input-step'
 import { mbgInputTagsModule } from './mbg-input-tags'
 import { mbgInputEmailModule } from './mbg-input-email'
+import { mbgAddressModule } from './mbg-address'
 
 const mbgComponentsModule = angular
   .module('mbg.components', [
@@ -30,7 +31,8 @@ const mbgComponentsModule = angular
     mbgInputPercentageModule,
     mbgInputStepModule,
     mbgInputTagsModule,
-    mbgInputEmailModule
+    mbgInputEmailModule,
+    mbgAddressModule,
   ])
   .name
 

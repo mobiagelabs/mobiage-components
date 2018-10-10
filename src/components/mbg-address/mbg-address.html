@@ -1,0 +1,20 @@
+<div class="mbg-address-wrapper">
+    <mbg-input-step>
+        <mbg-input-step-item ng-model="$ctrl.address.uf"
+                             fetch="$ctrl.getStates(query)"
+                             placeholder="Qual o estado?"
+                             label="name"></mbg-input-step-item>
+        <mbg-input-step-item ng-model="$ctrl.address.city"
+                             fetch="$ctrl.getCities(query)"
+                             placeholder="Qual a cidade?"></mbg-input-step-item>
+        <mbg-input-step-item ng-model="$ctrl.address.premisse"
+                             fetch="$ctrl.getPremisses(query)"
+                             placeholder="Agora, digite o endereço"></mbg-input-step-item>
+        <mbg-input-step-item ng-model="$ctrl.address.number"
+                             placeholder="Qual o número"></mbg-input-step-item>
+    </mbg-input-step>
+</div>
+
+
+<br><br><br>
+<pre>{{$ctrl.address|json}}</pre>

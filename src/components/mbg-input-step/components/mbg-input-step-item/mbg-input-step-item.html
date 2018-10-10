@@ -17,7 +17,8 @@
         <li ng-repeat="item in $ctrl.data"
             disable-animate
             ng-click="$ctrl.selectOption(item)">
-            {{ item[$ctrl.label] }}
+            <span ng-if="$ctrl.label">{{ item[$ctrl.label] }}</span>
+            <span ng-if="!$ctrl.label">{{ item }}</span>
         </li>
         <li ng-if="$ctrl.enableAdd && $ctrl.inputValue"
             disable-animate

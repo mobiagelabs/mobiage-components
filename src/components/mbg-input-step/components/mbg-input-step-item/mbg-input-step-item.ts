@@ -59,10 +59,12 @@ class MbgInputStepItemController {
     }
 
     onInputFocus() {
-        this.hasFocus = true
-        this.onInputChange(true)
-        this.updateElasticInput()
-        this.$element.find('input').select()
+        if (!this.hasFocus) {
+            this.hasFocus = true
+            this.onInputChange(true)
+            this.updateElasticInput()
+            this.$element.find('input').select()
+        }
     }
 
     onInputBlur() {
@@ -87,7 +89,7 @@ class MbgInputStepItemController {
 
     executeFetch() {
         const response = this.fetch({ query: this.inputValue })
-        if (response instanceof Promise) {
+        if (response && response.then) {
             response.then((data) => this.afterFetchData(data))
         } else {
             this.afterFetchData(response)
@@ -102,6 +104,7 @@ class MbgInputStepItemController {
     }
 
     onInputKeydown(evt) {
+        this.hasFocus = true
         this.oldInputValue = this.inputValue
         switch (evt.keyCode) {
             case 188: // VIRGULA
@@ -226,7 +229,11 @@ class MbgInputStepItemController {
                         item = { [this.label]: this.inputValue }
                     }
                     this.ngModel = item
-                    this.inputValue = this.ngModel[this.label]
+                    if (this.label) {
+                        this.inputValue = this.ngModel[this.label]
+                    } else {
+                        this.inputValue = this.ngModel
+                    }
                 }
             } else {
                 this.ngModel = this.inputValue
@@ -239,7 +246,11 @@ class MbgInputStepItemController {
 
     selectOption(item) {
         this.ngModel = item
-        this.inputValue = this.ngModel[this.label]
+        if (this.label) {
+            this.inputValue = this.ngModel[this.label]
+        } else {
+            this.inputValue = this.ngModel
+        }
         this.movePointerNextItem()
     }
 
