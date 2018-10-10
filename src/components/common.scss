@@ -21,3 +21,27 @@
         }
     }
 }
+
+.mbg-text-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 74px;
+    background: #FFF;
+    textarea {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 8px 14px;
+        flex: 1;
+        background: transparent;
+        outline: none;
+        width: 700px;
+        &.ng-touched.ng-invalid {
+            border: 1px solid #b00020;
+        }
+        &[disabled="disabled"] {
+            background: #f5f5f5;
+        }
+    }
+}
