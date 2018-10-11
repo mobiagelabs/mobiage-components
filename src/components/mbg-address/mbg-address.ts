@@ -2,6 +2,7 @@ import './mbg-address.scss'
 import template from './mbg-address.html'
 import { getStatesBR } from './helpers/states-br'
 import { MbgAddressService } from './services/mbg-address.service'
+import * as angular from 'angular'
 
 class MbgAddressController {
     private ngModel
@@ -9,11 +10,12 @@ class MbgAddressController {
     private premisseCache: any
     private address: {
         zipCode?: string,
-        uf?: { initial: string, name: string },
-        city?: string,
+        localization?: string,
         premisse?: string,
+        premisseType?: string,
         number?: string,
-        neighborhood?: string
+        neighborhood?: string,
+        uf?: { initial: string, name: string },
     }
     private cities: Array<any>
     private premisses: Array<any>
@@ -28,48 +30,135 @@ class MbgAddressController {
         this.premisseCache = {}
         this.citiesCache = {}
         this.address = {}
+        this.$scope.$watch('$ctrl.ngModel', () => this.checkModel(), true)
+        this.$scope.$watch('$ctrl.address.zipCode', () => this.searchAddressByCEP())
+        this.$scope.$watch('$ctrl.address.uf', () => this.onUfChange())
+        this.$scope.$watch('$ctrl.address.localization', () => this.onCityChange())
+        this.$scope.$watch('$ctrl.address.number', () => this.searchAddressInfo())
         this.$scope.$watch('$ctrl.address', () => {
-            this.onUfChange()
-            this.onCityChange()
-            this.searchAddressInfo()
+            if (this.address) {
+                this.ngModel = {
+                    zipCode: this.address.zipCode || '',
+                    localization: this.address.localization || '',
+                    premisse: this.formatFromPremisse(this.address.premisse) || '',
+                    premisseType: this.address.premisseType || '',
+                    number: this.address.number || '',
+                    neighborhood: this.address.neighborhood || '',
+                    uf: this.address.uf && this.address.uf.initial ? this.address.uf.initial : '',
+                }
+            }
         }, true)
     }
 
-    async searchAddressInfo() {
-        if (this.address.uf
-            && this.address.city
-            && this.address.premisse
-            && this.address.number
-            && !this.address.neighborhood
-            && !this.address.zipCode) {
-            const address = `${this.address.uf.name} ${this.address.city} ${this.address.premisse} ${this.address.number}`
-            this.mbgAddressService
-                .getAddressInfo(address)
+    checkModel() {
+        if (this.hasDiference()) {
+            this.address = this.createAddress()
+            this.updateSteps()
+        }
+    }
+
+    formatFromPremisse(str: string = '') {
+        if (str.includes('-')) {
+            return str.substring(0, str.lastIndexOf('-')).trim()
+        }
+        return str.trim()
+    }
+
+    createAddress() {
+        if (!this.ngModel) {
+            return {}
+        }
+        const uf = getStatesBR().filter((state) => state.initial === this.ngModel.uf)[0]
+        return {
+            zipCode: this.ngModel.zipCode.replace('-', ''),
+            neighborhood: this.ngModel.neighborhood,
+            localization: this.ngModel.localization,
+            premisse: this.formatFromPremisse(this.ngModel.premisse),
+            number: this.ngModel.number || '',
+            premisseType: this.ngModel.premisseType || '',
+            uf,
+        }
+    }
+
+    hasDiference() {
+        const address = this.createAddress()
+        return !angular.equals(address, this.address)
+    }
+
+    updateSteps() {
+        Array.from(this.$element.find('mbg-input-step-item input'))
+            .map((elm: any) => angular.element(elm).scope())
+            .forEach((scope: any) => {
+                scope.$ctrl.updateInputValue()
+            })
+    }
+
+    simuleClick() {
+        if (!this.address.uf || !this.address.localization || !this.address.premisse || !this.address.number) {
+            this.$element.find('mbg-input-step .mb-input-step-wrapper').click()
+        }
+    }
+
+    resetAddress() {
+        delete this.address.uf
+        delete this.address.localization
+        delete this.address.premisse
+        delete this.address.neighborhood
+        delete this.address.premisseType
+        delete this.address.number
+    }
+
+    async searchAddressByCEP() {
+        if (this.address
+            && this.address.zipCode) {
+            this.mbgAddressService.getCep(this.address.zipCode)
                 .then((response) => {
-                    if (response.data && response.data.results && response.data.results.length > 0) {
-                        const info = response.data.results[0]
-                        info.address_components.forEach((addressInfo) => {
-                            if (addressInfo.types.indexOf('sublocality_level_1') !== -1) {
-                                this.address.neighborhood = addressInfo.long_name
-                            }
-                            if (addressInfo.types.indexOf('postal_code') !== -1) {
-                                this.address.zipCode = addressInfo.long_name
-                            }
-                        })
+                    if (response && response.data) {
+                        const uf = getStatesBR().filter((state) => state.initial === response.data.uf)[0]
+                        this.address = {
+                            zipCode: this.address.zipCode.replace('-', ''),
+                            neighborhood: response.data.bairro ? response.data.bairro.trim() : '',
+                            localization: this.address.localization ? this.address.localization : response.data.cidade.trim(),
+                            premisse: this.formatFromPremisse(response.data.logradouro),
+                            number: this.address.number || '',
+                            premisseType: response.data.tipo_logradouro,
+                            uf,
+                        }
+                        this.updateSteps()
+                        this.$timeout(() => this.simuleClick())
                     }
                 })
         }
     }
 
+    async searchAddressInfo() {
+        if (this.address.uf
+            && this.address.localization
+            && this.address.premisse
+            && this.address.number
+            && !this.address.zipCode
+            && !this.address.neighborhood) {
+            this.mbgAddressService
+                .getAddress(this.address.uf.initial, this.address.localization, this.address.premisse)
+                .then((response) => {
+                    if (response.data.length > 0) {
+                        const info = response.data[0]
+                        this.address.neighborhood = info.bairro
+                        this.address.zipCode = info.cep.replace('-', '')
+                    }
+                })
+        } else {
+            delete this.address.neighborhood
+            delete this.address.premisseType
+        }
+    }
+
     async onCityChange() {
-        if (this.address.uf && this.address.city) {
-            const premisses = await this.loadPremisseByUFAndCity(this.address.uf.initial, this.address.city)
+        if (this.address.uf && this.address.localization) {
+            const premisses = await this.loadPremisseByUFAndCity(this.address.uf.initial, this.address.localization)
             this.$timeout(() => {
                 this.premisses = premisses
             })
-        } else {
-            delete this.address.neighborhood
-            delete this.address.zipCode
         }
     }
 
@@ -81,7 +170,7 @@ class MbgAddressController {
             })
         } else {
             delete this.address.neighborhood
-            delete this.address.zipCode
+            delete this.address.premisseType
         }
     }
 
@@ -108,6 +197,9 @@ class MbgAddressController {
                     this.citiesCache[uf] = response.data
                     return this.citiesCache[uf]
                 })
+        } else {
+            delete this.address.neighborhood
+            delete this.address.premisseType
         }
         return null
     }
@@ -141,7 +233,7 @@ class MbgAddressController {
             .filter((premisse) => {
                 return premisse && this.removeEspecialChar(premisse)
                     .toLowerCase()
-                    .indexOf(this.removeEspecialChar(query).toLowerCase()) !== -1
+                    .includes(this.removeEspecialChar(query).toLowerCase())
             })
             .sort((a, b) => {
                 if (a < b) { return -1 }
@@ -158,8 +250,6 @@ class MbgAddressController {
         str = str.replace(/[óòõôö]/ui, 'o')
         str = str.replace(/[úùûü]/ui, 'u')
         str = str.replace(/[ç]/ui, 'c')
-        str = str.replace(/[^a-z0-9]/i, '_')
-        str = str.replace(/_+/, '_')
         return str
     }
 

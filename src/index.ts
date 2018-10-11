@@ -15,10 +15,19 @@ const module = angular
   .module('demo', [
     components,
   ])
-  .controller('demoCtrl', ['$scope', ($scope) => {
+  .controller('demoCtrl', ['$scope', '$timeout', ($scope, $timeout) => {
     $scope.config = {
       maxImages: 15
     }
+
+    // $scope.number = {
+    //   'zipCode': '87035050',
+    //   'localization': 'Maringá',
+    //   'premisse': 'Manoel Ribas',
+    //   'number': '37',
+    //   'neighborhood': 'Jardim Alvorada',
+    //   'uf': 'PR'
+    // }
 
     // $scope.entity = {
     //   tipo: {

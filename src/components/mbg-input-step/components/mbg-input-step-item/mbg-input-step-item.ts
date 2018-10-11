@@ -43,11 +43,13 @@ class MbgInputStepItemController {
     }
 
     updateInputValue() {
-        if (this.label && this.ngModel) {
-            this.inputValue = this.ngModel[this.label]
-        } else {
-            this.inputValue = this.ngModel
-        }
+        this.$timeout(() => {
+            if (this.label && this.ngModel) {
+                this.inputValue = this.ngModel[this.label]
+            } else {
+                this.inputValue = this.ngModel
+            }
+        })
     }
 
     updateElasticInput() {

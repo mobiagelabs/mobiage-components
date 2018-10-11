@@ -1,6 +1,6 @@
 {
   "name": "@mobiage/components",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "description": "@mobiage/components",
   "main": "src/components/index.ts",
   "scripts": {
@@ -18,6 +18,7 @@
     "angular": "1.7.4",
     "angular-elastic-input": "^2.4.0",
     "angular-input-masks": "^4.2.1",
+    "cep-promise": "^3.0.3",
     "firebase": "^5.5.2",
     "jquery": "^3.3.1",
     "jquery-maskmoney": "^3.0.2"
