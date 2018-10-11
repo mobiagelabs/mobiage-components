@@ -15,6 +15,8 @@ class MbgAddressController {
         premisseType?: string,
         number?: string,
         neighborhood?: string,
+        stateCode?: string,
+        formalCode?: string,
         uf?: { initial: string, name: string },
     }
     private cities: Array<any>
@@ -44,7 +46,9 @@ class MbgAddressController {
                     premisseType: this.address.premisseType || '',
                     number: this.address.number || '',
                     neighborhood: this.address.neighborhood || '',
-                    uf: this.address.uf && this.address.uf.initial ? this.address.uf.initial : '',
+                    stateCode: this.address.stateCode || '',
+                    formalCode: this.address.formalCode || '',
+                    state: this.address.uf && this.address.uf.initial ? this.address.uf.initial : '',
                 }
             }
         }, true)
@@ -68,7 +72,7 @@ class MbgAddressController {
         if (!this.ngModel) {
             return {}
         }
-        const uf = getStatesBR().filter((state) => state.initial === this.ngModel.uf)[0]
+        const uf = getStatesBR().filter((state) => state.initial === this.ngModel.state)[0]
         return {
             zipCode: this.ngModel.zipCode.replace('-', ''),
             neighborhood: this.ngModel.neighborhood,
@@ -76,6 +80,8 @@ class MbgAddressController {
             premisse: this.formatFromPremisse(this.ngModel.premisse),
             number: this.ngModel.number || '',
             premisseType: this.ngModel.premisseType || '',
+            stateCode: this.ngModel.stateCode || '',
+            formalCode: this.ngModel.formalCode || '',
             uf,
         }
     }
@@ -106,6 +112,8 @@ class MbgAddressController {
         delete this.address.neighborhood
         delete this.address.premisseType
         delete this.address.number
+        delete this.address.stateCode
+        delete this.address.formalCode
     }
 
     async searchAddressByCEP() {
@@ -136,7 +144,6 @@ class MbgAddressController {
             && this.address.localization
             && this.address.premisse
             && this.address.number
-            && !this.address.zipCode
             && !this.address.neighborhood) {
             this.mbgAddressService
                 .getAddress(this.address.uf.initial, this.address.localization, this.address.premisse)
@@ -144,7 +151,11 @@ class MbgAddressController {
                     if (response.data.length > 0) {
                         const info = response.data[0]
                         this.address.neighborhood = info.bairro
-                        this.address.zipCode = info.cep.replace('-', '')
+                        this.address.stateCode = info.codigoIbgeUF
+                        this.address.formalCode = info.codigoIbgeCidade
+                        if (!this.address.zipCode) {
+                            this.address.zipCode = info.cep.replace('-', '')
+                        }
                     }
                 })
         } else {
