@@ -5,9 +5,10 @@
                autocomplete="off"
                ng-keyup="$ctrl.resetAddress()"
                ng-model="$ctrl.address.zipCode"
+               placeholder="99999-999"
                ui-br-cep-mask>
     </div>
-    <mbg-input-step>
+    <mbg-input-step placeholder="Estado, Cidade, Endereço, Número">
         <mbg-input-step-item ng-model="$ctrl.address.uf"
                              fetch="$ctrl.getStates(query)"
                              placeholder="Qual o estado?"
@@ -22,6 +23,3 @@
                              placeholder="Qual o número?"></mbg-input-step-item>
     </mbg-input-step>
 </div>
-
-
-<br><br><br>
