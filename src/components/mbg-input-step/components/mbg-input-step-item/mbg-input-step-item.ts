@@ -63,7 +63,7 @@ class MbgInputStepItemController {
     onInputFocus() {
         if (!this.hasFocus) {
             this.hasFocus = true
-            this.onInputChange(true)
+            this.onInputChange()
             this.updateElasticInput()
             this.$element.find('input').select()
         }
@@ -73,17 +73,14 @@ class MbgInputStepItemController {
         this.$timeout(() => {
             this.hasFocus = false
             this.updateElasticInput()
-            if (!this.label && this.inputValue) {
+            if (!this.label) {
                 this.setModel(true)
             }
-        }, 150)
+        }, 300)
     }
 
-    onInputChange(ignoreClearModel?: boolean) {
+    onInputChange() {
         this.inputValue = (this.inputValue || '').replace(',', '')
-        if (!ignoreClearModel) {
-            delete this.ngModel
-        }
         if (this.fetch) {
             this.executeFetch()
         }
@@ -127,7 +124,7 @@ class MbgInputStepItemController {
                 break
             case 8: // BACKSPACE
                 this.$timeout(() => {
-                    if (!this.ngModel && !this.inputValue && !this.oldInputValue) {
+                    if (!this.inputValue && !this.oldInputValue) {
                         this.movePointerPrevItem()
                     }
                 })
