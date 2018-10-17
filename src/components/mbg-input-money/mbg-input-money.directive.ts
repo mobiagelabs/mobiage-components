@@ -4,65 +4,66 @@ const mbgInputMoneyDirective = ($filter, $timeout) => {
         scope: {
             ngModel: '=',
             ngChange: '&?',
+            decimal: '@',
+            prefix: '@',
         },
         restrict: 'A',
-        link: function (scope, elem, attr, ngModel) {
+        link: function (scope, elem, attrs, ngModel) {
             $timeout(() => {
                 window['jQuery'](elem).maskMoney()
-                function decimalRex(dChar) {
-                    return RegExp('\\d|\\-|\\' + dChar, 'g')
+            })
+            function decimalRex(dChar) {
+                return RegExp('\\d|\\-|\\' + dChar, 'g')
+            }
+
+            function clearRex(dChar) {
+                return RegExp('\\-{0,1}((\\' + dChar + ')|([0-9]{1,}\\' + dChar + '?))&?[0-9]{0,2}', 'g')
+            }
+
+            function clearValue(value) {
+                let val = String(value)
+                let decimal = 'decimal'
+                let dSeparator = scope.decimal
+                let cleared = null
+
+                if (RegExp('^-[\\s]*$', 'g').test(val)) {
+                    val = '-0'
                 }
 
-                function clearRex(dChar) {
-                    return RegExp('\\-{0,1}((\\' + dChar + ')|([0-9]{1,}\\' + dChar + '?))&?[0-9]{0,2}', 'g')
+                if (decimalRex(dSeparator).test(val)) {
+                    cleared = val.match(decimalRex(dSeparator)).join('').match(clearRex(dSeparator))
+                    cleared = cleared ? cleared[0].replace(dSeparator, '.') : null
                 }
 
-                function clearValue(value) {
-                    let val = String(value)
-                    let decimal = 'decimal'
-                    let dSeparator = attr[decimal]
-                    let cleared = null
+                return cleared
+            }
 
-                    if (RegExp('^-[\\s]*$', 'g').test(val)) {
-                        val = '-0'
-                    }
+            function currencySymbol() {
+                return scope.prefix
+            }
 
-                    if (decimalRex(dSeparator).test(val)) {
-                        cleared = val.match(decimalRex(dSeparator)).join('').match(clearRex(dSeparator))
-                        cleared = cleared ? cleared[0].replace(dSeparator, '.') : null
-                    }
+            ngModel.$parsers.push(function (viewValue) {
+                let cVal = clearValue(viewValue)
+                return parseFloat(cVal)
+            })
 
-                    return cleared
-                }
-
-                function currencySymbol() {
-                    let prefix = 'prefix'
-                    return attr[prefix]
-                }
-
-                ngModel.$parsers.push(function (viewValue) {
-                    let cVal = clearValue(viewValue)
-                    return parseFloat(cVal)
-                })
-
-                elem.on('keyup', function (evt) {
-                    const formattedValue = evt.target.value
-                    scope.$apply(() => {
-                        let cVal = parseFloat(clearValue(evt.target.value))
-                        ngModel.$modelValue = evt.target.value
-                        scope.ngModel = cVal
-                        $timeout(() => {
-                            evt.target.value = formattedValue
-                            if (scope.ngChange) {
-                                scope.ngChange({})
-                            }
-                        })
+            elem.on('keyup', function (evt) {
+                const formattedValue = evt.target.value
+                scope.$apply(() => {
+                    let cVal = parseFloat(clearValue(evt.target.value))
+                    ngModel.$modelValue = evt.target.value
+                    scope.ngModel = cVal
+                    $timeout(() => {
+                        evt.target.value = formattedValue
+                        if (scope.ngChange) {
+                            scope.ngChange({})
+                        }
                     })
                 })
+            })
 
-                ngModel.$formatters.unshift(function (value) {
-                    return $filter('currency')(value, currencySymbol())
-                })
+            ngModel.$formatters.unshift(function (value) {
+                return $filter('currency')(value, currencySymbol())
             })
         }
 
