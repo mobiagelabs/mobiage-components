@@ -24,17 +24,115 @@
 
 <body ng-controller="demoCtrl">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6">
 
-        <mbg-address ng-model="number"></mbg-address>
-
-        <pre>{{number|json}}</pre>
-      
+    <div class="panel panel-default">
+      <div class="panel-heading">Address</div>
+      <div class="panel-body">
+        <mbg-address ng-model="address"></mbg-address>
       </div>
-
+      <div class="panel-footer">
+        <pre>{{ address | json }}</pre>
+      </div>
     </div>
 
+    <div class="panel panel-default">
+      <div class="panel-heading">Image Upload</div>
+      <div class="panel-body">
+        <mbg-image-upload ng-model="profileImage"></mbg-image-upload>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">CNPJ</div>
+      <div class="panel-body">
+        <mbg-input-cnpj ng-model="cnpj"></mbg-input-cnpj>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">CPF</div>
+      <div class="panel-body">
+        <mbg-input-cpf ng-model="cpf"></mbg-input-cpf>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">CPF ou CNPJ</div>
+      <div class="panel-body">
+        <mbg-input-cpf-cnpj ng-model="cpfcnpj"></mbg-input-cpf-cnpj>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Email</div>
+      <div class="panel-body">
+        <mbg-input-email ng-model="email"></mbg-input-email>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Money</div>
+      <div class="panel-body">
+        <mbg-input-money ng-model="email"></mbg-input-money>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Name</div>
+      <div class="panel-body">
+        <mbg-input-name ng-model="name"></mbg-input-name>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Number Only</div>
+      <div class="panel-body">
+        <mbg-input-number ng-model="number"></mbg-input-number>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Percentage</div>
+      <div class="panel-body">
+        <mbg-input-percentage ng-model="percentage"></mbg-input-percentage>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Phone</div>
+      <div class="panel-body">
+        <mbg-input-phone ng-model="phone"></mbg-input-phone>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Steps</div>
+      <div class="panel-body">
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Tags</div>
+      <div class="panel-body">
+        <mbg-input-tags ng-model="tags"></mbg-input-tags>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Text</div>
+      <div class="panel-body">
+        <mbg-input-text ng-model="text"></mbg-input-text>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Textarea</div>
+      <div class="panel-body">
+        <mbg-text-area ng-model="textarea"></mbg-text-area>
+      </div>
+    </div>
+
+  </div>
 </body>
 
 </html>
