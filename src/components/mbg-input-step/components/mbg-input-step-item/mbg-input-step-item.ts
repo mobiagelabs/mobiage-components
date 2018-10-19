@@ -23,7 +23,7 @@ class MbgInputStepItemController {
         this.inputValue = ''
         this.updateInputValue()
         this.$scope.$watch(`$ctrl.ngModel`, (value) => {
-            if (!angular.equals(value, this.ngModel)) {
+            if (!angular.equals(value, this.ngModel) || !angular.equals(value, this.inputValue)) {
                 this.updateInputValue()
             }
         })
