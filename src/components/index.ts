@@ -16,6 +16,7 @@ import { mbgInputTagsModule } from './mbg-input-tags'
 import { mbgInputEmailModule } from './mbg-input-email'
 import { mbgAddressModule } from './mbg-address'
 import { mbgTextAreaModule } from './mbg-text-area'
+import { mbgNavigationModule } from './mbg-navigation'
 
 const mbgComponentsModule = angular
   .module('mbg.components', [
@@ -34,7 +35,8 @@ const mbgComponentsModule = angular
     mbgInputTagsModule,
     mbgInputEmailModule,
     mbgAddressModule,
-    mbgTextAreaModule
+    mbgTextAreaModule,
+    mbgNavigationModule,
   ])
   .name
 

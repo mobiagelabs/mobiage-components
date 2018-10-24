@@ -1,0 +1,124 @@
+.mbg-navigation-wrapper {
+    width: 100%;
+    * {
+        font-family: 'Montserrat', sans-serif;
+    }
+    .breadcrumb {
+        background: none;
+        margin-bottom: 5px;
+        li {
+            padding-left: 5px;
+            cursor: pointer;
+            &:hover {
+                color: #375faf;
+            }
+        }
+    }
+    .mbg-navigation-item {
+        height: auto;
+        float: left;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        transition: all 350ms ease;
+        transform: scale(1);
+        will-change: transform;
+        &:hover {
+            transform: scale(1.009);
+        }
+        .mbg-navigation-content {
+            width: 100%;
+            max-width: 150px;
+            min-width: 150px;
+            min-height: 150px;
+            flex: 1;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            .mbg-navigation-svg-container {
+                z-index: 98;
+                position: absolute;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                background: #191919;
+                opacity: 0;
+                will-change: transform, transition;
+                transform: scale(1);
+                transition: all 500ms ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                pointer-events: none;
+                &.animated {
+                    animation: animate-navigation 300ms backwards;
+                    animation-timing-function: linear;
+                }
+            }
+            svg.add-icon {
+                z-index: 99;
+                width: 34px;
+                height: 34px;
+                fill: #fff;
+                will-change: transform, transition;
+                opacity: 0;
+                pointer-events: none;
+                &.animated {
+                    animation: animate-navigation-svg 300ms backwards;
+                    animation-timing-function: linear;
+                }
+            }
+            svg.no-image {
+                position: absolute;
+                width: 64px;
+                fill: #666;
+            }
+        }
+        .mbg-navigation-item-name {
+            margin-top: 5px;
+            color: #666;
+            font-size: 1em;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 150px;
+            text-overflow: ellipsis;
+        }
+        .mbg-navigation-item-value {
+            color: var(--primary);
+            font-size: 1.3em;
+        }
+    }
+}
+
+@keyframes animate-navigation {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: .6;
+        transform: scale(5);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(10);
+    }
+}
+
+@keyframes animate-navigation-svg {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}

@@ -15,9 +15,18 @@ const module = angular
   .module('demo', [
     components,
   ])
-  .controller('demoCtrl', ['$scope', '$timeout', ($scope, $timeout) => {
+  .controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
     $scope.config = {
       maxImages: 15
+    }
+
+    $scope.getNavigation = (item) => {
+      const id = item ? item.id : ''
+      return $http.get('http://localhost:8080/mobiage-api/api/product-tree/navigation?idProductTree=' + id, {
+        headers: {
+          gumgaToken: '8L6E1540402870567C154040107056700O6.I'
+        }
+      })
     }
 
     // $scope.number = {

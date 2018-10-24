@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <!-- Latest compiled and minified CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -24,6 +25,15 @@
 
 <body ng-controller="demoCtrl">
   <div class="container">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Navigation</div>
+      <div class="panel-body">
+        <mbg-navigation get-navigation="getNavigation(item)"
+                        on-item-click="addItem(item)">
+        </mbg-navigation>
+      </div>
+    </div>
 
     <div class="panel panel-default">
       <div class="panel-heading">Address</div>
