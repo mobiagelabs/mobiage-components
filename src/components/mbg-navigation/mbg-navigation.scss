@@ -1,5 +1,8 @@
 .mbg-navigation-wrapper {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 24px;
     * {
         font-family: 'Montserrat', sans-serif;
     }
@@ -14,7 +17,12 @@
             }
         }
     }
+    .mbg-navigation-items {
+        width: 100%;
+    }
     .mbg-navigation-item {
+        width: 164px;
+        margin-bottom: 10px;
         height: auto;
         float: left;
         display: flex;
