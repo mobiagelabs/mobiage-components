@@ -67,7 +67,7 @@
             </label>
             <label class="mbg-navigation-item-value"
                    ng-if="item.productItemBarCodes">
-                {{ item.productItemBarCodes[0].priceSheets[0].saleValue | currency: 'R$ '}}
+                {{ item.productItemBarCodes[0].priceSheets[0][$ctrl.attrValue] | currency: 'R$ '}}
             </label>
         </div>
     </div>

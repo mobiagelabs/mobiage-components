@@ -7,10 +7,12 @@ class MbgNavigationController {
     private navigation: Array<any>
     private breadcrumb: Array<any>
     private animated: any
+    private attrValue: string
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
     $onInit() {
+        this.attrValue = this.attrValue || 'saleValue'
         this.animated = {}
         this.breadcrumb = []
         this.handleNavigation(null)
@@ -62,7 +64,8 @@ MbgNavigationController.$inject = ['$scope', '$element', '$attrs', '$timeout']
 const mbgNavigation = {
     bindings: {
         getNavigation: '&',
-        onItemClick: '&'
+        onItemClick: '&',
+        attrValue: '@?',
     },
     template,
     controller: MbgNavigationController,
