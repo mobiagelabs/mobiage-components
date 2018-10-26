@@ -1,0 +1,54 @@
+mbg-image-crop{
+	width: 100%;
+	height: 100%;
+	canvas {
+		border-radius: 13px;
+	}
+	.cr-viewport.cr-vp-square {
+		border-radius: 5px;
+	}
+	.image-crop-wrapper {
+		height: 100%;
+		svg.close-crop {
+			width: 32px;
+			position: absolute;
+			z-index: 100;
+			left: 15px;
+			top: 15px;
+			fill: #dcd5d6;
+			transition: all 200ms ease;
+			&:hover {
+				transform: scale(1.1);
+				fill:#d7374e;
+			}
+		}
+		svg.accept {
+			width: 32px;
+			position: absolute;
+			z-index: 100;
+			right: 15px;
+			top: 15px;
+			fill: #dcd5d6;
+			transition: all 200ms ease;
+			&:hover {
+				transform: scale(1.1);
+				fill:#fff;
+			}
+		}
+		.croppie-container .cr-slider-wrap {
+			width: 60%;
+			margin: 0 auto;
+			border-radius: 31px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 10px;
+			transform: translateY(-150%);
+			text-align: center;
+			position: relative;
+			z-index: 100;
+			background-color: rgba(255,255,255,0.5)
+		}
+	}
+	
+}
