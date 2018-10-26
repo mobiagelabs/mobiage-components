@@ -1,5 +1,6 @@
 import * as angular from 'angular'
 import 'angular-input-masks'
+import 'webcamjs'
 import './common.scss'
 import { mbgImageUploadModule } from './mbg-image-upload'
 import { mbgInputCnpjModule } from './mbg-input-cnpj'

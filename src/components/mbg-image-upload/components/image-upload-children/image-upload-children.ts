@@ -5,7 +5,7 @@ import template from './image-upload-children.html'
 class ImageUploadChildrenController {
     private ngModel: any
 
-    constructor(public $scope, public $element, public $timeout) { }
+    constructor(public $scope, public $element, public $timeout, public webCam) { }
 
     getImageChilds() {
         const arr = Array.isArray(this.ngModel) ? this.ngModel : [this.ngModel]
@@ -21,9 +21,11 @@ class ImageUploadChildrenController {
     }
 
     handleClick(child, index) {
-        const currentMain = this.ngModel[0]
-        this.ngModel[0] = child
-        this.ngModel[index] = currentMain
+        if (!this.webCam) {
+            const currentMain = this.ngModel[0]
+            this.ngModel[0] = child
+            this.ngModel[index] = currentMain
+        }
     }
 
     removeChild(index, evt?) {
@@ -49,6 +51,7 @@ ImageUploadChildrenController.$inject = ['$scope', '$element', '$timeout']
 const imageUploadChildren = {
     bindings: {
         ngModel: '=',
+        webCam: '=',
         config: '='
     },
     controller: ImageUploadChildrenController,

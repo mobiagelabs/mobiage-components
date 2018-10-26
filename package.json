@@ -19,9 +19,11 @@
     "angular-elastic-input": "^2.4.0",
     "angular-input-masks": "^4.2.1",
     "cep-promise": "^3.0.3",
+    "croppie": "^2.6.2",
     "firebase": "^5.5.2",
     "jquery": "^3.3.1",
-    "jquery-maskmoney": "^3.0.2"
+    "jquery-maskmoney": "^3.0.2",
+    "webcamjs": "^1.0.25"
   },
   "devDependencies": {
     "@types/angular": "^1.6.27",

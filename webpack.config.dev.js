@@ -36,9 +36,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: NODE_MODULES_PATH,
-        use: ExtractTextPlugin.extract(['css-loader', 'autoprefixer-loader']),
-        include: APP_PATH
+        use: ExtractTextPlugin.extract(['css-loader', 'autoprefixer-loader'])
       },
       {
         test: /\.less$/,

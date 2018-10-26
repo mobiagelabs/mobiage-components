@@ -5,6 +5,7 @@ mbg-image-upload-main {
     align-items: center;
     width: 100%;
     height: 100%;
+    padding-bottom: 5px;
     svg.camera {
         width: 34px;
         position: absolute;
@@ -19,6 +20,58 @@ mbg-image-upload-main {
         cursor: pointer;
         transition: all 350ms ease;
         &:hover {
+            opacity: 1;
+        }
+    }
+    svg.camera-remove {
+        width: 34px;
+        position: absolute;
+        z-index: 1;
+        right: 18px;
+        bottom: 18px;
+        background: #000;
+        opacity: .5;
+        border-radius: 50%;
+        padding: 5px;
+        cursor: pointer;
+        transition: all 350ms ease;
+        .st1 {
+            fill: #ffffff;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+    svg.remove {
+        cursor: pointer;
+        width: 23px;
+        opacity: 0;
+        position: absolute;
+        z-index: 9;
+        top: -7px;
+        right: -7px;
+        fill: #ccc;
+        .st1 {
+            fill: #ffffff;
+        }
+        &:hover {
+            fill: #ee7983;
+        }
+    }
+    .snapshot {
+        position: absolute;
+        z-index: 1;
+        bottom: 18px;
+        background: #000;
+        color: #fff;
+        height: 34px;
+        opacity: .5;
+        border-radius: 50px;
+        padding: 5px 25px;
+        border: 0px;
+        cursor: pointer;
+        transition: all 350ms ease;
+        &:Hover {
             opacity: 1;
         }
     }
@@ -80,6 +133,11 @@ mbg-image-upload-main {
             &.active {
                 transform: translateY(0);
             }
+        }
+    }
+    &:hover {
+        svg.remove {
+            opacity: 1;
         }
     }
 }

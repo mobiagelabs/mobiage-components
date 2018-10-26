@@ -48,7 +48,9 @@
     <div class="panel panel-default">
       <div class="panel-heading">Image Upload</div>
       <div class="panel-body">
-        <mbg-image-upload ng-model="profileImage"></mbg-image-upload>
+        <mbg-image-upload config="config"
+                          enable-crop="true"
+                          ng-model="profileImage"></mbg-image-upload>
       </div>
     </div>
 

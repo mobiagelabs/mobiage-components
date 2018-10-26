@@ -7,6 +7,8 @@ class ImageUploadController {
     private config: ImageUploadConfig
     private defaultConfig: ImageUploadConfig
     private ngModel: any
+    private webCam: boolean
+    private enableCrop: boolean
 
     constructor() {
         this.defaultConfig = {
@@ -23,6 +25,7 @@ class ImageUploadController {
     }
 
     $onInit() {
+        this.webCam = false
         this.config = Object.assign(this.defaultConfig, this.config)
         if (this.config.maxImages > 1) {
             this.ngModel = this.ngModel || []
@@ -34,7 +37,8 @@ class ImageUploadController {
 const imageUpload = {
     bindings: {
         config: '=?',
-        ngModel: '='
+        ngModel: '=',
+        enableCrop: '=?'
     },
     controller: ImageUploadController,
     template,

@@ -17,7 +17,7 @@ const module = angular
   ])
   .controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
     $scope.config = {
-      maxImages: 15
+      maxImages: 1
     }
 
     $scope.getNavigation = (item) => {
