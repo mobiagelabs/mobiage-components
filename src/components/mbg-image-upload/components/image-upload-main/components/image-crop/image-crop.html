@@ -1,6 +1,7 @@
 <div class="image-crop-wrapper">
 
 	<svg class="close-crop"
+	     ng-class="{'rounded':$ctrl.config.rounded}"
 	     ng-click="$ctrl.closeCrop()"
 	     xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
 	     xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
@@ -30,6 +31,7 @@
 		</switch>
 	</svg>
 	<svg class="accept"
+	     ng-class="{'rounded':$ctrl.config.rounded}"
 	     ng-click="$ctrl.acceptCrop()"
 	     xmlns="http://www.w3.org/2000/svg"
 	     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -43,6 +45,6 @@
 		/>
 		<polygon points="45,52.9 35,42.9 27.9,50 45,67.1 72.1,40 65,32.9 " />
 	</svg>
-	<div class="crop">
+	<div class="crop" ng-class="{'rounded':$ctrl.config.rounded}">
 	</div>
 </div>

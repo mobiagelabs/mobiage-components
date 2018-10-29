@@ -19,6 +19,22 @@
         &[disabled="disabled"] {
             background: #f5f5f5;
         }
+        &::-webkit-input-placeholder {
+            color: #bcbcbc;
+            font-style: italic;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+            color: #bcbcbc;
+            font-style: italic;
+        }
+        &::-moz-placeholder {  /* Firefox 19+ */
+            color: #bcbcbc;
+            font-style: italic;
+        }
+        &:-ms-input-placeholder {  
+            color: #bcbcbc;
+            font-style: italic;
+        }
     }
 }
 

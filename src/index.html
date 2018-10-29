@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <!-- Latest compiled and minified CSS -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat"
+        rel="stylesheet">
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -26,19 +27,19 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <div class="panel panel-default">
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">Navigation</div>
       <div class="panel-body">
         <mbg-navigation get-navigation="getNavigation(item)"
                         on-item-click="addItem(item)">
         </mbg-navigation>
       </div>
-    </div>
+    </div> -->
 
     <div class="panel panel-default">
       <div class="panel-heading">Address</div>
       <div class="panel-body">
-        <mbg-address ng-model="address"></mbg-address>
+        <!-- <mbg-address ng-model="address"></mbg-address> -->
       </div>
       <div class="panel-footer">
         <pre>{{ address | json }}</pre>
@@ -49,7 +50,6 @@
       <div class="panel-heading">Image Upload</div>
       <div class="panel-body">
         <mbg-image-upload config="config"
-                          enable-crop="true"
                           ng-model="profileImage"></mbg-image-upload>
       </div>
     </div>
@@ -57,7 +57,8 @@
     <div class="panel panel-default">
       <div class="panel-heading">CNPJ</div>
       <div class="panel-body">
-        <mbg-input-cnpj ng-model="cnpj"></mbg-input-cnpj>
+        <mbg-input-cnpj placeholder="Ex: teste"
+                        ng-model="cnpj"></mbg-input-cnpj>
       </div>
     </div>
 
@@ -120,6 +121,21 @@
     <div class="panel panel-default">
       <div class="panel-heading">Steps</div>
       <div class="panel-body">
+        <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
+                        on-finish-focus-element="#entityModel input">
+          <mbg-input-step-item ng-model="entity.productTree"
+                               fetch="getTipoProduto()"
+                               placeholder="'Selecione na lista abaixo o tipo de produto.'"
+                               label="name"></mbg-input-step-item>
+          <mbg-input-step-item ng-model="entity.brand"
+                               fetch="getMarca()"
+                               placeholder="countBrands > 0 ? 'Digite a marca ou selecione uma na lista abaixo' : 'Digite a marca.'"
+                               enable-add="true"
+                               label="name"></mbg-input-step-item>
+          <mbg-input-step-item ng-model="entity.model"
+                               capitalize="true"
+                               placeholder="'Qual o modelo?'"></mbg-input-step-item>
+        </mbg-input-step>
       </div>
     </div>
 

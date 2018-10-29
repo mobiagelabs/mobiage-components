@@ -19,6 +19,10 @@ mbg-image-upload-main {
         padding: 5px;
         cursor: pointer;
         transition: all 350ms ease;
+        &.rounded {
+            right: 28px;
+            bottom: 28px;
+        }
         &:hover {
             opacity: 1;
         }
@@ -35,6 +39,10 @@ mbg-image-upload-main {
         padding: 5px;
         cursor: pointer;
         transition: all 350ms ease;
+        &.rounded {
+            right: 28px;
+            bottom: 28px;
+        }
         .st1 {
             fill: #ffffff;
         }
@@ -58,6 +66,27 @@ mbg-image-upload-main {
             fill: #ee7983;
         }
     }
+    svg.crop {
+        width: 34px;
+        position: absolute;
+        z-index: 1;
+        right: 18px;
+        bottom: 60px;
+        background: #000;
+        fill: #fff;
+        opacity: .5;
+        border-radius: 50%;
+        padding: 5px;
+        cursor: pointer;
+        transition: all 350ms ease;
+        &.rounded {
+            right: -1px;
+            bottom: 70px;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
     .snapshot {
         position: absolute;
         z-index: 1;
@@ -71,6 +100,9 @@ mbg-image-upload-main {
         border: 0px;
         cursor: pointer;
         transition: all 350ms ease;
+        &.rounded {
+            bottom: 28px;
+        }
         &:Hover {
             opacity: 1;
         }
@@ -113,8 +145,8 @@ mbg-image-upload-main {
             display: none;
         }
         .mbg-image-upload-content {
-            width: 95%;
-            height: 95%;
+            width: 100%;
+            height: 100%;
             transition: all 500ms ease;
         }
         .mbg-image-upload-max-files {
@@ -133,6 +165,12 @@ mbg-image-upload-main {
             &.active {
                 transform: translateY(0);
             }
+            &.rounded.active {
+                transform: translateY(-150%);
+            }
+        }
+        &.rounded {
+            border-radius: 50%;
         }
     }
     &:hover {

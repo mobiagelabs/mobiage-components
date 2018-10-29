@@ -17,6 +17,10 @@ mbg-image-crop{
 			top: 15px;
 			fill: #dcd5d6;
 			transition: all 200ms ease;
+			&.rounded {
+				left: 9px;
+				top: 9px;
+			}
 			&:hover {
 				transform: scale(1.1);
 				fill:#d7374e;
@@ -30,6 +34,10 @@ mbg-image-crop{
 			top: 15px;
 			fill: #dcd5d6;
 			transition: all 200ms ease;
+			&.rounded {
+				right: 9px;
+				top: 9px;
+			}
 			&:hover {
 				transform: scale(1.1);
 				fill:#fff;
@@ -47,8 +55,12 @@ mbg-image-crop{
 			text-align: center;
 			position: relative;
 			z-index: 100;
-			background-color: rgba(255,255,255,0.5)
+			background-color: rgba(255,255,255,0.5);
+		}
+		.rounded.croppie-container {
+			 .cr-slider-wrap{
+				transform: translateY(-180%);
+			}
 		}
 	}
-	
 }

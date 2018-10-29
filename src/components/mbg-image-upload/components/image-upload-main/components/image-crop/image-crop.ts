@@ -34,7 +34,7 @@ class ImageCropController {
             viewport: {
                 width: this.width,
                 height: this.height,
-                // type: this.params.type == 'circle' ? 'circle' : 'square'
+                type: this.config.rounded ? 'circle' : 'square'
             },
             zoomOnWheel: true,
             enableOrientation: true,
@@ -54,7 +54,7 @@ class ImageCropController {
 
     acceptCrop() {
         this.crop.result({ type: 'base64' }).then((resp) => {
-            this.upload(resp)
+            this.upload({ data: resp })
         })
     }
 
@@ -65,7 +65,7 @@ ImageCropController.$inject = ['$scope', '$element', '$timeout']
 const imageCrop = {
     bindings: {
         pendentCrop: '=',
-        upload: '=',
+        upload: '&',
         config: '=',
         width: '=',
         height: '='

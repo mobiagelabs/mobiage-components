@@ -12,7 +12,7 @@
         </div>
         <div class="mbg-image-upload-children-wrapper"
              ng-style="{ width: $ctrl.config.size.width }"
-             ng-if="$ctrl.config.maxImages > 1 && ($ctrl.ngModel && $ctrl.ngModel.length > 1)">
+             ng-if="$ctrl.config.maxImages > 1 && ($ctrl.ngModel && $ctrl.ngModel.length >= 1)">
             <mbg-image-upload-children ng-model="$ctrl.ngModel"
                                        web-cam="$ctrl.webCam"
                                        config="$ctrl.config"></mbg-image-upload-children>

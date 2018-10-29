@@ -14,6 +14,7 @@ class MbgInputStepItemController {
     private enableAdd: boolean
     private oldInputValue: string
     private capitalize: boolean
+    private mbgPlaceholder: string
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -272,6 +273,7 @@ const mbgInputStepItem = {
         label: '@?',
         enableAdd: '=?',
         capitalize: '=?',
+        placeholder: '=?'
     },
     require: {
         mbgInputStep: '^mbgInputStep'

@@ -14,6 +14,8 @@ class ImageUploadController {
         this.defaultConfig = {
             accept: 'image/png, image/jpeg',
             maxImages: 1,
+            enableCrop: false,
+            rounded: false,
             size: {
                 width: '290px',
                 height: '290px',
@@ -38,7 +40,6 @@ const imageUpload = {
     bindings: {
         config: '=?',
         ngModel: '=',
-        enableCrop: '=?'
     },
     controller: ImageUploadController,
     template,

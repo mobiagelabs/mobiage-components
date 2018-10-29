@@ -17,17 +17,17 @@ const module = angular
   ])
   .controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
     $scope.config = {
-      maxImages: 1
+      maxImages: 5
     }
 
-    $scope.getNavigation = (item) => {
-      const id = item ? item.id : ''
-      return $http.get('http://localhost:8080/mobiage-api/api/product-tree/navigation?idProductTree=' + id, {
-        headers: {
-          gumgaToken: '8L6E1540402870567C154040107056700O6.I'
-        }
-      })
-    }
+    // $scope.getNavigation = (item) => {
+    //   const id = item ? item.id : ''
+    //   return $http.get('http://localhost:8080/mobiage-api/api/product-tree/navigation?idProductTree=' + id, {
+    //     headers: {
+    //       gumgaToken: '8L6E1540402870567C154040107056700O6.I'
+    //     }
+    //   })
+    // }
 
     // $scope.number = {
     //   'zipCode': '87035050',
@@ -158,6 +158,10 @@ const module = angular
         }))
       })
     }
+
+    $scope.getMarca().then((resp) => {
+      $scope.countBrands = (resp || []).length
+    })
 
 
     $scope.getModelo = (param = '') => {

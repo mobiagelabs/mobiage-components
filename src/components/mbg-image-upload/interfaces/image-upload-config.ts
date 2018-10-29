@@ -22,4 +22,13 @@ export interface ImageUploadConfig {
     children?: {
         position?: ImageUploadPosition,
     }
+    /**
+    * @description Configuração de arredondamento (default : false = Square)
+    */
+    rounded?: boolean
+    /**
+    * @description Habilitar crop da imagem (dafault : false)
+    */
+    enableCrop?: boolean
+
 }
