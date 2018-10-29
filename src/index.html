@@ -27,14 +27,19 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <!-- <div class="panel panel-default">
+    <div class="panel panel-default">
       <div class="panel-heading">Navigation</div>
       <div class="panel-body">
-        <mbg-navigation get-navigation="getNavigation(item)"
-                        on-item-click="addItem(item)">
-        </mbg-navigation>
+        <div class="row">
+          <div class="col-md-6">
+            <mbg-navigation get-navigation="getNavigation(item, page)"
+                            max-height="300px"
+                            on-item-click="addItem(item)">
+            </mbg-navigation>
+          </div>
+        </div>
       </div>
-    </div> -->
+    </div>
 
     <div class="panel panel-default">
       <div class="panel-heading">Address</div>

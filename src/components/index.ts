@@ -1,5 +1,6 @@
 import * as angular from 'angular'
 import 'angular-input-masks'
+import 'ng-easy-infinite-scroll'
 import 'webcamjs'
 import './common.scss'
 import { mbgImageUploadModule } from './mbg-image-upload'
@@ -22,6 +23,7 @@ import { mbgNavigationModule } from './mbg-navigation'
 const mbgComponentsModule = angular
   .module('mbg.components', [
     'ui.utils.masks',
+    'ngEasyInfiniteScroll',
     mbgImageUploadModule,
     mbgInputCnpjModule,
     mbgInputCpfModule,

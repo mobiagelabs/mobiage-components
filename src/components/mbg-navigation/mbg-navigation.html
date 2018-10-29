@@ -17,6 +17,9 @@
         </ol>
     </nav>
     <div class="mbg-navigation-items"
+         ng-style="{ 'max-height': ($ctrl.maxHeight ? $ctrl.maxHeight : 'auto') }"
+         infinite-scroll="$ctrl.onScrollBottom()" 
+         infinite-disabled="$ctrl.isDisabledScroll"
          disable-animate>
         <div class="mbg-navigation-item col-md-2"
              ng-repeat="item in $ctrl.navigation"

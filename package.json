@@ -23,6 +23,7 @@
     "firebase": "^5.5.2",
     "jquery": "^3.3.1",
     "jquery-maskmoney": "^3.0.2",
+    "ng-easy-infinite-scroll": "^1.0.0",
     "webcamjs": "^1.0.25"
   },
   "devDependencies": {

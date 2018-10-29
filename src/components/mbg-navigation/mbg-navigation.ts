@@ -8,10 +8,14 @@ class MbgNavigationController {
     private breadcrumb: Array<any>
     private animated: any
     private attrValue: string
+    private submitted: boolean
+    private isDisabledScroll: boolean
+    private page: number
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
     $onInit() {
+        this.page = 1;
         this.attrValue = this.attrValue || 'saleValue'
         this.animated = {}
         this.breadcrumb = []
@@ -19,13 +23,37 @@ class MbgNavigationController {
     }
 
     handleNavigation(item) {
+        if (this.submitted) {
+            return;
+        }
+        this.page = 1;
+        this.submitted = true
         if (item && item.type === 'PRODUCT_ITEM') {
+            this.submitted = false
             return this.handleClickItem(item)
         }
         if (item) { this.breadcrumb.push(item) }
-        this.getNavigation({ item })
+        this.getNavigation({ item, page: this.page })
             .then((response) => {
                 this.navigation = response.data
+                this.submitted = false
+            })
+    }
+
+    onScrollBottom() {
+        if (this.isDisabledScroll) {
+            return;
+        }
+        this.page++
+        this.isDisabledScroll = true
+        const item = this.breadcrumb[this.breadcrumb.length - 1]
+        this.getNavigation({ item, page: this.page })
+            .then((response) => {
+                this.isDisabledScroll = false
+                this.navigation = this.navigation.concat(response.data)
+            })
+            .catch(() => {
+                this.isDisabledScroll = false
             })
     }
 
@@ -66,6 +94,7 @@ const mbgNavigation = {
         getNavigation: '&',
         onItemClick: '&',
         attrValue: '@?',
+        maxHeight: '@?'
     },
     template,
     controller: MbgNavigationController,
