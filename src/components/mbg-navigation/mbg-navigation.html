@@ -18,7 +18,7 @@
     </nav>
     <div class="mbg-navigation-items"
          ng-style="{ 'max-height': ($ctrl.maxHeight ? $ctrl.maxHeight : 'auto') }"
-         infinite-scroll="$ctrl.onScrollBottom()" 
+         infinite-scroll="$ctrl.onScrollBottom()"
          infinite-disabled="$ctrl.isDisabledScroll"
          disable-animate>
         <div class="mbg-navigation-item col-md-2"
@@ -65,7 +65,8 @@
                     </g>
                 </svg>
             </div>
-            <label class="mbg-navigation-item-name">
+            <label class="mbg-navigation-item-name"
+                   uib-tooltip="{{ item.name }}">
                 {{ item.name }}
             </label>
             <label class="mbg-navigation-item-value"
