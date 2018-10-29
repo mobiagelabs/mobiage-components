@@ -125,17 +125,14 @@
                         on-finish-focus-element="#entityModel input">
           <mbg-input-step-item ng-model="entity.productTree"
                                fetch="getTipoProduto()"
-                               focused="focusedTeste('1')"
                                placeholder="'Selecione na lista abaixo o tipo de produto.'"
                                label="name"></mbg-input-step-item>
           <mbg-input-step-item ng-model="entity.brand"
-                               fetch="getMarca()"
-                               focused="focusedTeste('2')"                               
+                               fetch="getMarca()"                             
                                placeholder="countBrands > 0 ? 'Digite a marca ou selecione uma na lista abaixo' : 'Digite a marca.'"
                                enable-add="true"
                                label="name"></mbg-input-step-item>
           <mbg-input-step-item ng-model="entity.model"
-                               focused="focusedTeste('3')"
                                capitalize="true"
                                placeholder="'Qual o modelo?'"></mbg-input-step-item>
         </mbg-input-step>

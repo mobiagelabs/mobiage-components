@@ -64,7 +64,7 @@ class MbgInputStepItemController {
 
     onInputFocus() {
         if (!this.hasFocus) {
-            this.focused()
+            this.focused ? this.focused() : angular.noop()
             this.hasFocus = true
             this.onInputChange()
             this.updateElasticInput()
