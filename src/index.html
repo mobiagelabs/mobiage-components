@@ -27,7 +27,7 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <div class="panel panel-default">
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">Navigation</div>
       <div class="panel-body">
         <div class="row">
@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="panel panel-default">
       <div class="panel-heading">Address</div>
@@ -133,7 +133,7 @@
                                placeholder="'Selecione na lista abaixo o tipo de produto.'"
                                label="name"></mbg-input-step-item>
           <mbg-input-step-item ng-model="entity.brand"
-                               fetch="getMarca()"
+                               fetch="getMarca()"                             
                                placeholder="countBrands > 0 ? 'Digite a marca ou selecione uma na lista abaixo' : 'Digite a marca.'"
                                enable-add="true"
                                label="name"></mbg-input-step-item>

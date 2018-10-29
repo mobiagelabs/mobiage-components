@@ -20,18 +20,22 @@ const module = angular
       maxImages: 5
     }
 
-    $scope.getNavigation = (item, page) => {
-      const id = item ? item.id : ''
-      return $http.get('http://localhost:8080/mobiage-api/api/product-tree/navigation', {
-        params: {
-          idProductTree: id,
-          page,
-        },
-        headers: {
-          gumgaToken: '51L42E1540820156126C154081835612600O42.I'
-        }
-      })
+    $scope.focusedTeste = (param) => {
+      console.log(param)
     }
+
+    // $scope.getNavigation = (item, page) => {
+    //   const id = item ? item.id : ''
+    //   return $http.get('http://localhost:8080/mobiage-api/api/product-tree/navigation', {
+    //     params: {
+    //       idProductTree: id,
+    //       page,
+    //     },
+    //     headers: {
+    //       gumgaToken: '51L42E1540820156126C154081835612600O42.I'
+    //     }
+    //   })
+    // }
 
     // $scope.number = {
     //   'zipCode': '87035050',
