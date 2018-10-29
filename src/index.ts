@@ -20,6 +20,10 @@ const module = angular
       maxImages: 5
     }
 
+    $scope.focusedTeste = (param) => {
+        console.log(param)
+    }
+
     // $scope.getNavigation = (item) => {
     //   const id = item ? item.id : ''
     //   return $http.get('http://localhost:8080/mobiage-api/api/product-tree/navigation?idProductTree=' + id, {
