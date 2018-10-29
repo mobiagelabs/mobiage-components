@@ -15,7 +15,8 @@ class MbgInputStepItemController {
     private oldInputValue: string
     private capitalize: boolean
     private mbgPlaceholder: string
-    private focused: Function
+    private focus: Function
+    private unFocus: Function
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -64,7 +65,7 @@ class MbgInputStepItemController {
 
     onInputFocus() {
         if (!this.hasFocus) {
-            this.focused ? this.focused() : angular.noop()
+            this.$timeout(() => this.focus ? this.focus() : angular.noop())
             this.hasFocus = true
             this.onInputChange()
             this.updateElasticInput()
@@ -73,6 +74,7 @@ class MbgInputStepItemController {
     }
 
     onInputBlur() {
+        this.unFocus ? this.unFocus() : angular.noop()
         this.$timeout(() => {
             this.hasFocus = false
             this.updateElasticInput()
@@ -276,7 +278,8 @@ const mbgInputStepItem = {
         enableAdd: '=?',
         capitalize: '=?',
         placeholder: '=?',
-        focused: '&?'
+        focus: '&?',
+        unFocus: '&?'
     },
     require: {
         mbgInputStep: '^mbgInputStep'
