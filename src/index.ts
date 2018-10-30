@@ -21,7 +21,13 @@ const module = angular
     }
 
     $scope.focusedTeste = (param) => {
-      console.log(param)
+      if (param) {
+        $scope.teste = param
+      }
+    }
+
+    $scope.unFocus = () => {
+      $scope.teste = ''
     }
 
     // $scope.getNavigation = (item, page) => {

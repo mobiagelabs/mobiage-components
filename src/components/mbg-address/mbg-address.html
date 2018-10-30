@@ -14,19 +14,19 @@
                     placeholder="Estado, Cidade, Endereço, Número">
         <mbg-input-step-item ng-model="$ctrl.address.uf"
                              fetch="$ctrl.getStates(query)"
-                             placeholder="Qual o estado?"
+                             placeholder="'Qual o estado?'"
                              disable-animate
                              label="name"></mbg-input-step-item>
         <mbg-input-step-item ng-model="$ctrl.address.localization"
                              fetch="$ctrl.getCities(query)"
                              disable-animate
-                             placeholder="Qual a cidade?"></mbg-input-step-item>
+                             placeholder="'Qual a cidade?'"></mbg-input-step-item>
         <mbg-input-step-item ng-model="$ctrl.address.premisse"
                              fetch="$ctrl.getPremisses(query)"
                              disable-animate
-                             placeholder="Agora, digite o endereço"></mbg-input-step-item>
+                             placeholder="'Agora, digite o endereço'"></mbg-input-step-item>
         <mbg-input-step-item ng-model="$ctrl.address.number"
                              disable-animate
-                             placeholder="Qual o número?"></mbg-input-step-item>
+                             placeholder="'Qual o número?'"></mbg-input-step-item>
     </mbg-input-step>
 </div>
