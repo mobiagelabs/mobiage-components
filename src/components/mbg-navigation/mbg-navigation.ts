@@ -15,7 +15,7 @@ class MbgNavigationController {
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
     $onInit() {
-        this.page = 1;
+        this.page = 1
         this.attrValue = this.attrValue || 'saleValue'
         this.animated = {}
         this.breadcrumb = []
@@ -24,9 +24,9 @@ class MbgNavigationController {
 
     handleNavigation(item) {
         if (this.submitted) {
-            return;
+            return
         }
-        this.page = 1;
+        this.page = 1
         this.submitted = true
         if (item && item.type === 'PRODUCT_ITEM') {
             this.submitted = false
@@ -42,7 +42,7 @@ class MbgNavigationController {
 
     onScrollBottom() {
         if (this.isDisabledScroll) {
-            return;
+            return
         }
         this.page++
         this.isDisabledScroll = true
