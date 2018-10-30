@@ -27,11 +27,39 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <!-- <div class="panel panel-default">
+
+    <mbg-list list="produtos"
+              class="table-striped">
+
+      <mbg-list-column name="code"
+                       ng-style="{ width: '44px' }"
+                       label="Código">
+      </mbg-list-column>
+      <mbg-list-column name="product"
+                       label="Nome do produto">
+      </mbg-list-column>
+      <mbg-list-column name="qnt"
+                       label="Quantidade">
+      </mbg-list-column>
+      <mbg-list-column name="costValue"
+                       ng-style="{ width: '144px' }"
+                       label="Valor de custo">
+        <mbg-list-content>
+          {{ $row.costValue | currency : 'R$ ' }}
+        </mbg-list-content>
+      </mbg-list-column>
+
+    </mbg-list>
+
+
+
+    <!-- 
+
+    <div class="panel panel-default">
       <div class="panel-heading">Navigation</div>
       <div class="panel-body">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <mbg-navigation get-navigation="getNavigation(item, page)"
                             max-height="300px"
                             on-item-click="addItem(item)">
@@ -39,12 +67,12 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
     <div class="panel panel-default">
       <div class="panel-heading">Address</div>
       <div class="panel-body">
-        <!-- <mbg-address ng-model="address"></mbg-address> -->
+        <mbg-address ng-model="address"></mbg-address>
       </div>
       <div class="panel-footer">
         <pre>{{ address | json }}</pre>
@@ -136,7 +164,7 @@
                                label="name"></mbg-input-step-item>
           <mbg-input-step-item ng-model="entity.brand"
                                fetch="getMarca()"
-                               focus="focusedTeste('2')"                               
+                               focus="focusedTeste('2')"
                                placeholder="countBrands > 0 ? 'Digite a marca ou selecione uma na lista abaixo' : 'Digite a marca.'"
                                enable-add="true"
                                un-focus="unFocus()"
@@ -170,7 +198,7 @@
       <div class="panel-body">
         <mbg-text-area ng-model="textarea"></mbg-text-area>
       </div>
-    </div>
+    </div> -->
 
   </div>
 </body>

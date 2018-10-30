@@ -1,0 +1,31 @@
+mbg-list {
+    .table {
+        > tbody {
+            > tr {
+                > td {
+                    padding: 10px 14px;
+                    border: none;
+                    font-weight: 100;
+                }
+                > th {
+                    padding: 10px 14px;
+                    border: none;
+                    font-weight: 100;
+                    background: #E2E2E2;
+                    label.column-title {
+                        color: #666;
+                        margin: 0;
+                    }
+                    &:first-child {
+                        border-top-left-radius: 5px;
+                        border-bottom-left-radius: 5px;
+                    }
+                    &:last-child {
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

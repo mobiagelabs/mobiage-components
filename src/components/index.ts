@@ -3,6 +3,7 @@ import 'angular-input-masks'
 import 'ng-easy-infinite-scroll'
 import 'webcamjs'
 import './common.scss'
+import { MbgDynamicHTML } from '../helpers/dynamic-html/dynamic-html'
 import { mbgImageUploadModule } from './mbg-image-upload'
 import { mbgInputCnpjModule } from './mbg-input-cnpj'
 import { mbgInputCpfModule } from './mbg-input-cpf'
@@ -19,6 +20,7 @@ import { mbgInputEmailModule } from './mbg-input-email'
 import { mbgAddressModule } from './mbg-address'
 import { mbgTextAreaModule } from './mbg-text-area'
 import { mbgNavigationModule } from './mbg-navigation'
+import { mbgListModule } from './mbg-list'
 
 const mbgComponentsModule = angular
   .module('mbg.components', [
@@ -40,7 +42,9 @@ const mbgComponentsModule = angular
     mbgAddressModule,
     mbgTextAreaModule,
     mbgNavigationModule,
+    mbgListModule,
   ])
+  .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
   .name
 
 export * from './mbg-image-upload'

@@ -1,0 +1,14 @@
+<div class="table-responsive">
+    <ng-transclude></ng-transclude>
+    <table class="table {{ $ctrl.class }}">
+        <tr>
+            <th ng-repeat="column in $ctrl.columns"
+                mbg-dynamic-html="column.templateColumn"
+                ng-style="column.ngStyle"></th>
+        </tr>
+        <tr ng-repeat="$row in $ctrl.list">
+            <td ng-repeat="column in $ctrl.columns"
+                mbg-dynamic-html="column.templateRow"></td>
+        </tr>
+    </table>
+</div>

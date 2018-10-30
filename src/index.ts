@@ -20,6 +20,32 @@ const module = angular
       maxImages: 5
     }
 
+    $scope.produtos = [
+      {
+        code: '002',
+        product: 'Camiseta Adidas farm floral',
+        qnt: 20,
+        costValue: 200.00
+      },
+      {
+        code: '003',
+        product: 'Blusa Adidas undeground',
+        qnt: 37,
+        costValue: 435.90
+      },
+      {
+        code: '004',
+        product: 'Calça Nike undeground',
+        qnt: 25,
+        costValue: 348.90
+      }, {
+        code: '005',
+        product: 'Shorts Nike undeground',
+        qnt: 25,
+        costValue: 348.90
+      }
+    ]
+
     $scope.focusedTeste = (param) => {
       if (param) {
         $scope.teste = param
@@ -30,18 +56,18 @@ const module = angular
       $scope.teste = ''
     }
 
-    // $scope.getNavigation = (item, page) => {
-    //   const id = item ? item.id : ''
-    //   return $http.get('http://localhost:8080/mobiage-api/api/product-tree/navigation', {
-    //     params: {
-    //       idProductTree: id,
-    //       page,
-    //     },
-    //     headers: {
-    //       gumgaToken: '51L42E1540820156126C154081835612600O42.I'
-    //     }
-    //   })
-    // }
+    $scope.getNavigation = (item, page) => {
+      const id = item ? item.id : ''
+      return $http.get('https://api-hom.kigisistemas.com.br/mobiage-api/api/product-tree/navigation', {
+        params: {
+          idProductTree: id,
+          page,
+        },
+        headers: {
+          gumgaToken: '2L2E1634220573724C154090857372400O2.I'
+        }
+      })
+    }
 
     // $scope.number = {
     //   'zipCode': '87035050',
