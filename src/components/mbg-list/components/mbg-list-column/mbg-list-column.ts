@@ -7,19 +7,46 @@ export class MbgListColumnController {
     private label: string
     private templateColumn: string
     private templateRow: string
+    private sortable: boolean
+    private direction: string
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
     $onInit() {
+        this.direction = 'desc'
+        this.sortable = this.sortable !== undefined ? this.sortable : false
         this.mbgList.registerColumn(this)
         this.generateTemplateColumn()
         this.generateTemplateRow()
     }
 
     generateTemplateColumn() {
-        this.templateColumn = `
-            <label class="column-title">${this.label ? this.label : this.name}</label>
-        `
+        this.templateColumn = `<label class="column-title">
+            ${this.label ? this.label : this.name}
+            <div class="column-title-sort" ng-if="column.sortable">
+                <svg ng-show="column.direction == 'desc'"
+                    ng-click="column.sort()"
+                    xmlns="http://www.w3.org/2000/svg"
+                    data-name="Layer 1"
+                    viewBox="0 0 96 96"
+                    x="0px" y="0px">
+                    <path d="M43.76,66.24a6,6,0,0,0,8.48,0l29-29a6,6,0,0,0-8.48-8.48L48,53.51,23.24,28.76a6,6,0,0,0-8.48,8.48Z"/>
+                </svg>
+                <svg ng-show="column.direction == 'asc'"
+                    ng-click="column.sort()"
+                    xmlns="http://www.w3.org/2000/svg"
+                    data-name="Layer 1"
+                    viewBox="0 0 96 96"
+                    x="0px" y="0px">
+                    <path d="M23.24,66.24,48,41.49,72.76,66.24a6,6,0,0,0,8.48-8.48l-29-29a6,6,0,0,0-8.48,0l-29,29a6,6,0,0,0,8.48,8.48Z"/>
+                </svg>
+            </div>
+        </label>`
+    }
+
+    sort() {
+        this.direction = this.direction === 'asc' ? 'desc' : 'asc'
+        this.mbgList.sort({ column: this.name, dir: this.direction })
     }
 
     generateTemplateRow() {
@@ -27,7 +54,7 @@ export class MbgListColumnController {
             angular.forEach(cloneElem, (elm) => {
                 const element = angular.element(elm)[0]
                 if (element.nodeName === 'MBG-LIST-CONTENT') {
-                    this.templateRow = element.outerHTML
+                    this.templateRow = element.innerHTML
                 }
             })
             if (!this.templateRow || !this.templateRow.trim()) { this.createDefaultTemplateRow() }
@@ -50,7 +77,8 @@ const mbgListColumn = {
     bindings: {
         name: '@',
         label: '@?',
-        ngStyle: '=?'
+        ngStyle: '=?',
+        sortable: '=?',
     },
     template: '',
     controller: MbgListColumnController,

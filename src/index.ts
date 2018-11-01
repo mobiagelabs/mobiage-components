@@ -22,29 +22,33 @@ const module = angular
 
     $scope.produtos = [
       {
-        code: '002',
+        code: '0',
         product: 'Camiseta Adidas farm floral',
         qnt: 20,
         costValue: 200.00
       },
       {
-        code: '003',
+        code: '1',
         product: 'Blusa Adidas undeground',
         qnt: 37,
         costValue: 435.90
       },
       {
-        code: '004',
+        code: '2',
         product: 'Calça Nike undeground',
         qnt: 25,
         costValue: 348.90
       }, {
-        code: '005',
+        code: '3',
         product: 'Shorts Nike undeground',
         qnt: 25,
-        costValue: 348.90
+        costValue: 348.90,
       }
     ]
+
+    $scope.sort = (dir, column) => {
+      console.log(dir, column)
+    }
 
     $scope.focusedTeste = (param) => {
       if (param) {

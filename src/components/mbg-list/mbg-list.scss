@@ -1,20 +1,28 @@
 mbg-list {
     .table {
-        > tbody {
+        > thead {
             > tr {
-                > td {
-                    padding: 10px 14px;
-                    border: none;
-                    font-weight: 100;
-                }
                 > th {
                     padding: 10px 14px;
                     border: none;
                     font-weight: 100;
                     background: #E2E2E2;
+                    vertical-align: middle;
                     label.column-title {
                         color: #666;
                         margin: 0;
+                        display: flex;
+                        .column-title-sort {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-left: 5px;
+                            svg {
+                                width: 18px;
+                                cursor: pointer;
+                                fill: currentColor;
+                            }
+                        }
                     }
                     &:first-child {
                         border-top-left-radius: 5px;
@@ -24,6 +32,15 @@ mbg-list {
                         border-top-right-radius: 5px;
                         border-bottom-right-radius: 5px;
                     }
+                }
+            }
+        }
+        > tbody {
+            > tr {
+                > td {
+                    padding: 10px 14px;
+                    border: none;
+                    font-weight: 100;
                 }
             }
         }

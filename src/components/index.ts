@@ -21,6 +21,7 @@ import { mbgAddressModule } from './mbg-address'
 import { mbgTextAreaModule } from './mbg-text-area'
 import { mbgNavigationModule } from './mbg-navigation'
 import { mbgListModule } from './mbg-list'
+import { mbgCheckboxModule } from './mbg-checkbox'
 
 const mbgComponentsModule = angular
   .module('mbg.components', [
@@ -43,6 +44,7 @@ const mbgComponentsModule = angular
     mbgTextAreaModule,
     mbgNavigationModule,
     mbgListModule,
+    mbgCheckboxModule,
   ])
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
   .name

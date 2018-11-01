@@ -1,14 +1,32 @@
 <div class="table-responsive">
     <ng-transclude></ng-transclude>
     <table class="table {{ $ctrl.class }}">
-        <tr>
+        <thead>
+            <th ng-show="$ctrl.checkbox">
+                <mbg-checkbox ng-model="$ctrl.checkAll"
+                              ng-change="$ctrl.toogleAll($ctrl.checkAll)"></mbg-checkbox>
+            </th>
             <th ng-repeat="column in $ctrl.columns"
                 mbg-dynamic-html="column.templateColumn"
                 ng-style="column.ngStyle"></th>
-        </tr>
-        <tr ng-repeat="$row in $ctrl.list">
-            <td ng-repeat="column in $ctrl.columns"
-                mbg-dynamic-html="column.templateRow"></td>
-        </tr>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="$row in $ctrl.rows track by $index"
+                ng-init="$position = $index"
+                ng-click="$ctrl.onClickRow($row, $position)">
+                <td ng-show="$ctrl.checkbox && $ctrl.rowsAdicional !== $position">
+                    <mbg-checkbox ng-model="$ctrl.selectedMap[$row.$json]"
+                                  ng-change="$ctrl.toogleCheckbox()"></mbg-checkbox>
+                </td>
+                <td ng-repeat="column in $ctrl.columns"
+                    ng-show="$ctrl.rowsAdicional !== $position"
+                    mbg-dynamic-html="column.templateRow"></td>
+                <td ng-show="$ctrl.rowsAdicional === $position"
+                    colspan="{{ $ctrl.checkbox ? $ctrl.columns.length + 1 : $ctrl.columns.length }}">
+                    <div mbg-dynamic-html="$row.template"></div>
+                </td>
+            </tr>
+        </tbody>
     </table>
 </div>

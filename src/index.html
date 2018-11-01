@@ -28,29 +28,49 @@
   <div class="container">
 
 
-    <mbg-list list="produtos"
-              class="table-striped">
 
+
+    <mbg-list list="produtos"
+              checkbox="true"
+              selected-values="selecionados"
+              sort="sort(dir, column)"
+              class="table-striped">
       <mbg-list-column name="code"
-                       ng-style="{ width: '44px' }"
-                       label="Código">
-      </mbg-list-column>
+                       label="Código"></mbg-list-column>
       <mbg-list-column name="product"
-                       label="Nome do produto">
-      </mbg-list-column>
+                       sortable="true"
+                       label="Nome do produto"></mbg-list-column>
       <mbg-list-column name="qnt"
-                       label="Quantidade">
-      </mbg-list-column>
+                       label="Quantidade"></mbg-list-column>
       <mbg-list-column name="costValue"
-                       ng-style="{ width: '144px' }"
                        label="Valor de custo">
-        <mbg-list-content>
-          {{ $row.costValue | currency : 'R$ ' }}
+        <mbg-list-content ng-non-bindable>
+          <button ng-click="verDetalhes = !verDetalhes">Ver detalhes</button>
+          <mbg-list-row position="$position"
+                        condition="verDetalhes">
+            <mbg-list-content ng-non-bindable>
+              <div class="col-md-12">
+                <label>Detalhes de {{ $row.product }}</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text"
+                       class="form-control"
+                       ng-model="$row.code">
+              </div>
+              <div class="col-md-6">
+                <input type="text"
+                       class="form-control"
+                       ng-model="$row.product">
+              </div>
+            </mbg-list-content>
+          </mbg-list-row>
         </mbg-list-content>
       </mbg-list-column>
-
     </mbg-list>
 
+
+
+    <pre>{{ selecionados | json }}</pre>
 
 
     <!-- 
