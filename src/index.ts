@@ -46,6 +46,10 @@ const module = angular
       }
     ]
 
+    $scope.lalala = () => {
+      console.log('aspodasdpoasdoasd')
+    }
+
     $scope.sort = (dir, column) => {
       console.log(dir, column)
     }
