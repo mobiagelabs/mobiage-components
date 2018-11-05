@@ -13,10 +13,12 @@ export class MbgListController {
     public selectedMap
     public checkAll: boolean
     public checkbox: boolean
+    public $c
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
     $onInit() {
+        this.$scope.$c = this.$scope.$parent
         this.columns = []
         this.selectedMap = {}
         this.$scope.$watch('$ctrl.list', (list) => {

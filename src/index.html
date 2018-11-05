@@ -12,9 +12,8 @@
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
   <style>
-
     :root {
-        --contrast: red; 
+      --contrast: red;
     }
 
     body,
@@ -31,10 +30,6 @@
 
 <body ng-controller="demoCtrl">
   <div class="container">
-
-
-
-
     <mbg-list list="produtos"
               checkbox="true"
               selected-values="selecionados"
@@ -50,12 +45,14 @@
       <mbg-list-column name="costValue"
                        label="Valor de custo">
         <mbg-list-content ng-non-bindable>
-          <button ng-click="verDetalhes = !verDetalhes">Ver detalhes</button>
+          <button ng-click="verDetalhes = !verDetalhes">
+            {{ $c.olamundo }}
+          </button>
           <mbg-list-row position="$position"
                         condition="verDetalhes">
             <mbg-list-content ng-non-bindable>
               <div class="col-md-12">
-                <label>Detalhes de {{ $row.product }}</label>
+                <label>Detalhes de {{ $row.product }} ----- {{ $c.olamundo }}</label>
               </div>
               <div class="col-md-6">
                 <input type="text"
@@ -77,7 +74,9 @@
 
     <pre>{{ selecionados | json }}</pre>
 
-    <mbg-btn-form ng-click="lalala()" disabled="true" label="Continuar &#62;"></mbg-btn-form>
+    <mbg-btn-form ng-click="lalala()"
+                  disabled="true"
+                  label="Continuar &#62;"></mbg-btn-form>
 
 
     <!-- 

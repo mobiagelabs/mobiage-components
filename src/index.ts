@@ -60,6 +60,8 @@ const module = angular
       }
     }
 
+    $scope.olamundo = 'Mateus'
+
     $scope.unFocus = () => {
       $scope.teste = ''
     }
