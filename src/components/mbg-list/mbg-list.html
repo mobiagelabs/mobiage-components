@@ -2,7 +2,7 @@
     <ng-transclude></ng-transclude>
     <table class="table {{ $ctrl.class }}">
         <thead>
-            <th ng-show="$ctrl.checkbox">
+            <th ng-if="$ctrl.checkbox">
                 <mbg-checkbox ng-model="$ctrl.checkAll"
                               ng-change="$ctrl.toogleAll($ctrl.checkAll)"></mbg-checkbox>
             </th>
@@ -15,7 +15,7 @@
             <tr ng-repeat="$row in $ctrl.rows track by $index"
                 ng-init="$position = $index"
                 ng-click="$ctrl.onClickRow($row, $position)">
-                <td ng-show="$ctrl.checkbox && $ctrl.rowsAdicional !== $position">
+                <td ng-if="$ctrl.checkbox && $ctrl.rowsAdicional !== $position">
                     <mbg-checkbox ng-model="$ctrl.selectedMap[$row.$json]"
                                   ng-change="$ctrl.toogleCheckbox()"></mbg-checkbox>
                 </td>
