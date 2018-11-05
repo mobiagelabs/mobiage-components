@@ -60,6 +60,53 @@ const module = angular
       }
     }
 
+    $scope.details = [
+      {
+        type: 'TAMANHO',
+        value: 'P'
+      },
+      {
+        type: 'TAMANHO',
+        value: 'M'
+      },
+      {
+        type: 'TAMANHO',
+        value: 'G'
+      },
+      {
+        type: 'TAMANHO',
+        value: 'GG'
+      },
+      {
+        type: 'COR',
+        value: 'Verde',
+        valueRef: '#17b709'
+      },
+      {
+        type: 'COR',
+        value: 'Azul',
+        valueRef: '#015ec1'
+      },
+      {
+        type: 'COR',
+        value: 'Preto',
+        valueRef: '#000000'
+      },
+      {
+        type: 'COR',
+        value: 'Pink',
+        valueRef: '#ce00cb'
+      }
+    ]
+
+    $scope.addColor = () => {
+      $scope.details.push({
+        type: 'COR',
+        value: 'Amarelo',
+        valueRef: '#fcf419'
+      })
+    }
+
     $scope.olamundo = 'Mateus'
 
     $scope.unFocus = () => {

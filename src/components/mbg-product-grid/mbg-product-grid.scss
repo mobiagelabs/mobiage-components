@@ -1,0 +1,52 @@
+.mbg-product-grid-wrapper {
+    table {
+        border-radius: 5px;
+        tbody {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            .grid-center-content {
+                text-align: center;
+            }
+            th {
+                padding: 0;
+                label {
+                    height: 100%;
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            th, td {
+                border: none;
+                border-top: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+                height: 54px;
+                &:first-child {
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+                &:last-child {
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+                .grid-product-edit-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+            .grid-product-item-name-wrapper {
+                display: flex;
+                align-items: center;
+                padding-left: 14px;
+                height: 100%;
+                .grid-product-item-circle {
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    margin: 0 12px 0 0;
+                }
+            }
+        }
+    }
+}

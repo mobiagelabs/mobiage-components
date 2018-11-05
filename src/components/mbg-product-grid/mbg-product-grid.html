@@ -1,0 +1,39 @@
+<div class="mbg-product-grid-wrapper">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th class="grid-center-content">
+                    <label>{{ $ctrl.y.label }}</label>
+                </th>
+                <th class="grid-center-content"
+                    colspan="{{ $ctrl.getItemX().length }}">
+                    <label>{{ $ctrl.x.label }}</label>
+                </th>
+            </tr>
+            <tr>
+                <td></td>
+                <td ng-repeat="xItem in $ctrl.getItemX()"
+                    class="grid-center-content">
+                    {{ xItem.value }}
+                </td>
+            </tr>
+            <tr ng-repeat="yItem in $ctrl.getItemY()">
+                <td>
+                    <div class="grid-product-item-name-wrapper">
+                        <div class="grid-product-item-circle"
+                             ng-style="{'background': yItem.valueRef}"></div>
+                        <span>{{ yItem.value }}</span>
+                    </div>
+                </td>
+                <td ng-repeat="xItem in $ctrl.getItemX()">
+                    <div class="grid-product-edit-wrapper">
+                        <span>Estoque</span>
+                        <mbg-input-number ng-model="xItem.stock"
+                                          class="grid-product-stock"></mbg-input-number>
+                        <mbg-input-money ng-model="xItem.price"></mbg-input-money>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -6,7 +6,7 @@ class MbgBtnFormController {
     private disabled: any
     private label: any
 
-    constructor($scope, $element, $attrs) {
+    constructor(public $scope, public $element, public $attrs) {
     }
 }
 MbgBtnFormController.$inject = ['$scope', '$element', '$attrs']

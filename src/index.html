@@ -30,7 +30,16 @@
 
 <body ng-controller="demoCtrl">
   <div class="container">
-    <mbg-list list="produtos"
+
+    <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
+                      y="{ key: 'COR', label: 'COR PRODUTO' }"
+                      details="details">
+    </mbg-product-grid>
+
+
+
+
+    <!-- <mbg-list list="produtos"
               checkbox="true"
               selected-values="selecionados"
               sort="sort(dir, column)"
@@ -69,14 +78,14 @@
         </mbg-list-content>
       </mbg-list-column>
     </mbg-list>
+ -->
 
-
-
+    <!-- 
     <pre>{{ selecionados | json }}</pre>
 
     <mbg-btn-form ng-click="lalala()"
                   disabled="true"
-                  label="Continuar &#62;"></mbg-btn-form>
+                  label="Continuar &#62;"></mbg-btn-form> -->
 
 
     <!-- 
