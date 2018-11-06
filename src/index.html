@@ -33,11 +33,12 @@
 
     <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
                       y="{ key: 'COR', label: 'COR PRODUTO' }"
-                      details="details">
+                      details="details"
+                      ng-model="result">
     </mbg-product-grid>
 
-
-
+    <br><br>
+    <pre>{{ result | json }}</pre>
 
     <!-- <mbg-list list="produtos"
               checkbox="true"

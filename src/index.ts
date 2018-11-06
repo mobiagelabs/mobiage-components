@@ -99,13 +99,34 @@ const module = angular
       }
     ]
 
-    $scope.addColor = () => {
-      $scope.details.push({
-        type: 'COR',
-        value: 'Amarelo',
-        valueRef: '#fcf419'
-      })
-    }
+    $scope.result = [
+      {
+        xDetail: {
+          type: 'TAMANHO',
+          value: 'P',
+        },
+        yDetail: {
+          type: 'COR',
+          value: 'Pink',
+          valueRef: '#ce00cb'
+        },
+        stock: 10,
+        price: 100
+      },
+      {
+        xDetail: {
+          type: 'TAMANHO',
+          value: 'GG'
+        },
+        yDetail: {
+          type: 'COR',
+          value: 'Verde',
+          valueRef: '#17b709'
+        },
+        price: 10
+      }
+    ]
+
 
     $scope.olamundo = 'Mateus'
 

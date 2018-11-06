@@ -9,12 +9,10 @@
             }
             th {
                 padding: 0;
+            }
+            td {
                 label {
-                    height: 100%;
-                    margin: 0;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    color: #666;
                 }
             }
             th, td {
@@ -22,6 +20,13 @@
                 border-top: 1px solid #ccc;
                 border-left: 1px solid #ccc;
                 height: 54px;
+                label {
+                    height: 100%;
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
                 &:first-child {
                     border-top-left-radius: 5px;
                     border-bottom-left-radius: 5px;
@@ -33,6 +38,34 @@
                 .grid-product-edit-wrapper {
                     display: flex;
                     flex-direction: column;
+                    align-items: flex-end;
+                    color: #666;
+                    font-weight: 400;
+                    mbg-input-money  {
+                        input {
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+                    }
+                    mbg-input-number, mbg-input-money {
+                        .mbg-input-wrapper, .mbg-input-money-wrapper {
+                            height: auto;
+                            background: transparent;
+                            input[type='number'] {
+                                -moz-appearance:textfield;
+                            }
+                            
+                            input::-webkit-outer-spin-button,
+                            input::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                            }
+                            input {
+                                padding: 0;
+                                border: none;
+                                text-align: right;
+                            }
+                        }
+                    }
                 }
             }
             .grid-product-item-name-wrapper {

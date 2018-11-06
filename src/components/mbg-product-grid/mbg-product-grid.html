@@ -14,7 +14,7 @@
                 <td></td>
                 <td ng-repeat="xItem in $ctrl.getItemX()"
                     class="grid-center-content">
-                    {{ xItem.value }}
+                    <label>{{ xItem.value }}</label>
                 </td>
             </tr>
             <tr ng-repeat="yItem in $ctrl.getItemY()">
@@ -28,9 +28,13 @@
                 <td ng-repeat="xItem in $ctrl.getItemX()">
                     <div class="grid-product-edit-wrapper">
                         <span>Estoque</span>
-                        <mbg-input-number ng-model="xItem.stock"
+                        <mbg-input-number ng-model="$ctrl.gridValues[$index][$parent.$index].stock"
+                                          placeholder="0"
+                                          ng-change="$ctrl.handleGridValues()"
                                           class="grid-product-stock"></mbg-input-number>
-                        <mbg-input-money ng-model="xItem.price"></mbg-input-money>
+                        <mbg-input-money placeholder="R$ 0,00"
+                                         ng-change="$ctrl.handleGridValues()"
+                                         ng-model="$ctrl.gridValues[$index][$parent.$index].price"></mbg-input-money>
                     </div>
                 </td>
             </tr>
