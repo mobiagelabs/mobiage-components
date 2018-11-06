@@ -16,10 +16,19 @@
                 }
             }
             th, td {
+                position: relative;
                 border: none;
                 border-top: 1px solid #ccc;
                 border-left: 1px solid #ccc;
                 height: 54px;
+                .grid-adicional-link {
+                    position: absolute;
+                    right: 18px;
+                    top: 16px;
+                    color: #666;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
                 label {
                     height: 100%;
                     margin: 0;

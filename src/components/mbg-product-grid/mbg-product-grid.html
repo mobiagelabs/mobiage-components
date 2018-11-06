@@ -8,6 +8,10 @@
                 <th class="grid-center-content"
                     colspan="{{ $ctrl.getItemX().length }}">
                     <label>{{ $ctrl.x.label }}</label>
+                    <a class="grid-adicional-link"
+                       ng-click="$ctrl.onClickExtraButton()">
+                        {{ $ctrl.extraButtonLabel }}
+                    </a>
                 </th>
             </tr>
             <tr>

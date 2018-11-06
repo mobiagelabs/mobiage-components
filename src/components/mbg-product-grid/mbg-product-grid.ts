@@ -82,6 +82,8 @@ const mbgProductGrid = {
         y: '=?',
         details: '=?',
         ngModel: '=?',
+        extraButtonLabel: '@?',
+        onClickExtraButton: '&?'
     },
     template,
     controller: MbgProductGridController,
