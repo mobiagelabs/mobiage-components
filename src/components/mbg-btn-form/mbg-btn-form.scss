@@ -18,4 +18,46 @@
     button[disabled] {
       opacity: 0.5;
     }
+
+    .mbg-btn-loading {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 5px solid #fff;
+        border-radius: 100%;
+        border-top: 5px solid transparent;
+            -webkit-animation: mbg-btn-animate infinite linear 1s;
+                    animation: mbg-btn-animate infinite linear 1s;
+    }
+    
+    @-webkit-keyframes mbg-btn-animate {
+        0% {
+          -webkit-transform: rotate(0deg);
+                  transform: rotate(0deg);
+        }
+        50% {
+          -webkit-transform: rotate(180deg);
+                  transform: rotate(180deg);
+          opacity: 0.35;
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+        }
+    }
+    @keyframes mbg-btn-animate {
+        0% {
+          -webkit-transform: rotate(0deg);
+                  transform: rotate(0deg);
+        }
+        50% {
+          -webkit-transform: rotate(180deg);
+                  transform: rotate(180deg);
+          opacity: 0.35;
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+        }
+    }
 }

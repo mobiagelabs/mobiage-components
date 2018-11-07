@@ -19,6 +19,7 @@ const mbgBtnForm = {
     bindings: {
         ngDisabled: '=?',
         label: '@?',
+        loading: '=?',
         ngClick: '&?',
     },
     template,
