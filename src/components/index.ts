@@ -11,6 +11,7 @@ import { mbgInputCpfCnpjModule } from './mbg-input-cpfcnpj'
 import { mbgInputNameModule } from './mbg-input-name'
 import { mbgInputPhoneModule } from './mbg-input-phone'
 import { mbgInputTextModule } from './mbg-input-text'
+import { mbgInputSearchModule } from './mbg-input-search'
 import { mbgInputNumberModule } from './mbg-input-number'
 import { mbgInputMoneyModule } from './mbg-input-money'
 import { mbgInputPercentageModule } from './mbg-input-percentage'
@@ -36,6 +37,7 @@ const mbgComponentsModule = angular
     mbgInputNameModule,
     mbgInputPhoneModule,
     mbgInputTextModule,
+    mbgInputSearchModule,
     mbgInputNumberModule,
     mbgInputMoneyModule,
     mbgInputPercentageModule,

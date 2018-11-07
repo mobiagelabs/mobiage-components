@@ -13,7 +13,32 @@
         crossorigin="anonymous">
   <style>
     :root {
-      --contrast: red;
+      --primary: #6e2bbb;
+      --secundary: #582098;
+      --bgColor: #f8f8f8;
+      --contrast: #E81756;
+      --quickMenuBackground: #ba1546;
+      --backgroundTopBar: #FFF;
+      --logoDetail: #FFF;
+      --footerPrimary: #6e2bbb;
+      --footerDark: #6e2bbb;
+      --footerAccent: #FF0064;
+      --neutral1: #292929;
+      --neutral2: #7b7b7b;
+      --neutral3: #bcbcbc;
+      --inputStroke: #d7d7d7;
+      --color1: #6e2bbb;
+      --color2: #eff5f1;
+      --color3: #582098;
+      --color4: #00bbbd;
+      --defaultColor: #4e4e4e;
+      --titleColor: #848484;
+      --error: #E81756;
+      --info: #69a8e3;
+      --warn: #ee8946;
+      --success: #6ab662;
+      --woman: #efb1de;
+      --man: #a3c8ea;
     }
 
     body,
@@ -31,16 +56,19 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
+    <mbg-input-search ng-model="search" placeholder="Digite aqui o que deseja pesquisar ..."></mbg-input-search>
+    {{search}}
+    <!-- 
     <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
                       y="{ key: 'COR', label: 'COR PRODUTO' }"
                       details="details"
                       ng-model="result"
                       extra-button-label="+ Adicionar tamanho">
-    </mbg-product-grid>
+    </mbg-product-grid> -->
 
+    <!-- <br>
     <br>
-    <br>
-    <pre>{{ result | json }}</pre>
+    <pre>{{ result | json }}</pre> -->
 
     <!-- <mbg-list list="produtos"
               checkbox="true"
@@ -83,9 +111,9 @@
     </mbg-list>
  -->
 
-    <mbg-btn-form ng-click="lalala()"
+    <!-- <mbg-btn-form ng-click="lalala()"
                   ng-disabled="false"
-                  label="Continuar"></mbg-btn-form>
+                  label="Continuar"></mbg-btn-form> -->
 
 
     <!--

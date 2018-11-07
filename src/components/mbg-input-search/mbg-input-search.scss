@@ -1,0 +1,23 @@
+.mbg-input-search-wrapper {
+	&.mbg-input-wrapper {
+		.btn-group {
+			position: relative;
+			width: 100%;
+			svg {
+				fill: var(--neutral3);
+				width: 24px;
+				position: absolute;
+    		display: flex;
+    		height: 100%;
+    		left: 20px;
+			}
+			input {
+				padding: 8px 59px;
+				height: 44px;
+				border-radius: 50px;
+				width: 100%;
+			}
+		}
+	}
+	
+}

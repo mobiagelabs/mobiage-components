@@ -1,0 +1,39 @@
+<div class="mbg-input-search-wrapper mbg-input-wrapper"
+     ng-if="$ctrl.props">
+  <div class="btn-group">
+
+    <svg xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:cc="http://creativecommons.org/ns#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+         version="1.1"
+         x="0px"
+         y="0px"
+         viewBox="0 0 100 100">
+      <g transform="translate(0,-952.36218)">
+        <path style="text-indent:0;text-transform:none;direction:ltr;block-progression:tb;baseline-shift:baseline;color:#000000;enable-background:accumulate;"    
+              d="m 42.998176,967.36037 c -15.42836,0 -28,12.5716 -28,28 0,15.42843 12.57163,28.00003 28,28.00003 6.63693,0 12.72497,-2.3393 17.53125,-6.2188 l 19.34375,19.3438 c 1.17146,1.1714 3.07843,1.1716 4.25,0 1.17152,-1.1715 1.17154,-3.0785 0,-4.25 l -19.3125,-19.3125 c 3.87427,-4.8046 6.1875,-10.9305 6.1875,-17.56253 0,-15.4284 -12.57165,-28 -28,-28 z m 0,6 c 12.18569,0 22,9.8143 22,22 0,12.18573 -9.81433,22.00003 -22,22.00003 -12.18568,0 -22,-9.8143 -22,-22.00003 0,-12.1857 9.81431,-22 22,-22 z"
+              fill-opacity="1"
+              stroke="none"
+              marker="none"
+              visibility="visible"
+              display="inline"
+              overflow="visible" />
+      </g>
+     </svg>
+    <input type="text"
+           ng-model="$ctrl.ngModel"
+           ng-change="$ctrl.onChange()"
+           ng-required="$ctrl.ngRequired"
+           ng-disabled="$ctrl.ngDisabled"
+           ng-blur="$ctrl.ngBlur({ $event })"
+           ng-focus="$ctrl.ngFocus({ $event })"
+           ng-keyup="$ctrl.ngKeyup({ $event })"
+           ng-keypress="$ctrl.ngKeypress({ $event })"
+           ng-keydown="$ctrl.ngKeydown({ $event })"
+           placeholder="{{ $ctrl.props.placeholder }}" />
+  </div>
+</div>
