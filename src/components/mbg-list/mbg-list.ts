@@ -22,7 +22,7 @@ export class MbgListController {
         this.columns = []
         this.selectedMap = {}
         this.$scope.$watch('$ctrl.list', (list) => {
-            this.rows = angular.copy(list)
+            this.rows = angular.copy(list) || []
             this.rows.forEach((row) => row.$json = JSON.stringify(row))
         }, true)
     }
