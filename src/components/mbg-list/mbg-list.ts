@@ -24,7 +24,7 @@ export class MbgListController {
         this.$scope.$watch('$ctrl.list', (list) => {
             this.rows = angular.copy(list)
             this.rows.forEach((row) => row.$json = JSON.stringify(row))
-        })
+        }, true)
     }
 
     registerColumn(column: MbgListColumnController) {
