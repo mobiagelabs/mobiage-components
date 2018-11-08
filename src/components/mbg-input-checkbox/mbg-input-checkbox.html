@@ -1,0 +1,14 @@
+<div class="mbg-input-wrapper mb-input-checkbox-wrapper"
+    ng-class="{ 'mbg-input-disabled': $ctrl.ngDisabled || !$ctrl.ngModel.checked }"
+     ng-if="$ctrl.props">
+    <mbg-checkbox ng-model="$ctrl.ngModel.checked"></mbg-checkbox>
+    <mbg-input-money ng-model="$ctrl.ngModel.value"
+                     ng-change="$ctrl.ngChange()"
+                     ng-required="$ctrl.ngRequired"
+                     ng-disabled="$ctrl.ngDisabled || !$ctrl.ngModel.checked"
+                     ng-blur="$ctrl.ngBlur({ $event })"
+                     ng-focus="$ctrl.ngFocus({ $event })"
+                     ng-keyup="$ctrl.ngKeyup({ $event })"
+                     ng-keypress="$ctrl.ngKeypress({ $event })"
+                     ng-keydown="$ctrl.ngKeydown({ $event })"></mbg-input-money>
+</div>

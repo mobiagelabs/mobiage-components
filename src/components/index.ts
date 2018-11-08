@@ -26,6 +26,7 @@ import { mbgCheckboxModule } from './mbg-checkbox'
 import { mbgRadioModule } from './mbg-radio'
 import { mbgBtnFormModule } from './mbg-btn-form'
 import { mbgProductGridModule } from './mbg-product-grid'
+import { mbgInputCheckboxModule } from './mbg-input-checkbox'
 
 const mbgComponentsModule = angular
   .module('mbg.components', [
@@ -53,6 +54,7 @@ const mbgComponentsModule = angular
     mbgRadioModule,
     mbgBtnFormModule,
     mbgProductGridModule,
+    mbgInputCheckboxModule,
   ])
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
   .name
