@@ -1,10 +1,9 @@
-<label for="cbx"
-       class="label-cbx"
-       ng-click="$ctrl.toogleModel()">
-    <input type="radio"
+<label for="rdo"
+       class="label-radio"
+       ng-click="$ctrl.toogleModel($event)">
+    <input type="checkbox"
            class="invisible"
            ng-model="$ctrl.ngModel"
-           ng-value="$ctrl.ngValue"
            ng-required="$ctrl.ngRequired"
            ng-disabled="$ctrl.ngDisabled">
     <div class="checkbox">

@@ -56,15 +56,15 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-4">
           <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox>
           <mbg-input-money ng-model="valor2"></mbg-input-money>
       </div>
-    </div>
+    </div> -->
 
-    {{ valor }}
-
+    <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
+    <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
     <!-- <mbg-input-search ng-model="search" placeholder="Digite aqui o que deseja pesquisar ..."></mbg-input-search> -->
     <!-- {{search}} -->
     <!-- 
@@ -83,8 +83,8 @@
 
     <mbg-radio ng-model="teste" ng-value="specialValue"></mbg-radio> -->
 
-    <!-- <mbg-list list="produtos"
-              checkbox="true"
+    <mbg-list list="produtos"
+              radio="true"
               selected-values="selecionados"
               sort="sort(dir, column)"
               class="table-striped">
@@ -122,7 +122,7 @@
         </mbg-list-content>
       </mbg-list-column>
     </mbg-list>
- -->
+
 
     <!-- <mbg-btn-form ng-click="lalala()"
                   ng-disabled="false"

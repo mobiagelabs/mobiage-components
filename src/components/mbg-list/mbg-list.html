@@ -6,6 +6,7 @@
                 <mbg-checkbox ng-model="$ctrl.checkAll"
                               ng-change="$ctrl.toogleAll($ctrl.checkAll)"></mbg-checkbox>
             </th>
+            <th ng-if="$ctrl.radio"></th>
             <th ng-repeat="column in $ctrl.columns"
                 mbg-dynamic-html="column.templateColumn"
                 ng-style="column.ngStyle"></th>
@@ -18,6 +19,10 @@
                 <td ng-if="$ctrl.checkbox && $ctrl.rowsAdicional !== $position">
                     <mbg-checkbox ng-model="$ctrl.selectedMap[$row.$json]"
                                   ng-change="$ctrl.toogleCheckbox()"></mbg-checkbox>
+                </td>
+                <td ng-if="$ctrl.radio && $ctrl.rowsAdicional !== $position">
+                    <mbg-radio ng-model="$ctrl.selectedMap[$row.$json]"
+                               ng-change="$ctrl.toogleRadio($row.$json)"></mbg-radio>
                 </td>
                 <td ng-repeat="column in $ctrl.columns"
                     ng-show="$ctrl.rowsAdicional !== $position"

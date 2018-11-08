@@ -45,6 +45,12 @@ export class MbgListController {
         this.handlingSelectedValues()
     }
 
+    toogleRadio(row) {
+        this.selectedMap = {}
+        this.selectedMap[row] = true
+        this.handlingSelectedValues()
+    }
+
     handlingSelectedValues() {
         this.selectedValues =
             Object.keys(this.selectedMap)
@@ -70,6 +76,7 @@ const mbgList = {
         class: '@?',
         sort: '&?',
         checkbox: '=?',
+        radio: '=?',
         selectedValues: '=?'
     },
     template,

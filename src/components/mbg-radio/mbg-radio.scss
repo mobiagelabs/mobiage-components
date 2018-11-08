@@ -1,27 +1,32 @@
 mbg-radio {
-    .label-cbx {
+    .label-radio {
         user-select: none;
         cursor: pointer;
         margin-bottom: 0;
     }
 
-    .label-cbx input:checked + .checkbox {
+    .label-radio input:checked + .checkbox {
         border-color: #20C2E0;
     }
 
-    .label-cbx input:checked + .checkbox svg path {
+    .label-radio input:checked + .checkbox svg path {
         fill: #20C2E0;
     }
 
-    .label-cbx input:checked + .checkbox svg polyline {
+    .label-radio input:checked + .checkbox svg polyline {
         stroke-dashoffset: 0;
     }
 
-    .label-cbx:hover .checkbox svg path {
+    .label-radio:hover .checkbox svg path {
         stroke-dashoffset: 0;
+        border-radius: 50%;
     }
 
-    .label-cbx .checkbox {
+    .label-radio:hover .checkbox {
+        border: 2px solid #20c2e0;
+    }
+
+    .label-radio .checkbox {
         position: relative;
         top: 2px;
         float: left;
@@ -29,16 +34,18 @@ mbg-radio {
         width: 20px;
         height: 20px;
         border: 2px solid #C8CCD4;
-        border-radius: 3px;
+        border-radius: 50%;
+        transition: all 0.6s ease;
     }
 
-    .label-cbx .checkbox svg {
+    .label-radio .checkbox svg {
         position: absolute;
         top: -2px;
         left: -2px;
+        border-radius: 50%;
     }
 
-    .label-cbx .checkbox svg path {
+    .label-radio .checkbox svg path {
         fill: none;
         stroke: #20C2E0;
         stroke-width: 2;
@@ -49,7 +56,7 @@ mbg-radio {
         transition: all 0.6s ease;
     }
 
-    .label-cbx .checkbox svg polyline {
+    .label-radio .checkbox svg polyline {
         fill: none;
         stroke: #FFF;
         stroke-width: 2;
@@ -60,12 +67,12 @@ mbg-radio {
         transition: all 0.3s ease;
     }
 
-    .label-cbx > span {
+    .label-radio > span {
         pointer-events: none;
         vertical-align: middle;
     }
     
-    .label-cbx .invisible {
+    .label-radio .invisible {
         position: absolute;
         z-index: -1;
         width: 0;
