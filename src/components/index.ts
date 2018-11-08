@@ -23,6 +23,7 @@ import { mbgTextAreaModule } from './mbg-text-area'
 import { mbgNavigationModule } from './mbg-navigation'
 import { mbgListModule } from './mbg-list'
 import { mbgCheckboxModule } from './mbg-checkbox'
+import { mbgRadioModule } from './mbg-radio'
 import { mbgBtnFormModule } from './mbg-btn-form'
 import { mbgProductGridModule } from './mbg-product-grid'
 
@@ -49,6 +50,7 @@ const mbgComponentsModule = angular
     mbgNavigationModule,
     mbgListModule,
     mbgCheckboxModule,
+    mbgRadioModule,
     mbgBtnFormModule,
     mbgProductGridModule,
   ])
