@@ -59,11 +59,12 @@
                     mbg-input-number, mbg-input-money {
                         .mbg-input-wrapper, .mbg-input-money-wrapper {
                             height: auto;
-                            background: transparent;
+                            input {
+                                background: transparent;
+                            }
                             input[type='number'] {
                                 -moz-appearance:textfield;
                             }
-                            
                             input::-webkit-outer-spin-button,
                             input::-webkit-inner-spin-button {
                                 -webkit-appearance: none;
