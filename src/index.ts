@@ -20,6 +20,10 @@ const module = angular
       maxImages: 5
     }
 
+    $scope.kkk = (index) => {
+      window['teste'][index].addAdicionalRow()
+    }
+
     $scope.produtos = [
       {
         code: '0',

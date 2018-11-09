@@ -69,29 +69,33 @@
                        label="Nome do produto"></mbg-list-column>
       <mbg-list-column name="qnt"
                        label="Quantidade"></mbg-list-column>
+
       <mbg-list-column name="costValue"
-                       label="Valor de custo">
+                       label="Opções">
+
+
         <mbg-list-content ng-non-bindable>
-          <button ng-click="verDetalhes = !verDetalhes">
+          <button ng-click="$ctrl.toogleRow($position)">
             {{ $c.olamundo }}
           </button>
-          <mbg-list-row position="$position"
-                        condition="verDetalhes">
+
+          <mbg-list-row position="$position">
             <mbg-list-content ng-non-bindable>
-
               <div class="col-md-12">
-
                 <mbg-input-step>
                   <mbg-input-step-item ng-model="teste"
                                        fetch="['Teste']"></mbg-input-step-item>
                 </mbg-input-step>
 
               </div>
-
             </mbg-list-content>
           </mbg-list-row>
+
         </mbg-list-content>
+
       </mbg-list-column>
+
+
     </mbg-list>
 
     <!-- <div class="row">

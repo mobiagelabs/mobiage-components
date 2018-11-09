@@ -7,6 +7,8 @@ export class MbgListRowController {
     private position: number
     private nextPosition: number
     private mbgListElement
+    private id
+    private unwatch
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
@@ -16,43 +18,20 @@ export class MbgListRowController {
         if (!scopeParent) { return }
         this.mbgList = scopeParent.$ctrl
         this.generateTemplateRow()
-        this.observeCondition()
-        this.nextPosition = this.position + 1
-    }
-
-    observeCondition() {
-        this.$scope.$watch('$ctrl.condition', (value) => {
-            if (this.mbgList.rowsAdicional !== undefined) {
-                this.removeAdicionalRow()
-                return
-            }
-            if (value) {
-                this.addAdicionalRow()
-            }
-        })
+        this.mbgList.registerRow(this)
     }
 
     addAdicionalRow() {
-        this.mbgList.rows = this.mbgList.rows || []
-        this.mbgList.rows.splice(this.nextPosition, 0, angular.merge(this.mbgList.rows[this.position], { template: this.template }))
-        this.updatePosition()
-        this.mbgList.rowsAdicional = this.nextPosition
+        const rows = angular.copy(this.mbgList.rows) || []
+        rows.splice(this.position + 1, 0,
+            angular.merge(angular.copy(rows[this.position]), { template: this.template, isAdicional: true }))
+        this.mbgList.rows = rows
     }
 
     removeAdicionalRow() {
-        if (this.mbgList.rows[this.nextPosition] && this.mbgList.rowsAdicional !== undefined) {
-            this.mbgList.rows.splice(this.mbgList.rowsAdicional, 1)
-            this.updatePosition()
-            delete this.mbgList.rowsAdicional
-        }
-    }
-
-    updatePosition() {
-        this.mbgList.$timeout(() => {
-            Array.from(angular.element(this.mbgListElement).find('tbody tr'))
-                .map((elm: any) => angular.element(elm).scope())
-                .forEach((scope, index) => scope.$position = index)
-        })
+        const rows = angular.copy(this.mbgList.rows) || []
+        rows.splice(this.position + 1, 1)
+        this.mbgList.rows = rows
     }
 
     generateTemplateRow() {

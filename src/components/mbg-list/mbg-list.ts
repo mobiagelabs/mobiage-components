@@ -2,33 +2,43 @@ import './mbg-list.scss'
 import * as angular from 'angular'
 import template from './mbg-list.html'
 import { MbgListColumnController } from './components/mbg-list-column/mbg-list-column'
+import { MbgListRowController } from './components/mbg-list-row/mbg-list-row'
 
 export class MbgListController {
     public rows: Array<any>
     public list: Array<any>
     public columns: Array<MbgListColumnController>
-    public rowsAdicional: number
+    public rowsAdicional: any
     public sort: Function
     public selectedValues: Array<any>
     public selectedMap
     public checkAll: boolean
     public checkbox: boolean
     public $c
+    public mbgRows: Array<MbgListRowController>
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
     $onInit() {
+        this.rowsAdicional = {}
         this.$scope.$c = this.$scope.$parent
         this.columns = []
+        this.mbgRows = []
         this.selectedMap = {}
         this.$scope.$watch('$ctrl.list', (list) => {
             this.rows = angular.copy(list) || []
-            this.rows.forEach((row) => row.$json = JSON.stringify(row))
+            this.rows.forEach((row) => {
+                row.$json = JSON.stringify(row)
+            })
         }, true)
     }
 
     registerColumn(column: MbgListColumnController) {
         this.columns.push(column)
+    }
+
+    registerRow(row: MbgListRowController) {
+        this.mbgRows.push(row)
     }
 
     isAllSelected() {
@@ -63,6 +73,15 @@ export class MbgListController {
         //     this.selectedMap[row.$json] = !this.selectedMap[row.$json]
         //     this.toogleCheckbox()
         // }
+    }
+
+    toogleRow(index) {
+        const row = this.rows[index + 1]
+        if (row && row.isAdicional) {
+            this.mbgRows[index].removeAdicionalRow()
+        } else {
+            this.mbgRows[index].addAdicionalRow()
+        }
     }
 
 }
