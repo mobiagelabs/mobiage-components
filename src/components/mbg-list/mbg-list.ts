@@ -78,8 +78,10 @@ export class MbgListController {
     toogleRow(index) {
         const row = this.rows[index + 1]
         if (row && row.isAdicional) {
+            this.rows[index].isOpenedRow = false
             this.mbgRows[index].removeAdicionalRow()
         } else {
+            this.rows[index].isOpenedRow = true
             this.mbgRows[index].addAdicionalRow()
         }
     }
