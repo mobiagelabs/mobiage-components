@@ -55,7 +55,7 @@ class MbgInputStepController {
     showPlaceholder() {
         return Array.from((this.items || [])).filter((item) => {
             const scope: any = angular.element(item).find('input').scope()
-            return scope.$ctrl.ngModel || scope.$ctrl.hasFocus
+            return (scope && scope.$ctrl.ngModel) || (scope && scope.$ctrl.hasFocus)
         }).length === 0
     }
 
