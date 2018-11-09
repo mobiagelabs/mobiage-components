@@ -26,7 +26,9 @@ export class MbgListRowController {
                 this.removeAdicionalRow()
                 return
             }
-            this.addAdicionalRow()
+            if (value) {
+                this.addAdicionalRow()
+            }
         })
     }
 

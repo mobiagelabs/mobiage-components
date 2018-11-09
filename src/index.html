@@ -56,34 +56,8 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <!-- <div class="row">
-      <div class="col-md-4">
-          <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox>
-          <mbg-input-money ng-model="valor2"></mbg-input-money>
-      </div>
-    </div> -->
 
-    <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
-    <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
-    <!-- <mbg-input-search ng-model="search" placeholder="Digite aqui o que deseja pesquisar ..."></mbg-input-search> -->
-    <!-- {{search}} -->
-    
-    <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
-                      y="{ key: 'COR', label: 'COR PRODUTO' }"
-                      details="details"
-                      ng-model="result"
-                      extra-button-label="+ Adicionar tamanho">
-    </mbg-product-grid>
-
-    <!-- <br>
-    <br>
-    <pre>{{ result | json }}</pre> -->
-
-    <!-- <mbg-checkbox ng-model="teste2"></mbg-checkbox>
-
-    <mbg-radio ng-model="teste" ng-value="specialValue"></mbg-radio> -->
-
-    <!-- <mbg-list list="produtos"
+    <mbg-list list="produtos"
               radio="true"
               selected-values="selecionados"
               sort="sort(dir, column)"
@@ -104,24 +78,50 @@
           <mbg-list-row position="$position"
                         condition="verDetalhes">
             <mbg-list-content ng-non-bindable>
+
               <div class="col-md-12">
-                <label>Detalhes de {{ $row.product }} ----- {{ $c.olamundo }}</label>
+
+                <mbg-input-step>
+                  <mbg-input-step-item ng-model="teste"
+                                       fetch="['Teste']"></mbg-input-step-item>
+                </mbg-input-step>
+
               </div>
-              <div class="col-md-6">
-                <input type="text"
-                       class="form-control"
-                       ng-model="$row.code">
-              </div>
-              <div class="col-md-6">
-                <input type="text"
-                       class="form-control"
-                       ng-model="$row.product">
-              </div>
+
             </mbg-list-content>
           </mbg-list-row>
         </mbg-list-content>
       </mbg-list-column>
-    </mbg-list> -->
+    </mbg-list>
+
+    <!-- <div class="row">
+      <div class="col-md-4">
+          <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox>
+          <mbg-input-money ng-model="valor2"></mbg-input-money>
+      </div>
+    </div> -->
+
+    <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
+    <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
+    <!-- <mbg-input-search ng-model="search" placeholder="Digite aqui o que deseja pesquisar ..."></mbg-input-search> -->
+    <!-- {{search}} -->
+
+    <!-- <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
+                      y="{ key: 'COR', label: 'COR PRODUTO' }"
+                      details="details"
+                      ng-model="result"
+                      extra-button-label="+ Adicionar tamanho">
+    </mbg-product-grid> -->
+
+    <!-- <br>
+    <br>
+    <pre>{{ result | json }}</pre> -->
+
+    <!-- <mbg-checkbox ng-model="teste2"></mbg-checkbox>
+
+    <mbg-radio ng-model="teste" ng-value="specialValue"></mbg-radio> -->
+
+    <!--  -->
 
 
     <!-- <mbg-btn-form ng-click="lalala()"

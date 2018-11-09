@@ -28,7 +28,7 @@
                     ng-show="$ctrl.rowsAdicional !== $position"
                     mbg-dynamic-html="column.templateRow"></td>
                 <td ng-show="$ctrl.rowsAdicional === $position"
-                    colspan="{{ $ctrl.checkbox ? $ctrl.columns.length + 1 : $ctrl.columns.length }}">
+                    colspan="{{ $ctrl.checkbox || $ctrl.radio ? $ctrl.columns.length + 1 : $ctrl.columns.length }}">
                     <div mbg-dynamic-html="$row.template"></div>
                 </td>
             </tr>
