@@ -3,7 +3,7 @@ mbg-list {
         > thead {
             > tr {
                 > th {
-                    padding: 10px 14px;
+                    padding: 10px 14px !important;
                     border: none;
                     font-weight: 100;
                     background: #E2E2E2;
@@ -38,7 +38,7 @@ mbg-list {
         > tbody {
             > tr {
                 > td {
-                    padding: 10px 14px;
+                    padding: 10px 14px !important;
                     border: none;
                     font-weight: 100;
                 }
