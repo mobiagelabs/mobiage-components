@@ -31,6 +31,9 @@ class MbgInputStepController {
     }
 
     handleClick(evt) {
+        if (evt.type !== 'click') {
+            return
+        }
         if (evt.target.nodeName === 'INPUT') {
             const scope: any = angular.element(evt.target).scope()
             if (scope.$ctrl.ngModel) {
