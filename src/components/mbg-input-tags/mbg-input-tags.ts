@@ -40,7 +40,10 @@ class MbgInputTagsController {
     }
 
     addTag(str: string) {
-        this.ngModel.push(str)
+        const newTag = str.trim()
+        if ((this.ngModel || []).filter((tag) => tag === newTag).length === 0) {
+            this.ngModel.push(newTag)
+        }
     }
 
     removeTag(index) {
