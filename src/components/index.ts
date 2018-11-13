@@ -4,6 +4,7 @@ import 'ng-easy-infinite-scroll'
 import 'webcamjs'
 import './common.scss'
 import { MbgDynamicHTML } from '../helpers/dynamic-html/dynamic-html'
+import { MbgPositiveNumber } from '../helpers/positive-number/positive-number'
 import { mbgImageUploadModule } from './mbg-image-upload'
 import { mbgInputCnpjModule } from './mbg-input-cnpj'
 import { mbgInputCpfModule } from './mbg-input-cpf'
@@ -57,6 +58,7 @@ const mbgComponentsModule = angular
     mbgInputCheckboxModule,
   ])
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
+  .directive('mbgPositiveNumber', () => new MbgPositiveNumber)
   .name
 
 export * from './mbg-image-upload'

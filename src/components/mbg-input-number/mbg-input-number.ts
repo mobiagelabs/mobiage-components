@@ -34,6 +34,7 @@ const mbgInputNumber = {
         ngKeyup: '&?',
         ngKeypress: '&?',
         ngKeydown: '&?',
+        positiveNumber: '=?'
     },
     template,
     controller: MbgInputNumberController,
