@@ -9,6 +9,7 @@
            ng-keydown="$ctrl.onInputKeydown($event)"
            ng-model="$ctrl.inputValue"
            ng-change="$ctrl.onInputChange()"
+           ng-class="{ 'error-value': $ctrl.label && !$ctrl.hasFocus && $ctrl.inputValue && !$ctrl.ngModel }"
            pu-elastic-input
            pu-elastic-input-maxwidth="none"
            ng-attr-placeholder="{{ $ctrl.hasFocus ? $ctrl.placeholder : '' }}" />
