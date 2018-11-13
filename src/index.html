@@ -56,8 +56,9 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <mbg-input-phone ng-model="phone"></mbg-input-number>
-      {{phone}}
+    <mbg-image-upload config="config"
+                      ng-model="profileImage"></mbg-image-upload>
+
     <!-- <mbg-list list="produtos"
               radio="true"
               selected-values="selecionados"
@@ -268,7 +269,7 @@
         <mbg-input-tags ng-model="tags"></mbg-input-tags>
       </div>
     </div> -->
-<!--
+    <!--
     <div class="panel panel-default">
       <div class="panel-heading">Text</div>
       <div class="panel-body">

@@ -1,9 +1,11 @@
 import * as angular from 'angular'
 import './image-upload-children.scss'
 import template from './image-upload-children.html'
+import { ImageUploadConfig } from '../../interfaces'
 
 class ImageUploadChildrenController {
     private ngModel: any
+    private config: ImageUploadConfig
 
     constructor(public $scope, public $element, public $timeout, public webCam) { }
 
