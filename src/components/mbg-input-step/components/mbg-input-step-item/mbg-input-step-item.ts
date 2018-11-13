@@ -85,10 +85,12 @@ class MbgInputStepItemController {
     }
 
     onInputChange() {
-        this.inputValue = (this.inputValue || '').replace(',', '')
-        if (this.fetch) {
-            this.executeFetch()
-        }
+        this.$timeout(() => {
+            // this.inputValue = (this.inputValue || '').replace(',', '')
+            if (this.fetch) {
+                this.executeFetch()
+            }
+        })
     }
 
     executeFetch() {
