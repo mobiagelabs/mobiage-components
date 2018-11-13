@@ -1,16 +1,16 @@
-
 <div class="mbg-input-wrapper mb-input-phone-wrapper"
-ng-if="$ctrl.props">
-<input type="text"
-      ng-model="$ctrl.ngModel"
-      ng-change="$ctrl.onChange()"
-      placeholder="{{ $ctrl.props.placeholder }}"
-      ng-required="$ctrl.ngRequired"
-      ng-disabled="$ctrl.ngDisabled"
-      ng-blur="$ctrl.ngBlur({ $event })"
-      ng-focus="$ctrl.ngFocus({ $event })"
-      ng-keyup="$ctrl.ngKeyup({ $event })"
-      ng-keypress="$ctrl.ngKeypress({ $event })"
-      ng-keydown="$ctrl.ngKeydown({ $event })"
-      ui-br-phone-number-mask />
+     ng-if="$ctrl.props">
+      <input type="text"
+             ng-model="$ctrl.ngModel"
+             ng-change="$ctrl.onChange()"
+             placeholder="{{ $ctrl.props.placeholder }}"
+             ng-required="$ctrl.ngRequired"
+             ng-disabled="$ctrl.ngDisabled"
+             ng-blur="$ctrl.ngBlur({ $event })"
+             ng-focus="$ctrl.ngFocus({ $event })"
+             ng-keyup="$ctrl.ngKeyup({ $event })"
+             ng-keypress="$ctrl.ngKeypress({ $event })"
+             ng-keydown="$ctrl.ngKeydown({ $event })"
+             ui-br-phone-number-mask="'areaCode'"
+             maxlength="15"/>
 </div>
