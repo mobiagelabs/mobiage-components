@@ -38,7 +38,8 @@ const mbgInputIe = {
         ngKeypress: '&?',
         ngKeydown: '&?',
         state: '=?',
-        name: '@?'
+        name: '@?',
+        isento: '=?'
     },
     template,
     controller: MbgInputIeController,

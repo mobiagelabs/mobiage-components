@@ -1,3 +1,11 @@
 .mbg-input-name-wrapper {
-   
+	position: relative;
+   .isento {
+		position: absolute;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+	 }
 }
