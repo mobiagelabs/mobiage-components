@@ -78,9 +78,6 @@ class MbgInputStepItemController {
         this.$timeout(() => {
             this.hasFocus = false
             this.updateElasticInput()
-            // if (!this.label) {
-            //     this.setModel(true)
-            // }
         }, 300)
     }
 
@@ -89,6 +86,9 @@ class MbgInputStepItemController {
             // this.inputValue = (this.inputValue || '').replace(',', '')
             if (this.fetch) {
                 this.executeFetch()
+            }
+            if (!this.label) {
+                this.setModel(true)
             }
         })
     }
