@@ -154,17 +154,18 @@
         </div>
       </div>
     </div>
-
+  -->
     <div class="panel panel-default">
       <div class="panel-heading">Address</div>
       <div class="panel-body">
-        <mbg-address ng-model="address"></mbg-address>
+        <mbg-address ng-model="address" not-found="lalala()"></mbg-address>
       </div>
       <div class="panel-footer">
         <pre>{{ address | json }}</pre>
       </div>
     </div>
 
+    <!--
     <div class="panel panel-default">
       <div class="panel-heading">Image Upload</div>
       <div class="panel-body">
@@ -238,7 +239,7 @@
     </div>
 
   -->
-    <div class="panel panel-default">
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">Steps</div>
       <div class="panel-body">
         <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
@@ -264,7 +265,7 @@
         </mbg-input-step>
         {{teste}}
       </div>
-    </div>
+    </div> -->
 
     <!-- <div class="panel panel-default">
       <div class="panel-heading">Tags</div>

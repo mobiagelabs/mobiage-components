@@ -21,6 +21,7 @@ class MbgAddressController {
     }
     private cities: Array<any>
     private premisses: Array<any>
+    public notFound: Function
 
     constructor(public $scope,
         public $element,
@@ -121,7 +122,7 @@ class MbgAddressController {
             && this.address.zipCode) {
             this.mbgAddressService.getCep(this.address.zipCode)
                 .then((response) => {
-                    if (response && response.data) {
+                    if (response && response.data && response.data.resultado !== '0') {
                         const uf = getStatesBR().filter((state) => state.initial === response.data.uf)[0]
                         this.address = {
                             zipCode: this.address.zipCode.replace('-', ''),
@@ -134,6 +135,8 @@ class MbgAddressController {
                         }
                         this.updateSteps()
                         this.$timeout(() => this.simuleClick())
+                    } else {
+                        this.notFound()
                     }
                 })
         }
@@ -270,7 +273,8 @@ MbgAddressController.$inject = ['$scope', '$element', '$attrs', '$timeout', 'mbg
 
 const mbgAddress = {
     bindings: {
-        ngModel: '='
+        ngModel: '=',
+        notFound: '&?'
     },
     template,
     controller: MbgAddressController,
