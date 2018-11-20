@@ -28,7 +28,7 @@ class ImageUploadMainController {
     }
 
     openWebCam() {
-        if (this.ngModel.length === this.config.maxImages) {
+        if ((this.ngModel || []).length === this.config.maxImages) {
             this.alertWebCam()
         } else {
             this.labelPicture = 'Tirar Foto'
