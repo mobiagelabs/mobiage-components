@@ -62,7 +62,8 @@ class MbgAddressController {
         }
     }
 
-    formatFromPremisse(str: string = '') {
+    formatFromPremisse(str) {
+        str = str || ''
         if (str.includes('-')) {
             return str.substring(0, str.lastIndexOf('-')).trim()
         }
@@ -257,7 +258,7 @@ class MbgAddressController {
             .slice(0, 50)
     }
 
-    removeEspecialChar(str) {
+    removeEspecialChar(str = '') {
         str = str.replace(/[áàãâä]/ui, 'a')
         str = str.replace(/[éèêë]/ui, 'e')
         str = str.replace(/[íìîï]/ui, 'i')
