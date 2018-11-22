@@ -4,9 +4,9 @@ import template from './mbg-input-step-item.html'
 import { Capitalize } from '../../../../helpers/capitalize'
 
 class MbgInputStepItemController {
-	private inputValue: string
 	private fetch: Function
 	private data: Array<any>
+	private inputValue: string
 	private hasFocus: boolean
 	private label: string
 	private ngModel: any
@@ -86,7 +86,6 @@ class MbgInputStepItemController {
 
 	onInputChange() {
 		this.$timeout(() => {
-			// this.inputValue = (this.inputValue || '').replace(',', '')
 			if (this.fetch) {
 				this.executeFetch()
 			}

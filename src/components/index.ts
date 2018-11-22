@@ -29,6 +29,7 @@ import { mbgRadioModule } from './mbg-radio'
 import { mbgBtnFormModule } from './mbg-btn-form'
 import { mbgProductGridModule } from './mbg-product-grid'
 import { mbgInputCheckboxModule } from './mbg-input-checkbox'
+import { mbgInputPasswordModule } from './mbg-input-password'
 
 const mbgComponentsModule = angular
   .module('mbg.components', [
@@ -58,6 +59,7 @@ const mbgComponentsModule = angular
     mbgBtnFormModule,
     mbgProductGridModule,
     mbgInputCheckboxModule,
+    mbgInputPasswordModule,
   ])
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
   .directive('mbgPositiveNumber', () => new MbgPositiveNumber)
