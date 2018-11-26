@@ -1,16 +1,19 @@
-.mb-input-checkbox-wrapper {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    padding-left: 12px;
-    mbg-input-money {
-        flex: 1;
-        input {
-            border: 1px solid #ddd;
-            border-left: none;
-            border-right: none;
-            border-radius: none;
+mbg-input-checkbox {
+    .mb-input-checkbox-wrapper {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+        padding: 8px 14px;
+        mbg-input-money {
+            flex: 1;
+            input {
+                border: 1px solid #ddd;
+                border-left: none;
+                border-right: none;
+                border-radius: none;
+            }
         }
     }
 }
