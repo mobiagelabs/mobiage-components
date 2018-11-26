@@ -60,7 +60,7 @@ class ImageUploadMainController {
                 this.labelPicture = 'Tirar Foto'
                 this.pendentCrop = base64
             } else {
-                const uploadedFiles = await ImageUploadFirebase.upload([base64])
+                const uploadedFiles = this.config.disableFirebase ? [base64] : await ImageUploadFirebase.upload([base64])
                 this.$timeout(() => {
                     this.setNgModel(uploadedFiles)
                     this.ngModel.length - 1 === this.config.maxImages ? this.alertWebCam() : angular.noop()
@@ -110,7 +110,7 @@ class ImageUploadMainController {
     async uploadFiles(files: Array<string>) {
         this.$timeout(() => this.loading = true)
         this.removeCurrentFiles()
-        const uploadedFiles = await ImageUploadFirebase.upload(files)
+        const uploadedFiles = this.config.disableFirebase ? files : await ImageUploadFirebase.upload(files)
         this.$timeout(() => {
             this.setNgModel(uploadedFiles)
             this.loading = false

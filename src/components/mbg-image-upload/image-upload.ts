@@ -16,6 +16,7 @@ class ImageUploadController {
             maxImages: 1,
             enableCrop: false,
             rounded: false,
+            disableFirebase: false,
             size: {
                 width: '290px',
                 height: '290px',

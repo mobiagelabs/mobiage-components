@@ -29,6 +29,10 @@ export interface ImageUploadConfig {
     /**
     * @description Habilitar crop da imagem (dafault : false)
     */
-    enableCrop?: boolean
+    enableCrop?: boolean,
+    /**
+        * @description Desabilita a integração com firebase (dafault : false)
+        */
+    disableFirebase?: boolean
 
 }

@@ -17,7 +17,8 @@ const module = angular
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
 		$scope.config = {
-			maxImages: 5
+			maxImages: 5,
+			disableFirebase: true
 		}
 
 		$scope.kkk = (index) => {
