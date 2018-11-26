@@ -56,13 +56,18 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
+
+    <mbg-input-date ng-model="data"
+                    placeholder="Teste"></mbg-input-date>
+
+    {{ data }}
     <!-- <form name="formteste">
       <mbg-input-ie ng-model="ie"
                     name="teste"
                     state="'PR'"></mbg-input-ie>
     </form> -->
-     <mbg-image-upload config="config"
-                      ng-model="profileImage"></mbg-image-upload> 
+    <!-- <mbg-image-upload config="config"
+                      ng-model="profileImage"></mbg-image-upload>  -->
 
     <!-- <mbg-list list="produtos"
               radio="true"
@@ -107,7 +112,7 @@
 
     <!-- <div class="row">
       <div class="col-md-4">
-      -->  <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox> <!--
+       <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox> 
           <mbg-input-money ng-model="valor2"></mbg-input-money>
       </div>
     </div> -->
@@ -155,7 +160,7 @@
         </div>
       </div>
     </div>
-  -->
+ 
     <div class="panel panel-default">
       <div class="panel-heading">Address</div>
       <div class="panel-body">
@@ -166,7 +171,6 @@
       </div>
     </div>
 
-    <!--
     <div class="panel panel-default">
       <div class="panel-heading">Image Upload</div>
       <div class="panel-body">

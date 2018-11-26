@@ -128,6 +128,9 @@ class ImageUploadMainController {
     }
 
     openImageChoice(evt) {
+        if (this.config.viewMode) {
+            return
+        }
         this.$timeout(() => {
             if (this.config.maxImages === 1 || (!this.enableImageContent() || (Array.isArray(this.ngModel) && this.ngModel.length === 1))) {
                 this.inputElement.click()

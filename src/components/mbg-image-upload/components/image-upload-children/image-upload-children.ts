@@ -23,7 +23,7 @@ class ImageUploadChildrenController {
     }
 
     handleClick(child, index) {
-        if (!this.webCam) {
+        if (!this.webCam && !this.config.viewMode) {
             const currentMain = this.ngModel[0]
             this.ngModel[0] = child
             this.ngModel[index] = currentMain

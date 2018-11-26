@@ -17,6 +17,8 @@ class ImageUploadController {
             enableCrop: false,
             rounded: false,
             disableFirebase: false,
+            viewMode: false,
+            disableWebcam: false,
             size: {
                 width: '290px',
                 height: '290px',

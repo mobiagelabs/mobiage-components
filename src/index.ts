@@ -18,13 +18,25 @@ const module = angular
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
 		$scope.config = {
 			maxImages: 5,
-			disableFirebase: true
+			disableFirebase: true,
+			disableWebcam: false,
+			viewMode: false,
 		}
 
 		$scope.kkk = (index) => {
 			window['teste'][index].addAdicionalRow()
 		}
 
+
+		$scope.profileImage = [
+			{
+				url: 'https://www.clubedocriador.com/img-passaros/abelharuco14-01-2016-08-46-31.jpg'
+			},
+			{
+				url: 'https://t1.ea.ltmcdn.com/pt/images/8/8/6/nomes_para_passaros_azuis_22688_2_600.jpg'
+			}
+		]
+		
 		$scope.produtos = [
 			{
 				code: '0',

@@ -1,6 +1,19 @@
 $padding-wrapper: 0;
 $childrenSize: 24%;
 
+.mbg-image-upload {
+    &.view-mode {
+        .mbg-image-upload-main { 
+            &.empty {
+                cursor: default;
+            }
+        }
+        .mbg-image-upload-child {
+            cursor: default;
+        }
+    }
+}
+
 .mbg-image-upload-wrapper {
     width: 100%;
     height: 100%;
@@ -80,5 +93,5 @@ $childrenSize: 24%;
             display: flex;
         }
     }
-
+    
 }

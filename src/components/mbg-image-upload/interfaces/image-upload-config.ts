@@ -31,8 +31,15 @@ export interface ImageUploadConfig {
     */
     enableCrop?: boolean,
     /**
-        * @description Desabilita a integração com firebase (dafault : false)
-        */
+    * @description Desabilita a integração com firebase (dafault : false)
+    */
     disableFirebase?: boolean
-
+    /**
+    * @description Habilita o modo apenas visualização (dafault : false)
+    */
+    viewMode?: boolean
+    /**
+    * @description Desabilita o modulo webcam (dafault : false)
+    */
+    disableWebcam?: boolean
 }

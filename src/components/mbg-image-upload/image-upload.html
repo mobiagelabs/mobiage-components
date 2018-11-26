@@ -1,5 +1,6 @@
 <div class="mbg-image-upload"
      disable-animate
+     ng-class="{ 'view-mode': $ctrl.config.viewMode }"
      ng-if="$ctrl.config">
     <div class="mbg-image-upload-wrapper"
          ng-class="{ [$ctrl.config.children.position.toLowerCase()]: true }">
