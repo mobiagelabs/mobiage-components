@@ -14,8 +14,10 @@ export class MbgListController {
     public selectedMap
     public checkAll: boolean
     public checkbox: boolean
+    public radio: boolean
     public $c
     public mbgRows: Array<MbgListRowController>
+    public openedRows: Array<number>
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
@@ -31,6 +33,35 @@ export class MbgListController {
                 row.$json = JSON.stringify(row)
             })
         }, true)
+        this.observeOpenedRows()
+    }
+
+    observeOpenedRows() {
+        this.$scope.$watch('$ctrl.openedRows', (openedRows) => {
+            this.$timeout(() => {
+                const rows = openedRows || []
+                this.closeAllRows()
+                rows.forEach((index, i) => {
+                    this.$timeout(() => {
+                        let position = index
+                        if (i > 0) {
+                            position = position + 1
+                        }
+                        this.rows[position].isOpenedRow = true
+                        this.mbgRows[position].addAdicionalRow()
+                    })
+                })
+            })
+        }, true)
+    }
+
+    closeAllRows() {
+        this.rows.forEach((row, index) => {
+            if (row && row.isAdicional) {
+                this.rows[index - 1].isOpenedRow = false
+                this.mbgRows[index - 1].removeAdicionalRow()
+            }
+        })
     }
 
     registerColumn(column: MbgListColumnController) {
@@ -38,7 +69,9 @@ export class MbgListController {
     }
 
     registerRow(row: MbgListRowController) {
-        this.mbgRows.push(row)
+        if (this.mbgRows.filter((r, index) => angular.equals(r, row)).length === 0) {
+            this.mbgRows.push(row)
+        }
     }
 
     isAllSelected() {
@@ -98,6 +131,7 @@ const mbgList = {
         sort: '&?',
         checkbox: '=?',
         radio: '=?',
+        openedRows: '=?',
         selectedValues: '=?'
     },
     template,

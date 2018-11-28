@@ -9,9 +9,7 @@
     "eofline": true,
     "forin": true,
     "indent": [
-      true,
-      "spaces",
-      4
+      true
     ],
     "label-position": true,
     "max-line-length": [

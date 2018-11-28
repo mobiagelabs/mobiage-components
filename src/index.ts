@@ -23,10 +23,15 @@ const module = angular
 			viewMode: false,
 		}
 
+		$scope.rowsOpen = [1]
+
+		$timeout(() => {
+			// $scope.rowsOpen = [2]
+		}, 5000)
+
 		$scope.kkk = (index) => {
 			window['teste'][index].addAdicionalRow()
 		}
-
 
 		$scope.profileImage = [
 			{
@@ -36,7 +41,7 @@ const module = angular
 				url: 'https://t1.ea.ltmcdn.com/pt/images/8/8/6/nomes_para_passaros_azuis_22688_2_600.jpg'
 			}
 		]
-		
+
 		$scope.produtos = [
 			{
 				code: '0',

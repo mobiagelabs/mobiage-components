@@ -56,23 +56,11 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-
-    <mbg-input-date ng-model="data"
-                    placeholder="Teste"></mbg-input-date>
-
-    {{ data }}
-    <!-- <form name="formteste">
-      <mbg-input-ie ng-model="ie"
-                    name="teste"
-                    state="'PR'"></mbg-input-ie>
-    </form> -->
-    <!-- <mbg-image-upload config="config"
-                      ng-model="profileImage"></mbg-image-upload>  -->
-
-    <!-- <mbg-list list="produtos"
+    <mbg-list list="produtos"
               radio="true"
               selected-values="selecionados"
               sort="sort(dir, column)"
+              opened-rows="rowsOpen"
               class="table-striped">
       <mbg-list-column name="code"
                        label="Código"></mbg-list-column>
@@ -88,17 +76,13 @@
 
         <mbg-list-content ng-non-bindable>
           <button ng-click="$ctrl.toogleRow($position)">
-            {{ $c.olamundo }}
+            Toogle
           </button>
 
           <mbg-list-row position="$position">
             <mbg-list-content ng-non-bindable>
               <div class="col-md-12">
-                <mbg-input-step>
-                  <mbg-input-step-item ng-model="teste"
-                                       fetch="['Teste']"></mbg-input-step-item>
-                </mbg-input-step>
-
+                <h1 style="margin: 0;">{{ $row.product }} - {{ $position }}</h1>
               </div>
             </mbg-list-content>
           </mbg-list-row>
@@ -107,8 +91,17 @@
 
       </mbg-list-column>
 
+    </mbg-list>
 
-    </mbg-list> -->
+    <!-- <form name="formteste">
+      <mbg-input-ie ng-model="ie"
+                    name="teste"
+                    state="'PR'"></mbg-input-ie>
+    </form> -->
+    <!-- <mbg-image-upload config="config"
+                      ng-model="profileImage"></mbg-image-upload>  -->
+
+    <!--  -->
 
     <!-- <div class="row">
       <div class="col-md-4">
