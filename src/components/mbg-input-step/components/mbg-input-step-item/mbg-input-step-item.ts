@@ -130,8 +130,9 @@ class MbgInputStepItemController {
 				break
 			case 8: // BACKSPACE
 				this.$timeout(() => {
-					this.inputValue = ''
-					this.ngModel = null
+					if (this.fetch) {
+						this.ngModel = null
+					}
 					if (!this.inputValue && !this.oldInputValue) {
 						this.movePointerPrevItem()
 					}
