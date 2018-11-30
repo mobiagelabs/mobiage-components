@@ -79,22 +79,20 @@
         ng-click="$ctrl.takeSnapshot()">
         {{$ctrl.labelPicture}}
 </button>
+<input type="file"
+       onchange="angular.element(this).scope().$ctrl.onFilesChoice(event)" />
 <div class="mbg-image-upload-main"
      ng-class="{'empty': !$ctrl.enableImageContent(), 'rounded': $ctrl.config.rounded && !$ctrl.pendentCrop}"
      ng-click="!$ctrl.webCam && !$ctrl.pendentCrop ? $ctrl.openImageChoice() : angular.noop">
-
         <div ng-show="$ctrl.webCam && !$ctrl.pendentCrop"
              class="webcam">
         </div>
-
         <mbg-image-crop ng-if="$ctrl.config.enableCrop && $ctrl.pendentCrop"
                         config="$ctrl.config"
                         upload="$ctrl.uploadPosCrop(data)"
                         pendent-crop="$ctrl.pendentCrop"
                         width="$ctrl.width"
                         height="$ctrl.height"></mbg-image-crop>
-        <input type="file"
-               onchange="angular.element(this).scope().$ctrl.onFilesChoice(event)" />
         <mbg-image-upload-loading ng-if="$ctrl.loading"
                                   disable-animate></mbg-image-upload-loading>
         <mbg-image-upload-no-image width="64px"
