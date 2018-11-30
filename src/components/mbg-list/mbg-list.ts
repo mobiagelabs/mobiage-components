@@ -119,6 +119,10 @@ export class MbgListController {
         }
     }
 
+    changeVariable(variable, index, str) {
+        this.rows[index + 1][variable] === str ? this.rows[index + 1][variable] = '' : this.rows[index + 1][variable] = str
+    }
+
 }
 
 MbgListController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$transclude']
