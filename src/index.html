@@ -56,42 +56,12 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <mbg-list list="produtos"
-              radio="true"
-              selected-values="selecionados"
-              sort="sort(dir, column)"
-              opened-rows="rowsOpen"
-              class="table-striped">
-      <mbg-list-column name="code"
-                       label="Código"></mbg-list-column>
-      <mbg-list-column name="product"
-                       sortable="true"
-                       label="Nome do produto"></mbg-list-column>
-      <mbg-list-column name="qnt"
-                       label="Quantidade"></mbg-list-column>
-
-      <mbg-list-column name="costValue"
-                       label="Opções">
-
-
-        <mbg-list-content ng-non-bindable>
-          <button ng-click="$ctrl.toogleRow($position)">
-            Toogle
-          </button>
-
-          <mbg-list-row position="$position">
-            <mbg-list-content ng-non-bindable>
-              <div class="col-md-12">
-                <h1 style="margin: 0;">{{ $row.product }} - {{ $position }}</h1>
-              </div>
-            </mbg-list-content>
-          </mbg-list-row>
-
-        </mbg-list-content>
-
-      </mbg-list-column>
-
-    </mbg-list>
+    <div class="panel panel-default">
+      <div class="panel-heading">Percentage</div>
+      <div class="panel-body">
+        <mbg-input-percentage ng-model="percentage"></mbg-input-percentage>
+      </div>
+    </div>
 
     <!-- <form name="formteste">
       <mbg-input-ie ng-model="ie"
