@@ -10,7 +10,7 @@ mbg-image-crop{
 	.image-crop-wrapper {
 		height: 100%;
 		svg.close-crop {
-			width: 32px;
+			width: 42px;
 			position: absolute;
 			z-index: 100;
 			left: 15px;
@@ -18,8 +18,8 @@ mbg-image-crop{
 			fill: #dcd5d6;
 			transition: all 200ms ease;
 			&.rounded {
-				left: 9px;
-				top: 9px;
+				left: 4px;
+				top: 4px;
 			}
 			&:hover {
 				transform: scale(1.1);

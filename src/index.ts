@@ -17,10 +17,12 @@ const module = angular
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
 		$scope.config = {
-			maxImages: 5,
+			maxImages: 1,
 			disableFirebase: true,
 			disableWebcam: false,
 			viewMode: false,
+			enableCrop: true,
+			rounded: true
 		}
 
 		$scope.rowsOpen = [1]
