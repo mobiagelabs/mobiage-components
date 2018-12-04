@@ -39,6 +39,8 @@ class MbgAddressController {
             if (this.address) {
                 this.ngModel = {
                     country: 'Brasil',
+                    latitude: 0,
+                    longitude: 0,
                     zipCode: this.address.zipCode || '',
                     localization: this.address.localization || '',
                     premisse: this.formatFromPremisse(this.address.premisse) || '',
