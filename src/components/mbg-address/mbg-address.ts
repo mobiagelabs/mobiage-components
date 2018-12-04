@@ -1,6 +1,7 @@
 import './mbg-address.scss'
 import template from './mbg-address.html'
 import { getStatesBR } from './helpers/states-br'
+import { premisseTypes } from './helpers/premisse-types'
 import { MbgAddressService } from './services/mbg-address.service'
 import * as angular from 'angular'
 
@@ -34,10 +35,6 @@ class MbgAddressController {
         this.citiesCache = {}
         this.address = {}
         this.$scope.$watch('$ctrl.ngModel', () => this.checkModel(), true)
-        this.$scope.$watch('$ctrl.address.zipCode', () => this.searchAddressByCEP())
-        this.$scope.$watch('$ctrl.address.uf', () => this.onUfChange())
-        this.$scope.$watch('$ctrl.address.localization', () => this.onCityChange())
-        this.$scope.$watch('$ctrl.address.number', () => this.searchAddressInfo())
         this.$scope.$watch('$ctrl.address', () => {
             if (this.address) {
                 this.ngModel = {
@@ -56,11 +53,27 @@ class MbgAddressController {
         }, true)
     }
 
+    onChangeCep() {
+        if (this.address.zipCode) {
+            this.searchAddressByCEP()
+        }
+    }
+
     checkModel() {
         if (this.hasDiference()) {
             this.address = this.createAddress()
             this.updateSteps()
         }
+    }
+
+    getPremisseType(premisse) {
+        premisse = premisse.toUpperCase()
+        for (let i = 0; i < premisseTypes.length; i += 2) {
+            if (premisse.startsWith(premisseTypes[i] + ' ')) {
+                return premisseTypes[i]
+            }
+        }
+        return ''
     }
 
     formatFromPremisse(str) {
@@ -133,6 +146,8 @@ class MbgAddressController {
                             premisse: this.formatFromPremisse(response.data.logradouro),
                             number: this.address.number || '',
                             premisseType: response.data.tipo_logradouro,
+                            stateCode: response.data.codigo_estado,
+                            formalCode: response.data.ibge_cod_cidade,
                             uf,
                         }
                         this.updateSteps()
@@ -144,50 +159,54 @@ class MbgAddressController {
         }
     }
 
-    async searchAddressInfo() {
-        if (this.address.uf
-            && this.address.localization
-            && this.address.premisse
-            && this.address.number
-            && !this.address.neighbourhood) {
-            this.mbgAddressService
-                .getAddress(this.address.uf.initial, this.address.localization, this.address.premisse)
-                .then((response) => {
-                    if (response.data.length > 0) {
-                        const info = response.data[0]
-                        this.address.neighbourhood = info.bairro
-                        this.address.stateCode = info.codigoIbgeUF
-                        this.address.formalCode = info.codigoIbgeCidade
-                        if (!this.address.zipCode) {
-                            this.address.zipCode = info.cep.replace('-', '')
+    searchAddressInfo() {
+        this.$timeout(() => {
+            if (this.address.uf
+                && this.address.localization
+                && this.address.premisse
+                && this.address.number
+                && !this.address.neighbourhood) {
+                this.mbgAddressService
+                    .getAddress(this.address.uf.initial, this.address.localization, this.address.premisse)
+                    .then((response) => {
+                        if (response.data.length > 0) {
+                            const info = response.data[0]
+                            this.address.neighbourhood = info.bairro
+                            this.address.stateCode = info.codigoIbgeUF
+                            this.address.formalCode = info.codigoIbgeCidade
+                            this.address.premisseType = this.getPremisseType(info.logradouro)
+                            if (!this.address.zipCode) {
+                                this.address.zipCode = info.cep.replace('-', '')
+                            }
                         }
-                    }
+                    })
+            }
+        })
+    }
+
+    onCityChange() {
+        this.$timeout(async () => {
+            if (this.address.uf && this.address.localization) {
+                const premisses = await this.loadPremisseByUFAndCity(this.address.uf.initial, this.address.localization)
+                this.$timeout(() => {
+                    this.premisses = premisses
                 })
-        } else {
-            delete this.address.neighbourhood
-            delete this.address.premisseType
-        }
+            }
+        })
     }
 
-    async onCityChange() {
-        if (this.address.uf && this.address.localization) {
-            const premisses = await this.loadPremisseByUFAndCity(this.address.uf.initial, this.address.localization)
-            this.$timeout(() => {
-                this.premisses = premisses
-            })
-        }
-    }
-
-    async onUfChange() {
-        if (this.address.uf) {
-            const cities = await this.loadCitiesByUF(this.address.uf.initial)
-            this.$timeout(() => {
-                this.cities = cities
-            })
-        } else {
-            delete this.address.neighbourhood
-            delete this.address.premisseType
-        }
+    onUfChange() {
+        this.$timeout(async () => {
+            if (this.address.uf) {
+                const cities = await this.loadCitiesByUF(this.address.uf.initial)
+                this.$timeout(() => {
+                    this.cities = cities
+                })
+            } else {
+                delete this.address.neighbourhood
+                delete this.address.premisseType
+            }
+        })
     }
 
     async loadPremisseByUFAndCity(uf, city) {

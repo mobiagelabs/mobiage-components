@@ -17,6 +17,7 @@ class MbgInputStepItemController {
 	private mbgPlaceholder: string
 	private focus: Function
 	private unFocus: Function
+	private ngChange
 
 	constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -237,6 +238,7 @@ class MbgInputStepItemController {
 						item = { [this.label]: this.inputValue }
 					}
 					this.ngModel = item
+					if (this.ngChange) { this.ngChange() }
 					if (this.label) {
 						this.inputValue = this.ngModel[this.label]
 					} else {
@@ -245,6 +247,7 @@ class MbgInputStepItemController {
 				}
 			} else {
 				this.ngModel = this.inputValue
+				if (this.ngChange) { this.ngChange() }
 			}
 			if (!ignoreFocusNext) {
 				this.movePointerNextItem()
@@ -254,6 +257,7 @@ class MbgInputStepItemController {
 
 	selectOption(item) {
 		this.ngModel = item
+		if (this.ngChange) { this.ngChange() }
 		if (this.label) {
 			this.inputValue = this.ngModel[this.label]
 		} else {
@@ -283,7 +287,8 @@ const mbgInputStepItem = {
 		capitalize: '=?',
 		placeholder: '=?',
 		focus: '&?',
-		unFocus: '&?'
+		unFocus: '&?',
+		ngChange: '&?',
 	},
 	require: {
 		mbgInputStep: '^mbgInputStep'
