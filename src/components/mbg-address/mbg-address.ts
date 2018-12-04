@@ -14,7 +14,7 @@ class MbgAddressController {
         premisse?: string,
         premisseType?: string,
         number?: string,
-        neighborhood?: string,
+        neighbourhood?: string,
         stateCode?: string,
         formalCode?: string,
         uf?: { initial: string, name: string },
@@ -47,7 +47,7 @@ class MbgAddressController {
                     premisse: this.formatFromPremisse(this.address.premisse) || '',
                     premisseType: this.address.premisseType || '',
                     number: this.address.number || '',
-                    neighborhood: this.address.neighborhood || '',
+                    neighbourhood: this.address.neighbourhood || '',
                     stateCode: this.address.stateCode || '',
                     formalCode: this.address.formalCode || '',
                     state: this.address.uf && this.address.uf.initial ? this.address.uf.initial : '',
@@ -78,7 +78,7 @@ class MbgAddressController {
         const uf = getStatesBR().filter((state) => state.initial === this.ngModel.state)[0]
         return {
             zipCode: this.ngModel.zipCode.replace('-', ''),
-            neighborhood: this.ngModel.neighborhood,
+            neighbourhood: this.ngModel.neighbourhood,
             localization: this.ngModel.localization,
             premisse: this.formatFromPremisse(this.ngModel.premisse),
             number: this.ngModel.number || '',
@@ -112,7 +112,7 @@ class MbgAddressController {
         delete this.address.uf
         delete this.address.localization
         delete this.address.premisse
-        delete this.address.neighborhood
+        delete this.address.neighbourhood
         delete this.address.premisseType
         delete this.address.number
         delete this.address.stateCode
@@ -128,7 +128,7 @@ class MbgAddressController {
                         const uf = getStatesBR().filter((state) => state.initial === response.data.uf)[0]
                         this.address = {
                             zipCode: this.address.zipCode.replace('-', ''),
-                            neighborhood: response.data.bairro ? response.data.bairro.trim() : '',
+                            neighbourhood: response.data.bairro ? response.data.bairro.trim() : '',
                             localization: this.address.localization ? this.address.localization : response.data.cidade.trim(),
                             premisse: this.formatFromPremisse(response.data.logradouro),
                             number: this.address.number || '',
@@ -149,13 +149,13 @@ class MbgAddressController {
             && this.address.localization
             && this.address.premisse
             && this.address.number
-            && !this.address.neighborhood) {
+            && !this.address.neighbourhood) {
             this.mbgAddressService
                 .getAddress(this.address.uf.initial, this.address.localization, this.address.premisse)
                 .then((response) => {
                     if (response.data.length > 0) {
                         const info = response.data[0]
-                        this.address.neighborhood = info.bairro
+                        this.address.neighbourhood = info.bairro
                         this.address.stateCode = info.codigoIbgeUF
                         this.address.formalCode = info.codigoIbgeCidade
                         if (!this.address.zipCode) {
@@ -164,7 +164,7 @@ class MbgAddressController {
                     }
                 })
         } else {
-            delete this.address.neighborhood
+            delete this.address.neighbourhood
             delete this.address.premisseType
         }
     }
@@ -185,7 +185,7 @@ class MbgAddressController {
                 this.cities = cities
             })
         } else {
-            delete this.address.neighborhood
+            delete this.address.neighbourhood
             delete this.address.premisseType
         }
     }
@@ -214,7 +214,7 @@ class MbgAddressController {
                     return this.citiesCache[uf]
                 })
         } else {
-            delete this.address.neighborhood
+            delete this.address.neighbourhood
             delete this.address.premisseType
         }
         return null
