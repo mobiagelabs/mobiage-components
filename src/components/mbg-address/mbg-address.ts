@@ -41,6 +41,7 @@ class MbgAddressController {
         this.$scope.$watch('$ctrl.address', () => {
             if (this.address) {
                 this.ngModel = {
+                    country: 'Brasil',
                     zipCode: this.address.zipCode || '',
                     localization: this.address.localization || '',
                     premisse: this.formatFromPremisse(this.address.premisse) || '',
