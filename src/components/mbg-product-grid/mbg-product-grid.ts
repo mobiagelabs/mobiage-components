@@ -36,6 +36,7 @@ class MbgProductGridController {
                             this.gridValues[xIndex][yIndex] = this.gridValues[xIndex][yIndex] || {}
                             this.gridValues[xIndex][yIndex] = {
                                 stock: item.stock,
+                                enable: item.enable,
                                 price: item.price,
                             }
                         }
@@ -64,12 +65,20 @@ class MbgProductGridController {
                                 xDetail: this.getItemX()[xIndex],
                                 yDetail: this.getItemY()[yIndex],
                                 stock: this.gridValues[xIndex][yIndex].stock,
+                                enable: this.gridValues[xIndex][yIndex].enable,
                                 price: this.gridValues[xIndex][yIndex].price,
                             }
                         })
                         .forEach((item) => this.ngModel.push(item))
                 })
         })
+    }
+
+    toogleEnableItem(xIndex, yIndex) {
+        this.gridValues[xIndex] = this.gridValues[xIndex] || {}
+        this.gridValues[xIndex][yIndex] = this.gridValues[xIndex][yIndex] || {}
+        this.gridValues[xIndex][yIndex].enable = !this.gridValues[xIndex][yIndex].enable
+        this.handleGridValues()
     }
 
 }
@@ -82,6 +91,7 @@ const mbgProductGrid = {
         y: '=?',
         details: '=?',
         ngModel: '=?',
+        activeAddOrRemove: '=?',
         extraButtonLabel: '@?',
         onClickExtraButton: '&?'
     },

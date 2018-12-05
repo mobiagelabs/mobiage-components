@@ -125,29 +125,29 @@ const module = angular
 
 		$scope.result = [
 			{
-				xDetail: {
-					type: 'TAMANHO',
-					value: 'P',
+				'xDetail': {
+					'type': 'TAMANHO',
+					'value': 'P'
 				},
-				yDetail: {
-					type: 'COR',
-					value: 'Pink',
-					valueRef: '#ce00cb'
+				'yDetail': {
+					'type': 'COR',
+					'value': 'Pink',
+					'valueRef': '#ce00cb'
 				},
-				stock: 10,
-				price: 100
+				'stock': 111,
+				'price': 10
 			},
 			{
-				xDetail: {
-					type: 'TAMANHO',
-					value: 'GG'
+				'xDetail': {
+					'type': 'TAMANHO',
+					'value': 'GG'
 				},
-				yDetail: {
-					type: 'COR',
-					value: 'Verde',
-					valueRef: '#17b709'
+				'yDetail': {
+					'type': 'COR',
+					'value': 'Verde',
+					'valueRef': '#17b709'
 				},
-				price: 10
+				'price': 10
 			}
 		]
 

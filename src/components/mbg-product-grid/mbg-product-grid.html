@@ -31,13 +31,20 @@
                 </td>
                 <td ng-repeat="xItem in $ctrl.getItemX()">
                     <div class="grid-product-edit-wrapper">
-                        <span>Estoque</span>
+                        <a class="link"
+                           ng-show="$ctrl.activeAddOrRemove"
+                           ng-click="$ctrl.toogleEnableItem($index, $parent.$index)">
+                            {{ $ctrl.gridValues[$index][$parent.$index].enable ? 'Remover' : 'Adicionar'}}
+                        </a>
+                        <span ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }">Estoque</span>
                         <mbg-input-number ng-model="$ctrl.gridValues[$index][$parent.$index].stock"
                                           placeholder="0"
+                                          ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }"
                                           ng-change="$ctrl.handleGridValues()"
                                           class="grid-product-stock"></mbg-input-number>
                         <mbg-input-money placeholder="R$ 0,00"
                                          ng-change="$ctrl.handleGridValues()"
+                                         ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }"
                                          ng-model="$ctrl.gridValues[$index][$parent.$index].price"></mbg-input-money>
                     </div>
                 </td>

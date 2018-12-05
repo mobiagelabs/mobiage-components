@@ -56,10 +56,10 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <mbg-address ng-model="address"
+    <!-- <mbg-address ng-model="address"
                  not-found="lalala()"></mbg-address>
                  <br />
-    <pre>{{ address | json }}</pre>
+    <pre>{{ address | json }}</pre> -->
     <!-- <div class="panel panel-default">
       <div class="panel-heading">Percentage</div>
       <div class="panel-body">
@@ -89,16 +89,19 @@
     <!-- <mbg-input-search ng-model="search" placeholder="Digite aqui o que deseja pesquisar ..."></mbg-input-search> -->
     <!-- {{search}} -->
 
-    <!-- <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
+    <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
                       y="{ key: 'COR', label: 'COR PRODUTO' }"
                       details="details"
                       ng-model="result"
+                      active-add-or-remove="true"
                       extra-button-label="+ Adicionar tamanho">
-    </mbg-product-grid> -->
+    </mbg-product-grid>
+    <br>
+    <pre>{{ result | json }}</pre>
 
     <!-- <br>
     <br>
-    <pre>{{ result | json }}</pre> -->
+     -->
 
     <!-- <mbg-checkbox ng-model="teste2"></mbg-checkbox>
 

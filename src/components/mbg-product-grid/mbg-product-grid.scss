@@ -50,6 +50,15 @@
                     align-items: flex-end;
                     color: #666;
                     font-weight: 400;
+                    .grid-disable {
+                        pointer-events: none;
+                        opacity: 0;
+                    }
+                    a.link {
+                        position: absolute;
+                        left: 10px;
+                        cursor: pointer;
+                    }
                     mbg-input-money  {
                         input {
                             font-size: 16px;
