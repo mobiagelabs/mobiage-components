@@ -151,6 +151,10 @@ const module = angular
 			}
 		]
 
+		$scope.editTeste = (x, y) => {
+			console.log(x, y)
+		}
+
 
 		$scope.olamundo = 'Mateus'
 

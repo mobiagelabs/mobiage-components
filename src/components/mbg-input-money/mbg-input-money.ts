@@ -21,12 +21,15 @@ class MbgInputMoneyController {
             allowNegative: $attrs.allowNegative ? JSON.parse($attrs.allowNegative) : true,
         }
     }
+
     onChange() {
         if (this.ngChange) {
             this.ngChange({})
         }
     }
+
 }
+
 MbgInputMoneyController.$inject = ['$scope', '$element', '$attrs']
 
 const mbgInputMoney = {

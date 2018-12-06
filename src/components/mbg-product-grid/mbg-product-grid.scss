@@ -54,10 +54,30 @@
                         pointer-events: none;
                         opacity: 0;
                     }
+                    &:hover {
+                        a.link {
+                            opacity: 1;
+                        }
+                        svg {
+                            opacity: 1;
+                        }
+                    }
                     a.link {
                         position: absolute;
                         left: 10px;
+                        bottom: 8px;
                         cursor: pointer;
+                        opacity: 0;
+                    }
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                        position: absolute;
+                        left: 11px;
+                        top: 10px;
+                        cursor: pointer;
+                        opacity: 0;
+                        fill: #666;
                     }
                     mbg-input-money  {
                         input {

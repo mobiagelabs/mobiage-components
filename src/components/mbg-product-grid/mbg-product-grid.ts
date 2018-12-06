@@ -93,7 +93,8 @@ const mbgProductGrid = {
         ngModel: '=?',
         activeAddOrRemove: '=?',
         extraButtonLabel: '@?',
-        onClickExtraButton: '&?'
+        onClickExtraButton: '&?',
+        onClickEditButton: '&?',
     },
     template,
     controller: MbgProductGridController,
