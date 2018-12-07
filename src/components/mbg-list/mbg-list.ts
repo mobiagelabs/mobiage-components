@@ -48,12 +48,21 @@ export class MbgListController {
                     }
                 }).forEach((mapValue) => {
                     const indexRow = this.rows.findIndex((r) => angular.equals(r, mapValue.row))
-                    this.rows[indexRow].isOpenedRow = true
-                    const newRow = angular.merge(angular.copy(this.rows[indexRow]), { template: this.mbgRows[mapValue.index].template, isAdicional: true })
-                    this.rows.splice(indexRow + 1, 0, newRow)
+                    this.addAdicionalRow(indexRow, mapValue.index)
                 })
             })
         }, true)
+    }
+
+    addAdicionalRow(indexRow, indexFakeRow) {
+        this.rows[indexRow].isOpenedRow = true
+        const newRow = angular.merge(angular.copy(this.rows[indexRow]), { template: this.mbgRows[indexFakeRow].template, isAdicional: true })
+        this.rows.splice(indexRow + 1, 0, newRow)
+    }
+
+    removeAdicionalRow(indexRow) {
+        this.rows[indexRow].isOpenedRow = false
+        this.rows.splice(indexRow + 1, 1)
     }
 
     closeAllRows() {
@@ -109,14 +118,13 @@ export class MbgListController {
         // }
     }
 
-    toogleRow(index) {
-        const row = this.rows[index + 1]
-        if (row && row.isAdicional) {
-            this.rows[index].isOpenedRow = false
-            this.mbgRows[index].removeAdicionalRow()
+    toogleRow(row) {
+        const indexRow = this.rows.findIndex((r) => angular.equals(r, row))
+        const listRow = this.rows[indexRow]
+        if (listRow.isOpenedRow) {
+            this.removeAdicionalRow(indexRow)
         } else {
-            this.rows[index].isOpenedRow = true
-            this.mbgRows[index].addAdicionalRow()
+            this.addAdicionalRow(indexRow, indexRow)
         }
     }
 
