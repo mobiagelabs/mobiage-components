@@ -246,14 +246,25 @@
   -->
 
     <mbg-list list="produtos"
-              class="table-striped">
+              class="table-striped"
+              opened-rows="rowsOpen">
       <mbg-list-column name="product"
                        label="Produto"
                        align-column="right"
                        align-row="right">
       </mbg-list-column>
       <mbg-list-column name="costValue"
-                       label="Valor"></mbg-list-column>
+                       label="Valor">
+        <mbg-list-content ng-non-bindable>
+          <button ng-click="$ctrl.toogleRow($position)"></button>
+          <mbg-list-row position="$position">
+            <mbg-list-content>
+              ola mundo -> {{ $row.product }}
+            </mbg-list-content>
+          </mbg-list-row>
+        </mbg-list-content>
+
+      </mbg-list-column>
     </mbg-list>
 
   </div>

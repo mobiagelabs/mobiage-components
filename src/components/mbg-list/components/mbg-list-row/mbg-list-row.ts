@@ -3,12 +3,12 @@ import { MbgListController } from '../../mbg-list'
 
 export class MbgListRowController {
     private mbgList: MbgListController
-    private template: string
-    private position: number
-    private nextPosition: number
-    private mbgListElement
-    private id
-    private unwatch
+    public template: string
+    public position: number
+    public nextPosition: number
+    public mbgListElement
+    public id
+    public unwatch
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
@@ -22,10 +22,8 @@ export class MbgListRowController {
     }
 
     addAdicionalRow() {
-        const rows = angular.copy(this.mbgList.rows) || []
-        rows.splice(this.position + 1, 0,
-            angular.merge(angular.copy(rows[this.position]), { template: this.template, isAdicional: true }))
-        this.mbgList.rows = rows
+        this.mbgList.rows.splice(this.position + 1, 0,
+            angular.merge(angular.copy(this.mbgList.rows[this.position]), { template: this.template, isAdicional: true }))
     }
 
     removeAdicionalRow() {

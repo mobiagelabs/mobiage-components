@@ -25,10 +25,10 @@ const module = angular
 			rounded: true
 		}
 
-		$scope.rowsOpen = [1]
+		// $scope.rowsOpen = [1]
 
 		$timeout(() => {
-			// $scope.rowsOpen = [2]
+			$scope.rowsOpen = [0, 1, 3]
 		}, 5000)
 
 		$scope.kkk = (index) => {

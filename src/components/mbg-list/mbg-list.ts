@@ -41,15 +41,16 @@ export class MbgListController {
             this.$timeout(() => {
                 const rows = openedRows || []
                 this.closeAllRows()
-                rows.forEach((index, i) => {
-                    this.$timeout(() => {
-                        let position = index
-                        if (i > 0) {
-                            position = position + 1
-                        }
-                        this.rows[position].isOpenedRow = true
-                        this.mbgRows[position].addAdicionalRow()
-                    })
+                rows.map((position) => {
+                    return {
+                        index: position,
+                        row: this.rows[position],
+                    }
+                }).forEach((mapValue) => {
+                    const indexRow = this.rows.findIndex((r) => angular.equals(r, mapValue.row))
+                    this.rows[indexRow].isOpenedRow = true
+                    const newRow = angular.merge(angular.copy(this.rows[indexRow]), { template: this.mbgRows[mapValue.index].template, isAdicional: true })
+                    this.rows.splice(indexRow + 1, 0, newRow)
                 })
             })
         }, true)
