@@ -28,7 +28,7 @@
                 </td>
                 <td ng-repeat="column in $ctrl.columns"
                     ng-if="!$row.isAdicional"
-                    ng-style="column.ngStyle"
+                    ng-style="{ 'text-align': column.alignRow }"
                     mbg-dynamic-html="column.templateRow"></td>
                 <td ng-if="$row.isAdicional"
                     colspan="{{ $ctrl.checkbox || $ctrl.radio ? $ctrl.columns.length + 1 : $ctrl.columns.length }}">
