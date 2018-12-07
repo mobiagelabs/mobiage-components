@@ -1,11 +1,14 @@
 mbg-input-step-item {
     display: flex;
-    z-index: 1;
     .mbg-input-step-item {
         position: relative;
         display: flex;
         align-items: center;
         padding-right: 5px;
+        z-index: 0;
+        &.opened {
+            z-index: 999999999;
+        }
         &.active {
             &::after {
                 content: ',';

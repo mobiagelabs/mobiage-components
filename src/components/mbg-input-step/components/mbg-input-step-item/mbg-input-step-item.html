@@ -1,6 +1,6 @@
 <div class="mbg-input-step-item"
      disable-animate
-     ng-class="{'active': $ctrl.hasData()}">
+     ng-class="{'active': $ctrl.hasData(), 'opened': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
     <input type="text"
            data-ignore-tab
            disable-animate
@@ -24,7 +24,8 @@
         <li ng-if="$ctrl.enableAdd && $ctrl.inputValue"
             disable-animate
             ng-click="$ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue })">
-            {{ $ctrl.inputValue }} <span>(novo)</span>
+            {{ $ctrl.inputValue }}
+            <span>(novo)</span>
         </li>
     </ul>
 </div>
