@@ -9,11 +9,13 @@ export class MbgListColumnController {
     private templateRow: string
     private sortable: boolean
     private direction: string
+    private alignColumn: string
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
     $onInit() {
         this.direction = 'desc'
+        this.alignColumn = this.alignColumn || 'left'
         this.sortable = this.sortable !== undefined ? this.sortable : false
         this.mbgList.registerColumn(this)
         this.generateTemplateColumn()
@@ -21,7 +23,7 @@ export class MbgListColumnController {
     }
 
     generateTemplateColumn() {
-        this.templateColumn = `<label class="column-title">
+        this.templateColumn = `<label class="column-title" ng-style="column.ngStyle">
             ${this.label ? this.label : this.name}
             <div class="column-title-sort" ng-if="column.sortable">
                 <svg ng-show="column.direction == 'desc'"
@@ -77,7 +79,9 @@ const mbgListColumn = {
     bindings: {
         name: '@',
         label: '@?',
+        ngClass: '=?',
         ngStyle: '=?',
+        alignColumn: '@?',
         sortable: '=?',
     },
     template: '',

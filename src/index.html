@@ -89,7 +89,7 @@
     <!-- <mbg-input-search ng-model="search" placeholder="Digite aqui o que deseja pesquisar ..."></mbg-input-search> -->
     <!-- {{search}} -->
 
-    <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
+    <!-- <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
                       y="{ key: 'COR', label: 'COR PRODUTO' }"
                       details="details"
                       ng-model="result"
@@ -98,7 +98,7 @@
                       extra-button-label="+ Adicionar tamanho">
     </mbg-product-grid>
     <br>
-    <pre>{{ result | json }}</pre>
+    <pre>{{ result | json }}</pre> -->
 
     <!-- <br>
     <br>
@@ -264,6 +264,17 @@
       </div>
     </div> 
   -->
+
+    <mbg-list list="produtos"
+              class="table-striped">
+      <mbg-list-column name="product"
+                       label="Produto"
+                       ng-style="{ 'display' : 'flex', 'justify-content': 'flex-end'}">
+      </mbg-list-column>
+      <mbg-list-column name="costValue"
+                       label="Valor"></mbg-list-column>
+    </mbg-list>
+
   </div>
 </body>
 

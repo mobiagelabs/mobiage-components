@@ -155,6 +155,9 @@ const module = angular
 			console.log(x, y)
 		}
 
+		$scope.listTeste = [
+			{}
+		]
 
 		$scope.olamundo = 'Mateus'
 
