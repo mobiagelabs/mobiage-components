@@ -31,7 +31,7 @@ class MbgInputStepController {
     }
 
     handleClick(evt) {
-        if (evt.type !== 'click') {
+        if (evt.type !== 'click' || evt.target.className !== 'mb-input-step-wrapper') {
             return
         }
         if (evt.target.nodeName === 'INPUT') {
@@ -48,10 +48,10 @@ class MbgInputStepController {
         })
         if (itemsEmpty.length > 0) {
             const lastEmpty: any = angular.element(itemsEmpty[0])
-            this.$timeout(() => lastEmpty.find('input').focus())
+            this.$timeout(() => lastEmpty.find('input').focus(), 400)
         } else {
             const lastItem: any = angular.element(Array.from(this.items)[this.items.length - 1])
-            this.$timeout(() => lastItem.find('input').focus())
+            this.$timeout(() => lastItem.find('input').focus(), 400)
         }
     }
 

@@ -122,6 +122,7 @@ class MbgInputStepItemController {
 				evt.preventDefault()
 				evt.stopPropagation()
 				this.setModel()
+				this.hasFocus = false
 				break
 			case 38: // SETA CIMA
 				this.moveToUp()
