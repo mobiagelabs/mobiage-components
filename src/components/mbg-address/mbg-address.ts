@@ -65,6 +65,9 @@ class MbgAddressController {
         if (this.hasDiference()) {
             this.address = this.createAddress()
             this.updateSteps()
+            if (this.address.zipCode && !this.address.localization) {
+                this.onChangeCep()
+            }
         }
     }
 
