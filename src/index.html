@@ -56,15 +56,17 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
+    <mbg-address ng-model="address"></mbg-address>
+
+    <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
                     on-finish-focus-element="#entityModel input">
       <mbg-input-step-item ng-model="entity.productTree"
                            fetch="getTipoProduto()"
                            focus="focusedTeste('1')"
                            un-focus="unFocus()"
                            placeholder="'Selecione na lista abaixo o tipo de produto.'"
-                           label="name"></mbg-input-step-item>
-      <!-- <mbg-input-step-item ng-model="entity.brand"
+                           label="name"></mbg-input-step-item> -->
+    <!-- <mbg-input-step-item ng-model="entity.brand"
                            fetch="getMarca()"
                            focus="focusedTeste('2')"
                            placeholder="countBrands > 0 ? 'Digite a marca ou selecione uma na lista abaixo' : 'Digite a marca.'"
@@ -76,7 +78,7 @@
                            un-focus="unFocus()"
                            capitalize="true"
                            placeholder="'Qual o modelo?'"></mbg-input-step-item> -->
-    </mbg-input-step>
+    <!-- </mbg-input-step> -->
 
     <!-- <mbg-address ng-model="address"
                  not-found="lalala()"></mbg-address>
