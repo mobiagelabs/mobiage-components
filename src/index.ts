@@ -28,7 +28,9 @@ const module = angular
 		// $scope.rowsOpen = [1]
 
 		$timeout(() => {
-			$scope.rowsOpen = [0, 1, 3]
+			$scope.address = {
+				zipCode: '87035050'
+			}
 		}, 5000)
 
 		$scope.kkk = (index) => {
