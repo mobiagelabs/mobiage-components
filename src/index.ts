@@ -28,10 +28,17 @@ const module = angular
 		// $scope.rowsOpen = [1]
 
 		$timeout(() => {
+
+
+
 			$scope.address = {
-				zipCode: '87035050'
+				searchZipCode: true,
+				zipCode: '87035050',
+				number: 37,
 			}
-		}, 5000)
+
+
+		}, 300)
 
 		$scope.kkk = (index) => {
 			window['teste'][index].addAdicionalRow()

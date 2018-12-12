@@ -56,8 +56,6 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <mbg-address ng-model="address"></mbg-address>
-
     <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
                     on-finish-focus-element="#entityModel input">
       <mbg-input-step-item ng-model="entity.productTree"
@@ -65,8 +63,8 @@
                            focus="focusedTeste('1')"
                            un-focus="unFocus()"
                            placeholder="'Selecione na lista abaixo o tipo de produto.'"
-                           label="name"></mbg-input-step-item> -->
-    <!-- <mbg-input-step-item ng-model="entity.brand"
+                           label="name"></mbg-input-step-item>
+     <mbg-input-step-item ng-model="entity.brand"
                            fetch="getMarca()"
                            focus="focusedTeste('2')"
                            placeholder="countBrands > 0 ? 'Digite a marca ou selecione uma na lista abaixo' : 'Digite a marca.'"
@@ -77,8 +75,8 @@
                            focus="focusedTeste('3')"
                            un-focus="unFocus()"
                            capitalize="true"
-                           placeholder="'Qual o modelo?'"></mbg-input-step-item> -->
-    <!-- </mbg-input-step> -->
+                           placeholder="'Qual o modelo?'"></mbg-input-step-item> 
+    </mbg-input-step> -->
 
     <!-- <mbg-address ng-model="address"
                  not-found="lalala()"></mbg-address>
@@ -158,14 +156,14 @@
  
     <div class="panel panel-default">
       <div class="panel-heading">Address</div>
-      <div class="panel-body">
-        <mbg-address ng-model="address" not-found="lalala()"></mbg-address>
-      </div>
-      <div class="panel-footer">
-        <pre>{{ address | json }}</pre>
-      </div>
-    </div>
-
+      <div class="panel-body">-->
+    <mbg-address ng-model="address"></mbg-address>
+    <!-- </div> -->
+    <!-- <div class="panel-footer"> -->
+    <pre>{{ address | json }}</pre>
+    <!-- </div> -->
+    <!-- </div> -->
+    <!--
     <div class="panel panel-default">
       <div class="panel-heading">Image Upload</div>
       <div class="panel-body">

@@ -65,6 +65,10 @@ class MbgAddressController {
         if (this.hasDiference()) {
             this.address = this.createAddress()
             this.updateSteps()
+            if (this.ngModel.searchZipCode && this.address.zipCode && !this.address.uf) {
+                delete this.ngModel.searchZipCode
+                this.onChangeCep()
+            }
         }
     }
 

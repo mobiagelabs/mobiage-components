@@ -79,9 +79,6 @@ class MbgInputStepItemController {
 		this.$timeout(() => {
 			this.hasFocus = false
 			this.updateElasticInput()
-			if (!this.fetch) {
-				this.setModel(true)
-			}
 		}, 300)
 	}
 
@@ -89,6 +86,8 @@ class MbgInputStepItemController {
 		this.$timeout(() => {
 			if (this.fetch) {
 				this.executeFetch()
+			} else {
+				this.setModel(true)
 			}
 		})
 	}
