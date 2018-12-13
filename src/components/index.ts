@@ -31,11 +31,13 @@ import { mbgProductGridModule } from './mbg-product-grid'
 import { mbgInputCheckboxModule } from './mbg-input-checkbox'
 import { mbgInputPasswordModule } from './mbg-input-password'
 import { mbgInputDateModule } from './mbg-input-date'
+import 'angular-ui-bootstrap'
 
 const mbgComponentsModule = angular
   .module('mbg.components', [
     'ui.utils.masks',
     'ngEasyInfiniteScroll',
+    'ui.bootstrap',
     mbgImageUploadModule,
     mbgInputCnpjModule,
     mbgInputCpfModule,

@@ -9,12 +9,13 @@ mbg-image-upload-main {
     input[type="file"] {
         display: none;
     }
-    svg.camera {
+    .camera {
         width: 34px;
+        height: 34px;
         position: absolute;
         z-index: 1;
-        right: 18px;
-        bottom: 18px;
+        right: 27px;
+        bottom: 28px;
         background: #000;
         fill: #fff;
         opacity: .5;
@@ -30,6 +31,7 @@ mbg-image-upload-main {
             opacity: 1;
         }
     }
+    
     svg.camera-remove {
         width: 34px;
         position: absolute;
