@@ -1,9 +1,9 @@
 <div class="mbg-address-wrapper"
      disable-animate>
     <div class="mbg-input-wrapper input-cep-wrapper"
+    ng-class="$ctrl.cepClass"
          disable-animate>
         <input type="text"
-               ng-class="$ctrl.cepClass"
                name="cep"
                autocomplete="off"
                ng-keyup="$ctrl.resetAddress()"
