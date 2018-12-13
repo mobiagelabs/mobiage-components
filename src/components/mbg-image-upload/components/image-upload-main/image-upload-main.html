@@ -58,7 +58,7 @@
         <path d="M78.6,70.5V29.5c0-4.5-3.7-8.2-8.2-8.2H29.5V5h-8.2v16.4H5v8.2h16.4v40.9c0,4.5,3.7,8.2,8.2,8.2h40.9V95h8.2V78.6H95v-8.2  H78.6z M29.5,70.5V29.5h40.9v40.9H29.5z"
         />
 </svg>
-<div class="camera"
+<div class="camera" ng-class="{'rounded': $ctrl.config.rounded}"
      uib-tooltip="Tirar Foto" ng-show="!$ctrl.webCam && !$ctrl.config.disableWebcam">
         <svg ng-click="$ctrl.openWebCam()"
              xmlns="http://www.w3.org/2000/svg"

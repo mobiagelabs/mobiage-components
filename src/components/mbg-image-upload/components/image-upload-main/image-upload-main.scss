@@ -14,8 +14,8 @@ mbg-image-upload-main {
         height: 34px;
         position: absolute;
         z-index: 1;
-        right: 27px;
-        bottom: 28px;
+        right: 18px;
+        bottom: 18px;
         background: #000;
         fill: #fff;
         opacity: .5;
@@ -24,7 +24,7 @@ mbg-image-upload-main {
         cursor: pointer;
         transition: all 350ms ease;
         &.rounded {
-            right: 28px;
+            right: 27px;
             bottom: 28px;
         }
         &:hover {

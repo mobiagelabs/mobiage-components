@@ -21,7 +21,7 @@ const module = angular
 			disableFirebase: true,
 			disableWebcam: false,
 			viewMode: false,
-			enableCrop: true,
+			enableCrop: false,
 			rounded: true
 		}
 
