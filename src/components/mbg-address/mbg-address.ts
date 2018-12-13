@@ -301,7 +301,8 @@ MbgAddressController.$inject = ['$scope', '$element', '$attrs', '$timeout', 'mbg
 const mbgAddress = {
     bindings: {
         ngModel: '=',
-        notFound: '&?'
+        notFound: '&?',
+        cepClass: "=?"
     },
     template,
     controller: MbgAddressController,

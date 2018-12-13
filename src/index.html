@@ -77,12 +77,14 @@
                            capitalize="true"
                            placeholder="'Qual o modelo?'"></mbg-input-step-item> 
     </mbg-input-step> -->
+    <mbg-address ng-model="address"
+                 not-found="lalala()"
+                 cep-class="teste"></mbg-address>
+    <br />
 
-    <!-- <mbg-address ng-model="address"
-                 not-found="lalala()"></mbg-address>
-                 <br />
-    <pre>{{ address | json }}</pre> -->
-    <!-- <div class="panel panel-default">
+    <!-- 
+          <pre>{{ address | json }}</pre> 
+      <div class="panel panel-default">
       <div class="panel-heading">Percentage</div>
       <div class="panel-body">
         <mbg-input-percentage ng-model="percentage"></mbg-input-percentage>
@@ -168,8 +170,8 @@
       <div class="panel-heading">Image Upload</div>
       <div class="panel-body">
         -->
-    <mbg-image-upload config="config"
-                      ng-model="profileImage"></mbg-image-upload>
+    <!-- <mbg-image-upload config="config"
+                      ng-model="profileImage"></mbg-image-upload> -->
     <!--
       </div>
     </div>

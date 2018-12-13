@@ -3,6 +3,7 @@
     <div class="mbg-input-wrapper input-cep-wrapper"
          disable-animate>
         <input type="text"
+               ng-class="$ctrl.cepClass"
                name="cep"
                autocomplete="off"
                ng-keyup="$ctrl.resetAddress()"
