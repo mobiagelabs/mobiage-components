@@ -77,10 +77,10 @@
                            capitalize="true"
                            placeholder="'Qual o modelo?'"></mbg-input-step-item> 
     </mbg-input-step> -->
-    <mbg-address ng-model="address"
+    <!-- <mbg-address ng-model="address"
                  not-found="lalala()"
                  cep-class="teste"></mbg-address>
-    <br />
+    <br /> -->
 
     <!-- 
           <pre>{{ address | json }}</pre> 
@@ -159,7 +159,8 @@
     <div class="panel panel-default">
       <div class="panel-heading">Address</div>
       <div class="panel-body">-->
-    <!-- <mbg-address ng-model="address"></mbg-address> -->
+    <mbg-address ng-model="address" on-finish-focus-element="#focusaqui"></mbg-address>
+    <input id="focusaqui">
     <!-- </div> -->
     <!-- <div class="panel-footer"> -->
     <!-- <pre>{{ address | json }}</pre> -->

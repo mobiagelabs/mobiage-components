@@ -28,9 +28,6 @@ const module = angular
 		// $scope.rowsOpen = [1]
 
 		$timeout(() => {
-
-
-
 			$scope.address = {
 				searchZipCode: true,
 				zipCode: '87035050',

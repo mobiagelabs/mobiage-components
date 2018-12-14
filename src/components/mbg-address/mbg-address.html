@@ -1,7 +1,7 @@
 <div class="mbg-address-wrapper"
      disable-animate>
     <div class="mbg-input-wrapper input-cep-wrapper"
-    ng-class="$ctrl.cepClass"
+         ng-class="$ctrl.cepClass"
          disable-animate>
         <input type="text"
                name="cep"
@@ -13,6 +13,7 @@
                ui-br-cep-mask>
     </div>
     <mbg-input-step disable-animate
+                    on-finish-focus-element="{{$ctrl.onFinishFocusElement}}"
                     placeholder="Estado, Cidade, Endereço, Número">
         <mbg-input-step-item ng-model="$ctrl.address.uf"
                              fetch="$ctrl.getStates(query)"

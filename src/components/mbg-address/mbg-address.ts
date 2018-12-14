@@ -302,7 +302,8 @@ const mbgAddress = {
     bindings: {
         ngModel: '=',
         notFound: '&?',
-        cepClass: "=?"
+        cepClass: '=?',
+        onFinishFocusElement: '@?',
     },
     template,
     controller: MbgAddressController,
