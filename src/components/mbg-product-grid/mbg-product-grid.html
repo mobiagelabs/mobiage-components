@@ -55,6 +55,8 @@
                         <input type="text"
                                ng-model="$ctrl.gridValues[$index][$parent.$index].price"
                                ui-money-mask
+                               ng-change="$ctrl.handleGridValues()"
+                               class="grid-product-money"
                                placeholder="0" />
                     </div>
                 </td>

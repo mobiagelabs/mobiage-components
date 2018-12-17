@@ -219,7 +219,9 @@
     <div class="panel panel-default">
       <div class="panel-heading">Money</div>
       <div class="panel-body">
-        <mbg-input-money ng-model="money"></mbg-input-money>
+        <mbg-input-money ng-model="money"
+                         allow-negative="false"></mbg-input-money>
+        {{ money }}
       </div>
     </div>
     <!--

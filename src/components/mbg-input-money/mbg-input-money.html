@@ -1,6 +1,22 @@
 <div class="mbg-input-money-wrapper mbg-input-wrapper"
+     ng-click="$ctrl.selectInput()"
      ng-if="$ctrl.props">
     <input type="text"
+           ng-if="$ctrl.props.allowNegative"
+           ng-model="$ctrl.ngModel"
+           ng-change="$ctrl.onChange()"
+           ng-required="$ctrl.ngRequired"
+           ng-disabled="$ctrl.ngDisabled"
+           ng-blur="$ctrl.ngBlur({ $event })"
+           ng-focus="$ctrl.ngFocus({ $event })"
+           ng-keyup="$ctrl.ngKeyup({ $event })"
+           ng-keypress="$ctrl.ngKeypress({ $event })"
+           ng-keydown="$ctrl.ngKeydown({ $event })"
+           ui-money-mask
+           ui-negative-number
+           placeholder="{{ $ctrl.props.placeholder }}" />
+    <input type="text"
+           ng-if="!$ctrl.props.allowNegative"
            ng-model="$ctrl.ngModel"
            ng-change="$ctrl.onChange()"
            ng-required="$ctrl.ngRequired"

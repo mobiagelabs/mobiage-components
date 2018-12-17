@@ -9,15 +9,11 @@ class MbgInputMoneyController {
     private ngDisabled
     private props
 
-    constructor($scope, $element, $attrs) {
+    constructor(public $scope, public $element, public $attrs) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
         this.props = {
             placeholder: $attrs.placeholder || '',
-            prefix: $attrs.prefix || 'R$ ',
-            decimal: $attrs.decimal || ',',
-            thousands: $attrs.decimal || '.',
-            precision: $attrs.precision || 2,
             allowNegative: $attrs.allowNegative ? JSON.parse($attrs.allowNegative) : true,
         }
     }
@@ -26,6 +22,10 @@ class MbgInputMoneyController {
         if (this.ngChange) {
             this.ngChange({})
         }
+    }
+
+    selectInput() {
+        this.$element.find('input').select()
     }
 
 }
