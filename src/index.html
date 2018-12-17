@@ -56,6 +56,16 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
+    <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
+                      y="{ key: 'COR', label: 'COR PRODUTO' }"
+                      details="details"
+                      ng-model="result"
+                      active-add-or-remove="true"
+                      on-click-edit-button="editTeste(x, y)"
+                      extra-button-label="+ Adicionar tamanho">
+    </mbg-product-grid>
+
+
     <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
                     on-finish-focus-element="#entityModel input">
       <mbg-input-step-item ng-model="entity.productTree"
@@ -159,8 +169,8 @@
     <div class="panel panel-default">
       <div class="panel-heading">Address</div>
       <div class="panel-body">-->
-    <mbg-address ng-model="address" on-finish-focus-element="#focusaqui"></mbg-address>
-    <input id="focusaqui">
+    <!-- <mbg-address ng-model="address" on-finish-focus-element="#focusaqui"></mbg-address>
+    <input id="focusaqui"> -->
     <!-- </div> -->
     <!-- <div class="panel-footer"> -->
     <!-- <pre>{{ address | json }}</pre> -->
@@ -205,14 +215,14 @@
         <mbg-input-email ng-model="email"></mbg-input-email>
       </div>
     </div>
-
+  -->
     <div class="panel panel-default">
       <div class="panel-heading">Money</div>
       <div class="panel-body">
         <mbg-input-money ng-model="money"></mbg-input-money>
       </div>
     </div>
-
+    <!--
     <div class="panel panel-default">
       <div class="panel-heading">Name</div>
       <div class="panel-body">

@@ -10,11 +10,6 @@
            ng-keyup="$ctrl.ngKeyup({ $event })"
            ng-keypress="$ctrl.ngKeypress({ $event })"
            ng-keydown="$ctrl.ngKeydown({ $event })"
-           mbg-input-money
-           data-prefix="{{ $ctrl.props.prefix }}"
-           data-decimal="{{ $ctrl.props.decimal }}"
-           data-precision="{{ $ctrl.props.precision }}"
-           data-allow-negative="{{ $ctrl.props.allowNegative }}"
-           data-thousands="{{ $ctrl.props.thousands }}"
+           ui-money-mask
            placeholder="{{ $ctrl.props.placeholder }}" />
 </div>
