@@ -16,6 +16,7 @@
         <tbody>
             <tr ng-repeat="$row in $ctrl.rows track by $index"
                 ng-init="$position = $index"
+                ng-style="$ctrl.getRowStripedStyle($row, $index)"
                 ng-class="{ 'contains-adicional-row' : $row.isOpenedRow }"
                 ng-click="$ctrl.onClickRow($row, $position)">
                 <td ng-if="$ctrl.checkbox && !$row.isAdicional">

@@ -132,6 +132,16 @@ export class MbgListController {
         this.rows[index + 1][variable] === str ? this.rows[index + 1][variable] = '' : this.rows[index + 1][variable] = str
     }
 
+    getRowStripedStyle(row, index) {
+        if (row.isAdicional) {
+            const background = this.$element.find(`table tr`)[index].style.backgroundColor
+            return { background }
+        }
+        return {
+            background: this.list.findIndex((r) => angular.equals(row.$json, JSON.stringify(r))) % 2 == 0 ? '#eaeaea' : ''
+        }
+    }
+
 }
 
 MbgListController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$transclude']
