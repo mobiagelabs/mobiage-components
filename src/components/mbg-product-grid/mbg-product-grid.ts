@@ -9,14 +9,15 @@ class MbgProductGridController {
     private x: { key: string, label: string }
     private y: { key: string, label: string }
     private grid: {
-        x: Array<any>,
-        y: Array<any>,
+        x?: Array<any>,
+        y?: Array<any>,
     }
     private gridValues
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
     $onInit() {
+        this.grid = {}
         this.gridValues = {}
         this.$scope.$watch('$ctrl.ngModel', () => this.handleModel(), true)
         this.$scope.$watch('$ctrl.details', () => this.handleModel(), true)
@@ -25,12 +26,12 @@ class MbgProductGridController {
     handleModel() {
         this.gridValues = {}
         this.ngModel = this.ngModel || []
+        this.grid.x = this.getItemX()
+        this.grid.y = this.getItemY()
         this.ngModel.forEach((item) => {
-            const xItems = this.getItemX()
-            const yItems = this.getItemY()
-            xItems.forEach((xItem, xIndex) => {
+            this.grid.x.forEach((xItem, xIndex) => {
                 if (xItem && ((xItem.id && xItem.id === item.xDetail.id) || angular.equals(xItem, item.xDetail))) {
-                    yItems.forEach((yItem, yIndex) => {
+                    this.grid.y.forEach((yItem, yIndex) => {
                         if (yItem && ((yItem.id && yItem.id === item.yDetail.id) || angular.equals(yItem, item.yDetail))) {
                             this.gridValues[xIndex] = this.gridValues[xIndex] || {}
                             this.gridValues[xIndex][yIndex] = this.gridValues[xIndex][yIndex] || {}
@@ -62,8 +63,8 @@ class MbgProductGridController {
                     Object.keys(this.gridValues[xIndex])
                         .map((yIndex) => {
                             return {
-                                xDetail: this.getItemX()[xIndex],
-                                yDetail: this.getItemY()[yIndex],
+                                xDetail: this.grid.x[xIndex],
+                                yDetail: this.grid.y[yIndex],
                                 stock: this.gridValues[xIndex][yIndex].stock,
                                 enable: this.gridValues[xIndex][yIndex].enable,
                                 price: this.gridValues[xIndex][yIndex].price,
