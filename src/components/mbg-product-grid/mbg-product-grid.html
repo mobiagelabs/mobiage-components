@@ -55,6 +55,8 @@
                         <input type="text"
                                ng-model="$ctrl.gridValues[$index][$parent.$index].price"
                                ui-money-mask
+                               onclick="angular.element(this).scope().$ctrl.focusInput(this)"
+                               ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }"
                                ng-change="$ctrl.handleGridValues()"
                                class="grid-product-money"
                                placeholder="0" />

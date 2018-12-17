@@ -82,6 +82,10 @@ class MbgProductGridController {
         this.handleGridValues()
     }
 
+    focusInput(element) {
+        element.select()
+    }
+
 }
 
 MbgProductGridController.$inject = ['$scope', '$element', '$attrs', '$timeout']

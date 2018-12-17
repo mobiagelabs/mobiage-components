@@ -141,6 +141,7 @@ const module = angular
 					'valueRef': '#ce00cb'
 				},
 				'stock': 111,
+				'enable': true,
 				'price': 10
 			},
 			{

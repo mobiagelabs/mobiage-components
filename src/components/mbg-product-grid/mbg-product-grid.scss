@@ -98,6 +98,29 @@
                         padding: 0;
                         border: none;
                         text-align: right;
+                        outline: none;
+                        &.ng-touched.ng-invalid {
+                            border: 1px solid #b00020;
+                        }
+                        &[disabled="disabled"] {
+                            background: #f5f5f5;
+                        }
+                        &::-webkit-input-placeholder {
+                            color: #bcbcbc;
+                            font-style: italic;
+                        }
+                        &:-moz-placeholder { /* Firefox 18- */
+                            color: #bcbcbc;
+                            font-style: italic;
+                        }
+                        &::-moz-placeholder {  /* Firefox 19+ */
+                            color: #bcbcbc;
+                            font-style: italic;
+                        }
+                        &:-ms-input-placeholder {  
+                            color: #bcbcbc;
+                            font-style: italic;
+                        }
                     }
                 }
             }
@@ -108,6 +131,7 @@
                 height: 100%;
                 .grid-product-item-circle {
                     width: 18px;
+                    min-width: 18px;
                     height: 18px;
                     border-radius: 50%;
                     margin: 0 12px 0 0;

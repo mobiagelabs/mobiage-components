@@ -1,6 +1,5 @@
 import './mbg-input-money.scss'
 import template from './mbg-input-money.html'
-import { mbgInputMoneyDirective } from './mbg-input-money.directive'
 
 class MbgInputMoneyController {
     private ngChange
