@@ -45,7 +45,7 @@
                             {{ $ctrl.gridValues[$index][$parent.$index].enable ? 'Remover' : 'Adicionar'}}
                         </a>
                         <span ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }">Estoque</span>
-                        <input type="text"
+                        <input type="number"
                                ng-model="$ctrl.gridValues[$index][$parent.$index].stock"
                                placeholder="0"
                                ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }"

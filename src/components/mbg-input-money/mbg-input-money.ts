@@ -1,5 +1,6 @@
 import './mbg-input-money.scss'
 import template from './mbg-input-money.html'
+import { mbgInputMoneyDirective } from './mbg-input-money.directive'
 
 class MbgInputMoneyController {
     private ngChange
@@ -13,6 +14,10 @@ class MbgInputMoneyController {
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
         this.props = {
             placeholder: $attrs.placeholder || '',
+            prefix: $attrs.prefix || 'R$ ',
+            decimal: $attrs.decimal || ',',
+            thousands: $attrs.decimal || '.',
+            precision: $attrs.precision || 2,
             allowNegative: $attrs.allowNegative ? JSON.parse($attrs.allowNegative) : true,
         }
     }
