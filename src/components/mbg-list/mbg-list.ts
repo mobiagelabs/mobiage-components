@@ -114,10 +114,11 @@ export class MbgListController {
     onClickRow(row, index) {
         if (this.rowsAdicional !== index && (this.checkbox || this.radio)) {
             if (this.radio) {
-                this.selectedMap = {}
+                this.toogleRadio(row.$json)
+            } else {
+                this.selectedMap[row.$json] = !this.selectedMap[row.$json]
+                this.toogleCheckbox()
             }
-            this.selectedMap[row.$json] = !this.selectedMap[row.$json]
-            this.toogleCheckbox()
         }
     }
 
