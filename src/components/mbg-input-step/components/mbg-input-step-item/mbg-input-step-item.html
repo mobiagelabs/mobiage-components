@@ -4,8 +4,8 @@
     <input type="text"
            data-ignore-tab
            disable-animate
-           autocomplete="off"
-           autocorrect="off"
+           autocomplete="{{ $ctrl.autocompleteValue }}"
+           autocorrect="{{ $ctrl.autocompleteValue }}"
            spellcheck="false"
            ng-focus="$ctrl.onInputFocus()"
            ng-blur="$ctrl.onInputBlur()"

@@ -2,6 +2,7 @@ import * as angular from 'angular'
 import './mbg-input-step-item.scss'
 import template from './mbg-input-step-item.html'
 import { Capitalize } from '../../../../helpers/capitalize'
+import { detect } from 'detect-browser'
 
 class MbgInputStepItemController {
 	private fetch: Function
@@ -18,10 +19,15 @@ class MbgInputStepItemController {
 	private focus: Function
 	private unFocus: Function
 	private ngChange
+	private navigatorData
+	private autocompleteValue
 
 	constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
 	$onInit() {
+		this.navigatorData = detect()
+		this.navigatorData.currentVersion = Number(this.navigatorData.version.substring(0, this.navigatorData.version.indexOf('.')))
+		this.createAutocompleteDisabled()
 		this.hasFocus = false
 		this.enableAdd = this.enableAdd || false
 		this.inputValue = ''
@@ -44,6 +50,10 @@ class MbgInputStepItemController {
 				this.inputValue = Capitalize.format(this.inputValue)
 			}
 		})
+	}
+
+	createAutocompleteDisabled() {
+		this.autocompleteValue = this.navigatorData.name === 'chrome' && this.navigatorData.currentVersion > 65 ? 'disabled' : 'off'
 	}
 
 	updateInputValue() {
