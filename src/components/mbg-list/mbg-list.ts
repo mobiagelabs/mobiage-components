@@ -138,7 +138,7 @@ export class MbgListController {
             return { background }
         }
         return {
-            background: this.list.findIndex((r) => angular.equals(row.$json, JSON.stringify(r))) % 2 === 0 ? '#eaeaea' : ''
+            background: this.list.findIndex((r) => angular.equals(row.$json, JSON.stringify(r))) % 2 === 0 ? '#eaeaea' : '#F5F5F5'
         }
     }
 
