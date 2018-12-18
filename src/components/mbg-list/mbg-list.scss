@@ -43,6 +43,9 @@ mbg-list {
                     font-weight: 100;
                     vertical-align: middle;
                 }
+                &.cursor-pointer {
+                    cursor: pointer;
+                }
             }
         }
     }
