@@ -7,7 +7,8 @@ export class MbgCheboxController {
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
-    toogleModel() {
+    toogleModel(evt) {
+        evt.stopPropagation()
         this.ngModel = !this.ngModel
         this.$timeout(() => {
             if (this.ngChange) { this.ngChange() }

@@ -56,27 +56,27 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-      <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
-      on-finish-focus-element="#entityModel input">
-<mbg-input-step-item ng-model="entity.productTree"
-             fetch="getTipoProduto()"
-             focus="focusedTeste('1')"
-             un-focus="unFocus()"
-             placeholder="'Selecione na lista abaixo o tipo de produto.'"
-             label="name"></mbg-input-step-item>
-<mbg-input-step-item ng-model="entity.brand"
-             fetch="getMarca()"
-             focus="focusedTeste('2')"
-             placeholder="countBrands > 0 ? 'Digite a marca ou selecione uma na lista abaixo' : 'Digite a marca.'"
-             enable-add="true"
-             un-focus="unFocus()"
-             label="name"></mbg-input-step-item>
-<mbg-input-step-item ng-model="entity.model"
-             focus="focusedTeste('3')"
-             un-focus="unFocus()"
-             capitalize="true"
-             placeholder="'Qual o modelo?'"></mbg-input-step-item>
-</mbg-input-step>
+    <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
+                    on-finish-focus-element="#entityModel input">
+      <mbg-input-step-item ng-model="entity.productTree"
+                           fetch="getTipoProduto()"
+                           focus="focusedTeste('1')"
+                           un-focus="unFocus()"
+                           placeholder="'Selecione na lista abaixo o tipo de produto.'"
+                           label="name"></mbg-input-step-item>
+      <mbg-input-step-item ng-model="entity.brand"
+                           fetch="getMarca()"
+                           focus="focusedTeste('2')"
+                           placeholder="countBrands > 0 ? 'Digite a marca ou selecione uma na lista abaixo' : 'Digite a marca.'"
+                           enable-add="true"
+                           un-focus="unFocus()"
+                           label="name"></mbg-input-step-item>
+      <mbg-input-step-item ng-model="entity.model"
+                           focus="focusedTeste('3')"
+                           un-focus="unFocus()"
+                           capitalize="true"
+                           placeholder="'Qual o modelo?'"></mbg-input-step-item>
+    </mbg-input-step>
 
     <!-- <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
                       y="{ key: 'COR', label: 'COR PRODUTO' }"
@@ -326,8 +326,10 @@
     </div> 
   -->
 
-    <!-- <mbg-list list="produtos"
+    <mbg-list list="produtos"
               class="table-striped"
+              checkbox="true"
+              selected-values="testetttt"
               opened-rows="rowsOpen">
       <mbg-list-column name="product"
                        label="Produto"
@@ -336,18 +338,10 @@
       </mbg-list-column>
       <mbg-list-column name="costValue"
                        label="Valor">
-        <mbg-list-content ng-non-bindable>
-          <button ng-click="$ctrl.toogleRow($row)"></button>
-          <mbg-list-row position="$position">
-            <mbg-list-content>
-              ola mundo -> {{ $row.product }}
-            </mbg-list-content>
-          </mbg-list-row>
-        </mbg-list-content>
-
+        
       </mbg-list-column>
-    </mbg-list> -->
-
+    </mbg-list>
+    {{testetttt}}
   </div>
 </body>
 
