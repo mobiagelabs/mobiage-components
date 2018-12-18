@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat"
+        rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+  <style>
+    :root {
+      --primary: #6e2bbb;
+      --secundary: #582098;
+      --bgColor: #f8f8f8;
+      --contrast: #E81756;
+      --quickMenuBackground: #ba1546;
+      --backgroundTopBar: #FFF;
+      --logoDetail: #FFF;
+      --footerPrimary: #6e2bbb;
+      --footerDark: #6e2bbb;
+      --footerAccent: #FF0064;
+      --neutral1: #292929;
+      --neutral2: #7b7b7b;
+      --neutral3: #bcbcbc;
+      --inputStroke: #d7d7d7;
+      --color1: #6e2bbb;
+      --color2: #eff5f1;
+      --color3: #582098;
+      --color4: #00bbbd;
+      --defaultColor: #4e4e4e;
+      --titleColor: #848484;
+      --error: #E81756;
+      --info: #69a8e3;
+      --warn: #ee8946;
+      --success: #6ab662;
+      --woman: #efb1de;
+      --man: #a3c8ea;
+    }
+
+    body,
+    html {
+      background: #fff;
+      padding-top: 40px;
+
+
+    }
+  </style>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+</head>
+
+<body ng-controller="demoCtrl">
+  <div class="container">
+
+    <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
+                    on-finish-focus-element="#entityModel input">
+      <mbg-input-step-item ng-model="entity.productTree"
+                           fetch="getTipoProduto()"
+                           focus="focusedTeste('1')"
+                           un-focus="unFocus()"
+                           placeholder="'Selecione na lista abaixo o tipo de produto.'"
+                           label="name"></mbg-input-step-item>
+     <mbg-input-step-item ng-model="entity.brand"
+                           fetch="getMarca()"
+                           focus="focusedTeste('2')"
+                           placeholder="countBrands > 0 ? 'Digite a marca ou selecione uma na lista abaixo' : 'Digite a marca.'"
+                           enable-add="true"
+                           un-focus="unFocus()"
+                           label="name"></mbg-input-step-item>
+      <mbg-input-step-item ng-model="entity.model"
+                           focus="focusedTeste('3')"
+                           un-focus="unFocus()"
+                           capitalize="true"
+                           placeholder="'Qual o modelo?'"></mbg-input-step-item> 
+    </mbg-input-step> -->
+
+    <!-- <mbg-address ng-model="address"
+                 not-found="lalala()"></mbg-address>
+                 <br />
+    <pre>{{ address | json }}</pre> -->
+    <!-- <div class="panel panel-default">
+      <div class="panel-heading">Percentage</div>
+      <div class="panel-body">
+        <mbg-input-percentage ng-model="percentage"></mbg-input-percentage>
+      </div>
+    </div> -->
+
+    <!-- <form name="formteste">
+      <mbg-input-ie ng-model="ie"
+                    name="teste"
+                    state="'PR'"></mbg-input-ie>
+    </form> -->
+    <!-- <mbg-image-upload config="config"
+                      ng-model="profileImage"></mbg-image-upload>  -->
+
+    <!--  -->
+
+    <!-- <div class="row">
+      <div class="col-md-4">
+       <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox> 
+          <mbg-input-money ng-model="valor2"></mbg-input-money>
+      </div>
+    </div> -->
+
+    <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
+    <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
+    <!-- <mbg-input-search ng-model="search" placeholder="Digite aqui o que deseja pesquisar ..."></mbg-input-search> -->
+    <!-- {{search}} -->
+
+    <!-- <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
+                      y="{ key: 'COR', label: 'COR PRODUTO' }"
+                      details="details"
+                      ng-model="result"
+                      active-add-or-remove="true"
+                      on-click-edit-button="editTeste(x, y)"
+                      extra-button-label="+ Adicionar tamanho">
+    </mbg-product-grid>
+    <br>
+    <pre>{{ result | json }}</pre> -->
+
+    <!-- <br>
+    <br>
+     -->
+
+    <!-- <mbg-checkbox ng-model="teste2"></mbg-checkbox>
+
+    <mbg-radio ng-model="teste" ng-value="specialValue"></mbg-radio> -->
+
+    <!--  -->
+
+
+    <!-- <mbg-btn-form ng-click="lalala()"
+                  ng-disabled="false"
+                  loading="false"
+                  label="Continuar"></mbg-btn-form> -->
+
+
+    <!--
+    <div class="panel panel-default">
+      <div class="panel-heading">Navigation</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <mbg-navigation get-navigation="getNavigation(item, page)"
+                            max-height="300px"
+                            on-item-click="addItem(item)">
+            </mbg-navigation>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="panel panel-default">
+      <div class="panel-heading">Address</div>
+      <div class="panel-body">-->
+    <!-- <mbg-address ng-model="address"
+                 not-found="lalala()"></mbg-address> -->
+    <!-- </div> -->
+    <!-- <div class="panel-footer"> -->
+    <!-- <pre>{{ address | json }}</pre> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!--
+    <div class="panel panel-default">
+      <div class="panel-heading">Image Upload</div>
+      <div class="panel-body">
+       <mbg-image-upload config="config"
+                          ng-model="profileImage"></mbg-image-upload> 
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">CNPJ</div>
+      <div class="panel-body">
+        <mbg-input-cnpj placeholder="Ex: teste"
+                        ng-model="cnpj"></mbg-input-cnpj>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">CPF</div>
+      <div class="panel-body">
+        <mbg-input-cpf ng-model="cpf"></mbg-input-cpf>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">CPF ou CNPJ</div>
+      <div class="panel-body">
+        <mbg-input-cpf-cnpj ng-model="cpfcnpj"></mbg-input-cpf-cnpj>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Email</div>
+      <div class="panel-body">
+        <mbg-input-email ng-model="email"></mbg-input-email>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Money</div>
+      <div class="panel-body">
+        <mbg-input-money ng-model="money"></mbg-input-money>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Name</div>
+      <div class="panel-body">
+        <mbg-input-name ng-model="name"></mbg-input-name>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Number Only</div>
+      <div class="panel-body">
+        <mbg-input-number ng-model="number"></mbg-input-number>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Percentage</div>
+      <div class="panel-body">
+        <mbg-input-percentage ng-model="percentage"></mbg-input-percentage>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Phone</div>
+      <div class="panel-body">
+        <mbg-input-phone ng-model="phone"></mbg-input-phone>
+      </div>
+    </div>
+
+  -->
+    <!-- <div class="panel panel-default">
+      <div class="panel-heading">Steps</div>
+      <div class="panel-body">
+        <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
+                        on-finish-focus-element="#entityModel input">
+          <mbg-input-step-item ng-model="entity.productTree"
+                               fetch="getTipoProduto()"
+                               focus="focusedTeste('1')"
+                               un-focus="unFocus()"
+                               placeholder="'Selecione na lista abaixo o tipo de produto.'"
+                               label="name"></mbg-input-step-item>
+          <mbg-input-step-item ng-model="entity.brand"
+                               fetch="getMarca()"
+                               focus="focusedTeste('2')"
+                               placeholder="countBrands > 0 ? 'Digite a marca ou selecione uma na lista abaixo' : 'Digite a marca.'"
+                               enable-add="true"
+                               un-focus="unFocus()"
+                               label="name"></mbg-input-step-item>
+          <mbg-input-step-item ng-model="entity.model"
+                               focus="focusedTeste('3')"
+                               un-focus="unFocus()"
+                               capitalize="true"
+                               placeholder="'Qual o modelo?'"></mbg-input-step-item>
+        </mbg-input-step>
+        {{teste}}
+      </div>
+    </div> -->
+
+    <!-- <div class="panel panel-default">
+      <div class="panel-heading">Tags</div>
+      <div class="panel-body">
+        <mbg-input-tags ng-model="tags"></mbg-input-tags>
+      </div>
+    </div> -->
+    <!--
+    <div class="panel panel-default">
+      <div class="panel-heading">Text</div>
+      <div class="panel-body">
+        <mbg-input-text ng-model="text"></mbg-input-text>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Textarea</div>
+      <div class="panel-body">
+        <mbg-text-area ng-model="textarea"></mbg-text-area>
+      </div>
+    </div> 
+  -->
+
+    <!-- <mbg-list list="produtos"
+              class="table-striped"
+              opened-rows="rowsOpen">
+      <mbg-list-column name="product"
+                       label="Produto"
+                       align-column="right"
+                       align-row="right">
+      </mbg-list-column>
+      <mbg-list-column name="costValue"
+                       label="Valor">
+        <mbg-list-content ng-non-bindable>
+          <button ng-click="$ctrl.toogleRow($row)"></button>
+          <mbg-list-row position="$position">
+            <mbg-list-content>
+              ola mundo -> {{ $row.product }}
+            </mbg-list-content>
+          </mbg-list-row>
+        </mbg-list-content>
+
+      </mbg-list-column>
+    </mbg-list> -->
+
+  </div>
+</body>
+
+</html>

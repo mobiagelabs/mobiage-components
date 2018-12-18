@@ -1,0 +1,34 @@
+<div class="mbg-input-step-item"
+     disable-animate
+     ng-class="{'active': $ctrl.hasData(), 'opened': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
+    <input type="text"
+           data-ignore-tab
+           disable-animate
+           autocomplete="off"
+           autocorrect="off"
+           spellcheck="false"
+           ng-focus="$ctrl.onInputFocus()"
+           ng-blur="$ctrl.onInputBlur()"
+           ng-keydown="$ctrl.onInputKeydown($event)"
+           ng-model="$ctrl.inputValue"
+           ng-change="$ctrl.onInputChange()"
+           ng-class="{ 'error-value': $ctrl.label && !$ctrl.hasFocus && $ctrl.inputValue && !$ctrl.ngModel }"
+           pu-elastic-input
+           pu-elastic-input-maxwidth="none"
+           ng-attr-placeholder="{{ $ctrl.hasFocus ? $ctrl.placeholder : '' }}" />
+    <ul class="mbg-input-step-list"
+        ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
+        <li ng-repeat="item in $ctrl.data"
+            disable-animate
+            ng-click="$ctrl.selectOption(item)">
+            <span ng-if="$ctrl.label">{{ item[$ctrl.label] }}</span>
+            <span ng-if="!$ctrl.label">{{ item }}</span>
+        </li>
+        <li ng-if="$ctrl.enableAdd && $ctrl.inputValue"
+            disable-animate
+            ng-click="$ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue })">
+            {{ $ctrl.inputValue }}
+            <span>(novo)</span>
+        </li>
+    </ul>
+</div>

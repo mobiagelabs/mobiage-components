@@ -1,0 +1,124 @@
+.mbg-product-grid-wrapper {
+    table {
+        border-radius: 5px;
+        tbody {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            .grid-center-content {
+                text-align: center;
+            }
+            th {
+                padding: 0;
+            }
+            td {
+                label {
+                    color: #666;
+                }
+            }
+            th, td {
+                position: relative;
+                border: none;
+                border-top: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+                height: 54px;
+                .grid-adicional-link {
+                    position: absolute;
+                    right: 18px;
+                    top: 16px;
+                    color: #666;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+                label {
+                    height: 100%;
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                &:first-child {
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+                &:last-child {
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+                .grid-product-edit-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    color: #666;
+                    font-weight: 400;
+                    .grid-disable {
+                        pointer-events: none;
+                        opacity: 0;
+                    }
+                    &:hover {
+                        a.link {
+                            opacity: 1;
+                        }
+                        svg {
+                            opacity: 1;
+                        }
+                    }
+                    a.link {
+                        position: absolute;
+                        left: 10px;
+                        bottom: 8px;
+                        cursor: pointer;
+                        opacity: 0;
+                    }
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                        position: absolute;
+                        left: 11px;
+                        top: 10px;
+                        cursor: pointer;
+                        opacity: 0;
+                        fill: #666;
+                    }
+                    mbg-input-money  {
+                        input {
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+                    }
+                    mbg-input-number, mbg-input-money {
+                        .mbg-input-wrapper, .mbg-input-money-wrapper {
+                            height: auto;
+                            input {
+                                background: transparent;
+                            }
+                            input[type='number'] {
+                                -moz-appearance:textfield;
+                            }
+                            input::-webkit-outer-spin-button,
+                            input::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                            }
+                            input {
+                                padding: 0;
+                                border: none;
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+            .grid-product-item-name-wrapper {
+                display: flex;
+                align-items: center;
+                padding-left: 14px;
+                height: 100%;
+                .grid-product-item-circle {
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    margin: 0 12px 0 0;
+                }
+            }
+        }
+    }
+}

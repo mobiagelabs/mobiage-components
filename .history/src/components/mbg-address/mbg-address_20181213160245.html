@@ -1,0 +1,37 @@
+<div class="mbg-address-wrapper"
+     disable-animate>
+    <div class="mbg-input-wrapper input-cep-wrapper"
+    ng-class="$ctrl.cepClass"
+         disable-animate>
+        <input type="text"
+               name="cep"
+               autocomplete="off"
+               ng-keyup="$ctrl.resetAddress()"
+               ng-change="$ctrl.onChangeCep()"
+               ng-model="$ctrl.address.zipCode"
+               placeholder="99999-999"
+               ui-br-cep-mask>
+    </div>
+    <mbg-input-step disable-animate
+                    placeholder="Estado, Cidade, Endereço, Número">
+        <mbg-input-step-item ng-model="$ctrl.address.uf"
+                             fetch="$ctrl.getStates(query)"
+                             placeholder="'Qual o estado?'"
+                             ng-change="$ctrl.onUfChange()"
+                             disable-animate
+                             label="name"></mbg-input-step-item>
+        <mbg-input-step-item ng-model="$ctrl.address.localization"
+                             fetch="$ctrl.getCities(query)"
+                             ng-change="$ctrl.onCityChange()"
+                             disable-animate
+                             placeholder="'Qual a cidade?'"></mbg-input-step-item>
+        <mbg-input-step-item ng-model="$ctrl.address.premisse"
+                             fetch="$ctrl.getPremisses(query)"
+                             disable-animate
+                             placeholder="'Agora, digite o endereço'"></mbg-input-step-item>
+        <mbg-input-step-item ng-model="$ctrl.address.number"
+                             disable-animate
+                             ng-change="$ctrl.searchAddressInfo()"
+                             placeholder="'Qual o número?'"></mbg-input-step-item>
+    </mbg-input-step>
+</div>

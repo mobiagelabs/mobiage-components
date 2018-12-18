@@ -1,0 +1,52 @@
+{
+  "name": "@mobiage/components",
+  "version": "1.46.6",
+  "description": "@mobiage/components",
+  "main": "src/components/index.ts",
+  "scripts": {
+    "dev": "webpack-dev-server --config webpack.config.dev.js --inline --open",
+    "prod": "rm -rf dist && webpack --config webpack.config.prod.js --progress --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Mateus Miranda",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^10.10.1",
+    "angular": "^1.7.4",
+    "angular-bootstrap": "^0.12.2",
+    "angular-elastic-input": "^2.4.0",
+    "angular-input-masks": "^4.2.1",
+    "angular-ui-bootstrap": "^2.5.6",
+    "cep-promise": "^3.0.3",
+    "croppie": "^2.6.2",
+    "firebase": "^5.5.2",
+    "jquery": "^3.3.1",
+    "jquery-maskmoney": "^3.0.2",
+    "ng-easy-infinite-scroll": "^1.0.0",
+    "webcamjs": "^1.0.25"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.6.27",
+    "autoprefixer-loader": "^3.2.0",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.29.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "ts-loader": "^2.3.1",
+    "tslint": "^5.5.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.4.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.6.1"
+  }
+}

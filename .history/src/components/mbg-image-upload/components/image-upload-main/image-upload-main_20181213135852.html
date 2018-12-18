@@ -1,0 +1,113 @@
+<label class="mbg-image-upload-main-label"
+       ng-if="$ctrl.enableImageContent() && !$ctrl.webCam"
+       ng-hide="$ctrl.config.maxImages == 1">Foto principal</label>
+<svg version="1.1"
+     ng-if="$ctrl.varifyEmptyNgModel() && !$ctrl.config.viewMode && !$ctrl.webCam && !$ctrl.pendentCrop"
+     ng-click="$ctrl.removeImage()"
+     class="remove"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     x="0px"
+     y="0px"
+     viewBox="0 0 113.4 113.4"
+     style="enable-background:new 0 0 113.4 113.4;"
+     xml:space="preserve">
+        <circle class="st0"
+                cx="56.6"
+                cy="56.2"
+                r="54.7" />
+        <path class="st1"
+              d="M84.8,79.8L61.2,56.2l23.6-23.7c1.3-1.3,1.3-3.3,0-4.6l0,0c-1.3-1.3-3.3-1.3-4.6,0L56.6,51.6L32.9,27.9
+  c-1.3-1.3-3.3-1.3-4.6,0s-1.3,3.3,0,4.6l23.6,23.6L28.3,79.8c-1.3,1.3-1.3,3.3,0,4.6c1.3,1.3,3.3,1.3,4.6,0l23.6-23.7l23.7,23.7
+  c1.3,1.3,3.3,1.3,4.6,0C86.1,83.1,86.1,81.1,84.8,79.8z" />
+</svg>
+<svg ng-if="$ctrl.webCam"
+     version="1.1"
+     ng-class="{'rounded': $ctrl.config.rounded}"
+     ng-click="$ctrl.closeWebCam()"
+     class="camera-remove"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     x="0px"
+     y="0px"
+     viewBox="0 0 113.4 113.4"
+     style="enable-background:new 0 0 113.4 113.4;"
+     xml:space="preserve">
+        <circle class="st0"
+                cx="56.6"
+                cy="56.2"
+                r="54.7" />
+        <path class="st1"
+              d="M84.8,79.8L61.2,56.2l23.6-23.7c1.3-1.3,1.3-3.3,0-4.6l0,0c-1.3-1.3-3.3-1.3-4.6,0L56.6,51.6L32.9,27.9
+  c-1.3-1.3-3.3-1.3-4.6,0s-1.3,3.3,0,4.6l23.6,23.6L28.3,79.8c-1.3,1.3-1.3,3.3,0,4.6c1.3,1.3,3.3,1.3,4.6,0l23.6-23.7l23.7,23.7
+  c1.3,1.3,3.3,1.3,4.6,0C86.1,83.1,86.1,81.1,84.8,79.8z" />
+</svg>
+
+<svg class="crop"
+     ng-click="$ctrl.cropImage()"
+     ng-class="{'rounded': $ctrl.config.rounded}"
+     ng-if="$ctrl.config.enableCrop && $ctrl.ngModel.length > 0 && $ctrl.config.maxImages > 1 && !$ctrl.webCam "
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="1.1"
+     x="0px"
+     y="0px"
+     viewBox="0 0 100 100"
+     style="enable-background:new 0 0 100 100;"
+     xml:space="preserve">
+        <path d="M78.6,70.5V29.5c0-4.5-3.7-8.2-8.2-8.2H29.5V5h-8.2v16.4H5v8.2h16.4v40.9c0,4.5,3.7,8.2,8.2,8.2h40.9V95h8.2V78.6H95v-8.2  H78.6z M29.5,70.5V29.5h40.9v40.9H29.5z"
+        />
+</svg>
+<svg ng-show="!$ctrl.webCam && !$ctrl.config.disableWebcam"
+     uib-tooltip="asddasgydasio"
+     ng-class="{'rounded': $ctrl.config.rounded}"
+     ng-click="$ctrl.openWebCam()"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="1.1"
+     x="0px"
+     y="0px"
+     viewBox="0 0 100 100"
+     class="camera"
+     enable-background="new 0 0 100 100"
+     xml:space="preserve">
+        <path d="M19.4,81.5h61.2c3.5,0,6.4-2.9,6.4-6.4V34.2c0-3.5-2.9-6.4-6.4-6.4h-7.9c-0.9,0-1.7-0.5-2.2-1.3L68,21.5  c-1.1-2.2-3.3-3.5-5.7-3.5H37.7c-2.4,0-4.6,1.3-5.7,3.5l-2.5,4.9c-0.4,0.8-1.2,1.3-2.2,1.3h-7.9c-3.5,0-6.4,2.9-6.4,6.4v40.9  C13,78.6,15.9,81.5,19.4,81.5z M17,34.2c0-1.3,1.1-2.4,2.4-2.4h7.9c2.4,0,4.6-1.3,5.7-3.5l2.5-4.9c0.4-0.8,1.2-1.3,2.2-1.3h24.6  c0.9,0,1.7,0.5,2.2,1.3l2.5,4.9c1.1,2.2,3.3,3.5,5.7,3.5h7.9c1.3,0,2.4,1.1,2.4,2.4v40.9c0,1.3-1.1,2.4-2.4,2.4H19.4  c-1.3,0-2.4-1.1-2.4-2.4V34.2z"
+        />
+        <path d="M50.1,72.8c10.8,0,19.6-8.8,19.6-19.6s-8.8-19.6-19.6-19.6s-19.6,8.8-19.6,19.6S39.3,72.8,50.1,72.8z   M50.1,37.6c8.6,0,15.6,7,15.6,15.6s-7,15.6-15.6,15.6s-15.6-7-15.6-15.6S41.5,37.6,50.1,37.6z"
+        />
+</svg>
+<button ng-if="$ctrl.webCam && $ctrl.ngModel.length -1 !== $ctrl.config.maxImages"
+        ng-class="{'rounded': $ctrl.config.rounded}"
+        class="snapshot"
+        ng-click="$ctrl.takeSnapshot()">
+        {{$ctrl.labelPicture}}
+</button>
+<input type="file"
+       onchange="angular.element(this).scope().$ctrl.onFilesChoice(event)" />
+<div class="mbg-image-upload-main"
+     ng-class="{'empty': !$ctrl.enableImageContent(), 'rounded': $ctrl.config.rounded && !$ctrl.pendentCrop}"
+     ng-click="!$ctrl.webCam && !$ctrl.pendentCrop ? $ctrl.openImageChoice() : angular.noop">
+        <div ng-show="$ctrl.webCam && !$ctrl.pendentCrop"
+             class="webcam">
+        </div>
+        <mbg-image-crop ng-if="$ctrl.config.enableCrop && $ctrl.pendentCrop"
+                        config="$ctrl.config"
+                        upload="$ctrl.uploadPosCrop(data)"
+                        pendent-crop="$ctrl.pendentCrop"
+                        width="$ctrl.width"
+                        height="$ctrl.height"></mbg-image-crop>
+        <mbg-image-upload-loading ng-if="$ctrl.loading"
+                                  disable-animate></mbg-image-upload-loading>
+        <mbg-image-upload-no-image width="64px"
+                                   disable-animate
+                                   ng-if="!$ctrl.enableImageContent() && !$ctrl.loading && !$ctrl.webCam && !$ctrl.pendentCrop"></mbg-image-upload-no-image>
+        <div class="mbg-image-upload-content"
+             ng-if="$ctrl.enableImageContent() && !$ctrl.loading && !$ctrl.webCam && !$ctrl.pendentCrop"
+             disable-animate
+             ng-style="$ctrl.getImageContent()">
+        </div>
+        <div class="mbg-image-upload-max-files"
+             ng-class="{ 'active': $ctrl.showAlertMessage, 'rounded': $ctrl.config.rounded}">
+                {{ $ctrl.showAlertMessage }}
+        </div>
+</div>
