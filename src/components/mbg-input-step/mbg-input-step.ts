@@ -48,10 +48,10 @@ class MbgInputStepController {
         })
         if (itemsEmpty.length > 0) {
             const lastEmpty: any = angular.element(itemsEmpty[0])
-            this.$timeout(() => lastEmpty.find('input').focus(), 400)
+            this.$timeout(() => lastEmpty.find('input').focus())
         } else {
             const lastItem: any = angular.element(Array.from(this.items)[this.items.length - 1])
-            this.$timeout(() => lastItem.find('input').focus(), 400)
+            this.$timeout(() => lastItem.find('input').focus())
         }
     }
 

@@ -14,19 +14,28 @@
            ng-change="$ctrl.onInputChange()"
            ng-class="{ 'error-value': $ctrl.label && !$ctrl.hasFocus && $ctrl.inputValue && !$ctrl.ngModel }"
            pu-elastic-input
-           pu-elastic-input-maxwidth="none"
+           pu-elastic-input-maxwidth="100%"
            ng-attr-placeholder="{{ $ctrl.hasFocus ? $ctrl.placeholder : '' }}" />
     <ul class="mbg-input-step-list"
         ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
+        <li ng-if="$ctrl.recentItemIsOn() && $ctrl.recentItem"
+            class="recent-item"
+            ng-mousedown="$ctrl.selectOption($ctrl.recentItem)"
+            disable-animate>
+            <label>Último selecionado</label>
+            <span ng-if="$ctrl.label">{{ $ctrl.recentItem[$ctrl.label] }}</span>
+            <span ng-if="!$ctrl.label">{{ $ctrl.recentItem }}</span>
+        </li>
         <li ng-repeat="item in $ctrl.data"
             disable-animate
-            ng-click="$ctrl.selectOption(item)">
+            ng-if="!$ctrl.isRecent(item)"
+            ng-mousedown="$ctrl.selectOption(item)">
             <span ng-if="$ctrl.label">{{ item[$ctrl.label] }}</span>
             <span ng-if="!$ctrl.label">{{ item }}</span>
         </li>
         <li ng-if="$ctrl.enableAdd && $ctrl.inputValue"
             disable-animate
-            ng-click="$ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue })">
+            ng-mousedown="$ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue })">
             {{ $ctrl.inputValue }}
             <span>(novo)</span>
         </li>

@@ -62,6 +62,8 @@
                            fetch="getTipoProduto()"
                            focus="focusedTeste('1')"
                            un-focus="unFocus()"
+                           enable-recent="true"
+                           name="teste"
                            placeholder="'Selecione na lista abaixo o tipo de produto.'"
                            label="name"></mbg-input-step-item>
       <mbg-input-step-item ng-model="entity.brand"
@@ -76,6 +78,11 @@
                            un-focus="unFocus()"
                            capitalize="true"
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
+                           <mbg-input-step-item ng-model="entity.model2"
+                           focus="focusedTeste('3')"
+                           un-focus="unFocus()"
+                           capitalize="true"
+                           placeholder="'Qual o modelodsadsadsaasd?'"></mbg-input-step-item>
     </mbg-input-step>
 
     <!-- <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
@@ -326,7 +333,7 @@
     </div> 
   -->
 
-    <mbg-list list="produtos"
+    <!-- <mbg-list list="produtos"
               class="table-striped"
               selected-values="testetttt"
               opened-rows="rowsOpen">
@@ -339,8 +346,8 @@
                        label="Valor">
         
       </mbg-list-column>
-    </mbg-list>
-    {{testetttt}}
+    </mbg-list> -->
+
   </div>
 </body>
 

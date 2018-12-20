@@ -220,76 +220,13 @@ const module = angular
 						name: 'Calça'
 					},
 					{
-						name: 'Camiseta'
+						name: 'Bone'
 					},
 					{
-						name: 'Sapato'
+						name: 'Bolsa'
 					},
 					{
-						name: 'Calça'
-					},
-					{
-						name: 'Camiseta'
-					},
-					{
-						name: 'Sapato'
-					},
-					{
-						name: 'Calça'
-					},
-					{
-						name: 'Camiseta'
-					},
-					{
-						name: 'Sapato'
-					},
-					{
-						name: 'Calça'
-					},
-					{
-						name: 'Camiseta'
-					},
-					{
-						name: 'Sapato'
-					},
-					{
-						name: 'Calça'
-					},
-					{
-						name: 'Camiseta'
-					},
-					{
-						name: 'Sapato'
-					},
-					{
-						name: 'Calça'
-					},
-					{
-						name: 'Camiseta'
-					},
-					{
-						name: 'Sapato'
-					},
-					{
-						name: 'Calça'
-					},
-					{
-						name: 'Camiseta'
-					},
-					{
-						name: 'Sapato'
-					},
-					{
-						name: 'Calça'
-					},
-					{
-						name: 'Camiseta'
-					},
-					{
-						name: 'Sapato'
-					},
-					{
-						name: 'Calça'
+						name: 'Informatica'
 					},
 				].filter((obj) => {
 					return obj.name.toLowerCase().startsWith(param.toLowerCase())

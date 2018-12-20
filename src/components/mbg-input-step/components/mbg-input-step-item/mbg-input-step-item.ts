@@ -15,12 +15,13 @@ class MbgInputStepItemController {
 	private enableAdd: boolean
 	private oldInputValue: string
 	private capitalize: boolean
-	private mbgPlaceholder: string
 	private focus: Function
 	private unFocus: Function
 	private ngChange
 	private navigatorData
 	private autocompleteValue
+	private recentItem
+	private enableRecent: boolean
 
 	constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -32,11 +33,27 @@ class MbgInputStepItemController {
 		this.enableAdd = this.enableAdd || false
 		this.inputValue = ''
 		this.updateInputValue()
+		this.observeModel()
+		this.observeLabel()
+		this.verifyDevErrors()
+		this.observeInputValue()
+	}
+
+	verifyDevErrors() {
+		if (this.enableRecent && !this.$attrs.name) {
+			console.warn('Para ativar a funcionalidade de item recente, é necessário colocar o atributo "name" no elemento -> ', this.$element[0].outerHTML)
+		}
+	}
+
+	observeModel() {
 		this.$scope.$watch(`$ctrl.ngModel`, (value) => {
 			if (!angular.equals(value, this.ngModel) || !angular.equals(value, this.inputValue)) {
 				this.updateInputValue()
 			}
 		})
+	}
+
+	observeLabel() {
 		if (this.label) {
 			this.$scope.$watch(`$ctrl.ngModel.${this.label}`, (value) => {
 				if (!angular.equals(value, this.ngModel)) {
@@ -44,7 +61,9 @@ class MbgInputStepItemController {
 				}
 			})
 		}
+	}
 
+	observeInputValue() {
 		this.$scope.$watch(`$ctrl.inputValue`, () => {
 			if (this.capitalize) {
 				this.inputValue = Capitalize.format(this.inputValue)
@@ -64,6 +83,58 @@ class MbgInputStepItemController {
 				this.inputValue = this.ngModel
 			}
 		})
+	}
+
+	setCookie(name, value) {
+		let expires = ''
+		const date = new Date()
+		date.setTime(date.getTime() + (999999 * 24 * 60 * 60 * 1000))
+		expires = '; expires=' + date.toUTCString()
+		document.cookie = name + '=' + (value || '') + expires + '; path=/'
+	}
+
+	getCookie(name) {
+		let nameEQ = name + '='
+		let ca = document.cookie.split(';')
+		for (let i = 0; i < ca.length; i++) {
+			let c = ca[i]
+			while (c.charAt(0) === ' ') {
+				c = c.substring(1, c.length)
+			}
+			if (c.indexOf(nameEQ) === 0) {
+				return c.substring(nameEQ.length, c.length)
+			}
+		}
+		return null
+	}
+
+	recentItemIsOn() {
+		return this.enableRecent && this.$attrs.name
+	}
+
+	isRecent(item) {
+		return this.recentItemIsOn() && this.recentItem && angular.equals(item, this.recentItem)
+	}
+
+	setItemRecent(item) {
+		if (this.recentItemIsOn()) {
+			this.setCookie(this.getRecentKey(), JSON.stringify(item))
+		}
+	}
+
+	getItemRecent() {
+		const recent = this.getCookie(this.getRecentKey())
+		return recent ? JSON.parse(recent) : null
+	}
+
+	getRecentKey() {
+		let user: any = sessionStorage.getItem('user')
+		if (user) {
+			user = JSON.parse(user)
+			return (user.organizationHierarchyCode || '') + 'recent-' + this.$attrs.name
+		} else {
+			return 'favorite-' + this.$attrs.name
+		}
 	}
 
 	updateElasticInput() {
@@ -89,16 +160,12 @@ class MbgInputStepItemController {
 		this.$timeout(() => {
 			this.hasFocus = false
 			this.updateElasticInput()
-		}, 300)
+		})
 	}
 
 	onInputChange() {
 		this.$timeout(() => {
-			if (this.fetch) {
-				this.executeFetch()
-			} else {
-				this.setModel(true)
-			}
+			this.fetch ? this.executeFetch() : this.setModel(true)
 		})
 	}
 
@@ -114,6 +181,7 @@ class MbgInputStepItemController {
 	afterFetchData(data) {
 		this.$timeout(() => {
 			this.data = data
+			this.recentItem = this.getItemRecent()
 		})
 		this.$timeout(() => this.focusFirstOption(), 150)
 	}
@@ -161,11 +229,11 @@ class MbgInputStepItemController {
 	}
 
 	movePointerNextItem() {
-		const nextItem = this.$element.next()
-		if (nextItem[0]) {
-			nextItem.find('input').focus()
+		if (this.ngModel !== null && this.ngModel !== undefined) { // be zero or false
+			const nextItem = this.$element.next()
+			nextItem[0] ? nextItem.find('input').focus() : this.mbgInputStep.focusNextInput()
 		} else {
-			this.mbgInputStep.focusNextInput()
+			this.onInputFocus()
 		}
 	}
 
@@ -202,27 +270,15 @@ class MbgInputStepItemController {
 	moveToUp() {
 		const currentOption = this.getOptionFocused()
 		const prevOption = currentOption.prev()
-		if (prevOption[0]) {
-			this.setFocusOption(prevOption)
-		} else {
-			this.focusLastOption()
-		}
-		this.$timeout(() => {
-			this.scrollMove()
-		})
+		prevOption[0] ? this.setFocusOption(prevOption) : this.focusLastOption()
+		this.$timeout(() => this.scrollMove())
 	}
 
 	moveToDown() {
 		const currentOption = this.getOptionFocused()
 		const nextOption = currentOption.next()
-		if (nextOption[0]) {
-			this.setFocusOption(nextOption)
-		} else {
-			this.focusFirstOption()
-		}
-		this.$timeout(() => {
-			this.scrollMove()
-		})
+		nextOption[0] ? this.setFocusOption(nextOption) : this.focusFirstOption()
+		this.$timeout(() => this.scrollMove())
 	}
 
 	scrollMove() {
@@ -243,11 +299,12 @@ class MbgInputStepItemController {
 			if (this.fetch) {
 				const currentOption = this.getOptionFocused()
 				if (currentOption[0]) {
-					let item = currentOption.scope().item
+					let item = currentOption.hasClass('recent-item') ? this.recentItem : currentOption.scope().item
 					if (!item && this.enableAdd) {
 						item = { [this.label]: this.inputValue }
 					}
 					this.ngModel = item
+					this.setItemRecent(item)
 					if (this.ngChange) { this.ngChange() }
 					if (this.label) {
 						this.inputValue = this.ngModel[this.label]
@@ -267,13 +324,16 @@ class MbgInputStepItemController {
 
 	selectOption(item) {
 		this.ngModel = item
+		this.setItemRecent(item)
 		if (this.ngChange) { this.ngChange() }
 		if (this.label) {
 			this.inputValue = this.ngModel[this.label]
 		} else {
 			this.inputValue = this.ngModel
 		}
-		this.movePointerNextItem()
+		this.$timeout(() => {
+			this.movePointerNextItem()
+		})
 	}
 
 	hasData() {
@@ -296,6 +356,7 @@ const mbgInputStepItem = {
 		enableAdd: '=?',
 		capitalize: '=?',
 		placeholder: '=?',
+		enableRecent: '=?',
 		focus: '&?',
 		unFocus: '&?',
 		ngChange: '&?',
