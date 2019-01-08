@@ -56,6 +56,8 @@ class MbgAddressController {
     }
 
     onChangeCep() {
+        this.resetAddress()
+        this.updateSteps()
         if (this.address.zipCode) {
             this.searchAddressByCEP()
         }
@@ -64,7 +66,6 @@ class MbgAddressController {
     checkModel() {
         if (this.hasDiference()) {
             this.address = this.createAddress()
-            this.updateSteps()
             if (this.ngModel.searchZipCode && this.address.zipCode && !this.address.uf) {
                 delete this.ngModel.searchZipCode
                 this.onChangeCep()
@@ -88,6 +89,10 @@ class MbgAddressController {
             return str.substring(0, str.lastIndexOf('-')).trim()
         }
         return str.trim()
+    }
+
+    focusInputCep() {
+        this.$element.find('.input-cep-wrapper input').focus()
     }
 
     createAddress() {

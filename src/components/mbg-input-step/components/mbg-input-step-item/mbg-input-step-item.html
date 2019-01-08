@@ -33,11 +33,11 @@
             <span ng-if="$ctrl.label">{{ item[$ctrl.label] }}</span>
             <span ng-if="!$ctrl.label">{{ item }}</span>
         </li>
-        <li ng-if="$ctrl.enableAdd && $ctrl.inputValue"
+        <li ng-if="$ctrl.addOnlyEmpty ? ($ctrl.enableAdd && $ctrl.inputValue && $ctrl.data.length == 0) : ($ctrl.enableAdd && $ctrl.inputValue)"
             disable-animate
             ng-mousedown="$ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue })">
             {{ $ctrl.inputValue }}
-            <span>(novo)</span>
+            <span ng-hide="$ctrl.hiddenAddLabel">(novo)</span>
         </li>
     </ul>
 </div>

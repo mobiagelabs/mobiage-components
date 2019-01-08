@@ -22,6 +22,13 @@ class MbgInputStepItemController {
 	private autocompleteValue
 	private recentItem
 	private enableRecent: boolean
+	private addOnlyEmpty: boolean
+	private disableWatchModel: Function
+	private disableWatchLabelModel: Function
+	private initializingModel: boolean
+	private initializingLabelModel: boolean
+	private onMovePrevItem: Function
+	private onMoveNextItem: Function
 
 	constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -32,9 +39,9 @@ class MbgInputStepItemController {
 		this.hasFocus = false
 		this.enableAdd = this.enableAdd || false
 		this.inputValue = ''
-		this.updateInputValue()
-		this.observeModel()
-		this.observeLabel()
+		// this.updateInputValue()
+		// this.observeModel()
+		// this.observeLabel()
 		this.verifyDevErrors()
 		this.observeInputValue()
 	}
@@ -46,18 +53,28 @@ class MbgInputStepItemController {
 	}
 
 	observeModel() {
-		this.$scope.$watch(`$ctrl.ngModel`, (value) => {
-			if (!angular.equals(value, this.ngModel) || !angular.equals(value, this.inputValue)) {
-				this.updateInputValue()
+		this.initializingModel = true
+		this.disableWatchModel = this.$scope.$watch(`$ctrl.ngModel`, (value) => {
+			if (this.initializingModel) {
+				this.$timeout(() => { this.initializingModel = false })
+			} else {
+				if (!angular.equals(value, this.ngModel) || !angular.equals(value, this.inputValue)) {
+					this.updateInputValue()
+				}
 			}
 		})
 	}
 
 	observeLabel() {
 		if (this.label) {
-			this.$scope.$watch(`$ctrl.ngModel.${this.label}`, (value) => {
-				if (!angular.equals(value, this.ngModel)) {
-					this.updateInputValue()
+			this.initializingLabelModel = true
+			this.disableWatchLabelModel = this.$scope.$watch(`$ctrl.ngModel.${this.label}`, (value) => {
+				if (this.initializingLabelModel) {
+					this.$timeout(() => { this.initializingLabelModel = false })
+				} else {
+					if (!angular.equals(value, this.ngModel)) {
+						this.updateInputValue()
+					}
 				}
 			})
 		}
@@ -210,6 +227,8 @@ class MbgInputStepItemController {
 			case 8: // BACKSPACE
 				this.$timeout(() => {
 					if (this.fetch) {
+						this.initializingLabelModel = true
+						this.initializingModel = true
 						this.ngModel = null
 					}
 					if (!this.inputValue && !this.oldInputValue) {
@@ -225,7 +244,10 @@ class MbgInputStepItemController {
 
 	movePointerPrevItem() {
 		const prevItem = this.$element.prev()
-		prevItem.find('input').focus()
+		if (prevItem[0] && prevItem[0].nodeName === 'MBG-INPUT-STEP-ITEM') {
+			prevItem.find('input').focus()
+		}
+		if (this.onMovePrevItem) { this.onMovePrevItem() }
 	}
 
 	movePointerNextItem() {
@@ -235,6 +257,7 @@ class MbgInputStepItemController {
 		} else {
 			this.onInputFocus()
 		}
+		if (this.onMoveNextItem) { this.onMoveNextItem() }
 	}
 
 	getOptions() {
@@ -283,14 +306,16 @@ class MbgInputStepItemController {
 
 	scrollMove() {
 		const li = this.getOptionFocused()[0]
-		const ul = li.parentNode
-		const fudge = 4
-		const bottom = (ul.scrollTop + (ul.offsetHeight - fudge) - li.offsetHeight)
-		const top = ul.scrollTop + fudge
-		if (li.offsetTop <= top) {
-			ul.scrollTop = li.offsetTop - fudge
-		} else if (li.offsetTop >= bottom) {
-			ul.scrollTop = li.offsetTop - ((ul.offsetHeight - fudge) - li.offsetHeight)
+		if (li) {
+			const ul = li.parentNode
+			const fudge = 4
+			const bottom = (ul.scrollTop + (ul.offsetHeight - fudge) - li.offsetHeight)
+			const top = ul.scrollTop + fudge
+			if (li.offsetTop <= top) {
+				ul.scrollTop = li.offsetTop - fudge
+			} else if (li.offsetTop >= bottom) {
+				ul.scrollTop = li.offsetTop - ((ul.offsetHeight - fudge) - li.offsetHeight)
+			}
 		}
 	}
 
@@ -301,7 +326,11 @@ class MbgInputStepItemController {
 				if (currentOption[0]) {
 					let item = currentOption.hasClass('recent-item') ? this.recentItem : currentOption.scope().item
 					if (!item && this.enableAdd) {
-						item = { [this.label]: this.inputValue }
+						if (this.label) {
+							item = { [this.label]: this.inputValue }
+						} else {
+							item = this.inputValue
+						}
 					}
 					this.ngModel = item
 					this.setItemRecent(item)
@@ -354,11 +383,15 @@ const mbgInputStepItem = {
 		fetch: '&?',
 		label: '@?',
 		enableAdd: '=?',
+		hiddenAddLabel: '=?',
+		addOnlyEmpty: '=?',
 		capitalize: '=?',
 		placeholder: '=?',
 		enableRecent: '=?',
 		focus: '&?',
 		unFocus: '&?',
+		onMovePrevItem: '&?',
+		onMoveNextItem: '&?',
 		ngChange: '&?',
 	},
 	require: {

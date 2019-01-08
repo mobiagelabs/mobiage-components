@@ -6,7 +6,6 @@
         <input type="text"
                name="cep"
                autocomplete="off"
-               ng-keyup="$ctrl.resetAddress()"
                ng-change="$ctrl.onChangeCep()"
                ng-model="$ctrl.address.zipCode"
                placeholder="99999-999"
@@ -20,6 +19,7 @@
                              placeholder="'Qual o estado?'"
                              ng-change="$ctrl.onUfChange()"
                              disable-animate
+                             on-move-prev-item="$ctrl.focusInputCep()"
                              label="name"></mbg-input-step-item>
         <mbg-input-step-item ng-model="$ctrl.address.localization"
                              fetch="$ctrl.getCities(query)"
@@ -28,6 +28,9 @@
                              placeholder="'Qual a cidade?'"></mbg-input-step-item>
         <mbg-input-step-item ng-model="$ctrl.address.premisse"
                              fetch="$ctrl.getPremisses(query)"
+                             enable-add="true"
+                             hidden-add-label="true"
+                             add-only-empty="true"
                              disable-animate
                              placeholder="'Agora, digite o endereço'"></mbg-input-step-item>
         <mbg-input-step-item ng-model="$ctrl.address.number"

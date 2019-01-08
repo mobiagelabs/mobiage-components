@@ -56,7 +56,13 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
+    <mbg-address ng-model="address"
+                 not-found="lalala()"
+                 cep-class="teste"></mbg-address>
+
+    <pre>{{address|json}}</pre>
+
+    <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
                     on-finish-focus-element="#entityModel input">
       <mbg-input-step-item ng-model="entity.productTree"
                            fetch="getTipoProduto()"
@@ -83,7 +89,7 @@
                            un-focus="unFocus()"
                            capitalize="true"
                            placeholder="'Qual o modelodsadsadsaasd?'"></mbg-input-step-item>
-    </mbg-input-step>
+    </mbg-input-step> -->
 
     <!-- <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
                       y="{ key: 'COR', label: 'COR PRODUTO' }"
