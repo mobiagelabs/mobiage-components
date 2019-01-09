@@ -7,20 +7,82 @@ export class MbgKeyboard {
     private activeColor: string
     private currentActiveElement
     private lastBorderElement: string
+    private rowsButtons: Array<{ buttons: Array<{ code: any, label: string }> }>
+    private options: Array<{ content: string, onClick: Function, enable: boolean }>
+    private focusElement: string
 
-    constructor(public $scope, public $element, public $attrs, public $timeout, public $interval) { }
+    constructor(public $scope, public $element, public $attrs, public $timeout, public $interval, public $sce) { }
 
     $onInit() {
+        this.createButtons()
         this.bindClick = angular.element(document)
             .on('click', (evt) => this.checkActiveElement(evt))
             .on('keydown', (evt) => this.checkActiveElement(evt))
+        this.focusInitialElement()
+    }
+
+    focusInitialElement() {
+        if (this.focusElement) {
+            this.$timeout(() => {
+                angular.element(this.focusElement).focus()
+                this.checkActiveElement()
+            })
+        }
+    }
+
+    transformHTMLContent(content) {
+        return this.$sce.trustAsHtml(content)
+    }
+
+    handleOptionClick(option) {
+        option.enable = !option.enable
+        if (option.onClick) {
+            option.onClick(option)
+        }
+    }
+
+    createButtons() {
+        this.rowsButtons = [
+            {
+                buttons: [
+                    { code: 55, label: '7' },
+                    { code: 56, label: '8' },
+                    { code: 57, label: '9' },
+                    { code: 'CLEAR', label: 'C' },
+                ]
+            },
+            {
+                buttons: [
+                    { code: 52, label: '4' },
+                    { code: 53, label: '5' },
+                    { code: 54, label: '6' },
+                    { code: 'BACKSPACE', label: '<' },
+                ]
+            },
+            {
+                buttons: [
+                    { code: 49, label: '1' },
+                    { code: 50, label: '2' },
+                    { code: 51, label: '3' },
+                    { code: 120, label: 'x' },
+                ]
+            },
+            {
+                buttons: [
+                    { code: 48, label: '0' },
+                    { code: '48 48', label: '00' },
+                    { code: 44, label: ',' },
+                    { code: 43, label: '+' },
+                ]
+            }
+        ]
     }
 
     $onDestroy() {
         this.bindClick.unbind()
     }
 
-    checkActiveElement(evt) {
+    checkActiveElement(evt?) {
         this.$timeout(() => {
             const activeTempElement = angular.element(document.activeElement)
             this.beforeActiveElement()
@@ -29,7 +91,7 @@ export class MbgKeyboard {
                 this.afterActiveElement()
             } else if (this.currentActiveElement
                 && (activeTempElement.closest('.mbg-keyboard-wrapper').length === 1
-                    || angular.element(evt.target).closest('.mbg-keyboard-wrapper').length === 1)) {
+                    || (evt && angular.element(evt.target).closest('.mbg-keyboard-wrapper').length === 1))) {
                 this.currentActiveElement.focus()
                 this.afterActiveElement()
                 const itemCode = activeTempElement.attr('data-keyboard-code')
@@ -124,11 +186,13 @@ export class MbgKeyboard {
 
 }
 
-MbgKeyboard.$inject = ['$scope', '$element', '$attrs', '$timeout', '$interval']
+MbgKeyboard.$inject = ['$scope', '$element', '$attrs', '$timeout', '$interval', '$sce']
 
 const mbgKeyboard = {
     bindings: {
         activeColor: '@?',
+        focusElement: '@?',
+        options: '=?',
     },
     template,
     controller: MbgKeyboard,

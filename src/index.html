@@ -55,6 +55,8 @@
   </style>
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 </head>
 
 <body ng-controller="demoCtrl">
@@ -68,7 +70,11 @@
             <div class="row">
               <div class="col-md-12">
                 <label>Código de barras</label>
-                <mbg-input-text ng-model="entity.code"></mbg-input-text>
+                <i class="fa fa-car"
+                   aria-hidden="true"></i>
+                <mbg-input-text ng-model="entity.code"
+                                id="barCode"
+                                ng-keydown="teste222($event)"></mbg-input-text>
               </div>
             </div>
             <div class="row">
@@ -80,7 +86,9 @@
           </div>
           <div class="col-md-3 col-md-offset-1">
 
-            <mbg-keyboard active-color="#0CBCBD"></mbg-keyboard>
+            <mbg-keyboard active-color="#0CBCBD"
+                          focus-element="#barCode input"
+                          options="optionsKeyboard"></mbg-keyboard>
 
           </div>
         </div>

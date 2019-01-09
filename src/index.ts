@@ -16,6 +16,7 @@ const module = angular
 		components,
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
+
 		$scope.config = {
 			maxImages: 1,
 			disableFirebase: true,
@@ -24,6 +25,37 @@ const module = angular
 			enableCrop: true,
 			rounded: false
 		}
+
+		$scope.optionsKeyboard = [
+			{
+				content: 'D',
+				enable: false,
+				onClick: (option) => {
+					console.log('clicou no D')
+				}
+			},
+			{
+				content: 'Q',
+				enable: false,
+				onClick: (option) => {
+					console.log('clicou no Q')
+				}
+			},
+			{
+				content: `<i class="fa fa-car" aria-hidden="true"></i>`,
+				enable: false,
+				onClick: (option) => {
+					console.log('clicou no carro')
+				}
+			},
+			{
+				content: `<i class="fa fa-lightbulb-o" aria-hidden="true"></i>`,
+				enable: false,
+				onClick: (option) => {
+					console.log('clicou no lampada')
+				}
+			}
+		]
 
 		// $scope.rowsOpen = [1]
 
@@ -165,6 +197,10 @@ const module = angular
 		$scope.listTeste = [
 			{}
 		]
+
+		$scope.teste222 = (evt) => {
+			// console.log(evt.keyCode)
+		}
 
 		$scope.olamundo = 'Mateus'
 

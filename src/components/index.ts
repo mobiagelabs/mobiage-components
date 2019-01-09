@@ -4,6 +4,7 @@ import 'ng-easy-infinite-scroll'
 import 'webcamjs'
 import './common.scss'
 import '../helpers/locale'
+import * as ngSanitize from 'angular-sanitize'
 import { MbgDynamicHTML } from '../helpers/dynamic-html/dynamic-html'
 import { MbgPositiveNumber } from '../helpers/positive-number/positive-number'
 import { mbgImageUploadModule } from './mbg-image-upload'
@@ -40,6 +41,7 @@ const mbgComponentsModule = angular
     'ui.utils.masks',
     'ngEasyInfiniteScroll',
     'ui.bootstrap',
+    ngSanitize,
     mbgImageUploadModule,
     mbgInputCnpjModule,
     mbgInputCpfModule,
