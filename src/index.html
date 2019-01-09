@@ -48,6 +48,10 @@
 
 
     }
+
+    .label-margin label {
+      margin-top: 14px;
+    }
   </style>
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
@@ -55,6 +59,41 @@
 
 <body ng-controller="demoCtrl">
   <div class="container">
+
+
+    <!-- <div class="panel panel-default label-margin">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-12">
+                <label>Código de barras</label>
+                <mbg-input-text ng-model="entity.code"></mbg-input-text>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <label>Data de nascimento</label>
+                <mbg-input-date ng-model="entity.nasc"></mbg-input-date>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <label>Idade</label>
+                <mbg-input-number ng-model="entity.idade"></mbg-input-number>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+
+            <mbg-keyboard></mbg-keyboard>
+
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
 
     <mbg-address ng-model="address"
                  not-found="lalala()"

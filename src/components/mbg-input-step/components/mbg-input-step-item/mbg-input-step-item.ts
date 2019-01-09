@@ -39,9 +39,9 @@ class MbgInputStepItemController {
 		this.hasFocus = false
 		this.enableAdd = this.enableAdd || false
 		this.inputValue = ''
-		// this.updateInputValue()
-		// this.observeModel()
-		// this.observeLabel()
+		this.updateInputValue()
+		this.observeModel()
+		this.observeLabel()
 		this.verifyDevErrors()
 		this.observeInputValue()
 	}
