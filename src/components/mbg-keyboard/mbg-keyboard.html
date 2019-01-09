@@ -1,3 +1,100 @@
-<div class="mbg-keyboard-wrapper">
-    oi
+<div class="mbg-keyboard-wrapper"
+     ng-class="{ 'mbg-keyboard-disable': !$ctrl.currentActiveElement }">
+    <div class="mbg-keyboard-row">
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="55">7</button>
+        </div>
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="56">8</button>
+        </div>
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="57">9</button>
+        </div>
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="CLEAR">C</button>
+        </div>
+    </div>
+    <div class="mbg-keyboard-row">
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="52">4</button>
+        </div>
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="53">5</button>
+        </div>
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="54">6</button>
+        </div>
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="BACKSPACE">&lt;</button>
+        </div>
+    </div>
+    <div class="mbg-keyboard-row">
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="49">1</button>
+        </div>
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="50">2</button>
+        </div>
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="51">3</button>
+        </div>
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="120">x</button>
+        </div>
+    </div>
+    <div class="mbg-keyboard-row">
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="48">0</button>
+        </div>
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="48 48">00</button>
+        </div>
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="44">,</button>
+        </div>
+        <div class="mbg-keyboard-item">
+            <button type="button"
+                    tabindex="-1"
+                    data-keyboard-code="43">+</button>
+        </div>
+    </div>
+    <div class="mbg-keyboard-row">
+        <div class="mbg-keyboard-item flex-1">
+            <button data-keyboard-code="13"
+                    type="button"
+                    tabindex="-1"
+                    ng-style="{ 'background': $ctrl.activeColor }"
+                    class="mbg-keyboard-enter">ENTER</button>
+        </div>
+    </div>
 </div>
