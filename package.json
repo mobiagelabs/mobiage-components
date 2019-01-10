@@ -15,11 +15,11 @@
   "license": "MIT",
   "dependencies": {
     "@types/node": "^10.10.1",
-    "angular": "^1.7.4",
+    "angular": "^1.6.10",
     "angular-bootstrap": "^0.12.2",
     "angular-elastic-input": "^2.4.0",
     "angular-input-masks": "^4.2.1",
-    "angular-sanitize": "^1.7.4",
+    "angular-sanitize": "^1.6.10",
     "angular-ui-bootstrap": "^2.5.6",
     "cep-promise": "^3.0.3",
     "croppie": "^2.6.2",
