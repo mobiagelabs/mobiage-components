@@ -12,6 +12,8 @@
            ng-keypress="$ctrl.ngKeypress({ $event })"
            ng-keydown="$ctrl.ngKeydown({ $event })"
            mbg-input-money
+           data-allow-zero="{{ $ctrl.props.allowZero }}"
+           data-allow-empty="{{ $ctrl.props.allowEmpty }}"
            data-prefix="{{ $ctrl.props.prefix }}"
            data-decimal="{{ $ctrl.props.decimal }}"
            data-precision="{{ $ctrl.props.precision }}"
