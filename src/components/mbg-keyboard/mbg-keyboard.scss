@@ -58,6 +58,12 @@ mbg-keyboard {
                     border: 1px solid #9c9c9c;
                     color: #666;
                     font-weight: bold;
+                    background: transparent;
+                    display: flex;
+                    flex-direction: column;
+                    span {
+                        font-size: 11px;
+                    }
                     &.active {
                         color: #FFF;
                     }

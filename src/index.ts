@@ -28,14 +28,20 @@ const module = angular
 
 		$scope.optionsKeyboard = [
 			{
-				content: 'D',
+				content: `
+					<i class="fa fa-tag" aria-hidden="true"></i>
+					<span>Preço</span>
+				`,
 				enable: false,
 				onClick: (option) => {
 					console.log('clicou no D')
 				}
 			},
 			{
-				content: 'Q',
+				content: `
+					<i class="fa fa-quora" aria-hidden="true"></i>
+					<span>Quant</span>
+				`,
 				enable: false,
 				onClick: (option) => {
 					console.log('clicou no Q')
