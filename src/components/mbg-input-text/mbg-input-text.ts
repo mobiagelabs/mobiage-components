@@ -1,4 +1,5 @@
 import './mbg-input-text.scss'
+import * as angular from 'angular'
 import template from './mbg-input-text.html'
 
 class MbgInputTextController {
@@ -7,6 +8,7 @@ class MbgInputTextController {
     private ngRequired
     private ngDisabled
     private props
+    private ngKeydown
 
     constructor($scope, $element, $attrs) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
@@ -20,6 +22,13 @@ class MbgInputTextController {
             this.ngChange({})
         }
     }
+    onKeydown($event: Event) {
+        $event.stopPropagation()
+        if (this.ngKeydown) {
+            this.ngKeydown({ $event })
+        }
+    }
+
 }
 MbgInputTextController.$inject = ['$scope', '$element', '$attrs']
 

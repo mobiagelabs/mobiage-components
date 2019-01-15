@@ -26,6 +26,10 @@ const module = angular
 			rounded: false
 		}
 
+		$scope.teste = (evt) => {
+			console.log(evt)
+		}
+
 		$scope.optionsKeyboard = [
 			{
 				content: `
