@@ -75,6 +75,8 @@ const module = angular
 
 		}, 300)
 
+		$scope.entity = { productTree: { name: 'Camiseta' }, brand: { name: 'Adidas' }, model: 'Teste' }
+
 		$scope.kkk = (index) => {
 			window['teste'][index].addAdicionalRow()
 		}

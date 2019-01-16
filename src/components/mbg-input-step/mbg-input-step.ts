@@ -44,7 +44,7 @@ class MbgInputStepController {
         evt.stopPropagation()
         const itemsEmpty = Array.from(this.items).filter((item) => {
             const scope: any = angular.element(item).find('input').scope()
-            return !scope.$ctrl.ngModel
+            return !scope.$ctrl.ngModel && !angular.element(item)[0].hasAttribute('disabled')
         })
         if (itemsEmpty.length > 0) {
             const lastEmpty: any = angular.element(itemsEmpty[0])
