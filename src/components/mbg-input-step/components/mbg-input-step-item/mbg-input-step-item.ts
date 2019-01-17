@@ -257,7 +257,7 @@ class MbgInputStepItemController {
 	movePointerNextItem() {
 		if (this.ngModel !== null && this.ngModel !== undefined) { // be zero or false
 			let nextItem = this.$element.next()
-			while (nextItem && nextItem[0].hasAttribute('disabled')) {
+			while (nextItem && nextItem[0] && nextItem[0].hasAttribute('disabled')) {
 				nextItem = nextItem.next()
 			}
 			nextItem[0] ? nextItem.find('input').focus() : this.mbgInputStep.focusNextInput()
