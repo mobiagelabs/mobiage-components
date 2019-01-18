@@ -20,7 +20,7 @@ class MbgProductGridController {
     $onInit() {
         this.grid = {}
         this.gridValues = {}
-        this.showStock = this.showStock || true
+        this.showStock = this.showStock === undefined ? true : this.showStock
         this.$scope.$watch('$ctrl.ngModel', () => this.handleModel(), true)
         this.$scope.$watch('$ctrl.details', () => this.handleModel(), true)
     }
