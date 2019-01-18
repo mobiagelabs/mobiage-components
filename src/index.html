@@ -89,7 +89,13 @@
 
     <pre>{{ address | json }}</pre> -->
 
-    <mbg-input-search ng-model="teste"></mbg-input-search>
+    <mbg-input-search ng-model="teste" ng-top-layout="true">
+      <select ng-model="$parent.$parent.teste2">
+        <option ng-repeat="op in opcoesSelect">{{ op.label }}</option>
+      </select>
+    </mbg-input-search>
+
+    <!-- <p>aqui {{ teste2 }} {{ opcoesSelect.length }}</p> -->
 
     <!-- <div class="panel panel-default label-margin">
       <div class="panel-body">

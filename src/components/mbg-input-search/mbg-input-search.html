@@ -1,6 +1,6 @@
-<div class="mbg-input-search-wrapper mbg-input-wrapper"
+<div class="mbg-input-search-wrapper"
   ng-show="$ctrl.props">
-  <div class="btn-group">
+  <div class="input-group-search" ng-class="{'top-layout' : $ctrl.ngTopLayout}">
     <svg xmlns:dc="http://purl.org/dc/elements/1.1/"
       xmlns:cc="http://creativecommons.org/ns#"
       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -25,7 +25,6 @@
     </svg>
     <div ng-transclude></div>
     <input type="text"
-      ng-class="{'pad-alt':$ctrl.searchNgTransclude() > 0}"
       ng-model-options="$ctrl.ngModelOptions"
       ng-model="$ctrl.ngModel"
       ng-change="$ctrl.onChange()"

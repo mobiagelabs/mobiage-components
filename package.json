@@ -1,6 +1,6 @@
 {
   "name": "@mobiage/components",
-  "version": "1.66.4",
+  "version": "1.67.0",
   "description": "@mobiage/components",
   "main": "src/components/index.ts",
   "scripts": {

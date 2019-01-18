@@ -23,10 +23,6 @@ class MbgInputTextController {
         }
     }
 
-    searchNgTransclude() {
-        return angular.element(document.querySelectorAll('[ng-transclude]')).find('>').length
-    }
-
 }
 MbgInputTextController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$compile']
 
@@ -42,6 +38,8 @@ const mbgInputSearch = {
         ngKeyup: '&?',
         ngKeypress: '&?',
         ngKeydown: '&?',
+        ngTopLayout: '=?',
+        ngModelOptions: '=?'
     },
     template,
     controller: MbgInputTextController,
