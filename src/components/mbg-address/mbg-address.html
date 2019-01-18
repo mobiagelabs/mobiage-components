@@ -33,9 +33,16 @@
                              add-only-empty="true"
                              disable-animate
                              placeholder="'Agora, digite o endereço'"></mbg-input-step-item>
+        <mbg-input-step-item ng-model="$ctrl.address.neighbourhood"
+                             disable-animate
+                             capitalize="true"
+                             placeholder="'Informe o bairro'"></mbg-input-step-item>
         <mbg-input-step-item ng-model="$ctrl.address.number"
                              disable-animate
                              ng-change="$ctrl.searchAddressInfo()"
                              placeholder="'Qual o número?'"></mbg-input-step-item>
+        <mbg-input-step-item ng-model="$ctrl.address.information"
+                             disable-animate
+                             placeholder="'Complemento'"></mbg-input-step-item>
     </mbg-input-step>
 </div>

@@ -102,7 +102,7 @@ const mbgProductGrid = {
         extraButtonLabel: '@?',
         onClickExtraButton: '&?',
         onClickEditButton: '&?',
-        showStock: '=?'  
+        showStock: '=?',
     },
     template,
     controller: MbgProductGridController,

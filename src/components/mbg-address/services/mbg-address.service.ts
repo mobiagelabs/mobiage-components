@@ -26,8 +26,8 @@ class MbgAddressService {
         return this.$http.get(`${this.apiLocation}/public/busca-cep/${cep}`)
     }
 
-    getAddress(uf, city, premisse) {
-        return this.$http.get(`${this.apiLocation}/public/buscar-endereco-completo?uf=${uf}&cidade=${city}&logradouro=${premisse}`)
+    getAddress(uf, city, premisse, neighbourhood) {
+        return this.$http.get(`${this.apiLocation}/public/buscar-endereco-completo?uf=${uf}&cidade=${city}&logradouro=${premisse}&bairro=${neighbourhood}`)
     }
 
 }

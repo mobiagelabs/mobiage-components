@@ -16,6 +16,7 @@ class MbgAddressController {
         premisseType?: string,
         number?: string,
         neighbourhood?: string,
+        information?: string,
         stateCode?: string,
         formalCode?: string,
         uf?: { initial: string, name: string },
@@ -47,6 +48,7 @@ class MbgAddressController {
                     premisseType: this.address.premisseType || '',
                     number: this.address.number || '',
                     neighbourhood: this.address.neighbourhood || '',
+                    information: this.address.information || '',
                     stateCode: this.address.stateCode || '',
                     formalCode: this.address.formalCode || '',
                     state: this.address.uf && this.address.uf.initial ? this.address.uf.initial : '',
@@ -108,6 +110,7 @@ class MbgAddressController {
             number: this.ngModel.number || '',
             premisseType: this.ngModel.premisseType || '',
             stateCode: this.ngModel.stateCode || '',
+            information: this.ngModel.information || '',
             formalCode: this.ngModel.formalCode || '',
             uf,
         }
@@ -140,6 +143,7 @@ class MbgAddressController {
         delete this.address.premisseType
         delete this.address.number
         delete this.address.stateCode
+        delete this.address.information
         delete this.address.formalCode
     }
 
@@ -156,6 +160,7 @@ class MbgAddressController {
                             localization: this.address.localization ? this.address.localization : response.data.cidade.trim(),
                             premisse: this.formatFromPremisse(response.data.logradouro),
                             number: this.address.number || '',
+                            information: this.address.information || '',
                             premisseType: response.data.tipo_logradouro,
                             stateCode: response.data.codigo_estado,
                             formalCode: response.data.ibge_cod_cidade,
@@ -176,9 +181,10 @@ class MbgAddressController {
                 && this.address.localization
                 && this.address.premisse
                 && this.address.number
-                && !this.address.neighbourhood) {
+                && this.address.neighbourhood
+                && !this.address.zipCode) {
                 this.mbgAddressService
-                    .getAddress(this.address.uf.initial, this.address.localization, this.address.premisse)
+                    .getAddress(this.address.uf.initial, this.address.localization, this.address.premisse, this.address.neighbourhood)
                     .then((response) => {
                         if (response.data.length > 0) {
                             const info = response.data[0]

@@ -65,15 +65,6 @@ const module = angular
 
 		// $scope.rowsOpen = [1]
 
-		$timeout(() => {
-			$scope.address = {
-				searchZipCode: true,
-				zipCode: '87035050',
-				number: 37,
-			}
-
-
-		}, 300)
 
 		$scope.entity = { productTree: { name: 'Camiseta' }, brand: { name: 'Adidas' }, model: 'Teste' }
 
