@@ -44,9 +44,10 @@
                             ng-click="$ctrl.toogleEnableItem($index, $parent.$index)">
                             {{ $ctrl.gridValues[$index][$parent.$index].enable ? 'Remover' : 'Adicionar'}}
                         </a>
-                        <span ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }">{{$ctrl.showStock ? 'Estoque' : 'R$ Venda'}}</span>
+                        <span ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }">{{$ctrl.showStock
+                            ? 'Estoque' : 'R$ Venda'}}</span>
                         <input type="number"
-                            ng-if="$ctrl.showStock"
+                            ng-show="$ctrl.showStock"
                             ng-model="$ctrl.gridValues[$index][$parent.$index].stock"
                             placeholder="0"
                             ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }"
