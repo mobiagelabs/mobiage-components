@@ -1,5 +1,6 @@
 import './mbg-input-search.scss'
 import template from './mbg-input-search.html'
+import * as angular from 'angular'
 
 class MbgInputTextController {
     private ngChange
@@ -20,6 +21,10 @@ class MbgInputTextController {
         if (this.ngChange) {
             this.ngChange({})
         }
+    }
+
+    searchNgTransclude() {
+        return angular.element(document.querySelectorAll('[ng-transclude]')).find('>').length
     }
 
 }

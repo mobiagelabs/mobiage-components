@@ -25,6 +25,7 @@
     </svg>
     <div ng-transclude></div>
     <input type="text"
+      ng-class="{'pad-alt':$ctrl.searchNgTransclude() > 0}"
       ng-model-options="$ctrl.ngModelOptions"
       ng-model="$ctrl.ngModel"
       ng-change="$ctrl.onChange()"
