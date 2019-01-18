@@ -8,22 +8,25 @@ class MbgInputTextController {
     private ngDisabled
     private props
 
-    constructor($scope, $element, $attrs) {
+    constructor(public $scope, public $element, public $attrs, public $timeout, public $compile) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
         this.props = {
             placeholder: $attrs.placeholder || '',
         }
     }
+
     onChange() {
         if (this.ngChange) {
             this.ngChange({})
         }
     }
+
 }
-MbgInputTextController.$inject = ['$scope', '$element', '$attrs']
+MbgInputTextController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$compile']
 
 const mbgInputSearch = {
+    transclude: true,
     bindings: {
         ngModel: '=',
         ngChange: '&?',

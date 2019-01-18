@@ -26,6 +26,15 @@ const module = angular
 			rounded: false
 		}
 
+		$scope.testezao = () => {
+			console.log($scope)
+		}
+
+		$scope.opcoesSelect = [
+			{ key: 'CONTAINS', label: 'Contém' },
+			{ key: 'NOT_CONTAINS', label: 'Não Contém' },
+		]
+
 		$scope.optionsKeyboard = [
 			{
 				content: `

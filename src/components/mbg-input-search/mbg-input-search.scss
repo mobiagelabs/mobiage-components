@@ -22,6 +22,22 @@ mbg-input-search {
 					width: 100%;
 					background-color: #f8f8f8;
 				}
+				select {
+					position: absolute;
+					display: flex;
+					height: 100%;
+					left: 52px;
+					width: 100px;
+					border: none;
+					background-color: transparent;
+					&:focus {
+						outline: none
+					}
+					option {
+						border: none;
+						
+					}
+				}
 			}
 		}
 	}
