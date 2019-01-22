@@ -44,10 +44,7 @@ const mbgInputMoney = {
         ngRequired: '=?',
         ngDisabled: '=?',
         ngBlur: '&?',
-        ngFocus: '&?',
-        ngKeyup: '&?',
-        ngKeypress: '&?',
-        ngKeydown: '&?',
+        ngFocus: '&?'
     },
     template,
     controller: MbgInputMoneyController,

@@ -89,11 +89,11 @@
 
     <pre>{{ address | json }}</pre> -->
 
-    <mbg-input-search ng-model="teste" ng-top-layout="true">
+    <!-- <mbg-input-search ng-model="teste" ng-top-layout="true">
       <select ng-model="$parent.$parent.teste2">
         <option ng-repeat="op in opcoesSelect">{{ op.label }}</option>
       </select>
-    </mbg-input-search>
+    </mbg-input-search> -->
 
     <!-- <p>aqui {{ teste2 }} {{ opcoesSelect.length }}</p> -->
 
@@ -330,14 +330,15 @@
       </div>
     </div>
   -->
-    <!-- <div class="panel panel-default">
+    <div class="panel panel-default">
       <div class="panel-heading">Money</div>
       <div class="panel-body">
         <mbg-input-money ng-model="money"
-                         allow-negative="false"></mbg-input-money>
+          ng-keydown="testeloko()"
+          allow-negative="false"></mbg-input-money>
         {{ money }}
       </div>
-    </div> -->
+    </div>
     <!--
     <div class="panel panel-default">
       <div class="panel-heading">Name</div>
@@ -352,14 +353,14 @@
         <mbg-input-number ng-model="number"></mbg-input-number>
       </div>
     </div>
-
+  -->
     <div class="panel panel-default">
       <div class="panel-heading">Percentage</div>
       <div class="panel-body">
         <mbg-input-percentage ng-model="percentage"></mbg-input-percentage>
       </div>
     </div>
-
+    <!--
     <div class="panel panel-default">
       <div class="panel-heading">Phone</div>
       <div class="panel-body">

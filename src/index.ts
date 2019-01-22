@@ -35,6 +35,10 @@ const module = angular
 			{ key: 'NOT_CONTAINS', label: 'Não Contém' },
 		]
 
+		$scope.testeloko = () => {
+			console.log('sdfu')
+		}
+
 		$scope.optionsKeyboard = [
 			{
 				content: `
