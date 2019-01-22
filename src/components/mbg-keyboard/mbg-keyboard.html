@@ -4,7 +4,7 @@
              ng-repeat="option in $ctrl.options">
             <button type="button"
                     tabindex="-1"
-                    ng-disabled="$ctrl.option.isDisabled()"
+                    ng-disabled="option.isDisabled()"
                     ng-class="{ 'active': option.enable }"
                     ng-style="{ 'background': option.enable ? $ctrl.activeColor : 'transparent', 'border': option.enable ? '1px solid ' + $ctrl.activeColor : '' }"
                     ng-click="$ctrl.handleOptionClick(option)"
