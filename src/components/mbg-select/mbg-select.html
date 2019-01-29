@@ -1,0 +1,14 @@
+<div class="mbg-select-wrapper">
+    <mbg-input-text ng-model="$ctrl.inputValue"
+        ng-focus="$ctrl.onInputFocus()"
+        ng-blur="$ctrl.onInputBlur()"
+        ng-keydown="$ctrl.onInputKeydown($event)"></mbg-input-text>
+    <ul class="mbg-select-list"
+        ng-class="{'active': $ctrl.hasFocus && $ctrl.data.length > 0}">
+        <li ng-if="$ctrl.data"
+            ng-mousedown="$ctrl.selectOption(item)"
+            ng-repeat="item in $ctrl.data">
+            {{item[$ctrl.label]}}
+        </li>
+    </ul>
+</div>

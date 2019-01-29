@@ -85,6 +85,13 @@
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
+    <mbg-select ng-model="teste"
+      fetch="getTipoProduto()"
+      label="name"></mbg-select>
+    <br>
+    <pre>{{teste | json}}</pre>
+
+
     <!-- <mbg-address ng-model="address"></mbg-address>a
 
     <pre>{{ address | json }}</pre> -->
@@ -330,7 +337,7 @@
       </div>
     </div>
   -->
-    <div class="panel panel-default">
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">Money</div>
       <div class="panel-body">
         <mbg-input-money ng-model="money"
@@ -338,7 +345,7 @@
           allow-negative="false"></mbg-input-money>
         {{ money }}
       </div>
-    </div>
+    </div> -->
     <!--
     <div class="panel panel-default">
       <div class="panel-heading">Name</div>
@@ -354,12 +361,12 @@
       </div>
     </div>
   -->
-    <div class="panel panel-default">
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">Percentage</div>
       <div class="panel-body">
         <mbg-input-percentage ng-model="percentage"></mbg-input-percentage>
       </div>
-    </div>
+    </div> -->
     <!--
     <div class="panel panel-default">
       <div class="panel-heading">Phone</div>

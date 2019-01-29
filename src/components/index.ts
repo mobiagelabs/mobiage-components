@@ -34,6 +34,7 @@ import { mbgInputCheckboxModule } from './mbg-input-checkbox'
 import { mbgInputPasswordModule } from './mbg-input-password'
 import { mbgInputDateModule } from './mbg-input-date'
 import { mbgKeyboardModule } from './mbg-keyboard'
+import { mbgSelectModule } from './mbg-select'
 import 'angular-ui-bootstrap'
 
 const mbgComponentsModule = angular
@@ -69,6 +70,7 @@ const mbgComponentsModule = angular
     mbgInputPasswordModule,
     mbgInputDateModule,
     mbgKeyboardModule,
+    mbgSelectModule
   ])
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
   .directive('mbgPositiveNumber', () => new MbgPositiveNumber)
