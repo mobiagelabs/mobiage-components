@@ -2,7 +2,8 @@
     <mbg-input-text ng-model="$ctrl.inputValue"
         ng-focus="$ctrl.onInputFocus()"
         ng-blur="$ctrl.onInputBlur()"
-        ng-keydown="$ctrl.onInputKeydown($event)"></mbg-input-text>
+        ng-keydown="$ctrl.onInputKeydown($event)"
+        ng-change="$ctrl.onInputChange()"></mbg-input-text>
     <ul class="mbg-select-list"
         ng-class="{'active': $ctrl.hasFocus && $ctrl.data.length > 0}">
         <li ng-if="$ctrl.data"

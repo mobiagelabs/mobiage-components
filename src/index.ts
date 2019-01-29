@@ -255,7 +255,8 @@ const module = angular
 		//   }
 		// }
 
-		$scope.getTipoProduto = (param = '') => {
+		$scope.getTipoProduto = (param: string) => {
+			console.log(param)
 			return new Promise((resolve) => {
 				resolve([
 					{
@@ -277,7 +278,7 @@ const module = angular
 						name: 'Informatica'
 					},
 				].filter((obj) => {
-					return obj.name.toLowerCase().startsWith(param.toLowerCase())
+					// return obj.name.toLowerCase().startsWith(param.toLowerCase())
 				}))
 			})
 		}
