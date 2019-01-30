@@ -13,9 +13,7 @@ class MbgInputTextController {
     constructor($scope, $element, $attrs) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
-        this.props = {
-            placeholder: $attrs.placeholder || '',
-        }
+        this.props = {}
     }
     onChange() {
         if (this.ngChange) {
@@ -38,6 +36,7 @@ const mbgInputText = {
         ngChange: '&?',
         ngRequired: '=?',
         ngDisabled: '=?',
+        placeholder: '@?',
         ngBlur: '&?',
         ngFocus: '&?',
         ngKeyup: '&?',

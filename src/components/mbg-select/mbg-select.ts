@@ -16,7 +16,12 @@ class MbgSelectController {
     private isLoading: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile) {
+    }
 
+    $onInit() {
+        this.inputValue = ''
+        this.observeModel()
+        this.updateInputValue()
     }
 
     executeFetch() {
@@ -193,7 +198,8 @@ const mbgSelect = {
         ngValue: '@?',
         fetch: '&?',
         label: '@?',
-        enableAdd: '=?'
+        enableAdd: '=?',
+        placeholder: '@?'
     },
     controller: MbgSelectController,
     template,

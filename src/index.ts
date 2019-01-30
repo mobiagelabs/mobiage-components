@@ -30,6 +30,10 @@ const module = angular
 			console.log($scope)
 		}
 
+		$scope.teste = {
+			name: 'teste'
+		}
+
 		$scope.opcoesSelect = [
 			{ key: 'CONTAINS', label: 'Contém' },
 			{ key: 'NOT_CONTAINS', label: 'Não Contém' },
