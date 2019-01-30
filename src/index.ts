@@ -255,31 +255,34 @@ const module = angular
 		//   }
 		// }
 
-		$scope.getTipoProduto = (param: string) => {
-			console.log(param)
+		$scope.getTipoProduto = (param = '') => {
 			return new Promise((resolve) => {
-				resolve([
-					{
-						name: 'Camiseta'
-					},
-					{
-						name: 'Sapato'
-					},
-					{
-						name: 'Calça'
-					},
-					{
-						name: 'Bone'
-					},
-					{
-						name: 'Bolsa'
-					},
-					{
-						name: 'Informatica'
-					},
-				].filter((obj) => {
-					// return obj.name.toLowerCase().startsWith(param.toLowerCase())
-				}))
+				$timeout(() => {
+					resolve([
+						{
+							name: 'Camiseta'
+						},
+						{
+							name: 'Sapato'
+						},
+						{
+							name: 'Calça'
+						},
+						{
+							name: 'Bone'
+						},
+						{
+							name: 'Bolsa'
+						},
+						{
+							name: 'Informaticaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+						},
+					].filter((obj) => {
+
+						return obj.name.toLowerCase().startsWith(param.toLowerCase())
+
+					}))
+				}, 1000)
 			})
 		}
 

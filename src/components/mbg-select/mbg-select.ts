@@ -12,15 +12,21 @@ class MbgSelectController {
     private ngModel: any
     private initializingModel: boolean
     private disableWatchModel: any
+    private ngValue: string
+    private isLoading: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile) {
 
     }
 
     executeFetch() {
+        this.data = []
+        this.isLoading = true
         const response = this.fetch({ query: this.inputValue })
         if (response && response.then) {
-            response.then((data) => this.afterFetchData(data))
+            response.then((data) => {
+                this.afterFetchData(data)
+            })
         } else {
             this.afterFetchData(response)
         }
@@ -28,6 +34,7 @@ class MbgSelectController {
     afterFetchData(data) {
         this.$timeout(() => {
             this.data = data
+            this.isLoading = false
         })
         this.$timeout(() => this.focusFirstOption(), 150)
     }
@@ -58,6 +65,11 @@ class MbgSelectController {
         this.$timeout(() => {
             this.fetch ? this.executeFetch() : angular.noop()
         })
+    }
+    clearNgModel() {
+        delete this.ngModel
+        delete this.inputValue
+        this.onInputFocus()
     }
     onInputBlur() {
         this.$timeout(() => this.hasFocus = false)
@@ -129,7 +141,7 @@ class MbgSelectController {
                             item = this.inputValue
                         }
                     }
-                    this.ngModel = item
+                    this.ngValue ? this.ngModel = item[this.ngValue] : this.ngModel = item
                     if (this.label) {
                         this.inputValue = this.ngModel[this.label]
                     } else {
@@ -142,7 +154,7 @@ class MbgSelectController {
         })
     }
     selectOption(item) {
-        this.ngModel = item
+        this.ngValue ? this.ngModel = item[this.ngValue] : this.ngModel = item
         if (this.label) {
             this.inputValue = this.ngModel[this.label]
         } else {
@@ -150,26 +162,26 @@ class MbgSelectController {
         }
     }
     observeModel() {
-		this.initializingModel = true
-		this.disableWatchModel = this.$scope.$watch(`$ctrl.ngModel`, (value) => {
-			if (this.initializingModel) {
-				this.$timeout(() => { this.initializingModel = false })
-			} else {
-				if (!angular.equals(value, this.ngModel) || !angular.equals(value, this.inputValue)) {
-					this.updateInputValue()
-				}
-			}
-		})
-	}
+        this.initializingModel = true
+        this.disableWatchModel = this.$scope.$watch(`$ctrl.ngModel`, (value) => {
+            if (this.initializingModel) {
+                this.$timeout(() => { this.initializingModel = false })
+            } else {
+                if (!angular.equals(value, this.ngModel) || !angular.equals(value, this.inputValue)) {
+                    this.updateInputValue()
+                }
+            }
+        })
+    }
     updateInputValue() {
-		this.$timeout(() => {
-			if (this.label && this.ngModel) {
-				this.inputValue = this.ngModel[this.label]
-			} else {
-				this.inputValue = this.ngModel
-			}
-		})
-	}
+        this.$timeout(() => {
+            if (this.label && this.ngModel) {
+                this.inputValue = this.ngModel[this.label]
+            } else {
+                this.inputValue = this.ngModel
+            }
+        })
+    }
 
 }
 
@@ -178,6 +190,7 @@ MbgSelectController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$com
 const mbgSelect = {
     bindings: {
         ngModel: '=',
+        ngValue: '@?',
         fetch: '&?',
         label: '@?',
         enableAdd: '=?'
