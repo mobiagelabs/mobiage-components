@@ -42,7 +42,7 @@ class ImageCropController {
         }
 
         const config = Object.assign(defaultCrop)
-        this.crop = new Croppie(this.element, config)
+        this.crop = Croppie ?  new Croppie(this.element, config) : new window['Croppie'](this.element, config)
         this.crop.bind({ url: this.editImage }).then()
     }
 
