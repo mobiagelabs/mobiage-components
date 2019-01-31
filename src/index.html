@@ -227,8 +227,8 @@
                     name="teste"
                     state="'PR'"></mbg-input-ie>
     </form> -->
-    <mbg-image-upload config="config"
-                      ng-model="profileImage"></mbg-image-upload> 
+    <!-- <mbg-image-upload config="config"
+                      ng-model="profileImage"></mbg-image-upload>  -->
 
     <!--  -->
 
@@ -337,15 +337,7 @@
       </div>
     </div>
   -->
-    <!-- <div class="panel panel-default">
-      <div class="panel-heading">Money</div>
-      <div class="panel-body">
-        <mbg-input-money ng-model="money"
-          ng-keydown="testeloko()"
-          allow-negative="false"></mbg-input-money>
-        {{ money }}
-      </div>
-    </div> -->
+    <!-- -->
     <!--
     <div class="panel panel-default">
       <div class="panel-heading">Name</div>
@@ -354,13 +346,24 @@
       </div>
     </div>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">Number Only</div>
-      <div class="panel-body">
-        <mbg-input-number ng-model="number"></mbg-input-number>
-      </div>
-    </div>
+
   -->
+  <div class="panel panel-default">
+    <div class="panel-heading">Money</div>
+    <div class="panel-body">
+      <mbg-input-money ng-model="money"
+        ng-keydown="testeloko()"
+        allow-negative="false"></mbg-input-money>
+      {{ money }}
+    </div>
+  </div> 
+    
+  <div class="panel panel-default">
+    <div class="panel-heading">Number Only</div>
+    <div class="panel-body">
+      <mbg-input-number ng-model="number"></mbg-input-number>
+    </div>
+  </div>
     <!-- <div class="panel panel-default">
       <div class="panel-heading">Percentage</div>
       <div class="panel-body">
