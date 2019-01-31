@@ -3,13 +3,16 @@
     <div class="mbg-input-wrapper input-cep-wrapper"
          ng-class="$ctrl.cepClass"
          disable-animate>
-        <input type="text"
-               name="cep"
-               autocomplete="off"
+        <input autocomplete="disabled"
+               autocorrect="disabled"
+               autocapitalize="disabled"
+               spellcheck="false"
+               type="text"
+               name="CEP"
                ng-change="$ctrl.onChangeCep()"
                ng-model="$ctrl.address.zipCode"
                placeholder="99999-999"
-               ui-br-cep-mask>
+               ui-br-cep-mask/>
     </div>
     <mbg-input-step disable-animate
                     on-finish-focus-element="{{$ctrl.onFinishFocusElement}}"
