@@ -30,12 +30,15 @@ export default function CurrencyMaskDirective($mbgMasker, $timeout) {
             ngModel.$parsers.push(function (value) {
                 value = ((value || '').match(/[0-9]|\.|\,|\040|R|\$|\-/g) || []).join('')
                 const isNegative = value.startsWith('-')
-                let unmask = unmaskValue(value);
+                let unmask = value.indexOf(currency) !== -1 ? unmaskValue(value) : value;
                 if (unmask && isNegative && allowNegative) {
                     unmask = '-' + unmask
                 }
                 if (allowNegative && !unmask) {
                     unmask = '0'
+                }
+                if (unmask && value.indexOf(currency) === -1) {
+                    unmask = Number(unmask) * 0.01
                 }
                 return parseFloat(unmask || '0')
             });
@@ -53,10 +56,6 @@ export default function CurrencyMaskDirective($mbgMasker, $timeout) {
                 value = (value + '')
                 const isNegative = value.startsWith('-')
                 if (!value || value.length < 1) {
-                    if (!allowZero) {
-                        ngModel.$setValue(0);
-                        return
-                    }
                     value = '0'
                 }
                 if (isNegative) {
@@ -79,11 +78,6 @@ export default function CurrencyMaskDirective($mbgMasker, $timeout) {
                     evt.preventDefault();
                 }
             });
-
-
-            element.bind('keyup', function (evt) {
-                console.log(evt.target.value)
-            })
 
             element.bind('keydown', function (evt) {
                 /** pega o codigo da tecla */

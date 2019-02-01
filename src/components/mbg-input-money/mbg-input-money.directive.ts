@@ -49,7 +49,6 @@ const mbgInputMoneyDirective = ($filter, $timeout) => {
 
             elem.on('keyup', function (evt) {
                 const formattedValue = evt.target.value
-                console.log(formattedValue)
                 scope.$apply(() => {
                     let cVal = parseFloat(clearValue(evt.target.value))
                     ngModel.$modelValue = evt.target.value
