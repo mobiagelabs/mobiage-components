@@ -61,6 +61,11 @@
 
 <body ng-controller="demoCtrl">
   <div class="container">
+    
+    <p>Valor: {{ valor2 }}</p>
+    <mbg-input-money ng-model="valor2" allow-negative="false" allow-zero="true"></mbg-input-money>
+
+    <mbg-keyboard active-color="#0CBCBD"></mbg-keyboard>
 
     <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
                     on-finish-focus-element="#entityModel input">
@@ -348,7 +353,7 @@
 
 
   -->
-  <div class="panel panel-default">
+  <!-- <div class="panel panel-default">
     <div class="panel-heading">Money</div>
     <div class="panel-body">
       <mbg-input-money ng-model="money"
@@ -363,7 +368,7 @@
     <div class="panel-body">
       <mbg-input-number ng-model="number"></mbg-input-number>
     </div>
-  </div>
+  </div> -->
     <!-- <div class="panel panel-default">
       <div class="panel-heading">Percentage</div>
       <div class="panel-body">

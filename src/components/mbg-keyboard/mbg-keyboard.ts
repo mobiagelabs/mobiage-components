@@ -72,7 +72,7 @@ export class MbgKeyboard {
                     { code: 48, label: '0' },
                     { code: '48 48', label: '00' },
                     { code: 44, label: ',' },
-                    { code: 43, label: '+' },
+                    { code: 45, label: '-' },
                 ]
             }
         ]
@@ -146,7 +146,12 @@ export class MbgKeyboard {
     }
 
     applyValue(key: number) {
+        key = Number(key)
         const nativeActiveElement = this.currentActiveElement[0]
+        if (nativeActiveElement.hasAttribute('mbg-input-money')
+            && (key === 44 || key === 45 || key === 120)) {
+            return
+        }
         if (nativeActiveElement.type === 'text') {
             const currentVal = this.currentActiveElement.val()
             const newValue = String.fromCharCode(key)

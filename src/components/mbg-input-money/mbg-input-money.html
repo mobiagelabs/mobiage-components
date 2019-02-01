@@ -1,5 +1,5 @@
 <div class="mbg-input-money-wrapper mbg-input-wrapper"
-    tabindex="-1"
+     tabindex="-1"
      ng-click="$ctrl.selectInput()"
      ng-if="$ctrl.props">
     <input type="text"
@@ -10,12 +10,9 @@
            ng-blur="$ctrl.ngBlur({ $event })"
            ng-focus="$ctrl.ngFocus({ $event })"
            mbg-input-money
+           currency="R$ "
            data-allow-zero="{{ $ctrl.props.allowZero }}"
-           data-allow-empty="{{ $ctrl.props.allowEmpty }}"
-           data-prefix="{{ $ctrl.props.prefix }}"
-           data-decimal="{{ $ctrl.props.decimal }}"
            data-precision="{{ $ctrl.props.precision }}"
            data-allow-negative="{{ $ctrl.props.allowNegative }}"
-           data-thousands="{{ $ctrl.props.thousands }}"
            placeholder="{{ $ctrl.props.placeholder }}" />
 </div>

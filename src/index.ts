@@ -26,6 +26,8 @@ const module = angular
 			rounded: false
 		}
 
+		$scope.valor2 = -1500.00
+
 		$scope.testezao = () => {
 			console.log($scope)
 		}
@@ -40,7 +42,7 @@ const module = angular
 		]
 
 		$scope.testeloko = () => {
-			console.log('sdfu')
+			// console.log('sdfu')
 		}
 
 		$scope.optionsKeyboard = [
