@@ -37,7 +37,7 @@ export default function CurrencyMaskDirective($mbgMasker, $timeout) {
                 if (allowNegative && !unmask) {
                     unmask = '0'
                 }
-                return unmask
+                return parseFloat(unmask || '0')
             });
 
             /**
@@ -80,6 +80,11 @@ export default function CurrencyMaskDirective($mbgMasker, $timeout) {
                 }
             });
 
+
+            element.bind('keyup', function (evt) {
+                console.log(evt.target.value)
+            })
+
             element.bind('keydown', function (evt) {
                 /** pega o codigo da tecla */
                 var charCode = evt.charCode;
@@ -89,7 +94,7 @@ export default function CurrencyMaskDirective($mbgMasker, $timeout) {
                 if (keyCode == 48) {
                     let unmask = unmaskValue(evt.target.value);
                     if (!unmask) {
-                        $timeout(() =>  processMask(''))
+                        $timeout(() => processMask(''))
                     }
                 }
 
