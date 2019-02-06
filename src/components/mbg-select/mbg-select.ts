@@ -1,6 +1,7 @@
 import * as angular from 'angular'
 import './mbg-select.scss'
 import template from './mbg-select.html'
+import { MbgCookie } from '../../helpers/cookie'
 
 class MbgSelectController {
     private data: any
@@ -14,14 +15,33 @@ class MbgSelectController {
     private disableWatchModel: any
     private ngValue: string
     private isLoading: boolean
+    private transcludeTemplate: string
+    private onSelect: Function
+    private onUnselect: Function
+    private ngFocus: Function
+    private ngBlur: Function
+    private enableFavorite: boolean
 
-    constructor(public $scope, public $element, public $attrs, public $timeout, public $compile) {
-    }
+    constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
 
     $onInit() {
         this.inputValue = ''
+        this.enableAdd = this.enableAdd || false
         this.observeModel()
         this.updateInputValue()
+        this.findTransclude()
+        this.checkFavorite()
+    }
+
+    findTransclude() {
+        this.$transclude(this.$scope, (cloneEl) => {
+            angular.forEach(cloneEl, cl => {
+                let element = angular.element(cl)[0]
+                if (element.nodeName && element.nodeName === 'TEMPLATE') {
+                    this.transcludeTemplate = element.innerHTML
+                }
+            })
+        })
     }
 
     executeFetch() {
@@ -36,6 +56,7 @@ class MbgSelectController {
             this.afterFetchData(response)
         }
     }
+
     afterFetchData(data) {
         this.$timeout(() => {
             this.data = data
@@ -43,45 +64,64 @@ class MbgSelectController {
         })
         this.$timeout(() => this.focusFirstOption(), 150)
     }
+
     focusFirstOption() {
         const firstOption = this.getOptions()[0]
         this.setFocusOption(firstOption)
     }
+
     getOptions() {
         return this.$element.find('ul li')
     }
+
     setFocusOption(liOption) {
         if (liOption) {
             this.removeAllFocus()
             angular.element(liOption).addClass('focused')
         }
     }
+
     removeAllFocus() {
         this.getOptions().removeClass('focused')
     }
-    onInputFocus() {
+
+    onInputFocus(ignoreCallback?: boolean) {
         if (!this.hasFocus) {
             this.onInputChange()
             this.hasFocus = true
             this.$element.find('input').select()
         }
+        if (!ignoreCallback && this.ngFocus) {
+            this.ngFocus()
+        }
     }
+
+    onInputBlur() {
+        this.$timeout(() => this.hasFocus = false)
+        if (this.ngBlur) {
+            this.ngBlur()
+        }
+    }
+
     onInputChange() {
         this.$timeout(() => {
             this.fetch ? this.executeFetch() : angular.noop()
         })
     }
-    clearNgModel() {
+
+    clearNgModel(ignoreCallback?: boolean) {
         delete this.ngModel
         delete this.inputValue
-        this.onInputFocus()
+        this.onInputFocus(ignoreCallback)
+        if (this.onUnselect) {
+            this.onUnselect()
+        }
     }
-    onInputBlur() {
-        this.$timeout(() => this.hasFocus = false)
-    }
+
     getOptionFocused() {
         return this.$element.find('ul li.focused')
     }
+
     onInputKeydown(evt) {
         this.hasFocus = true
         switch (evt.keyCode) {
@@ -98,22 +138,36 @@ class MbgSelectController {
                 this.moveToDown()
                 break
             case 9: // TAB
-                this.setModel(true)
+                this.setModel()
+                break
+            case 8: // BACKSPACE
+                this.$timeout(() => {
+                    if (this.fetch) {
+                        this.initializingModel = true
+                        this.ngModel = null
+                        if (this.onUnselect) {
+                            this.onUnselect()
+                        }
+                    }
+                })
                 break
         }
     }
+
     moveToUp() {
         const currentOption = this.getOptionFocused()
         const prevOption = currentOption.prev()
         prevOption[0] ? this.setFocusOption(prevOption) : this.focusLastOption()
         this.$timeout(() => this.scrollMove())
     }
+
     moveToDown() {
         const currentOption = this.getOptionFocused()
         const nextOption = currentOption.next()
         nextOption[0] ? this.setFocusOption(nextOption) : this.focusFirstOption()
         this.$timeout(() => this.scrollMove())
     }
+
     scrollMove() {
         const li = this.getOptionFocused()[0]
         if (li) {
@@ -128,12 +182,14 @@ class MbgSelectController {
             }
         }
     }
+
     focusLastOption() {
         const options = this.getOptions()
         const lastOption = options[options.length - 1]
         this.setFocusOption(lastOption)
     }
-    setModel(ignoreFocusNext?: boolean) {
+
+    setModel() {
         this.$timeout(() => {
             if (this.fetch) {
                 const currentOption = this.getOptionFocused()
@@ -156,8 +212,12 @@ class MbgSelectController {
             } else {
                 this.ngModel = this.inputValue
             }
+            if (this.onSelect) {
+                this.onSelect({ value: this.ngModel })
+            }
         })
     }
+
     selectOption(item) {
         this.ngValue ? this.ngModel = item[this.ngValue] : this.ngModel = item
         if (this.label) {
@@ -166,6 +226,7 @@ class MbgSelectController {
             this.inputValue = this.ngModel
         }
     }
+
     observeModel() {
         this.initializingModel = true
         this.disableWatchModel = this.$scope.$watch(`$ctrl.ngModel`, (value) => {
@@ -178,6 +239,7 @@ class MbgSelectController {
             }
         })
     }
+
     updateInputValue() {
         this.$timeout(() => {
             if (this.label && this.ngModel) {
@@ -188,18 +250,51 @@ class MbgSelectController {
         })
     }
 
+    getFavoriteKey() {
+        return 'mbg-favorite-' + this.$attrs.name
+    }
+
+    checkFavorite() {
+        const favorite = MbgCookie.get(this.getFavoriteKey())
+        if (favorite && this.enableFavorite && !this.ngModel) {
+            this.selectOption(favorite)
+        }
+    }
+
+    favorite(evt, item) {
+        evt.preventDefault()
+        evt.stopPropagation()
+        if (this.isFavorite(item)) {
+            MbgCookie.set(this.getFavoriteKey(), null)
+        } else {
+            MbgCookie.set(this.getFavoriteKey(), item)
+        }
+    }
+
+    isFavorite(item) {
+        const favorite = MbgCookie.get(this.getFavoriteKey())
+        return favorite && angular.equals(favorite, item)
+    }
+
 }
 
-MbgSelectController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$compile']
+MbgSelectController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$compile', '$transclude']
 
 const mbgSelect = {
+    transclude: true,
     bindings: {
         ngModel: '=',
         ngValue: '@?',
         fetch: '&?',
+        ngFocus: '&?',
+        ngBlur: '&?',
+        onSelect: '&?',
+        onUnselect: '&?',
         label: '@?',
         enableAdd: '=?',
-        placeholder: '@?'
+        placeholder: '@?',
+        addOnlyEmpty: '=?',
+        enableFavorite: '=?',
     },
     controller: MbgSelectController,
     template,

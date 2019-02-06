@@ -61,11 +61,11 @@
 
 <body ng-controller="demoCtrl">
   <div class="container">
-    
-    <p>Valor: {{ valor2 + 1500 }}</p>
-    <mbg-input-money ng-model="valor2" allow-negative="true" allow-zero="false"></mbg-input-money>
 
-    <mbg-keyboard active-color="#0CBCBD"></mbg-keyboard>
+    <!-- <p>Valor: {{ valor2 + 1500 }}</p> -->
+    <!-- <mbg-input-money ng-model="valor2" allow-negative="true" allow-zero="false"></mbg-input-money> -->
+
+    <!-- <mbg-keyboard active-color="#0CBCBD"></mbg-keyboard> -->
 
     <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
                     on-finish-focus-element="#entityModel input">
@@ -89,12 +89,19 @@
                            capitalize="true"
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
-    <!-- <mbg-select ng-model="teste"
+
+    <mbg-select ng-model="teste"
       fetch="getTipoProduto(query)"
       placeholder="teste"
-      label="name"></mbg-select>
+      enable-add="true"
+      add-only-empty="true"
+      enable-favorite="true"
+      label="name">
+      <template>{{ item.name }} - {{ item.name }}</template>
+    </mbg-select>
+
     <br>
-    <pre>{{teste | json}}</pre> -->
+    <pre>{{teste | json}}</pre>
 
 
     <!-- <mbg-address ng-model="address"></mbg-address>a
@@ -353,7 +360,7 @@
 
 
   -->
-  <!-- <div class="panel panel-default">
+    <!-- <div class="panel panel-default">
     <div class="panel-heading">Money</div>
     <div class="panel-body">
       <mbg-input-money ng-model="money"

@@ -32,9 +32,9 @@ const module = angular
 			console.log($scope)
 		}
 
-		$scope.teste = {
-			name: 'teste'
-		}
+		// $scope.teste = {
+		// 	name: 'teste'
+		// }
 
 		$scope.opcoesSelect = [
 			{ key: 'CONTAINS', label: 'Contém' },

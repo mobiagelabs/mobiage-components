@@ -2,7 +2,7 @@
     <mbg-input-text ng-model="$ctrl.inputValue"
         ng-focus="$ctrl.onInputFocus()"
         ng-blur="$ctrl.onInputBlur()"
-        placeholder="{{ $ctrl.placeholder }}" 
+        placeholder="{{ $ctrl.placeholder }}"
         ng-keydown="$ctrl.onInputKeydown($event)"
         ng-change="$ctrl.onInputChange()"></mbg-input-text>
     <svg class="loading"
@@ -30,18 +30,30 @@
     </svg>
     <i class="fa fa-caret-down mbg-icon-select"
         ng-show="!$ctrl.ngModel && !$ctrl.isLoading"
-        ng-click="$ctrl.onInputFocus()"
+        ng-click="$ctrl.onInputFocus(true)"
         aria-hidden="true"></i>
     <i class="fa fa-times mbg-icon-select"
         ng-show="$ctrl.ngModel && !$ctrl.isLoading"
         aria-hidden="true"
-        ng-click="$ctrl.clearNgModel()"></i>
+        ng-click="$ctrl.clearNgModel(true)"></i>
     <ul class="mbg-select-list"
-        ng-class="{'active': $ctrl.hasFocus && $ctrl.data.length > 0}">
-        <li ng-if="$ctrl.data"
+        ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
+        <li ng-show="$ctrl.data"
             ng-mousedown="$ctrl.selectOption(item)"
             ng-repeat="item in $ctrl.data">
-            {{item[$ctrl.label]}}
+            <div ng-if="$ctrl.transcludeTemplate"
+                mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
+            <div ng-if="!$ctrl.transcludeTemplate">{{item[$ctrl.label]}}</div>
+            <i title="Favoritar"
+                ng-mousedown="$ctrl.favorite($event, item)"
+                ng-class="{ 'fa fa-star-o': !$ctrl.isFavorite(item), 'fa fa-star': $ctrl.isFavorite(item) }"></i>
+
+        </li>
+        <li ng-if="$ctrl.addOnlyEmpty ? ($ctrl.enableAdd && $ctrl.inputValue && $ctrl.data.length == 0) : ($ctrl.enableAdd && $ctrl.inputValue)"
+            disable-animate
+            ng-mousedown="$ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue })">
+            {{ $ctrl.inputValue }}
+            <span ng-hide="$ctrl.hiddenAddLabel">(novo)</span>
         </li>
     </ul>
 </div>
