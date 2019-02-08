@@ -1,39 +1,40 @@
 <div class="mbg-keyboard-wrapper">
     <div class="mbg-keyboard-row">
         <div class="mbg-keyboard-item mbg-keyboard-option"
-             ng-repeat="option in $ctrl.options">
+            ng-repeat="option in $ctrl.options">
             <button type="button"
-                    tabindex="-1"
-                    ng-disabled="option.isDisabled()"
-                    ng-class="{ 'active': option.enable }"
-                    ng-style="{ 'background': option.enable ? $ctrl.activeColor : 'transparent', 'border': option.enable ? '1px solid ' + $ctrl.activeColor : '' }"
-                    ng-click="$ctrl.handleOptionClick(option)"
-                    ng-bind-html="$ctrl.transformHTMLContent(option.content)">
+                uib-tooltip="{{option.tooltip ? option.tooltip : ''}}"
+                tabindex="-1"
+                ng-disabled="option.isDisabled()"
+                ng-class="{ 'active': option.enable }"
+                ng-style="{ 'background': option.enable ? $ctrl.activeColor : 'transparent', 'border': option.enable ? '1px solid ' + $ctrl.activeColor : '' }"
+                ng-click="$ctrl.handleOptionClick(option)"
+                ng-bind-html="$ctrl.transformHTMLContent(option.content)">
             </button>
         </div>
     </div>
     <div class="mbg-keyboard-separator"
-         ng-if="$ctrl.options.length > 0">
+        ng-if="$ctrl.options.length > 0">
         <div class="mbg-keyboard-line"></div>
     </div>
     <div class="mbg-keyboard-row"
-         ng-class="{ 'mbg-keyboard-disable': !$ctrl.currentActiveElement }"
-         ng-repeat="row in $ctrl.rowsButtons">
+        ng-class="{ 'mbg-keyboard-disable': !$ctrl.currentActiveElement }"
+        ng-repeat="row in $ctrl.rowsButtons">
         <div class="mbg-keyboard-item"
-             ng-repeat="button in row.buttons">
+            ng-repeat="button in row.buttons">
             <button type="button"
-                    tabindex="-1"
-                    data-keyboard-code="{{ button.code }}">{{ button.label }}</button>
+                tabindex="-1"
+                data-keyboard-code="{{ button.code }}">{{ button.label }}</button>
         </div>
     </div>
     <div class="mbg-keyboard-row"
-         ng-class="{ 'mbg-keyboard-disable': !$ctrl.currentActiveElement }">
+        ng-class="{ 'mbg-keyboard-disable': !$ctrl.currentActiveElement }">
         <div class="mbg-keyboard-item flex-1">
             <button data-keyboard-code="13"
-                    type="button"
-                    tabindex="-1"
-                    ng-style="{ 'background': $ctrl.activeColor }"
-                    class="mbg-keyboard-enter">ENTER</button>
+                type="button"
+                tabindex="-1"
+                ng-style="{ 'background': $ctrl.activeColor }"
+                class="mbg-keyboard-enter">ENTER</button>
         </div>
     </div>
 </div>

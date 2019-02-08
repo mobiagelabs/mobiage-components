@@ -54,7 +54,8 @@ const module = angular
 				enable: false,
 				onClick: (option) => {
 					console.log('clicou no D')
-				}
+				},
+				tooltip: 'Testeeeeeeeeeeeeeeeeeeeeeeeee'
 			},
 			{
 				content: `
@@ -64,7 +65,8 @@ const module = angular
 				enable: false,
 				onClick: (option) => {
 					console.log('clicou no Q')
-				}
+				},
+				tooltip: 'Quantidade'
 			},
 			{
 				content: `<i class="fa fa-car" aria-hidden="true"></i>`,
