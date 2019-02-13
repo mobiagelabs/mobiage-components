@@ -44,8 +44,10 @@
                             ng-click="$ctrl.toogleEnableItem($index, $parent.$index)">
                             {{ $ctrl.gridValues[$index][$parent.$index].enable ? 'Remover' : 'Adicionar'}}
                         </a>
-                        <span ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }">{{$ctrl.showStock
-                            ? 'Estoque' : 'R$ Venda'}}</span>
+                        <span ng-show="$ctrl.enableCurrentStock">Estoque atual:
+                            {{$ctrl.gridValues[$index][$parent.$index].currentStock || '0'}}</span>
+                        <span ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }">
+                            {{$ctrl.inputLabel ? $ctrl.inputLabel : $ctrl.showStock ? 'Estoque' : 'R$ Venda'}}</span>
                         <input type="number"
                             ng-show="$ctrl.showStock"
                             ng-model="$ctrl.gridValues[$index][$parent.$index].stock"
@@ -56,6 +58,7 @@
                             class="grid-product-stock" />
                         <input type="text"
                             ng-model="$ctrl.gridValues[$index][$parent.$index].price"
+                            ng-show="$ctrl.enablePrice"
                             ui-money-mask
                             onclick="angular.element(this).scope().$ctrl.focusInput(this)"
                             ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }"

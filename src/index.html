@@ -145,9 +145,9 @@
           </div>
           <div class="col-md-3 col-md-offset-1">
           -->
-            <mbg-keyboard active-color="#0CBCBD"
+            <!-- <mbg-keyboard active-color="#0CBCBD"
                           focus-element="#barCode input"
-                          options="optionsKeyboard"></mbg-keyboard>
+                          options="optionsKeyboard"></mbg-keyboard> -->
 
           <!-- </div>
         </div>
@@ -189,14 +189,15 @@
                            placeholder="'Qual o modelodsadsadsaasd?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <!-- <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
+     <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
                       y="{ key: 'COR', label: 'COR PRODUTO' }"
                       details="details"
                       ng-model="result"
-                      active-add-or-remove="true"
-                      on-click-edit-button="editTeste(x, y)"
-                      extra-button-label="+ Adicionar tamanho">
+                      enable-price="true"
+                      enable-current-stock="false">
     </mbg-product-grid>
+
+    <!--
 
     {{ result }} -->
     <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"

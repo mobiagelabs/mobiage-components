@@ -192,7 +192,7 @@ const module = angular
 					'value': 'Pink',
 					'valueRef': '#ce00cb'
 				},
-				'stock': 111,
+				'currentStock': 500,
 				'enable': true,
 				'price': 10
 			},
@@ -206,7 +206,9 @@ const module = angular
 					'value': 'Verde',
 					'valueRef': '#17b709'
 				},
-				'price': 10
+				'price': 10,
+				'currentStock': 200,
+				'enable': true,
 			}
 		]
 

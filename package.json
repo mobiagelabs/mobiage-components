@@ -1,10 +1,6 @@
 {
   "name": "@mobiage/components",
-<<<<<<< HEAD
-  "version": "1.70.0",
-=======
   "version": "1.71.0",
->>>>>>> 4f2e51ead5e8450949a3847fb4a9ee60cff9378a
   "description": "@mobiage/components",
   "main": "src/components/index.ts",
   "scripts": {

@@ -6,7 +6,8 @@ class MbgProductGridController {
     private ngModel: Array<any>
     private details: Array<any>
     private showStock
-
+    private enablePrice: boolean
+    private enableCurrentStock: boolean
     private x: { key: string, label: string }
     private y: { key: string, label: string }
     private grid: {
@@ -20,6 +21,8 @@ class MbgProductGridController {
     $onInit() {
         this.grid = {}
         this.gridValues = {}
+        this.enableCurrentStock = this.enableCurrentStock === undefined ? false : this.enableCurrentStock
+        this.enablePrice = this.enablePrice === undefined ? true : this.enablePrice
         this.showStock = this.showStock === undefined ? true : this.showStock
         this.$scope.$watch('$ctrl.ngModel', () => this.handleModel(), true)
         this.$scope.$watch('$ctrl.details', () => this.handleModel(), true)
@@ -39,6 +42,7 @@ class MbgProductGridController {
                             this.gridValues[xIndex][yIndex] = this.gridValues[xIndex][yIndex] || {}
                             this.gridValues[xIndex][yIndex] = {
                                 stock: item.stock,
+                                currentStock: item.currentStock,
                                 enable: item.enable,
                                 price: item.price,
                             }
@@ -68,6 +72,7 @@ class MbgProductGridController {
                                 xDetail: this.grid.x[xIndex],
                                 yDetail: this.grid.y[yIndex],
                                 stock: this.gridValues[xIndex][yIndex].stock,
+                                currentStock: this.gridValues[xIndex][yIndex].currentStock,
                                 enable: this.gridValues[xIndex][yIndex].enable,
                                 price: this.gridValues[xIndex][yIndex].price,
                             }
@@ -102,7 +107,10 @@ const mbgProductGrid = {
         extraButtonLabel: '@?',
         onClickExtraButton: '&?',
         onClickEditButton: '&?',
+        inputLabel: '@?',
         showStock: '=?',
+        enablePrice: '=?',
+        enableCurrentStock: '=?'
     },
     template,
     controller: MbgProductGridController,
