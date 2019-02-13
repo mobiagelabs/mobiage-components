@@ -219,6 +219,7 @@ const module = angular
 		$scope.listTeste = [
 			{}
 		]
+		$scope.testelabel = 'Devolver:'
 
 		$scope.teste222 = (evt) => {
 			// console.log(evt.keyCode)

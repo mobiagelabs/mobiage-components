@@ -107,7 +107,7 @@ const mbgProductGrid = {
         extraButtonLabel: '@?',
         onClickExtraButton: '&?',
         onClickEditButton: '&?',
-        inputLabel: '@?',
+        inputLabel: '=?',
         showStock: '=?',
         enablePrice: '=?',
         enableCurrentStock: '=?'
