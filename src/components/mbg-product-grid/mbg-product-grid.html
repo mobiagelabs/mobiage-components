@@ -52,6 +52,7 @@
                             ng-show="$ctrl.showStock"
                             ng-model="$ctrl.gridValues[$index][$parent.$index].stock"
                             placeholder="0"
+                            positive-number="true"
                             ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }"
                             ng-change="$ctrl.handleGridValues()"
                             ng-model-options="{ debounce: 500 }"
