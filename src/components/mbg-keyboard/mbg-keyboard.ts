@@ -148,7 +148,7 @@ export class MbgKeyboard {
     applyValue(key: number) {
         key = Number(key)
         const nativeActiveElement = this.currentActiveElement[0]
-        if (nativeActiveElement.hasAttribute('mbg-input-money')
+        if ((nativeActiveElement.hasAttribute('mbg-input-money') || nativeActiveElement.hasAttribute('type="number"'))
             && (key === 44 || key === 45 || key === 120 || key === 13)) {
             return
         }
@@ -185,6 +185,10 @@ export class MbgKeyboard {
             let startPos = nativeActiveElement.selectionStart
             this.currentActiveElement.val(this.replaceAt(currentVal, startPos - 1, ''))
             nativeActiveElement.setSelectionRange(startPos - 1, startPos - 1)
+        }
+        if (nativeActiveElement.type === 'number') {
+            const currentVal = this.currentActiveElement.val()
+            this.currentActiveElement.val(this.replaceAt(currentVal, currentVal.length - 1, ''))
         }
         this.currentActiveElement.trigger('input')
     }
