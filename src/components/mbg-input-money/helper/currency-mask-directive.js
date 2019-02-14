@@ -80,6 +80,14 @@ export default function CurrencyMaskDirective($mbgMasker, $timeout) {
             });
 
             element.bind('keydown', function (evt) {
+                const isValid = (evt.keyCode >= 48 && evt.keyCode <= 57) 
+                                || (evt.keyCode >= 96 && evt.keyCode <= 105) 
+                                || (evt.keyCode >= 37 && evt.keyCode <= 40)
+                                || (evt.keyCode == 8 || evt.keyCode == 13)
+                if (!isValid) { 
+                    evt.preventDefault()
+                    return
+                }
                 /** pega o codigo da tecla */
                 var charCode = evt.charCode;
                 var keyCode = evt.which || evt.keyCode;
