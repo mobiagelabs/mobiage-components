@@ -149,7 +149,7 @@ export class MbgKeyboard {
         key = Number(key)
         const nativeActiveElement = this.currentActiveElement[0]
         if (nativeActiveElement.hasAttribute('mbg-input-money')
-            && (key === 44 || key === 45 || key === 120)) {
+            && (key === 44 || key === 45 || key === 120 || key === 13)) {
             return
         }
         if (nativeActiveElement.type === 'text') {
