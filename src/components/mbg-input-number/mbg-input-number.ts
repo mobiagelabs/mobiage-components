@@ -31,9 +31,6 @@ const mbgInputNumber = {
         ngDisabled: '=?',
         ngBlur: '&?',
         ngFocus: '&?',
-        ngKeyup: '&?',
-        ngKeypress: '&?',
-        ngKeydown: '&?',
         positive: '=?'
     },
     template,
