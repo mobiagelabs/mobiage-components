@@ -43,7 +43,8 @@
             ng-repeat="item in $ctrl.data">
             <div ng-if="$ctrl.transcludeTemplate"
                  mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
-            <div ng-if="!$ctrl.transcludeTemplate">{{item[$ctrl.label]}}</div>
+            <div ng-if="!$ctrl.transcludeTemplate && $ctrl.label">{{item[$ctrl.label]}}</div>
+            <div ng-if="!$ctrl.transcludeTemplate && !$ctrl.label">{{item}}</div>
             <i title="Favoritar"
                ng-if="$ctrl.enableFavorite"
                ng-mousedown="$ctrl.favorite($event, item)"
@@ -52,7 +53,7 @@
         </li>
         <li ng-if="$ctrl.addOnlyEmpty ? ($ctrl.enableAdd && $ctrl.inputValue && $ctrl.data.length == 0) : ($ctrl.enableAdd && $ctrl.inputValue)"
             disable-animate
-            ng-mousedown="$ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue })">
+            ng-mousedown="$ctrl.label ? $ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue }) : $ctrl.selectOption($ctrl.inputValue)">
             {{ $ctrl.inputValue }}
             <span ng-hide="$ctrl.hiddenAddLabel">(novo)</span>
         </li>

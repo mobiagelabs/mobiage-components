@@ -63,9 +63,12 @@
   <div class="container">
     <h1>{{ teste22222 + 10 }}</h1>
 
-    <mbg-input-number ng-model="teste22222" allow-negative="false"></mbg-input-number>
+    <p>Valor: {{ valor2 }}</p>
+    <!-- <mbg-input-money ng-model="valor2" allow-negative="true" allow-zero="false"></mbg-input-money> -->
 
-    <mbg-keyboard active-color="#0CBCBD"></mbg-keyboard>
+    <!-- <mbg-input-number ng-model="teste22222"></mbg-input-number>
+
+    <mbg-keyboard active-color="#0CBCBD"></mbg-keyboard> -->
 
     <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
                     on-finish-focus-element="#entityModel input">
@@ -90,20 +93,31 @@
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <!-- <mbg-select ng-model="teste"
+    <mbg-select ng-model="teste"
       fetch="getTipoProduto(query)"
       placeholder="teste"
       enable-add="true"
+      name="teste1"
       add-only-empty="true"
-      enable-favorite="true"
-      label="name">
-      <template>{{ item.name }} - {{ item.name }}</template>
+      enable-favorite="true">
     </mbg-select>
 
     <br>
-    <pre>{{teste | json}}</pre> -->
+    <pre>{{teste | json}}</pre>
+    <br>
+    <br>
+    <mbg-select ng-model="teste2"
+      fetch="getTipoProdutoObj(query)"
+      placeholder="teste"
+      enable-add="true"
+      name="teste2"
+      add-only-empty="true"
+      label="name"
+      enable-favorite="true">
+    </mbg-select>
 
-
+    <br>
+    <pre>{{teste2 | json}}</pre>
     <!-- <mbg-address ng-model="address"></mbg-address>a
 
     <pre>{{ address | json }}</pre> -->

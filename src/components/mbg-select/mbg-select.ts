@@ -6,7 +6,7 @@ import { MbgCookie } from '../../helpers/cookie'
 class MbgSelectController {
     private data: any
     private fetch: Function
-    private inputValue: string
+    private inputValue: any
     private hasFocus: boolean
     private enableAdd: boolean
     private label: string
@@ -199,7 +199,7 @@ class MbgSelectController {
                         if (this.label) {
                             item = { [this.label]: this.inputValue }
                         } else {
-                            item = this.inputValue
+                            item = isNaN(this.inputValue) ? this.inputValue : Number(this.inputValue)
                         }
                     }
                     this.ngValue ? this.ngModel = item[this.ngValue] : this.ngModel = item
