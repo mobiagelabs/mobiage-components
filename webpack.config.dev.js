@@ -1,6 +1,7 @@
 let path = require('path'),
   webpack = require('webpack'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'), //css单独打包
+  autoprefixer = require('autoprefixer'),
   HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const ROOT_PATH = path.resolve(__dirname), //项目根目录
@@ -45,7 +46,30 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: NODE_MODULES_PATH,
-        use: ExtractTextPlugin.extract(['css-loader', 'autoprefixer-loader', 'sass-loader']),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            { loader: 'css-loader' },
+            {
+              loader: require.resolve('postcss-loader'),
+              options: {
+                // Necessary for external CSS imports to work
+                // https://github.com/facebookincubator/create-react-app/issues/2677
+                ident: 'postcss',
+                plugins: () => [
+                  require('postcss-flexbugs-fixes'),
+                  autoprefixer({
+                    browsers: [
+                      "last 2 versions", "Safari 6", "IE 8"
+                    ],
+                    flexbox: 'no-2009'
+                  })
+                ]
+              }
+            },
+            'sass-loader'
+          ]
+        }),
         include: APP_PATH
       },
       {
@@ -106,9 +130,9 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery'
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
     })
   ],
   resolve: {

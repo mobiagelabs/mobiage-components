@@ -1,6 +1,7 @@
 import './mbg-keyboard.scss'
 import template from './mbg-keyboard.html'
 import * as angular from 'angular'
+import { MbgDeviceCheck } from '../../helpers/mbg-device-check'
 
 export class MbgKeyboard {
     private bindClick: any
@@ -82,11 +83,17 @@ export class MbgKeyboard {
         this.bindClick.unbind()
     }
 
+    elementEnableVirtualKeyboard(elm) {
+        const elmScope = elm.parent().scope()
+        return elmScope.$ctrl && elmScope.$ctrl.$attrs && elmScope.$ctrl.$attrs.hasOwnProperty('enableKeyboard')
+    }
+
     checkActiveElement(evt?) {
         this.$timeout(() => {
             const activeTempElement = angular.element(document.activeElement)
             this.beforeActiveElement()
-            if (activeTempElement.closest('.mbg-input-wrapper').length === 1) {
+            if (activeTempElement.closest('.mbg-input-wrapper').length === 1 && this.elementEnableVirtualKeyboard(activeTempElement)) {
+                this.hideNativeKeyboard(activeTempElement)
                 this.currentActiveElement = activeTempElement
                 this.afterActiveElement()
             } else if (this.currentActiveElement
@@ -94,14 +101,29 @@ export class MbgKeyboard {
                     || (evt && angular.element(evt.target).closest('.mbg-keyboard-wrapper').length === 1))) {
                 this.currentActiveElement.focus()
                 this.afterActiveElement()
-                const itemCode = activeTempElement.attr('data-keyboard-code')
-                if (itemCode) {
-                    this.onItemKeyboardPress(itemCode)
-                }
             } else {
                 delete this.currentActiveElement
             }
         })
+    }
+
+    hideNativeKeyboard(activeTempElement) {
+        if (MbgDeviceCheck.isMobileOrTablet()) {
+            activeTempElement.attr('readonly', 'readonly') // Force keyboard to hide on input field.
+            activeTempElement.attr('disabled', 'true') // Force keyboard to hide on textarea field.
+            this.$timeout(() => {
+                activeTempElement.blur()
+                activeTempElement.removeAttr('readonly')
+                activeTempElement.removeAttr('disabled')
+            }, 100)
+        }
+    }
+
+    onButtonClick(itemCode) {
+        this.currentActiveElement.focus()
+        if (itemCode) {
+            this.onItemKeyboardPress(itemCode.toString())
+        }
     }
 
     onItemKeyboardPress(itemCode) {

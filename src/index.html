@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
   <meta charset="UTF-8">
@@ -61,14 +61,17 @@
 
 <body ng-controller="demoCtrl">
   <div class="container">
-    <h1>{{ teste22222 + 10 }}</h1>
 
-    <p>Valor: {{ valor2 }}</p>
-    <!-- <mbg-input-money ng-model="valor2" allow-negative="true" allow-zero="false"></mbg-input-money> -->
+    <mbg-input-text ng-model="teste222222" enable-keyboard></mbg-input-text>
+    <mbg-input-money ng-model="valor2" allow-negative="true" allow-zero="false"></mbg-input-money>
+
+
+    <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard>
+
 
     <!-- <mbg-input-number ng-model="teste22222"></mbg-input-number>
 
-    <mbg-keyboard active-color="#0CBCBD"></mbg-keyboard> -->
+     -->
 
     <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
                     on-finish-focus-element="#entityModel input">
@@ -93,7 +96,7 @@
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <mbg-select ng-model="teste"
+    <!-- <mbg-select ng-model="teste"
       fetch="getTipoProduto(query)"
       placeholder="teste"
       enable-add="true"
@@ -117,7 +120,7 @@
     </mbg-select>
 
     <br>
-    <pre>{{teste2 | json}}</pre>
+    <pre>{{teste2 | json}}</pre> -->
     <!-- <mbg-address ng-model="address"></mbg-address>a
 
     <pre>{{ address | json }}</pre> -->
