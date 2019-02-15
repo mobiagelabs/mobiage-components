@@ -8,7 +8,7 @@ class MbgInputNumberController {
     private ngDisabled
     private props
 
-    constructor(public $scope, public $element, $attrs, public $compile, public $timeout) {
+    constructor(public $scope, public $element, public $attrs, public $compile, public $timeout) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
         this.props = {
