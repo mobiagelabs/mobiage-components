@@ -1,6 +1,7 @@
 import * as angular from 'angular'
 import components from './components'
 import { initializeApp } from 'firebase/app'
+import './assets/angular-locale_pt-br.js'
 
 initializeApp({
 	apiKey: 'AIzaSyCpNjqpFQJ-ptCOMsqZjyDUx33vB_j_yOk',
@@ -13,6 +14,7 @@ initializeApp({
 
 const module = angular
 	.module('demo', [
+		'ngLocale',
 		components,
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
