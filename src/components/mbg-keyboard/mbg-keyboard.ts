@@ -154,12 +154,14 @@ export class MbgKeyboard {
     }
 
     createKeypressEvent(key: number) {
-        const nativeActiveElement = this.currentActiveElement[0]
-        const eventObj: any = document.createEvent('Events')
-        eventObj.initEvent('keydown', true, true)
-        eventObj.which = key
-        eventObj.keyCode = key
-        nativeActiveElement.dispatchEvent(eventObj)
+        this.$timeout(() => {
+            const nativeActiveElement = this.currentActiveElement[0]
+            const eventObj: any = document.createEvent('Events')
+            eventObj.initEvent('keydown', true, true)
+            eventObj.which = key
+            eventObj.keyCode = key
+            nativeActiveElement.dispatchEvent(eventObj)
+        })
     }
 
     clearValue() {
