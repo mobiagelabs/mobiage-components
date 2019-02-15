@@ -266,12 +266,10 @@ const module = angular
 		//   }
 		// }
 
-		$scope.getTipoProduto = (param = '') => {
+		$scope.getTipoProduto = (param) => {
 			return new Promise((resolve) => {
 				$timeout(() => {
-					resolve(['30', '60', '90', '120', '150', '180'].filter((obj) => {
-						return obj.toLowerCase().startsWith(param.toLowerCase())
-					}))
+					resolve([30, 60, 90, 120, 150, 180].filter((obj) => obj === Number(param)))
 				}, 1000)
 			})
 		}

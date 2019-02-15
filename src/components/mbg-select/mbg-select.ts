@@ -256,7 +256,6 @@ class MbgSelectController {
 
     checkFavorite() {
         const favorite = MbgCookie.get(this.getFavoriteKey())
-        console.log(favorite)
         if (favorite && this.enableFavorite && !this.ngModel) {
             this.selectOption(favorite)
         }
