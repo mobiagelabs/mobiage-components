@@ -47,6 +47,9 @@ mbg-keyboard {
                     font-weight: bold;
                     color: #666;
                     font-family: 'Montserrat', sans-serif;
+                    * {
+                        margin: auto;
+                    }
                 }
                 .mbg-keyboard-enter {
                     width: 100%;
