@@ -80,11 +80,12 @@ export default function CurrencyMaskDirective($mbgMasker, $timeout) {
             });
 
             element.bind('keydown', function (evt) {
-                const isValid = (evt.keyCode >= 48 && evt.keyCode <= 57) 
-                                || (evt.keyCode >= 96 && evt.keyCode <= 105) 
-                                || (evt.keyCode >= 37 && evt.keyCode <= 40)
-                                || (evt.keyCode == 8 || evt.keyCode == 13)
-                if (!isValid) { 
+                const isValid = (evt.keyCode >= 48 && evt.keyCode <= 57)
+                    || (evt.keyCode >= 96 && evt.keyCode <= 105)
+                    || (evt.keyCode >= 37 && evt.keyCode <= 40)
+                    || (evt.keyCode == 8 || evt.keyCode == 13)
+                    || (evt.keyCode == 9)
+                if (!isValid) {
                     evt.preventDefault()
                     return
                 }
