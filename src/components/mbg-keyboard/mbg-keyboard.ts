@@ -11,22 +11,32 @@ export class MbgKeyboard {
     private rowsButtons: Array<{ buttons: Array<{ code: any, label: string }> }>
     private options: Array<{ content: string, onClick: Function, enable: boolean }>
     private focusElement: string
+    private onDocumentClick
+    private onDocumentKeyDown
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $interval, public $sce) { }
 
     $onInit() {
+        const self = this
         this.createButtons()
-        this.bindClick = angular.element(document)
-            .on('click', (evt) => this.checkActiveElement(evt))
-            .on('keydown', (evt) => this.checkActiveElement(evt))
+        this.onDocumentClick = (evt) => self.checkActiveElement(evt)
+        document.addEventListener('click', this.onDocumentClick, false)
+        document.addEventListener('keydown', this.onDocumentKeyDown, false)
         this.focusInitialElement()
+    }
+
+    $onDestroy() {
+        document.removeEventListener('click', this.onDocumentClick, false)
+        document.removeEventListener('keydown', this.onDocumentKeyDown, false)
     }
 
     focusInitialElement() {
         if (this.focusElement) {
             this.$timeout(() => {
                 angular.element(this.focusElement).focus()
-                this.checkActiveElement()
+                this.$timeout(() => {
+                    this.checkActiveElement()
+                })
             })
         }
     }
@@ -77,10 +87,6 @@ export class MbgKeyboard {
                 ]
             }
         ]
-    }
-
-    $onDestroy() {
-        this.bindClick.unbind()
     }
 
     elementEnableVirtualKeyboard(elm) {
