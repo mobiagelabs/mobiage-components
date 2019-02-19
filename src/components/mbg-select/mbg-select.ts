@@ -225,6 +225,9 @@ class MbgSelectController {
         } else {
             this.inputValue = this.ngModel
         }
+        if (this.onSelect) {
+            this.onSelect({ value: this.ngModel })
+        }
     }
 
     observeModel() {
