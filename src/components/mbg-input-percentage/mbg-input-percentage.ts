@@ -9,7 +9,7 @@ class MbgInputPercentageController {
     private props
     public valid = true
 
-    constructor($scope, $element, $attrs) {
+    constructor(public $scope, public $element, public $attrs) {
         if ($attrs.ngRequired === '') {
             this.ngRequired = true
         }

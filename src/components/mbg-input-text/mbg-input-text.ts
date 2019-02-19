@@ -10,16 +10,22 @@ class MbgInputTextController {
     private props
     private ngKeydown
 
-    constructor($scope, $element, $attrs) {
+    constructor(public $scope, public $element, public $attrs) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
         this.props = {}
     }
+
+    fillAttributes() {
+        console.log(this.$attrs.$attr.hasOwnProperty('enableKeyboard'))
+    }
+
     onChange() {
         if (this.ngChange) {
             this.ngChange({})
         }
     }
+
     onKeydown($event: Event) {
         $event.stopPropagation()
         if (this.ngKeydown) {

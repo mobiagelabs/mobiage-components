@@ -1,7 +1,9 @@
 <div class="mbg-input-number-wrapper mbg-input-wrapper"
      ng-if="$ctrl.props">
-  <input type="number"
-         mbg-positive-number="{{$ctrl.positive}}"
+  <input type="text"
+         ui-number-mask="{{ $ctrl.props.precision }}"
+         min="{{ $ctrl.props.min }}"
+         max="{{ $ctrl.props.max }}"
          ng-model="$ctrl.ngModel"
          ng-change="$ctrl.onChange()"
          ng-required="$ctrl.ngRequired"

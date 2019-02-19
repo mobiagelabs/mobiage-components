@@ -8,20 +8,39 @@ class MbgInputNumberController {
     private ngDisabled
     private props
 
-    constructor($scope, $element, $attrs) {
+    constructor(public $scope, public $element, public $attrs, public $compile, public $timeout) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
         this.props = {
             placeholder: $attrs.placeholder || '',
+            precision: $attrs.precision || 0,
+            allowNegative: $attrs.allowNegative ? JSON.parse($attrs.allowNegative) : false,
         }
     }
+
+    $onInit() {
+        if (this.props.allowNegative) {
+            this.enableNegative()
+        }
+    }
+
+    enableNegative() {
+        this.$timeout(() => {
+            let input = this.$element.find('input').clone()
+            input.attr('ui-negative-number', 'true')
+            input = this.$compile(input)(this.$scope)
+            this.$element.find('input').replaceWith(input)
+        })
+    }
+
     onChange() {
         if (this.ngChange) {
             this.ngChange({})
         }
     }
+
 }
-MbgInputNumberController.$inject = ['$scope', '$element', '$attrs']
+MbgInputNumberController.$inject = ['$scope', '$element', '$attrs', '$compile', '$timeout']
 
 const mbgInputNumber = {
     bindings: {

@@ -8,7 +8,7 @@ class MbgInputPasswordController {
     private ngDisabled
     private props
 
-    constructor($scope, $element, $attrs) {
+    constructor(public $scope, public $element, public $attrs) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
         this.props = {

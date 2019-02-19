@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
   <!-- Latest compiled and minified CSS -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat"
-    rel="stylesheet">
+        rel="stylesheet">
   <link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
   <style>
     :root {
       --primary: #6e2bbb;
@@ -54,20 +54,25 @@
     }
   </style>
   <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 </head>
 
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <p>Valor: {{ valor2 }}</p>
-    <!-- <mbg-input-money ng-model="valor2" allow-negative="true" allow-zero="false"></mbg-input-money> -->
+    <mbg-input-number ng-model="teste222222222" enable-keyboard></mbg-input-number>
+    <mbg-input-text ng-model="teste222222" enable-keyboard></mbg-input-text>
+    <mbg-input-money ng-model="valor2" allow-negative="true" allow-zero="false"></mbg-input-money>
+
+
+    <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard>
+
 
     <!-- <mbg-input-number ng-model="teste22222"></mbg-input-number>
 
-    <mbg-keyboard active-color="#0CBCBD"></mbg-keyboard> -->
+     -->
 
     <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
                     on-finish-focus-element="#entityModel input">
@@ -92,7 +97,7 @@
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <mbg-select ng-model="teste"
+    <!-- <mbg-select ng-model="teste"
       fetch="getTipoProduto(query)"
       placeholder="teste"
       enable-add="true"
@@ -116,7 +121,7 @@
     </mbg-select>
 
     <br>
-    <pre>{{teste2 | json}}</pre>
+    <pre>{{teste2 | json}}</pre> -->
     <!-- <mbg-address ng-model="address"></mbg-address>a
 
     <pre>{{ address | json }}</pre> -->
@@ -471,7 +476,6 @@
         
       </mbg-list-column>
     </mbg-list> -->
-
   </div>
 </body>
 

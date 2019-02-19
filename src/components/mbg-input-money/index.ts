@@ -10,7 +10,6 @@ import CurrencyMaskDirective from './helper/currency-mask-directive'
 const mbgInputMoneyModule = angular
     .module('mbg.components.mbgInputMoney', [])
     .component('mbgInputMoney', mbgInputMoney)
-    // .directive('mbgInputMoney', mbgInputMoneyDirective)
     .directive('mbgInputMoney', CurrencyMaskDirective)
     .filter('mbgCurrencyMask', CurrencyMaskFilter)
     .provider('$mbgMasker', MaskerProvider)

@@ -1,4 +1,5 @@
 import * as angular from 'angular'
+
 export class MbgPositiveNumber {
     private restrict: string
     private replace: boolean
