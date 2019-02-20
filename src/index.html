@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=0.4, maximum-scale=1, user-scalable=no">
   <title>Document</title>
   <!-- Latest compiled and minified CSS -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat"
@@ -52,6 +53,9 @@
     .label-margin label {
       margin-top: 14px;
     }
+    button {
+    touch-action: manipulation;
+}
   </style>
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
@@ -61,6 +65,7 @@
 
 <body ng-controller="demoCtrl">
   <div class="container">
+    <button>dsadsa</button>
 
     <mbg-input-number ng-model="teste222222222" enable-keyboard></mbg-input-number>
     <mbg-input-text ng-model="teste222222" enable-keyboard></mbg-input-text>

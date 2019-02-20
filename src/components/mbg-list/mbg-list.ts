@@ -18,6 +18,7 @@ export class MbgListController {
     public $c
     public mbgRows: Array<MbgListRowController>
     public openedRows: Array<number>
+    public onClickRow: Function
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
@@ -111,7 +112,7 @@ export class MbgListController {
                 .map((row) => JSON.parse(row))
     }
 
-    onClickRow(row, index) {
+    handleClickRow(row, index) {
         if (this.rowsAdicional !== index && (this.checkbox || this.radio)) {
             if (this.radio) {
                 this.toogleRadio(row.$json)
@@ -119,6 +120,9 @@ export class MbgListController {
                 this.selectedMap[row.$json] = !this.selectedMap[row.$json]
                 this.toogleCheckbox()
             }
+        }
+        if (this.onClickRow) {
+            this.onClickRow({ $row: row })
         }
     }
 
@@ -158,6 +162,7 @@ const mbgList = {
         sort: '&?',
         checkbox: '=?',
         radio: '=?',
+        onClickRow: '&?',
         openedRows: '=?',
         selectedValues: '=?'
     },
