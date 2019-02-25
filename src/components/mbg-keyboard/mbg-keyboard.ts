@@ -11,23 +11,26 @@ export class MbgKeyboard {
     private rowsButtons: Array<{ buttons: Array<{ code: any, label: string }> }>
     private options: Array<{ content: string, onClick: Function, enable: boolean }>
     private focusElement: string
-    private onDocumentClick
-    private onDocumentKeyDown
+    private onEventListener
+    private isMobileOrTablet: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $interval, public $sce) { }
 
     $onInit() {
         const self = this
         this.createButtons()
-        this.onDocumentClick = (evt) => self.checkActiveElement(evt)
-        document.addEventListener('click', this.onDocumentClick, false)
-        document.addEventListener('keydown', this.onDocumentKeyDown, false)
+        this.onEventListener = (evt) => self.checkActiveElement(evt)
+        document.addEventListener('click', this.onEventListener, false)
+        document.addEventListener('keydown', this.onEventListener, false)
+        window.addEventListener('focus', this.onEventListener, false)
         this.focusInitialElement()
+        this.isMobileOrTablet = MbgDeviceCheck.isMobileOrTablet()
     }
 
     $onDestroy() {
-        document.removeEventListener('click', this.onDocumentClick, false)
-        document.removeEventListener('keydown', this.onDocumentKeyDown, false)
+        document.removeEventListener('click', this.onEventListener, false)
+        document.removeEventListener('keydown', this.onEventListener, false)
+        window.removeEventListener('focus', this.onEventListener, false)
     }
 
     focusInitialElement() {
@@ -95,8 +98,9 @@ export class MbgKeyboard {
     }
 
     checkActiveElement(evt?) {
+        this.checkInputMbg(evt)
+        const activeTempElement = angular.element(evt.target)
         this.$timeout(() => {
-            const activeTempElement = angular.element(document.activeElement)
             this.beforeActiveElement()
             if (activeTempElement.closest('.mbg-input-wrapper').length === 1 && this.elementEnableVirtualKeyboard(activeTempElement)) {
                 this.hideNativeKeyboard(activeTempElement)
@@ -105,7 +109,9 @@ export class MbgKeyboard {
             } else if (this.currentActiveElement
                 && (activeTempElement.closest('.mbg-keyboard-wrapper').length === 1
                     || (evt && angular.element(evt.target).closest('.mbg-keyboard-wrapper').length === 1))) {
-                this.currentActiveElement.focus()
+                if (!this.isMobileOrTablet) {
+                    this.currentActiveElement.focus()
+                }
                 this.afterActiveElement()
             } else {
                 delete this.currentActiveElement
@@ -113,8 +119,17 @@ export class MbgKeyboard {
         })
     }
 
+    checkInputMbg(evt) {
+        if (this.isMobileOrTablet) {
+            const elm = angular.element(evt.target)
+            if (elm.closest('.mbg-input-wrapper').length === 1 && this.elementEnableVirtualKeyboard(elm)) {
+                this.hideNativeKeyboard(elm)
+            }
+        }
+    }
+
     hideNativeKeyboard(activeTempElement) {
-        if (MbgDeviceCheck.isMobileOrTablet()) {
+        if (this.isMobileOrTablet) {
             activeTempElement.attr('readonly', 'readonly') // Force keyboard to hide on input field.
             activeTempElement.attr('disabled', 'true') // Force keyboard to hide on textarea field.
             this.$timeout(() => {
@@ -126,7 +141,9 @@ export class MbgKeyboard {
     }
 
     onButtonClick(itemCode) {
-        this.currentActiveElement.focus()
+        if (!this.isMobileOrTablet) {
+            this.currentActiveElement.focus()
+        }
         if (itemCode) {
             this.onItemKeyboardPress(itemCode.toString())
         }
@@ -185,13 +202,17 @@ export class MbgKeyboard {
         if (nativeActiveElement.type === 'text') {
             const currentVal = this.currentActiveElement.val()
             const newValue = String.fromCharCode(key)
-            let startPos = nativeActiveElement.selectionStart,
-                endPos = nativeActiveElement.selectionEnd
-            const pre = currentVal.substring(0, startPos)
-            const post = currentVal.substring(endPos, currentVal.length)
-            startPos += newValue.length
-            this.currentActiveElement.val(pre + newValue + post)
-            nativeActiveElement.setSelectionRange(startPos, startPos)
+            if (this.isMobileOrTablet) {
+                this.currentActiveElement.val(currentVal + newValue)
+            } else {
+                let startPos = nativeActiveElement.selectionStart,
+                    endPos = nativeActiveElement.selectionEnd
+                const pre = currentVal.substring(0, startPos)
+                const post = currentVal.substring(endPos, currentVal.length)
+                startPos += newValue.length
+                this.currentActiveElement.val(pre + newValue + post)
+                nativeActiveElement.setSelectionRange(startPos, startPos)
+            }
         }
         if (nativeActiveElement.type === 'number') {
             const currentVal = this.currentActiveElement.val()
@@ -212,9 +233,13 @@ export class MbgKeyboard {
         const nativeActiveElement = this.currentActiveElement[0]
         if (nativeActiveElement.type === 'text') {
             const currentVal = this.currentActiveElement.val()
-            let startPos = nativeActiveElement.selectionStart
-            this.currentActiveElement.val(this.replaceAt(currentVal, startPos - 1, ''))
-            nativeActiveElement.setSelectionRange(startPos - 1, startPos - 1)
+            if (this.isMobileOrTablet) {
+                this.currentActiveElement.val(this.replaceAt(currentVal, currentVal.length - 1, ''))
+            } else {
+                let startPos = nativeActiveElement.selectionStart
+                this.currentActiveElement.val(this.replaceAt(currentVal, startPos - 1, ''))
+                nativeActiveElement.setSelectionRange(startPos - 1, startPos - 1)
+            }
         }
         if (nativeActiveElement.type === 'number') {
             const currentVal = this.currentActiveElement.val()

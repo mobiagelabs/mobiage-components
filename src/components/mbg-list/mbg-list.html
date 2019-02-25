@@ -18,7 +18,7 @@
                 ng-init="$position = $index"
                 ng-style="$ctrl.getRowStripedStyle($row, $index)"
                 ng-class="{'contains-adicional-row' : $row.isOpenedRow, 'cursor-pointer' : $ctrl.checkbox || $ctrl.radio}"
-                ng-click="$ctrl.onClickRow($row, $position, $event)">
+                ng-click="$ctrl.handleClickRow($row, $position, $event)">
                 <td ng-if="$ctrl.checkbox && !$row.isAdicional">
                     <mbg-checkbox ng-model="$ctrl.selectedMap[$row.$json]"
                                   ng-change="$ctrl.toogleCheckbox()"></mbg-checkbox>
