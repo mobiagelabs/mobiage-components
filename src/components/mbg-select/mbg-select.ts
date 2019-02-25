@@ -254,7 +254,6 @@ class MbgSelectController {
             if (this.ngValue && this.ngModel) {
                 this.executeFetch((data) => {
                     const item = (data || []).find((i) => i[this.ngValue] === this.ngModel)
-                    console.log('item:', item, data)
                     if (item) {
                         this.inputValue = item[this.label]
                     }
