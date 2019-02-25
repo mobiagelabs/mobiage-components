@@ -11,8 +11,7 @@ export class MbgKeyboard {
     private rowsButtons: Array<{ buttons: Array<{ code: any, label: string }> }>
     private options: Array<{ content: string, onClick: Function, enable: boolean }>
     private focusElement: string
-    private onDocumentClick
-    private onDocumentKeyDown
+    private onEventListener
     private isMobileOrTablet: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $interval, public $sce) { }
@@ -20,16 +19,18 @@ export class MbgKeyboard {
     $onInit() {
         const self = this
         this.createButtons()
-        this.onDocumentClick = (evt) => self.checkActiveElement(evt)
-        document.addEventListener('click', this.onDocumentClick, false)
-        document.addEventListener('keydown', this.onDocumentKeyDown, false)
+        this.onEventListener = (evt) => self.checkActiveElement(evt)
+        document.addEventListener('click', this.onEventListener, false)
+        document.addEventListener('keydown', this.onEventListener, false)
+        window.addEventListener('focus', this.onEventListener, false)
         this.focusInitialElement()
         this.isMobileOrTablet = MbgDeviceCheck.isMobileOrTablet()
     }
 
     $onDestroy() {
-        document.removeEventListener('click', this.onDocumentClick, false)
-        document.removeEventListener('keydown', this.onDocumentKeyDown, false)
+        document.removeEventListener('click', this.onEventListener, false)
+        document.removeEventListener('keydown', this.onEventListener, false)
+        window.removeEventListener('focus', this.onEventListener, false)
     }
 
     focusInitialElement() {
