@@ -31,6 +31,11 @@ class MbgSelectController {
         this.updateInputValue()
         this.findTransclude()
         this.checkFavorite()
+        this.$scope.$watch('$ctrl.fetch', () => {
+            if (this.ngModel && this.ngValue) {
+                this.updateInputValue()
+            }
+        }, true)
     }
 
     findTransclude() {
@@ -44,16 +49,22 @@ class MbgSelectController {
         })
     }
 
-    executeFetch() {
+    executeFetch(onExecute?: Function) {
         this.data = []
         this.isLoading = true
-        const response = this.fetch({ query: this.inputValue })
+        const response = this.fetch({ query: (this.inputValue || '') })
         if (response && response.then) {
             response.then((data) => {
                 this.afterFetchData(data)
+                if (onExecute) {
+                    onExecute(data)
+                }
             })
         } else {
             this.afterFetchData(response)
+            if (onExecute) {
+                onExecute(response)
+            }
         }
     }
 
@@ -202,15 +213,10 @@ class MbgSelectController {
                             item = isNaN(this.inputValue) ? this.inputValue : Number(this.inputValue)
                         }
                     }
-                    this.ngValue ? this.ngModel = item[this.ngValue] : this.ngModel = item
-                    if (this.label) {
-                        this.inputValue = this.ngModel[this.label]
-                    } else {
-                        this.inputValue = this.ngModel
-                    }
+                    this.updateModelValue(this.ngValue ? item[this.ngValue] : item)
                 }
             } else {
-                this.ngModel = this.inputValue
+                this.updateModelValue(this.inputValue)
             }
             if (this.onSelect) {
                 this.onSelect({ value: this.ngModel })
@@ -219,12 +225,7 @@ class MbgSelectController {
     }
 
     selectOption(item) {
-        this.ngValue ? this.ngModel = item[this.ngValue] : this.ngModel = item
-        if (this.label) {
-            this.inputValue = this.ngModel[this.label]
-        } else {
-            this.inputValue = this.ngModel
-        }
+        this.updateModelValue(this.ngValue ? item[this.ngValue] : item)
         if (this.onSelect) {
             this.onSelect({ value: this.ngModel })
         }
@@ -243,12 +244,27 @@ class MbgSelectController {
         })
     }
 
+    updateModelValue(value) {
+        this.ngModel = value
+        this.updateInputValue()
+    }
+
     updateInputValue() {
         this.$timeout(() => {
-            if (this.label && this.ngModel) {
-                this.inputValue = this.ngModel[this.label]
+            if (this.ngValue && this.ngModel) {
+                this.executeFetch((data) => {
+                    const item = (data || []).find((i) => i[this.ngValue] === this.ngModel)
+                    console.log('item:', item, data)
+                    if (item) {
+                        this.inputValue = item[this.label]
+                    }
+                })
             } else {
-                this.inputValue = this.ngModel
+                if (this.label && this.ngModel) {
+                    this.inputValue = this.ngModel[this.label]
+                } else {
+                    this.inputValue = this.ngModel
+                }
             }
         })
     }
