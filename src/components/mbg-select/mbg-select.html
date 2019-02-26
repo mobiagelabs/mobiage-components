@@ -53,7 +53,8 @@
         </li>
         <li ng-if="$ctrl.addOnlyEmpty ? ($ctrl.enableAdd && $ctrl.inputValue && $ctrl.data.length == 0) : ($ctrl.enableAdd && $ctrl.inputValue)"
             disable-animate
-            ng-mousedown="$ctrl.label ? $ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue }) : $ctrl.selectOption($ctrl.inputValue)">
+            class="new-item"
+            ng-mousedown="$ctrl.label ? $ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue }, true) : $ctrl.selectOption($ctrl.inputValue, true)">
             {{ $ctrl.inputValue }}
             <span ng-hide="$ctrl.hiddenAddLabel">(novo)</span>
         </li>

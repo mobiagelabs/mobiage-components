@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="initial-scale=0.4, maximum-scale=1, user-scalable=no">
+  <meta name="viewport"
+    content="initial-scale=0.4, maximum-scale=1, user-scalable=no">
   <title>Document</title>
   <!-- Latest compiled and minified CSS -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat"
@@ -53,9 +54,10 @@
     .label-margin label {
       margin-top: 14px;
     }
+
     button {
-    touch-action: manipulation;
-}
+      touch-action: manipulation;
+    }
   </style>
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0">
@@ -65,14 +67,8 @@
 
 <body ng-controller="demoCtrl">
   <div class="container">
-<<<<<<< HEAD
-    <mbg-pagination></mbg-pagination>
+    <!-- <mbg-pagination></mbg-pagination> -->
     <!-- <mbg-input-number ng-model="teste222222222" enable-keyboard></mbg-input-number>
-=======
-    <button>dsadsa</button>
-
-    <mbg-input-number ng-model="teste222222222" enable-keyboard></mbg-input-number>
->>>>>>> 39af1d96beb420e51d3d6111c18a5d57c24141a2
     <mbg-input-text ng-model="teste222222" enable-keyboard></mbg-input-text>
     <mbg-input-money ng-model="valor2" allow-negative="true" allow-zero="false"></mbg-input-money>
 
@@ -107,31 +103,19 @@
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <!-- <mbg-select ng-model="teste"
-      fetch="getTipoProduto(query)"
+    <mbg-select ng-model="teste"
+      fetch="getTipoProdutoObj(query)"
       placeholder="teste"
       enable-add="true"
-      name="teste1"
+      label="name"
+      name="teste5"
+      callback-add="testeadd()"
       add-only-empty="true"
       enable-favorite="true">
     </mbg-select>
 
     <br>
     <pre>{{teste | json}}</pre>
-    <br>
-    <br>
-    <mbg-select ng-model="teste2"
-      fetch="getTipoProdutoObj(query)"
-      placeholder="teste"
-      enable-add="true"
-      name="teste2"
-      add-only-empty="true"
-      label="name"
-      enable-favorite="true">
-    </mbg-select>
-
-    <br>
-    <pre>{{teste2 | json}}</pre> -->
     <!-- <mbg-address ng-model="address"></mbg-address>a
 
     <pre>{{ address | json }}</pre> -->

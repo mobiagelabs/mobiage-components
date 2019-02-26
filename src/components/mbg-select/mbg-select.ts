@@ -21,6 +21,7 @@ class MbgSelectController {
     private ngFocus: Function
     private ngBlur: Function
     private enableFavorite: boolean
+    private callbackAdd: Function
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
 
@@ -218,13 +219,22 @@ class MbgSelectController {
             } else {
                 this.updateModelValue(this.inputValue)
             }
+            this.executeCallback()
             if (this.onSelect) {
                 this.onSelect({ value: this.ngModel })
             }
         })
     }
 
-    selectOption(item) {
+    executeCallback(isNew?: boolean) {
+        const currentOption = this.getOptionFocused()
+        if (currentOption && (currentOption.hasClass('new-item') || isNew) && this.callbackAdd) {
+            this.callbackAdd({ query: (this.inputValue || '') })
+        }
+    }
+
+    selectOption(item, isNew?: boolean) {
+        this.executeCallback(isNew)
         this.updateModelValue(this.ngValue ? item[this.ngValue] : item)
         if (this.onSelect) {
             this.onSelect({ value: this.ngModel })
@@ -313,6 +323,7 @@ const mbgSelect = {
         placeholder: '@?',
         addOnlyEmpty: '=?',
         enableFavorite: '=?',
+        callbackAdd: '&?'
     },
     controller: MbgSelectController,
     template,

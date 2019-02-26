@@ -98,8 +98,11 @@ export class MbgKeyboard {
     }
 
     checkActiveElement(evt?) {
-        this.checkInputMbg(evt)
-        const activeTempElement = angular.element(evt.target)
+        this.checkInputMbg(evt) 
+        const activeTempElement = evt && evt.target ? angular.element(evt.target) : null
+        if (!activeTempElement) {
+            return
+        }
         this.$timeout(() => {
             this.beforeActiveElement()
             if (activeTempElement.closest('.mbg-input-wrapper').length === 1 && this.elementEnableVirtualKeyboard(activeTempElement)) {

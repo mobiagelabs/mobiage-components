@@ -309,6 +309,10 @@ const module = angular
 			})
 		}
 
+		$scope.testeadd = () => {
+			console.log('aójaosidhaioshdipash')
+		}
+
 		$scope.getMarca = (param = '') => {
 			return new Promise((resolve) => {
 				resolve([
