@@ -30,8 +30,9 @@ class MbgInputStepItemController {
 	private onMovePrevItem: Function
 	private onMoveNextItem: Function
 	private ngDisabled: boolean
+	private transcludeTemplate: string
 
-	constructor(public $scope, public $element, public $attrs, public $timeout) { }
+	constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
 	$onInit() {
 		this.navigatorData = detect()
@@ -40,11 +41,25 @@ class MbgInputStepItemController {
 		this.hasFocus = false
 		this.enableAdd = this.enableAdd || false
 		this.inputValue = ''
+		this.findTransclude()
 		this.updateInputValue()
 		this.observeModel()
 		this.observeLabel()
 		this.verifyDevErrors()
 		this.observeInputValue()
+	}
+
+	findTransclude() {
+		this.$transclude(this.$scope, (cloneEl) => {
+			angular.forEach(cloneEl, cl => {
+				let element = angular.element(cl)[0]
+				if (element.nodeName && element.nodeName === 'TEMPLATE') {
+					this.$timeout(() => {
+						this.transcludeTemplate = element.innerHTML
+					})
+				}
+			})
+		})
 	}
 
 	verifyDevErrors() {
@@ -382,9 +397,10 @@ class MbgInputStepItemController {
 
 }
 
-MbgInputStepItemController.$inject = ['$scope', '$element', '$attrs', '$timeout']
+MbgInputStepItemController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$transclude']
 
 const mbgInputStepItem = {
+	transclude: true,
 	bindings: {
 		ngModel: '=',
 		fetch: '&?',

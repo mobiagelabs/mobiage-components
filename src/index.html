@@ -68,10 +68,10 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <mbg-pagination active-page="activePage"
+    <!-- <mbg-pagination active-page="activePage"
                     page-size="10"
                     count="120000"
-                    page-range-displayed="10"></mbg-pagination>
+                    page-range-displayed="10"></mbg-pagination> -->
 
     <!-- <mbg-input-number ng-model="teste222222222" enable-keyboard></mbg-input-number>
     <mbg-input-text ng-model="teste222222" enable-keyboard></mbg-input-text>
@@ -85,15 +85,18 @@
 
      -->
 
-    <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
+    <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
                     on-finish-focus-element="#entityModel input">
       <mbg-input-step-item ng-model="entity.productTree"
-                           fetch="getTipoProduto()"
+                           fetch="getTipoProdutoObj()"
                            focus="focusedTeste('1')"
                            un-focus="unFocus()"
-                           ng-disabled="true"
                            placeholder="'Selecione na lista abaixo o tipo de produto.'"
-                           label="name"></mbg-input-step-item>
+                           label="name">
+        <template>
+          Teste - {{ item.name }}
+        </template>
+      </mbg-input-step-item>
       <mbg-input-step-item ng-model="entity.brand"
                            fetch="getMarca()"
                            focus="focusedTeste('2')"
@@ -106,7 +109,7 @@
                            un-focus="unFocus()"
                            capitalize="true"
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
-    </mbg-input-step> -->
+    </mbg-input-step>
     <!-- 
     <mbg-select ng-model="teste"
       fetch="getTipoProdutoObj(query)"
