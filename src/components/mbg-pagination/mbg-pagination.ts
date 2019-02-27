@@ -9,7 +9,7 @@ class MbgPaginationController {
     private count: number
     private pageRangeDisplayed: number
     private pages: Array<{ key: string }>
-    private ngChange: Function
+    private onChange: Function
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -41,8 +41,8 @@ class MbgPaginationController {
     setActivePage(page) {
         this.activePage = page
         this.$timeout(() => {
-            if (this.ngChange) {
-                this.ngChange({ page: this.activePage })
+            if (this.onChange) {
+                this.onChange({ page: this.activePage })
             }
         })
     }
@@ -57,7 +57,7 @@ const mbgPagination = {
         pageSize: '=',
         count: '=',
         pageRangeDisplayed: '=',
-        ngChange: '&?',
+        onChange: '&?',
     },
     template,
     controller: MbgPaginationController,
