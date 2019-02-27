@@ -1,15 +1,45 @@
 <div class="mbg-pagination-wrapper">
-    <button class="btn-arrow prev"
-        [disabled]="$ctrl.page === 1"
-        (click)="$ctrl.prev()">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+    <button key="first"
+            type="button"
+            ng-class="{ visible: $ctrl.paginationInfo.hasPreviousPage }"
+            ng-click="$ctrl.setActivePage(1)">
+        <svg aria-hidden="true"
+             focusable="false"
+             data-prefix="far"
+             data-icon="angle-double-left"
+             role="img"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 384 512"
+             class="svg-inline--fa fa-angle-double-left fa-w-12 fa-9x">
+            <path fill="currentColor"
+                  d="M20.2 247.5L167 99.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17L85.3 256l118.5 119.7c4.7 4.7 4.7 12.3 0 17L184 412.5c-4.7 4.7-12.3 4.7-17 0l-146.8-148c-4.7-4.7-4.7-12.3 0-17zm160 17l146.8 148c4.7 4.7 12.3 4.7 17 0l19.8-19.8c4.7-4.7 4.7-12.3 0-17L245.3 256l118.5-119.7c4.7-4.7 4.7-12.3 0-17L344 99.5c-4.7-4.7-12.3-4.7-17 0l-146.8 148c-4.7 4.7-4.7 12.3 0 17z"
+                  class=""></path>
+        </svg>
     </button>
 
-    <button class="page" type="button">1</button>
+    <button type="button"
+            key="{{ page.key }}"
+            ng-class="{ active: page.key === $ctrl.activePage }"
+            ng-repeat="page in $ctrl.pages"
+            ng-click="$ctrl.setActivePage(page.key)">
+        {{ page.key }}
+    </button>
 
-    <button class="next"
-        [disabled]="btn-arrow $ctrl.disableNext()"
-        (click)="$ctrl.next()">
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    <button key="last"
+            type="button"
+            ng-class="{ visible: $ctrl.paginationInfo.hasNextPage }"
+            ng-click="$ctrl.setActivePage($ctrl.paginationInfo.totalPages)">
+        <svg aria-hidden="true"
+             focusable="false"
+             data-prefix="far"
+             data-icon="angle-double-right"
+             role="img"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 384 512"
+             class="svg-inline--fa fa-angle-double-right fa-w-12 fa-9x">
+            <path fill="currentColor"
+                  d="M363.8 264.5L217 412.5c-4.7 4.7-12.3 4.7-17 0l-19.8-19.8c-4.7-4.7-4.7-12.3 0-17L298.7 256 180.2 136.3c-4.7-4.7-4.7-12.3 0-17L200 99.5c4.7-4.7 12.3-4.7 17 0l146.8 148c4.7 4.7 4.7 12.3 0 17zm-160-17L57 99.5c-4.7-4.7-12.3-4.7-17 0l-19.8 19.8c-4.7 4.7-4.7 12.3 0 17L138.7 256 20.2 375.7c-4.7 4.7-4.7 12.3 0 17L40 412.5c4.7 4.7 12.3 4.7 17 0l146.8-148c4.7-4.7 4.7-12.3 0-17z"
+                  class=""></path>
+        </svg>
     </button>
 </div>

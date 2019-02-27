@@ -1,40 +1,43 @@
 .mbg-pagination-wrapper {
-        height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    * {
+        user-select: none;
+    }
+    button {
+        font-weight: bold;
+        background: transparent;
+        border: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        .btn-arrow {
-            background-color: transparent;
-            border: 0px;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 17px;
-            color: #666;
-            &:hover {
-                transform: scale(1.1)
+        border-radius: 50%;
+        width: 38px;
+        min-width: fit-content;
+        height: 38px;
+        margin: 0 5px;
+        cursor: pointer;
+        color: #666;
+        text-decoration: none;
+        outline: none;
+        &.active {
+            background: var(--primary);
+            color: #FFF;
+        }
+        &[key="first"], &[key="last"] {
+            text-decoration: underline;
+            margin: 0 14px;
+            opacity: 0;
+            pointer-events: none;
+            &.visible {                
+                opacity: 1;
+                pointer-events: all;
             }
         }
-        .page {
-            border-radius: 50%;
-            width: 34px;
-            height: 34px;
-            color: var(--primary);
-            border: 1 solid var(--primary);
+        svg {
+            width: 16px;
         }
-        .prev {
-            i {
-                margin-right: 10px;
-            }
-        }
-        .next {
-            margin-right: 34px;
-            i {
-                margin-left: 10px;
-            }
-        }
-        .inf-page {
-            margin-right: 24px;
-        }
+    }
 }

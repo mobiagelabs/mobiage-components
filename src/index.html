@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
-    content="initial-scale=0.4, maximum-scale=1, user-scalable=no">
+        content="initial-scale=0.4, maximum-scale=1, user-scalable=no">
   <title>Document</title>
   <!-- Latest compiled and minified CSS -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat"
-    rel="stylesheet">
+        rel="stylesheet">
   <link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
   <style>
     :root {
       --primary: #6e2bbb;
@@ -60,14 +60,19 @@
     }
   </style>
   <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 </head>
 
 <body ng-controller="demoCtrl">
   <div class="container">
-    <!-- <mbg-pagination></mbg-pagination> -->
+
+    <mbg-pagination active-page="activePage"
+                    page-size="10"
+                    count="120000"
+                    page-range-displayed="10"></mbg-pagination>
+
     <!-- <mbg-input-number ng-model="teste222222222" enable-keyboard></mbg-input-number>
     <mbg-input-text ng-model="teste222222" enable-keyboard></mbg-input-text>
     <mbg-input-money ng-model="valor2" allow-negative="true" allow-zero="false"></mbg-input-money>
@@ -102,7 +107,7 @@
                            capitalize="true"
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
-
+    <!-- 
     <mbg-select ng-model="teste"
       fetch="getTipoProdutoObj(query)"
       placeholder="teste"
@@ -112,10 +117,10 @@
       callback-add="testeadd()"
       add-only-empty="true"
       enable-favorite="true">
-    </mbg-select>
+    </mbg-select> -->
 
-    <br>
-    <pre>{{teste | json}}</pre>
+    <!-- <br>
+    <pre>{{teste | json}}</pre> -->
     <!-- <mbg-address ng-model="address"></mbg-address>a
 
     <pre>{{ address | json }}</pre> -->

@@ -1,31 +1,50 @@
 import './mbg-pagination.scss'
 import template from './mbg-pagination.html'
+import { Paginator } from './helpers/paginator'
 
 class MbgPaginationController {
+    private paginationInfo
+    private activePage: number
     private pageSize: number
-    private page: number
     private count: number
-    private next: Function
-    private prev: Function
+    private pageRangeDisplayed: number
+    private pages: Array<{ key: string }>
+    private ngChange: Function
 
-    constructor(public $scope, public $element, public $attrs, public $timeout) {}
+    constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
     $onInit() {
-        this.pageSize = this.pageSize || 0
-        this.page = this.page || 0
+        this.activePage = this.activePage || 1
+        this.pageSize = this.pageSize || 10
         this.count = this.count || 0
+        this.pageRangeDisplayed = this.pageRangeDisplayed || 5
+        this.observeParams()
+        this.buildPages()
     }
 
-    initialRecordsInPage() {
-        return (this.page * this.pageSize) - this.pageSize + 1
+    observeParams() {
+        this.$scope.$watch('$ctrl.activePage', (newValue, oldValue) => newValue !== oldValue && this.buildPages(), true)
+        this.$scope.$watch('$ctrl.pageSize', (newValue, oldValue) => newValue !== oldValue && this.buildPages(), true)
+        this.$scope.$watch('$ctrl.pageRangeDisplayed', (newValue, oldValue) => newValue !== oldValue && this.buildPages(), true)
+        this.$scope.$watch('$ctrl.count', (newValue, oldValue) => newValue !== oldValue && this.buildPages(), true)
     }
 
-    countRecordsInPage() {
-        return this.count < this.pageSize ? this.count : this.page * this.pageSize < this.count ? this.page * this.pageSize : ((this.page - 1) * this.pageSize) + this.count
+    buildPages() {
+        const pages = []
+        this.paginationInfo = new Paginator(this.pageSize, this.pageRangeDisplayed).build(this.count, this.activePage)
+        for (let i = this.paginationInfo.firstPage; i <= this.paginationInfo.lastPage; i++) {
+            pages.push({ key: i })
+        }
+        this.pages = pages
     }
 
-    disableNext() {
-        return this.countRecordsInPage() === this.count
+    setActivePage(page) {
+        this.activePage = page
+        this.$timeout(() => {
+            if (this.ngChange) {
+                this.ngChange({ page: this.activePage })
+            }
+        })
     }
 
 }
@@ -34,11 +53,11 @@ MbgPaginationController.$inject = ['$scope', '$element', '$attrs', '$timeout']
 
 const mbgPagination = {
     bindings: {
-        pageSize: '=?',
-        page: '=?',
-        count: '=?',
-        next: '&?',
-        prev: '&?'
+        activePage: '=',
+        pageSize: '=',
+        count: '=',
+        pageRangeDisplayed: '=',
+        ngChange: '&?',
     },
     template,
     controller: MbgPaginationController,

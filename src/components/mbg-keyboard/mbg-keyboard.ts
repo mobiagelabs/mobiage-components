@@ -98,7 +98,7 @@ export class MbgKeyboard {
     }
 
     checkActiveElement(evt?) {
-        this.checkInputMbg(evt) 
+        this.checkInputMbg(evt)
         const activeTempElement = evt && evt.target ? angular.element(evt.target) : null
         if (!activeTempElement) {
             return
