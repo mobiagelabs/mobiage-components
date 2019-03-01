@@ -17,7 +17,7 @@ class MbgInputTextController {
     }
 
     fillAttributes() {
-        console.log(this.$attrs.$attr.hasOwnProperty('enableKeyboard'))
+        // console.log(this.$attrs.$attr.hasOwnProperty('enableKeyboard'))
     }
 
     onChange() {

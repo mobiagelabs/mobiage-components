@@ -35,7 +35,6 @@ class MbgInputStepItemController {
 	constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
 	$onInit() {
-		console.log(this.mbgInputStep.uid)
 		this.navigatorData = detect()
 		this.navigatorData.currentVersion = Number(this.navigatorData.version.substring(0, this.navigatorData.version.indexOf('.')))
 		this.createAutocompleteDisabled()
