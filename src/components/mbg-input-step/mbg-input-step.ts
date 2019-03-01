@@ -1,14 +1,17 @@
 import * as angular from 'angular'
 import './mbg-input-step.scss'
 import template from './mbg-input-step.html'
+import { UtilUID } from '../../helpers/util-uid'
 
 class MbgInputStepController {
     private items: Array<HTMLElement>
     private onFinishFocusElement: string
+    private uid: string
 
-    constructor(public $scope, public $element, public $attrs, public $timeout, public $compile) { }
+    constructor(public $scope, public $element, public $attrs, public $timeout, public $compile) {}
 
     $onInit() {
+        this.uid = UtilUID.generete()
         this.$timeout(() => this.fetchItems())
     }
 

@@ -1,22 +1,24 @@
 <div class="mbg-input-step-item"
-     disable-animate
-     ng-class="{ 'disabled-item': $ctrl.ngDisabled, 'is-empty': !$ctrl.inputValue, 'active': $ctrl.hasData(), 'opened': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
+    disable-animate
+    ng-class="{ 'disabled-item': $ctrl.ngDisabled, 'is-empty': !$ctrl.inputValue, 'active': $ctrl.hasData(), 'opened': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
     <input type="text"
-           data-ignore-tab
-           disable-animate
-           autocomplete="{{ $ctrl.autocompleteValue }}"
-           autocorrect="{{ $ctrl.autocompleteValue }}"
-           spellcheck="false"
-           ng-focus="$ctrl.onInputFocus()"
-           ng-blur="$ctrl.onInputBlur()"
-           ng-keydown="$ctrl.onInputKeydown($event)"
-           ng-model="$ctrl.inputValue"
-           ng-change="$ctrl.onInputChange()"
-           ng-class="{ 'error-value': $ctrl.label && !$ctrl.hasFocus && $ctrl.inputValue && !$ctrl.ngModel }"
-           pu-elastic-input
-           pu-elastic-input-maxwidth="100%"
-           ng-attr-placeholder="{{ $ctrl.hasFocus ? $ctrl.placeholder : '' }}" />
+        data-ignore-tab
+        disable-animate
+        autocomplete="{{ $ctrl.autocompleteValue }}"
+        autocorrect="{{ $ctrl.autocompleteValue }}"
+        spellcheck="false"
+        ng-focus="$ctrl.onInputFocus()"
+        ng-blur="$ctrl.onInputBlur()"
+        ng-keydown="$ctrl.onInputKeydown($event)"
+        ng-model="$ctrl.inputValue"
+        ng-change="$ctrl.onInputChange()"
+        ng-class="{ 'error-value': $ctrl.label && !$ctrl.hasFocus && $ctrl.inputValue && !$ctrl.ngModel }"
+        pu-elastic-input
+        pu-elastic-input-maxwidth="100%"
+        ng-attr-placeholder="{{ $ctrl.hasFocus ? $ctrl.placeholder : '' }}" />
     <ul class="mbg-input-step-list"
+        mbg-extends-style=".mb-input-step-wrapper[steps-uid='{{ $ctrl.mbgInputStep.uid }}']"
+        extends-style="max-width"
         ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
         <li ng-if="$ctrl.recentItemIsOn() && $ctrl.recentItem"
             class="recent-item"
@@ -33,8 +35,8 @@
             <span ng-if="!$ctrl.transcludeTemplate && $ctrl.label">{{ item[$ctrl.label] }}</span>
             <span ng-if="!$ctrl.transcludeTemplate && !$ctrl.label">{{ item }}</span>
             <div ng-if="$ctrl.transcludeTemplate"
-                 mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
-                
+                mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
+
         </li>
         <li ng-if="$ctrl.addOnlyEmpty ? ($ctrl.enableAdd && $ctrl.inputValue && $ctrl.data.length == 0) : ($ctrl.enableAdd && $ctrl.inputValue)"
             disable-animate
