@@ -34,8 +34,8 @@
             ng-mousedown="$ctrl.selectOption(item)">
             <span ng-if="!$ctrl.transcludeTemplate && $ctrl.label">{{ item[$ctrl.label] }}</span>
             <span ng-if="!$ctrl.transcludeTemplate && !$ctrl.label">{{ item }}</span>
-            <div ng-if="$ctrl.transcludeTemplate"
-                mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
+            <span ng-if="$ctrl.transcludeTemplate"
+                mbg-dynamic-html="$ctrl.transcludeTemplate"></span>
 
         </li>
         <li ng-if="$ctrl.addOnlyEmpty ? ($ctrl.enableAdd && $ctrl.inputValue && $ctrl.data.length == 0) : ($ctrl.enableAdd && $ctrl.inputValue)"

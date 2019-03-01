@@ -41,6 +41,7 @@ mbg-input-step-item {
         }
         .mbg-input-step-list {
             min-width: 250px;
+            width: max-content;
             top: 100%;
             z-index: 999999999;
             list-style: none;
@@ -64,11 +65,16 @@ mbg-input-step-item {
                 pointer-events: all;
             }
             li {
+                width: 100%;
                 padding: 12px 12px;
                 color: #666;
                 cursor: pointer;
                 &:hover, &.focused {
                     background: #f5f5f5;
+                }
+                div {
+                    width: 100%;
+                    min-width: max-content;
                 }
                 &.recent-item {
                     display: flex;

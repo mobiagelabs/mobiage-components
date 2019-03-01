@@ -184,32 +184,35 @@
     <pre>{{address|json}}</pre> -->
 
     <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
-                    on-finish-focus-element="#entityModel input">
+      on-finish-focus-element="#entityModel input">
       <mbg-input-step-item ng-model="entity.productTree"
-                           fetch="getTipoProduto()"
-                           focus="focusedTeste('1')"
-                           un-focus="unFocus()"
-                           enable-recent="true"
-                           name="teste"
-                           placeholder="'Selecione na lista abaixo o tipo de produto.'"
-                           label="name"></mbg-input-step-item>
+        fetch="getTipoProduto()"
+        focus="focusedTeste('1')"
+        un-focus="unFocus()"
+        name="teste"
+        placeholder="'Selecione na lista abaixo o tipo de produto.'"
+        label="name">
+        <template>
+          {{item.name}}
+        </template>
+      </mbg-input-step-item>
       <mbg-input-step-item ng-model="entity.brand"
-                           fetch="getMarca()"
-                           focus="focusedTeste('2')"
-                           placeholder="countBrands > 0 ? 'Digite a marca ou selecione uma na lista abaixo' : 'Digite a marca.'"
-                           enable-add="true"
-                           un-focus="unFocus()"
-                           label="name"></mbg-input-step-item>
+        fetch="getMarca()"
+        focus="focusedTeste('2')"
+        placeholder="countBrands > 0 ? 'Digite a marca ou selecione uma na lista abaixo' : 'Digite a marca.'"
+        enable-add="true"
+        un-focus="unFocus()"
+        label="name"></mbg-input-step-item>
       <mbg-input-step-item ng-model="entity.model"
-                           focus="focusedTeste('3')"
-                           un-focus="unFocus()"
-                           capitalize="true"
-                           placeholder="'Qual o modelo?'"></mbg-input-step-item>
-                           <mbg-input-step-item ng-model="entity.model2"
-                           focus="focusedTeste('3')"
-                           un-focus="unFocus()"
-                           capitalize="true"
-                           placeholder="'Qual o modelodsadsadsaasd?'"></mbg-input-step-item>
+        focus="focusedTeste('3')"
+        un-focus="unFocus()"
+        capitalize="true"
+        placeholder="'Qual o modelo?'"></mbg-input-step-item>
+      <mbg-input-step-item ng-model="entity.model2"
+        focus="focusedTeste('3')"
+        un-focus="unFocus()"
+        capitalize="true"
+        placeholder="'Qual o modelodsadsadsaasd?'"></mbg-input-step-item>
     </mbg-input-step>
 
     <!-- <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
