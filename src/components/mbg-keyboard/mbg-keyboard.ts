@@ -4,7 +4,6 @@ import * as angular from 'angular'
 import { MbgDeviceCheck } from '../../helpers/mbg-device-check'
 
 export class MbgKeyboard {
-    private bindClick: any
     private activeColor: string
     private currentActiveElement
     private lastBorderElement: string
@@ -13,6 +12,7 @@ export class MbgKeyboard {
     private focusElement: string
     private onEventListener
     private isMobileOrTablet: boolean
+    private checkTimer
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $interval, public $sce) { }
 
@@ -25,9 +25,15 @@ export class MbgKeyboard {
         window.addEventListener('focus', this.onEventListener, false)
         this.focusInitialElement()
         this.isMobileOrTablet = MbgDeviceCheck.isMobileOrTablet()
+        this.checkTimer = this.$interval(() => {
+            if (!this.currentActiveElement && document.activeElement) {
+                this.onEventListener({ target: document.activeElement })
+            }
+        }, 500)
     }
 
     $onDestroy() {
+        this.$interval.cancel(this.checkTimer)
         document.removeEventListener('click', this.onEventListener, false)
         document.removeEventListener('keydown', this.onEventListener, false)
         window.removeEventListener('focus', this.onEventListener, false)
