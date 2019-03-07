@@ -1,20 +1,29 @@
-import * as angular from 'angular'
-
 export namespace AbsPosition {
 
+    function getTransformCoords(item) {
+        const transArr = []
+        if (!window.getComputedStyle) { return }
+        const style = getComputedStyle(item),
+            transform = style.transform || style.webkitTransform || style['mozTransform'] || style['msTransform']
+        let mat = transform.match(/^matrix3d\((.+)\)$/)
+        if (mat) { return parseFloat(mat[1].split(', ')[13]) }
+        mat = transform.match(/^matrix\((.+)\)$/)
+        mat ? transArr.push(parseFloat(mat[1].split(', ')[4])) : transArr.push(0)
+        mat ? transArr.push(parseFloat(mat[1].split(', ')[5])) : transArr.push(0)
+        return { left: transArr[0] || 0, top: transArr[1] || 0 }
+    }
+
     export function get(el: any) {
-        const rect = el.getBoundingClientRect()
-        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
-        let y = 0
+        let x = 0, y = 0
         while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
-            if (el.nodeName === 'BODY') {
-                y += el.offsetTop - Math.max(angular.element('html').scrollTop(), angular.element('body').scrollTop())
-            } else {
-                y += el.offsetTop - el.scrollTop
-            }
+            const coords: any = getTransformCoords(el)
+            x += coords.left
+            y += coords.top
+            x += el.offsetLeft - el.scrollLeft + el.clientLeft
+            y += el.offsetTop - el.scrollTop + el.clientTop
             el = el.offsetParent
         }
-        return { top: y, left: rect.left + scrollLeft }
+        return { top: y, left: x }
     }
 
 }
