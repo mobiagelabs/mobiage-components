@@ -4,8 +4,10 @@ import { getStatesBR } from './helpers/states-br'
 import { premisseTypes } from './helpers/premisse-types'
 import { MbgAddressService } from './services/mbg-address.service'
 import * as angular from 'angular'
+import { detect } from 'detect-browser'
 
 class MbgAddressController {
+    private navigatorData
     private ngModel
     private citiesCache: any
     private premisseCache: any
@@ -24,6 +26,7 @@ class MbgAddressController {
     private cities: Array<any>
     private premisses: Array<any>
     public notFound: Function
+    private autocompleteValue
 
     constructor(public $scope,
         public $element,
@@ -32,6 +35,9 @@ class MbgAddressController {
         public mbgAddressService: MbgAddressService) { }
 
     $onInit() {
+        this.navigatorData = detect()
+        this.navigatorData.currentVersion = Number(this.navigatorData.version.substring(0, this.navigatorData.version.indexOf('.')))
+        this.createAutocompleteDisabled()
         this.premisseCache = {}
         this.citiesCache = {}
         this.address = {}
@@ -55,6 +61,19 @@ class MbgAddressController {
                 }
             }
         }, true)
+    }
+
+    createAutocompleteDisabled() {
+		this.autocompleteValue = this.navigatorData.name === 'chrome' && this.navigatorData.currentVersion > 65 ? 'disabled' : 'off'
+	}
+
+    getMaxWidth() {
+        const elmWrapper = this.$element.find('.mbg-address-wrapper')
+        const inputElmWrapper = this.$element.find('.input-cep-wrapper')
+        const elmWidth = elmWrapper.width(),
+            inputElmWidth = inputElmWrapper.width(),
+            marginRight = parseFloat(window.getComputedStyle(inputElmWrapper[0]).marginRight.replace('px', ''))
+        return (elmWidth - inputElmWidth - marginRight) + 'px'
     }
 
     onChangeCep() {

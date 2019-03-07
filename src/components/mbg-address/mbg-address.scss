@@ -1,11 +1,15 @@
 .mbg-address-wrapper {
     display: flex;
     .input-cep-wrapper {
-        min-width: 104px;
+        width: 104px;
         max-width: 104px;
         margin-right: 15px;
+        input {
+            max-width: 100%;
+        }
     }
     mbg-input-step {
         flex: 1;
+        max-width: 100%;
     }
 }

@@ -3,18 +3,17 @@
     <div class="mbg-input-wrapper input-cep-wrapper"
          ng-class="$ctrl.cepClass"
          disable-animate>
-        <input autocomplete="disabled"
-               autocorrect="disabled"
-               autocapitalize="disabled"
+        <input autocomplete="{{ $ctrl.autocompleteValue }}"
+               autocorrect="{{ $ctrl.autocompleteValue }}"
                spellcheck="false"
                type="text"
-               name="CEP"
                ng-change="$ctrl.onChangeCep()"
                ng-model="$ctrl.address.zipCode"
                placeholder="99999-999"
-               ui-br-cep-mask/>
+               ui-br-cep-mask />
     </div>
     <mbg-input-step disable-animate
+                    ng-style="{ 'max-width': $ctrl.getMaxWidth() }"
                     on-finish-focus-element="{{$ctrl.onFinishFocusElement}}"
                     placeholder="Estado, Cidade, Endereço, Número">
         <mbg-input-step-item ng-model="$ctrl.address.uf"

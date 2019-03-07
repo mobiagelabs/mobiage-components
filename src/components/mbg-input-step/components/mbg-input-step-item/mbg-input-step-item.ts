@@ -3,6 +3,8 @@ import './mbg-input-step-item.scss'
 import template from './mbg-input-step-item.html'
 import { Capitalize } from '../../../../helpers/capitalize'
 import { detect } from 'detect-browser'
+import { AbsPosition } from '../../../../helpers/abs-position'
+import { UtilUID } from '../../../../helpers/util-uid'
 
 class MbgInputStepItemController {
 	private fetch: Function
@@ -31,6 +33,8 @@ class MbgInputStepItemController {
 	private onMoveNextItem: Function
 	private ngDisabled: boolean
 	private transcludeTemplate: string
+	private position
+	private uid: string
 
 	constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
@@ -39,6 +43,7 @@ class MbgInputStepItemController {
 		this.navigatorData.currentVersion = Number(this.navigatorData.version.substring(0, this.navigatorData.version.indexOf('.')))
 		this.createAutocompleteDisabled()
 		this.hasFocus = false
+		this.checkPosition()
 		this.enableAdd = this.enableAdd || false
 		this.inputValue = ''
 		this.findTransclude()
@@ -182,6 +187,7 @@ class MbgInputStepItemController {
 		if (!this.hasFocus) {
 			this.$timeout(() => this.focus ? this.focus() : angular.noop())
 			this.hasFocus = true
+			this.checkPosition()
 			this.onInputChange()
 			this.updateElasticInput()
 			this.$element.find('input').select()
@@ -192,6 +198,7 @@ class MbgInputStepItemController {
 		this.unFocus ? this.unFocus() : angular.noop()
 		this.$timeout(() => {
 			this.hasFocus = false
+			this.checkPosition()
 			this.updateElasticInput()
 		})
 	}
@@ -283,11 +290,11 @@ class MbgInputStepItemController {
 	}
 
 	getOptions() {
-		return this.$element.find('ul li')
+		return angular.element(`[uid="${this.uid}"] li`)
 	}
 
 	getOptionFocused() {
-		return this.$element.find('ul li.focused')
+		return angular.element(`[uid="${this.uid}"] li.focused`)
 	}
 
 	removeAllFocus() {
@@ -393,6 +400,33 @@ class MbgInputStepItemController {
 		} else {
 			return this.ngModel ? true : false
 		}
+	}
+
+	checkPosition() {
+		if (!this.hasFocus) {
+			this.removeInBody()
+		} else {
+			this.uid = UtilUID.generete()
+			this.addInBody()
+		}
+		const elm = this.$element.find('input')
+		const absolutePosition = AbsPosition.get(elm[0])
+		this.position = {
+			left: absolutePosition.left + 'px',
+			top: (absolutePosition.top + elm.height()) + 'px',
+		}
+	}
+
+	addInBody() {
+		const body = angular.element(document).find('body')
+		const list = this.$element.find('ul')
+		list.attr('uid', this.uid)
+		body.append(list)
+	}
+
+	removeInBody() {
+		const list = angular.element(`[uid="${this.uid}"]`)
+		this.$element.find('.mbg-input-step-item').append(list)
 	}
 
 }

@@ -13,6 +13,10 @@
     position: relative;
     min-width: 0;
     cursor: text;
+    overflow: auto;
+    &::-webkit-scrollbar { 
+        display: none; 
+    }
     > label {
         color: #bcbcbc;
         font-style: italic;
