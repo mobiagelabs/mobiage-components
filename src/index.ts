@@ -246,6 +246,10 @@ const module = angular
 			})
 		}
 
+		$scope.soma = () => {
+			return 10 + 10
+		}
+
 		// $scope.number = {
 		//   'zipCode': '87035050',
 		//   'localization': 'Maringá',

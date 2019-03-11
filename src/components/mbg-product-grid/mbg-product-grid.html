@@ -21,6 +21,16 @@
                     <label>{{ ::xItem.value }}</label>
                 </td>
             </tr>
+            <!-- <tr>
+                <td></td>
+                <td ng-repeat="xItem in $ctrl.grid.x track by xItem.value"
+                    class="grid-center-content">
+                    <div class="testtr">
+                        <label>Entrada</label>
+                        <label>Estoque</label>
+                    </div>
+                </td>
+            </tr> -->
             <tr ng-repeat="yItem in $ctrl.grid.y track by yItem.value">
                 <td>
                     <div class="grid-product-item-name-wrapper">
@@ -30,7 +40,12 @@
                     </div>
                 </td>
                 <td ng-repeat="xItem in $ctrl.grid.x track by xItem.value">
-                    <div class="grid-product-edit-wrapper">
+                    <div class="grid-transclude-edir-wrapper">
+                        <div ng-show="$ctrl.transcludeTemplate"
+                            mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
+                    </div>
+                    <div ng-show="!$ctrl.transcludeTemplate"
+                        class="grid-product-edit-wrapper">
                         <svg height="401pt"
                             viewBox="0 -1 401.52289 401"
                             width="401pt"
@@ -44,7 +59,7 @@
                             ng-click="$ctrl.toogleEnableItem($index, $parent.$index)">
                             {{ $ctrl.gridValues[$index][$parent.$index].enable ? 'Remover' : 'Adicionar'}}
                         </a>
-                        <span ng-show="$ctrl.enableCurrentStock">Estoque atual:
+                        <span ng-show="$ctrl.enableCurrentStock">Estoque:
                             {{$ctrl.gridValues[$index][$parent.$index].currentStock || '0'}}</span>
                         <span ng-class="{ 'grid-disable': $ctrl.activeAddOrRemove && !$ctrl.gridValues[$index][$parent.$index].enable }">
                             {{$ctrl.inputLabel ? $ctrl.inputLabel : $ctrl.showStock ? 'Estoque' : 'R$ Venda'}}</span>
