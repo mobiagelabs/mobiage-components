@@ -6,6 +6,11 @@ mbg-input-step-item {
         align-items: center;
         padding-right: 5px;
         z-index: 0;
+        &.has-focus {
+            &:last-child {
+                margin-right: 5px;
+            }
+        }
         &.is-empty {
             padding: 0;
         }

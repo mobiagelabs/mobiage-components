@@ -180,6 +180,9 @@ class MbgInputStepItemController {
 			const event = new Event('change')
 			const input = this.$element.find('input')
 			input[0].dispatchEvent(event)
+			const inputWrapper = this.mbgInputStep.$element.find('.mb-input-step-wrapper')
+			const currentLeft = inputWrapper.scrollLeft()
+			inputWrapper.scrollLeft(currentLeft + input.width())
 		})
 	}
 

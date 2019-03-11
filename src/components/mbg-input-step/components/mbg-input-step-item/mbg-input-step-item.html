@@ -1,6 +1,6 @@
 <div class="mbg-input-step-item"
      disable-animate
-     ng-class="{ 'disabled-item': $ctrl.ngDisabled, 'is-empty': !$ctrl.inputValue, 'active': $ctrl.hasData(), 'opened': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
+     ng-class="{ 'has-focus': $ctrl.hasFocus,'disabled-item': $ctrl.ngDisabled, 'is-empty': !$ctrl.inputValue, 'active': $ctrl.hasData(), 'opened': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
      <input type="text"
            data-ignore-tab
            disable-animate
