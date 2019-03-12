@@ -15,17 +15,31 @@ class MbgProductGridController {
         y?: Array<any>,
     }
     private gridValues
+    private transcludeTemplate
 
-    constructor(public $scope, public $element, public $attrs, public $timeout) { }
+    constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
     $onInit() {
         this.grid = {}
         this.gridValues = {}
+        this.$scope.$c = this.$scope.$parent
         this.enableCurrentStock = this.enableCurrentStock === undefined ? false : this.enableCurrentStock
         this.enablePrice = this.enablePrice === undefined ? true : this.enablePrice
         this.showStock = this.showStock === undefined ? true : this.showStock
+        this.findTransclude()
         this.$scope.$watch('$ctrl.ngModel', () => this.handleModel(), true)
         this.$scope.$watch('$ctrl.details', () => this.handleModel(), true)
+    }
+
+    findTransclude() {
+        this.$transclude(this.$scope, (cloneEl) => {
+            angular.forEach(cloneEl, cl => {
+                let element = angular.element(cl)[0]
+                if (element.nodeName && element.nodeName === 'TEMPLATE') {
+                    this.transcludeTemplate = element.innerHTML
+                }
+            })
+        })
     }
 
     handleModel() {
@@ -95,9 +109,10 @@ class MbgProductGridController {
 
 }
 
-MbgProductGridController.$inject = ['$scope', '$element', '$attrs', '$timeout']
+MbgProductGridController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$transclude']
 
 const mbgProductGrid = {
+    transclude: true,
     bindings: {
         x: '=?',
         y: '=?',
