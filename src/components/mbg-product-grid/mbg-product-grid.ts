@@ -54,12 +54,7 @@ class MbgProductGridController {
                         if (yItem && ((yItem.id && yItem.id === item.yDetail.id) || angular.equals(yItem, item.yDetail))) {
                             this.gridValues[xIndex] = this.gridValues[xIndex] || {}
                             this.gridValues[xIndex][yIndex] = this.gridValues[xIndex][yIndex] || {}
-                            this.gridValues[xIndex][yIndex] = {
-                                stock: item.stock,
-                                currentStock: item.currentStock,
-                                enable: item.enable,
-                                price: item.price,
-                            }
+                            this.gridValues[xIndex][yIndex] = Object.assign({}, item)
                         }
                     })
                 }
@@ -82,14 +77,8 @@ class MbgProductGridController {
                 .forEach((xIndex) => {
                     Object.keys(this.gridValues[xIndex])
                         .map((yIndex) => {
-                            return {
-                                xDetail: this.grid.x[xIndex],
-                                yDetail: this.grid.y[yIndex],
-                                stock: this.gridValues[xIndex][yIndex].stock,
-                                currentStock: this.gridValues[xIndex][yIndex].currentStock,
-                                enable: this.gridValues[xIndex][yIndex].enable,
-                                price: this.gridValues[xIndex][yIndex].price,
-                            }
+                            return Object.assign({xDetail: this.grid.x[xIndex],
+                                yDetail: this.grid.y[yIndex]}, this.gridValues[xIndex][yIndex])
                         })
                         .forEach((item) => this.ngModel.push(item))
                 })
