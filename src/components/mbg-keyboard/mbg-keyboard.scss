@@ -25,6 +25,7 @@ mbg-keyboard {
             }
         }
         .mbg-keyboard-row {
+            position: relative;
             margin: 12px 0px;
             display: flex;
             justify-content: space-between;
