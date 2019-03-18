@@ -279,6 +279,14 @@ class MbgProductSearchController {
         })
     }
 
+    recalcPosition() {
+        const elm = this.$element.find('.mbg-input-wrapper')
+        const absolutePosition = AbsPosition.get(elm[0])
+        this.position = {
+            left: absolutePosition.left + 'px',
+            top: (absolutePosition.top + elm.height()) + 'px',
+        }
+    }
 
     checkPosition() {
         if (!this.hasFocus) {
@@ -287,12 +295,7 @@ class MbgProductSearchController {
             this.uid = UtilUID.generete()
             this.addInBody()
         }
-        const elm = this.$element.find('.mbg-input-wrapper')
-        const absolutePosition = AbsPosition.get(elm[0])
-        this.position = {
-            left: absolutePosition.left + 'px',
-            top: (absolutePosition.top + elm.height()) + 'px',
-        }
+        this.recalcPosition()
     }
 
     addInBody() {

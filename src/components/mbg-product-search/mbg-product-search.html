@@ -3,6 +3,7 @@
     <mbg-input-text ng-model="$ctrl.inputValue"
                     ng-focus="$ctrl.onInputFocus()"
                     ng-blur="$ctrl.onInputBlur()"
+                    enable-keyboard
                     placeholder="{{ $ctrl.placeholder }}"
                     ng-keydown="$ctrl.onInputKeydown($event)"
                     ng-change="$ctrl.onInputChange()"></mbg-input-text>
