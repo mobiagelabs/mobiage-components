@@ -101,7 +101,7 @@ class MbgProductSearchController {
         if (!this.hasFocus) {
             this.onInputChange()
             // this.hasFocus = true
-            this.$element.find('input').select()
+            // this.$element.find('input').select()
         }
         if (!ignoreCallback && this.ngFocus) {
             // this.ngFocus()

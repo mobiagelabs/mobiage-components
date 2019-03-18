@@ -69,13 +69,16 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-6 col-md-offset-2">
+      <div class="col-md-6">
         <mbg-product-search ng-model="teste"
                             label="barCode"
                             try-add="addItem(barCode, quantity)"
                             auto-clear="false"
                             fetch="getProductsDTO(query)">
         </mbg-product-search>
+      </div>
+      <div class="col-md-6">
+        <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard>
       </div>
     </div>
 
@@ -89,7 +92,7 @@
     <mbg-input-money ng-model="valor2" allow-negative="true" allow-zero="false"></mbg-input-money>
     -->
 
-    <!-- <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard> -->
+    <!--  -->
 
 
     <!-- <mbg-input-number ng-model="teste22222"></mbg-input-number>
