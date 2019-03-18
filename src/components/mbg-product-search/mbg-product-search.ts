@@ -139,12 +139,16 @@ class MbgProductSearchController {
     onInputKeydown(evt) {
         const oldHasFocus = this.hasFocus
         this.hasFocus = true
+        if (evt.keyCode !== 38 && evt.keyCode !== 40) {
+            this.checkPosition()
+        }
         switch (evt.keyCode) {
             case 13: // ENTER
                 evt.preventDefault()
                 evt.stopPropagation()
                 this.setModel(oldHasFocus)
                 this.hasFocus = false
+                this.checkPosition()
                 break
             case 38: // SETA CIMA
                 this.moveToUp()
@@ -216,7 +220,6 @@ class MbgProductSearchController {
                     this.$element.find('mbg-input-text input').select()
                 })
             }
-            this.checkPosition()
         })
     }
 
@@ -289,13 +292,14 @@ class MbgProductSearchController {
     }
 
     checkPosition() {
-        if (!this.hasFocus) {
+        if (this.uid) {
             this.removeInBody()
-        } else {
+        }
+        if (this.hasFocus) {
             this.uid = UtilUID.generete()
             this.addInBody()
+            this.recalcPosition()
         }
-        this.recalcPosition()
     }
 
     addInBody() {

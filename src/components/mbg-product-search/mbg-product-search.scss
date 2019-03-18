@@ -1,5 +1,8 @@
 .mbg-product-search-wrapper {
     position: relative;
+    .mbg-product-search-list {
+        display: none;
+    }
     .mbg-input-wrapper {
         input {
             padding-right: 44px;
