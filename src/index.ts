@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 import * as angular from 'angular'
 import components from './components'
 import { initializeApp } from 'firebase/app'
@@ -18,6 +20,80 @@ const module = angular
 		components,
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
+
+		const url = 'https://api-hom.kigisistemas.com.br/mobiage-api/api/v2/product-item/terminal?gumgaToken=310L261E1552912392436C155291059243600O260.261.I'
+
+		$scope.getProductsDTO = (query) => {
+			return $http.post(url, {
+				"page": 1,
+				"pageSize": 6,
+				"gQuery": {
+					"subQuerys": [
+						{
+							"subQuerys": [],
+							"joins": [
+								{
+									"subQuerys": [],
+									"table": "obj.productItemBarCodes as pib",
+									"type": "INNER"
+								}
+							],
+							"selects": [],
+							"criteria": {
+								"comparisonOperator": "CONTAINS",
+								"fieldFunction": "lower(translate(%s, 'âàãáÁÂÀÃéêÉÊíÍóôõÓÔÕüúÜÚÇç','AAAAAAAAEEEEIIOOOOOOUUUUCC'))",
+								"valueFunction": "lower(translate(%s, 'âàãáÁÂÀÃéêÉÊíÍóôõÓÔÕüúÜÚÇç','AAAAAAAAEEEEIIOOOOOOUUUUCC'))",
+								"field": "obj.name",
+								"value": query
+							},
+							"logicalOperator": "SIMPLE"
+						},
+						{
+							"subQuerys": [],
+							"joins": [],
+							"selects": [],
+							"criteria": {
+								"comparisonOperator": "CONTAINS",
+								"fieldFunction": "%s",
+								"valueFunction": "%s",
+								"field": "pib.barCode",
+								"value": query
+							},
+							"logicalOperator": "SIMPLE"
+						},
+						{
+							"subQuerys": [],
+							"joins": [],
+							"selects": [],
+							"criteria": {
+								"comparisonOperator": "CONTAINS",
+								"fieldFunction": "%s",
+								"valueFunction": "%s",
+								"field": "obj.product.reference",
+								"value": query
+							},
+							"logicalOperator": "SIMPLE"
+						}
+					],
+					"joins": [],
+					"selects": [],
+					"logicalOperator": "OR",
+					"useDistinct": true
+				},
+				"start": 0,
+				"searchCount": true,
+				"sortField": "",
+				"sortDir": "",
+				"count": 189
+			}).then((resp) => resp.data.values.map((t) => {
+				t.image = 'https://firebasestorage.googleapis.com/v0/b/mobiage-homologation.appspot.com/o/14c17995-5c77-b589-e3c5-c5bc81c44b6d?alt=media'
+				return t
+			}))
+		}
+
+		$scope.addItem = (barCode, quantity) => {
+			console.log(barCode, quantity)
+		}
 
 		$scope.config = {
 			maxImages: 1,
@@ -358,3 +434,5 @@ const module = angular
 
 	}])
 angular.bootstrap(document, [module.name])
+
+/* tslint:enable */

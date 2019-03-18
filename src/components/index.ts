@@ -37,6 +37,7 @@ import { mbgInputDateModule } from './mbg-input-date'
 import { mbgKeyboardModule } from './mbg-keyboard'
 import { mbgSelectModule } from './mbg-select'
 import { mbgPaginationModule } from './mbg-pagination'
+import { mbgProductSearchModule } from './mbg-product-search'
 import 'angular-ui-bootstrap'
 
 const mbgComponentsModule = angular
@@ -73,7 +74,8 @@ const mbgComponentsModule = angular
     mbgInputDateModule,
     mbgKeyboardModule,
     mbgSelectModule,
-    mbgPaginationModule
+    mbgPaginationModule,
+    mbgProductSearchModule,
   ])
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
   .directive('mbgExtendsStyle', () => new NgExtendsStyle)

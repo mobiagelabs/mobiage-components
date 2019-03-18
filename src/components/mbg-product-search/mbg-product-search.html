@@ -1,0 +1,62 @@
+<div class="mbg-product-search-wrapper">
+    <mbg-input-text ng-model="$ctrl.inputValue"
+                    ng-focus="$ctrl.onInputFocus()"
+                    ng-blur="$ctrl.onInputBlur()"
+                    placeholder="{{ $ctrl.placeholder }}"
+                    ng-keydown="$ctrl.onInputKeydown($event)"
+                    ng-change="$ctrl.onInputChange()"></mbg-input-text>
+    <svg class="loading"
+         ng-show="$ctrl.isLoading"
+         version="1.1"
+         id="loader-1"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         x="0px"
+         y="0px"
+         width="40px"
+         height="40px"
+         viewBox="0 0 50 50"
+         style="enable-background:new 0 0 50 50;"
+         xml:space="preserve">
+        <path d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
+            <animateTransform attributeType="xml"
+                              attributeName="transform"
+                              type="rotate"
+                              from="0 25 25"
+                              to="360 25 25"
+                              dur="0.6s"
+                              repeatCount="indefinite" />
+        </path>
+    </svg>
+    <ul class="mbg-select-list"
+        ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
+        <li ng-show="$ctrl.data"
+            ng-mousedown="$ctrl.selectOption(item)"
+            ng-repeat="item in $ctrl.data">
+            <div class="item-wrapper">
+                <div class="image"
+                     ng-style="{ 'background': 'url(' + item.image + ') no-repeat center center / contain' }">
+                </div>
+                <div class="content">
+                    <h3>{{ item.name }}</h3>
+                    <h2><b>Ref:</b> {{ item.reference }} - <b>Cód:</b> {{ item.barCode }}</h2>
+                    <h2><b>Marca:</b> {{ item.brand }} | <b>Variação:</b> {{ item.variation }}</h2>
+                </div>
+                <div class="values-wrapper">
+                    <div class="price">
+                        <span>Preço: </span>
+                        {{ (item.saleValue || 0) | currency: 'R$ ' }}
+                    </div>
+                    <div class="stock">
+                        <span><b>Estoque:</b> </span>
+                        {{ item.stock }}
+                    </div>
+                </div>
+            </div>
+            <!-- <div ng-if="$ctrl.transcludeTemplate"
+                 mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
+            <div ng-if="!$ctrl.transcludeTemplate && $ctrl.label">{{item[$ctrl.label]}}</div>
+            <div ng-if="!$ctrl.transcludeTemplate && !$ctrl.label">{{item}}</div> -->
+        </li>
+    </ul>
+</div>
