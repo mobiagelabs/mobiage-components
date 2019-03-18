@@ -1,6 +1,8 @@
 import * as angular from 'angular'
 import './mbg-product-search.scss'
 import template from './mbg-product-search.html'
+import { UtilUID } from '../../helpers/util-uid'
+import { AbsPosition } from '../../helpers/abs-position'
 
 class MbgProductSearchController {
     private data: any
@@ -19,13 +21,18 @@ class MbgProductSearchController {
     private placeholder: string
     private autoClear: boolean
     private tryAdd: Function
+    private position
+    private uidComponent: string
+    private uid: string
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
 
     $onInit() {
+        this.uidComponent = UtilUID.generete()
         this.placeholder = this.placeholder || 'Encontre por código de barras, referência ou nome do produto.'
         this.inputValue = ''
         this.observeModel()
+        this.checkPosition()
         this.updateInputValue()
         this.findTransclude()
         this.$scope.$watch('$ctrl.fetch', () => {
@@ -76,7 +83,7 @@ class MbgProductSearchController {
     }
 
     getOptions() {
-        return this.$element.find('ul li')
+        return angular.element(`[uid="${this.uid}"] li`)
     }
 
     setFocusOption(liOption) {
@@ -99,10 +106,15 @@ class MbgProductSearchController {
         if (!ignoreCallback && this.ngFocus) {
             // this.ngFocus()
         }
+        this.hasFocus = true
+        this.checkPosition()
     }
 
     onInputBlur() {
-        this.$timeout(() => this.hasFocus = false)
+        this.$timeout(() => {
+            this.hasFocus = false
+            this.checkPosition()
+        })
         if (this.ngBlur) {
             this.ngBlur()
         }
@@ -121,7 +133,7 @@ class MbgProductSearchController {
     }
 
     getOptionFocused() {
-        return this.$element.find('ul li.focused')
+        return angular.element(`[uid="${this.uid}"] li.focused`)
     }
 
     onInputKeydown(evt) {
@@ -264,6 +276,34 @@ class MbgProductSearchController {
                 }
             }
         })
+    }
+
+
+    checkPosition() {
+        if (!this.hasFocus) {
+            this.removeInBody()
+        } else {
+            this.uid = UtilUID.generete()
+            this.addInBody()
+        }
+        const elm = this.$element.find('.mbg-input-wrapper')
+        const absolutePosition = AbsPosition.get(elm[0])
+        this.position = {
+            left: absolutePosition.left + 'px',
+            top: (absolutePosition.top + elm.height()) + 'px',
+        }
+    }
+
+    addInBody() {
+        const body = angular.element(document).find('body')
+        const list = this.$element.find('ul')
+        list.attr('uid', this.uid)
+        body.append(list)
+    }
+
+    removeInBody() {
+        const list = angular.element(`[uid="${this.uid}"]`)
+        this.$element.find('.mbg-product-search-wrapper').append(list)
     }
 
 }

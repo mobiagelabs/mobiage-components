@@ -1,4 +1,5 @@
-<div class="mbg-product-search-wrapper">
+<div class="mbg-product-search-wrapper"
+     uid="{{ $ctrl.uidComponent }}">
     <mbg-input-text ng-model="$ctrl.inputValue"
                     ng-focus="$ctrl.onInputFocus()"
                     ng-blur="$ctrl.onInputBlur()"
@@ -28,7 +29,10 @@
                               repeatCount="indefinite" />
         </path>
     </svg>
-    <ul class="mbg-select-list"
+    <ul class="mbg-product-search-list"
+        mbg-extends-style=".mbg-product-search-wrapper[uid='{{ $ctrl.uidComponent }}']"
+        extends-style="max-width"
+        ng-style="{ left: $ctrl.position.left, top: $ctrl.position.top }"
         ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
         <li ng-show="$ctrl.data"
             ng-mousedown="$ctrl.selectOption(item)"
