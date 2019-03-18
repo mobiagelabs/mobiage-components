@@ -216,6 +216,7 @@ class MbgProductSearchController {
                     this.$element.find('mbg-input-text input').select()
                 })
             }
+            this.checkPosition()
         })
     }
 
