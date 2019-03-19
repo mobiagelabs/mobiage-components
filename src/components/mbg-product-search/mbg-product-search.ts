@@ -287,8 +287,8 @@ class MbgProductSearchController {
             this.recalcPosition()
         }
         return { 
-            left: this.position.left, 
-            top: this.position.top 
+            left: this.position ? this.position.left : 0, 
+            top: this.position ? this.position.top : 0 
         }
     }
 
