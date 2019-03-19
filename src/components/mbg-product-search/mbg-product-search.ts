@@ -282,6 +282,16 @@ class MbgProductSearchController {
         })
     }
 
+    getPosition() {
+        if (this.hasFocus) {
+            this.recalcPosition()
+        }
+        return { 
+            left: this.position.left, 
+            top: this.position.top 
+        }
+    }
+
     recalcPosition() {
         const elm = this.$element.find('.mbg-input-wrapper')
         const absolutePosition = AbsPosition.get(elm[0])
