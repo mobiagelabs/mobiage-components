@@ -86,7 +86,8 @@ const module = angular
 				"sortDir": "",
 				"count": 189
 			}).then((resp) => resp.data.values.map((t) => {
-				t.image = 'https://firebasestorage.googleapis.com/v0/b/mobiage-homologation.appspot.com/o/14c17995-5c77-b589-e3c5-c5bc81c44b6d?alt=media'
+				t.image = t.urlImage
+				t.saleValue = t.value
 				return t
 			}))
 		}

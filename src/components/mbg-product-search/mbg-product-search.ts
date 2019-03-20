@@ -23,11 +23,14 @@ class MbgProductSearchController {
     private tryAdd: Function
     private position
     private uidComponent: string
+    private debounce
+    private debounceTime
     private uid: string
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
 
     $onInit() {
+        this.debounceTime = this.debounceTime || 1000
         this.uidComponent = UtilUID.generete()
         this.placeholder = this.placeholder || 'Encontre por código de barras, referência ou nome do produto.'
         this.inputValue = ''
@@ -56,17 +59,22 @@ class MbgProductSearchController {
     executeFetch(onExecute?: Function) {
         this.data = []
         if (!this.inputValue || this.inputValue.length < 2) { return }
-        this.isLoading = true
-        const response = this.fetch({ query: (this.inputValue || '') })
-        if (response && response.then) {
-            response.then((data) => {
-                this.afterFetchData(data)
-                if (onExecute) { onExecute(data) }
-            })
-        } else {
-            this.afterFetchData(response)
-            if (onExecute) { onExecute(response) }
+        if (this.debounce) {
+            this.$timeout.cancel(this.debounce)
         }
+        this.debounce = this.$timeout(() => {
+            this.isLoading = true
+            const response = this.fetch({ query: (this.inputValue || '') })
+            if (response && response.then) {
+                response.then((data) => {
+                    this.afterFetchData(data)
+                    if (onExecute) { onExecute(data) }
+                })
+            } else {
+                this.afterFetchData(response)
+                if (onExecute) { onExecute(response) }
+            }
+        }, this.debounceTime)
     }
 
     afterFetchData(data) {
@@ -286,9 +294,9 @@ class MbgProductSearchController {
         if (this.hasFocus) {
             this.recalcPosition()
         }
-        return { 
-            left: this.position ? this.position.left : 0, 
-            top: this.position ? this.position.top : 0 
+        return {
+            left: this.position ? this.position.left : 0,
+            top: this.position ? this.position.top : 0
         }
     }
 
@@ -335,6 +343,7 @@ const mbgProductSearch = {
         ngModel: '=',
         ngValue: '@?',
         fetch: '&?',
+        debounceTime: '=?',
         ngFocus: '&?',
         ngBlur: '&?',
         label: '@?',
