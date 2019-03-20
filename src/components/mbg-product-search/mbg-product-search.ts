@@ -157,7 +157,7 @@ class MbgProductSearchController {
         if (evt.keyCode !== 38 && evt.keyCode !== 40) {
             this.checkPosition()
         }
-        switch (evt.keyCode) {
+        switch (Number(evt.keyCode)) {
             case 13: // ENTER
                 evt.preventDefault()
                 evt.stopPropagation()

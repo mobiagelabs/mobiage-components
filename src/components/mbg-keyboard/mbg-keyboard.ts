@@ -214,13 +214,16 @@ export class MbgKeyboard {
             if (this.isMobileOrTablet) {
                 this.currentActiveElement.val(currentVal + newValue)
             } else {
-                let startPos = nativeActiveElement.selectionStart,
-                    endPos = nativeActiveElement.selectionEnd
-                const pre = currentVal.substring(0, startPos)
-                const post = currentVal.substring(endPos, currentVal.length)
-                startPos += newValue.length
-                this.currentActiveElement.val(pre + newValue + post)
-                nativeActiveElement.setSelectionRange(startPos, startPos)
+                if (key !== 13) {
+                    let startPos = nativeActiveElement.selectionStart,
+                        endPos = nativeActiveElement.selectionEnd
+                    const pre = currentVal.substring(0, startPos)
+                    const post = currentVal.substring(endPos, currentVal.length)
+                    startPos += newValue.length
+                    this.currentActiveElement.val(pre + newValue + post)
+                    nativeActiveElement.setSelectionRange(startPos, startPos)
+                }
+
             }
         }
         if (nativeActiveElement.type === 'number') {
