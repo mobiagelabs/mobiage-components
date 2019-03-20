@@ -26,6 +26,7 @@ class MbgProductSearchController {
     private debounce
     private debounceTime
     private uid: string
+    private debounceEnter
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
 
@@ -144,6 +145,12 @@ class MbgProductSearchController {
         return angular.element(`[uid="${this.uid}"] li.focused`)
     }
 
+    afterEnterPress(oldHasFocus) {
+        this.setModel(oldHasFocus)
+        this.hasFocus = false
+        this.checkPosition()
+    }
+
     onInputKeydown(evt) {
         const oldHasFocus = this.hasFocus
         this.hasFocus = true
@@ -154,9 +161,10 @@ class MbgProductSearchController {
             case 13: // ENTER
                 evt.preventDefault()
                 evt.stopPropagation()
-                this.setModel(oldHasFocus)
-                this.hasFocus = false
-                this.checkPosition()
+                if (this.debounceEnter) { this.$timeout.cancel(this.debounceEnter) }
+                this.debounceEnter = this.$timeout(() => {
+                    this.afterEnterPress(oldHasFocus)
+                }, 100)
                 break
             case 38: // SETA CIMA
                 this.moveToUp()
