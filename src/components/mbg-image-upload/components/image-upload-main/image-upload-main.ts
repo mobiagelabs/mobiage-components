@@ -29,6 +29,10 @@ class ImageUploadMainController {
         this.observeClickOutside()
     }
 
+    $onDestroy() {
+        this.closeWebCam()
+    }
+
     observeClickOutside() {
         angular
             .element(document)
@@ -129,6 +133,7 @@ class ImageUploadMainController {
     }
 
     async uploadFiles(files: Array<string>) {
+        this.closeWebCam()
         this.$timeout(() => this.loading = true)
         this.removeCurrentFiles()
         const uploadedFiles = this.config.disableFirebase
