@@ -34,11 +34,13 @@ export class MbgListController {
                 row.$json = JSON.stringify(row)
             })
         }, true)
-        this.$scope.$watch('$ctrl.selectedValues', () => {
-            (this.rows || []).forEach((row) => {
-                this.selectedMap[row.$json] = (this.selectedValues || []).filter((sv) => JSON.stringify(sv) === JSON.stringify(row)).length > 0
-            })
-        })
+        this.$scope.$watch('$ctrl.rows', () => {
+            this.$timeout(() => {
+                (this.rows || []).forEach((row) => {
+                    this.selectedMap[row.$json] = (this.selectedValues || []).filter((sv) => JSON.stringify(sv) === JSON.stringify(row)).length > 0
+                })
+            }, 1000)
+        }, true)
         this.observeOpenedRows()
     }
 
