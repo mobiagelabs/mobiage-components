@@ -68,7 +68,7 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-6">
         <mbg-product-search ng-model="teste"
                             label="barCode"
@@ -80,7 +80,7 @@
       <div class="col-md-6">
         <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard>
       </div>
-    </div>
+    </div> -->
 
     <!-- <mbg-pagination active-page="activePage"
                     page-size="10"
@@ -282,9 +282,11 @@
                     name="teste"
                     state="'PR'"></mbg-input-ie>
     </form> -->
-    <!-- <mbg-image-upload config="config"
-                      ng-model="profileImage"></mbg-image-upload>  -->
-
+    <div class="width-300" style="width: 200px;padding: 0 15px;">
+      <mbg-image-upload config="config"
+      ng-model="profileImage"></mbg-image-upload>
+    </div>
+   
     <!--  -->
 
     <!-- <div class="row">

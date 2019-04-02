@@ -102,7 +102,10 @@ const module = angular
 			disableWebcam: false,
 			viewMode: false,
 			enableCrop: true,
-			rounded: false
+			rounded: false,
+			size: {
+				width: '100%'
+			}
 		}
 
 		$scope.valor2 = -1500.00
