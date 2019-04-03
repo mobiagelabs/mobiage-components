@@ -2,6 +2,7 @@
      ng-if="$ctrl.props">
   <input type="text"
          ui-number-mask="{{ $ctrl.props.precision }}"
+         ng-attr-ui-hide-group-sep="{{ $ctrl.props.uiHideGroupSep }}"
          min="{{ $ctrl.props.min }}"
          max="{{ $ctrl.props.max }}"
          ng-model="$ctrl.ngModel"
