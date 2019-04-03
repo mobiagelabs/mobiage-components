@@ -103,7 +103,7 @@ class ImageUploadMainController {
     closeWebCam() {
         Webcam.reset()
         this.webCam = false
-        this.config.maxImages > 1 ? this.ngModel.splice(0, 1) : angular.noop()
+        // this.config.maxImages > 1 ? this.ngModel.splice(0, 1) : angular.noop()
     }
 
     setNgModel(files) {

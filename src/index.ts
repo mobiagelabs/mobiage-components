@@ -97,11 +97,11 @@ const module = angular
 		}
 
 		$scope.config = {
-			maxImages: 1,
+			maxImages: 3,
 			disableFirebase: true,
 			disableWebcam: false,
 			viewMode: false,
-			enableCrop: true,
+			enableCrop: false,
 			rounded: false,
 			size: {
 				width: '100%'
