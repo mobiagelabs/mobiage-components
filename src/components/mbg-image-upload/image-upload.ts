@@ -19,6 +19,7 @@ class ImageUploadController {
             maxImages: 1,
             enableCrop: false,
             rounded: false,
+            enableShadow: false,
             disableFirebase: false,
             viewMode: false,
             disableWebcam: false,
@@ -37,7 +38,7 @@ class ImageUploadController {
         this.webCam = false
         this.$timeout(() => {
             if (this.config && this.config.size && this.config.size.width.includes('%')) {
-                this.config.size.height = !this.config.size.height 
+                this.config.size.height = !this.config.size.height
                 ? angular.element(`#${this.uid}`).parent().parent().width() // Foi realizado os parents para capturar o tamanho do pai relativo ao mbg-image-upload para que o height não fique zerado
                 : this.config.size.height
             }

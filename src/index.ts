@@ -100,6 +100,7 @@ const module = angular
 			maxImages: 3,
 			disableFirebase: true,
 			disableWebcam: false,
+			enableShadow: true,
 			viewMode: false,
 			enableCrop: false,
 			rounded: false,
