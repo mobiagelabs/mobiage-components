@@ -17,6 +17,8 @@ class MbgInputNumberController {
             allowNegative: $attrs.allowNegative ? JSON.parse($attrs.allowNegative) : false,
             uiHideGroupSep: typeof $attrs.uiHideGroupSep !== undefined ? true : undefined
         }
+        if ($attrs.min) { this.props.min = $attrs.min }
+        if ($attrs.max) { this.props.max = $attrs.max }
     }
 
     $onInit() {
