@@ -42,4 +42,8 @@ export interface ImageUploadConfig {
     * @description Desabilita o modulo webcam (dafault : false)
     */
     disableWebcam?: boolean
+     /**
+    * @description Abilitar o modulo box-shadow (dafault : false)
+    */
+    enableShadow?: boolean
 }

@@ -5,7 +5,8 @@
      ng-if="$ctrl.config">
     <div class="mbg-image-upload-wrapper"
          ng-class="{ [$ctrl.config.children.position.toLowerCase()]: true }">
-        <div class="mbg-image-upload-main-wrapper"
+        <div class="mbg-image-upload-main-wrapper "
+        ng-class="{'shadow': $ctrl.config.enableShadow}"
              ng-style="$ctrl.config.size">
             <mbg-image-upload-main ng-model="$ctrl.ngModel"
                                    enable-crop="$ctrl.enableCrop"

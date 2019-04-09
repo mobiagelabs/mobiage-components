@@ -70,7 +70,7 @@ class ImageUploadMainController {
     }
 
     varifyEmptyNgModel() {
-        return this.config.maxImages > 1 ? this.ngModel.length > 0 : this.ngModel
+        return this.config.maxImages > 1 ? (this.ngModel || []).length > 0 : this.ngModel
     }
 
     takeSnapshot() {
