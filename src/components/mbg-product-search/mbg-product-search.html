@@ -34,7 +34,8 @@
         mbg-extends-style=".mbg-product-search-wrapper[uid='{{ $ctrl.uidComponent }}']"
         extends-style="max-width"
         ng-style="$ctrl.getPosition()"
-        ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
+        ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}"
+        mbg-on-scroll="$ctrl.onScroll($event)">
         <li ng-show="$ctrl.data"
             ng-mousedown="$ctrl.selectOption(item)"
             ng-repeat="item in $ctrl.data">

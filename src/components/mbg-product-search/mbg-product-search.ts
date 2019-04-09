@@ -27,6 +27,7 @@ class MbgProductSearchController {
     private debounceTime
     private uid: string
     private debounceEnter
+    private page: number
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
 
@@ -58,14 +59,14 @@ class MbgProductSearchController {
     }
 
     executeFetch(onExecute?: Function) {
-        this.data = []
         if (!this.inputValue || this.inputValue.length < 2) { return }
         if (this.debounce) {
             this.$timeout.cancel(this.debounce)
         }
+        if (this.page === 1) { this.data = [] }
         this.debounce = this.$timeout(() => {
             this.isLoading = true
-            const response = this.fetch({ query: (this.inputValue || '') })
+            const response = this.fetch({ query: (this.inputValue || ''), page: this.page })
             if (response && response.then) {
                 response.then((data) => {
                     this.afterFetchData(data)
@@ -80,7 +81,7 @@ class MbgProductSearchController {
 
     afterFetchData(data) {
         this.$timeout(() => {
-            this.data = data
+            this.data = this.data.concat(data)
             this.isLoading = false
         })
         this.$timeout(() => this.focusFirstOption(), 150)
@@ -131,6 +132,7 @@ class MbgProductSearchController {
 
     onInputChange() {
         this.$timeout(() => {
+            this.page = 1
             this.fetch ? this.executeFetch() : angular.noop()
         })
     }
@@ -282,6 +284,7 @@ class MbgProductSearchController {
     updateInputValue() {
         this.$timeout(() => {
             if (this.ngValue && this.ngModel) {
+                this.page = 1
                 this.executeFetch((data) => {
                     const item = (data || []).find((i) => i[this.ngValue] === this.ngModel)
                     if (item) {
@@ -338,6 +341,14 @@ class MbgProductSearchController {
     removeInBody() {
         const list = angular.element(`[uid="${this.uid}"]`)
         this.$element.find('.mbg-product-search-wrapper').append(list)
+    }
+
+    onScroll(event) {
+        const element = event.target
+        if (!this.isLoading && element.scrollHeight - element.scrollTop === element.clientHeight) {
+            this.page++
+            this.fetch ? this.executeFetch() : angular.noop()
+        }
     }
 
 }

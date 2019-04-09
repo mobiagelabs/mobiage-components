@@ -23,9 +23,9 @@ const module = angular
 
 		const url = 'https://api-hom.kigisistemas.com.br/mobiage-api/api/v2/product-item/terminal?gumgaToken=310L261E1552912392436C155291059243600O260.261.I'
 
-		$scope.getProductsDTO = (query) => {
+		$scope.getProductsDTO = (query, page) => {
 			return $http.post(url, {
-				"page": 1,
+				"page": page,
 				"pageSize": 6,
 				"gQuery": {
 					"subQuerys": [
