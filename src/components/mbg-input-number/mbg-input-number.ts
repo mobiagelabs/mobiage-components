@@ -15,6 +15,7 @@ class MbgInputNumberController {
             placeholder: $attrs.placeholder || '',
             precision: $attrs.precision || 0,
             allowNegative: $attrs.allowNegative ? JSON.parse($attrs.allowNegative) : false,
+            uiHideGroupSep: typeof $attrs.uiHideGroupSep !== undefined ? true : undefined
         }
     }
 
