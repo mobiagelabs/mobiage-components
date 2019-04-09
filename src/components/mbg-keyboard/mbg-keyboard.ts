@@ -6,7 +6,6 @@ import { MbgDeviceCheck } from '../../helpers/mbg-device-check'
 export class MbgKeyboard {
     private activeColor: string
     private currentActiveElement
-    private lastBorderElement: string
     private rowsButtons: Array<{ buttons: Array<{ code: any, label: string }> }>
     private options: Array<{ content: string, onClick: Function, enable: boolean }>
     private focusElement: string
@@ -176,12 +175,11 @@ export class MbgKeyboard {
 
     beforeActiveElement() {
         if (this.currentActiveElement) {
-            this.currentActiveElement.css({ border: this.lastBorderElement })
+            this.currentActiveElement.css({ border: '1px solid #ddd' })
         }
     }
 
     afterActiveElement() {
-        this.lastBorderElement = this.currentActiveElement.css('border')
         this.currentActiveElement.css({ border: `1px solid ${this.activeColor}` })
     }
 
