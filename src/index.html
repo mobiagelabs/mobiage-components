@@ -68,6 +68,20 @@
 <body ng-controller="demoCtrl">
   <div class="container">
 
+    <label for="">Monte o nome do produto. <span style="color: #666;">&nbsp;&nbsp;&nbsp;Ex: {{ getLabelSelected() }}</span></label>
+    
+    <mbg-multi-select ng-model="selecteds"
+                      placeholder="Adicionar campo..."
+                      label="name"
+                      enable-sort="true"
+                      fetch="getOptionsMultiSelect()">
+    </mbg-multi-select>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- <mbg-input-text></mbg-input-text> -->
     <!-- <div class="row">
       <div class="col-md-6">
         <mbg-product-search ng-model="teste"
@@ -87,10 +101,10 @@
                     count="120000"
                     page-range-displayed="10"></mbg-pagination> -->
 
-    <mbg-input-number ng-model="teste222222222"
+    <!-- <mbg-input-number ng-model="teste222222222"
                       enable-keyboard
                       min="1"
-                      max="31"></mbg-input-number>
+                      max="31"></mbg-input-number> -->
 
 
     <!--  -->

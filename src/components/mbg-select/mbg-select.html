@@ -40,7 +40,7 @@
         ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
         <li ng-show="$ctrl.data"
             ng-mousedown="$ctrl.selectOption(item)"
-            ng-repeat="item in $ctrl.data">
+            ng-repeat="item in $ctrl.getData()">
             <div ng-if="$ctrl.transcludeTemplate"
                  mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
             <div ng-if="!$ctrl.transcludeTemplate && $ctrl.label">{{item[$ctrl.label]}}</div>

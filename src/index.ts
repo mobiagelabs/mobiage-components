@@ -21,6 +21,53 @@ const module = angular
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
 
+		$scope.getLabelSelected = () => {
+			return $scope.selecteds.reduce((v, select) => {
+				return v + ' ' + select.label
+			}, '')
+		}
+
+		$scope.getOptionsMultiSelect = () => {
+			return [
+				{
+					name: 'Tipo de produto',
+					label: 'Camiseta',
+				},
+				{
+					name: 'Marca',
+					label: 'Adidas',
+				},
+				{
+					name: 'Tamanho',
+					label: 'P',
+				},
+				{
+					name: 'Cor',
+					label: 'Azul',
+				},
+				{
+					name: 'Coleção',
+					label: 'Verão 2019',
+				},
+				{
+					name: 'Modelo',
+					label: 'Underground',
+				}
+			]
+		}
+
+		$scope.selecteds = [
+			{
+				name: 'Tipo de produto',
+				label: 'Camiseta',
+			},
+			{
+				name: 'Marca',
+				label: 'Adidas',
+			}
+		]
+
+
 		const url = 'https://api-hom.kigisistemas.com.br/mobiage-api/api/v2/product-item/terminal?gumgaToken=310L261E1552912392436C155291059243600O260.261.I'
 
 		$scope.getProductsDTO = (query, page) => {

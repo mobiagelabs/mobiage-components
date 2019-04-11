@@ -22,6 +22,7 @@ class MbgSelectController {
     private ngBlur: Function
     private enableFavorite: boolean
     private callbackAdd: Function
+    private ignoreItems: Array<any>
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
 
@@ -37,6 +38,12 @@ class MbgSelectController {
                 this.updateInputValue()
             }
         }, true)
+    }
+
+    getData() {
+        return (this.data || []).filter((item) => {
+            return (this.ignoreItems || []).find((ignoreItem) => angular.equals(ignoreItem, item)) ? false : true
+        })
     }
 
     findTransclude() {
@@ -314,6 +321,7 @@ const mbgSelect = {
         ngModel: '=',
         ngValue: '@?',
         fetch: '&?',
+        ignoreItems: '=?',
         ngFocus: '&?',
         ngBlur: '&?',
         onSelect: '&?',
