@@ -23,6 +23,10 @@ class MbgMultiSelectController {
         }, true)
     }
 
+    $onDestroy() {
+        this.stopDragEvents()
+    }
+
     handleEvents() {
         this.stopDragEvents()
         if (this.enableSort) { this.createDragEvents() }
@@ -36,16 +40,14 @@ class MbgMultiSelectController {
     }
 
     stopDragEvents() {
-        this.$timeout(() => {
-            if (this.eventsFunctions) {
-                Array.from(this.$element.find('ul.items-selected li')).forEach((liElement: HTMLElement) => {
-                    liElement.removeEventListener('dragstart', this.eventsFunctions.dragStart, false)
-                    liElement.removeEventListener('drag', this.eventsFunctions.drag, false)
-                    liElement.removeEventListener('dragend', this.eventsFunctions.dragend, false)
-                    liElement.removeEventListener('dragover', this.eventsFunctions.dragover, false)
-                })
-            }
-        })
+        if (this.eventsFunctions) {
+            Array.from(this.$element.find('ul.items-selected li')).forEach((liElement: HTMLElement) => {
+                liElement.removeEventListener('dragstart', this.eventsFunctions.dragStart, false)
+                liElement.removeEventListener('drag', this.eventsFunctions.drag, false)
+                liElement.removeEventListener('dragend', this.eventsFunctions.dragend, false)
+                liElement.removeEventListener('dragover', this.eventsFunctions.dragover, false)
+            })
+        }
     }
 
     createDragEvents() {
