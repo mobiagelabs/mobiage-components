@@ -1,7 +1,7 @@
 <div class="mbg-btn-form-wrapper">
   <button type="button"
           ng-click="$ctrl.handleClick($event)"
-          ng-disabled="$ctrl.ngDisabled">
+          ng-disabled="$ctrl.ngDisabled || $ctrl.loading">
     <span ng-if="!$ctrl.loading">
       {{$ctrl.label}}
     </span>
