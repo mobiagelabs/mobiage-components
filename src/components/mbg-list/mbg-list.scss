@@ -32,6 +32,9 @@ mbg-list {
                         border-top-right-radius: 5px;
                         border-bottom-right-radius: 5px;
                     }
+                    &.width-48 {
+                        width: 48px;
+                    }
                 }
             }
         }

@@ -2,11 +2,11 @@
     <ng-transclude></ng-transclude>
     <table class="table {{ $ctrl.class }}">
         <thead>
-            <th ng-if="$ctrl.checkbox">
+            <th class="width-48" ng-if="$ctrl.checkbox">
                 <mbg-checkbox ng-model="$ctrl.checkAll"
                               ng-change="$ctrl.toogleAll($ctrl.checkAll)"></mbg-checkbox>
             </th>
-            <th ng-if="$ctrl.radio"></th>
+            <th class="width-48" ng-if="$ctrl.radio"></th>
             <th ng-repeat="column in $ctrl.columns"
                 mbg-dynamic-html="column.templateColumn"
                 ng-class="column.ngClass"
