@@ -270,10 +270,10 @@ class MbgInputStepItemController {
 
 	movePointerPrevItem() {
 		let prevItem = this.$element.prev()
-		while (prevItem && prevItem[0].hasAttribute('disabled')) {
+		while (prevItem && prevItem[0] && prevItem[0].hasAttribute('disabled')) {
 			prevItem = prevItem.prev()
 		}
-		if (prevItem[0] && prevItem[0].nodeName === 'MBG-INPUT-STEP-ITEM') {
+		if (prevItem[0] && prevItem[0] && prevItem[0].nodeName === 'MBG-INPUT-STEP-ITEM') {
 			prevItem.find('input').focus()
 		}
 		if (this.onMovePrevItem) { this.onMovePrevItem() }
