@@ -114,7 +114,7 @@ class MbgMultiSelectController {
     onDragStart(evt: DragEvent) {
         delete this.liDragging
         delete this.liOver
-        const elm = evt.toElement || evt.srcElement
+        const elm: any = evt.toElement || evt.srcElement
         if (elm.nodeName !== 'LI') {
             evt.stopPropagation()
             evt.preventDefault()
@@ -137,7 +137,7 @@ class MbgMultiSelectController {
     onDragOver(evt: DragEvent) {
         this.pageX = evt.pageX
         if (!this.liDragging) { return }
-        const elm = evt.toElement || evt.srcElement
+        const elm: any = evt.toElement || evt.srcElement
         if (elm.nodeName !== 'LI') {
             evt.stopPropagation()
             evt.preventDefault()
@@ -164,7 +164,7 @@ const mbgMultiSelect = {
         fetch: '&?',
         ngModel: '=?',
         enableSort: '=?',
-        label: '@?',
+        label: '@?'
     },
     template,
     controller: MbgMultiSelectController,

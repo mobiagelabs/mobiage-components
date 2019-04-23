@@ -19,10 +19,12 @@ export class MbgListController {
     public mbgRows: Array<MbgListRowController>
     public openedRows: Array<number>
     public onClickRow: Function
+    public enableOnSelectByRow: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
     $onInit() {
+        this.enableOnSelectByRow = this.enableOnSelectByRow === undefined ? true : this.enableOnSelectByRow
         this.rowsAdicional = {}
         this.$scope.$c = this.$scope.$parent
         this.columns = []
@@ -129,7 +131,7 @@ export class MbgListController {
     }
 
     handleClickRow(row, index) {
-        if (this.rowsAdicional !== index && (this.checkbox || this.radio)) {
+        if (this.rowsAdicional !== index && (this.checkbox || this.radio) && this.enableOnSelectByRow) {
             if (this.radio) {
                 this.toogleRadio(row.$json)
             } else {
@@ -179,6 +181,7 @@ const mbgList = {
         checkbox: '=?',
         radio: '=?',
         onClickRow: '&?',
+        enableOnSelectByRow: '=?',
         openedRows: '=?',
         selectedValues: '=?'
     },
