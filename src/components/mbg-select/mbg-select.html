@@ -38,7 +38,7 @@
        aria-hidden="true"
        ng-click="$ctrl.clearNgModel(true)"></i>
     <ul class="mbg-select-list"
-        mbg-extends-style=".mbg-select-wrapper[steps-uid='{{ $ctrl.mbgInputStep.uid }}']"
+        mbg-extends-style=".mbg-select-wrapper[steps-uid='{{ $ctrl.uid }}']"
         extends-style="max-width"
         ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}"
         ng-style="{ left: $ctrl.position.left, top: $ctrl.position.top }">
