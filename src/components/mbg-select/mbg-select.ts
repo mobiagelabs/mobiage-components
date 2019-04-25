@@ -279,7 +279,7 @@ class MbgSelectController {
 
     removeInBody() {
         const list = angular.element(`[uid="${this.uid}"]`)
-        this.$element.find('.mbg-input-step-item').append(list)
+        this.$element.find('.mbg-select-wrapper').append(list)
     }
 
     checkPosition() {
