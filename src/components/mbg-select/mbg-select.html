@@ -1,4 +1,5 @@
-<div class="mbg-select-wrapper">
+<div class="mbg-select-wrapper"
+     steps-uid="{{ $ctrl.uid }}">
     <mbg-input-text ng-model="$ctrl.inputValue"
                     ng-focus="$ctrl.onInputFocus()"
                     ng-blur="$ctrl.onInputBlur()"
@@ -37,7 +38,10 @@
        aria-hidden="true"
        ng-click="$ctrl.clearNgModel(true)"></i>
     <ul class="mbg-select-list"
-        ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}">
+        mbg-extends-style=".mbg-select-wrapper[steps-uid='{{ $ctrl.mbgInputStep.uid }}']"
+        extends-style="max-width"
+        ng-class="{'active': $ctrl.hasFocus && ($ctrl.data.length > 0 || $ctrl.enableAdd)}"
+        ng-style="{ left: $ctrl.position.left, top: $ctrl.position.top }">
         <li ng-show="$ctrl.data"
             ng-mousedown="$ctrl.selectOption(item)"
             ng-repeat="item in $ctrl.getData()">

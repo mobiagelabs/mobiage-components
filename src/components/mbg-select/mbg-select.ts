@@ -2,6 +2,8 @@ import * as angular from 'angular'
 import './mbg-select.scss'
 import template from './mbg-select.html'
 import { MbgCookie } from '../../helpers/cookie'
+import { UtilUID } from '../../helpers/util-uid'
+import { AbsPosition } from '../../helpers/abs-position'
 
 class MbgSelectController {
     private data: any
@@ -23,6 +25,8 @@ class MbgSelectController {
     private enableFavorite: boolean
     private callbackAdd: Function
     private ignoreItems: Array<any>
+    private uid: string
+    private position
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
 
@@ -38,6 +42,7 @@ class MbgSelectController {
                 this.updateInputValue()
             }
         }, true)
+        this.$timeout(() => this.checkPosition())
     }
 
     getData() {
@@ -90,7 +95,7 @@ class MbgSelectController {
     }
 
     getOptions() {
-        return this.$element.find('ul li')
+        return angular.element(`[uid="${this.uid}"] li`)
     }
 
     setFocusOption(liOption) {
@@ -108,6 +113,7 @@ class MbgSelectController {
         if (!this.hasFocus) {
             this.onInputChange()
             this.hasFocus = true
+            this.checkPosition()
             this.$element.find('input').select()
         }
         if (!ignoreCallback && this.ngFocus) {
@@ -116,7 +122,10 @@ class MbgSelectController {
     }
 
     onInputBlur() {
-        this.$timeout(() => this.hasFocus = false)
+        this.$timeout(() => {
+            this.hasFocus = false
+            this.checkPosition()
+        })
         if (this.ngBlur) {
             this.ngBlur()
         }
@@ -138,7 +147,7 @@ class MbgSelectController {
     }
 
     getOptionFocused() {
-        return this.$element.find('ul li.focused')
+        return angular.element(`[uid="${this.uid}"] li.focused`)
     }
 
     onInputKeydown(evt) {
@@ -259,6 +268,33 @@ class MbgSelectController {
                 }
             }
         })
+    }
+
+    addInBody() {
+        const body = angular.element(document).find('body')
+        const list = this.$element.find('ul')
+        list.attr('uid', this.uid)
+        body.append(list)
+    }
+
+    removeInBody() {
+        const list = angular.element(`[uid="${this.uid}"]`)
+        this.$element.find('.mbg-input-step-item').append(list)
+    }
+
+    checkPosition() {
+        if (!this.hasFocus) {
+            this.removeInBody()
+        } else {
+            this.uid = UtilUID.generete()
+            this.addInBody()
+        }
+        const elm = this.$element.find('mbg-input-text .mbg-input-wrapper')
+        const absolutePosition = AbsPosition.get(elm[0])
+        this.position = {
+            left: absolutePosition.left + 'px',
+            top: (absolutePosition.top + elm.height()) + 'px',
+        }
     }
 
     updateModelValue(value) {
