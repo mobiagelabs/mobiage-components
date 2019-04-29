@@ -34,8 +34,10 @@ class MbgMultiSelectController {
 
     onSelect() {
         this.$timeout(() => {
-            this.ngModel.push(this.searchModel)
-            delete this.searchModel
+            if (this.searchModel) {
+                this.ngModel.push(this.searchModel)
+                delete this.searchModel
+            }
         })
     }
 

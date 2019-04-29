@@ -48,8 +48,7 @@
       background: #fff;
       padding-top: 40px;
 
-      /* height: 2000px;
-      overflow: auto; */
+
     }
 
     .label-margin label {
@@ -70,17 +69,17 @@
   <div class="container">
 
     <!-- <label for="">Monte o nome do produto. <span style="color: #666;">&nbsp;&nbsp;&nbsp;Ex: {{ getLabelSelected() }}</span></label> -->
-    
-    <!-- <mbg-multi-select ng-model="selecteds"
+
+    <mbg-multi-select ng-model="selecteds"
                       placeholder="Adicionar campo..."
                       label="name"
                       enable-sort="true"
                       fetch="getOptionsMultiSelect()">
-    </mbg-multi-select>
+    </mbg-multi-select> 
 
     <br>
     <br>
-    <br> -->
+    <br>
 
     <!-- <mbg-input-text></mbg-input-text> -->
     <!-- <div class="row">
@@ -115,7 +114,7 @@
 
      -->
 
-    <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
+    <!-- <mbg-input-step placeholder="Ex. Camiseta, Adidas, Verão"
                     on-finish-focus-element="#entityModel input">
       <mbg-input-step-item ng-model="entity.productTree"
                            fetch="getTipoProdutoObj()"
@@ -139,17 +138,18 @@
                            un-focus="unFocus()"
                            capitalize="true"
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
-    </mbg-input-step>
-    
+    </mbg-input-step> -->
+    <!-- 
     <mbg-select ng-model="teste"
-      fetch="getTipoProduto(query)"
+      fetch="getTipoProdutoObj(query)"
       placeholder="teste"
       enable-add="true"
       label="name"
       name="teste5"
+      callback-add="testeadd()"
       add-only-empty="true"
       enable-favorite="true">
-    </mbg-select>
+    </mbg-select> -->
 
     <!-- <br>
     <pre>{{teste | json}}</pre> -->
