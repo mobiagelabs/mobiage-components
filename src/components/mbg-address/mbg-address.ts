@@ -53,6 +53,7 @@ class MbgAddressController {
                     formalCode: this.address.formalCode || '',
                     state: this.address.uf && this.address.uf.initial ? this.address.uf.initial : '',
                 }
+                this.normalizeAddress()
             }
         }, true)
     }
@@ -305,9 +306,17 @@ class MbgAddressController {
         return str
     }
 
+    normalizeAddress() {
+        let address = Object.keys(this.ngModel)
+        address.forEach((key) => {
+            if (typeof this.ngModel[key] === 'string') {
+                this.ngModel[key] = (this.ngModel[key] || '').replace(';', ' ')
+            }
+        })
+    }
 }
 
-MbgAddressController.$inject = ['$scope', '$element', '$attrs', '$timeout', 'mbgAddressService']
+MbgAddressController['$inject'] = ['$scope', '$element', '$attrs', '$timeout', 'mbgAddressService']
 
 const mbgAddress = {
     bindings: {
