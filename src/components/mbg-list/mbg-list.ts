@@ -35,9 +35,18 @@ export class MbgListController {
             this.rows.forEach((row) => {
                 row.$json = JSON.stringify(row)
             })
+            try {
+                this.checkAll = this.isAllSelected()
+            } catch (e) { }
         }, true)
         this.observeOpenedRows()
         this.observeSelectedValues()
+    }
+
+    removeCircularJson(json) {
+        const parsed = JSON.parse(json)
+        delete parsed.$json
+        return JSON.stringify(parsed)
     }
 
     observeSelectedValues() {
@@ -45,12 +54,15 @@ export class MbgListController {
             if (selectedValues && Array.isArray(selectedValues)) {
                 selectedValues.forEach((selectedValue) => {
                     if (selectedValue && selectedValue.$json) {
-                        this.selectedMap[selectedValue.$json] = true
+                        this.selectedMap[this.removeCircularJson(selectedValue.$json)] = true
                     } else {
                         selectedValue.$json = JSON.stringify(selectedValue)
-                        this.selectedMap[selectedValue.$json] = true
+                        this.selectedMap[this.removeCircularJson(selectedValue.$json)] = true
                     }
                 })
+                try {
+                    this.checkAll = this.isAllSelected()
+                } catch (e) { }
             }
         }, true)
     }
@@ -104,11 +116,11 @@ export class MbgListController {
     }
 
     isAllSelected() {
-        return this.list.filter((row) => !this.selectedMap[JSON.stringify(row)]).length === 0
+        return this.list.filter((row) => !this.selectedMap[this.removeCircularJson(JSON.stringify(row))]).length === 0
     }
 
     toogleAll(selectAll) {
-        this.list.forEach((row) => this.selectedMap[JSON.stringify(row)] = selectAll)
+        this.list.forEach((row) => this.selectedMap[this.removeCircularJson(JSON.stringify(row))] = selectAll)
         this.handlingSelectedValues()
     }
 
@@ -119,7 +131,7 @@ export class MbgListController {
 
     toogleRadio(row) {
         this.selectedMap = {}
-        this.selectedMap[row] = true
+        this.selectedMap[this.removeCircularJson(row)] = true
         this.handlingSelectedValues()
     }
 

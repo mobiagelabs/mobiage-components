@@ -2,11 +2,13 @@
     <ng-transclude></ng-transclude>
     <table class="table {{ $ctrl.class }}">
         <thead>
-            <th class="width-48" ng-if="$ctrl.checkbox">
+            <th class="width-48"
+                ng-if="$ctrl.checkbox">
                 <mbg-checkbox ng-model="$ctrl.checkAll"
                               ng-change="$ctrl.toogleAll($ctrl.checkAll)"></mbg-checkbox>
             </th>
-            <th class="width-48" ng-if="$ctrl.radio"></th>
+            <th class="width-48"
+                ng-if="$ctrl.radio"></th>
             <th ng-repeat="column in $ctrl.columns"
                 mbg-dynamic-html="column.templateColumn"
                 ng-class="column.ngClass"
@@ -20,12 +22,12 @@
                 ng-class="{'contains-adicional-row' : $row.isOpenedRow, 'cursor-pointer' : $ctrl.checkbox || $ctrl.radio}"
                 ng-click="$ctrl.handleClickRow($row, $position, $event)">
                 <td ng-if="$ctrl.checkbox && !$row.isAdicional">
-                    <mbg-checkbox ng-model="$ctrl.selectedMap[$row.$json]"
+                    <mbg-checkbox ng-model="$ctrl.selectedMap[$ctrl.removeCircularJson($row.$json)]"
                                   ng-change="$ctrl.toogleCheckbox()"></mbg-checkbox>
                 </td>
                 <td ng-if="$ctrl.radio && !$row.isAdicional">
-                    <mbg-radio ng-model="$ctrl.selectedMap[$row.$json]"
-                               ng-change="$ctrl.toogleRadio($row.$json)"></mbg-radio>
+                    <mbg-radio ng-model="$ctrl.selectedMap[$ctrl.removeCircularJson($row.$json)]"
+                               ng-change="$ctrl.toogleRadio($ctrl.removeCircularJson($row.$json))"></mbg-radio>
                 </td>
                 <td ng-repeat="column in $ctrl.columns"
                     ng-if="!$row.isAdicional"
