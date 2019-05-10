@@ -1,0 +1,16 @@
+<div class="mh-container">
+    <div class="mbg-h-tabs">
+        <div class="mbg-h-t-tab"
+             ng-repeat="tab in $ctrl.tabs"
+             ng-click="$ctrl.renderTab($index)"
+             ng-class="{ 'active' : tab.active }">
+            {{ tab.name }}
+        </div>
+    </div>
+    <mbg-chart-line chart="$ctrl.chart"
+                    ng-if="$ctrl.chart"></mbg-chart-line>
+    <div class="mbg-h-card-container">
+        <mbg-card-typeone ng-repeat="card in $ctrl.cards"
+                          card="card"></mbg-card-typeone>
+    </div>
+</div>

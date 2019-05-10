@@ -37,7 +37,9 @@ export class MbgListController {
             })
             try {
                 this.checkAll = this.isAllSelected()
-            } catch (e) { }
+            } catch (e) {
+                this.checkAll = false
+            }
         }, true)
         this.observeOpenedRows()
         this.observeSelectedValues()
@@ -62,7 +64,9 @@ export class MbgListController {
                 })
                 try {
                     this.checkAll = this.isAllSelected()
-                } catch (e) { }
+                } catch (e) {
+                    this.checkAll = false
+                }
             }
         }, true)
     }

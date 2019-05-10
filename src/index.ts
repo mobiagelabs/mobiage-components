@@ -408,6 +408,61 @@ const module = angular
 		// 	})
 		// }
 
+		$scope.homeConfig = {
+			tabs: [
+				{
+					name: 'Geral',
+					chart: {
+						format: 'money',
+						series: [
+							{
+								name: 'Realizado',
+								sync: (context) => {
+									context.setValue([10000, 12000, 30000])
+								}
+							}
+						]
+					},
+					cards: [
+						{
+							icon: '<i class="far fa-smile"></i>',
+							text: 'Só hoje, sua loja vendeu:',
+							color: '#d3e000',
+							sync: (context) => {
+								context.setValue('R$ 459,00');
+							}
+						},
+						{
+							icon: '<i class="far fa-calendar-alt"></i>',
+							text: 'Quantidade de vendas hoje:',
+							color: '#7e39c5',
+							sync: (context) => {
+								context.setValue('17');
+							}
+						},
+						{
+							icon: '<i class="fas fa-chart-bar"></i>',
+							text: 'Ticket médio do dia:',
+							color: '#00c7c4',
+							sync: (context) => {
+								context.setValue('R$ 293,00');
+							}
+						},
+						{
+							icon: '<i class="far fa-money-bill-alt"></i>',
+							text: 'Quantidade de itens vendidos:',
+							greyColor: true,
+							color: '#ff1057',
+							dark: true,
+							sync: (context) => {
+								context.setValue('200');
+							}
+						}
+					]
+				}
+			]
+		};
+
 		$scope.getTipoProduto = (param = '') => {
 			return new Promise((resolve) => {
 				$timeout(() => {

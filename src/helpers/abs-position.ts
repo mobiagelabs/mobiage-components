@@ -8,7 +8,7 @@ export namespace AbsPosition {
         while (el) {
             const style = window.getComputedStyle(el)
             zooms.push(style.getPropertyValue('zoom'))
-            if (el.tagName == 'BODY') {
+            if (el.tagName === 'BODY') {
                 // deal with browser quirks with body/window/document and page scroll
                 const xScroll = el.scrollLeft || document.documentElement.scrollLeft
                 const yScroll = el.scrollTop || document.documentElement.scrollTop
@@ -21,7 +21,7 @@ export namespace AbsPosition {
             }
             el = el.offsetParent
         }
-        zooms = zooms.filter((zoom) => zoom && Number(zoom) != 1)
+        zooms = zooms.filter((zoom) => zoom && Number(zoom) !== 1)
         const value = zooms.reduce((v, zoom) => v + parseFloat(zoom), 0) / zooms.length * 100
         if (!isNaN(value)) {
             xPos = xPos * value / 100

@@ -1,0 +1,69 @@
+mbg-homescreen {
+    .mh-container {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    
+        .mh-panel-container {
+            background-color: white;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+        }
+    
+        .mh-content-container {
+            margin-top: 50px;
+            height: 300px;
+            width: 100%;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
+    
+            &:first-child {
+                margin-top: 0px;
+            }
+        }
+    
+        .mbg-h-card-container {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            padding-bottom: 50px;
+            padding-top: 50px;
+        }
+    
+        .mbg-h-tabs {
+            background-color: white;
+            height: auto;
+            width: 100%;
+            border-radius: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-bottom: 15px;
+            box-shadow: 0px 2px 20px rgba(0,0,0,0.05);
+            user-select: none;
+        
+            .mbg-h-t-tab {
+                color: #a5a5a5;
+                width: auto;
+                height: 35px;
+                line-height: 35px;
+                background-color: white;
+                padding: 0px 15px 0px 15px;
+                margin: 7.5px 5px 7.5px 5px;
+                border-radius: 17.5px;
+                font-weight: 500;
+                font-size: 14px;
+                transition: color 100ms linear, background-color 100ms linear;
+                cursor: pointer;
+                white-space: nowrap;
+                &:hover, &:active, &.active {
+                    color: #ff1e5f;
+                    background-color: #f8f8f8;
+                }
+            }
+        }
+        
+    }
+}

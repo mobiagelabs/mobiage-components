@@ -40,6 +40,7 @@ import { mbgSelectModule } from './mbg-select'
 import { mbgPaginationModule } from './mbg-pagination'
 import { mbgProductSearchModule } from './mbg-product-search'
 import { mbgMultiSelectModule } from './mbg-multi-select'
+import { mbgHomeScreenModule } from './mbg-homescreen'
 import 'angular-ui-bootstrap'
 
 const mbgComponentsModule = angular
@@ -79,6 +80,7 @@ const mbgComponentsModule = angular
     mbgPaginationModule,
     mbgProductSearchModule,
     mbgMultiSelectModule,
+    mbgHomeScreenModule,
   ])
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
   .directive('mbgExtendsStyle', () => new NgExtendsStyle)
