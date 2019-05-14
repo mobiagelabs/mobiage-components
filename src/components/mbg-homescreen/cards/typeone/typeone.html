@@ -15,22 +15,26 @@
              ng-style="{'color': $ctrl.card.dark === true ? '#fff' : $ctrl.card.color}">
 
             <div class="mbg-h-c-tone-loading"
-                 ng-if="$ctrl.card.loading === true"></div>
+                 ng-if="$ctrl.card.loading === true"
+                 disable-animate></div>
 
             <div class="mbg-h-c-tone-v-real-value"
                  ng-show="$ctrl.card.loading !== true && $ctrl.hideValue !== true"
+                 disable-animate
                  ng-class="{ greey: $ctrl.card.greyColor}">
                 {{ $ctrl.card.value }}
             </div>
 
             <div class="mbg-h-c-tone-v-hide-value"
-                 ng-show="$ctrl.card.loading !== true && $ctrl.hideValue === true">
+                 ng-show="$ctrl.card.loading !== true && $ctrl.hideValue === true"
+                 disable-animate>
                 {{ $ctrl.randomEmoji }}
             </div>
 
         </div>
         <div ng-if="$ctrl.card.loading !== true"
              class="mbg-h-c-tone-show"
+             disable-animate
              ng-style="{'color': $ctrl.card.dark === true ? '#fff' : $ctrl.card.color}"
              ng-click="$ctrl.toggleShowValue()">
             <div class="mbg-h-c-tone-s-text">
@@ -38,8 +42,10 @@
             </div>
             <div class="mbg-h-c-tone-s-icon">
                 <i ng-if="$ctrl.hideValue === true"
+                   disable-animate
                    class="far fa-eye"></i>
                 <i ng-if="$ctrl.hideValue !== true"
+                   disable-animate
                    class="far fa-eye-slash"></i>
             </div>
         </div>
