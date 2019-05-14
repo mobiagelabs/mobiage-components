@@ -59,7 +59,9 @@ class MbgChartLineController {
         const configDefault = {
             chart: {
                 type: 'areaspline',
-                margin: [0, -12, 0, -12],
+                spacingLeft: 34,
+                spacingBottom: 34,
+                // margin: [0, -12, 0, -12],
                 backgroundColor: 'transparent'
             },
             exporting: {
@@ -90,21 +92,28 @@ class MbgChartLineController {
                         fontWeight: 'bold',
                         fontFamily: '"Montserrat", sans-serif',
                     },
-                    x: 30,
+                    x: -10,
                     y: 30
                 }
             },
             xAxis: {
+                enabled: true,
+                lineWidth: 0,
+                minorTickLength: 0,
+                tickLength: 0,
+                minorGridLineWidth: 0,
+                lineColor: 'transparent',
+                categories: this.chart.categories,
                 title: {
-                    enabled: false
+                    enabled: true
                 },
                 labels: {
-                    enabled: false
+                    enabled: true
                 },
             },
             plotOptions: {
                 label: {
-                    enabled: false
+                    enabled: true
                 },
             },
             credits: {
@@ -126,7 +135,8 @@ class MbgChartLineController {
             legend: {
                 enabled: true,
                 align: 'right',
-                y: -340,
+                verticalAlign: 'top',
+                // y: -340,
                 itemStyle: {
                     color: '#aaa',
                     pointerEvents: 'none',

@@ -59,6 +59,7 @@ class MbgChartBarLineController {
         const configDefault = {
             chart: {
                 type: 'column',
+                styledMode: true,
                 spacingLeft: 34,
                 spacingBottom: 34,
                 backgroundColor: 'transparent'
@@ -116,6 +117,21 @@ class MbgChartBarLineController {
                 label: {
                     enabled: false
                 },
+                spline: {
+                    dataLabels: {
+                        enabled: true,
+                        color: '#aaa',
+                        style: {
+                            fontWeight: '100',
+                        },
+                        borderRadius: 2,
+                        y: -10,
+                        shape: 'callout',
+                        formatter: function () {
+                            return ` ` + self.formatValue({ value: this.y })
+                        }
+                    }
+                },
                 column: {
                     label: {
                         enabled: true
@@ -132,6 +148,7 @@ class MbgChartBarLineController {
                 enabled: false
             },
             tooltip: {
+                enabled: true,
                 borderRadius: 20,
                 backgroundColor: this.chart.chartColor ? this.chart.chartColor.tooltip : '#00BDBE',
                 borderWidth: 2,
@@ -192,7 +209,7 @@ class MbgChartBarLineController {
 
     formatValue(context) {
         if (this.chart && this.chart.format === 'money') {
-            return 'R$' + (context.value).toLocaleString('pt-BR')
+            return 'R$ ' + (context.value).toLocaleString('pt-BR')
         } else {
             return context.value
         }
