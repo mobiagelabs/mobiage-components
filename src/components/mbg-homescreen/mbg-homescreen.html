@@ -8,7 +8,9 @@
         </div>
     </div>
     <mbg-chart-line chart="$ctrl.chart"
-                    ng-if="$ctrl.chart"></mbg-chart-line>
+                    ng-if="$ctrl.chart && $ctrl.chart.type == 'line'"></mbg-chart-line>
+    <mbg-chart-bar-line chart="$ctrl.chart"
+                    ng-if="$ctrl.chart && $ctrl.chart.type == 'barline'"></mbg-chart-bar-line>
     <div class="mbg-h-card-container">
         <mbg-card-typeone ng-repeat="card in $ctrl.cards"
                           card="card"></mbg-card-typeone>

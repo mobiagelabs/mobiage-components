@@ -408,60 +408,107 @@ const module = angular
 		// 	})
 		// }
 
-		$scope.homeConfig = {
-			tabs: [
-				{
-					name: 'Geral',
-					chart: {
-						format: 'money',
-						series: [
+		var series = []
+
+		$http.get('https://api-hom.kigisistemas.com.br/mobiage-api/api/sales-goal/dashboard?gumgaToken=475L461E1557835396590C155783360006000O459.460.461.I')
+			.then((response) => {
+
+				series.push({
+					type: 'column',
+					name: 'Valor vendido',
+					color: '#42CAF5',
+					data: response.data[0].vendors.map((vendor) => {
+						return {
+							y: vendor.movementsValue || 0,
+							name: vendor.vendorName,
+						}
+					})
+				})
+
+				series = series.concat(response.data.map((goal) => {
+					return {
+						type: 'spline',
+						color: '#541794',
+						name: goal.name,
+						data: goal.vendors.map((vendor) => vendor.goalValue || 0),
+						marker: {
+							lineWidth: 2,
+							lineColor: '#541794',
+							fillColor: 'white'
+						}
+					}
+				}))
+
+				aaaaaaaaaaaaaaaaaaaa(series, response.data[0].vendors.map((vendor) => vendor.vendorName))
+
+			})
+
+		const aaaaaaaaaaaaaaaaaaaa = (teste, categories) => {
+			$scope.homeConfig = {
+				tabs: [
+					{
+						name: 'Metas',
+						chart: {
+							type: 'barline',
+							format: 'money',
+							categories,
+							series: teste
+						}
+					},
+					{
+						name: 'Geral',
+						chart: {
+							type: 'line',
+							format: 'money',
+							series: [
+								{
+									name: 'Realizado',
+									sync: (context) => {
+										context.setValue([10000, 12000, 30000])
+									}
+								}
+							]
+						},
+						cards: [
 							{
-								name: 'Realizado',
+								icon: '<i class="far fa-smile"></i>',
+								text: 'Só hoje, sua loja vendeu:',
+								color: '#d3e000',
 								sync: (context) => {
-									context.setValue([10000, 12000, 30000])
+									context.setValue('R$ 459,00');
+								}
+							},
+							{
+								icon: '<i class="far fa-calendar-alt"></i>',
+								text: 'Quantidade de vendas hoje:',
+								color: '#7e39c5',
+								sync: (context) => {
+									context.setValue('17');
+								}
+							},
+							{
+								icon: '<i class="fas fa-chart-bar"></i>',
+								text: 'Ticket médio do dia:',
+								color: '#00c7c4',
+								sync: (context) => {
+									context.setValue('R$ 293,00');
+								}
+							},
+							{
+								icon: '<i class="far fa-money-bill-alt"></i>',
+								text: 'Quantidade de itens vendidos:',
+								greyColor: true,
+								color: '#ff1057',
+								dark: true,
+								sync: (context) => {
+									context.setValue('200');
 								}
 							}
 						]
-					},
-					cards: [
-						{
-							icon: '<i class="far fa-smile"></i>',
-							text: 'Só hoje, sua loja vendeu:',
-							color: '#d3e000',
-							sync: (context) => {
-								context.setValue('R$ 459,00');
-							}
-						},
-						{
-							icon: '<i class="far fa-calendar-alt"></i>',
-							text: 'Quantidade de vendas hoje:',
-							color: '#7e39c5',
-							sync: (context) => {
-								context.setValue('17');
-							}
-						},
-						{
-							icon: '<i class="fas fa-chart-bar"></i>',
-							text: 'Ticket médio do dia:',
-							color: '#00c7c4',
-							sync: (context) => {
-								context.setValue('R$ 293,00');
-							}
-						},
-						{
-							icon: '<i class="far fa-money-bill-alt"></i>',
-							text: 'Quantidade de itens vendidos:',
-							greyColor: true,
-							color: '#ff1057',
-							dark: true,
-							sync: (context) => {
-								context.setValue('200');
-							}
-						}
-					]
-				}
-			]
-		};
+					}
+				]
+			};
+		}
 
 		$scope.getTipoProduto = (param = '') => {
 			return new Promise((resolve) => {

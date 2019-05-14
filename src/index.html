@@ -115,7 +115,8 @@
 
     <div class="testeContainer">
       <div class="testeConteudo">
-        <mbg-homescreen config="homeConfig"></mbg-homescreen>
+        <mbg-homescreen ng-if="homeConfig"
+                        config="homeConfig"></mbg-homescreen>
       </div>
     </div>
 
