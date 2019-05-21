@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="mbg-h-c-tone-v-real-value"
-                     ng-style="{'color': item.color}"
+                     ng-style="{'color': item.color, 'font-weight': item.weight || 400}"
                      ng-repeat="item in $ctrl.card.items"
                      ng-show="$ctrl.card.loading !== true && $ctrl.hideValue !== true"
                      disable-animate>
