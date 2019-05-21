@@ -17,6 +17,7 @@ class MbgCardTypeOneController {
         this.randomEmoji = this.generateRandomEmoji()
         this.syncValue()
         this.renderIcon()
+        this.card.enableHideValues = this.card.enableHideValues === undefined ? true : this.card.enableHideValues
     }
 
     renderIcon() {
