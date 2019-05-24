@@ -11,6 +11,7 @@
                 ng-if="$ctrl.radio"></th>
             <th ng-repeat="column in $ctrl.columns"
                 mbg-dynamic-html="column.templateColumn"
+                ng-if="!column.hidden"
                 ng-class="column.ngClass"
                 ng-style="column.ngStyle"></th>
             </tr>
@@ -30,7 +31,7 @@
                                ng-change="$ctrl.toogleRadio($ctrl.removeCircularJson($row.$json))"></mbg-radio>
                 </td>
                 <td ng-repeat="column in $ctrl.columns"
-                    ng-if="!$row.isAdicional"
+                    ng-if="!$row.isAdicional && !column.hidden"
                     ng-style="{ 'text-align': column.alignRow }"
                     mbg-dynamic-html="column.templateRow"></td>
                 <td ng-if="$row.isAdicional"

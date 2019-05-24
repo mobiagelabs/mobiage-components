@@ -11,6 +11,7 @@ export class MbgListColumnController {
     private direction: string
     private alignColumn: string
     private alignRow: string
+    private hidden: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
@@ -87,6 +88,7 @@ const mbgListColumn = {
         ngStyle: '=?',
         alignColumn: '@?',
         alignRow: '@?',
+        hidden: '=?',
         sortable: '=?',
     },
     template: '',

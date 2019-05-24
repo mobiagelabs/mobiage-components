@@ -389,10 +389,10 @@
 
     <!--  -->
 
-    <mbg-btn-form ng-click="lalala()"
+    <!-- <mbg-btn-form ng-click="lalala()"
                   ng-disabled="false"
                   loading="false"
-                  label="Continuar"></mbg-btn-form>
+                  label="Continuar"></mbg-btn-form> -->
 
 
     <!--
@@ -551,21 +551,30 @@
       </div>
     </div> 
   -->
+    <br> <br>
 
-    <!-- <mbg-list list="produtos"
-              class="table-striped"
-              selected-values="testetttt"
-              opened-rows="rowsOpen">
-      <mbg-list-column name="product"
-                       label="Produto"
-                       align-column="right"
-                       align-row="right">
-      </mbg-list-column>
-      <mbg-list-column name="costValue"
-                       label="Valor">
-        
-      </mbg-list-column>
-    </mbg-list> -->
+    <button ng-click="kkkkkjsadjhdjsah9()">Toogle Column</button>
+
+    <div class="container">
+      <mbg-list list="produtos"
+                class="table-striped"
+                selected-values="testetttt"
+                opened-rows="rowsOpen">
+        <mbg-list-column name="product"
+                         label="Produto"
+                         align-column="right"
+                         align-row="right">
+        </mbg-list-column>
+        <mbg-list-column name="qnt"
+                         label="Quantidade"
+                         hidden="columnQntHidden">
+        </mbg-list-column>
+        <mbg-list-column name="costValue"
+                         label="Valor">
+
+        </mbg-list-column>
+      </mbg-list>
+    </div>
   </div>
 </body>
 

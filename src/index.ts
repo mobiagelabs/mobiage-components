@@ -232,6 +232,10 @@ const module = angular
 			}
 		]
 
+		$scope.kkkkkjsadjhdjsah9 = () => {
+			$scope.columnQntHidden = !$scope.columnQntHidden
+		}
+
 		$scope.produtos = [
 			{
 				code: '0',
