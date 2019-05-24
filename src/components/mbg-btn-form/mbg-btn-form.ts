@@ -4,10 +4,13 @@ import template from './mbg-btn-form.html'
 
 class MbgBtnFormController {
     private ngClick: Function
+    private ngDisabled: boolean
+    private loading: boolean
 
-    constructor(public $scope, public $element, public $attrs) {}
+    constructor(public $scope, public $element, public $attrs) { }
 
     handleClick($event) {
+        if (this.ngDisabled || this.loading) { return }
         $event.stopPropagation()
         this.ngClick({ $event })
     }

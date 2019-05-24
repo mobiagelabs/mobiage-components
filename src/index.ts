@@ -410,38 +410,38 @@ const module = angular
 
 		var series = []
 
-		$http.get('https://api-hom.kigisistemas.com.br/mobiage-api/api/sales-goal/dashboard?gumgaToken=475L461E1557835396590C155783360006000O459.460.461.I')
-			.then((response) => {
+		// $http.get('https://api-hom.kigisistemas.com.br/mobiage-api/api/sales-goal/dashboard?gumgaToken=475L461E1557835396590C155783360006000O459.460.461.I')
+		// 	.then((response) => {
 
-				series.push({
-					type: 'column',
-					name: 'Valor vendido',
-					color: '#42CAF5',
-					data: response.data[0].vendors.map((vendor) => {
-						return {
-							y: vendor.movementsValue || 0,
-							name: vendor.vendorName,
-						}
-					})
-				})
+		// 		series.push({
+		// 			type: 'column',
+		// 			name: 'Valor vendido',
+		// 			color: '#42CAF5',
+		// 			data: response.data[0].vendors.map((vendor) => {
+		// 				return {
+		// 					y: vendor.movementsValue || 0,
+		// 					name: vendor.vendorName,
+		// 				}
+		// 			})
+		// 		})
 
-				series = series.concat(response.data.map((goal) => {
-					return {
-						type: 'spline',
-						color: '#541794',
-						name: goal.name,
-						data: goal.vendors.map((vendor) => vendor.goalValue || 0),
-						marker: {
-							lineWidth: 2,
-							lineColor: '#541794',
-							fillColor: 'white'
-						}
-					}
-				}))
+		// 		series = series.concat(response.data.map((goal) => {
+		// 			return {
+		// 				type: 'spline',
+		// 				color: '#541794',
+		// 				name: goal.name,
+		// 				data: goal.vendors.map((vendor) => vendor.goalValue || 0),
+		// 				marker: {
+		// 					lineWidth: 2,
+		// 					lineColor: '#541794',
+		// 					fillColor: 'white'
+		// 				}
+		// 			}
+		// 		}))
 
-				aaaaaaaaaaaaaaaaaaaa(series, response.data[0].vendors.map((vendor) => vendor.vendorName))
+		// 		aaaaaaaaaaaaaaaaaaaa(series, response.data[0].vendors.map((vendor) => vendor.vendorName))
 
-			})
+		// 	})
 
 		const aaaaaaaaaaaaaaaaaaaa = (teste, categories) => {
 			$scope.homeConfig = {
