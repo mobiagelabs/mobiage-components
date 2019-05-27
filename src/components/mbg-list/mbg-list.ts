@@ -20,6 +20,7 @@ export class MbgListController {
     public openedRows: Array<number>
     public onClickRow: Function
     public enableOnSelectByRow: boolean
+    public checkboxIf: Function
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
@@ -120,11 +121,23 @@ export class MbgListController {
     }
 
     isAllSelected() {
+        if (this.checkboxIf) {
+            const possibleActive = this.list.filter((row) => this.checkboxIf({ $row: row }))
+            return possibleActive.filter((row) => !this.selectedMap[this.removeCircularJson(JSON.stringify(row))]).length === 0
+        }
         return this.list.filter((row) => !this.selectedMap[this.removeCircularJson(JSON.stringify(row))]).length === 0
     }
 
     toogleAll(selectAll) {
-        this.list.forEach((row) => this.selectedMap[this.removeCircularJson(JSON.stringify(row))] = selectAll)
+        this.list.forEach((row) => {
+            if (this.checkboxIf) {
+                if (this.checkboxIf({ $row: row })) {
+                    this.selectedMap[this.removeCircularJson(JSON.stringify(row))] = selectAll
+                }
+            } else {
+                this.selectedMap[this.removeCircularJson(JSON.stringify(row))] = selectAll
+            }
+        })
         this.handlingSelectedValues()
     }
 
@@ -198,6 +211,7 @@ const mbgList = {
         radio: '=?',
         onClickRow: '&?',
         enableOnSelectByRow: '=?',
+        checkboxIf: '&?',
         openedRows: '=?',
         selectedValues: '=?'
     },

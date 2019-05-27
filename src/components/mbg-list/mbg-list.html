@@ -24,7 +24,8 @@
                 ng-click="$ctrl.handleClickRow($row, $position, $event)">
                 <td ng-if="$ctrl.checkbox && !$row.isAdicional">
                     <mbg-checkbox ng-model="$ctrl.selectedMap[$ctrl.removeCircularJson($row.$json)]"
-                                  ng-change="$ctrl.toogleCheckbox()"></mbg-checkbox>
+                                  ng-change="$ctrl.toogleCheckbox()"
+                                  ng-show="!$ctrl.checkboxIf || $ctrl.checkboxIf({ $row: $row })"></mbg-checkbox>
                 </td>
                 <td ng-if="$ctrl.radio && !$row.isAdicional">
                     <mbg-radio ng-model="$ctrl.selectedMap[$ctrl.removeCircularJson($row.$json)]"

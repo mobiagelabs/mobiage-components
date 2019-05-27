@@ -27,6 +27,10 @@ const module = angular
 			}, '')
 		}
 
+		$scope.essaColunaPode = (row) => {
+			return row.qnt != 37
+		}
+
 		$scope.getOptionsMultiSelect = () => {
 			return [
 				{

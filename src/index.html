@@ -559,11 +559,13 @@
       <mbg-list list="produtos"
                 class="table-striped"
                 selected-values="testetttt"
+                checkbox="true"
+                checkbox-if="essaColunaPode($row)"
                 opened-rows="rowsOpen">
         <mbg-list-column name="product"
                          label="Produto"
-                         align-column="right"
-                         align-row="right">
+                         align-column="left"
+                         align-row="left">
         </mbg-list-column>
         <mbg-list-column name="qnt"
                          label="Quantidade"
@@ -571,9 +573,11 @@
         </mbg-list-column>
         <mbg-list-column name="costValue"
                          label="Valor">
-
         </mbg-list-column>
       </mbg-list>
+
+
+      <pre><code>{{ testetttt | json }}</code></pre>
     </div>
   </div>
 </body>
