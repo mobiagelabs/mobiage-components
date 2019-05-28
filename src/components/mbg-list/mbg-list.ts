@@ -164,8 +164,15 @@ export class MbgListController {
             if (this.radio) {
                 this.toogleRadio(row.$json)
             } else {
-                this.selectedMap[row.$json] = !this.selectedMap[row.$json]
-                this.toogleCheckbox()
+                if (this.checkboxIf) {
+                    if (this.checkboxIf({ $row: row })) {
+                        this.selectedMap[row.$json] = !this.selectedMap[row.$json]
+                        this.toogleCheckbox()
+                    }
+                } else {
+                    this.selectedMap[row.$json] = !this.selectedMap[row.$json]
+                    this.toogleCheckbox()
+                }
             }
         }
         if (this.onClickRow) {
