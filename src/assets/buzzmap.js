@@ -110,7 +110,7 @@ var Node = function (obj, parent, label) {
 	});
 
 	// drag
-	this.el.draggable({
+	angular.element(this.el).draggable({
 		cancel: ':input,option,button,a',
 		start: function () {
 			thisnode.dragging = true;
@@ -350,7 +350,7 @@ Node.prototype.display = function () {
 	return this.updatePosition();
 };
 
-// updatePosition returns a boolean stating whether it's been static
+// updatePosition returns a boolean drag whether it's been static
 Node.prototype.updatePosition = function () {
 	if ($(this.el).hasClass("ui-draggable-dragging")) {
 		this.x = parseInt(this.el.css('left')) + ($(this.el).width() / 2) - this.obj.offset.left;
