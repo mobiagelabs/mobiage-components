@@ -1,5 +1,7 @@
+import * as Raphael from 'raphael'
 import * as angular from 'angular'
 import 'angular-input-masks'
+import 'jquery-ui-bundle'
 import 'ng-easy-infinite-scroll'
 import 'webcamjs'
 import './common.scss'
@@ -41,7 +43,10 @@ import { mbgPaginationModule } from './mbg-pagination'
 import { mbgProductSearchModule } from './mbg-product-search'
 import { mbgMultiSelectModule } from './mbg-multi-select'
 import { mbgHomeScreenModule } from './mbg-homescreen'
+import { mbgMindmapModule } from './mbg-mindmap'
 import 'angular-ui-bootstrap'
+
+window['Raphael'] = Raphael
 
 const mbgComponentsModule = angular
   .module('mbg.components', [
@@ -81,6 +86,7 @@ const mbgComponentsModule = angular
     mbgProductSearchModule,
     mbgMultiSelectModule,
     mbgHomeScreenModule,
+    mbgMindmapModule,
   ])
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
   .directive('mbgExtendsStyle', () => new NgExtendsStyle)

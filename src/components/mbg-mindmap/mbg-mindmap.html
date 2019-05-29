@@ -1,0 +1,19 @@
+<div class="mbg-mindmap-wrapper"></div>
+
+<ul class="mbg-mindmap-structure">
+   <li ng-repeat="$item in $ctrl.tree">
+      <div mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
+      <div ng-if="$item.children.length"
+           ng-include="'{{ $ctrl.uid }}'"></div>
+   </li>
+</ul>
+
+<script type="text/ng-template"
+        id="{{ $ctrl.uid }}">
+    <ul>
+       <li ng-repeat="$item in $item.children">
+            <div mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
+         <div ng-include="'{{ $ctrl.uid }}'"></div>
+       </li>
+    </ul>
+ </script>

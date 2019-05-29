@@ -1,0 +1,29 @@
+mbg-mindmap {
+    .mbg-mindmap-wrapper {
+        border-radius: 5px;
+        background: #fff;
+    }
+    .mbg-mindmap-structure {
+      display: none;
+    }
+    .buzzmap .node {
+        z-index: 100;
+        display: block;
+        background: #f5f5f5;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0px 0px 0px #626262;
+        &.active {
+            background: #FF8A22;
+            color: #FFF;
+        }
+    }
+    .node-children {
+        display: flex;
+        flex-direction: column;
+        padding: 14px 22px;
+        .document {
+            font-weight: 100;
+            font-size: .9em;
+        }
+    }
+}

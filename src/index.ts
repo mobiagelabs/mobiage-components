@@ -220,6 +220,31 @@ const module = angular
 
 		// $scope.rowsOpen = [1]
 
+		$scope.treeOrgs = [
+			{
+				name: 'Matriz',
+				cnpj: '82.829.028/0001-09',
+				children: [
+					{
+						name: 'Bom dia 01',
+						cnpj: '58.851.253/0001-59',
+					},
+					// {
+					// 	name: 'Bom dia 02',
+					// 	cnpj: '58.851.253/0001-59',
+					// },
+					// {
+					// 	name: 'Bom dia 03',
+					// 	cnpj: '58.851.253/0001-59',
+					// },
+					// {
+					// 	name: 'Bom dia 04',
+					// 	cnpj: '58.851.253/0001-59',
+					// }
+				]
+			}
+		]
+
 
 		$scope.entity = { productTree: { name: 'Camiseta' }, brand: { name: 'Adidas' }, model: 'Teste' }
 

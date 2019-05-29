@@ -1,6 +1,6 @@
 {
   "name": "@mobiage/components",
-  "version": "1.100.5",
+  "version": "1.101.0",
   "description": "@mobiage/components",
   "main": "src/components/index.ts",
   "scripts": {
@@ -26,13 +26,17 @@
     "detect-browser": "^3.0.1",
     "firebase": "^5.5.2",
     "highcharts": "^6.1.0",
-    "jquery": "^3.3.1",
+    "imports-loader": "^0.8.0",
+    "jquery": "^3.4.1",
     "jquery-maskmoney": "^3.0.2",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-bundle": "^1.12.1-migrate",
     "ng-easy-infinite-scroll": "^1.0.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.5.0",
     "precss": "^4.0.0",
+    "raphael": "^2.2.8",
     "sugarss": "^2.0.0",
     "webcamjs": "^1.0.25"
   },

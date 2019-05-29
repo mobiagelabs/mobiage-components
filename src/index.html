@@ -111,7 +111,11 @@
 </head>
 
 <body ng-controller="demoCtrl">
-  <div class="containers">
+  <div class="container"> <br><br><br>
+
+    <mbg-mindmap tree="treeOrgs"
+                 loop-key="children">
+    </mbg-mindmap>
 
     <!-- <div class="testeContainer">
       <div class="testeConteudo">
@@ -551,7 +555,7 @@
       </div>
     </div> 
   -->
-    <br> <br>
+    <!-- <br> <br>
 
     <button ng-click="kkkkkjsadjhdjsah9()">Toogle Column</button>
 
@@ -578,7 +582,8 @@
 
 
       <pre><code>{{ testetttt | json }}</code></pre>
-    </div>
+    </div> -->
+
   </div>
 </body>
 
