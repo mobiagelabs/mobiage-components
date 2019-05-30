@@ -220,6 +220,8 @@ const module = angular
 
 		// $scope.rowsOpen = [1]
 
+		$scope.testefelipegordao = (item) => console.log(item)
+
 		$scope.treeOrgs = [
 			{
 				name: 'Matriz',
@@ -228,19 +230,21 @@ const module = angular
 					{
 						name: 'Bom dia 01',
 						cnpj: '58.851.253/0001-59',
+						children: [
+							{
+								name: 'Bom dia 04',
+								cnpj: '58.851.253/0001-59',
+							}
+						]
 					},
-					// {
-					// 	name: 'Bom dia 02',
-					// 	cnpj: '58.851.253/0001-59',
-					// },
-					// {
-					// 	name: 'Bom dia 03',
-					// 	cnpj: '58.851.253/0001-59',
-					// },
-					// {
-					// 	name: 'Bom dia 04',
-					// 	cnpj: '58.851.253/0001-59',
-					// }
+					{
+						name: 'Bom dia 02',
+						cnpj: '58.851.253/0001-59',
+					},
+					{
+						name: 'Bom dia 03',
+						cnpj: '58.851.253/0001-59',
+					},
 				]
 			}
 		]

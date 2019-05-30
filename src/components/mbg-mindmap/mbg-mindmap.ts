@@ -11,6 +11,8 @@ export class MbgMindmapController {
     public loopKey: string
     public buzzmap
     public container
+    public onClickEdit: Function
+    public enableEdit: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
@@ -25,8 +27,32 @@ export class MbgMindmapController {
             <div class="node-children">
                 <label>{{ $item.name }}</label>
                 <label class="document">CNPJ: {{ $item.cnpj }}</label>
+                ${this.enableEdit ? `<div class="edit-wrapper">
+                        <i class="far fa-edit"></i>
+                        <a>Editar</a>
+                    </div> ` : ``}
             </div>
         `
+    }
+
+    handleClickEdit(item) {
+        this.$timeout(() => {
+            if (this.onClickEdit) {
+                this.onClickEdit({ $item: item })
+            } else {
+                throw 'Não foi informado a função de callback para a ação "editar" do componente mindmap.'
+            }
+        })
+    }
+
+    createEventClick() {
+        this.$element.find('.node').on('click', (evt) => {
+            const parent = angular.element(evt.target).closest('div.node')
+            const parentIsEditWrapper = angular.element(evt.target).closest('div.edit-wrapper')
+            if (parent && parentIsEditWrapper.length && !evt.target.classList.contains('edit-wrapper')) {
+                this.handleClickEdit(parent[0].$item)
+            }
+        })
     }
 
     findTransclude() {
@@ -53,6 +79,7 @@ export class MbgMindmapController {
             },
         })
         this.setInitialPosition()
+        this.createEventClick()
     }
 
     setInitialPosition() {
@@ -69,7 +96,7 @@ export class MbgMindmapController {
                     const left = (cardSize / 2) * (index)
                     node.setPosition(left, top)
                 }
-                // node.updatePosition()
+                node.updatePosition()
             })
         })
     }
@@ -81,6 +108,8 @@ MbgMindmapController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$tr
 const mbgMindmap = {
     transclude: true,
     bindings: {
+        onClickEdit: '&?',
+        enableEdit: '=?',
         tree: '=',
         loopKey: '@?',
     },

@@ -3,6 +3,8 @@ mbg-mindmap {
         border-radius: 5px;
         background: #fff;
         position: relative;
+        width: 100%;
+        height: 100%;
     }
     .mbg-mindmap-structure {
       display: none;
@@ -16,12 +18,32 @@ mbg-mindmap {
         &.active {
             background: #FF8A22;
             color: #FFF;
+            .edit-wrapper {
+                i, a {
+                    color: #fff;
+                }
+            }
         }
     }
     .node-children {
         display: flex;
         flex-direction: column;
         padding: 14px 22px;
+        min-width: fit-content;
+        .edit-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 3px;
+            i, a {
+                color: #666;
+            }
+            a {
+                width: fit-content;
+                cursor: pointer;
+                margin-left: 5px;
+            }
+        }
         .document {
             font-weight: 100;
             font-size: .9em;

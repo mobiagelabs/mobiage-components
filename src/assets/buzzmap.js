@@ -43,7 +43,7 @@ Line.prototype.updatePosition = function () {
 		.attr({ stroke: this.strokeStyle, opacity: this.strokeOpacity, 'stroke-width': this.strokeWidth });
 };
 
-var Node = function (obj, parent, label) {
+var Node = function (obj, parent, label, originalEl) {
 	var thisnode = this;
 
 	// Define Properties
@@ -69,7 +69,9 @@ var Node = function (obj, parent, label) {
 	this.el.addClass('node');
 	this.obj.el.append(this.el);
 	this.el.hide();
-
+	if (originalEl) {
+		this.el[0].$item = originalEl.$item
+	}
 	// label
 	this.label(label);
 
@@ -138,7 +140,17 @@ Node.prototype.toggleChildren = function () {
 	if (this.children.length > 0 && this.parent.parent) {
 		this.el.toggleClass('active');
 		this.obj.animate();
+		// redraw lines
+		this.obj.canvas.clear();
+		for (var i = 0; i < this.obj.lines.length; i++) {
+			this.obj.lines[i].updatePosition();
+		}
 		return false;
+	}
+	// redraw lines
+	this.obj.canvas.clear();
+	for (var i = 0; i < this.obj.lines.length; i++) {
+		this.obj.lines[i].updatePosition();
 	}
 	return true;
 };
@@ -533,7 +545,6 @@ var Buzzmap = function (el, options) {
 	$(window).resize(function () {
 		obj.animate();
 	});
-
 	// root node
 	this.root = this.nodes[0] = new Node(this, null, '<span>Buzzmap</span>');
 };
@@ -553,8 +564,8 @@ Buzzmap.prototype.createCanvas = function () {
 	this.offset = (this.el.css('position') == 'relative') ? { top: 0, left: 0 } : this.el.offset();
 };
 
-Buzzmap.prototype.addNode = function (parent, label) {
-	var node = this.nodes[this.nodes.length] = new Node(this, parent, label);
+Buzzmap.prototype.addNode = function (parent, label, el) {
+	var node = this.nodes[this.nodes.length] = new Node(this, parent, label, el);
 	this.animate();
 
 	return node;
@@ -670,13 +681,14 @@ export default function (elm, options) {
 	var $data = $(obj.options.structure).filter('ul');
 	if ($data.length > 0) {
 		var addLI = function () {
+			this.$item = angular.element(this).scope().$item
 			var parent = $(this).parents('li').get(0);
-			parent = (!parent) ? obj.root : parent.buzznode;
-			this.buzznode = obj.addNode(parent, $('div:eq(0)', this).html());
+			parent = (!parent) ? obj.root : parent.buzznode
+			this.buzznode = obj.addNode(parent, $('div:eq(0)', this).html(), this);
 			$(this).hide();
-			$('ul > li', this).each(addLI);
+			$('> div > ul > li', this).each(addLI);
 		};
-		$('>li', $data).each(addLI);
+		$('li.mindmap-root-item', $data).each(addLI);
 		return buzz();
 	}
 
