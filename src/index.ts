@@ -222,6 +222,35 @@ const module = angular
 
 		$scope.testefelipegordao = (item) => console.log(item)
 
+		$timeout(() => {
+			$scope.treeOrgs = [
+				{
+					name: 'Matriz 2',
+					cnpj: '82.829.028/0001-09',
+					children: [
+						{
+							name: 'Bom dia 03',
+							cnpj: '58.851.253/0001-59',
+							children: [
+								{
+									name: 'Bom dia 04',
+									cnpj: '58.851.253/0001-59',
+								}
+							]
+						},
+						{
+							name: 'Bom dia 06',
+							cnpj: '58.851.253/0001-59',
+						},
+						{
+							name: 'Bom dia 15',
+							cnpj: '58.851.253/0001-59',
+						},
+					]
+				}
+			]
+		}, 5000)
+
 		$scope.treeOrgs = [
 			{
 				name: 'Matriz',

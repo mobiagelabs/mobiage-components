@@ -13,13 +13,23 @@ export class MbgMindmapController {
     public container
     public onClickEdit: Function
     public enableEdit: boolean
+    public unsubscribe
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) { }
 
     $onInit() {
         this.uid = UtilUID.generete()
         this.findTransclude()
-        this.$timeout(() => this.createMap(), 1000)
+        this.unsubscribe = this.$scope.$watch('$ctrl.tree', () => {
+            this.$timeout(() => this.createMap(), 1000)
+        }, true)
+    }
+
+    $onDestroy() {
+        if (this.buzzmap) {
+            this.buzzmap.destroy()
+        }
+        this.unsubscribe()
     }
 
     createDefaultTemplate() {
@@ -70,6 +80,9 @@ export class MbgMindmapController {
     }
 
     createMap() {
+        if (this.buzzmap) {
+            this.buzzmap.destroy()
+        }
         this.container = this.$element.find('.mbg-mindmap-wrapper')
         this.buzzmap = Buzzmap(this.container, {
             structure: '.mbg-mindmap-structure',
