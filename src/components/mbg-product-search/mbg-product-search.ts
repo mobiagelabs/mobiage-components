@@ -28,10 +28,12 @@ class MbgProductSearchController {
     private uid: string
     private debounceEnter
     private page: number
+    private minLetter: number
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
 
     $onInit() {
+        this.minLetter = typeof this.minLetter === 'undefined' ? 2 : this.minLetter
         this.debounceTime = this.debounceTime || 1000
         this.uidComponent = UtilUID.generete()
         this.placeholder = this.placeholder || 'Encontre por código de barras, referência ou nome do produto.'
@@ -59,7 +61,7 @@ class MbgProductSearchController {
     }
 
     executeFetch(onExecute?: Function) {
-        if (!this.inputValue || this.inputValue.length < 2) { return }
+        if (!this.inputValue || this.inputValue.length < this.minLetter) { return }
         if (this.debounce) {
             this.$timeout.cancel(this.debounce)
         }
@@ -367,6 +369,7 @@ const mbgProductSearch = {
         ngBlur: '&?',
         label: '@?',
         autoClear: '=?',
+        minLetter: '=?',
         placeholder: '@?',
     },
     controller: MbgProductSearchController,
