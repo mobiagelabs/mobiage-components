@@ -13,7 +13,9 @@
     position: relative;
     min-width: 0;
     cursor: text;
-    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
+
     &::-webkit-scrollbar { 
         display: none; 
     }

@@ -535,16 +535,24 @@ var Buzzmap = function (el, options) {
 	this.moving = false;
 	this.stopMovement = false;
 	this.fps = 0;
-
-	window.setInterval(function () {
+	
+	const intervalEvent = window.setInterval(function () {
 		var fps = obj.fps * 2;
 		obj.fps = 0;
 		obj.trigger('fps', fps);
 	}, 500);
 
-	$(window).resize(function () {
+	const onResize = function () {
 		obj.animate();
-	});
+	}
+	
+	const jqueryEvent = $(window).resize(onResize);
+
+	this.destroy = () => {
+		clearInterval(intervalEvent)
+		jqueryEvent.unbind('resize', onResize)
+		this.el.html('')
+	}
 	// root node
 	this.root = this.nodes[0] = new Node(this, null, '<span>Buzzmap</span>');
 };
@@ -649,7 +657,7 @@ Buzzmap.prototype.parseOptions = function (opts) {
 		lineOpacity: 0.1,
 
 		minSpeed: 0.2,
-		animationTimeout: 5
+		animationTimeout: 0
 		// centerOffset: 100, #DEPRECATED
 		// centerAttraction: 0, #DEPRECATED
 	}, opts);
