@@ -8,7 +8,13 @@ class MbgInputNumberController {
   private ngDisabled
   private props
 
-  constructor(public $scope, public $element, public $attrs, public $compile, public $timeout) {}
+  constructor(
+    public $scope,
+    public $element,
+    public $attrs,
+    public $compile,
+    public $timeout
+  ) { }
 
   $onInit() {
     this.$timeout(() => {
@@ -53,7 +59,13 @@ class MbgInputNumberController {
 
 }
 
-MbgInputNumberController.$inject = ['$scope', '$element', '$attrs', '$compile', '$timeout']
+MbgInputNumberController.$inject = [
+  '$scope',
+  '$element',
+  '$attrs',
+  '$compile',
+  '$timeout'
+]
 
 const mbgInputNumber = {
   bindings: {
@@ -63,7 +75,8 @@ const mbgInputNumber = {
     ngDisabled: '=?',
     ngBlur: '&?',
     ngFocus: '&?',
-    positive: '=?'
+    positive: '=?',
+    ngModelOptions: '=?'
   },
   template,
   controller: MbgInputNumberController,
