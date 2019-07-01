@@ -7,6 +7,7 @@ class MbgProductGridController {
     private details: Array<any>
     private showStock
     private enablePrice: boolean
+    private ngDisabled: boolean
     private enableCurrentStock: boolean
     private x: { key: string, label: string }
     private y: { key: string, label: string }
@@ -107,6 +108,7 @@ const mbgProductGrid = {
         y: '=?',
         details: '=?',
         ngModel: '=?',
+        ngDisabled: '=?',
         activeAddOrRemove: '=?',
         extraButtonLabel: '@?',
         onClickExtraButton: '&?',

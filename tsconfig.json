@@ -3,7 +3,9 @@
         "sourceMap": true,
         "allowSyntheticDefaultImports": true,
         "declaration": false,
-        "types": ["node"],
+        "types": [
+            "node"
+        ],
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "lib": [
@@ -19,7 +21,7 @@
     ],
     "globals": {
         "require": true
-      },
+    },
     "exclude": [
         "node_modules"
     ],
