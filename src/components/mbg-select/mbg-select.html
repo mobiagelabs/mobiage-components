@@ -4,6 +4,7 @@
                     ng-focus="$ctrl.onInputFocus()"
                     ng-blur="$ctrl.onInputBlur()"
                     placeholder="{{ $ctrl.placeholder }}"
+                    ng-disabled="$ctrl.ngDisabled"
                     ng-keydown="$ctrl.onInputKeydown($event)"
                     ng-change="$ctrl.onInputChange()"></mbg-input-text>
     <svg class="loading"

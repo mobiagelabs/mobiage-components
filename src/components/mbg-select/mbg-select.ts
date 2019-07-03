@@ -27,6 +27,7 @@ class MbgSelectController {
     private ignoreItems: Array<any>
     private uid: string
     private position
+    private ngDisabled: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
 
@@ -355,6 +356,7 @@ const mbgSelect = {
     transclude: true,
     bindings: {
         ngModel: '=',
+        ngDisabled: '=',
         ngValue: '@?',
         fetch: '&?',
         ignoreItems: '=?',
