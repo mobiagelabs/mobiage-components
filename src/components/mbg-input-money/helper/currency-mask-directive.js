@@ -58,6 +58,9 @@ export default function CurrencyMaskDirective($mbgMasker, $timeout) {
                 if (!value || value.length < 1) {
                     value = '0'
                 }
+                if (value.length > 18) {
+                    return
+                }
                 if (isNegative) {
                     value = value.replace('-', '')
                 }
@@ -80,11 +83,19 @@ export default function CurrencyMaskDirective($mbgMasker, $timeout) {
             });
 
             element.bind('keydown', function (evt) {
+                const validLength = (evt.keyCode == 8 || evt.keyCode >= 27 && evt.keyCode <= 40)
                 const isValid = (evt.keyCode >= 48 && evt.keyCode <= 57)
                     || (evt.keyCode >= 96 && evt.keyCode <= 105)
                     || (evt.keyCode >= 37 && evt.keyCode <= 40)
                     || (evt.keyCode == 8 || evt.keyCode == 13)
                     || (evt.keyCode == 9)
+
+                    
+                if (!validLength && unmaskValue(evt.target.value).length > 17) {
+                    evt.stopPropagation();
+                    evt.preventDefault()
+                    return
+                }
                 if (!isValid) {
                     evt.preventDefault()
                     return
