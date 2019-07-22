@@ -4,6 +4,10 @@ mbg-checkbox {
         cursor: pointer;
         margin-bottom: 0;
     }
+    .disabled {
+        opacity: .6;
+        pointer-events: none;
+    }
 
     .label-cbx input:checked + .checkbox {
         border-color: #20C2E0;
