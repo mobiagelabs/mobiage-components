@@ -1,6 +1,6 @@
 export namespace MbgCookie {
     const getKeyCookie = (key: string) => {
-        let user: any = sessionStorage.getItem('user')
+        let user: any = localStorage.getItem('user')
         if (user) {
             user = JSON.parse(user)
             return (user.organizationHierarchyCode || '') + 'preference-' + key

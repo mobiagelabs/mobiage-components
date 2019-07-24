@@ -166,7 +166,7 @@ class MbgInputStepItemController {
 	}
 
 	getRecentKey() {
-		let user: any = sessionStorage.getItem('user')
+		let user: any = localStorage.getItem('user')
 		if (user) {
 			user = JSON.parse(user)
 			return (user.organizationHierarchyCode || '') + 'recent-' + this.$attrs.name
