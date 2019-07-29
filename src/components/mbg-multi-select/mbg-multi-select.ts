@@ -2,6 +2,7 @@ import './mbg-multi-select.scss'
 import template from './mbg-multi-select.html'
 import * as angular from 'angular'
 import { AbsPosition } from '../../helpers/abs-position'
+import { ScrollAnimate } from '../../helpers/scroll-animate'
 
 class MbgMultiSelectController {
     private ngModel: any
@@ -32,10 +33,20 @@ class MbgMultiSelectController {
         if (this.enableSort) { this.createDragEvents() }
     }
 
+    verifyScroll() {
+        this.$timeout(() => {
+            const elm = angular.element(`.mbg-multi-select-scroll`)[0]
+            this.$timeout(() => {
+                ScrollAnimate.scrollLeftTo(elm, elm.scrollWidth, 350)
+            }, 100)
+        })
+    }
+
     onSelect() {
         this.$timeout(() => {
             if (this.searchModel) {
                 this.ngModel.push(this.searchModel)
+                this.verifyScroll()
                 delete this.searchModel
             }
         })

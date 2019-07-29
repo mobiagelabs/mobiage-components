@@ -1,5 +1,5 @@
 .mbg-multi-select-wrapper {
-    .input-group-search {
+    .mbg-multi-select-scroll {
         border: 1px solid #ddd;
         background: #FFF;
         border-radius: 5px;
@@ -8,10 +8,24 @@
         flex: 1 1;
         outline: none;
         width: inherit;
-        max-width: 100%;
+        display: inline-flex;
         height: 44px;
-        display: flex;
         align-items: center;
+        overflow: visible;
+        max-width: 100%;
+        overflow: scroll;
+         overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        padding-top: 0;
+        padding-bottom: 0;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .mbg-multi-select-content{
+            display: inline-flex;
+            align-items: center;
+        }
         input {
             width: 100%;
             border: none;
@@ -66,6 +80,7 @@
         }
         mbg-select {
             flex: 1;
+            min-width: 191.03px;
             i {
                 display: none;
             }

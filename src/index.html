@@ -113,7 +113,7 @@
 <body ng-controller="demoCtrl">
   <div class="container"> <br><br><br>
 
-    <mbg-checkbox ng-model="valor" ng-disabled="false"></mbg-checkbox>
+    <!-- <mbg-checkbox ng-model="valor" ng-disabled="false"></mbg-checkbox> -->
 
     <!-- <mbg-mindmap tree="treeOrgs"
                  loop-key="children"
@@ -130,13 +130,17 @@
 
     <!-- <label for="">Monte o nome do produto. <span style="color: #666;">&nbsp;&nbsp;&nbsp;Ex: {{ getLabelSelected() }}</span></label> -->
 
-    <!-- <mbg-multi-select ng-model="selecteds"
-                      placeholder="Adicionar campo..."
-                      label="name"
-                      enable-sort="true"
-                      fetch="getOptionsMultiSelect()">
-    </mbg-multi-select> 
-
+    <div class="row">
+      <div class="col-md-4">
+        <mbg-multi-select ng-model="selecteds"
+                          placeholder="Adicionar campo..."
+                          label="name"
+                          enable-sort="true"
+                          fetch="getOptionsMultiSelect()">
+        </mbg-multi-select>
+      </div>
+    </div>
+    <!-- 
     <br>
     <br>
     <br> -->
@@ -367,8 +371,8 @@
     <!-- <div class="row">
       <div class="col-md-4">
        <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox> -->
-          <mbg-input-money ng-model="valor2"></mbg-input-money>
-          <!--      </div>
+    <!-- <mbg-input-money ng-model="valor2"></mbg-input-money> -->
+    <!--      </div>
     </div> -->
 
     <!-- <mbg-radio ng-model="teste"></mbg-radio> -->

@@ -1,25 +1,27 @@
 <div class="mbg-multi-select-wrapper">
-  <div class="input-group-search">
-    <ul class="items-selected">
-      <li ng-repeat="item in $ctrl.ngModel"
-          draggable="true">
-        {{ $ctrl.label ? item[$ctrl.label] : item }}
-        <svg xmlns="http://www.w3.org/2000/svg"
-             data-name="Layer 1"
-             viewBox="0 0 1024 1024"
-             x="0px"
-             ng-click="$ctrl.ngModel.splice($index, 1)"
-             y="0px">
-          <path
-                d="M601.376 512l191.52-191.52c28.096-28.096 30.976-71.168 6.4-95.744s-67.68-21.696-95.744 6.4l-191.52 191.52-191.52-191.52c-28.096-28.096-71.168-30.976-95.744-6.368s-21.696 67.68 6.4 95.744l191.52 191.52-191.52 191.52c-28.096 28.096-30.976 71.168-6.368 95.744s67.68 21.696 95.744-6.4l191.52-191.52 191.52 191.52c28.096 28.096 71.168 30.976 95.744 6.4s21.696-67.68-6.4-95.744l-191.52-191.52z" />
-        </svg>
-      </li>
-    </ul>
-    <mbg-select ng-model="$ctrl.searchModel"
-                fetch="$ctrl.fetch({ query })"
-                ignore-items="$ctrl.ngModel"
-                on-select="$ctrl.onSelect()"
-                placeholder="{{ $ctrl.placeholder }}"
-                label="{{ $ctrl.label }}"></mbg-select>
+  <div class="mbg-multi-select-scroll">
+    <div class="mbg-multi-select-content">
+      <ul class="items-selected">
+        <li ng-repeat="item in $ctrl.ngModel"
+            draggable="true">
+          {{ $ctrl.label ? item[$ctrl.label] : item }}
+          <svg xmlns="http://www.w3.org/2000/svg"
+               data-name="Layer 1"
+               viewBox="0 0 1024 1024"
+               x="0px"
+               ng-click="$ctrl.ngModel.splice($index, 1); $ctrl.verifyScroll()"
+               y="0px">
+            <path
+                  d="M601.376 512l191.52-191.52c28.096-28.096 30.976-71.168 6.4-95.744s-67.68-21.696-95.744 6.4l-191.52 191.52-191.52-191.52c-28.096-28.096-71.168-30.976-95.744-6.368s-21.696 67.68 6.4 95.744l191.52 191.52-191.52 191.52c-28.096 28.096-30.976 71.168-6.368 95.744s67.68 21.696 95.744-6.4l191.52-191.52 191.52 191.52c28.096 28.096 71.168 30.976 95.744 6.4s21.696-67.68-6.4-95.744l-191.52-191.52z" />
+          </svg>
+        </li>
+      </ul>
+      <mbg-select ng-model="$ctrl.searchModel"
+                  fetch="$ctrl.fetch({ query })"
+                  ignore-items="$ctrl.ngModel"
+                  on-select="$ctrl.onSelect()"
+                  placeholder="{{ $ctrl.placeholder }}"
+                  label="{{ $ctrl.label }}"></mbg-select>
+    </div>
   </div>
 </div>
