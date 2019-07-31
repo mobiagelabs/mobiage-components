@@ -54,7 +54,47 @@ const module = angular
 					label: 'Verão 2019',
 				},
 				{
-					name: 'Modelo',
+					name: 'Número do motor',
+					label: 'Underground',
+				},
+				{
+					name: 'Número do motor2',
+					label: 'Underground',
+				},
+				{
+					name: 'Número do motor3',
+					label: 'Underground',
+				},
+				{
+					name: 'Número do motor4',
+					label: 'Underground',
+				},
+				{
+					name: 'Número do motor5',
+					label: 'Underground',
+				},
+				{
+					name: 'Número do motor6',
+					label: 'Underground',
+				},
+				{
+					name: 'Número do motor7',
+					label: 'Underground',
+				},
+				{
+					name: 'Número do motor8',
+					label: 'Underground',
+				},
+				{
+					name: 'Número do motor9',
+					label: 'Underground',
+				},
+				{
+					name: 'Número do motor10',
+					label: 'Underground',
+				},
+				{
+					name: 'Número do motor11',
 					label: 'Underground',
 				}
 			]
