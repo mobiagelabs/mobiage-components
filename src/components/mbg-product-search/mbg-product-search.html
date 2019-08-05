@@ -53,7 +53,7 @@
                         <span>Preço: </span>
                         {{ (item.saleValue || 0) | currency: 'R$ ' }}
                     </div>
-                    <div class="stock">
+                    <div class="stock" ng-show="!$ctrl.disableStock">
                         <span><b>Estoque:</b> </span>
                         {{ item.stock }}
                     </div>
