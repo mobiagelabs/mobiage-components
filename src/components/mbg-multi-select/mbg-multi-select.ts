@@ -190,7 +190,7 @@ const mbgMultiSelect = {
         placeholder: '@?',
         fetch: '&?',
         ngModel: '=?',
-        ngChange: '=?',
+        ngChange: '&?',
         enableSort: '=?',
         label: '@?'
     },
