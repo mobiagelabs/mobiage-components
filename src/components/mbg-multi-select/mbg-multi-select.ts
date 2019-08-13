@@ -15,6 +15,7 @@ class MbgMultiSelectController {
     private fetch: Function
     private searchModel
     private eventsFunctions
+    private ngChange: Function
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -48,6 +49,19 @@ class MbgMultiSelectController {
                 this.ngModel.push(this.searchModel)
                 this.verifyScroll()
                 delete this.searchModel
+                if (this.ngChange) {
+                    this.ngChange()
+                }
+            }
+        })
+    }
+
+    remoteItem(index) {
+        this.ngModel.splice(index, 1)
+        this.verifyScroll()
+        this.$timeout(() => {
+            if (this.ngChange) {
+                this.ngChange()
             }
         })
     }
@@ -176,6 +190,7 @@ const mbgMultiSelect = {
         placeholder: '@?',
         fetch: '&?',
         ngModel: '=?',
+        ngChange: '=?',
         enableSort: '=?',
         label: '@?'
     },
