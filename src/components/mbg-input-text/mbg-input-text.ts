@@ -9,11 +9,18 @@ class MbgInputTextController {
     private ngDisabled
     private props
     private ngKeydown
+    private ngValue
 
     constructor(public $scope, public $element, public $attrs) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
         this.props = {}
+    }
+
+    $onInit() {
+        if (this.ngValue) {
+            this.ngModel = this.ngValue
+        }
     }
 
     fillAttributes() {
@@ -38,6 +45,7 @@ MbgInputTextController.$inject = ['$scope', '$element', '$attrs']
 
 const mbgInputText = {
     bindings: {
+        ngValue: '=?',
         ngModel: '=',
         ngChange: '&?',
         ngRequired: '=?',

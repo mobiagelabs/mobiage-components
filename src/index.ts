@@ -21,6 +21,10 @@ const module = angular
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
 
+		$scope.initValue = () => {
+			return 'Teste'
+		}
+
 		$scope.getLabelSelected = () => {
 			return $scope.selecteds.reduce((v, select) => {
 				return v + ' ' + select.label
