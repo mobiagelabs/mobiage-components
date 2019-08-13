@@ -101,7 +101,7 @@ const module = angular
 					name: 'Número do motor11',
 					label: 'Underground',
 				}
-			]
+			].map((s) => s.label)
 		}
 
 		$scope.selecteds = [
@@ -113,7 +113,7 @@ const module = angular
 				name: 'Marca',
 				label: 'Adidas',
 			}
-		]
+		].map((s) => s.label)
 
 
 		const url = 'https://api-hom.kigisistemas.com.br/mobiage-api/api/v2/product-item/terminal?gumgaToken=310L261E1552912392436C155291059243600O260.261.I'
