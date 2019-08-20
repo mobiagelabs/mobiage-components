@@ -45,7 +45,7 @@
         ng-style="{ left: $ctrl.position.left, top: $ctrl.position.top }">
         <li ng-show="$ctrl.data"
             ng-mousedown="$ctrl.selectOption(item)"
-            ng-repeat="item in $ctrl.getData()">
+            ng-repeat="item in $ctrl.getData() track by $index">
             <div ng-if="$ctrl.transcludeTemplate"
                  mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
             <div ng-if="!$ctrl.transcludeTemplate && $ctrl.label">{{item[$ctrl.label]}}</div>
