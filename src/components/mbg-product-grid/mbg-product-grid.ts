@@ -110,6 +110,7 @@ const mbgProductGrid = {
         ngModel: '=?',
         ngDisabled: '=?',
         activeAddOrRemove: '=?',
+        activeEdit: '=?',
         extraButtonLabel: '@?',
         onClickExtraButton: '&?',
         onClickEditButton: '&?',
