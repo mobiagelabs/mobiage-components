@@ -1,0 +1,43 @@
+<div class="mbg-dropdown-wrapper">
+    <span uib-dropdown>
+        <a href
+           class="title-option"
+           uib-dropdown-toggle>
+            <span>{{$ctrl.label}}</span>
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 version="1.1"
+                 x="0px"
+                 y="0px"
+                 viewBox="0 0 36 36"
+                 style="enable-background:new 0 0 36 36;"
+                 xml:space="preserve">
+                <circle cx="18"
+                        cy="30"
+                        r="4.25" />
+                <circle cx="18"
+                        cy="18"
+                        r="4.25" />
+                <circle cx="18"
+                        cy="6"
+                        r="4.25" />
+            </svg>
+        </a>
+        <ul class="dropdown-menu"
+            ng-class="$ctrl.direction"
+            uib-dropdown-menu
+            aria-labelledby="simple-dropdown">
+            <li class="options"
+                ng-repeat="option in $ctrl.options">
+                <a href
+                   ng-click="$ctrl.onClickOption(option)">
+                    <i ng-if="option.icon"
+                       ng-class="option.icon"></i>
+                    <span>{{option.label}}</span>
+                </a>
+            </li>
+        </ul>
+    </span>
+    <input type="file"
+           onchange="angular.element(this).scope().$ctrl.onFilesChoice(event)" />
+</div>

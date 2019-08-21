@@ -1,0 +1,52 @@
+.mbg-dropdown-wrapper {
+  display: flex;
+  span {
+    display: flex;
+    .title-option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--neutral2);
+
+      svg {
+        fill: var(--neutral2);
+        width: 17px;
+        margin-left: 6px;
+      }
+
+      &:hover,
+      &:focus {
+        outline: none;
+        text-decoration: none;
+      }
+    }
+    .options {
+      a {
+        display: flex;
+        align-items: center;
+        color: var(--neutral2);
+        padding: 6px 20px;
+
+        i {
+            color: var(--neutral2);
+            margin-right: 10px;
+        }
+      }
+    }
+
+    .dropdown-menu {
+        margin-top: 10px;
+        border: 1px solid #f5f5f5;
+        box-shadow: 0px 0px 7px 0px rgba(0,0,0,.03);
+
+        &.left {
+            transform: translateX(-100%);
+            left: 70px;
+        }
+    }
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}

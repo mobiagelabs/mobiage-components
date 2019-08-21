@@ -44,6 +44,7 @@ import { mbgProductSearchModule } from './mbg-product-search'
 import { mbgMultiSelectModule } from './mbg-multi-select'
 import { mbgHomeScreenModule } from './mbg-homescreen'
 import { mbgMindmapModule } from './mbg-mindmap'
+import { mbgDropdownModule } from './mbg-dropdown'
 import 'angular-ui-bootstrap'
 
 window['Raphael'] = Raphael
@@ -87,6 +88,7 @@ const mbgComponentsModule = angular
     mbgMultiSelectModule,
     mbgHomeScreenModule,
     mbgMindmapModule,
+    mbgDropdownModule
   ])
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
   .directive('mbgExtendsStyle', () => new NgExtendsStyle)

@@ -34,6 +34,23 @@ const module = angular
 		$scope.essaColunaPode = (row) => {
 			return row.qnt != 37
 		}
+		$scope.optionsDropdown = [
+			{
+				label: 'Importar arquivo XLS',
+				action: 'UPLOAD',
+				icon: 'fas fa-upload',
+				callback: (file) => {
+					console.log(file)
+				}
+			},
+			{
+				label: 'Baixar Layout XLS',
+				icon: 'fas fa-download',
+				callback: () => {
+					console.log('Teste')
+				}
+			},
+		]
 
 		$scope.getOptionsMultiSelect = () => {
 			return [
