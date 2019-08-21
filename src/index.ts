@@ -21,8 +21,25 @@ const module = angular
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
 
+		$scope.percentage = 0
+
+		const goTo = (value) => {
+			$timeout(() => {
+				$scope.percentage = value
+			})
+		}
+
+		[1,2,3,4].forEach((n, i) => {
+			$timeout(() => {
+				goTo(25 * n)
+			}, 3000 * (i + 1))
+		})
+
 		$scope.initValue = () => {
 			return 'Teste'
+		}
+		$scope.acabo = () => {
+			console.log('Acabou')
 		}
 
 		$scope.getLabelSelected = () => {

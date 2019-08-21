@@ -1,0 +1,35 @@
+.mbg-progress-circle-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .backdrop {
+        background-color: rgba(255,255,255,0.3);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    #progress {
+        width: 200px;
+    }
+
+    .progress-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        label {
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+    }
+}

@@ -112,16 +112,7 @@
 
 <body ng-controller="demoCtrl">
   <div class="container"> <br><br><br>
-
-    <div class="row">
-      <div class="col-md-6">
-        <mbg-dropdown label="Opções" options="optionsDropdown"></mbg-dropdown>
-      </div>
-      <div class="col-md-6" style="display: flex;align-items:center;justify-content: flex-end;">
-          <mbg-dropdown label="Opções" options="optionsDropdown" direction="left"></mbg-dropdown>
-        </div>
-    </div>
-
+    <mbg-progress-circle title-progress="Realizando upload" percentage="percentage"></mbg-progress-circle>
     <!-- <mbg-checkbox ng-model="valor" ng-disabled="false"></mbg-checkbox> -->
 
     <!-- <mbg-mindmap tree="treeOrgs"

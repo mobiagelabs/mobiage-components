@@ -1,6 +1,6 @@
 {
   "name": "@mobiage/components",
-  "version": "1.104.0",
+  "version": "1.105.0",
   "description": "@mobiage/components",
   "main": "src/components/index.ts",
   "scripts": {
@@ -36,6 +36,7 @@
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.5.0",
     "precss": "^4.0.0",
+    "progressbar.js": "^1.0.1",
     "raphael": "^2.2.8",
     "sugarss": "^2.0.0",
     "webcamjs": "^1.0.25"

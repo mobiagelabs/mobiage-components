@@ -6,6 +6,7 @@ import 'ng-easy-infinite-scroll'
 import 'webcamjs'
 import './common.scss'
 import '../helpers/locale'
+import 'progressbar.js/dist/progressbar.min.js'
 import * as ngSanitize from 'angular-sanitize'
 import { MbgDynamicHTML } from '../helpers/dynamic-html/dynamic-html'
 import { MbgPositiveNumber } from '../helpers/positive-number/positive-number'
@@ -45,6 +46,7 @@ import { mbgMultiSelectModule } from './mbg-multi-select'
 import { mbgHomeScreenModule } from './mbg-homescreen'
 import { mbgMindmapModule } from './mbg-mindmap'
 import { mbgDropdownModule } from './mbg-dropdown'
+import { mbgProgressCircleModule } from './mbg-progress-circle'
 import 'angular-ui-bootstrap'
 
 window['Raphael'] = Raphael
@@ -88,7 +90,8 @@ const mbgComponentsModule = angular
     mbgMultiSelectModule,
     mbgHomeScreenModule,
     mbgMindmapModule,
-    mbgDropdownModule
+    mbgDropdownModule,
+    mbgProgressCircleModule
   ])
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
   .directive('mbgExtendsStyle', () => new NgExtendsStyle)
