@@ -4,6 +4,7 @@ import template from './mbg-dropdown.html'
 class MbgDropdownController {
     private inputElement: HTMLInputElement
     private callbackFunction: Function
+
     constructor(public $scope, public $element, public $attrs, public $timeout) {
         this.inputElement = this.$element.find('input')[0]
     }
@@ -28,10 +29,12 @@ class MbgDropdownController {
 
     async onFilesChoice(evt) {
         const files: Array<File> = Array.from(evt.target.files)
-        const data = await Promise.all(files.map(async (file) => this.getBase64(file)))
+        // const data = await Promise.all(files.map(async (file) => this.getBase64(file)))
+        const data = files
         if (this.callbackFunction) {
             this.callbackFunction(data)
         }
+        this.inputElement.value = null
     }
 
     transformBase64ToObject(files) {

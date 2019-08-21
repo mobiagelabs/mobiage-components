@@ -2,8 +2,7 @@ import './mbg-progress-circle.scss'
 import template from './mbg-progress-circle.html'
 import * as angular from 'angular'
 import { UtilUID } from '../../helpers/util-uid'
-const ProgressBar = require('progressbar.js')
-
+const progressBar = require('progressbar.js')
 class MbgProgressCircleController {
 
     private unWatchPercentage: any
@@ -19,7 +18,7 @@ class MbgProgressCircleController {
     $onInit() {
         this.uidComponent = UtilUID.generete()
         this.unWatchPercentage = this.$scope.$watch('$ctrl.percentage', (value) => {
-            if (this.progressCircle && value != undefined) {
+            if (this.progressCircle && value !== undefined) {
                 this.progressCircle.animate(value / 100)
             }
         })
@@ -29,7 +28,7 @@ class MbgProgressCircleController {
             })
         })
         this.$timeout(() => {
-            this.progressCircle = new ProgressBar.Circle('#progress', {
+            this.progressCircle = new progressBar.Circle('#progress', {
                 color: '#666',
                 strokeWidth: 4,
                 trailWidth: 1,
@@ -41,14 +40,14 @@ class MbgProgressCircleController {
                 from: { color: '#666', width: 1 },
                 to: { color: '#000', width: 4 },
                 step: function (state, circle) {
-                    var value = Math.round(circle.value() * 100);
+                    const value = Math.round(circle.value() * 100)
                     if (value === 0) {
                         circle.setText('')
                     } else {
                         circle.setText(value + '%')
                     }
                 }
-            });
+            })
             this.progressCircle.text.style.fontFamily = '"Raleway", Helvetica, sans-serif'
             this.progressCircle.text.style.fontSize = '2rem'
             this.progressCircle.animate(0.0)

@@ -47,10 +47,6 @@ const module = angular
 		$scope.initValue = () => {
 			return 'Teste'
 		}
-		$scope.acabo = () => {
-			console.log('Acabou')
-		}
-
 		$scope.getLabelSelected = () => {
 			return $scope.selecteds.reduce((v, select) => {
 				return v + ' ' + select.label
