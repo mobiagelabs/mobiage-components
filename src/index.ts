@@ -29,11 +29,20 @@ const module = angular
 			})
 		}
 
-		[1,2,3,4].forEach((n, i) => {
+		[1, 2, 3, 4].forEach((n, i) => {
 			$timeout(() => {
 				goTo(25 * n)
+				if (n === 4) {
+					$timeout(() => {
+						$scope.show = false
+					}, 1000)
+				}
 			}, 3000 * (i + 1))
 		})
+
+		$timeout(() => {
+			$scope.show = true
+		}, 2000)
 
 		$scope.initValue = () => {
 			return 'Teste'

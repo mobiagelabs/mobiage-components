@@ -1,7 +1,9 @@
-<div class="mbg-progress-circle-wrapper">
+<div class="mbg-progress-circle-wrapper"
+     ng-show="$ctrl.show"
+     uid="{{ $ctrl.uidComponent }}">
     <div class="backdrop"></div>
     <div class="progress-content">
-            <label>{{$ctrl.titleProgress}}</label>
-            <div id="progress"></div>
+        <label>{{$ctrl.titleProgress}}</label>
+        <div id="progress"></div>
     </div>
 </div>

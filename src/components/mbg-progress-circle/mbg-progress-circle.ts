@@ -1,21 +1,32 @@
 import './mbg-progress-circle.scss'
 import template from './mbg-progress-circle.html'
+import * as angular from 'angular'
+import { UtilUID } from '../../helpers/util-uid'
 const ProgressBar = require('progressbar.js')
 
 class MbgProgressCircleController {
 
-    private unWatch: any
+    private unWatchPercentage: any
+    private unWatchShow: any
     private progressCircle: any
     private onFinish: Function
+    private uidComponent
+    private show = false
 
     constructor(public $scope, public $element, public $attrs, public $timeout) {
     }
 
     $onInit() {
-        this.unWatch = this.$scope.$watch('$ctrl.percentage', (value) => {
+        this.uidComponent = UtilUID.generete()
+        this.unWatchPercentage = this.$scope.$watch('$ctrl.percentage', (value) => {
             if (this.progressCircle && value != undefined) {
                 this.progressCircle.animate(value / 100)
             }
+        })
+        this.unWatchShow = this.$scope.$watch('$ctrl.show', (value) => {
+            this.$timeout(() => {
+                value !== undefined && value ? this.addInBody() : this.removeInBody()
+            })
         })
         this.$timeout(() => {
             this.progressCircle = new ProgressBar.Circle('#progress', {
@@ -44,9 +55,21 @@ class MbgProgressCircleController {
         })
     }
 
+    addInBody() {
+        const body = angular.element(document).find('body')
+        const list = this.$element.find('div.mbg-progress-circle-wrapper')
+        list.attr('uid', this.uidComponent)
+        body.append(list)
+    }
+
+    removeInBody() {
+        const list = angular.element(`[uid="${this.uidComponent}"]`)
+        this.$element.find('.mbg-progress-circle-wrapper').append(list)
+    }
+
     $onDestroy() {
-        if (this.unWatch) {
-            this.unWatch()
+        if (this.unWatchPercentage) {
+            this.unWatchPercentage()
         }
     }
 
@@ -62,7 +85,8 @@ MbgProgressCircleController.$inject = [
 const mbgProgressCircle = {
     bindings: {
         percentage: '=?',
-        titleProgress: '@?'
+        titleProgress: '@?',
+        show: '=?'
     },
     template,
     controller: MbgProgressCircleController,
