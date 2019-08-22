@@ -1,40 +1,58 @@
 .mbg-progress-circle-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0px;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.8s linear all;
+
+  &.ng-enter {
+    transition: 0.8s linear all;
+    opacity: 0;
+  }
+
+  &.ng-enter.ng-enter-active {
+    opacity: 1;
+  }
+
+  &.ng-leave {
+    transition: 0.3s linear all;
+    opacity: 1;
+  }
+
+  &.ng-leave.ng-leave-active {
+    opacity: 0;
+  }
+
+  .backdrop {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+  }
+
+  #progress {
+    width: 200px;
+  }
+
+  .progress-content {
+    position: relative;
+    z-index: 999999;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
 
-    .backdrop {
-        background-color: rgba(255,255,255,0.9);
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 99999;
+    label {
+      margin-bottom: 18px;
+      font-size: 16px;
+      color: #666;
     }
-
-    #progress {
-        width: 200px;
-    }
-
-    .progress-content {
-        position: relative;
-        z-index: 999999;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        label {
-            margin-bottom: 18px;
-            font-size: 16px;
-            color: #666;
-        }
-    }
+  }
 }

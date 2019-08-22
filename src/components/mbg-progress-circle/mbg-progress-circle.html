@@ -1,5 +1,6 @@
-<div class="mbg-progress-circle-wrapper"
-     ng-show="$ctrl.show"
+<div class="mbg-progress-circle-wrapper angular-animate"
+     ng-init="$ctrl.createProgress()"
+     ng-if="$ctrl.show"
      uid="{{ $ctrl.uidComponent }}">
     <div class="backdrop"></div>
     <div class="progress-content">

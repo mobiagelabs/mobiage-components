@@ -8,6 +8,7 @@ import './common.scss'
 import '../helpers/locale'
 import 'progressbar.js/dist/progressbar.min.js'
 import * as ngSanitize from 'angular-sanitize'
+import * as ngAnimate from 'angular-animate'
 import { MbgDynamicHTML } from '../helpers/dynamic-html/dynamic-html'
 import { MbgPositiveNumber } from '../helpers/positive-number/positive-number'
 import { NgExtendsStyle } from '../helpers/extends-style/extends-style'
@@ -49,6 +50,8 @@ import { mbgDropdownModule } from './mbg-dropdown'
 import { mbgProgressCircleModule } from './mbg-progress-circle'
 import 'angular-ui-bootstrap'
 
+import { appConfig } from '../config/app-config'
+
 window['Raphael'] = Raphael
 
 const mbgComponentsModule = angular
@@ -57,6 +60,7 @@ const mbgComponentsModule = angular
     'ngEasyInfiniteScroll',
     'ui.bootstrap',
     ngSanitize,
+    ngAnimate,
     mbgImageUploadModule,
     mbgInputCnpjModule,
     mbgInputCpfModule,
@@ -93,6 +97,7 @@ const mbgComponentsModule = angular
     mbgDropdownModule,
     mbgProgressCircleModule
   ])
+  .config(appConfig)
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
   .directive('mbgExtendsStyle', () => new NgExtendsStyle)
   .directive('mbgPositiveNumber', () => new MbgPositiveNumber)

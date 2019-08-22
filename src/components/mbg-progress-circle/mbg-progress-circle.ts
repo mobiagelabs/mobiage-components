@@ -11,17 +11,16 @@ class MbgProgressCircleController {
     private onFinish: Function
     private uidComponent
     private show = false
+    private duration: number
+    private percentage
 
     constructor(public $scope, public $element, public $attrs, public $timeout) {
+        this.percentage = this.percentage || 100
     }
 
-    $onInit() {
+    createProgress() {
+        this.duration = this.duration || 1400
         this.uidComponent = UtilUID.generete()
-        this.unWatchPercentage = this.$scope.$watch('$ctrl.percentage', (value) => {
-            if (this.progressCircle && value !== undefined) {
-                this.progressCircle.animate(value / 100)
-            }
-        })
         this.unWatchShow = this.$scope.$watch('$ctrl.show', (value) => {
             this.$timeout(() => {
                 value !== undefined && value ? this.addInBody() : this.removeInBody()
@@ -33,17 +32,20 @@ class MbgProgressCircleController {
                 strokeWidth: 4,
                 trailWidth: 1,
                 easing: 'easeInOut',
-                duration: 1400,
+                duration: this.duration,
                 text: {
                     autoStyleContainer: true,
                 },
                 from: { color: '#666', width: 1 },
                 to: { color: '#000', width: 4 },
-                step: function (state, circle) {
+                step: (state, circle) => {
                     const value = Math.round(circle.value() * 100)
                     if (value === 0) {
                         circle.setText('')
                     } else {
+                        if (this.duration && value === 100) {
+                            this.$timeout(() => this.show = false, 2000)
+                        }
                         circle.setText(value + '%')
                     }
                 }
@@ -51,6 +53,12 @@ class MbgProgressCircleController {
             this.progressCircle.text.style.fontFamily = '"Raleway", Helvetica, sans-serif'
             this.progressCircle.text.style.fontSize = '2rem'
             this.progressCircle.animate(0.0)
+
+            this.unWatchPercentage = this.$scope.$watch('$ctrl.percentage', (value) => {
+                if (this.progressCircle && value !== undefined) {
+                    this.progressCircle.animate(value / 100)
+                }
+            })
         })
     }
 
@@ -85,7 +93,8 @@ const mbgProgressCircle = {
     bindings: {
         percentage: '=?',
         titleProgress: '@?',
-        show: '=?'
+        show: '=?',
+        duration: '=?'
     },
     template,
     controller: MbgProgressCircleController,
