@@ -1,0 +1,19 @@
+<div class="mbg-input-receive-day-wrapper mbg-input-wrapper"
+     ng-if="$ctrl.props">
+  <div class="day-group">
+    <label>D +</label>
+  </div>
+  <input type="text"
+         ui-number-mask="{{ $ctrl.props.precision }}"
+         ng-attr-ui-hide-group-sep="{{ $ctrl.props.uiHideGroupSep }}"
+         min="{{ $ctrl.props.min }}"
+         max="31"
+         ng-model="$ctrl.ngModel"
+         ng-change="$ctrl.onChange()"
+         ng-required="$ctrl.ngRequired"
+         ng-disabled="$ctrl.ngDisabled"
+         ng-blur="$ctrl.ngBlur({ $event })"
+         ng-focus="$ctrl.ngFocus({ $event })"
+         placeholder="{{ $ctrl.props.placeholder }}"
+         ng-model-options="$ctrl.ngModelOptions" />
+</div>

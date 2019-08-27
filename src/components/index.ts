@@ -51,6 +51,7 @@ import { mbgProgressCircleModule } from './mbg-progress-circle'
 import 'angular-ui-bootstrap'
 
 import { appConfig } from '../config/app-config'
+import { mbgInputReceiveDayModule } from './mbg-input-receive-day'
 
 window['Raphael'] = Raphael
 
@@ -95,7 +96,8 @@ const mbgComponentsModule = angular
     mbgHomeScreenModule,
     mbgMindmapModule,
     mbgDropdownModule,
-    mbgProgressCircleModule
+    mbgProgressCircleModule,
+    mbgInputReceiveDayModule
   ])
   .config(appConfig)
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
