@@ -74,6 +74,10 @@ class ImageUploadMainController {
     }
 
     takeSnapshot() {
+        if (this.config.maxImages === (this.ngModel.length - 1)) {
+            this.alertWebCam()
+            return
+        }
         this.labelPicture = 'Capturando Foto'
         Webcam.snap(async (base64) => {
             if (this.config.enableCrop && this.config.maxImages === 1) {
@@ -84,8 +88,7 @@ class ImageUploadMainController {
                     ? this.transformBase64ToObject([base64]) : await ImageUploadFirebase.upload([base64])
                 this.$timeout(() => {
                     this.setNgModel(uploadedFiles)
-                    this.ngModel.length - 1 === this.config.maxImages ? this.alertWebCam() : angular.noop()
-                    this.config.maxImages === 1 ? this.closeWebCam() : angular.noop()
+                    this.config.maxImages === 1 && this.webCam ? this.closeWebCam() : angular.noop()
                     this.labelPicture = 'Tirar Foto'
                 })
             }
@@ -103,7 +106,7 @@ class ImageUploadMainController {
     closeWebCam() {
         Webcam.reset()
         this.webCam = false
-        // this.config.maxImages > 1 ? this.ngModel.splice(0, 1) : angular.noop()
+        this.config.maxImages > 1 ? this.ngModel.splice(0, 1) : angular.noop()
     }
 
     setNgModel(files) {
@@ -133,7 +136,9 @@ class ImageUploadMainController {
     }
 
     async uploadFiles(files: Array<string>) {
-        this.closeWebCam()
+        if (this.webCam) {
+            this.closeWebCam()
+        }
         this.$timeout(() => this.loading = true)
         this.removeCurrentFiles()
         const uploadedFiles = this.config.disableFirebase

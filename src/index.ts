@@ -42,7 +42,7 @@ const module = angular
 
 		$timeout(() => {
 			$scope.show = true
-		},500)
+		}, 500)
 
 		$scope.initValue = () => {
 			return 'Teste'
@@ -239,7 +239,8 @@ const module = angular
 			enableCrop: false,
 			rounded: false,
 			size: {
-				width: '100%'
+				width: '267px',
+				height: '267px'
 			}
 		}
 
