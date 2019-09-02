@@ -35,7 +35,7 @@ class MbgInputReceiveDayController {
       }
     })
   }
-  
+
   onChange() {
     if (this.ngChange) {
       this.ngChange({})

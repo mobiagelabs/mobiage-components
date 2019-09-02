@@ -1,0 +1,9 @@
+<div class="connection-retry-wrapper"
+     ng-show="$ctrl.connectionError">
+  <h1>Problemas de conexão</h1>
+  <p>Encontramos problemas ao tentar se comunicar <br> com nossos servidores.</p>
+  <div class="wifi-loader-wrapper">
+    <img ng-src="{{ $ctrl.wifiImage }}" />
+  </div>
+  <h5>Tentando reconectar...</h5>
+</div>
