@@ -373,7 +373,7 @@ const mbgSelect = {
         label: '@?',
         enableAdd: '=?',
         placeholder: '@?',
-        addOnlyEmpty: '=?',
+        addOnlyNotEqual: '=?',
         enableFavorite: '=?',
         callbackAdd: '&?'
     },
