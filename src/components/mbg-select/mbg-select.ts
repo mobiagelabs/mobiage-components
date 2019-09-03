@@ -343,6 +343,12 @@ class MbgSelectController {
         }
     }
 
+    isOnlyEqual() {
+        this.inputValue
+        const options = this.getData()
+        return options.filter((opt) => opt[this.label].toLowerCase() === this.inputValue.toLowerCase()).length !== 1
+    }
+
     isFavorite(item) {
         const favorite = MbgCookie.get(this.getFavoriteKey())
         return favorite && angular.equals(favorite, item)

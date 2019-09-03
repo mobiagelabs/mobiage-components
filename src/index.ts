@@ -74,6 +74,8 @@ const module = angular
 			},
 		]
 
+		
+
 		$scope.getOptionsMultiSelect = () => {
 			return [
 				{

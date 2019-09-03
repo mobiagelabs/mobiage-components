@@ -56,7 +56,7 @@
                ng-class="{ 'fa fa-star-o': !$ctrl.isFavorite(item), 'fa fa-star': $ctrl.isFavorite(item) }"></i>
 
         </li>
-        <li ng-if="$ctrl.addOnlyEmpty ? ($ctrl.enableAdd && $ctrl.inputValue && $ctrl.data.length == 0) : ($ctrl.enableAdd && $ctrl.inputValue)"
+        <li ng-if="$ctrl.addOnlyEmpty ? ($ctrl.enableAdd && $ctrl.inputValue && $ctrl.isOnlyEqual()) : ($ctrl.enableAdd && $ctrl.inputValue)"
             disable-animate
             class="new-item"
             ng-mousedown="$ctrl.label ? $ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue }, true) : $ctrl.selectOption($ctrl.inputValue, true)">
