@@ -61,7 +61,8 @@ const mbgInputReceiveDay = {
     ngBlur: '&?',
     ngFocus: '&?',
     positive: '=?',
-    ngModelOptions: '=?'
+    ngModelOptions: '=?',
+    label: '@?'
   },
   template,
   controller: MbgInputReceiveDayController,
