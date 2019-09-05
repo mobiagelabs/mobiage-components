@@ -1,34 +1,35 @@
 .mbg-input-receive-day-wrapper {
-    position: relative;
-    .day-group {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        min-width: 45px;
-        background-color: #f3f3f3;
-        border-top-left-radius: 5px;
-        border: 1px solid #ddd;
-        border-bottom-left-radius: 5px;
-        left: -1px;
-        padding: 0 14px;
+  position: relative;
+  .day-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 45px;
+    background-color: #f3f3f3;
+    border-top-left-radius: 5px;
+    border: 1px solid #ddd;
+    border-bottom-left-radius: 5px;
+    padding: 0 14px;
 
-        label {
-            margin: 0px;
-            color: var(--neutral2);
-        }
+    label {
+      margin: 0px;
+      color: var(--neutral2);
     }
-    input {
-        text-align: right;
-        -moz-appearance: textfield;
-        appearance: textfield;
-        margin: 0; 
-        padding-left: 55px;
-        &::-webkit-inner-spin-button, 
-        &::-webkit-outer-spin-button  {
-            -webkit-appearance: none; 
-            margin: 0; 
-        }
+  }
+  input {
+    text-align: right;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: 0px;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
+  }
 }
