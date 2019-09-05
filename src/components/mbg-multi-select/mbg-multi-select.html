@@ -20,6 +20,8 @@
                   fetch="$ctrl.fetch({ query })"
                   ignore-items="$ctrl.ngModel"
                   on-select="$ctrl.onSelect()"
+                  ng-blur="$ctrl.ngBlur({ $event })"
+                  ng-focus="$ctrl.ngFocus({ $event })"
                   placeholder="{{ $ctrl.placeholder }}"
                   label="{{ $ctrl.label }}"></mbg-select>
     </div>

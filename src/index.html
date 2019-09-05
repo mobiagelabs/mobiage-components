@@ -141,7 +141,9 @@
         <mbg-multi-select ng-model="selecteds"
                           placeholder="Adicionar campo..."
                           enable-sort="true"
-                          fetch="getOptionsMultiSelect()">
+                          fetch="getOptionsMultiSelect()"
+                          ng-blur="blurTest()"
+                          ng-focus="focusTest()">
         </mbg-multi-select>
       </div>
     </div> -->

@@ -192,7 +192,9 @@ const mbgMultiSelect = {
         ngModel: '=?',
         ngChange: '&?',
         enableSort: '=?',
-        label: '@?'
+        label: '@?',
+        ngBlur: '&?',
+        ngFocus: '&?'
     },
     template,
     controller: MbgMultiSelectController,
