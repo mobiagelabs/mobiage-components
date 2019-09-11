@@ -721,21 +721,30 @@ const module = angular
 
 
 		$scope.getModelo = (param = '') => {
-			return new Promise((resolve) => {
-				resolve([
-					{
-						name: 'Futebol'
-					},
-					{
-						name: 'Casual'
-					},
-					{
-						name: 'Corrida'
-					}
-				].filter((obj) => {
-					return obj.name.toLowerCase().indexOf(param.toLowerCase()) !== -1
-				}))
-			})
+			// return new Promise((resolve) => {
+			// 	resolve([
+			// 		{
+			// 			name: 'Futebol'
+			// 		},
+			// 		{
+			// 			name: 'Casual'
+			// 		},
+			// 		{
+			// 			name: 'Corrida'
+			// 		}
+			// 	].filter((obj) => {
+			// 		return obj.name.toLowerCase().indexOf(param.toLowerCase()) !== -1
+			// 	}))
+			// })
+			return [
+				'teste',
+				'2',
+				'teste3',
+				'teste4',
+				'teste6',
+				'teste5',
+				'teste7',
+			]
 		}
 
 	}])

@@ -346,7 +346,13 @@ class MbgSelectController {
     isOnlyEqual() {
         this.inputValue
         const options = this.getData()
-        return options.filter((opt) => opt[this.label].toLowerCase() === this.inputValue.toLowerCase()).length !== 1
+        return options.filter((opt) => {
+            if (this.label) {
+                return opt[this.label].toLowerCase() === this.inputValue.toLowerCase()
+            } else {
+                return opt.toLowerCase() === this.inputValue.toLowerCase()
+            }
+        }).length !== 1
     }
 
     isFavorite(item) {

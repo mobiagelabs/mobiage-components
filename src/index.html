@@ -116,7 +116,7 @@
     </mbg-connection-retry> -->
     <!-- <mbg-image-upload config="config"
                       ng-model="profileImage"></mbg-image-upload> -->
-    <mbg-input-receive-day label="Dia Loco mano" ng-model="$ctrl.teste"></mbg-input-receive-day>
+    <!-- <mbg-input-receive-day label="Dia Loco mano" ng-model="$ctrl.teste"></mbg-input-receive-day> -->
     <!-- <mbg-dropdown options="optionsDropdown" label="Opções"></mbg-dropdown> -->
     <!-- <mbg-progress-circle title-progress="Realizando upload" show="show" duration="6000"></mbg-progress-circle> -->
     <!-- <mbg-checkbox ng-model="valor" ng-disabled="false"></mbg-checkbox> -->
@@ -213,16 +213,15 @@
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <!-- <mbg-select ng-model="teste"
+    <mbg-select ng-model="teste"
       fetch="getModelo(query)"
       placeholder="teste"
       enable-add="true"
-      label="name"
       name="teste5"
       callback-add="testeadd()"
-      add-only-empty="true"
+      add-only-not-equal="true"
       enable-favorite="true">
-    </mbg-select> -->
+    </mbg-select>
 
     <!-- <br>
     <pre>{{teste | json}}</pre> -->
