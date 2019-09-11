@@ -350,7 +350,7 @@ class MbgSelectController {
             if (this.label) {
                 return opt[this.label].toLowerCase() === this.inputValue.toLowerCase()
             } else {
-                return opt.toString().toLowerCase() === this.inputValue.toLowerCase()
+                return opt.toString().toLowerCase() === this.inputValue.toString().toLowerCase()
             }
         }).length !== 1
     }

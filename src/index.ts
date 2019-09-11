@@ -737,13 +737,11 @@ const module = angular
 			// 	}))
 			// })
 			return [
-				'teste',
-				'2',
-				'teste3',
-				'teste4',
-				'teste6',
-				'teste5',
-				'teste7',
+				10,
+				20,
+				30,
+				40,
+				50,
 			]
 		}
 
