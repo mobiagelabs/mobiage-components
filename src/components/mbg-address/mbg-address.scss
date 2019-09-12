@@ -1,11 +1,16 @@
 .mbg-address-wrapper {
     display: flex;
     .input-cep-wrapper {
-        width: 104px;
-        max-width: 104px;
+        width: 108px;
+        max-width: 108px;
         margin-right: 15px;
+        font-weight: 700;
         input {
             max-width: 100%;
+
+            &::placeholder {
+                color: #888888;
+            }
         }
     }
     mbg-input-step {
