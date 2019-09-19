@@ -3,7 +3,7 @@ mbg-card-typeone {
         0% {
             background-position: 100% 100%;
         }
-    
+
         100% {
             background-position: -100% -100%;
         }
@@ -16,11 +16,11 @@ mbg-card-typeone {
         margin-right: 10px;
         margin-left: 10px;
         display: inline-block;
-    
+
         @media screen and (max-width: 768px) {
             width: 80%;
         }
-    
+
         .mbg-h-c-tone-inside-container {
             position: relative;
             width: 100%;
@@ -35,12 +35,12 @@ mbg-card-typeone {
             transition: transform 500ms ease, box-shadow 500ms ease;
             transform: translateY(-0px);
             box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.05);
-    
+
             &:hover {
                 transform: translateY(-3px);
                 box-shadow: 0px 4px 15px 2.5px rgba(0, 0, 0, 0.1);
             }
-    
+
             .mbg-h-c-tone-icon-container {
                 width: 15%;
                 min-width: 55px;
@@ -49,7 +49,7 @@ mbg-card-typeone {
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-    
+
                 .mbg-h-c-tone-icon {
                     width: 40px;
                     height: 40px;
@@ -61,14 +61,14 @@ mbg-card-typeone {
                     color: #fff;
                 }
             }
-    
+
             .mbg-h-c-tone-v-real-value{
                 color: #54A231;
                 &.greey{
                     color: #D5D5D5;
                 }
             }
-    
+
             .mbg-h-c-tone-text {
                 height: 100%;
                 width: 30%;
@@ -81,7 +81,7 @@ mbg-card-typeone {
                 justify-content: center;
                 flex-direction: column;
             }
-    
+
             .mbg-h-c-tone-loading {
                 margin-right: 10px;
                 height: 25px;
@@ -95,7 +95,7 @@ mbg-card-typeone {
                 background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.05) 8%, rgba(0, 0, 0, 0.2) 18%, rgba(0, 0, 0, 0.05) 33%);
                 background-size: 300% 300%;
             }
-    
+
             .mbg-h-c-tone-value {
                 width: 55%;
                 height: 100%;
@@ -107,13 +107,13 @@ mbg-card-typeone {
                 color: red;
                 font-weight: 700;
                 font-size: 24px;
-    
+
                 .mbg-h-c-tone-v-hide-value {
                     font-size: 32px;
                     letter-spacing: 10px;
                 }
             }
-    
+
             .mbg-h-c-tone-show {
                 position: absolute;
                 right: 15px;
@@ -123,14 +123,14 @@ mbg-card-typeone {
                 font-weight: 400;
                 color: #ccc;
                 user-select: none;
-    
+
                 .mbg-h-c-tone-s-icon {
                     display: inline-block;
                     vertical-align: top;
                     font-size: 14px;
                     margin-left: 2.5px;
                 }
-    
+
                 .mbg-h-c-tone-s-text {
                     opacity: 0;
                     transition: opacity 250ms linear, transform 500ms ease;
@@ -138,7 +138,7 @@ mbg-card-typeone {
                     display: inline-block;
                     vertical-align: top;
                 }
-    
+
                 &:hover {
                     .mbg-h-c-tone-s-text {
                         opacity: 1;
@@ -146,24 +146,24 @@ mbg-card-typeone {
                     }
                 }
             }
-    
+
             &.mbg-h-c-tone-darker {
                 background-color: #ccc;
-    
+
                 .mbg-h-c-tone-icon-container {
                     .mbg-h-c-tone-icon {
                         background-color: white;
                     }
                 }
-    
+
                 .mbg-h-c-tone-text {
                     color: white;
                 }
-    
+
                 .mbg-h-c-tone-value {
                     color: white;
                 }
-    
+
                 .mbg-h-c-tone-show {
                     color: white;
                 }

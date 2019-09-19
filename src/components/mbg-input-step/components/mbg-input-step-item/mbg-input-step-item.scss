@@ -14,17 +14,17 @@ mbg-input-step-item {
         &.is-empty {
             padding: 0;
         }
-        &.disabled-item {  
+        &.disabled-item {
             * {
                 pointer-events: none !important;
                 color: #ccc !important;
             }
         }
         &.opened {
-            z-index: 999999999;#element::-webkit-scrollbar { #element::-webkit-scrollbar { 
-                display: none; 
+            z-index: 999999999;#element::-webkit-scrollbar { #element::-webkit-scrollbar {
+                display: none;
             }
-                display: none; 
+                display: none;
             }
         }
         &.active {
@@ -34,7 +34,7 @@ mbg-input-step-item {
         }
         input, label {
             margin: 0;
-            font-weight: 100;
+            font-weight: 500;
         }
         input {
             height: 44px;
@@ -42,7 +42,7 @@ mbg-input-step-item {
             border: none;
             background: transparent;
             outline: none;
-            font-weight: 700;
+            font-weight: 500;
         }
         .error-value {
             color: #E71255;

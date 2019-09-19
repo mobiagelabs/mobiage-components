@@ -51,7 +51,7 @@
                     flex-direction: column;
                     align-items: flex-end;
                     color: #666;
-                    font-weight: 400;
+                    font-weight: 500;
                     .grid-disable {
                         pointer-events: none;
                         opacity: 0;
@@ -118,7 +118,7 @@
                             color: #bcbcbc;
                             font-style: italic;
                         }
-                        &:-ms-input-placeholder {  
+                        &:-ms-input-placeholder {
                             color: #bcbcbc;
                             font-style: italic;
                         }

@@ -7,7 +7,7 @@
         content="initial-scale=0.4, maximum-scale=1, user-scalable=no">
   <title>Document</title>
   <!-- Latest compiled and minified CSS -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
         rel="stylesheet">
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -147,7 +147,7 @@
         </mbg-multi-select>
       </div>
     </div> -->
-    <!-- 
+    <!--
     <br>
     <br>
     <br> -->
@@ -213,23 +213,23 @@
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <mbg-select ng-model="teste"
+    <!-- <mbg-select ng-model="teste"
       fetch="getModelo(query)"
-      placeholder="teste"
+      placeholder="TESTEEEEE"
       enable-add="true"
       name="teste5"
       callback-add="testeadd()"
       add-only-not-equal="true"
       enable-favorite="true">
-    </mbg-select>
+    </mbg-select> -->
 
     <!-- <br>
     <pre>{{teste | json}}</pre> -->
-    <!-- <div style="max-width: 600px;">
+    <div style="max-width: 600px;">
       <mbg-address ng-model="address"></mbg-address>
     </div>
 
-    <pre>{{ address | json }}</pre>
+    <!-- <pre>{{ address | json }}</pre>
     <input class="teste"> -->
 
     <!-- <mbg-input-search ng-model="teste" ng-top-layout="true">
@@ -253,8 +253,8 @@
                                 id="barCode"
                                 ng-keydown="teste222($event)"></mbg-input-text>
               </div>
-            </div>
-            <div class="row">
+            </div>-->
+            <!-- <div class="row">
               <div class="col-md-12">
                 <label>Data de nascimento</label>
                 <mbg-input-date ng-model="entity.nasc"></mbg-input-date>
@@ -280,7 +280,7 @@
 
 
 
-    <!-- 
+    <!--
 
     <pre>{{address|json}}</pre> -->
 
@@ -316,7 +316,7 @@
         placeholder="'Qual o modelodsadsadsaasd?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <!-- <mbg-product-grid 
+    <!-- <mbg-product-grid
       x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
       y="{ key: 'COR', label: 'COR PRODUTO' }"
       details="details"
@@ -348,15 +348,15 @@
                            focus="focusedTeste('3')"
                            un-focus="unFocus()"
                            capitalize="true"
-                           placeholder="'Qual o modelo?'"></mbg-input-step-item> 
+                           placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
     <!-- <mbg-address ng-model="address"
                  not-found="lalala()"
                  cep-class="teste"></mbg-address>
     <br /> -->
 
-    <!-- 
-          <pre>{{ address | json }}</pre> 
+    <!--
+          <pre>{{ address | json }}</pre>
       <div class="panel panel-default">
       <div class="panel-heading">Percentage</div>
       <div class="panel-body">
@@ -364,23 +364,22 @@
       </div>
     </div> -->
 
-    <!-- <form name="formteste">
+    <form name="formteste">
       <mbg-input-ie ng-model="ie"
                     name="teste"
                     state="'PR'"></mbg-input-ie>
-    </form> -->
-    <!-- <div class="width-300" style="width: 300px">
+    </form>
+    <div class="width-300" style="width: 300px">
       <mbg-image-upload config="config"
       ng-model="profileImage"></mbg-image-upload>
-    </div> -->
+    </div>
 
-    <!--  -->
 
     <!-- <div class="row">
       <div class="col-md-4">
-       <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox> -->
-    <!-- <mbg-input-money ng-model="valor2"></mbg-input-money> -->
-    <!--      </div>
+       <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox>
+    <mbg-input-money ng-model="valor2"></mbg-input-money>
+         </div>
     </div> -->
 
     <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
@@ -415,8 +414,7 @@
                   label="Continuar"></mbg-btn-form> -->
 
 
-    <!--
-    <div class="panel panel-default">
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">Navigation</div>
       <div class="panel-body">
         <div class="row">
@@ -428,9 +426,9 @@
           </div>
         </div>
       </div>
-    </div>
- 
-    <div class="panel panel-default">
+    </div> -->
+
+<!--    <div class="panel panel-default">
       <div class="panel-heading">Address</div>
       <div class="panel-body">-->
     <!-- <mbg-address ng-model="address" on-finish-focus-element="#focusaqui"></mbg-address>
@@ -450,47 +448,45 @@
     <!--
       </div>
     </div>
-
-    <div class="panel panel-default">
+  -->
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">CNPJ</div>
       <div class="panel-body">
         <mbg-input-cnpj placeholder="Ex: teste"
                         ng-model="cnpj"></mbg-input-cnpj>
       </div>
-    </div>
+    </div> -->
 
-    <div class="panel panel-default">
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">CPF</div>
       <div class="panel-body">
         <mbg-input-cpf ng-model="cpf"></mbg-input-cpf>
       </div>
-    </div>
+    </div> -->
 
-    <div class="panel panel-default">
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">CPF ou CNPJ</div>
       <div class="panel-body">
         <mbg-input-cpf-cnpj ng-model="cpfcnpj"></mbg-input-cpf-cnpj>
       </div>
-    </div>
+    </div> -->
 
-    <div class="panel panel-default">
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">Email</div>
       <div class="panel-body">
         <mbg-input-email ng-model="email"></mbg-input-email>
       </div>
-    </div>
-  -->
-    <!-- -->
-    <!--
-    <div class="panel panel-default">
+    </div> -->
+
+
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">Name</div>
       <div class="panel-body">
         <mbg-input-name ng-model="name"></mbg-input-name>
       </div>
-    </div>
+    </div> -->
 
 
-  -->
     <!-- <div class="panel panel-default">
     <div class="panel-heading">Money</div>
     <div class="panel-body">
@@ -499,9 +495,9 @@
         allow-negative="false"></mbg-input-money>
       {{ money }}
     </div>
-  </div> 
-    
-  <div class="panel panel-default">
+  </div>
+-->
+  <!-- <div class="panel panel-default">
     <div class="panel-heading">Number Only</div>
     <div class="panel-body">
       <mbg-input-number ng-model="number"></mbg-input-number>
@@ -513,15 +509,15 @@
         <mbg-input-percentage ng-model="percentage"></mbg-input-percentage>
       </div>
     </div> -->
-    <!--
-    <div class="panel panel-default">
+
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">Phone</div>
       <div class="panel-body">
         <mbg-input-phone ng-model="phone"></mbg-input-phone>
       </div>
-    </div>
+    </div> -->
 
-  -->
+
     <!-- <div class="panel panel-default">
       <div class="panel-heading">Steps</div>
       <div class="panel-body">
@@ -556,21 +552,21 @@
         <mbg-input-tags ng-model="tags"></mbg-input-tags>
       </div>
     </div> -->
-    <!--
-    <div class="panel panel-default">
+
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">Text</div>
       <div class="panel-body">
         <mbg-input-text ng-model="text"></mbg-input-text>
       </div>
-    </div>
+    </div> -->
 
-    <div class="panel panel-default">
+    <!-- <div class="panel panel-default">
       <div class="panel-heading">Textarea</div>
       <div class="panel-body">
         <mbg-text-area ng-model="textarea"></mbg-text-area>
       </div>
-    </div> 
-  -->
+    </div> -->
+
     <!-- <br> <br>
 
     <button ng-click="kkkkkjsadjhdjsah9()">Toogle Column</button>
@@ -579,7 +575,7 @@
       <mbg-list list="produtos"
                 class="table-striped"
                 selected-values="testetttt"
-                checkbox="true"
+                checkbox="false"
                 checkbox-if="essaColunaPode($row)"
                 opened-rows="rowsOpen">
         <mbg-list-column name="product"
@@ -594,11 +590,11 @@
         <mbg-list-column name="costValue"
                          label="Valor">
         </mbg-list-column>
-      </mbg-list>
+      </mbg-list> -->
 
 
-      <pre><code>{{ testetttt | json }}</code></pre>
-    </div> -->
+      <!-- <pre><code>{{ testetttt | json }}</code></pre> -->
+    </div>
 
   </div>
 </body>
