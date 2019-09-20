@@ -13,6 +13,7 @@ import { MbgDynamicHTML } from '../helpers/dynamic-html/dynamic-html'
 import { MbgPositiveNumber } from '../helpers/positive-number/positive-number'
 import { NgExtendsStyle } from '../helpers/extends-style/extends-style'
 import { MbgOnScroll } from '../helpers/mbg-on-scroll/mbg-on-scroll'
+import { AutocompleteOff } from '../helpers/autocomplete-off/autocomplete-off'
 import { mbgImageUploadModule } from './mbg-image-upload'
 import { mbgInputCnpjModule } from './mbg-input-cnpj'
 import { mbgInputCpfModule } from './mbg-input-cpf'
@@ -106,6 +107,7 @@ const mbgComponentsModule = angular
   .directive('mbgExtendsStyle', () => new NgExtendsStyle)
   .directive('mbgPositiveNumber', () => new MbgPositiveNumber)
   .directive('mbgOnScroll', () => new MbgOnScroll)
+  .directive('mbgAutocompleteOff', () => new AutocompleteOff)
   .name
 
 export * from './mbg-image-upload'
