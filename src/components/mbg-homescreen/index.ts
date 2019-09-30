@@ -1,7 +1,7 @@
 import * as angular from 'angular'
 import { mbgHomescreen } from './mbg-homescreen'
 import { mbgCardTypeone } from './cards'
-import { mbgChartLine, mbgChartBarLine } from './charts'
+import { mbgChartLine, mbgChartBarLine, mbgChartBarLinePie } from './charts'
 
 const mbgHomeScreenModule = angular
     .module('mbg.components.mbgHomescreen', [])
@@ -9,6 +9,7 @@ const mbgHomeScreenModule = angular
     .component('mbgCardTypeone', mbgCardTypeone)
     .component('mbgChartLine', mbgChartLine)
     .component('mbgChartBarLine', mbgChartBarLine)
+    .component('mbgChartBarLinePie', mbgChartBarLinePie)
     .name
 
 export { mbgHomeScreenModule }

@@ -74,7 +74,7 @@ const module = angular
 			},
 		]
 
-		
+
 
 		$scope.getOptionsMultiSelect = () => {
 			return [
@@ -561,39 +561,156 @@ const module = angular
 		// }
 
 		var series = []
+		const metas = [
+			{
+				name: 'Meta 1',
+				data: [
+					{
+						name: 'Jan',
+						value: 6000
+					},
+					{
+						name: 'Fev',
+						value: 8000
+					},
+					{
+						name: 'Mar',
+						value: 13000
+					},
+					{
+						name: 'Abr',
+						value: 17000
+					},
+					{
+						name: 'Mai',
+						value: 18000
+					},
+					{
+						name: 'Jun',
+						value: 18000
+					},
+					{
+						name: 'Jul',
+						value: 15000
+					},
+					{
+						name: 'Ago',
+						value: 16000
+					},
+					{
+						name: 'Set',
+						value: 19000
+					},
+					{
+						name: 'Out',
+						value: 17000
+					},
+					{
+						name: 'Nov',
+						value: 27000
+					},
+					{
+						name: 'Dez',
+						value: 20000
+					},
+				]
+			}
+		]
+		const meses = [
+			{
+				y: 7000,
+				name: 'Jan',
+			},
+			{
+				y: 2343,
+				name: 'Fev',
+			},
+			{
+				y: 7435,
+				name: 'Mar',
+			},
+			{
+				y: 7422,
+				name: 'Abr',
+			},
+			{
+				y: 3484,
+				name: 'Mai',
+			},
+			{
+				y: 9436,
+				name: 'Jun',
+			},
+			{
+				y: 2684,
+				name: 'Jul',
+			},
+			{
+				y: 2485,
+				name: 'Ago',
+			},
+			{
+				y: 2357,
+				name: 'Set',
+			},
+			{
+				y: 8542,
+				name: 'Out',
+			},
+			{
+				y: 2374,
+				name: 'Nov',
+			},
+			{
+				y: 2375,
+				name: 'Dez',
+			},
+		]
 
-		// $http.get('https://api-hom.kigisistemas.com.br/mobiage-api/api/sales-goal/dashboard?gumgaToken=475L461E1557835396590C155783360006000O459.460.461.I')
-		// 	.then((response) => {
+		$http.get('https://api-hom.kigisistemas.com.br/mobiage-api/api/sales-goal/dashboard?gumgaToken=511L518E1569847473353C156984568040000O516.517.518.I')
+			.then((response) => {
+				series.push({
+					type: 'column',
+					name: 'Valor vendido',
+					color: '#42CAF5',
+					data: meses
+				})
 
-		// 		series.push({
-		// 			type: 'column',
-		// 			name: 'Valor vendido',
-		// 			color: '#42CAF5',
-		// 			data: response.data[0].vendors.map((vendor) => {
-		// 				return {
-		// 					y: vendor.movementsValue || 0,
-		// 					name: vendor.vendorName,
-		// 				}
-		// 			})
-		// 		})
+				series = series.concat(metas.map((goal) => {
+					return {
+						type: 'spline',
+						color: '#541794',
+						name: goal.name,
+						data: goal.data.map((mes) => mes.value || 0),
+						marker: {
+							lineWidth: 2,
+							lineColor: '#541794',
+							fillColor: 'white'
+						}
+					}
+				}))
 
-		// 		series = series.concat(response.data.map((goal) => {
-		// 			return {
-		// 				type: 'spline',
-		// 				color: '#541794',
-		// 				name: goal.name,
-		// 				data: goal.vendors.map((vendor) => vendor.goalValue || 0),
-		// 				marker: {
-		// 					lineWidth: 2,
-		// 					lineColor: '#541794',
-		// 					fillColor: 'white'
-		// 				}
-		// 			}
-		// 		}))
+				series.push({
+					type: 'pie',
+					name: 'Meta Anual',
+					data: [{
+						name: 'Meta',
+						y: 76700,
+					}, {
+						name: 'Progresso',
+						y: 18458,
+					}],
+					center: [100, -40],
+					size: 100,
+					showInLegend: false,
+					dataLabels: {
+						enabled: false
+					}
+				})
 
-		// 		aaaaaaaaaaaaaaaaaaaa(series, response.data[0].vendors.map((vendor) => vendor.vendorName))
+				aaaaaaaaaaaaaaaaaaaa(series, meses.map((mes) => mes.name))
 
-		// 	})
+			})
 
 		const aaaaaaaaaaaaaaaaaaaa = (teste, categories) => {
 			$scope.homeConfig = {
@@ -601,7 +718,7 @@ const module = angular
 					{
 						name: 'Metas',
 						chart: {
-							type: 'barline',
+							type: 'barlinepie',
 							format: 'money',
 							categories,
 							series: teste

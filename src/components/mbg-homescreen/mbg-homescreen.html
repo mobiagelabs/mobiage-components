@@ -10,7 +10,9 @@
     <mbg-chart-line chart="$ctrl.chart"
                     ng-if="$ctrl.chart && $ctrl.chart.type == 'line'"></mbg-chart-line>
     <mbg-chart-bar-line chart="$ctrl.chart"
-                    ng-if="$ctrl.chart && $ctrl.chart.type == 'barline'"></mbg-chart-bar-line>
+                        ng-if="$ctrl.chart && $ctrl.chart.type == 'barline'"></mbg-chart-bar-line>
+    <mbg-chart-bar-line-pie chart="$ctrl.chart"
+                        ng-if="$ctrl.chart && $ctrl.chart.type == 'barlinepie'"></mbg-chart-bar-line-pie>
     <div class="mbg-h-card-container">
         <mbg-card-typeone ng-repeat="card in $ctrl.cards"
                           card="card"></mbg-card-typeone>

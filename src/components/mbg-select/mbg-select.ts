@@ -344,7 +344,6 @@ class MbgSelectController {
     }
 
     isOnlyEqual() {
-        this.inputValue
         const options = this.getData()
         return options.filter((opt) => {
             if (this.label) {
