@@ -9,9 +9,9 @@
             </button>
         </div>
     </div>
-    <div class="mbg-keyboard-separator" ng-if="$ctrl.options.length > 0">
+    <!-- <div class="mbg-keyboard-separator" ng-if="$ctrl.options.length > 0">
         <div class="mbg-keyboard-line"></div>
-    </div>
+    </div> -->
     <div class="mbg-keyboard-row" ng-class="{ 'mbg-keyboard-disable': !$ctrl.currentActiveElement }"
         ng-repeat="row in $ctrl.rowsButtons">
         <div class="mbg-keyboard-item" ng-repeat="button in row.buttons">
