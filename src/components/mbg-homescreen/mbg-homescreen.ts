@@ -8,6 +8,7 @@ class MbgHomescreenController {
     private config
     private cards: Array<any>
     private chart
+    private loading
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -34,6 +35,7 @@ MbgHomescreenController.$inject = ['$scope', '$element', '$attrs', '$timeout']
 const mbgHomescreen = {
     bindings: {
         config: '=',
+        loading: '=?',
     },
     template,
     controller: MbgHomescreenController,

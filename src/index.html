@@ -103,6 +103,7 @@
     }
 
     body {
+      background-color: #f8f8f8;
       font-family: 'Montserrat', sans-serif;
     }
   </style>
@@ -129,12 +130,8 @@
                  on-click-edit="testefelipegordao($item)">
     </mbg-mindmap> -->
 
-    <!-- <div class="testeContainer">
-      <div class="testeConteudo">
-        <mbg-homescreen ng-if="homeConfig"
+    <mbg-homescreen ng-if="homeConfig"
                         config="homeConfig"></mbg-homescreen>
-      </div>
-    </div> -->
 
     <!-- <label for="">Monte o nome do produto. <span style="color: #666;">&nbsp;&nbsp;&nbsp;Ex: {{ getLabelSelected() }}</span></label> -->
 
@@ -157,7 +154,7 @@
     <!-- <mbg-input-text ng-value="'dsdfsdf'"
                     ng-model="locura"></mbg-input-text>
     {{locura}} -->
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-6">
         <mbg-product-search ng-model="teste"
                             label="barCode"
@@ -169,7 +166,7 @@
       <div class="col-md-6">
         <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard>
       </div>
-    </div>
+    </div> -->
 
     <!-- <mbg-pagination active-page="activePage"
                     page-size="10"

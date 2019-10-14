@@ -658,15 +658,6 @@ const module = angular
 			$scope.homeConfig = {
 				tabs: [
 					{
-						name: 'Metas',
-						chart: {
-							type: 'barlinepie',
-							format: 'money',
-							categories,
-							series: teste
-						}
-					},
-					{
 						name: 'Geral',
 						chart: {
 							type: 'line',
@@ -716,7 +707,16 @@ const module = angular
 								}
 							}
 						]
-					}
+					},
+					{
+						name: 'Metas',
+						chart: {
+							type: 'barlinepie',
+							format: 'money',
+							categories,
+							series: teste
+						}
+					},
 				]
 			};
 		}

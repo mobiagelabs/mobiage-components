@@ -1,4 +1,5 @@
-<div class="mh-container">
+<div class="mh-container"
+     ng-show="!$ctrl.loading">
     <div class="mbg-h-tabs">
         <div class="mbg-h-t-tab"
              ng-repeat="tab in $ctrl.tabs"
@@ -12,9 +13,28 @@
     <mbg-chart-bar-line chart="$ctrl.chart"
                         ng-if="$ctrl.chart && $ctrl.chart.type == 'barline'"></mbg-chart-bar-line>
     <mbg-chart-bar-line-pie chart="$ctrl.chart"
-                        ng-if="$ctrl.chart && $ctrl.chart.type == 'barlinepie'"></mbg-chart-bar-line-pie>
+                            ng-if="$ctrl.chart && $ctrl.chart.type == 'barlinepie'"></mbg-chart-bar-line-pie>
     <div class="mbg-h-card-container">
         <mbg-card-typeone ng-repeat="card in $ctrl.cards"
+                          card="card"></mbg-card-typeone>
+    </div>
+</div>
+
+<div class="mh-container"
+     ng-show="$ctrl.loading">
+    <div class="mbg-h-tabs">
+        <mbg-skeleton height="100%"
+                      width="100%"
+                      ng-show="$ctrl.loading"></mbg-skeleton>
+        <div class="mbg-h-t-tab"></div>
+    </div>
+    <div class="fake-chart">
+        <mbg-skeleton height="100%"
+                      width="100%"></mbg-skeleton>
+    </div>
+    <div class="mbg-h-card-container">
+        <mbg-card-typeone ng-repeat="card in $ctrl.cards"
+                          loading="$ctrl.loading"
                           card="card"></mbg-card-typeone>
     </div>
 </div>

@@ -92,6 +92,7 @@ MbgCardTypeOneController.$inject = ['$scope', '$element', '$attrs', '$timeout']
 const mbgCardTypeone = {
     bindings: {
         card: '=',
+        loading: '=?',
     },
     template,
     controller: MbgCardTypeOneController,

@@ -50,6 +50,7 @@ import { mbgMindmapModule } from './mbg-mindmap'
 import { mbgDropdownModule } from './mbg-dropdown'
 import { mbgProgressCircleModule } from './mbg-progress-circle'
 import { mbgConnectionRetryModule } from './mbg-connection-retry'
+import { mbgSkeletonModule } from './mbg-skeleton'
 import 'angular-ui-bootstrap'
 
 import { appConfig } from '../config/app-config'
@@ -101,6 +102,7 @@ const mbgComponentsModule = angular
     mbgProgressCircleModule,
     mbgInputReceiveDayModule,
     mbgConnectionRetryModule,
+    mbgSkeletonModule,
   ])
   .config(appConfig)
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)

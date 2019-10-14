@@ -1,4 +1,7 @@
 <div class="mbg-h-c-typeone">
+    <mbg-skeleton height="100%"
+                  width="100%"
+                  ng-show="$ctrl.loading"></mbg-skeleton>
     <div class="mbg-h-c-tone-inside-container"
          ng-style="{'border-color': $ctrl.card.color, 'background-color': $ctrl.card.dark === true ? $ctrl.darkerColor($ctrl.card.color) : '#fff'}"
          ng-class="{'mbg-h-c-tone-darker': $ctrl.card.dark}">

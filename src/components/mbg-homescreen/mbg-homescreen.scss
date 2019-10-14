@@ -21,6 +21,17 @@ mbg-homescreen {
                 margin-top: 0px;
             }
         }
+
+        .fake-chart {
+            height: 400px;
+            width: 100%;
+            position: relative;
+            border-radius: 15px;
+            padding: 0px;
+            margin: 0px;
+            box-shadow: 0px 2px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
     
         .mbg-h-card-container {
             width: 100%;
@@ -43,7 +54,8 @@ mbg-homescreen {
             margin-bottom: 15px;
             box-shadow: 0px 2px 20px rgba(0,0,0,0.05);
             user-select: none;
-        
+            position: relative;
+            overflow: hidden;
             .mbg-h-t-tab {
                 color: #a5a5a5;
                 width: auto;
