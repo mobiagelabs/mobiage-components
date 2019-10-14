@@ -9,9 +9,9 @@ MbgSkeletonController.$inject = []
 
 const mbgSkeleton = {
     bindings: {
-        width: '@',
-        height: '@',
-        margin: '@'
+        width: '@?',
+        height: '@?',
+        margin: '@?'
     },
     template,
     controller: MbgSkeletonController,

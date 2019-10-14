@@ -32,6 +32,22 @@ mbg-homescreen {
             box-shadow: 0px 2px 20px rgba(0,0,0,0.05);
             overflow: hidden;
         }
+
+        .fake-card {
+            width: 45%;
+            min-width: 375px;
+            height: 100px;
+            margin-top: 20px;
+            margin-right: 10px;
+            margin-left: 10px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            @media screen and (max-width: 768px) {
+                width: 80%;
+            }
+        }
     
         .mbg-h-card-container {
             width: 100%;

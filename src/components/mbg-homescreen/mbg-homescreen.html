@@ -23,18 +23,24 @@
 <div class="mh-container"
      ng-show="$ctrl.loading">
     <div class="mbg-h-tabs">
-        <mbg-skeleton height="100%"
-                      width="100%"
-                      ng-show="$ctrl.loading"></mbg-skeleton>
+        <mbg-skeleton></mbg-skeleton>
         <div class="mbg-h-t-tab"></div>
     </div>
     <div class="fake-chart">
-        <mbg-skeleton height="100%"
-                      width="100%"></mbg-skeleton>
+        <mbg-skeleton></mbg-skeleton>
     </div>
     <div class="mbg-h-card-container">
-        <mbg-card-typeone ng-repeat="card in $ctrl.cards"
-                          loading="$ctrl.loading"
-                          card="card"></mbg-card-typeone>
+        <div class="fake-card">
+            <mbg-skeleton></mbg-skeleton>
+        </div>
+        <div class="fake-card">
+            <mbg-skeleton></mbg-skeleton>
+        </div>
+        <div class="fake-card">
+            <mbg-skeleton></mbg-skeleton>
+        </div>
+        <div class="fake-card">
+            <mbg-skeleton></mbg-skeleton>
+        </div>
     </div>
 </div>

@@ -623,7 +623,7 @@ const module = angular
 						type: 'spline',
 						color: '#541794',
 						name: goal.name,
-						data: goal.data.map((mes) => mes.value || 0),
+						data: goal.data.map((mes) => (mes.value * Math.random()) || 0),
 						marker: {
 							lineWidth: 2,
 							lineColor: '#541794',

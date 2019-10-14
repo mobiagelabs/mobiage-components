@@ -2,7 +2,7 @@ import './mbg-homescreen.scss'
 import template from './mbg-homescreen.html'
 
 class MbgHomescreenController {
-    private tabs: Array<any> = []
+    private tabs: Array<any>
     private ngModel
     private ngChange
     private config
@@ -13,8 +13,12 @@ class MbgHomescreenController {
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
     $onInit() {
-        this.tabs = this.config.tabs
-        this.renderTab(0)
+        this.$scope.$watch('$ctrl.config', () => {
+            if (this.config && !this.tabs) {
+                this.tabs = this.config.tabs
+                this.renderTab(0)
+            }
+        })
     }
 
     renderTab(tabIndex) {
