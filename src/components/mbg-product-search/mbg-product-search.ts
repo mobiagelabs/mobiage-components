@@ -28,7 +28,10 @@ class MbgProductSearchController {
     private uid: string
     private debounceEnter
     private page: number
+    private isLoadingMore: boolean
     private minLetter: number
+    private containsMore: boolean
+    private showFeebackScroll: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
 
@@ -83,8 +86,11 @@ class MbgProductSearchController {
 
     afterFetchData(data) {
         this.$timeout(() => {
-            this.data = this.data.concat(data)
+            this.data = this.data.concat(data.values)
             this.isLoading = false
+            this.isLoadingMore = false
+            this.containsMore = data.pageSize > 0
+            this.showFeebackScroll = this.page === 1 && data.count > data.pageSize
         })
         this.$timeout(() => this.focusFirstOption(), 150)
     }
@@ -309,7 +315,8 @@ class MbgProductSearchController {
         }
         return {
             left: this.position ? this.position.left : 0,
-            top: this.position ? this.position.top : 0
+            top: this.position ? this.position.top : 0,
+            paddingBottom: this.showFeebackScroll ? 54 : 0,
         }
     }
 
@@ -347,7 +354,9 @@ class MbgProductSearchController {
 
     onScroll(event) {
         const element = event.target
+        this.$timeout(() => this.showFeebackScroll = false)
         if (!this.isLoading && element.scrollHeight - element.scrollTop === element.clientHeight) {
+            this.$timeout(() => this.isLoadingMore = true)
             this.page++
             this.fetch ? this.executeFetch() : angular.noop()
         }

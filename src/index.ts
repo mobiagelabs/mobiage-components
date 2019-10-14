@@ -157,75 +157,17 @@ const module = angular
 		].map((s) => s.label)
 
 
-		const url = 'https://api-hom.kigisistemas.com.br/mobiage-api/api/v2/product-item/terminal?gumgaToken=310L261E1552912392436C155291059243600O260.261.I'
+		const url = 'https://api-hom.kigisistemas.com.br/mobiage-api/api/v2/product-item/terminal?idPriceSheetType=MOBAAAC410AAA&gumgaToken=615L758E1571055003567C157105320585900O756.757.758.I&pageSize=6'
 
-		$scope.getProductsDTO = (query, page) => {
-			return $http.post(url, {
-				"page": page,
-				"pageSize": 6,
-				"gQuery": {
-					"subQuerys": [
-						{
-							"subQuerys": [],
-							"joins": [
-								{
-									"subQuerys": [],
-									"table": "obj.productItemBarCodes as pib",
-									"type": "INNER"
-								}
-							],
-							"selects": [],
-							"criteria": {
-								"comparisonOperator": "CONTAINS",
-								"fieldFunction": "lower(translate(%s, 'âàãáÁÂÀÃéêÉÊíÍóôõÓÔÕüúÜÚÇç','AAAAAAAAEEEEIIOOOOOOUUUUCC'))",
-								"valueFunction": "lower(translate(%s, 'âàãáÁÂÀÃéêÉÊíÍóôõÓÔÕüúÜÚÇç','AAAAAAAAEEEEIIOOOOOOUUUUCC'))",
-								"field": "obj.name",
-								"value": query
-							},
-							"logicalOperator": "SIMPLE"
-						},
-						{
-							"subQuerys": [],
-							"joins": [],
-							"selects": [],
-							"criteria": {
-								"comparisonOperator": "CONTAINS",
-								"fieldFunction": "%s",
-								"valueFunction": "%s",
-								"field": "pib.barCode",
-								"value": query
-							},
-							"logicalOperator": "SIMPLE"
-						},
-						{
-							"subQuerys": [],
-							"joins": [],
-							"selects": [],
-							"criteria": {
-								"comparisonOperator": "CONTAINS",
-								"fieldFunction": "%s",
-								"valueFunction": "%s",
-								"field": "obj.product.reference",
-								"value": query
-							},
-							"logicalOperator": "SIMPLE"
-						}
-					],
-					"joins": [],
-					"selects": [],
-					"logicalOperator": "OR",
-					"useDistinct": true
-				},
-				"start": 0,
-				"searchCount": true,
-				"sortField": "",
-				"sortDir": "",
-				"count": 189
-			}).then((resp) => resp.data.values.map((t) => {
-				t.image = t.urlImage
-				t.saleValue = t.value
-				return t
-			}))
+		$scope.getProductsDTO = (query = '', page) => {
+			return $http.get(url + '&search='+query + '&page=' + page).then((resp) => {
+				resp.data.values = resp.data.values.map((t) => {
+					t.image = t.urlImage || `https://firebasestorage.googleapis.com/v0/b/mobiage-homologation.appspot.com/o/91d32d0d-1c27-7c2c-254b-85c1e139d32e?alt=media`
+					t.saleValue = t.value
+					return t
+				})
+				return resp.data
+			})
 		}
 
 		$scope.addItem = (barCode, quantity) => {

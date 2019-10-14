@@ -53,16 +53,24 @@
                         <span>Preço: </span>
                         {{ (item.saleValue || 0) | currency: 'R$ ' }}
                     </div>
-                    <div class="stock" ng-show="!$ctrl.disableStock">
+                    <div class="stock"
+                         ng-show="!$ctrl.disableStock">
                         <span><b>Estoque:</b> </span>
                         {{ item.stock }}
                     </div>
                 </div>
             </div>
-            <!-- <div ng-if="$ctrl.transcludeTemplate"
-                 mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
-            <div ng-if="!$ctrl.transcludeTemplate && $ctrl.label">{{item[$ctrl.label]}}</div>
-            <div ng-if="!$ctrl.transcludeTemplate && !$ctrl.label">{{item}}</div> -->
         </li>
+        <li class="mbg-product-search-feedback"
+            ng-show="$ctrl.showFeebackScroll">
+            <img src="https://firebasestorage.googleapis.com/v0/b/mobiage-n-chill.appspot.com/o/common%2Fmouse-scroll.gif?alt=media"
+                 alt="">
+            Deslize para baixo para ver mais
+        </li>
+        <li class="mbg-product-search-loading"
+            ng-show="!$ctrl.showFeebackScroll && $ctrl.containsMore"
+            ng-style="{ opacity: $ctrl.isLoadingMore ? 1 : 0 }">Carregando...</li>
+        <li class="mbg-product-search-loading"
+            ng-show="!$ctrl.showFeebackScroll && !$ctrl.containsMore">Não há mais dados para mostrar</li>
     </ul>
 </div>
