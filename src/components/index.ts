@@ -55,6 +55,7 @@ import 'angular-ui-bootstrap'
 
 import { appConfig } from '../config/app-config'
 import { mbgInputReceiveDayModule } from './mbg-input-receive-day'
+import { mbgLoadingModule } from './mbg-loading'
 
 window['Raphael'] = Raphael
 
@@ -103,6 +104,7 @@ const mbgComponentsModule = angular
     mbgInputReceiveDayModule,
     mbgConnectionRetryModule,
     mbgSkeletonModule,
+    mbgLoadingModule
   ])
   .config(appConfig)
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)

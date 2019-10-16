@@ -23,6 +23,10 @@ const module = angular
 
 		$scope.percentage = 0
 
+		$scope.testeobj = {
+			color: 'var(--primary)'
+		}
+
 		const goTo = (value) => {
 			$timeout(() => {
 				$scope.percentage = value
