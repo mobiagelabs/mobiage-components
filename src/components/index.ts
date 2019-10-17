@@ -60,6 +60,13 @@ import { mbgLoadingModule } from './mbg-loading'
 
 window['Raphael'] = Raphael
 
+import * as $ from 'jquery'
+
+if (!window['$']) {
+  window['$'] = $
+  window['jQuery'] = $
+}
+
 const mbgComponentsModule = angular
   .module('mbg.components', [
     'ui.utils.masks',
