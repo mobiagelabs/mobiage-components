@@ -33,7 +33,6 @@
     <div class="mbg-date-between"
          ng-if="$ctrl.between">
         <input type="text"
-               ng-if="$ctrl.calendar"
                ng-model="$ctrl.ngModel.start"
                ng-change="$ctrl.onChange()"
                placeholder="{{ $ctrl.props.placeholderStart }}"
@@ -52,7 +51,6 @@
         </div>
         <input type="text"
                class="mbg-date-between-end"
-               ng-if="$ctrl.calendar"
                ng-model="$ctrl.ngModel.end"
                ng-change="$ctrl.onChange()"
                placeholder="{{ $ctrl.props.placeholderEnd }}"
