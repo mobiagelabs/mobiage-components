@@ -1,4 +1,4 @@
-import * as $ from 'jquery'
+import * as JQuery from 'jquery'
 
 export class MbgDatepicker {
     private restrict: string
@@ -17,6 +17,7 @@ export class MbgDatepicker {
     }
 
     link = (scope, ele, attrs, controllers) => {
+        const $ = JQuery && JQuery.fn ? JQuery : window[`$`]
 
         $.fn.datepicker.languages['pt-BR'] = {
             format: 'dd/MM/yyyy',
