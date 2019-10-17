@@ -1,15 +1,69 @@
 <div class="mbg-input-wrapper mb-input-date-wrapper"
      ng-if="$ctrl.props">
-      <input type="text"
-             ng-model="$ctrl.ngModel"
-             ng-change="$ctrl.onChange()"
-             placeholder="{{ $ctrl.props.placeholder }}"
-             ng-required="$ctrl.ngRequired"
-             ng-disabled="$ctrl.ngDisabled"
-             ng-blur="$ctrl.ngBlur({ $event })"
-             ng-focus="$ctrl.ngFocus({ $event })"
-             ng-keyup="$ctrl.ngKeyup({ $event })"
-             ng-keypress="$ctrl.ngKeypress({ $event })"
-             ng-keydown="$ctrl.ngKeydown({ $event })"
-             ui-date-mask="{{ $ctrl.format }}"/>
+    <!-- only mask -->
+    <input type="text"
+           ng-if="!$ctrl.calendar && !$ctrl.between"
+           ng-model="$ctrl.ngModel"
+           ng-change="$ctrl.onChange()"
+           placeholder="{{ $ctrl.props.placeholder }}"
+           ng-required="$ctrl.ngRequired"
+           ng-disabled="$ctrl.ngDisabled"
+           ng-blur="$ctrl.ngBlur({ $event })"
+           ng-focus="$ctrl.ngFocus({ $event })"
+           ng-keyup="$ctrl.ngKeyup({ $event })"
+           ng-keypress="$ctrl.ngKeypress({ $event })"
+           ng-keydown="$ctrl.ngKeydown({ $event })"
+           ui-date-mask="{{ $ctrl.format }}" />
+    <!-- with calendar -->
+    <input type="text"
+           ng-if="$ctrl.calendar && !$ctrl.between"
+           ng-model="$ctrl.ngModel"
+           ng-change="$ctrl.onChange()"
+           placeholder="{{ $ctrl.props.placeholder }}"
+           ng-required="$ctrl.ngRequired"
+           ng-disabled="$ctrl.ngDisabled"
+           ng-blur="$ctrl.handleBlur({ $event })"
+           ng-focus="$ctrl.handleFocus({ $event })"
+           ng-keyup="$ctrl.ngKeyup({ $event })"
+           ng-keypress="$ctrl.ngKeypress({ $event })"
+           ng-keydown="$ctrl.ngKeydown({ $event })"
+           ui-date-mask="{{ $ctrl.format }}"
+           mbg-datepicker />
+    <!-- between dates -->
+    <div class="mbg-date-between"
+         ng-if="$ctrl.between">
+        <input type="text"
+               ng-if="$ctrl.calendar"
+               ng-model="$ctrl.ngModel.start"
+               ng-change="$ctrl.onChange()"
+               placeholder="{{ $ctrl.props.placeholderStart }}"
+               ng-required="$ctrl.ngRequired"
+               ng-disabled="$ctrl.ngDisabled"
+               ng-blur="$ctrl.handleBlur({ $event })"
+               ng-focus="$ctrl.handleFocus({ $event })"
+               ng-keyup="$ctrl.ngKeyup({ $event })"
+               ng-keypress="$ctrl.ngKeypress({ $event })"
+               ng-keydown="$ctrl.ngKeydown({ $event })"
+               ui-date-mask="{{ $ctrl.format }}"
+               on-select="$ctrl.onSelectStart()"
+               mbg-datepicker />
+        <div class="mbg-date-between-space">
+            {{ $ctrl.betweenText == undefined ? 'Até' : $ctrl.betweenText }}
+        </div>
+        <input type="text"
+               class="mbg-date-between-end"
+               ng-if="$ctrl.calendar"
+               ng-model="$ctrl.ngModel.end"
+               ng-change="$ctrl.onChange()"
+               placeholder="{{ $ctrl.props.placeholderEnd }}"
+               ng-required="$ctrl.ngRequired"
+               ng-disabled="$ctrl.ngDisabled"
+               ng-blur="$ctrl.handleBlur({ $event })"
+               ng-focus="$ctrl.handleFocus({ $event })"
+               ng-keyup="$ctrl.ngKeyup({ $event })"
+               ng-keypress="$ctrl.ngKeypress({ $event })"
+               ng-keydown="$ctrl.ngKeydown({ $event })"
+               ui-date-mask="{{ $ctrl.format }}"
+               mbg-datepicker />
+    </div>
 </div>

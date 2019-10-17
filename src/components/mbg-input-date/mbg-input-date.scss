@@ -1,3 +1,34 @@
-// .mbg-input-date-wrapper {
-   
-// }
+.mb-input-date-wrapper {
+  input {
+    width: 100%;
+  }
+  .mbg-date-between {
+    display: flex;
+  }
+  .mbg-date-between-space {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+  }
+}
+
+body {
+  .datepicker-top-left, .datepicker-top-right {
+    border-top-color: var(--primary);
+  }
+  .datepicker-container {
+    border-radius: 5px;
+    .datepicker-panel {
+      overflow: hidden;
+      border-radius: 5px;
+    }
+  }
+  .datepicker-panel > ul > li.picked, .datepicker-panel > ul > li.picked:hover {
+    background-color: rgb(229, 242, 255);
+  }
+  .datepicker-panel > ul > li.highlighted {
+    background: transparent;
+    color:  var(--primary);
+  }
+}

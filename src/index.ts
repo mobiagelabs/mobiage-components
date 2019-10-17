@@ -20,11 +20,15 @@ const module = angular
 		components,
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
-
+		$scope.entity = {}
 		$scope.percentage = 0
 
 		$scope.testeobj = {
 			color: 'var(--primary)'
+		}
+
+		$scope.print = () => {
+			$scope.entity.nasc = new Date(1571886000000)
 		}
 
 		const goTo = (value) => {
@@ -164,7 +168,7 @@ const module = angular
 		const url = 'https://api-hom.kigisistemas.com.br/mobiage-api/api/v2/product-item/terminal?idPriceSheetType=MOBAAAC410AAA&gumgaToken=615L758E1571055003567C157105320585900O756.757.758.I&pageSize=6'
 
 		$scope.getProductsDTO = (query = '', page) => {
-			return $http.get(url + '&search='+query + '&page=' + page).then((resp) => {
+			return $http.get(url + '&search=' + query + '&page=' + page).then((resp) => {
 				resp.data.values = resp.data.values.map((t) => {
 					t.image = t.urlImage || `https://firebasestorage.googleapis.com/v0/b/mobiage-homologation.appspot.com/o/91d32d0d-1c27-7c2c-254b-85c1e139d32e?alt=media`
 					t.saleValue = t.value
@@ -311,7 +315,7 @@ const module = angular
 		]
 
 
-		$scope.entity = { productTree: { name: 'Camiseta' }, brand: { name: 'Adidas' }, model: 'Teste' }
+		$scope.entity = Object.assign($scope.entity, { productTree: { name: 'Camiseta' }, brand: { name: 'Adidas' }, model: 'Teste' })
 
 		$scope.kkk = (index) => {
 			window['teste'][index].addAdicionalRow()
@@ -613,7 +617,7 @@ const module = angular
 			},
 		]
 
-		$http.get('https://api-hom.kigisistemas.com.br/mobiage-api/api/sales-goal/dashboard?gumgaToken=511L518E1569847473353C156984568040000O516.517.518.I')
+		$http.get('https://api-hom.mobiage.io/mobiage-api/api/sales-goal/dashboard?gumgaToken=511L518E1569847473353C156984568040000O516.517.518.I')
 			.then((response) => {
 				series.push({
 					type: 'column',

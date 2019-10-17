@@ -115,6 +115,38 @@
 
 <body ng-controller="demoCtrl">
   <div class="container"> <br><br><br>
+
+    <div class="row">
+      <div class="col-md-4">
+        <label>Single</label>
+        <mbg-input-date ng-model="entity.nasc"></mbg-input-date>
+      </div>
+      <div class="col-md-4">
+        <label>Single With Calendar</label>
+        <mbg-input-date ng-model="entity.nasc" calendar="true"></mbg-input-date>
+      </div>
+    </div>
+
+    <br><br>
+
+    <div class="row">
+      <div class="col-md-4">
+        <label>Between</label>
+        <mbg-input-date ng-model="entity.between"
+                        placeholder-start="Ida"
+                        placeholder-end="Volta"
+                        between="true"
+                        between-text=""
+                        calendar="true"></mbg-input-date>
+      </div>
+    </div>
+
+
+    <br><br><br>
+    <button ng-click="print()">foi</button>
+    <br><br>
+    {{ entity.between | json }}
+
     <!-- <mbg-connection-retry ping-url="https://api-hom.kigisistemas.com.br/mobiage-api/actuator/health">
     </mbg-connection-retry> -->
     <!-- <mbg-image-upload config="config"
@@ -129,8 +161,8 @@
                  enable-edit="true"
                  on-click-edit="testefelipegordao($item)">
     </mbg-mindmap> -->
-    
-    <mbg-loading config="testeobj"></mbg-loading>
+
+    <!-- <mbg-loading config="testeobj"></mbg-loading> -->
 
     <!-- <mbg-homescreen config="homeConfig"></mbg-homescreen> -->
 
@@ -254,7 +286,7 @@
                                 ng-keydown="teste222($event)"></mbg-input-text>
               </div>
             </div>-->
-            <!-- <div class="row">
+    <!-- <div class="row">
               <div class="col-md-12">
                 <label>Data de nascimento</label>
                 <mbg-input-date ng-model="entity.nasc"></mbg-input-date>
@@ -428,7 +460,7 @@
       </div>
     </div> -->
 
-<!--    <div class="panel panel-default">
+    <!--    <div class="panel panel-default">
       <div class="panel-heading">Address</div>
       <div class="panel-body">-->
     <!-- <mbg-address ng-model="address" on-finish-focus-element="#focusaqui"></mbg-address>
@@ -499,7 +531,7 @@
     </div>
   </div>
 -->
-  <!-- <div class="panel panel-default">
+    <!-- <div class="panel panel-default">
     <div class="panel-heading">Number Only</div>
     <div class="panel-body">
       <mbg-input-number ng-model="number"></mbg-input-number>
@@ -595,8 +627,8 @@
       </mbg-list> -->
 
 
-      <!-- <pre><code>{{ testetttt | json }}</code></pre> -->
-    </div>
+    <!-- <pre><code>{{ testetttt | json }}</code></pre> -->
+  </div>
 
   </div>
 </body>
