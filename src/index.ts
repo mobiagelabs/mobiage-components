@@ -165,7 +165,7 @@ const module = angular
 		].map((s) => s.label)
 
 
-		const url = 'https://api-hom.kigisistemas.com.br/mobiage-api/api/v2/product-item/terminal?idPriceSheetType=MOBAAAC410AAA&gumgaToken=615L758E1571055003567C157105320585900O756.757.758.I&pageSize=6'
+		const url = 'https://api-hom.mobiage.io/mobiage-api/api/v2/product-item/terminal?idPriceSheetType=MOBAAAC410AAA&gumgaToken=615L758E1571055003567C157105320585900O756.757.758.I&pageSize=6'
 
 		$scope.getProductsDTO = (query = '', page) => {
 			return $http.get(url + '&search=' + query + '&page=' + page).then((resp) => {

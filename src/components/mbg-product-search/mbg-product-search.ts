@@ -26,12 +26,12 @@ class MbgProductSearchController {
     private debounce
     private debounceTime
     private uid: string
-    private debounceEnter
     private page: number
     private isLoadingMore: boolean
     private minLetter: number
     private containsMore: boolean
     private showFeebackScroll: boolean
+    private timeoutChange: any
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
 
@@ -138,13 +138,6 @@ class MbgProductSearchController {
         }
     }
 
-    onInputChange() {
-        this.$timeout(() => {
-            this.page = 1
-            this.fetch ? this.executeFetch() : angular.noop()
-        })
-    }
-
     clearNgModel(ignoreCallback?: boolean) {
         delete this.ngModel
         delete this.inputValue
@@ -161,20 +154,26 @@ class MbgProductSearchController {
         this.checkPosition()
     }
 
+
+    onInputChange() {
+        if (this.timeoutChange) { this.$timeout.cancel(this.timeoutChange) }
+        this.timeoutChange = this.$timeout(() => {
+            this.page = 1
+            this.data = []
+            this.fetch ? this.executeFetch() : angular.noop()
+        }, 400)
+    }
+
     onInputKeydown(evt) {
         const oldHasFocus = this.hasFocus
         this.hasFocus = true
-        if (evt.keyCode !== 38 && evt.keyCode !== 40) {
-            this.checkPosition()
-        }
+        if (evt.keyCode != 13 && evt.keyCode != 38 && evt.keyCode != 40) { this.checkPosition() }
         switch (Number(evt.keyCode)) {
             case 13: // ENTER
+                if (this.timeoutChange) { this.$timeout.cancel(this.timeoutChange) }
                 evt.preventDefault()
                 evt.stopPropagation()
-                if (this.debounceEnter) { this.$timeout.cancel(this.debounceEnter) }
-                this.debounceEnter = this.$timeout(() => {
-                    this.afterEnterPress(oldHasFocus)
-                }, 100)
+                this.afterEnterPress(oldHasFocus)
                 break
             case 38: // SETA CIMA
                 this.moveToUp()

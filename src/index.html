@@ -116,7 +116,14 @@
 <body ng-controller="demoCtrl">
   <div class="container"> <br><br><br>
 
-    <div class="row">
+    <mbg-product-search ng-model="teste"
+                        label="barCode"
+                        try-add="addItem(barCode, quantity)"
+                        auto-clear="false"
+                        fetch="getProductsDTO(query, page)">
+    </mbg-product-search>
+
+    <!-- <div class="row">
       <div class="col-md-4">
         <label>Single</label>
         <mbg-input-date ng-model="entity.nasc"></mbg-input-date>
@@ -145,7 +152,7 @@
     <br><br><br>
     <button ng-click="print()">foi</button>
     <br><br>
-    {{ entity.between | json }}
+    {{ entity.between | json }} -->
 
     <!-- <mbg-connection-retry ping-url="https://api-hom.kigisistemas.com.br/mobiage-api/actuator/health">
     </mbg-connection-retry> -->
