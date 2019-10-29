@@ -1,0 +1,76 @@
+<div class="mbg-confirm-alert-wrapper">
+	<div class="mbg-alert-icon"
+		 ng-class="$ctrl.config.type">
+		<svg ng-if="$ctrl.config.type === 'information' || $ctrl.config.type === 'warning'"
+			 xmlns:dc="http://purl.org/dc/elements/1.1/"
+			 xmlns:cc="http://creativecommons.org/ns#"
+			 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			 xmlns:svg="http://www.w3.org/2000/svg"
+			 xmlns="http://www.w3.org/2000/svg"
+			 xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+			 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+			 version="1.1"
+			 x="0px"
+			 y="0px"
+			 viewBox="0 0 100 100">
+			<g transform="translate(0,-952.36218)">
+				<path style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:1;fill-opacity:1;stroke:none;stroke-width:4.11764716999999970;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+					  d="M 50 14 C 30.141435 14 14 30.14144 14 50 C 14 69.8586 30.141435 86 50 86 C 69.858564 86 86 69.8586 86 50 C 86 30.14144 69.858564 14 50 14 z M 50 18 C 67.696805 18 82 32.3032 82 50 C 82 67.6968 67.696805 82 50 82 C 32.303194 82 18 67.6968 18 50 C 18 32.3032 32.303194 18 50 18 z M 49.78125 29.96875 A 2.0002 2.0002 0 0 0 48 32 L 48 60 A 2.0002 2.0002 0 1 0 52 60 L 52 32 A 2.0002 2.0002 0 0 0 49.78125 29.96875 z M 50 65 C 48.343144 65 47 66.3431 47 68 C 47 69.6568 48.343144 71 50 71 C 51.656856 71 53 69.6568 53 68 C 53 66.3431 51.656856 65 50 65 z "
+					  transform="translate(0,952.36218)" />
+			</g>
+		</svg>
+
+		<svg ng-if="$ctrl.config.type === 'error'"
+			 xmlns="http://www.w3.org/2000/svg"
+			 xmlns:xlink="http://www.w3.org/1999/xlink"
+			 version="1.1"
+			 x="0px"
+			 y="0px"
+			 viewBox="0 0 52 52"
+			 enable-background="new 0 0 52 52"
+			 xml:space="preserve">
+			<g>
+				<path
+					  d="M26,0C11.66,0,0,11.66,0,26s11.66,26,26,26s26-11.66,26-26S40.34,0,26,0z M26,50C12.77,50,2,39.23,2,26S12.77,2,26,2   s24,10.77,24,24S39.23,50,26,50z" />
+				<path
+					  d="M35.71,16.29c-0.39-0.39-1.02-0.39-1.41,0L26,24.59l-8.29-8.29c-0.39-0.39-1.02-0.39-1.41,0s-0.39,1.02,0,1.41L24.59,26   l-8.29,8.29c-0.39,0.39-0.39,1.02,0,1.41C16.49,35.9,16.74,36,17,36s0.51-0.1,0.71-0.29L26,27.41l8.29,8.29   C34.49,35.9,34.74,36,35,36s0.51-0.1,0.71-0.29c0.39-0.39,0.39-1.02,0-1.41L27.41,26l8.29-8.29C36.1,17.32,36.1,16.68,35.71,16.29z   " />
+			</g>
+		</svg>
+
+		<svg ng-if="$ctrl.config.type === 'success'"
+			 xmlns="http://www.w3.org/2000/svg"
+			 xmlns:xlink="http://www.w3.org/1999/xlink"
+			 version="1.1"
+			 x="0px"
+			 y="0px"
+			 viewBox="0 0 512 512"
+			 xml:space="preserve">
+			<g>
+				<g>
+					<path
+						  d="M256,16C123.36,16,16,123.34,16,256c0,132.641,107.34,240,240,240c132.645,0,240-107.343,240-240    C496,123.36,388.661,16,256,16z M256,476c-121.309,0-220-98.691-220-220S134.691,36,256,36s220,98.691,220,220    S377.309,476,256,476z" />
+					<path
+						  d="M371.146,117.425c-4.735-2.841-10.878-1.306-13.72,3.43l-142.938,238.23l-60.961-69.67    c-3.637-4.156-9.955-4.577-14.111-0.94s-4.577,9.954-0.94,14.11l70,80c4.464,5.102,12.614,4.371,16.101-1.44l150-250    C377.417,126.409,375.881,120.267,371.146,117.425z" />
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="information-wrapper">
+		<h3>{{$ctrl.config.title}}</h3>
+		<p class="message">{{$ctrl.config.message}}</p>
+		<div ng-if="$ctrl.config && $ctrl.config.tip"
+			 class="tip-wrapper">
+			<p><strong>Dica:</strong> {{$ctrl.config.tip}}</p>
+		</div>
+	</div>
+	<div class="mbg-group-buttons">
+		<button class="mbg-btn-accept"
+				ng-class="$ctrl.config.type"
+				ng-click="$ctrl.close(true)">
+			{{$ctrl.config.textConfirm ? $ctrl.config.textConfirm : 'Sim'}}
+		</button>
+		<a class="mbg-link-cancel"
+		   ng-if="$ctrl.config.visibleCancel"
+		   ng-click="$ctrl.close(false)">{{$ctrl.config.textCancel ? $ctrl.config.textCancel : 'Cancelar'}}</a>
+	</div>
+</div>

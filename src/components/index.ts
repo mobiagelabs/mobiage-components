@@ -61,6 +61,7 @@ import { mbgLoadingModule } from './mbg-loading'
 window['Raphael'] = Raphael
 
 import * as $ from 'jquery'
+import { MbgAlert } from '../helpers/services/mbg-alert'
 
 if (!window['$']) {
   window['$'] = $
@@ -115,6 +116,7 @@ const mbgComponentsModule = angular
     mbgLoadingModule
   ])
   .config(appConfig)
+  .service('mbgAlert', MbgAlert)
   .directive('mbgDynamicHtml', () => new MbgDynamicHTML)
   .directive('mbgExtendsStyle', () => new NgExtendsStyle)
   .directive('mbgPositiveNumber', () => new MbgPositiveNumber)

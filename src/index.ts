@@ -4,6 +4,8 @@ import * as angular from 'angular'
 import components from './components'
 import { initializeApp } from 'firebase/app'
 import './assets/angular-locale_pt-br.js'
+import { MbgAlert } from './helpers/services/mbg-alert'
+import { MbgTypeAlert } from './helpers/enums/mbg-type-alert';
 
 initializeApp({
 	apiKey: 'AIzaSyCpNjqpFQJ-ptCOMsqZjyDUx33vB_j_yOk',
@@ -19,7 +21,17 @@ const module = angular
 		'ngLocale',
 		components,
 	])
-	.controller('demoCtrl', ['$scope', '$timeout', '$http', ($scope, $timeout, $http) => {
+	.controller('demoCtrl', ['$scope', '$timeout', '$http', 'mbgAlert', ($scope, $timeout, $http, mbgAlert: MbgAlert) => {
+		mbgAlert.confirm({
+			title: 'Salvar operação',
+			type: MbgTypeAlert.WARNING,
+			message: 'Deseja salvar a operação atual?',
+			invertContrast: true
+			// visibleCancel: false
+			// tip: 'Ao salvar a operação, você poderá continuar ela em outro momento.'
+		}).then((response) => {
+			console.log(response)
+		})
 		$scope.entity = {}
 		$scope.percentage = 0
 

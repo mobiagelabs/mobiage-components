@@ -167,7 +167,7 @@ class MbgProductSearchController {
     onInputKeydown(evt) {
         const oldHasFocus = this.hasFocus
         this.hasFocus = true
-        if (evt.keyCode != 13 && evt.keyCode != 38 && evt.keyCode != 40) { this.checkPosition() }
+        if (Number(evt.keyCode) !== 13 && Number(evt.keyCode) !== 38 && Number(evt.keyCode) !== 40) { this.checkPosition() }
         switch (Number(evt.keyCode)) {
             case 13: // ENTER
                 if (this.timeoutChange) { this.$timeout.cancel(this.timeoutChange) }
