@@ -57,7 +57,7 @@
 	</div>
 	<div class="information-wrapper">
 		<h3>{{$ctrl.config.title}}</h3>
-		<p class="message">{{$ctrl.config.message}}</p>
+		<p ng-if="$ctrl.config.message" class="message">{{$ctrl.config.message}}</p>
 		<div ng-if="$ctrl.config && $ctrl.config.tip"
 			 class="tip-wrapper">
 			<p><strong>Dica:</strong> {{$ctrl.config.tip}}</p>

@@ -1,10 +1,9 @@
 import { MbgTypeAlert } from '../enums/mbg-type-alert'
 
-
 export interface ConfirmAlert {
+	type: MbgTypeAlert,
 	title: string,
 	message?: string,
-	type: MbgTypeAlert,
 	textConfirm?: string,
 	textCancel?: string,
 	visibleCancel?: boolean,
