@@ -114,14 +114,14 @@
 </head>
 
 <body ng-controller="demoCtrl">
-  <div class="container"> <br><br><br>
+  <!-- <div class="container"> <br><br><br> -->
 
-    <mbg-product-search ng-model="teste"
+    <!-- <mbg-product-search ng-model="teste"
                         label="barCode"
                         try-add="addItem(barCode, quantity)"
                         auto-clear="false"
                         fetch="getProductsDTO(query, page)">
-    </mbg-product-search>
+    </mbg-product-search> -->
 
     <!-- <div class="row">
       <div class="col-md-4">
@@ -293,21 +293,21 @@
                                 ng-keydown="teste222($event)"></mbg-input-text>
               </div>
             </div>-->
-    <!-- <div class="row">
-              <div class="col-md-12">
+    <!-- <div class="row"> -->
+              <!-- <div class="col-md-12">
                 <label>Data de nascimento</label>
                 <mbg-input-date ng-model="entity.nasc"></mbg-input-date>
               </div>
-            </div>
-            <div class="row">
+            </div> -->
+            <!-- <div class="row">
               <div class="col-md-12">
                 <label>CPF</label>
                 <mbg-input-cpf ng-model="entity.cpfValue"></mbg-input-cpf>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-md-offset-1">
-          -->
+          <div class="col-md-3 col-md-offset-1"> -->
+         
     <!-- <mbg-keyboard active-color="#0CBCBD"
                           focus-element="#barCode input"
                           options="optionsKeyboard"></mbg-keyboard> -->
@@ -587,12 +587,15 @@
       </div>
     </div> -->
 
-    <!-- <div class="panel panel-default">
+    <div class="panel panel-default">
       <div class="panel-heading">Tags</div>
       <div class="panel-body">
-        <mbg-input-tags ng-model="tags"></mbg-input-tags>
+        <mbg-input-tags ng-model="tags" input-value="VANDERSON"></mbg-input-tags>
       </div>
-    </div> -->
+    </div>
+    <div>
+      {{VANDERSON}}
+    </div>
 
     <!-- <div class="panel panel-default">
       <div class="panel-heading">Text</div>

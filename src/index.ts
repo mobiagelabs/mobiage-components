@@ -22,16 +22,18 @@ const module = angular
 		components,
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', 'mbgAlert', ($scope, $timeout, $http, mbgAlert: MbgAlert) => {
-		mbgAlert.confirm({
-			title: 'Salvar operação',
-			type: MbgTypeAlert.WARNING,
-			message: 'Deseja salvar a operação atual?',
-			invertContrast: true
-			// visibleCancel: false
-			// tip: 'Ao salvar a operação, você poderá continuar ela em outro momento.'
-		}).then((response) => {
-			console.log(response)
-		})
+		// mbgAlert.confirm({
+		// 	title: 'Salvar operação',
+		// 	type: MbgTypeAlert.WARNING,
+		// 	message: 'Deseja salvar a operação atual?',
+		// 	invertContrast: true
+		// 	// visibleCancel: false
+		// 	// tip: 'Ao salvar a operação, você poderá continuar ela em outro momento.'
+		// }).then((response) => {
+		// 	console.log(response)
+		// })
+
+		$scope.VANDERSON
 		$scope.entity = {}
 		$scope.percentage = 0
 
