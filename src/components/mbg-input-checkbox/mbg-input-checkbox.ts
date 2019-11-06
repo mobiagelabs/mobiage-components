@@ -36,6 +36,7 @@ const mbgInputCheckbox = {
         ngKeyup: '&?',
         ngKeypress: '&?',
         ngKeydown: '&?',
+        type: '@?'
     },
     template,
     controller: MbgInputCheckboxController,

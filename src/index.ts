@@ -5,7 +5,7 @@ import components from './components'
 import { initializeApp } from 'firebase/app'
 import './assets/angular-locale_pt-br.js'
 import { MbgAlert } from './helpers/services/mbg-alert'
-import { MbgTypeAlert } from './helpers/enums/mbg-type-alert';
+import { MbgTypeAlert } from './helpers/enums/mbg-type-alert'
 
 initializeApp({
 	apiKey: 'AIzaSyCpNjqpFQJ-ptCOMsqZjyDUx33vB_j_yOk',
