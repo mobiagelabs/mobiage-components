@@ -2,7 +2,7 @@
      ng-class="{ 'mbg-input-disabled': $ctrl.ngDisabled || !$ctrl.ngModel.checked }"
      ng-if="$ctrl.props">
     <mbg-checkbox ng-model="$ctrl.ngModel.checked"></mbg-checkbox>
-    <mbg-input-money ng-if="!$ctrl.type || $ctrl.type === 'MONEY'"
+    <mbg-input-money ng-if="!$ctrl.type || $ctrl.type === 'money'"
                      ng-model="$ctrl.ngModel.value"
                      ng-change="$ctrl.ngChange()"
                      ng-required="$ctrl.ngRequired"
@@ -12,7 +12,7 @@
                      ng-keyup="$ctrl.ngKeyup({ $event })"
                      ng-keypress="$ctrl.ngKeypress({ $event })"
                      ng-keydown="$ctrl.ngKeydown({ $event })"></mbg-input-money>
-    <mbg-input-text ng-if="$ctrl.type === 'TEXT'"
+    <mbg-input-text ng-if="$ctrl.type === 'text'"
                     ng-model="$ctrl.ngModel.value"
                     ng-change="$ctrl.ngChange()"
                     ng-required="$ctrl.ngRequired"
@@ -22,7 +22,7 @@
                     ng-keyup="$ctrl.ngKeyup({ $event })"
                     ng-keypress="$ctrl.ngKeypress({ $event })"
                     ng-keydown="$ctrl.ngKeydown({ $event })"></mbg-input-text>
-    <mbg-input-number ng-if="$ctrl.type === 'NUMBER'"
+    <mbg-input-number ng-if="$ctrl.type === 'number'"
                       ng-model="$ctrl.ngModel.value"
                       ng-change="$ctrl.ngChange()"
                       ng-required="$ctrl.ngRequired"
@@ -32,7 +32,7 @@
                       ng-keyup="$ctrl.ngKeyup({ $event })"
                       ng-keypress="$ctrl.ngKeypress({ $event })"
                       ng-keydown="$ctrl.ngKeydown({ $event })"></mbg-input-number>
-    <mbg-input-email ng-if="$ctrl.type === 'EMAIL'"
+    <mbg-input-email ng-if="$ctrl.type === 'email'"
                      ng-model="$ctrl.ngModel.value"
                      ng-change="$ctrl.ngChange()"
                      ng-required="$ctrl.ngRequired"
