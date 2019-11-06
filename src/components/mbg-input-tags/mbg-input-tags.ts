@@ -65,6 +65,7 @@ const mbgInputTags = {
         ngKeyup: '&?',
         ngKeypress: '&?',
         ngKeydown: '&?',
+        inputValue: '=?',
     },
     template,
     controller: MbgInputTagsController,
