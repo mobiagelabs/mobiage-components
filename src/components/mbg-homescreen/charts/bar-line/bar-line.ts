@@ -10,11 +10,15 @@ class MbgChartBarLineController {
     public hasData: any
     public countUpdates = 0
     public chart
+    private displayValues: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
     $onInit() {
         this.render()
+        this.$scope.$watch('$ctrl.displayValues', () => {
+            this.render()
+        })
     }
 
     updateSerie(chartInstance, serie, index) {
@@ -87,7 +91,7 @@ class MbgChartBarLineController {
                 gridLineColor: 'rgba(220, 220, 220, 0.1)',
                 gridZIndex: 4,
                 labels: {
-                    enabled: true,
+                    enabled: this.displayValues,
                     align: 'left',
                     style: {
                         color: '#ababab',
@@ -119,7 +123,7 @@ class MbgChartBarLineController {
                 },
                 spline: {
                     dataLabels: {
-                        enabled: true,
+                        enabled: this.displayValues,
                         color: '#aaa',
                         style: {
                             fontWeight: '100',
@@ -148,7 +152,7 @@ class MbgChartBarLineController {
                 enabled: false
             },
             tooltip: {
-                enabled: true,
+                enabled: this.displayValues,
                 borderRadius: 20,
                 backgroundColor: this.chart.chartColor ? this.chart.chartColor.tooltip : '#00BDBE',
                 borderWidth: 2,
@@ -222,6 +226,7 @@ MbgChartBarLineController.$inject = ['$scope', '$element', '$attrs', '$timeout']
 const mbgChartBarLine = {
     bindings: {
         chart: '=',
+        displayValues: '=?'
     },
     template,
     controller: MbgChartBarLineController,

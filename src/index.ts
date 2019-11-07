@@ -51,6 +51,11 @@ const module = angular
 			})
 		}
 
+		$scope.displayValues = false
+		// $timeout(() => {
+		// 	$scope.displayValues = false
+		// }, 5000)
+
 		// [1, 2, 3, 4].forEach((n, i) => {
 		// 	$timeout(() => {
 		// 		goTo(25 * n)
@@ -64,6 +69,9 @@ const module = angular
 
 		$timeout(() => {
 			$scope.show = true
+			$scope.teste = {
+				value: 'ajdioasjd@asiodasjd.com'
+			}
 		}, 500)
 
 		$scope.initValue = () => {
@@ -733,7 +741,7 @@ const module = angular
 					{
 						name: 'Metas',
 						chart: {
-							type: 'barlinepie',
+							type: 'barline',
 							format: 'money',
 							categories,
 							series: teste
@@ -824,6 +832,10 @@ const module = angular
 				40,
 				50,
 			]
+		}
+
+		$scope.testecons = () => {
+			console.log('asdihasoidashpid')
 		}
 
 	}])

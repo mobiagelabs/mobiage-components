@@ -9,7 +9,7 @@ class MbgInputEmailController {
     private ngDisabled
     private props
 
-    constructor(public $scope, public $element, public $attrs) {
+    constructor(public $scope, public $element, public $attrs, public $timeout) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
         this.props = {
@@ -17,15 +17,16 @@ class MbgInputEmailController {
         }
     }
     onChange() {
-        if (this.isValidEmail(this.inputValue)) {
-            this.ngModel = this.inputValue
-        } else {
-            this.ngModel = null
-        }
-
-        if (this.ngChange) {
-            this.ngChange({})
-        }
+        this.$timeout(() => {
+            if (this.isValidEmail(this.inputValue)) {
+                this.ngModel = this.inputValue
+            } else {
+                this.ngModel = null
+            }
+            if (this.ngChange) {
+                this.ngChange({})
+            }
+        })
     }
 
     isValidEmail(email: string) {
@@ -35,7 +36,7 @@ class MbgInputEmailController {
     }
 
 }
-MbgInputEmailController.$inject = ['$scope', '$element', '$attrs']
+MbgInputEmailController.$inject = ['$scope', '$element', '$attrs', '$timeout']
 
 const mbgInputEmail = {
     bindings: {

@@ -7,6 +7,8 @@ class MbgCardTypeOneController {
     public luminosity: number
     public intervalFunction
     public card
+    public allowedToSee: boolean
+    private allowedCallBack: Function
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -18,6 +20,9 @@ class MbgCardTypeOneController {
         this.syncValue()
         this.renderIcon()
         this.card.enableHideValues = this.card.enableHideValues === undefined ? true : this.card.enableHideValues
+        this.$scope.$watch('$ctrl.displayValues', (data) => {
+            this.hideValue = !data
+        })
     }
 
     renderIcon() {
@@ -59,6 +64,12 @@ class MbgCardTypeOneController {
     }
 
     toggleShowValue = () => {
+        if (this.allowedToSee != undefined && !this.allowedToSee) {
+            if (this.allowedCallBack) {
+                this.allowedCallBack()
+            }
+            return
+        }
         this.randomEmoji = this.generateRandomEmoji()
         this.hideValue = !this.hideValue
     }
@@ -93,6 +104,9 @@ const mbgCardTypeone = {
     bindings: {
         card: '=',
         loading: '=?',
+        displayValues: '=?',
+        allowedToSee: '=?',
+        allowedCallBack: '&?'
     },
     template,
     controller: MbgCardTypeOneController,

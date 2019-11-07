@@ -9,6 +9,9 @@ class MbgHomescreenController {
     private cards: Array<any>
     private chart
     private loading
+    private allowedToSee: boolean
+    private allowedCallBack: Function
+    private displayValues:boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -32,6 +35,16 @@ class MbgHomescreenController {
         })
     }
 
+    handleDisplayValues() {
+        if (!this.allowedToSee) {
+            if (this.allowedCallBack) {
+                this.allowedCallBack()
+            }
+            return
+        }
+        this.displayValues = !this.displayValues
+    }
+
 }
 
 MbgHomescreenController.$inject = ['$scope', '$element', '$attrs', '$timeout']
@@ -40,6 +53,9 @@ const mbgHomescreen = {
     bindings: {
         config: '=',
         loading: '=?',
+        displayValues: '=?',
+        allowedToSee: '=?',
+        allowedCallBack: '&?'
     },
     template,
     controller: MbgHomescreenController,
