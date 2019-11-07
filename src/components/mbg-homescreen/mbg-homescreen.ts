@@ -36,7 +36,7 @@ class MbgHomescreenController {
     }
 
     handleDisplayValues() {
-        if (!this.allowedToSee) {
+        if (this.allowedToSee != undefined && !this.allowedToSee) {
             if (this.allowedCallBack) {
                 this.allowedCallBack()
             }
