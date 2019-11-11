@@ -69,6 +69,9 @@ export class MbgListController {
                     this.checkAll = false
                 }
             }
+            if (!selectedValues || selectedValues.length === 0) {
+                this.selectedMap = []
+            }
         }, true)
     }
 
