@@ -171,7 +171,7 @@
 
   <!-- <mbg-loading config="testeobj"></mbg-loading> -->
 
-  <mbg-homescreen config="homeConfig" allowed-call-back="testecons()" allowed-to-see="false" display-values="displayValues"></mbg-homescreen>
+  <!-- <mbg-homescreen config="homeConfig" allowed-call-back="testecons()" allowed-to-see="false" display-values="displayValues"></mbg-homescreen> -->
 
   <!-- <label for="">Monte o nome do produto. <span style="color: #666;">&nbsp;&nbsp;&nbsp;Ex: {{ getLabelSelected() }}</span></label> -->
 
@@ -252,15 +252,16 @@
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-  <!-- <mbg-select ng-model="teste"
+  <mbg-select ng-model="teste"
       fetch="getModelo(query)"
+      label="name"
       placeholder="TESTEEEEE"
       enable-add="true"
       name="teste5"
       callback-add="testeadd()"
       add-only-not-equal="true"
       enable-favorite="true">
-    </mbg-select> -->
+    </mbg-select>
 
   <!-- <br>
     <pre>{{teste | json}}</pre> -->

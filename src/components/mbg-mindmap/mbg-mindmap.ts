@@ -88,7 +88,7 @@ export class MbgMindmapController {
             structure: '.mbg-mindmap-structure',
             editable: false, // enable edit mode
             onchange: function (node, data) {  // if map is changed, save to localStorage
-                console.log(data)
+                // console.log(data)
             },
         })
         this.setInitialPosition()

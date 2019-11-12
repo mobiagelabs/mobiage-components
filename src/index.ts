@@ -69,9 +69,9 @@ const module = angular
 
 		$timeout(() => {
 			$scope.show = true
-			$scope.teste = {
-				value: 'ajdioasjd@asiodasjd.com'
-			}
+			// $scope.teste = {
+			// 	value: 'ajdioasjd@asiodasjd.com'
+			// }
 		}, 500)
 
 		$scope.initValue = () => {
@@ -810,28 +810,21 @@ const module = angular
 
 
 		$scope.getModelo = (param = '') => {
-			// return new Promise((resolve) => {
-			// 	resolve([
-			// 		{
-			// 			name: 'Futebol'
-			// 		},
-			// 		{
-			// 			name: 'Casual'
-			// 		},
-			// 		{
-			// 			name: 'Corrida'
-			// 		}
-			// 	].filter((obj) => {
-			// 		return obj.name.toLowerCase().indexOf(param.toLowerCase()) !== -1
-			// 	}))
-			// })
-			return [
-				10,
-				20,
-				30,
-				40,
-				50,
-			]
+			return new Promise((resolve) => {
+				resolve([
+					{
+						name: 'Futebol'
+					},
+					{
+						name: 'Casual'
+					},
+					{
+						name: 'Corrida'
+					}
+				].filter((obj) => {
+					return obj.name.toLowerCase().indexOf(param.toLowerCase()) !== -1
+				}))
+			})
 		}
 
 		$scope.testecons = () => {
