@@ -162,11 +162,12 @@ class MbgProductSearchController {
             this.data = []
             this.fetch ? this.executeFetch() : angular.noop()
         }, 400)
+
     }
 
     onInputKeydown(evt) {
         const oldHasFocus = this.hasFocus
-        this.hasFocus = true
+        this.hasFocus = (this.inputValue || '').toString().length > 1
         if (Number(evt.keyCode) !== 13 && Number(evt.keyCode) !== 38 && Number(evt.keyCode) !== 40) { this.checkPosition() }
         switch (Number(evt.keyCode)) {
             case 13: // ENTER
