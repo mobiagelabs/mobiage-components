@@ -201,7 +201,7 @@ const module = angular
 		}
 
 		$scope.addItem = (barCode, quantity) => {
-			console.log(barCode, quantity)
+			console.log('asydgaysud',barCode, quantity)
 		}
 
 		$scope.config = {

@@ -173,6 +173,7 @@ class MbgProductSearchController {
                 if (this.timeoutChange) { this.$timeout.cancel(this.timeoutChange) }
                 evt.preventDefault()
                 evt.stopPropagation()
+                this.data = []
                 this.afterEnterPress(oldHasFocus)
                 break
             case 38: // SETA CIMA
@@ -254,7 +255,9 @@ class MbgProductSearchController {
                 const currentOption = this.getOptionFocused()
                 if (currentOption[0]) {
                     let item = currentOption.scope().item
-                    this.updateModelValue(this.ngValue ? item[this.ngValue] : item)
+                    if (item) {
+                        this.updateModelValue(this.ngValue ? item[this.ngValue] : item)
+                    }
                     this.$timeout(() => this.executeTryAdd(), 10)
                 } else {
                     this.executeTryAdd()
