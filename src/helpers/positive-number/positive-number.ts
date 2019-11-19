@@ -18,7 +18,7 @@ export class MbgPositiveNumber {
         angular.element(ele)
             .on('keydown', (event) => {
                 if (attrs.mbgPositiveNumber === 'true') {
-                    if (event != null && (event.keyCode === 189 || event.keyCode === 109)) {
+                    if (event !== null && (event.keyCode === 189 || event.keyCode === 109)) {
                         event.stopPropagation()
                         event.preventDefault()
                     }

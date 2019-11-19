@@ -33,6 +33,10 @@ const module = angular
 		// 	console.log(response)
 		// })
 
+		$timeout(() => {
+			$scope.mostrarErros = true
+		}, 3000)
+
 		$scope.VANDERSON
 		$scope.entity = {}
 		$scope.percentage = 0
@@ -84,7 +88,7 @@ const module = angular
 		}
 
 		$scope.essaColunaPode = (row) => {
-			return row.qnt != 37
+			return row.qnt !== 37
 		}
 		$scope.optionsDropdown = [
 			{

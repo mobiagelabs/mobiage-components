@@ -114,14 +114,55 @@
 </head>
 
 <body ng-controller="demoCtrl">
+
+  <div class="container"> <br><br><br><br><br><br><br>
+
+    <!-- <mbg-input-text ng-model="nomeCompletoDoCliente"
+                    mbg-error="!nomeCompletoDoCliente"
+                    mbg-error-message="Precisamos saber o nome completo do cliente."></mbg-input-text> -->
+
+    <form name="formData">
+
+      <mbg-input-text ng-model="text2"
+                      mbg-error="!text2"
+                      mbg-error-when="inputErros"
+                      mbg-error-trigger="hover"
+                      mbg-error-message="Abacaxi são gostosos"></mbg-input-text> <br>
+
+      <mbg-input-text ng-model="text3"
+                      mbg-error="!text3"
+                      mbg-error-when="inputErros"
+                      mbg-error-message="Abacaxi são gostosos"></mbg-input-text> <br>
+
+      <mbg-input-text ng-model="text4"
+                      mbg-error="!text4"
+                      mbg-error-when="inputErros"
+                      mbg-error-message="Abacaxi são gostosos"></mbg-input-text> <br>
+
+      <mbg-input-text ng-model="text5"
+                      mbg-error="!text5"
+                      mbg-error-when="inputErros"
+                      mbg-error-message="Abacaxi são gostosos"></mbg-input-text> <br>
+
+    </form>
+
+    <br><br><br><br><br><br><br>
+
+    {{ formData.$valid }}
+
+    <button ng-click="inputErros = true">Salvar</button>
+
+
+  </div>
+
   <!-- <div class="container"> <br><br><br> -->
 
-  <mbg-product-search ng-model="teste"
+  <!-- <mbg-product-search ng-model="teste"
                         label="barCode"
                         try-add="addItem(barCode, quantity)"
                         auto-clear="false"
                         fetch="getProductsDTO(query, page)">
-    </mbg-product-search>
+    </mbg-product-search> -->
 
   <!-- <div class="row">
       <div class="col-md-4">

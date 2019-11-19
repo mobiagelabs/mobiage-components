@@ -11,7 +11,7 @@ class MbgHomescreenController {
     private loading
     private allowedToSee: boolean
     private allowedCallBack: Function
-    private displayValues:boolean
+    private displayValues: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -36,7 +36,7 @@ class MbgHomescreenController {
     }
 
     handleDisplayValues() {
-        if (this.allowedToSee != undefined && !this.allowedToSee) {
+        if (this.allowedToSee !== undefined && !this.allowedToSee) {
             if (this.allowedCallBack) {
                 this.allowedCallBack()
             }

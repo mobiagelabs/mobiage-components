@@ -588,7 +588,7 @@ Buzzmap.prototype.animate = function () {
 	var obj = this;
 
 	// Set animation timeout
-	if (obj.options.animationTimeout != 0) {
+	if (obj.options.animationTimeout !== 0) {
 		clearTimeout(obj.moveTimer);
 		obj.moveTimer = setTimeout(function () {
 			obj.stopMovement = true;
