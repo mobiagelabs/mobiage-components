@@ -27,7 +27,7 @@
   &:after {
     text-transform: none;
     content: attr(data-tooltip);
-    font-size: 14px;
+    font-size: 12px;
     position: absolute;
     color: #fff;
     background: var(--error);

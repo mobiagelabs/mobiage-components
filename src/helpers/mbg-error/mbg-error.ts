@@ -36,8 +36,10 @@ export class MbgError {
         const hasError = scope.$eval(attrs.mbgError)
         const mbgErrorWhen = scope.$eval(attrs.mbgErrorWhen)
         const trigger = attrs.mbgErrorTrigger || 'focus'
-        const formName = elm.closest('form').attr('name')
-        if (formName) { scope[formName].$setValidity(attrs.mbgError, !hasError, window) }
+        const form = elm.closest('form')
+        const formName = form.attr('name')
+        const formScope = form.scope()
+        if (formName) { formScope[formName].$setValidity(attrs.mbgError, !hasError, window) }
         if (hasError && (!attrs.mbgErrorWhen || mbgErrorWhen)) {
           elm.find('input').addClass('mbg-error')
           elm.find('input').off(trigger === 'hover' ? 'mouseover' : 'focus', handleCreate)
