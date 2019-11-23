@@ -1,6 +1,6 @@
 {
   "name": "@mobiage/components",
-  "version": "1.121.2",
+  "version": "1.122.0",
   "description": "@mobiage/components",
   "main": "src/components/index.ts",
   "scripts": {
@@ -29,7 +29,7 @@
     "firebase": "^5.5.2",
     "highcharts": "^6.1.0",
     "imports-loader": "^0.8.0",
-    "jquery": "^3.4.1",
+    "jquery": "3.4.1",
     "jquery-maskmoney": "^3.0.2",
     "jquery-ui": "^1.12.1",
     "jquery-ui-bundle": "^1.12.1-migrate",
