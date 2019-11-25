@@ -16,6 +16,13 @@ class MbgInputEmailController {
             placeholder: $attrs.placeholder || '',
         }
     }
+
+    $onInit() {
+        if (this.isValidEmail(this.ngModel)) {
+            this.inputValue = this.ngModel
+        }
+    }
+    
     onChange() {
         if (this.isValidEmail(this.inputValue)) {
             this.ngModel = this.inputValue
