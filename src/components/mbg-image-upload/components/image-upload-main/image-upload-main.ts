@@ -256,7 +256,7 @@ class ImageUploadMainController {
         const image = {
             background: `url(${imageMain.url}) no-repeat center center / cover`,
         }
-        if (imageMain.url != null) {
+        if (imageMain.url !== null) {
             return image
         } else {
             return

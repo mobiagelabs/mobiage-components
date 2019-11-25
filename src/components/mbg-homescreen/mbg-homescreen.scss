@@ -1,97 +1,122 @@
 mbg-homescreen {
-    .mh-container {
-        width: 100%;
-        height: auto;
-        padding: 15px;
-    
-        .mh-panel-container {
-            background-color: white;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  .charts {
+    .display-values {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 300ms ease;
+      opacity: 0;
+      cursor: pointer;
+      
+      a {
+        color: var(--neutral2);
+        i {
+          margin-right: 4px;
         }
-    
-        .mh-content-container {
-            margin-top: 50px;
-            height: 300px;
-            width: 100%;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
-    
-            &:first-child {
-                margin-top: 0px;
-            }
-        }
-
-        .fake-chart {
-            height: 400px;
-            width: 100%;
-            position: relative;
-            border-radius: 15px;
-            padding: 0px;
-            margin: 0px;
-            box-shadow: 0px 2px 20px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
-
-        .fake-card {
-            width: 45%;
-            min-width: 375px;
-            height: 100px;
-            margin-top: 20px;
-            margin-right: 10px;
-            margin-left: 10px;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-            border-radius: 5px;
-            @media screen and (max-width: 768px) {
-                width: 80%;
-            }
-        }
-    
-        .mbg-h-card-container {
-            width: 100%;
-            height: auto;
-            text-align: center;
-            padding-bottom: 50px;
-            padding-top: 50px;
-        }
-    
-        .mbg-h-tabs {
-            background-color: white;
-            height: auto;
-            width: 100%;
-            border-radius: 25px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding-left: 5px;
-            padding-right: 5px;
-            margin-bottom: 15px;
-            box-shadow: 0px 2px 20px rgba(0,0,0,0.05);
-            user-select: none;
-            position: relative;
-            overflow: hidden;
-            .mbg-h-t-tab {
-                color: #a5a5a5;
-                width: auto;
-                height: 35px;
-                line-height: 35px;
-                background-color: white;
-                padding: 0px 15px 0px 15px;
-                margin: 7.5px 5px 7.5px 5px;
-                border-radius: 17.5px;
-                font-weight: 500;
-                font-size: 14px;
-                transition: color 100ms linear, background-color 100ms linear;
-                cursor: pointer;
-                white-space: nowrap;
-                &:hover, &:active, &.active {
-                    color: #ff1e5f;
-                    background-color: #f8f8f8;
-                }
-            }
-        }
-        
+      }
     }
+
+    &:hover {
+        .display-values {
+            transform: translateY(10px);
+            opacity: 1;
+        }
+    }
+  }
+  .mh-container {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+
+    .mh-panel-container {
+      background-color: white;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .mh-content-container {
+      margin-top: 50px;
+      height: 300px;
+      width: 100%;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
+
+      &:first-child {
+        margin-top: 0px;
+      }
+    }
+
+    .fake-chart {
+      height: 400px;
+      width: 100%;
+      position: relative;
+      border-radius: 15px;
+      padding: 0px;
+      margin: 0px;
+      box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    .fake-card {
+      width: 45%;
+      min-width: 375px;
+      height: 100px;
+      margin-top: 20px;
+      margin-right: 10px;
+      margin-left: 10px;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      border-radius: 5px;
+      @media screen and (max-width: 768px) {
+        width: 80%;
+      }
+    }
+
+    .mbg-h-card-container {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      padding-bottom: 30px;
+      padding-top: 30px;
+    }
+
+    .mbg-h-tabs {
+      background-color: white;
+      height: auto;
+      width: 100%;
+      border-radius: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-bottom: 15px;
+      box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+      .mbg-h-t-tab {
+        color: #a5a5a5;
+        width: auto;
+        height: 35px;
+        line-height: 35px;
+        background-color: white;
+        padding: 0px 15px 0px 15px;
+        margin: 7.5px 5px 7.5px 5px;
+        border-radius: 17.5px;
+        font-weight: 500;
+        font-size: 14px;
+        transition: color 100ms linear, background-color 100ms linear;
+        cursor: pointer;
+        white-space: nowrap;
+        &:hover,
+        &:active,
+        &.active {
+          color: #ff1e5f;
+          background-color: #f8f8f8;
+        }
+      }
+    }
+  }
 }

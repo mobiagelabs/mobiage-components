@@ -68,7 +68,7 @@ export default function CurrencyMaskDirective($mbgMasker, $timeout) {
                 if (isNegative && allowNegative) {
                     maskedValue = '-' + maskedValue
                 }
-                if (maskedValue != value) {
+                if (maskedValue !== value) {
                     ngModel.$setViewValue(maskedValue);
                     ngModel.$render();
                 }

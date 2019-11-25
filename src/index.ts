@@ -5,7 +5,7 @@ import components from './components'
 import { initializeApp } from 'firebase/app'
 import './assets/angular-locale_pt-br.js'
 import { MbgAlert } from './helpers/services/mbg-alert'
-import { MbgTypeAlert } from './helpers/enums/mbg-type-alert';
+import { MbgTypeAlert } from './helpers/enums/mbg-type-alert'
 
 initializeApp({
 	apiKey: 'AIzaSyCpNjqpFQJ-ptCOMsqZjyDUx33vB_j_yOk',
@@ -33,6 +33,10 @@ const module = angular
 		// 	console.log(response)
 		// })
 
+		$timeout(() => {
+			$scope.mostrarErros = true
+		}, 3000)
+
 		$scope.VANDERSON
 		$scope.entity = {}
 		$scope.percentage = 0
@@ -51,6 +55,11 @@ const module = angular
 			})
 		}
 
+		$scope.displayValues = false
+		// $timeout(() => {
+		// 	$scope.displayValues = false
+		// }, 5000)
+
 		// [1, 2, 3, 4].forEach((n, i) => {
 		// 	$timeout(() => {
 		// 		goTo(25 * n)
@@ -64,6 +73,9 @@ const module = angular
 
 		$timeout(() => {
 			$scope.show = true
+			// $scope.teste = {
+			// 	value: 'ajdioasjd@asiodasjd.com'
+			// }
 		}, 500)
 
 		$scope.initValue = () => {
@@ -76,7 +88,7 @@ const module = angular
 		}
 
 		$scope.essaColunaPode = (row) => {
-			return row.qnt != 37
+			return row.qnt !== 37
 		}
 		$scope.optionsDropdown = [
 			{
@@ -193,7 +205,7 @@ const module = angular
 		}
 
 		$scope.addItem = (barCode, quantity) => {
-			console.log(barCode, quantity)
+			console.log('asydgaysud',barCode, quantity)
 		}
 
 		$scope.config = {
@@ -733,7 +745,7 @@ const module = angular
 					{
 						name: 'Metas',
 						chart: {
-							type: 'barlinepie',
+							type: 'barline',
 							format: 'money',
 							categories,
 							series: teste
@@ -802,28 +814,25 @@ const module = angular
 
 
 		$scope.getModelo = (param = '') => {
-			// return new Promise((resolve) => {
-			// 	resolve([
-			// 		{
-			// 			name: 'Futebol'
-			// 		},
-			// 		{
-			// 			name: 'Casual'
-			// 		},
-			// 		{
-			// 			name: 'Corrida'
-			// 		}
-			// 	].filter((obj) => {
-			// 		return obj.name.toLowerCase().indexOf(param.toLowerCase()) !== -1
-			// 	}))
-			// })
-			return [
-				10,
-				20,
-				30,
-				40,
-				50,
-			]
+			return new Promise((resolve) => {
+				resolve([
+					{
+						name: 'Futebol'
+					},
+					{
+						name: 'Casual'
+					},
+					{
+						name: 'Corrida'
+					}
+				].filter((obj) => {
+					return obj.name.toLowerCase().indexOf(param.toLowerCase()) !== -1
+				}))
+			})
+		}
+
+		$scope.testecons = () => {
+			console.log('asdihasoidashpid')
 		}
 
 	}])

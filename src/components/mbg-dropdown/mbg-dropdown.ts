@@ -4,9 +4,14 @@ import template from './mbg-dropdown.html'
 class MbgDropdownController {
     private inputElement: HTMLInputElement
     private callbackFunction: Function
+    private options: Array<any>
 
     constructor(public $scope, public $element, public $attrs, public $timeout) {
         this.inputElement = this.$element.find('input')[0]
+    }
+
+    $onInit() {
+        this.options = this.$scope.$parent.$eval(this.$attrs.options)
     }
 
     onClickOption(option) {
@@ -64,7 +69,6 @@ MbgDropdownController.$inject = [
 
 const mbgDropdown = {
     bindings: {
-        options: '=?',
         label: '@?',
         direction: '@?'
     },

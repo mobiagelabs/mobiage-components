@@ -8,16 +8,32 @@
             {{ tab.name }}
         </div>
     </div>
-    <mbg-chart-line chart="$ctrl.chart"
-                    ng-if="$ctrl.chart && $ctrl.chart.type == 'line'"></mbg-chart-line>
-    <mbg-chart-bar-line chart="$ctrl.chart"
-                        ng-if="$ctrl.chart && $ctrl.chart.type == 'barline'"></mbg-chart-bar-line>
-    <mbg-chart-bar-line-pie chart="$ctrl.chart"
-                            ng-if="$ctrl.chart && $ctrl.chart.type == 'barlinepie'"></mbg-chart-bar-line-pie>
+    <div class="charts">
+        <mbg-chart-line chart="$ctrl.chart"
+                        display-values="$ctrl.displayValues"
+                        ng-if="$ctrl.chart && $ctrl.chart.type == 'line'"></mbg-chart-line>
+        <mbg-chart-bar-line chart="$ctrl.chart"
+                            display-values="$ctrl.displayValues"
+                            ng-if="$ctrl.chart && $ctrl.chart.type == 'barline'"></mbg-chart-bar-line>
+        <mbg-chart-bar-line-pie chart="$ctrl.chart"
+                                display-values="$ctrl.displayValues"
+                                ng-if="$ctrl.chart && $ctrl.chart.type == 'barlinepie'"></mbg-chart-bar-line-pie>
+        <div class="display-values">
+            <a ng-show="!$ctrl.displayValues"
+               ng-click="$ctrl.handleDisplayValues()"><i class="fas fa-eye"></i> <span>Visualizar valores</span></a>
+            <a ng-show="$ctrl.displayValues"
+               ng-click="$ctrl.handleDisplayValues()"><i class="fas fa-eye-slash"></i> <span>Esconder valores</span></a>
+        </div>
+    </div>
+
     <div class="mbg-h-card-container">
         <mbg-card-typeone ng-repeat="card in $ctrl.cards"
+                          allowed-to-see="$ctrl.allowedToSee"
+                          display-values="$ctrl.displayValues"
+                          allowed-call-back="$ctrl.allowedCallBack()"
                           card="card"></mbg-card-typeone>
     </div>
+
 </div>
 
 <div class="mh-container"
