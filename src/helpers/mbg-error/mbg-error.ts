@@ -11,6 +11,8 @@ export class MbgError {
 
   link = (scope, elm, attrs) => {
 
+    let form, formName, formScope, index
+
     const addTooltip = () => {
       const trigger = attrs.mbgErrorTrigger || 'focus'
       elm.attr('data-tooltip', attrs.mbgErrorMessage || 'Essa informação é obrigatória.')
@@ -36,10 +38,11 @@ export class MbgError {
         const hasError = scope.$eval(attrs.mbgError)
         const mbgErrorWhen = scope.$eval(attrs.mbgErrorWhen)
         const trigger = attrs.mbgErrorTrigger || 'focus'
-        const form = elm.closest('form')
-        const formName = form.attr('name')
-        const formScope = form.scope()
-        if (formName) { formScope[formName].$setValidity(attrs.mbgError, !hasError, window) }
+        form = elm.closest('form')
+        formName = form.attr('name')
+        formScope = form.scope()
+        index = scope.$index ? scope.$index + '-' : '0-'
+        if (formName) { formScope[formName].$setValidity(index + attrs.mbgError, !hasError, window) }
         if (hasError && (!attrs.mbgErrorWhen || mbgErrorWhen)) {
           elm.find('input').addClass('mbg-error')
           elm.find('input').off(trigger === 'hover' ? 'mouseover' : 'focus', handleCreate)
@@ -56,6 +59,7 @@ export class MbgError {
     const unWatchError = scope.$watch(attrs.mbgError, onChangeModelError)
     const unWatchWhen = scope.$watch(attrs.mbgErrorWhen, onChangeModelError)
     scope.$on('$destroy', () => {
+      if (formName) { formScope[formName].$setValidity(index + attrs.mbgError, true, window) }
       unWatchError()
       unWatchWhen()
     })
