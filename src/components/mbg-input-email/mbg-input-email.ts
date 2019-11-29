@@ -22,7 +22,7 @@ class MbgInputEmailController {
             this.inputValue = this.ngModel
         }
     }
-    
+
     onChange() {
         this.$timeout(() => {
             if (this.isValidEmail(this.inputValue)) {

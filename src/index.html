@@ -123,7 +123,26 @@
 
     <form name="formData">
 
-      <mbg-input-text ng-model="text2"
+      <mbg-multi-select ng-model="izkkkkkkkkadnksanksandsa"
+                        placeholder="Adicionar campo..."
+                        enable-sort="false"
+                        enable-add="true"
+                        fetch="testedlsadkasjn()">
+      </mbg-multi-select>
+
+      <pre>{{ izkkkkkkkkadnksanksandsa | json }}</pre> <br><br><br>
+
+      <mbg-multi-select ng-model="selecteds"
+                        placeholder="Adicionar campo..."
+                        fetch="getOptionsMultiSelect()"
+                        ng-blur="blurTest()"
+                        label="label"
+                        ng-focus="focusTest()">
+      </mbg-multi-select>
+
+      <pre>{{ selecteds | json }}</pre> <br><br><br>
+
+      <!-- <mbg-input-text ng-model="text2"
                       mbg-error="!text2"
                       mbg-error-when="inputErros"
                       mbg-error-trigger="hover"
@@ -142,7 +161,7 @@
       <mbg-input-text ng-model="text5"
                       mbg-error="!text5"
                       mbg-error-when="inputErros"
-                      mbg-error-message="Abacaxi são gostosos"></mbg-input-text> <br>
+                      mbg-error-message="Abacaxi são gostosos"></mbg-input-text> <br> -->
 
     </form>
 
