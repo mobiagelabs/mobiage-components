@@ -16,6 +16,7 @@ class MbgMultiSelectController {
     private searchModel
     private eventsFunctions
     private ngChange: Function
+    private enableAdd: boolean
 
     constructor(public $scope, public $element, public $attrs, public $timeout) { }
 
@@ -46,7 +47,14 @@ class MbgMultiSelectController {
     onSelect() {
         this.$timeout(() => {
             if (this.searchModel) {
-                this.ngModel.push(this.searchModel)
+                this.ngModel = this.ngModel || []
+                if (this.ngModel && typeof this.ngModel[0] === 'string') {
+                    if (this.ngModel.filter((v) => v.toLowerCase() === this.searchModel.toLowerCase()).length === 0) {
+                        this.ngModel.push(this.searchModel)
+                    }
+                } else {
+                    this.ngModel.push(this.searchModel)
+                }
                 this.verifyScroll()
                 delete this.searchModel
                 if (this.ngChange) {
@@ -102,7 +110,7 @@ class MbgMultiSelectController {
         element.parentNode.insertBefore(elementToInsert, element.nextSibling)
     }
 
-    onDrag(evt: DragEvent) {
+    onDrag(evt: any) {
         if (!this.liDragging) { return }
         if (evt.pageX !== 0) { this.pageX = evt.pageX }
         if (this.liDragging && this.liOver && this.pageX > 0) {
@@ -138,7 +146,7 @@ class MbgMultiSelectController {
         this.lastPageX = this.pageX
     }
 
-    onDragStart(evt: DragEvent) {
+    onDragStart(evt: any) {
         delete this.liDragging
         delete this.liOver
         const elm: any = evt.toElement || evt.srcElement
@@ -153,7 +161,7 @@ class MbgMultiSelectController {
         this.liDragging.classList.add('dragging')
     }
 
-    onDragEnd(evt: DragEvent) {
+    onDragEnd(evt: any) {
         if (!this.liDragging) { return }
         evt.dataTransfer.effectAllowed = 'none'
         this.liDragging.classList.remove('dragging')
@@ -161,7 +169,7 @@ class MbgMultiSelectController {
         delete this.liOver
     }
 
-    onDragOver(evt: DragEvent) {
+    onDragOver(evt: any) {
         this.pageX = evt.pageX
         if (!this.liDragging) { return }
         const elm: any = evt.toElement || evt.srcElement
@@ -191,6 +199,7 @@ const mbgMultiSelect = {
         fetch: '&?',
         ngModel: '=?',
         ngChange: '&?',
+        enableAdd: '=?',
         enableSort: '=?',
         label: '@?',
         ngBlur: '&?',

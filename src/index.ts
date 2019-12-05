@@ -108,6 +108,12 @@ const module = angular
 			},
 		]
 
+		$scope.testedlsadkasjn = () => {
+			return [
+				'Fixo',
+				'Variavel',
+			]
+		}
 
 
 		$scope.getOptionsMultiSelect = () => {
@@ -176,7 +182,7 @@ const module = angular
 					name: 'Número do motor11',
 					label: 'Underground',
 				}
-			].map((s) => s.label)
+			]//.map((s) => s.label)
 		}
 
 		$scope.selecteds = [
@@ -188,7 +194,7 @@ const module = angular
 				name: 'Marca',
 				label: 'Adidas',
 			}
-		].map((s) => s.label)
+		]//.map((s) => s.label)
 
 
 		const url = 'https://api-hom.mobiage.io/mobiage-api/api/v2/product-item/terminal?idPriceSheetType=MOBAAAC410AAA&gumgaToken=615L758E1571055003567C157105320585900O756.757.758.I&pageSize=6'
