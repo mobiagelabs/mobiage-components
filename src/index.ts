@@ -8,12 +8,14 @@ import { MbgAlert } from './helpers/services/mbg-alert'
 import { MbgTypeAlert } from './helpers/enums/mbg-type-alert'
 
 initializeApp({
-	apiKey: 'AIzaSyCpNjqpFQJ-ptCOMsqZjyDUx33vB_j_yOk',
-	authDomain: 'mobiage-ac405.firebaseapp.com',
-	databaseURL: 'https://mobiage-ac405.firebaseio.com',
-	projectId: 'mobiage-ac405',
-	storageBucket: 'mobiage-ac405.appspot.com',
-	messagingSenderId: '224462853887'
+	apiKey: "AIzaSyBONcuLOKuFFlAjMOr04pYSnJhWCPtr3bU",
+	authDomain: "mobiage-n-chill.firebaseapp.com",
+	databaseURL: "https://mobiage-n-chill.firebaseio.com",
+	projectId: "mobiage-n-chill",
+	storageBucket: "mobiage-n-chill.appspot.com",
+	messagingSenderId: "74787051710",
+	appId: "1:74787051710:web:e8de92a4ed0298f88326ef",
+	measurementId: "G-T7BCMVHD5C"
 })
 
 const module = angular
@@ -211,7 +213,7 @@ const module = angular
 		}
 
 		$scope.addItem = (barCode, quantity) => {
-			console.log('asydgaysud',barCode, quantity)
+			console.log('asydgaysud', barCode, quantity)
 		}
 
 		$scope.config = {
@@ -649,50 +651,50 @@ const module = angular
 			},
 		]
 
-		$http.get('https://api-hom.mobiage.io/mobiage-api/api/sales-goal/dashboard?gumgaToken=511L518E1569847473353C156984568040000O516.517.518.I')
-			.then((response) => {
-				series.push({
-					type: 'column',
-					name: 'Valor vendido',
-					color: '#42CAF5',
-					data: meses
-				})
+		// $http.get('https://api-hom.mobiage.io/mobiage-api/api/sales-goal/dashboard?gumgaToken=511L518E1569847473353C156984568040000O516.517.518.I')
+		// 	.then((response) => {
+		// 		series.push({
+		// 			type: 'column',
+		// 			name: 'Valor vendido',
+		// 			color: '#42CAF5',
+		// 			data: meses
+		// 		})
 
-				series = series.concat(metas.map((goal) => {
-					return {
-						type: 'spline',
-						color: '#541794',
-						name: goal.name,
-						data: goal.data.map((mes) => (mes.value * Math.random()) || 0),
-						marker: {
-							lineWidth: 2,
-							lineColor: '#541794',
-							fillColor: 'white'
-						}
-					}
-				}))
+		// 		series = series.concat(metas.map((goal) => {
+		// 			return {
+		// 				type: 'spline',
+		// 				color: '#541794',
+		// 				name: goal.name,
+		// 				data: goal.data.map((mes) => (mes.value * Math.random()) || 0),
+		// 				marker: {
+		// 					lineWidth: 2,
+		// 					lineColor: '#541794',
+		// 					fillColor: 'white'
+		// 				}
+		// 			}
+		// 		}))
 
-				series.push({
-					type: 'pie',
-					name: 'Meta Anual',
-					data: [{
-						name: 'Meta',
-						y: 76700,
-					}, {
-						name: 'Progresso',
-						y: 18458,
-					}],
-					center: [100, -40],
-					size: 100,
-					showInLegend: false,
-					dataLabels: {
-						enabled: false
-					}
-				})
+		// 		series.push({
+		// 			type: 'pie',
+		// 			name: 'Meta Anual',
+		// 			data: [{
+		// 				name: 'Meta',
+		// 				y: 76700,
+		// 			}, {
+		// 				name: 'Progresso',
+		// 				y: 18458,
+		// 			}],
+		// 			center: [100, -40],
+		// 			size: 100,
+		// 			showInLegend: false,
+		// 			dataLabels: {
+		// 				enabled: false
+		// 			}
+		// 		})
 
-				aaaaaaaaaaaaaaaaaaaa(series, meses.map((mes) => mes.name))
+		// 		aaaaaaaaaaaaaaaaaaaa(series, meses.map((mes) => mes.name))
 
-			})
+		// 	})
 
 		const aaaaaaaaaaaaaaaaaaaa = (teste, categories) => {
 			$scope.homeConfig = {

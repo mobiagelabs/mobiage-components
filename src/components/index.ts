@@ -41,6 +41,7 @@ import { mbgProductGridModule } from './mbg-product-grid'
 import { mbgInputCheckboxModule } from './mbg-input-checkbox'
 import { mbgInputPasswordModule } from './mbg-input-password'
 import { mbgInputDateModule } from './mbg-input-date'
+import { mbgInputFileModule } from './mbg-input-file'
 import { mbgKeyboardModule } from './mbg-keyboard'
 import { mbgSelectModule } from './mbg-select'
 import { mbgPaginationModule } from './mbg-pagination'
@@ -114,7 +115,8 @@ const mbgComponentsModule = angular
     mbgInputReceiveDayModule,
     mbgConnectionRetryModule,
     mbgSkeletonModule,
-    mbgLoadingModule
+    mbgLoadingModule,
+    mbgInputFileModule,
   ])
   .config(appConfig)
   .service('mbgAlert', MbgAlert)

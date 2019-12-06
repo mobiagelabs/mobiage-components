@@ -111,6 +111,7 @@
         content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body ng-controller="demoCtrl">
@@ -121,18 +122,43 @@
                     mbg-error="!nomeCompletoDoCliente"
                     mbg-error-message="Precisamos saber o nome completo do cliente."></mbg-input-text> -->
 
-    <form name="formData">
+    <form name="formData" style="padding: 0 64px;">
 
-      <mbg-multi-select ng-model="izkkkkkkkkadnksanksandsa"
-                        placeholder="Adicionar campo..."
-                        enable-sort="false"
-                        enable-add="true"
-                        fetch="testedlsadkasjn()">
-      </mbg-multi-select>
+      <div class="row">
+        <!-- <div class="col-md-6"> -->
+          <!-- <label for="" style="font-size: 14px;
+          color: var(--neutral1);
+          margin-top: 15px;
+          font-weight: 500;
+          margin-bottom: 12px;">Test1 </label>
+          <mbg-multi-select ng-model="izkkkkkkkkadnksanksandsa"
+                            placeholder="Adicionar campo..."
+                            enable-sort="false"
+                            enable-add="true"
+                            fetch="testedlsadkasjn()">
+          </mbg-multi-select>
+          <label for="" style="font-size: 14px;
+          color: var(--neutral1);
+          margin-top: 15px;
+          font-weight: 500;
+          margin-bottom: 12px;">Test1 </label>
+          <mbg-multi-select ng-model="izkkkkkkkkadnksanksandsa"
+                            placeholder="Adicionar campo..."
+                            enable-sort="false"
+                            enable-add="true"
+                            fetch="testedlsadkasjn()">
+          </mbg-multi-select> -->
+        <!-- </div> -->
+        <div class="col-md-6">
+          <mbg-input-file ng-model="mbginputfiles"></mbg-input-file>
+        </div>
+      </div>
 
-      <pre>{{ izkkkkkkkkadnksanksandsa | json }}</pre> <br><br><br>
+      <br><br>
 
-      <mbg-multi-select ng-model="selecteds"
+      <!-- <pre>{{ izkkkkkkkkadnksanksandsa | json }}</pre> <br><br><br> -->
+
+      <!-- <mbg-multi-select ng-model="selecteds"
                         placeholder="Adicionar campo..."
                         fetch="getOptionsMultiSelect()"
                         ng-blur="blurTest()"
@@ -140,7 +166,7 @@
                         ng-focus="focusTest()">
       </mbg-multi-select>
 
-      <pre>{{ selecteds | json }}</pre> <br><br><br>
+      <pre>{{ selecteds | json }}</pre> <br><br><br> -->
 
       <!-- <mbg-input-text ng-model="text2"
                       mbg-error="!text2"
@@ -167,9 +193,9 @@
 
     <br><br><br><br><br><br><br>
 
-    {{ formData.$valid }}
+    <!-- {{ formData.$valid }}
 
-    <button ng-click="inputErros = true">Salvar</button>
+    <button ng-click="inputErros = true">Salvar</button> -->
 
 
   </div>

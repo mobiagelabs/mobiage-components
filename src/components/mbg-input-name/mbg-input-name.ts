@@ -17,8 +17,8 @@ class MbgInputNameController {
         }
     }
 
-    onInit() {
-        this.ngModel = this.capitalize(this.ngModel)
+    $onInit() {
+        this.ngModel = this.capitalize(this.ngModel || '')
     }
 
 
