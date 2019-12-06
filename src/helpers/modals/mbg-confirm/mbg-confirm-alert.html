@@ -63,10 +63,14 @@
 			 class="tip-wrapper">
 			<p><strong>Dica:</strong> {{$ctrl.config.tip}}</p>
 		</div>
-		<div class="input-wrapper" ng-class="{'input-error' : $ctrl.isValidResult !== undefined && !$ctrl.isValidResult}" ng-if="$ctrl.config.enableInput">
+		<div class="input-wrapper"
+			 ng-class="{'input-error' : $ctrl.isValidResult !== undefined && !$ctrl.isValidResult}"
+			 ng-if="$ctrl.config.enableInput">
 			<mbg-input-text ng-if="$ctrl.config.inputType === 'INPUT'"
+							ng-attr-placeholder="{{$ctrl.config.inputPlaceholder}}"
 							ng-model="$ctrl.inputValue"></mbg-input-text>
 			<mbg-text-area ng-if="$ctrl.config.inputType === 'TEXTAREA'"
+						   ng-attr-placeholder="{{$ctrl.config.inputPlaceholder}}"
 						   ng-model="$ctrl.inputValue"></mbg-text-area>
 		</div>
 	</div>

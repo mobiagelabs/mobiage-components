@@ -31,6 +31,7 @@ const module = angular
 			invertContrast: false,
 			textConfirm: 'Aceitar',
 			enableInput: true,
+			inputPlaceholder: 'Motivo',
 			inputType: MbgInputType.TEXTAREA,
 			inputValidate: (inputValue) => {
 				console.log('validade ', inputValue)

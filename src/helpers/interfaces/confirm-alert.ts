@@ -11,6 +11,7 @@ export interface ConfirmAlert {
 	tip?: string,
 	enableInput?: boolean,
 	inputType?: MbgInputType,
+	inputPlaceholder?: string,
 	invertContrast?: boolean,
 	inputValidate?: any
 }

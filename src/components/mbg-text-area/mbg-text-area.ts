@@ -11,9 +11,6 @@ class MbgTextAreaController {
     constructor($scope, $element, $attrs) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
-        this.props = {
-            placeholder: $attrs.placeholder || '',
-        }
     }
     onChange() {
         if (this.ngChange) {
@@ -34,6 +31,7 @@ const mbgTextArea = {
         ngKeyup: '&?',
         ngKeypress: '&?',
         ngKeydown: '&?',
+        placeholder: '@?',
     },
     template,
     controller: MbgTextAreaController,
