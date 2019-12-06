@@ -1,12 +1,15 @@
 import './mbg-confirm-alert.scss'
+import { ConfirmAlert } from '../../interfaces/confirm-alert'
 
 class MbgCofirmAlertController {
+	private isValidResult: boolean
+	private inputValue: string
 
 	constructor(
 		public $scope,
 		public $timeout,
 		public $uibModalInstance,
-		public config
+		public config: ConfirmAlert
 	) { }
 
 	$onInit() {
@@ -14,11 +17,26 @@ class MbgCofirmAlertController {
 	}
 
 	close(confirm) {
-		this.$uibModalInstance.close(confirm)
+		this.$timeout(async () => {
+			if (this.config.invertContrast) { confirm = !confirm }
+			if (this.config.inputValidate) {
+				const isValidResult = await this.executeValidade()
+				this.$timeout(() => {
+					this.isValidResult = isValidResult
+					if (this.isValidResult) { this.$uibModalInstance.close(this.inputValue) }
+				})
+			} else {
+				this.$uibModalInstance.close(confirm)
+			}
+		})
+	}
+
+	async executeValidade() {
+		return this.config.inputValidate(this.inputValue)
 	}
 
 	dismiss() {
-		this.$uibModalInstance.dismiss()
+		this.$uibModalInstance.close(false)
 	}
 }
 
