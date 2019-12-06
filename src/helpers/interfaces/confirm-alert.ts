@@ -1,4 +1,5 @@
 import { MbgTypeAlert } from '../enums/mbg-type-alert'
+import { MbgInputType } from '../enums/mbg-input-type'
 
 export interface ConfirmAlert {
 	type: MbgTypeAlert,
@@ -9,5 +10,7 @@ export interface ConfirmAlert {
 	visibleCancel?: boolean,
 	tip?: string,
 	enableInput?: boolean,
-	invertContrast?: boolean
+	inputType?: MbgInputType,
+	invertContrast?: boolean,
+	inputValidate?: any
 }

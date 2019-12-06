@@ -57,20 +57,28 @@
 	</div>
 	<div class="information-wrapper">
 		<h3>{{$ctrl.config.title}}</h3>
-		<p ng-if="$ctrl.config.message" class="message">{{$ctrl.config.message}}</p>
+		<p ng-if="$ctrl.config.message"
+		   class="message">{{$ctrl.config.message}}</p>
 		<div ng-if="$ctrl.config && $ctrl.config.tip"
 			 class="tip-wrapper">
 			<p><strong>Dica:</strong> {{$ctrl.config.tip}}</p>
 		</div>
+		<div class="input-wrapper" ng-class="{'input-error' : $ctrl.isValidResult !== undefined && !$ctrl.isValidResult}" ng-if="$ctrl.config.enableInput">
+			<mbg-input-text ng-if="$ctrl.config.inputType === 'INPUT'"
+							ng-model="$ctrl.inputValue"></mbg-input-text>
+			<mbg-text-area ng-if="$ctrl.config.inputType === 'TEXTAREA'"
+						   ng-model="$ctrl.inputValue"></mbg-text-area>
+		</div>
 	</div>
-	<div class="mbg-group-buttons">
+	<div class="mbg-group-buttons"
+		 ng-class="{'invert-contrast': $ctrl.config.invertContrast}">
 		<button class="mbg-btn-accept"
 				ng-class="$ctrl.config.type"
 				ng-click="$ctrl.close(true)">
-			{{$ctrl.config.textConfirm ? $ctrl.config.textConfirm : 'Sim'}}
+			{{$ctrl.config.invertContrast ? $ctrl.config.textCancel ? $ctrl.config.textCancel : 'Cancelar' : $ctrl.config.textConfirm ? $ctrl.config.textConfirm : 'Sim'}}
 		</button>
 		<a class="mbg-link-cancel"
 		   ng-if="$ctrl.config.visibleCancel"
-		   ng-click="$ctrl.close(false)">{{$ctrl.config.textCancel ? $ctrl.config.textCancel : 'Cancelar'}}</a>
+		   ng-click="$ctrl.dismiss()">{{$ctrl.config.invertContrast ? $ctrl.config.textConfirm ? $ctrl.config.textConfirm : 'Sim' : $ctrl.config.textCancel ? $ctrl.config.textCancel : 'Cancelar'}}</a>
 	</div>
 </div>

@@ -6,6 +6,7 @@ import { initializeApp } from 'firebase/app'
 import './assets/angular-locale_pt-br.js'
 import { MbgAlert } from './helpers/services/mbg-alert'
 import { MbgTypeAlert } from './helpers/enums/mbg-type-alert'
+import { MbgInputType } from './helpers/enums/mbg-input-type'
 
 initializeApp({
 	apiKey: 'AIzaSyCpNjqpFQJ-ptCOMsqZjyDUx33vB_j_yOk',
@@ -22,16 +23,24 @@ const module = angular
 		components,
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', 'mbgAlert', ($scope, $timeout, $http, mbgAlert: MbgAlert) => {
-		// mbgAlert.confirm({
-		// 	title: 'Salvar operação',
-		// 	type: MbgTypeAlert.WARNING,
-		// 	message: 'Deseja salvar a operação atual?',
-		// 	invertContrast: true
-		// 	// visibleCancel: false
-		// 	// tip: 'Ao salvar a operação, você poderá continuar ela em outro momento.'
-		// }).then((response) => {
-		// 	console.log(response)
-		// })
+
+		mbgAlert.confirm({
+			title: 'Salvar operação',
+			type: MbgTypeAlert.INFORMATION,
+			message: 'Deseja salvar a operação atual?',
+			invertContrast: false,
+			textConfirm: 'Aceitar',
+			enableInput: true,
+			inputType: MbgInputType.TEXTAREA,
+			inputValidate: (inputValue) => {
+				console.log('validade ', inputValue)
+				return true
+			},
+			// visibleCancel: false
+			// tip: 'Ao salvar a operação, você poderá continuar ela em outro momento.'
+		}).then((response) => {
+			console.log('onSuccess',response)
+		})
 
 		$timeout(() => {
 			$scope.mostrarErros = true
@@ -211,7 +220,7 @@ const module = angular
 		}
 
 		$scope.addItem = (barCode, quantity) => {
-			console.log('asydgaysud',barCode, quantity)
+			console.log('asydgaysud', barCode, quantity)
 		}
 
 		$scope.config = {
