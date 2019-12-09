@@ -1,0 +1,83 @@
+<div class="mbg-input-file-wrapper"
+     mbg-autocomplete-off>
+
+    <input onchange="angular.element(this).scope().$ctrl.onFilesChoice(event)"
+           type="file" />
+
+    <div class="input-fake"
+         ng-class="{ 'drag-enter' : $ctrl.isDragStart }">
+        <div class="file-content"
+             ng-show="$ctrl.ngModel">
+            <div class="left">
+                <a>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         data-name="Layer 1"
+                         viewBox="0 0 100 100"
+                         x="0px"
+                         y="0px">
+                        <path d="M47.77,54.66v36c0,4.83,7.5,4.84,7.5,0v-36c0-4.83-7.5-4.84-7.5,0Z" />
+                        <path
+                              d="M53.41,87.82C50.35,86.2,47.73,83.55,45,81c-3.54-3.26-8.86,2-5.3,5.3,3,2.8,6.27,6,9.94,8,4.27,2.25,8.07-4.22,3.79-6.47Z" />
+                        <path
+                              d="M53.41,94.16a101.83,101.83,0,0,0,8.91-7.83C65.79,83,60.48,77.66,57,81c-.89.87-1.79,1.72-2.71,2.56s-1.62,1.49-2.45,2.22L50.48,87c-.13.1-1.18,1-.86.71-1.6,1.23-2.46,3.22-1.34,5.13.92,1.58,3.52,2.59,5.13,1.34Z" />
+                        <path
+                              d="M39,66.89c-8.78-.15-19.22.61-23.93-8.45-1.85-3.56-2.6-8.21.26-11.45A9.92,9.92,0,0,1,27.66,45.2c1.89,1.09,5.14.21,5.51-2.24,1-6.36,3.28-12.85,9.18-16.21,5.58-3.19,13.11-1.55,14.94,5.09a3.8,3.8,0,0,0,6.27,1.66c6-5.44,15.28-3.6,19.51,3.1a16.2,16.2,0,0,1,1.39,14C81.12,60.9,72.23,66.5,61.64,66.53c-4.82,0-4.83,7.52,0,7.5,15,0,28.11-9.67,30.93-24.79,3.6-19.3-18.79-35-34.31-21l6.26,1.66c-2.47-9-11.72-13.9-20.67-11.72C33.27,20.72,27.46,30.87,25.94,41l5.51-2.24C19.46,31.77,4,41.16,6.21,55.24A22.35,22.35,0,0,0,17.3,71.11c6.5,3.54,14.53,3.16,21.7,3.28,4.82.08,4.82-7.42,0-7.5Z" />
+
+                    </svg>
+                    {{ $ctrl.ngModel.fileName }}
+                </a>
+                <p>• {{ $ctrl.getSize($ctrl.ngModel.fileSize) }}</p>
+            </div>
+            <div class="right">
+                <button ng-click="$ctrl.openImageChoice()"><i class="fas fa-upload"></i></button>
+                <button ng-click="$ctrl.clearModel()"><i class="fas fa-trash"></i></button>
+            </div>
+        </div>
+        <div class="file-empty"
+             ng-show="!$ctrl.ngModel">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 data-name="Layer 2 copy"
+                 viewBox="0 0 32 32"
+                 x="0px"
+                 y="0px">
+                <path
+                      d="M19,27H9.5a7.5,7.5,0,0,1-.7627-14.9619A11,11,0,1,1,19,27ZM19,7a8.97,8.97,0,0,0-8.5859,6.3008l-.22.6953L9.4658,14A5.5,5.5,0,0,0,9.5,25H19A9,9,0,0,0,19,7Z" />
+                <rect x="15"
+                      y="16"
+                      width="2"
+                      height="7" />
+                <polygon
+                         points="19.293 19.707 16 16.414 12.707 19.707 11.293 18.293 16 13.586 20.707 18.293 19.293 19.707" />
+            </svg>
+            <label ng-show="!$ctrl.ngModel && !$ctrl.isDragStart"
+                   class="empty-label">
+                Arraste o arquivo aqui ou <a ng-click="$ctrl.openImageChoice()">selecione</a>
+            </label>
+            <label ng-show="!$ctrl.ngModel && $ctrl.isDragStart"
+                   class="empty-label">
+                Solte o arquivo
+            </label>
+        </div>
+        <div class="uploading"
+             ng-class="{'visible': $ctrl.uploading}">
+            <div class="uploading-line"
+                 ng-style="{width: $ctrl.uploadProgress + '%'}"></div>
+            <div class="uploading-content">
+                <div class="left">
+                    <label>Enviando o arquivo</label>
+                    <p>• {{ $ctrl.uploadProgress }}%</p>
+                </div>
+                <div class="right">
+                    <button ng-click="$ctrl.playOrResume()">
+                        <i class="far fa-pause-circle"
+                           ng-show="!$ctrl.uploadPaused"></i>
+                        <i class="far fa-play-circle"
+                           ng-show="$ctrl.uploadPaused"></i>
+                    </button>
+                    <button ng-click="$ctrl.stopUpload()"><i class="far fa-times-circle"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

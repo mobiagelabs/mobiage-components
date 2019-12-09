@@ -1,0 +1,194 @@
+.mbg-input-file-wrapper {
+  [type="file"] {
+    display: none;
+  }
+  .input-fake {
+    border: none;
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0, .1);
+    background: #fff;
+    border-radius: 12px;
+    padding: 8px 14px;
+    flex: 1;
+    outline: none;
+    width: inherit;
+    height: 94px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    &.drag-enter {
+      background: #f8f9ff;
+      label.empty-label {
+        color: #474955;
+      }
+    }
+    .file-content {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      .left, .right {
+        p, label {
+          margin: 0;
+        }
+      }
+      .left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+        a {
+          display: flex;
+          align-items: center;
+          color: #337ab7;
+          cursor: pointer;
+          svg {
+            width: 24px;
+            margin-right: 8px;
+            fill: #12ab28;
+          }
+        }
+        p {
+          margin-left: 32px;
+          font-size: 12px;
+        }
+        // a {
+        //   font-size: 12px;
+        //   white-space: nowrap;
+        //   overflow: hidden;
+        //   max-width: 100%;
+        //   text-overflow: ellipsis;
+        //   cursor: pointer;
+        //   color: #337ab7;
+        //   margin-left: 32px;
+        //   &:hover {
+        //     text-decoration: none;
+        //   }
+        // }
+      }
+      .right {
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        button {
+          font-size: 20px;
+          color: #9f9fb0;
+          background: transparent;
+          border: none;
+          border-radius: 50%;
+          outline: none;
+          margin-right: 5px;
+        }
+      }
+    }
+    .file-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: -8px;
+      svg {
+        width: 44px;
+        fill: #666;
+        margin-bottom: 5px;
+      }
+      label.empty-label {
+        font-weight: 500;
+        font-family: 'Open Sans', sans-serif;
+        margin: 0;
+        color: #666;
+        font-size: 14px;
+        a {
+          cursor: pointer;
+          color: #337ab7;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .uploading {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #fff;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 350ms ease;
+      transition-timing-function: linear;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 15px 19px 0 18px;
+      p, label {
+        margin: 0;
+      }
+      label {
+        color: #474955;
+        display: flex;
+        align-items: center;
+        line-height: 1.4;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Open Sans', sans-serif;
+      }
+      p {
+        font-size: 13px;
+        margin-top: 7px;
+        margin-left: 5px;
+        font-family: 'Open Sans', sans-serif;
+        color: #9f9fb0;
+      }
+      .uploading-content {
+        z-index: 1;
+        display: flex;
+        height: 100%;
+        .left, .right {
+          flex: 1;
+        }
+        .right {
+          height: 100%;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-end;
+          padding-top: 15px;
+          button {
+            font-size: 24px;
+            color: #9f9fb0;
+            background: transparent;
+            border: none;
+            border-radius: 50%;
+            outline: none;
+          }
+        }
+      }
+      .uploading-line {
+        height: 100%;
+        bottom: 0;
+        background: #f8f9ff;
+        position: absolute;
+        transition: all 350ms ease-in;
+        left: 0;
+        transition-timing-function: linear;
+        &::before {
+          content: '';
+          background: #5128CD;
+          height: 2px;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          bottom: 20px;
+        }
+      }
+      &.visible {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+}
