@@ -34,7 +34,7 @@ const module = angular
 			inputPlaceholder: 'Motivo',
 			inputType: MbgInputType.TEXTAREA,
 			inputValidate: (inputValue) => {
-				console.log('validade ', inputValue)
+				// console.log('validade ', inputValue)
 				return true
 			},
 			// visibleCancel: false

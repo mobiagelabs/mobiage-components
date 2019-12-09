@@ -26,7 +26,7 @@ class MbgCofirmAlertController {
 					if (this.isValidResult) { this.$uibModalInstance.close(this.inputValue) }
 				})
 			} else {
-				this.$uibModalInstance.close(confirm)
+				this.$uibModalInstance.close(this.inputValue || confirm)
 			}
 		})
 	}
