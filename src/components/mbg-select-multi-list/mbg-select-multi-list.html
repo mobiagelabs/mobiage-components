@@ -1,0 +1,53 @@
+<div class="mbg-select-multi-list-wrapper">
+    <div class="row">
+        <div class="col-md-6">
+
+            <!-- ng-model-options="{ debounce: 300 }"
+            ng-change="$ctrl.onInputSearchChange()"
+            ng-model="$ctrl.pagination.filter.text"
+            ng-top-layout="true" -->
+            <mbg-input-search ng-model="$ctrl.inputValue"
+                              placeholder="$ctrl.placeholderLeft"
+                              ng-model-options="{ debounce: 300 }"
+                              ng-change="$ctrl.executeFetch()"></mbg-input-search>
+            <div class="mbg-multi-list-wrapper">
+                <div ng-if="$ctrl.listRowTransclude"
+                     ng-click="$ctrl.selectRow($row)"
+                     ng-repeat="$row in $ctrl.getData() track by $index"
+                     mbg-dynamic-html="$ctrl.listRowTransclude"></div>
+                <div class="row-content"
+                     ng-click="$ctrl.selectRow($row)"
+                     ng-if="!$ctrl.listRowTransclude && $ctrl.label"
+                     ng-repeat="$row in $ctrl.getData() track by $index">
+                    {{$row[$ctrl.label]}}
+                </div>
+            </div>
+            <div class="paginate"
+                 ng-show="$ctrl.count">
+                <span>{{$ctrl.data.length}} / {{$ctrl.count}}</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <mbg-input-search ng-model="$ctrl.inputValueResult"
+                              ng-model-options="{ debounce: 300 }"
+                              placeholder="$ctrl.placeholderRight"
+                              ng-change="$ctrl.searchNgModel()"></mbg-input-search>
+            <div class="mbg-multi-list-wrapper">
+                <div ng-if="$ctrl.listRowTransclude"
+                     ng-click="$ctrl.removeRow($row)"
+                     ng-repeat="$row in $ctrl.dataModel track by $index"
+                     mbg-dynamic-html="$ctrl.listRowTransclude"></div>
+                <div class="row-content"
+                     ng-click="$ctrl.removeRow($row)"
+                     ng-if="!$ctrl.listRowTransclude && $ctrl.label"
+                     ng-repeat="$row in $ctrl.dataModel track by $index">
+                    {{$row[$ctrl.label]}}
+                </div>
+            </div>
+            <div class="paginate"
+                 ng-show="$ctrl.dataModel && $ctrl.dataModel > 0">
+                <span>{{$ctrl.dataModel.length}}</span>
+            </div>
+        </div>
+    </div>
+</div>

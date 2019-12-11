@@ -7,6 +7,7 @@ import './assets/angular-locale_pt-br.js'
 import { MbgAlert } from './helpers/services/mbg-alert'
 import { MbgTypeAlert } from './helpers/enums/mbg-type-alert'
 import { MbgInputType } from './helpers/enums/mbg-input-type'
+import { Resolver } from 'dns'
 
 initializeApp({
 	apiKey: "AIzaSyBONcuLOKuFFlAjMOr04pYSnJhWCPtr3bU",
@@ -26,28 +27,28 @@ const module = angular
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', 'mbgAlert', ($scope, $timeout, $http, mbgAlert: MbgAlert) => {
 
-		mbgAlert.confirm({
-			title: 'Salvar operação',
-			type: MbgTypeAlert.INFORMATION,
-			message: 'Deseja salvar a operação atual?',
-			invertContrast: false,
-			textConfirm: 'Aceitar',
-			enableInput: true,
-			inputPlaceholder: 'Motivo',
-			inputType: MbgInputType.TEXTAREA,
-			inputValidate: (inputValue) => {
-				// console.log('validade ', inputValue)
-				return true
-			},
-			// visibleCancel: false
-			// tip: 'Ao salvar a operação, você poderá continuar ela em outro momento.'
-		}).then((response) => {
-			console.log('onSuccess',response)
-		})
+		// mbgAlert.confirm({
+		// 	title: 'Salvar operação',
+		// 	type: MbgTypeAlert.INFORMATION,
+		// 	message: 'Deseja salvar a operação atual?',
+		// 	invertContrast: false,
+		// 	textConfirm: 'Aceitar',
+		// 	enableInput: true,
+		// 	inputPlaceholder: 'Motivo',
+		// 	inputType: MbgInputType.TEXTAREA,
+		// 	inputValidate: (inputValue) => {
+		// 		// console.log('validade ', inputValue)
+		// 		return true
+		// 	},
+		// 	// visibleCancel: false
+		// 	// tip: 'Ao salvar a operação, você poderá continuar ela em outro momento.'
+		// }).then((response) => {
+		// 	console.log('onSuccess',response)
+		// })
 
-		$timeout(() => {
-			$scope.mostrarErros = true
-		}, 3000)
+		// $timeout(() => {
+		// 	$scope.mostrarErros = true
+		// }, 3000)
 
 		$scope.VANDERSON
 		$scope.entity = {}
@@ -57,6 +58,31 @@ const module = angular
 			color: 'var(--primary)'
 		}
 
+		$scope.searchTeste = (query) => {
+			return new Promise((resolve) => {
+				resolve([
+					{
+						label: 'label'
+					},
+					{
+						label: 'label2'
+					},
+					{
+						label: 'label3'
+					},
+					{
+						label: 'label4'
+					},
+					{
+						label: 'label5'
+					},
+				].filter((teste) => teste.label.toLowerCase().startsWith(query.toLowerCase())))
+			})
+		}
+
+		$scope.data =
+
+			$scope.count = 50
 		$scope.print = () => {
 			$scope.entity.nasc = new Date(1571886000000)
 		}

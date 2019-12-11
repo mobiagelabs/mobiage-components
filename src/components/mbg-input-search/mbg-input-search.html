@@ -1,5 +1,4 @@
-<div class="mbg-input-search-wrapper"
-  ng-show="$ctrl.props">
+<div class="mbg-input-search-wrapper">
   <div class="input-group-search" ng-class="{'top-layout' : $ctrl.ngTopLayout}">
     <svg xmlns:dc="http://purl.org/dc/elements/1.1/"
       xmlns:cc="http://creativecommons.org/ns#"
@@ -35,6 +34,6 @@
       ng-keyup="$ctrl.ngKeyup({ $event })"
       ng-keypress="$ctrl.ngKeypress({ $event })"
       ng-keydown="$ctrl.ngKeydown({ $event })"
-      placeholder="{{ $ctrl.props.placeholder }}" />
+      placeholder="{{$ctrl.placeholder}}" />
   </div>
 </div>

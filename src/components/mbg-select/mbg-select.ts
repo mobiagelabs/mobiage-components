@@ -29,7 +29,13 @@ class MbgSelectController {
     private position
     private ngDisabled: boolean
 
-    constructor(public $scope, public $element, public $attrs, public $timeout, public $compile, public $transclude) { }
+    constructor(
+        public $scope,
+        public $element,
+        public $attrs,
+        public $timeout,
+        public $compile,
+        public $transclude) { }
 
     $onInit() {
         this.inputValue = ''
@@ -361,7 +367,14 @@ class MbgSelectController {
 
 }
 
-MbgSelectController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$compile', '$transclude']
+MbgSelectController.$inject = [
+    '$scope',
+    '$element',
+    '$attrs',
+    '$timeout',
+    '$compile',
+    '$transclude'
+]
 
 const mbgSelect = {
     transclude: true,

@@ -1,6 +1,6 @@
 {
   "name": "@mobiage/components",
-  "version": "1.128.2",
+  "version": "1.129.0-beta.1",
   "description": "@mobiage/components",
   "main": "src/components/index.ts",
   "scripts": {
@@ -27,6 +27,7 @@
     "croppie": "^2.6.2",
     "detect-browser": "^3.0.1",
     "firebase": "^5.5.2",
+    "fuse.js": "^3.4.6",
     "highcharts": "^6.1.0",
     "imports-loader": "^0.8.0",
     "jquery": "3.4.1",

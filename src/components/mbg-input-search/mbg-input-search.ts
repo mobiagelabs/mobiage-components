@@ -8,13 +8,16 @@ class MbgInputTextController {
     private ngRequired
     private ngDisabled
     private props
+    private placeholder
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
-        this.props = {
-            placeholder: $attrs.placeholder || '',
-        }
+        const evalPlaceholder = this.$scope.$parent.$eval(this.$attrs.placeholder)
+        this.placeholder = evalPlaceholder ? evalPlaceholder : evalPlaceholder === '' ? '' : this.$attrs.placeholder
+    }
+
+    $onInit() {
     }
 
     onChange() {
