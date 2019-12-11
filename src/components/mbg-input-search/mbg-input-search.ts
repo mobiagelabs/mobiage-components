@@ -12,8 +12,12 @@ class MbgInputTextController {
     constructor(public $scope, public $element, public $attrs, public $timeout, public $compile) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
         if ($attrs.ngDisabled === '') { this.ngDisabled = true }
-        const evalPlaceholder = this.$scope.$parent.$eval(this.$attrs.placeholder)
-        this.placeholder = evalPlaceholder ? evalPlaceholder : evalPlaceholder === '' ? '' : this.$attrs.placeholder
+        try {
+            const evalPlaceholder = this.$scope.$parent.$eval(this.$attrs.placeholder)
+            this.placeholder = evalPlaceholder ? evalPlaceholder : evalPlaceholder === '' ? '' : this.$attrs.placeholder
+        } catch (e) {
+            this.placeholder = this.$attrs.placeholder
+        }
     }
 
     onChange() {
