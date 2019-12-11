@@ -31,7 +31,7 @@ export class MbgSelectMultiListController {
         }, true)
         this.$timeout(() => {
             this.ngModel = this.ngModel || []
-            this.dataModel = this.dataModel || []
+            this.dataModel = JSON.parse(JSON.stringify(this.ngModel)) || []
         })
     }
 
@@ -77,6 +77,11 @@ export class MbgSelectMultiListController {
             this.ngModel.push(copyRow)
             this.dataModel.push(copyRow)
             this.data.splice(index, 1)
+            this.$timeout(() => {
+                (this.ngModel || []).forEach((model) => {
+                    delete model._uid
+                })
+            }, 500)
         }
     }
 
