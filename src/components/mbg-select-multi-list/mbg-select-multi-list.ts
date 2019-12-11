@@ -12,6 +12,7 @@ export class MbgSelectMultiListController {
     private isLoading: boolean
     private inputValue: string
     private listRowTransclude: string
+    private listHeaderTransclude: string
     private placeholderLeft: string
     private placeholderRight: string
     private inputValueResult: string
@@ -21,18 +22,16 @@ export class MbgSelectMultiListController {
     $onInit() {
         this.placeholderLeft = this.placeholderLeft || ''
         this.placeholderRight = this.placeholderRight || ''
+        this.$scope.$c = this.$scope.$parent
         this.findTransclude()
-        this.$scope.$watch('$ctrl.fetch', () => {
-            this.executeFetch()
+        this.findTranscludeHeader()
+        this.$scope.$watch('$ctrl.data', (data) => {
+            this.afterFetchData(data)
         }, true)
         this.$timeout(() => {
             this.ngModel = this.ngModel || []
             this.dataModel = this.dataModel || []
         })
-    }
-
-    getData() {
-        return (this.data || [])
     }
 
     findTransclude() {
@@ -46,31 +45,26 @@ export class MbgSelectMultiListController {
         })
     }
 
-    executeFetch(onExecute?: Function) {
-        this.$timeout(() => {
-            this.data = []
-            this.isLoading = true
-            const response = this.fetch({ query: (this.inputValue || '') }) || []
-            if (response && response.then) {
-                response.then((data) => {
-                    this.afterFetchData(data)
-                    if (onExecute) {
-                        onExecute(data)
-                    }
-                })
-            } else {
-                this.afterFetchData(response)
-                if (onExecute) {
-                    onExecute(response)
+    findTranscludeHeader() {
+        this.$transclude(this.$scope, (cloneEl) => {
+            angular.forEach(cloneEl, cl => {
+                let element = angular.element(cl)[0]
+                if (element.nodeName && element.nodeName === 'MBG-HEADER-CONTENT') {
+                    this.listHeaderTransclude = element.innerHTML
                 }
-            }
+            })
+        })
+    }
+
+    executeFetch() {
+        this.$timeout(() => {
+            this.fetch({ query: (this.inputValue || '') })
         })
     }
 
     afterFetchData(data) {
         this.$timeout(() => {
-            this.data = data.filter((row) => this.ngModel.filter((model) => angular.equals(row, model)).length === 0)
-            this.isLoading = false
+            this.data = (data || []).filter((row) => this.ngModel.filter((model) => angular.equals(row, model)).length === 0)
         })
     }
 
@@ -140,6 +134,8 @@ const mbgSelectMultiList = {
         placeholderRight: '@?',
         titleLeft: '@?',
         titleRight: '@?',
+        data: '=?',
+        isLoading: '=?'
     },
     template,
     controller: MbgSelectMultiListController,
