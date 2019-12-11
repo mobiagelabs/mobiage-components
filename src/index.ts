@@ -58,34 +58,26 @@ const module = angular
 			color: 'var(--primary)'
 		}
 
-		$scope.searchTeste = (query) => {
-			return new Promise((resolve) => {
-				resolve([
-					{
-						label: 'label'
-					},
-					{
-						label: 'label2'
-					},
-					{
-						label: 'label3'
-					},
-					{
-						label: 'label4'
-					},
-					{
-						label: 'label5'
-					},
-				].filter((teste) => teste.label.toLowerCase().startsWith(query.toLowerCase())))
-			})
+		$scope.searchTeste = (query = '') => {
+			$scope.dataTeste = [
+				{
+					label: 'label'
+				},
+				{
+					label: 'label2'
+				},
+				{
+					label: 'label3'
+				},
+				{
+					label: 'label4'
+				},
+				{
+					label: 'label5'
+				},
+			].filter((teste) => teste.label.toLowerCase().startsWith(query.toLowerCase()))
 		}
-
-		$scope.data =
-
-			$scope.count = 50
-		$scope.print = () => {
-			$scope.entity.nasc = new Date(1571886000000)
-		}
+		$scope.searchTeste()
 
 		const goTo = (value) => {
 			$timeout(() => {

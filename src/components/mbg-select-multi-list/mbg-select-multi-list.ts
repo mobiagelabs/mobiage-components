@@ -22,17 +22,13 @@ export class MbgSelectMultiListController {
         this.placeholderLeft = this.placeholderLeft || ''
         this.placeholderRight = this.placeholderRight || ''
         this.findTransclude()
-        this.$scope.$watch('$ctrl.fetch', () => {
-            this.executeFetch()
+        this.$scope.$watch('$ctrl.data', (data) => {
+            this.afterFetchData(data)
         }, true)
         this.$timeout(() => {
             this.ngModel = this.ngModel || []
             this.dataModel = this.dataModel || []
         })
-    }
-
-    getData() {
-        return (this.data || [])
     }
 
     findTransclude() {
@@ -46,30 +42,24 @@ export class MbgSelectMultiListController {
         })
     }
 
-    executeFetch(onExecute?: Function) {
+    executeFetch() {
         this.$timeout(() => {
             this.data = []
             this.isLoading = true
             const response = this.fetch({ query: (this.inputValue || '') }) || []
             if (response && response.then) {
                 response.then((data) => {
-                    this.afterFetchData(data)
-                    if (onExecute) {
-                        onExecute(data)
-                    }
+                    this.data = data
                 })
             } else {
-                this.afterFetchData(response)
-                if (onExecute) {
-                    onExecute(response)
-                }
+                this.data = response
             }
         })
     }
 
     afterFetchData(data) {
         this.$timeout(() => {
-            this.data = data.filter((row) => this.ngModel.filter((model) => angular.equals(row, model)).length === 0)
+            this.data = (data || []).filter((row) => this.ngModel.filter((model) => angular.equals(row, model)).length === 0)
             this.isLoading = false
         })
     }
@@ -140,6 +130,7 @@ const mbgSelectMultiList = {
         placeholderRight: '@?',
         titleLeft: '@?',
         titleRight: '@?',
+        data: '=?'
     },
     template,
     controller: MbgSelectMultiListController,

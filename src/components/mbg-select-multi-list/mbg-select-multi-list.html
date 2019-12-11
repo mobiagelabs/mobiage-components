@@ -14,7 +14,7 @@
                               ng-model-options="{ debounce: 300 }"
                               ng-change="$ctrl.executeFetch()"></mbg-input-search>
             <div class="empty-array"
-                 ng-show="$ctrl.getData().length === 0">
+                 ng-show="$ctrl.data.length === 0">
                 <svg xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
                      xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
                      xmlns:graph="http://ns.adobe.com/Graphs/1.0/"
@@ -55,12 +55,12 @@
             <div class="mbg-multi-list-wrapper">
                 <div ng-if="$ctrl.listRowTransclude"
                      ng-click="$ctrl.selectRow($row)"
-                     ng-repeat="$row in $ctrl.getData() track by $index"
+                     ng-repeat="$row in $ctrl.data track by $index"
                      mbg-dynamic-html="$ctrl.listRowTransclude"></div>
                 <div class="row-content"
                      ng-click="$ctrl.selectRow($row)"
                      ng-if="!$ctrl.listRowTransclude && $ctrl.label"
-                     ng-repeat="$row in $ctrl.getData() track by $index">
+                     ng-repeat="$row in $ctrl.data track by $index">
                     {{$row[$ctrl.label]}}
                 </div>
             </div>
