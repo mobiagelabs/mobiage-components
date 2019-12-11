@@ -125,7 +125,7 @@
                       ng-change="$ctrl.onSearchChange()"
                       ng-model="$ctrl.pagination.filter.text"
                       ng-top-layout="true"></mbg-input-search> <br><br><br>
-                      
+
     <mbg-select-multi-list ng-model="selectedItems"
                            placeholder-left="Pesquise pelo numero"
                            placeholder-right="Pesquise pelo numero 2"
@@ -133,9 +133,15 @@
                            count="count"
                            label="label"
                            data="dataTeste">
-      <!-- <mbg-row-content>
-        123 - {{$row.label}}
-      </mbg-row-content> -->
+      <mbg-header-content>
+        <h2>TEste</h2>
+      </mbg-header-content>
+      <mbg-row-content>
+        <div class="panel">
+          123 - {{$row.label}}
+          <i ng-click="$c.testeteste($event)">click</i>
+        </div>
+      </mbg-row-content>
     </mbg-select-multi-list>
     <!-- <mbg-input-text ng-model="nomeCompletoDoCliente"
                     mbg-error="!nomeCompletoDoCliente"

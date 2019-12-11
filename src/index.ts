@@ -50,6 +50,12 @@ const module = angular
 		// 	$scope.mostrarErros = true
 		// }, 3000)
 
+		$scope.testeteste = (evt:Event) => {
+			evt.preventDefault()
+			evt.stopPropagation()
+			console.log('asçldjasdmçl', evt)
+		}
+
 		$scope.VANDERSON
 		$scope.entity = {}
 		$scope.percentage = 0

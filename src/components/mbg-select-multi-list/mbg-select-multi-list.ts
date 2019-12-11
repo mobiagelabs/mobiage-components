@@ -12,6 +12,7 @@ export class MbgSelectMultiListController {
     private isLoading: boolean
     private inputValue: string
     private listRowTransclude: string
+    private listHeaderTransclude: string
     private placeholderLeft: string
     private placeholderRight: string
     private inputValueResult: string
@@ -21,7 +22,9 @@ export class MbgSelectMultiListController {
     $onInit() {
         this.placeholderLeft = this.placeholderLeft || ''
         this.placeholderRight = this.placeholderRight || ''
+        this.$scope.$c = this.$scope.$parent
         this.findTransclude()
+        this.findTranscludeHeader()
         this.$scope.$watch('$ctrl.data', (data) => {
             this.afterFetchData(data)
         }, true)
@@ -42,25 +45,26 @@ export class MbgSelectMultiListController {
         })
     }
 
+    findTranscludeHeader() {
+        this.$transclude(this.$scope, (cloneEl) => {
+            angular.forEach(cloneEl, cl => {
+                let element = angular.element(cl)[0]
+                if (element.nodeName && element.nodeName === 'MBG-HEADER-CONTENT') {
+                    this.listHeaderTransclude = element.innerHTML
+                }
+            })
+        })
+    }
+
     executeFetch() {
         this.$timeout(() => {
-            this.data = []
-            this.isLoading = true
-            const response = this.fetch({ query: (this.inputValue || '') }) || []
-            if (response && response.then) {
-                response.then((data) => {
-                    this.data = data
-                })
-            } else {
-                this.data = response
-            }
+            this.fetch({ query: (this.inputValue || '') })
         })
     }
 
     afterFetchData(data) {
         this.$timeout(() => {
             this.data = (data || []).filter((row) => this.ngModel.filter((model) => angular.equals(row, model)).length === 0)
-            this.isLoading = false
         })
     }
 
@@ -130,7 +134,8 @@ const mbgSelectMultiList = {
         placeholderRight: '@?',
         titleLeft: '@?',
         titleRight: '@?',
-        data: '=?'
+        data: '=?',
+        isLoading: '=?'
     },
     template,
     controller: MbgSelectMultiListController,
