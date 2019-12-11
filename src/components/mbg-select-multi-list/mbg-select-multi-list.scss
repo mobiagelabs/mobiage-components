@@ -38,4 +38,36 @@
     color: var(--neutral2);
     padding-right: 7px;
   }
+
+  .empty-array {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 34px;
+
+    svg {
+      width: 54px;
+      fill: var(--neutral2);
+    }
+
+    label {
+      margin-top: 14px;
+      font-weight: 400;
+      color: var(--neutral2);
+      font-size: 16px;
+    }
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    label {
+      font-weight: 400;
+      color: var(--neutral2);
+      margin-bottom: 14px;
+    }
+  }
 }

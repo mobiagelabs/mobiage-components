@@ -138,6 +138,8 @@ const mbgSelectMultiList = {
         count: '=?',
         placeholderLeft: '@?',
         placeholderRight: '@?',
+        titleLeft: '@?',
+        titleRight: '@?',
     },
     template,
     controller: MbgSelectMultiListController,

@@ -1,6 +1,5 @@
 import './mbg-input-search.scss'
 import template from './mbg-input-search.html'
-import * as angular from 'angular'
 
 class MbgInputTextController {
     private ngChange
@@ -17,9 +16,6 @@ class MbgInputTextController {
         this.placeholder = evalPlaceholder ? evalPlaceholder : evalPlaceholder === '' ? '' : this.$attrs.placeholder
     }
 
-    $onInit() {
-    }
-
     onChange() {
         if (this.ngChange) {
             this.ngChange({})
@@ -27,6 +23,7 @@ class MbgInputTextController {
     }
 
 }
+
 MbgInputTextController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$compile']
 
 const mbgInputSearch = {
