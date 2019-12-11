@@ -9,7 +9,9 @@
         <div class="file-content"
              ng-show="$ctrl.ngModel">
             <div class="left">
-                <a>
+                <a href="{{ $ctrl.ngModel.url }}"
+                   download="{{ $ctrl.ngModel.fileName }}"
+                   target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg"
                          data-name="Layer 1"
                          viewBox="0 0 100 100"
