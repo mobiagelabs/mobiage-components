@@ -2,6 +2,7 @@ import * as angular from 'angular'
 import './mbg-select-multi-list.scss'
 import template from './mbg-select-multi-list.html'
 import * as Fuse from 'fuse.js'
+import { UtilUID } from '../../helpers/util-uid'
 
 export class MbgSelectMultiListController {
     private data: Array<any>
@@ -72,6 +73,7 @@ export class MbgSelectMultiListController {
         const copyRow = JSON.parse(JSON.stringify(row))
         const index = this.findIndexRow(this.data, row)
         if (index !== -1) {
+            copyRow._uid = UtilUID.generete()
             this.ngModel.push(copyRow)
             this.dataModel.push(copyRow)
             this.data.splice(index, 1)
@@ -111,6 +113,16 @@ export class MbgSelectMultiListController {
 
     findIndexRow(array: Array<any>, row) {
         return array.findIndex((data) => angular.equals(data, row))
+    }
+
+    async addEvent(row) {
+        const target: any = angular.element('.result-multi-list-wrapper')
+        await target.animate({ scrollTop: this.dataModel.length * 44 }, 500);
+        this.$timeout(() => {
+            const element = angular.element(`div[id="${row['_uid']}"]`)
+            element.addClass('active')
+            this.$timeout(() => element.removeClass('active'), 300)
+        }, 100)
     }
 }
 
