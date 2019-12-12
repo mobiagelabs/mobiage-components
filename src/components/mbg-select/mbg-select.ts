@@ -28,6 +28,7 @@ class MbgSelectController {
     private uid: string
     private position
     private ngDisabled: boolean
+    private unObserve: any
 
     constructor(
         public $scope,
@@ -35,7 +36,7 @@ class MbgSelectController {
         public $attrs,
         public $timeout,
         public $compile,
-        public $transclude) {}
+        public $transclude) { }
 
     $onInit() {
         this.inputValue = ''
@@ -51,8 +52,17 @@ class MbgSelectController {
         }, true)
         this.$timeout(() => {
             this.checkPosition()
-            this.resolveLabel()
         })
+        this.$attrs.$observe('label', () => {
+            this.resolveLabel()
+            this.updateInputValue()
+        })
+    }
+
+    $onDestroy() {
+        if (this.unObserve) {
+            this.unObserve()
+        }
     }
 
     resolveLabel() {
@@ -246,6 +256,7 @@ class MbgSelectController {
                     let item = currentOption.scope().item
                     if (!item && this.enableAdd) {
                         if (this.labelValue) {
+                            console.log('asojdaoisjda')
                             item = { [this.labelValue]: this.inputValue }
                         } else {
                             item = isNaN(this.inputValue) ? this.inputValue : Number(this.inputValue)

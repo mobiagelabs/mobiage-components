@@ -50,7 +50,38 @@ const module = angular
 		// 	$scope.mostrarErros = true
 		// }, 3000)
 
-		$scope.testeteste = (evt:Event) => {
+		$scope.testeMbgSelect = {
+			name: 'Teste',
+			key: 'TESTE'
+		}
+
+		$scope.testeMbgSelectList = [
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+		]
+
+		$scope.testeee2 = () => {
+			return $scope.testeLabel ? 'name' : 'key'
+		}
+
+		$scope.testeLabel = 'name'
+
+		$timeout(() => {
+			console.log('ASPjdoiajsd')
+			$scope.testeLabel = 'key'
+		}, 5000)
+
+		$scope.testeteste = (evt: Event) => {
 			evt.preventDefault()
 			evt.stopPropagation()
 			console.log('asçldjasdmçl', evt)

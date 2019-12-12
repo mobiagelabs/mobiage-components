@@ -122,7 +122,7 @@ export class MbgSelectMultiListController {
 
     async addEvent(row) {
         const target: any = angular.element('.result-multi-list-wrapper')
-        await target.animate({ scrollTop: this.dataModel.length * 44 }, 500);
+        await target.animate({ scrollTop: this.dataModel.length * 44 }, 500)
         this.$timeout(() => {
             const element = angular.element(`div[id="${row['_uid']}"]`)
             element.addClass('active')

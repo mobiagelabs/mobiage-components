@@ -120,7 +120,7 @@
   <div class="container">
     <br><br><br><br><br><br><br>
 
-    <mbg-input-search placeholder="Quem você está procurando ?"
+    <!-- <mbg-input-search placeholder="Quem você está procurando ?"
                       ng-model-options="{ debounce: 300 }"
                       ng-change="$ctrl.onSearchChange()"
                       ng-model="$ctrl.pagination.filter.text"
@@ -142,7 +142,7 @@
           <i ng-click="$c.testeteste($event)">click</i>
         </div>
       </mbg-row-content>
-    </mbg-select-multi-list>
+    </mbg-select-multi-list> -->
     <!-- <mbg-input-text ng-model="nomeCompletoDoCliente"
                     mbg-error="!nomeCompletoDoCliente"
                     mbg-error-message="Precisamos saber o nome completo do cliente."></mbg-input-text> -->
@@ -363,15 +363,14 @@
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <mbg-select ng-model="teste"
-      fetch="getModelo(query)"
-      label="name"
-      placeholder="TESTEEEEE"
-      enable-add="true"
-      name="teste5"
-      callback-add="testeadd()"
-      add-only-not-equal="true"
-      enable-favorite="true">
+    <mbg-select ng-model="testeMbgSelect"
+                fetch="testeMbgSelectList"
+                label="name"
+                enable-add="true"
+                name="teste5"
+                callback-add="testeadd()"
+                add-only-not-equal="true"
+                enable-favorite="true">
     </mbg-select>
 
     <!-- <br>
