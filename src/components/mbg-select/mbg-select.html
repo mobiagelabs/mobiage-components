@@ -49,8 +49,8 @@
             ng-repeat="item in $ctrl.getData() track by $index">
             <div ng-if="$ctrl.transcludeTemplate"
                  mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
-            <div ng-if="!$ctrl.transcludeTemplate && $ctrl.label">{{item[$ctrl.label]}}</div>
-            <div ng-if="!$ctrl.transcludeTemplate && !$ctrl.label">{{item}}</div>
+            <div ng-if="!$ctrl.transcludeTemplate && $ctrl.labelValue">{{item[$ctrl.labelValue]}}</div>
+            <div ng-if="!$ctrl.transcludeTemplate && !$ctrl.labelValue">{{item}}</div>
             <i title="Favoritar"
                ng-if="$ctrl.enableFavorite"
                ng-mousedown="$ctrl.favorite($event, item)"
@@ -60,7 +60,7 @@
         <li ng-if="$ctrl.addOnlyNotEqual ? ($ctrl.enableAdd && $ctrl.inputValue && $ctrl.isOnlyEqual()) : ($ctrl.enableAdd && $ctrl.inputValue)"
             disable-animate
             class="new-item"
-            ng-mousedown="$ctrl.label ? $ctrl.selectOption({ [$ctrl.label]: $ctrl.inputValue }, true) : $ctrl.selectOption($ctrl.inputValue, true)">
+            ng-mousedown="$ctrl.labelValue ? $ctrl.selectOption({ [$ctrl.labelValue]: $ctrl.inputValue }, true) : $ctrl.selectOption($ctrl.inputValue, true)">
             {{ $ctrl.inputValue }}
             <span ng-hide="$ctrl.hiddenAddLabel">(novo)</span>
         </li>

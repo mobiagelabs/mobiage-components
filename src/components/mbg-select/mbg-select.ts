@@ -11,7 +11,7 @@ class MbgSelectController {
     private inputValue: any
     private hasFocus: boolean
     private enableAdd: boolean
-    private label: string
+    private labelValue: string
     private ngModel: any
     private initializingModel: boolean
     private disableWatchModel: any
@@ -35,7 +35,7 @@ class MbgSelectController {
         public $attrs,
         public $timeout,
         public $compile,
-        public $transclude) { }
+        public $transclude) {}
 
     $onInit() {
         this.inputValue = ''
@@ -49,7 +49,21 @@ class MbgSelectController {
                 this.updateInputValue()
             }
         }, true)
-        this.$timeout(() => this.checkPosition())
+        this.$timeout(() => {
+            this.checkPosition()
+            this.resolveLabel()
+        })
+    }
+
+    resolveLabel() {
+        try {
+            this.labelValue = this.$scope.$eval(this.$attrs.label)
+            if (!this.labelValue) {
+                this.labelValue = this.$attrs.label
+            }
+        } catch (e) {
+            this.labelValue = this.$attrs.label
+        }
     }
 
     getData() {
@@ -231,8 +245,8 @@ class MbgSelectController {
                 if (currentOption[0]) {
                     let item = currentOption.scope().item
                     if (!item && this.enableAdd) {
-                        if (this.label) {
-                            item = { [this.label]: this.inputValue }
+                        if (this.labelValue) {
+                            item = { [this.labelValue]: this.inputValue }
                         } else {
                             item = isNaN(this.inputValue) ? this.inputValue : Number(this.inputValue)
                         }
@@ -315,12 +329,12 @@ class MbgSelectController {
                 this.executeFetch((data) => {
                     const item = (data || []).find((i) => i[this.ngValue] === this.ngModel)
                     if (item) {
-                        this.inputValue = item[this.label]
+                        this.inputValue = item[this.labelValue]
                     }
                 })
             } else {
-                if (this.label && this.ngModel) {
-                    this.inputValue = this.ngModel[this.label]
+                if (this.labelValue && this.ngModel) {
+                    this.inputValue = this.ngModel[this.labelValue]
                 } else {
                     this.inputValue = this.ngModel
                 }
@@ -352,8 +366,8 @@ class MbgSelectController {
     isOnlyEqual() {
         const options = this.getData()
         return options.filter((opt) => {
-            if (this.label) {
-                return opt[this.label].toLowerCase() === this.inputValue.toLowerCase()
+            if (this.labelValue) {
+                return opt[this.labelValue].toLowerCase() === this.inputValue.toLowerCase()
             } else {
                 return opt.toString().toLowerCase() === this.inputValue.toString().toLowerCase()
             }
@@ -388,7 +402,6 @@ const mbgSelect = {
         ngBlur: '&?',
         onSelect: '&?',
         onUnselect: '&?',
-        label: '@?',
         enableAdd: '=?',
         placeholder: '@?',
         addOnlyNotEqual: '=?',
