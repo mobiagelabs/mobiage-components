@@ -93,6 +93,12 @@ class MbgSelectController {
         })
     }
 
+    clickArrow() {
+        this.onInputFocus(true)
+        delete this.ngModel
+        delete this.inputValue
+    }
+
     executeFetch(onExecute?: Function) {
         this.data = []
         this.isLoading = true
