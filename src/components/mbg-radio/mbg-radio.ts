@@ -6,7 +6,6 @@ export class MbgRadioController {
     private ngChange
 
     constructor(public $scope, public $element, public $attrs, public $timeout, public $transclude) {
-        console.log('Oi')
     }
 
     toogleModel(evt) {
