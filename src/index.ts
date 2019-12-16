@@ -74,6 +74,10 @@ const module = angular
 			return $scope.testeLabel ? 'name' : 'key'
 		}
 
+		$scope.testekey = () => {
+			console.log('Asuhd8aysgdiuhoiansp')
+		}
+
 		$scope.testeLabel = 'name'
 
 		$timeout(() => {

@@ -7,6 +7,7 @@ class MbgInputMoneyController {
     private ngRequired
     private ngDisabled
     private props
+    private ngKeyup: Function
 
     constructor(public $scope, public $element, public $attrs) {
         if ($attrs.ngRequired === '') { this.ngRequired = true }
@@ -45,9 +46,6 @@ const mbgInputMoney = {
         ngDisabled: '=?',
         ngBlur: '&?',
         ngFocus: '&?',
-        ngKeyup: '&?',
-        ngKeypress: '&?',
-        ngKeydown: '&?',
     },
     template,
     controller: MbgInputMoneyController,
