@@ -728,13 +728,12 @@
     <!-- <br> <br>
 
     <button ng-click="kkkkkjsadjhdjsah9()">Toogle Column</button>
-
+    -->
     <div class="container">
       <mbg-list list="produtos"
+                radio="true"
                 class="table-striped"
                 selected-values="testetttt"
-                checkbox="false"
-                checkbox-if="essaColunaPode($row)"
                 opened-rows="rowsOpen">
         <mbg-list-column name="product"
                          label="Produto"
@@ -748,9 +747,10 @@
         <mbg-list-column name="costValue"
                          label="Valor">
         </mbg-list-column>
-      </mbg-list> -->
-
-
+      </mbg-list>
+    </div>
+    {{testeradio}}
+    <mbg-radio ng-model="testeradio"></mbg-radio>
     <!-- <pre><code>{{ testetttt | json }}</code></pre> -->
     <!-- <div style="padding: 14px;">
     <mbg-input-checkbox ng-model="teste"
