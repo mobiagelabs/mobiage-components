@@ -65,6 +65,7 @@ window['Raphael'] = Raphael
 import * as $ from 'jquery'
 import { MbgAlert } from '../helpers/services/mbg-alert'
 import { mbgSelectMultiListModule } from './mbg-select-multi-list'
+import { mbgProductInlineModule } from './mbg-product-inline'
 
 if (!window['$']) {
   window['$'] = $
@@ -118,7 +119,8 @@ const mbgComponentsModule = angular
     mbgSkeletonModule,
     mbgLoadingModule,
     mbgInputFileModule,
-    mbgSelectMultiListModule
+    mbgSelectMultiListModule,
+    mbgProductInlineModule
   ])
   .config(appConfig)
   .service('mbgAlert', MbgAlert)

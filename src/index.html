@@ -244,7 +244,8 @@
       </div>
       <div class="col-md-4">
         <label>Single With Calendar</label>
-        <mbg-input-date ng-model="entity.nasc" calendar="true"></mbg-input-date>
+        <mbg-input-date ng-model="entity.nasc"
+                        calendar="true"></mbg-input-date>
       </div>
     </div>
 
@@ -254,19 +255,14 @@
       <div class="col-md-4">
         <label>Between</label>
         <mbg-input-date ng-model="entity.between"
+                        ng-change="testechange()"
                         placeholder-start="Ida"
                         placeholder-end="Volta"
                         between="true"
                         between-text=""
                         calendar="true"></mbg-input-date>
       </div>
-    </div>
-
-
-    <br><br><br>
-    <button ng-click="print()">foi</button>
-    <br><br>
-    {{ entity.between | json }} -->
+    </div> -->
 
     <!-- <mbg-connection-retry ping-url="https://api-hom.kigisistemas.com.br/mobiage-api/actuator/health">
     </mbg-connection-retry> -->
@@ -469,15 +465,22 @@
         placeholder="'Qual o modelodsadsadsaasd?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <!-- <mbg-product-grid
-      x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
-      y="{ key: 'COR', label: 'COR PRODUTO' }"
-      details="details"
-      ng-model="result"
-      input-label="'Devolver'"
-      enable-price="false"
-      enable-current-stock="true">
-    </mbg-product-grid> -->
+    <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
+                      y="{ key: 'COR', label: 'COR PRODUTO' }"
+                      details="details"
+                      ng-model="result"
+                      enable-price="true">
+    </mbg-product-grid>
+    <br />
+    <pre>{{result | json}}</pre>
+    <br />
+    <mbg-product-inline x="{ key: 'TAMANHO', label: 'TAMANHOS' }"
+                        y="{ key: 'COR', label: 'CORES' }"
+                        details="details"
+                        ng-model="result2">
+    </mbg-product-inline>
+    <br />
+    <pre>{{result2 | json}}</pre>
 
     <!--
 
@@ -729,7 +732,7 @@
 
     <button ng-click="kkkkkjsadjhdjsah9()">Toogle Column</button>
     -->
-    <div class="container">
+    <!-- <div class="container">
       <mbg-list list="produtos"
                 radio="true"
                 class="table-striped"
@@ -750,7 +753,7 @@
       </mbg-list>
     </div>
     {{testeradio}}
-    <mbg-radio ng-model="testeradio"></mbg-radio>
+    <mbg-radio ng-model="testeradio"></mbg-radio> -->
     <!-- <pre><code>{{ testetttt | json }}</code></pre> -->
     <!-- <div style="padding: 14px;">
     <mbg-input-checkbox ng-model="teste"

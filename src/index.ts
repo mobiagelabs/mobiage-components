@@ -437,6 +437,10 @@ const module = angular
 			$scope.columnQntHidden = !$scope.columnQntHidden
 		}
 
+		$scope.testechange = () => {
+			console.log('Oi 2')
+		}
+
 		$scope.produtos = [
 			{
 				code: '0',
@@ -546,6 +550,40 @@ const module = angular
 				'enable': true,
 			}
 		]
+
+		$scope.result2 = [
+			{
+				'xDetail': {
+					'type': 'TAMANHO',
+					'value': 'P'
+				},
+				'yDetail': {
+					'type': 'COR',
+					'value': 'Pink',
+					'valueRef': '#ce00cb'
+				},
+				'currentStock': 500,
+				'enable': true,
+				'price': 10
+			},
+			{
+				'xDetail': {
+					'type': 'TAMANHO',
+					'value': 'GG'
+				},
+				'yDetail': {
+					'type': 'COR',
+					'value': 'Verde',
+					'valueRef': '#17b709'
+				},
+				'price': 10,
+				'stock': 50,
+				'barCode': '2487182379812',
+				'currentStock': 200,
+				'enable': true,
+			}
+		]
+
 
 		$scope.editTeste = (x, y) => {
 			console.log(x, y)
