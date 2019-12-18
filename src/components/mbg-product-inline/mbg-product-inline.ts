@@ -48,9 +48,9 @@ class MbgProductInlineController {
         this.grid.y = this.getItemY()
         this.ngModel.forEach((item) => {
             this.grid.x.forEach((xItem, xIndex) => {
-                if (xItem && ((xItem.id && xItem.id === item.xDetail.id) || angular.equals(xItem, item.xDetail))) {
+                if (xItem && ((xItem && xItem.id === item.xDetail.id) || angular.equals(xItem, item.xDetail))) {
                     this.grid.y.forEach((yItem, yIndex) => {
-                        if (yItem && ((yItem.id && yItem.id === item.yDetail.id) || angular.equals(yItem, item.yDetail))) {
+                        if (yItem && ((yItem && yItem.id === item.yDetail.id) || angular.equals(yItem, item.yDetail))) {
                             this.gridValues[xIndex] = this.gridValues[xIndex] || {}
                             this.gridValues[xIndex][yIndex] = this.gridValues[xIndex][yIndex] || {}
                             this.gridValues[xIndex][yIndex] = Object.assign({}, item)
@@ -99,7 +99,8 @@ const mbgProductInline = {
         x: '=?',
         y: '=?',
         details: '=?',
-        ngModel: '=?'
+        ngModel: '=?',
+        maxHeight: '=?'
     },
     template,
     controller: MbgProductInlineController,

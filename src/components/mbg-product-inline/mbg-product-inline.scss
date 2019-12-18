@@ -2,6 +2,9 @@
   .default-template {
     border-top: 1px solid #ccc;
   }
+  .inline-content {
+    overflow: auto;
+  }
   .inline-row {
     display: flex;
     height: 44px;

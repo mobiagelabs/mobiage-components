@@ -262,7 +262,6 @@ class MbgSelectController {
                     let item = currentOption.scope().item
                     if (!item && this.enableAdd) {
                         if (this.labelValue) {
-                            console.log('asojdaoisjda')
                             item = { [this.labelValue]: this.inputValue }
                         } else {
                             item = isNaN(this.inputValue) ? this.inputValue : Number(this.inputValue)
