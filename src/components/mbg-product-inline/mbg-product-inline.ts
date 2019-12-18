@@ -83,6 +83,10 @@ class MbgProductInlineController {
                 })
         })
     }
+
+    focusInput(element) {
+        element.select()
+    }
 }
 
 MbgProductInlineController.$inject = [

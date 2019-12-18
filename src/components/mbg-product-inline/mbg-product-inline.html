@@ -1,68 +1,71 @@
 <div class="mbg-product-inline-wrapper">
-        <div class="default-header-inline">
-            <div class="inline-row">
-                <div class="x-value-col">
-                    <label>{{$ctrl.x.label}}</label>
-                </div>
-                <div class="y-value-col">
-                    <label>{{$ctrl.y.label}}</label>
-                </div>
-                <div class="barcode-col">
-                    <label>Código barcode</label>
-                </div>
-                <div class="stock-col">
-                    <label>Estoque</label>
-                </div>
-                <div class="price-col">
-                    <label>Preço</label>
-                </div>
+    <div class="default-header-inline">
+        <div class="inline-row">
+            <div class="x-value-col">
+                <label>{{$ctrl.x.label}}</label>
+            </div>
+            <div class="y-value-col">
+                <label>{{$ctrl.y.label}}</label>
+            </div>
+            <div class="barcode-col">
+                <label>Código barcode</label>
+            </div>
+            <div class="stock-col">
+                <label>Estoque</label>
+            </div>
+            <div class="price-col">
+                <label>Preço</label>
             </div>
         </div>
-        <div class="inline-content"
-             ng-style="{'max-height': $ctrl.maxHeight + 'px'}">
-            <div class="inline-x"
-                 ng-repeat="xValue in $ctrl.grid.x track by $index">
-                <div class="inline-y"
-                     ng-repeat="yValue in $ctrl.grid.y track by $index">
-                    <div class="inline-row"
-                         ng-class="{'default-template': !$ctrl.transcludeTemplate && $parent.$index === 0 && $index === 0}">
-                        <div class="x-value-col">
-                            <span>{{xValue.value}}</span>
-                        </div>
-                        <div class="y-value-col">
-                            <div class="grid-product-item-circle"
-                                 ng-style="{'background': yValue.valueRef}"></div>
-                            <span>{{ ::yValue.value }}</span>
-                        </div>
-                        <div class="barcode-col">
-                            <input type="text"
-                                   ng-model="$ctrl.gridValues[$index][$parent.$index].barCode"
-                                   placeholder="Código de barras"
-                                   ng-change="$ctrl.handleInlineValues()"
-                                   ng-model-options="{ debounce: 500 }"
-                                   class="inline-product-barcode" />
-                        </div>
-                        <div class="stock-col">
-                            <input type="number"
-                                   ng-model="$ctrl.gridValues[$index][$parent.$index].stock"
-                                   placeholder="0"
-                                   positive-number="true"
-                                   placeholder="Estoque"
-                                   ng-change="$ctrl.handleInlineValues()"
-                                   ng-model-options="{ debounce: 500 }"
-                                   class="inline-product-stock" />
-                        </div>
-                        <div class="price-col">
-                            <input type="text"
-                                   ng-model="$ctrl.gridValues[$index][$parent.$index].price"
-                                   ui-money-mask
-                                   ng-disabled="$ctrl.ngDisabled"
-                                   ng-change="$ctrl.handleInlineValues()"
-                                   class="inline-product-money"
-                                   placeholder="0" />
-                        </div>
+    </div>
+    <div class="inline-content"
+         ng-style="{'max-height': $ctrl.maxHeight + 'px'}">
+        <div class="inline-x"
+             ng-repeat="xValue in $ctrl.grid.x track by $index">
+            <div class="inline-y"
+                 ng-repeat="yValue in $ctrl.grid.y track by $index">
+                <div class="inline-row"
+                     ng-class="{'default-template': !$ctrl.transcludeTemplate && $parent.$index === 0 && $index === 0}">
+                    <div class="x-value-col">
+                        <span>{{xValue.value}}</span>
+                    </div>
+                    <div class="y-value-col">
+                        <div class="grid-product-item-circle"
+                             ng-style="{'background': yValue.valueRef}"></div>
+                        <span>{{ ::yValue.value }}</span>
+                    </div>
+                    <div class="barcode-col">
+                        <input type="text"
+                               onclick="angular.element(this).scope().$ctrl.focusInput(this)"
+                               ng-model="$ctrl.gridValues[$index][$parent.$index].barCode"
+                               placeholder="Código de barras"
+                               ng-change="$ctrl.handleInlineValues()"
+                               ng-model-options="{ debounce: 500 }"
+                               class="inline-product-barcode" />
+                    </div>
+                    <div class="stock-col">
+                        <input type="number"
+                               onclick="angular.element(this).scope().$ctrl.focusInput(this)"
+                               ng-model="$ctrl.gridValues[$index][$parent.$index].stock"
+                               placeholder="0"
+                               positive-number="true"
+                               placeholder="Estoque"
+                               ng-change="$ctrl.handleInlineValues()"
+                               ng-model-options="{ debounce: 500 }"
+                               class="inline-product-stock" />
+                    </div>
+                    <div class="price-col">
+                        <input type="text"
+                               onclick="angular.element(this).scope().$ctrl.focusInput(this)"
+                               ng-model="$ctrl.gridValues[$index][$parent.$index].price"
+                               ui-money-mask
+                               ng-disabled="$ctrl.ngDisabled"
+                               ng-change="$ctrl.handleInlineValues()"
+                               class="inline-product-money"
+                               placeholder="0" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
