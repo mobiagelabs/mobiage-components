@@ -21,9 +21,9 @@
     <div class="inline-content"
          ng-style="{'max-height': $ctrl.maxHeight + 'px'}">
         <div class="inline-x"
-             ng-repeat="xValue in $ctrl.grid.x track by $index">
+             ng-repeat="xValue in $ctrl.grid.x track by xValue.value">
             <div class="inline-y"
-                 ng-repeat="yValue in $ctrl.grid.y track by $index">
+                 ng-repeat="yValue in $ctrl.grid.y track by yValue.value">
                 <div class="inline-row"
                      ng-class="{'default-template': !$ctrl.transcludeTemplate && $parent.$index === 0 && $index === 0}">
                     <div class="x-value-col">
