@@ -1,6 +1,7 @@
 import './mbg-product-inline.scss'
 import template from './mbg-product-inline.html'
 import * as angular from 'angular'
+import { OrderPreferences } from '../../helpers/order-preferences'
 
 class MbgProductInlineController {
     private ngModel: Array<any>
@@ -25,63 +26,12 @@ class MbgProductInlineController {
         this.grid = {}
         this.gridValues = {}
         this.$scope.$c = this.$scope.$parent
-        this.findTransclude()
+        this.ngModel =  this.ngModel || []
         this.$scope.$watch('$ctrl.ngModel', () => this.handleModel(), true)
-        this.$scope.$watch('$ctrl.details', () => this.handleModel(), true)
-    }
-
-    findTransclude() {
-        this.$transclude(this.$scope, (cloneEl) => {
-            angular.forEach(cloneEl, cl => {
-                let element = angular.element(cl)[0]
-                if (element.nodeName && element.nodeName === 'TEMPLATE') {
-                    this.transcludeTemplate = element.innerHTML
-                }
-            })
-        })
     }
 
     handleModel() {
-        this.gridValues = {}
-        this.ngModel = this.ngModel || []
-        this.grid.x = this.getItemX()
-        this.grid.y = this.getItemY()
-        this.ngModel.forEach((item) => {
-            this.grid.x.forEach((xItem, xIndex) => {
-                if (xItem && ((xItem && xItem.id === item.xDetail.id) || angular.equals(xItem, item.xDetail))) {
-                    this.grid.y.forEach((yItem, yIndex) => {
-                        if (yItem && ((yItem && yItem.id === item.yDetail.id) || angular.equals(yItem, item.yDetail))) {
-                            this.gridValues[xIndex] = this.gridValues[xIndex] || {}
-                            this.gridValues[xIndex][yIndex] = this.gridValues[xIndex][yIndex] || {}
-                            this.gridValues[xIndex][yIndex] = Object.assign({}, item)
-                        }
-                    })
-                }
-            })
-        })
-    }
-
-    getItemX() {
-        return (this.details || []).filter((d) => d.type === this.x.key)
-    }
-
-    getItemY() {
-        return (this.details || []).filter((d) => d.type === this.y.key)
-    }
-
-    handleInlineValues() {
-        this.$timeout(() => {
-            this.ngModel = []
-            Object.keys(this.gridValues)
-                .forEach((xIndex) => {
-                    Object.keys(this.gridValues[xIndex])
-                        .map((yIndex) => {
-                            return Object.assign({xDetail: this.grid.x[xIndex],
-                                yDetail: this.grid.y[yIndex]}, this.gridValues[xIndex][yIndex])
-                        })
-                        .forEach((item) => this.ngModel.push(item))
-                })
-        })
+        this.ngModel = OrderPreferences.order(this.ngModel, 'xDetail.value')
     }
 
     focusInput(element) {

@@ -1,16 +1,23 @@
 .mbg-product-inline-wrapper {
-  .default-template {
-    border-top: 1px solid #ccc;
-  }
   .inline-content {
     overflow: auto;
   }
+  
+  .inline-y {
+    &:first-child {
+      .inline-row {
+        border-top: 1px solid #ccc;
+      }
+    }
+  }
+
   .inline-row {
     display: flex;
     height: 44px;
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
+
 
     div {
       flex: 1;
