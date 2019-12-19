@@ -34,7 +34,7 @@ class MbgProductInlineController {
 
     changeBarCode(item) {
         if (this.errorCallBackBarCode) {
-            const callBack = this.errorCallBackBarCode({ barCode: item.barCode })
+            const callBack = this.errorCallBackBarCode({ barCode: item })
             if (callBack && callBack.then) {
                 callBack.then((response) => {
                     this.$timeout(() => {
