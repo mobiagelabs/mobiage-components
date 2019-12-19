@@ -22,6 +22,7 @@
              ng-style="{'max-height': $ctrl.maxHeight + 'px'}">
             <div class="inline-x">
                 <div class="inline-y"
+                     ng-if="item[$ctrl.activeAttr] === undefined ? true : item[$ctrl.activeAttr]"
                      ng-repeat="item in $ctrl.ngModel track by $index">
                     <div class="inline-row"
                          ng-class="{'default-template': !$ctrl.transcludeTemplate && $parent.$index === 0 && $index === 0}">

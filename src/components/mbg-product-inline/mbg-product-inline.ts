@@ -63,7 +63,8 @@ const mbgProductInline = {
         y: '=?',
         ngModel: '=?',
         maxHeight: '=?',
-        errorCallBackBarCode: '&?'
+        errorCallBackBarCode: '&?',
+        activeAttr: '@?'
     },
     template,
     controller: MbgProductInlineController,
