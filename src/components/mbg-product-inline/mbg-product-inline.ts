@@ -5,15 +5,10 @@ import { OrderPreferences } from '../../helpers/order-preferences'
 
 class MbgProductInlineController {
     private ngModel: Array<any>
-    private details: Array<any>
-    private transcludeTemplate
     private x: { key: string, label: string }
     private y: { key: string, label: string }
-    private grid: {
-        x?: Array<any>,
-        y?: Array<any>,
-    }
     private gridValues: any
+    private errorCallBackBarCode: Function
 
     constructor(
         public $scope,
@@ -23,10 +18,9 @@ class MbgProductInlineController {
         public $transclude) { }
 
     $onInit() {
-        this.grid = {}
         this.gridValues = {}
         this.$scope.$c = this.$scope.$parent
-        this.ngModel =  this.ngModel || []
+        this.ngModel = this.ngModel || []
         this.$scope.$watch('$ctrl.ngModel', () => this.handleModel(), true)
     }
 
@@ -36,6 +30,21 @@ class MbgProductInlineController {
 
     focusInput(element) {
         element.select()
+    }
+
+    changeBarCode(item) {
+        if (this.errorCallBackBarCode) {
+            const callBack = this.errorCallBackBarCode({ barCode: item.barCode })
+            if (callBack && callBack.then) {
+                callBack.then((response) => {
+                    this.$timeout(() => {
+                        item.inputError = !!response
+                    })
+                })
+            } else {
+                this.$timeout(() => item.inputError = !!callBack)
+            }
+        }
     }
 }
 
@@ -52,9 +61,9 @@ const mbgProductInline = {
     bindings: {
         x: '=?',
         y: '=?',
-        details: '=?',
         ngModel: '=?',
-        maxHeight: '=?'
+        maxHeight: '=?',
+        errorCallBackBarCode: '&?'
     },
     template,
     controller: MbgProductInlineController,

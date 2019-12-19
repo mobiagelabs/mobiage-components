@@ -465,7 +465,7 @@
         placeholder="'Qual o modelodsadsadsaasd?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
+    <!-- <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
                       y="{ key: 'COR', label: 'COR PRODUTO' }"
                       details="details"
                       ng-model="result2"
@@ -473,14 +473,16 @@
     </mbg-product-grid>
     <br />
     <pre>{{result | json}}</pre>
-    <br />
+    <br /> -->
     <mbg-product-inline x="{ key: 'TAMANHO', label: 'TAMANHOS' }"
                         y="{ key: 'COR', label: 'CORES' }"
+                        error-call-back-bar-code="errorBarCode(barCode)"
+                        bar-code-error-label="errorlabelteste"
                         details="details"
                         ng-model="result2">
     </mbg-product-inline>
-    <br />
-    <pre>{{result2 | json}}</pre>
+    <!-- <br />
+    <pre>{{result2 | json}}</pre> -->
 
     <!--
 

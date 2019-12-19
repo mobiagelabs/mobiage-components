@@ -34,7 +34,10 @@
                         <span>{{ item.yDetail.value }}</span>
                     </div>
                     <div class="barcode-col">
+
                         <input type="text"
+                               ng-class="{'input-error': item.inputError}"
+                               ng-change="$ctrl.changeBarCode(item)"
                                onclick="angular.element(this).scope().$ctrl.focusInput(this)"
                                ng-model="item.barCode"
                                placeholder="Código de barras"

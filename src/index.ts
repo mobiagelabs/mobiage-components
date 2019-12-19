@@ -361,6 +361,24 @@ const module = angular
 
 		$scope.testefelipegordao = (item) => console.log(item)
 
+		$scope.errorBarCode = (barCode) => {
+			return new Promise((resolve) => {
+				if (barCode === '123') {
+					$timeout(() => {
+						$scope.errorlabelteste = 'Primeiro erro'
+						resolve(true)
+					}, 500)
+				} else if (barCode === '321') {
+					$timeout(() => {
+						$scope.errorlabelteste = 'Segundo erro'
+						resolve(true)
+					}, 700)
+				} else {
+					resolve(false)
+				}
+			})
+		}
+
 		$timeout(() => {
 			$scope.treeOrgs = [
 				{
@@ -483,492 +501,492 @@ const module = angular
 
 		$scope.details = [
 			{
-			   "id":"3700D589F4C540099D03026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(UN-G5)",
-			   "value":"PP",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D589F4C540099D03026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(UN-G5)",
+				"value": "PP",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D57DA6BF00009C54026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(UN-G5)",
-			   "value":"P",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D57DA6BF00009C54026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(UN-G5)",
+				"value": "P",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D57D7C2C90EE3F71026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(UN-G5)",
-			   "value":"M",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D57D7C2C90EE3F71026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(UN-G5)",
+				"value": "M",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D57DADEAF0EBC693026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(UN-G5)",
-			   "value":"G",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D57DADEAF0EBC693026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(UN-G5)",
+				"value": "G",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D57FD1673013431F026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(UN-G5)",
-			   "value":"GG",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D57FD1673013431F026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(UN-G5)",
+				"value": "GG",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58EA2E40006908B026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(UN-G5)",
-			   "value":"XG",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58EA2E40006908B026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(UN-G5)",
+				"value": "XG",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58ACCD5C0AB8687026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(UN-G5)",
-			   "value":"G1",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58ACCD5C0AB8687026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(UN-G5)",
+				"value": "G1",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58A28A6808C510B026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(UN-G5)",
-			   "value":"G2",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58A28A6808C510B026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(UN-G5)",
+				"value": "G2",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58DE1B6E07B502C026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(UN-G5)",
-			   "value":"G3",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58DE1B6E07B502C026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(UN-G5)",
+				"value": "G3",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D5D1FF0030BD7AF1026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(UN-G5)",
-			   "value":"G5",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D5D1FF0030BD7AF1026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(UN-G5)",
+				"value": "G5",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D57D7A09B0A3E71E026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(UN-G5)",
-			   "value":"UN",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D57D7A09B0A3E71E026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(UN-G5)",
+				"value": "UN",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"A81B847856AFB8F49FE0771A18054FB8",
-			   "oi":{
-				  "value":"1034.1035.1036."
-			   },
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":null,
-			   "value":"4",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "A81B847856AFB8F49FE0771A18054FB8",
+				"oi": {
+					"value": "1034.1035.1036."
+				},
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": null,
+				"value": "4",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"5B972F42D7A520E1B838D34C18CFE3CB",
-			   "oi":{
-				  "value":"1034.1035.1036."
-			   },
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":null,
-			   "value":"6",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "5B972F42D7A520E1B838D34C18CFE3CB",
+				"oi": {
+					"value": "1034.1035.1036."
+				},
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": null,
+				"value": "6",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"25BE99FD9C15AE54AAF39A89B9171CCB",
-			   "oi":{
-				  "value":"1034.1035.1036."
-			   },
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":null,
-			   "value":"8",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "25BE99FD9C15AE54AAF39A89B9171CCB",
+				"oi": {
+					"value": "1034.1035.1036."
+				},
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": null,
+				"value": "8",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D774B1BCE0D33F7C026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"TAMANHO (34-46)",
-			   "value":"34",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D774B1BCE0D33F7C026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "TAMANHO (34-46)",
+				"value": "34",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D77F358A704824F4026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"TAMANHO (SAPATOS)",
-			   "value":"35",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D77F358A704824F4026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "TAMANHO (SAPATOS)",
+				"value": "35",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58C87CC30D37227026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(36-56)",
-			   "value":"36",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58C87CC30D37227026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(36-56)",
+				"value": "36",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D77F32CB5078A501026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"TAMANHO (SAPATOS)",
-			   "value":"37",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D77F32CB5078A501026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "TAMANHO (SAPATOS)",
+				"value": "37",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58C7D1DD01584D7026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(36-56)",
-			   "value":"38",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58C7D1DD01584D7026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(36-56)",
+				"value": "38",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D77F2F6FF02D3135026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"TAMANHO (SAPATOS)",
-			   "value":"39",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D77F2F6FF02D3135026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "TAMANHO (SAPATOS)",
+				"value": "39",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58A516430F9160B026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(36-56)",
-			   "value":"40",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58A516430F9160B026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(36-56)",
+				"value": "40",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58FE06D109D3A21026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(36-56)",
-			   "value":"42",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58FE06D109D3A21026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(36-56)",
+				"value": "42",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58A6E13F0E5A26D026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(36-56)",
-			   "value":"44",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58A6E13F0E5A26D026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(36-56)",
+				"value": "44",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58AFEE240368409026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(36-56)",
-			   "value":"46",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58AFEE240368409026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(36-56)",
+				"value": "46",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58C768E20794F99026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(36-56)",
-			   "value":"48",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58C768E20794F99026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(36-56)",
+				"value": "48",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58C82750024D917026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(36-56)",
-			   "value":"50",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58C82750024D917026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(36-56)",
+				"value": "50",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D58DF2CDE0CB938F026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(36-56)",
-			   "value":"52",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D58DF2CDE0CB938F026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(36-56)",
+				"value": "52",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D5D720C850CAA177026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(36-56)",
-			   "value":"54",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D5D720C850CAA177026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(36-56)",
+				"value": "54",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D5D4CB8DB02EA803026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"TAMANHO",
-			   "subType":null,
-			   "description":"Tamanho(36-56)",
-			   "value":"56",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D5D4CB8DB02EA803026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "TAMANHO",
+				"subType": null,
+				"description": "Tamanho(36-56)",
+				"value": "56",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D56836EC30B80037026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"COR",
-			   "subType":null,
-			   "description":"Amarelo",
-			   "value":"Amarelo",
-			   "valueRef":"#FFFF00",
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D56836EC30B80037026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "COR",
+				"subType": null,
+				"description": "Amarelo",
+				"value": "Amarelo",
+				"valueRef": "#FFFF00",
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D56833DEF06C4C4A026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"COR",
-			   "subType":null,
-			   "description":"Couro",
-			   "value":"Couro",
-			   "valueRef":null,
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D56833DEF06C4C4A026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "COR",
+				"subType": null,
+				"description": "Couro",
+				"value": "Couro",
+				"valueRef": null,
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D568300E609EE9DD026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"COR",
-			   "subType":null,
-			   "description":"Lilás",
-			   "value":"Lilás",
-			   "valueRef":"#B19CD9",
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D568300E609EE9DD026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "COR",
+				"subType": null,
+				"description": "Lilás",
+				"value": "Lilás",
+				"valueRef": "#B19CD9",
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D568316DF038D765026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"COR",
-			   "subType":null,
-			   "description":"Ocre",
-			   "value":"Ocre",
-			   "valueRef":"#cc7722",
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D568316DF038D765026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "COR",
+				"subType": null,
+				"description": "Ocre",
+				"value": "Ocre",
+				"valueRef": "#cc7722",
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D5683824B0CAFC88026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"COR",
-			   "subType":null,
-			   "description":"Vermelho",
-			   "value":"Vermelho",
-			   "valueRef":"#FF0000",
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D5683824B0CAFC88026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "COR",
+				"subType": null,
+				"description": "Vermelho",
+				"value": "Vermelho",
+				"valueRef": "#FF0000",
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D568353E80220F72026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"COR",
-			   "subType":null,
-			   "description":"Pérola",
-			   "value":"Pérola",
-			   "valueRef":"#FEFFDD",
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D568353E80220F72026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "COR",
+				"subType": null,
+				"description": "Pérola",
+				"value": "Pérola",
+				"valueRef": "#FEFFDD",
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D5683A4790112BE7026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"COR",
-			   "subType":null,
-			   "description":"Champagne",
-			   "value":"Champagne",
-			   "valueRef":"#C0C0AC",
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D5683A4790112BE7026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "COR",
+				"subType": null,
+				"description": "Champagne",
+				"value": "Champagne",
+				"valueRef": "#C0C0AC",
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D5683B59003C6B8E026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"COR",
-			   "subType":null,
-			   "description":"Azul navy",
-			   "value":"Azul navy",
-			   "valueRef":"#2C385D",
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D5683B59003C6B8E026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "COR",
+				"subType": null,
+				"description": "Azul navy",
+				"value": "Azul navy",
+				"valueRef": "#2C385D",
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D5683CDFA028985D026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"COR",
-			   "subType":null,
-			   "description":"Nude",
-			   "value":"Nude",
-			   "valueRef":"#ebc8b2",
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D5683CDFA028985D026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "COR",
+				"subType": null,
+				"description": "Nude",
+				"value": "Nude",
+				"valueRef": "#ebc8b2",
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D5683DF1103DD33F026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"COR",
-			   "subType":null,
-			   "description":"Verde Limão",
-			   "value":"Verde Limão",
-			   "valueRef":"#00ff00",
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D5683DF1103DD33F026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "COR",
+				"subType": null,
+				"description": "Verde Limão",
+				"value": "Verde Limão",
+				"valueRef": "#00ff00",
+				"tags": null,
+				"detailsBase": null
 			},
 			{
-			   "id":"3700D5683FC5D0C471B6026A0E133CE0",
-			   "oi":null,
-			   "version":0,
-			   "type":"COR",
-			   "subType":null,
-			   "description":"Verde Tiffany",
-			   "value":"Verde Tiffany",
-			   "valueRef":"#23CDB8",
-			   "tags":null,
-			   "detailsBase":null
+				"id": "3700D5683FC5D0C471B6026A0E133CE0",
+				"oi": null,
+				"version": 0,
+				"type": "COR",
+				"subType": null,
+				"description": "Verde Tiffany",
+				"value": "Verde Tiffany",
+				"valueRef": "#23CDB8",
+				"tags": null,
+				"detailsBase": null
 			}
-		 ]
+		]
 
 		$scope.result = [
 			{
@@ -1001,7159 +1019,7159 @@ const module = angular
 			}
 		]
 
-		$scope.result2 =  [
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D589F4C540099D03026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"PP",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DA6BF00009C54026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"P",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7C2C90EE3F71026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"M",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DADEAF0EBC693026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57FD1673013431F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"GG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58EA2E40006908B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"XG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58ACCD5C0AB8687026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G1",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A28A6808C510B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G2",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58DE1B6E07B502C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G3",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D5D1FF0030BD7AF1026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G5",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7A09B0A3E71E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"UN",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"A81B847856AFB8F49FE0771A18054FB8",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"4",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"5B972F42D7A520E1B838D34C18CFE3CB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"6",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"25BE99FD9C15AE54AAF39A89B9171CCB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"8",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D774B1BCE0D33F7C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (34-46)",
-				  "value":"34",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F358A704824F4026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"35",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C87CC30D37227026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"36",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F32CB5078A501026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"37",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C7D1DD01584D7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"38",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F2F6FF02D3135026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"39",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A516430F9160B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"40",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58FE06D109D3A21026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"42",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568300E609EE9DD026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Lilás",
-				  "value":"Lilás",
-				  "valueRef":"#B19CD9",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A6E13F0E5A26D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"44",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D589F4C540099D03026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"PP",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D589F4C540099D03026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"PP",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D589F4C540099D03026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"PP",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D589F4C540099D03026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"PP",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DA6BF00009C54026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"P",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DA6BF00009C54026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"P",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DA6BF00009C54026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"P",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DA6BF00009C54026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"P",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7C2C90EE3F71026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"M",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7C2C90EE3F71026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"M",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7C2C90EE3F71026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"M",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7C2C90EE3F71026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"M",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DADEAF0EBC693026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DADEAF0EBC693026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DADEAF0EBC693026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DADEAF0EBC693026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57FD1673013431F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"GG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57FD1673013431F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"GG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57FD1673013431F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"GG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57FD1673013431F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"GG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58EA2E40006908B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"XG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58EA2E40006908B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"XG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58EA2E40006908B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"XG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58EA2E40006908B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"XG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58ACCD5C0AB8687026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G1",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58ACCD5C0AB8687026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G1",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58ACCD5C0AB8687026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G1",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58ACCD5C0AB8687026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G1",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A28A6808C510B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G2",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A28A6808C510B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G2",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A28A6808C510B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G2",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A28A6808C510B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G2",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58DE1B6E07B502C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G3",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58DE1B6E07B502C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G3",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58DE1B6E07B502C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G3",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58DE1B6E07B502C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G3",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D5D1FF0030BD7AF1026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G5",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D5D1FF0030BD7AF1026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G5",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D5D1FF0030BD7AF1026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G5",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D5D1FF0030BD7AF1026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G5",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7A09B0A3E71E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"UN",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7A09B0A3E71E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"UN",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7A09B0A3E71E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"UN",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7A09B0A3E71E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"UN",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"A81B847856AFB8F49FE0771A18054FB8",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"4",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"A81B847856AFB8F49FE0771A18054FB8",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"4",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"A81B847856AFB8F49FE0771A18054FB8",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"4",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"A81B847856AFB8F49FE0771A18054FB8",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"4",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"5B972F42D7A520E1B838D34C18CFE3CB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"6",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"5B972F42D7A520E1B838D34C18CFE3CB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"6",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"5B972F42D7A520E1B838D34C18CFE3CB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"6",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"5B972F42D7A520E1B838D34C18CFE3CB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"6",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"25BE99FD9C15AE54AAF39A89B9171CCB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"8",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"25BE99FD9C15AE54AAF39A89B9171CCB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"8",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"25BE99FD9C15AE54AAF39A89B9171CCB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"8",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"25BE99FD9C15AE54AAF39A89B9171CCB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"8",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D774B1BCE0D33F7C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (34-46)",
-				  "value":"34",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D774B1BCE0D33F7C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (34-46)",
-				  "value":"34",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D774B1BCE0D33F7C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (34-46)",
-				  "value":"34",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D774B1BCE0D33F7C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (34-46)",
-				  "value":"34",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F358A704824F4026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"35",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F358A704824F4026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"35",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F358A704824F4026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"35",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F358A704824F4026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"35",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C87CC30D37227026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"36",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C87CC30D37227026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"36",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C87CC30D37227026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"36",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C87CC30D37227026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"36",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F32CB5078A501026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"37",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F32CB5078A501026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"37",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F32CB5078A501026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"37",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F32CB5078A501026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"37",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C7D1DD01584D7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"38",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C7D1DD01584D7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"38",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C7D1DD01584D7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"38",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C7D1DD01584D7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"38",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F2F6FF02D3135026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"39",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F2F6FF02D3135026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"39",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F2F6FF02D3135026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"39",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F2F6FF02D3135026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"39",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A516430F9160B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"40",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A516430F9160B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"40",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A516430F9160B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"40",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A516430F9160B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"40",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58FE06D109D3A21026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"42",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58FE06D109D3A21026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"42",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58FE06D109D3A21026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"42",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58FE06D109D3A21026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"42",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568316DF038D765026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Ocre",
-				  "value":"Ocre",
-				  "valueRef":"#cc7722",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A6E13F0E5A26D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"44",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56833DEF06C4C4A026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Couro",
-				  "value":"Couro",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A6E13F0E5A26D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"44",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D568353E80220F72026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Pérola",
-				  "value":"Pérola",
-				  "valueRef":"#FEFFDD",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A6E13F0E5A26D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"44",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5682734C0267582026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Única",
-				  "value":"Única",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A6E13F0E5A26D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"44",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D589F4C540099D03026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"PP",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D589F4C540099D03026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"PP",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D589F4C540099D03026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"PP",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D589F4C540099D03026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"PP",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DA6BF00009C54026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"P",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DA6BF00009C54026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"P",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DA6BF00009C54026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"P",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DA6BF00009C54026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"P",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7C2C90EE3F71026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"M",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7C2C90EE3F71026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"M",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7C2C90EE3F71026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"M",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7C2C90EE3F71026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"M",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DADEAF0EBC693026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DADEAF0EBC693026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DADEAF0EBC693026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DADEAF0EBC693026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57FD1673013431F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"GG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57FD1673013431F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"GG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57FD1673013431F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"GG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57FD1673013431F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"GG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58EA2E40006908B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"XG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58EA2E40006908B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"XG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58EA2E40006908B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"XG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58EA2E40006908B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"XG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58ACCD5C0AB8687026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G1",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58ACCD5C0AB8687026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G1",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58ACCD5C0AB8687026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G1",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58ACCD5C0AB8687026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G1",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A28A6808C510B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G2",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A28A6808C510B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G2",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A28A6808C510B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G2",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A28A6808C510B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G2",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58DE1B6E07B502C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G3",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58DE1B6E07B502C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G3",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58DE1B6E07B502C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G3",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58DE1B6E07B502C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G3",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D5D1FF0030BD7AF1026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G5",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D5D1FF0030BD7AF1026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G5",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D5D1FF0030BD7AF1026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G5",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D5D1FF0030BD7AF1026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G5",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7A09B0A3E71E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"UN",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7A09B0A3E71E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"UN",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7A09B0A3E71E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"UN",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7A09B0A3E71E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"UN",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"A81B847856AFB8F49FE0771A18054FB8",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"4",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"A81B847856AFB8F49FE0771A18054FB8",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"4",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"A81B847856AFB8F49FE0771A18054FB8",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"4",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"A81B847856AFB8F49FE0771A18054FB8",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"4",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"5B972F42D7A520E1B838D34C18CFE3CB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"6",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"5B972F42D7A520E1B838D34C18CFE3CB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"6",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"5B972F42D7A520E1B838D34C18CFE3CB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"6",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"5B972F42D7A520E1B838D34C18CFE3CB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"6",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"25BE99FD9C15AE54AAF39A89B9171CCB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"8",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"25BE99FD9C15AE54AAF39A89B9171CCB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"8",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"25BE99FD9C15AE54AAF39A89B9171CCB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"8",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"25BE99FD9C15AE54AAF39A89B9171CCB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"8",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D774B1BCE0D33F7C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (34-46)",
-				  "value":"34",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D774B1BCE0D33F7C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (34-46)",
-				  "value":"34",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D774B1BCE0D33F7C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (34-46)",
-				  "value":"34",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D774B1BCE0D33F7C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (34-46)",
-				  "value":"34",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F358A704824F4026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"35",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F358A704824F4026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"35",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F358A704824F4026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"35",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F358A704824F4026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"35",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C87CC30D37227026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"36",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C87CC30D37227026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"36",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C87CC30D37227026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"36",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C87CC30D37227026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"36",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F32CB5078A501026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"37",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F32CB5078A501026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"37",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F32CB5078A501026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"37",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F32CB5078A501026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"37",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C7D1DD01584D7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"38",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C7D1DD01584D7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"38",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C7D1DD01584D7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"38",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C7D1DD01584D7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"38",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F2F6FF02D3135026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"39",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F2F6FF02D3135026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"39",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F2F6FF02D3135026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"39",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F2F6FF02D3135026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"39",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A516430F9160B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"40",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A516430F9160B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"40",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A516430F9160B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"40",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A516430F9160B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"40",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58FE06D109D3A21026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"42",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58FE06D109D3A21026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"42",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58FE06D109D3A21026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"42",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58FE06D109D3A21026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"42",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683824B0CAFC88026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Vermelho",
-				  "value":"Vermelho",
-				  "valueRef":"#FF0000",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A6E13F0E5A26D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"44",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683A4790112BE7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Champagne",
-				  "value":"Champagne",
-				  "valueRef":"#C0C0AC",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A6E13F0E5A26D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"44",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D56836EC30B80037026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Amarelo",
-				  "value":"Amarelo",
-				  "valueRef":"#FFFF00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A6E13F0E5A26D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"44",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683B59003C6B8E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Azul navy",
-				  "value":"Azul navy",
-				  "valueRef":"#2C385D",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A6E13F0E5A26D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"44",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D589F4C540099D03026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"PP",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D589F4C540099D03026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"PP",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DA6BF00009C54026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"P",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DA6BF00009C54026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"P",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7C2C90EE3F71026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"M",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7C2C90EE3F71026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"M",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DADEAF0EBC693026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57DADEAF0EBC693026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57FD1673013431F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"GG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57FD1673013431F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"GG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58EA2E40006908B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"XG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58EA2E40006908B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"XG",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58ACCD5C0AB8687026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G1",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58ACCD5C0AB8687026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G1",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A28A6808C510B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G2",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A28A6808C510B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G2",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58DE1B6E07B502C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G3",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58DE1B6E07B502C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G3",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D5D1FF0030BD7AF1026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G5",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D5D1FF0030BD7AF1026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"G5",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7A09B0A3E71E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"UN",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D57D7A09B0A3E71E026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(UN-G5)",
-				  "value":"UN",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"A81B847856AFB8F49FE0771A18054FB8",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"4",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"A81B847856AFB8F49FE0771A18054FB8",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"4",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"5B972F42D7A520E1B838D34C18CFE3CB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"6",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"5B972F42D7A520E1B838D34C18CFE3CB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"6",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"25BE99FD9C15AE54AAF39A89B9171CCB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"8",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"25BE99FD9C15AE54AAF39A89B9171CCB",
-				  "oi":{
-					 "value":"1034.1035.1036."
-				  },
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":null,
-				  "value":"8",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D774B1BCE0D33F7C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (34-46)",
-				  "value":"34",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D774B1BCE0D33F7C026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (34-46)",
-				  "value":"34",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F358A704824F4026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"35",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F358A704824F4026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"35",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C87CC30D37227026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"36",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C87CC30D37227026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"36",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F32CB5078A501026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"37",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F32CB5078A501026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"37",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C7D1DD01584D7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"38",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58C7D1DD01584D7026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"38",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F2F6FF02D3135026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"39",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D77F2F6FF02D3135026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"TAMANHO (SAPATOS)",
-				  "value":"39",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A516430F9160B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"40",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A516430F9160B026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"40",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58FE06D109D3A21026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"42",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58FE06D109D3A21026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"42",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683CDFA028985D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Nude",
-				  "value":"Nude",
-				  "valueRef":"#ebc8b2",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A6E13F0E5A26D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"44",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
-			},
-			{
-			   "yDetail":{
-				  "id":"3700D5683DF1103DD33F026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"COR",
-				  "subType":null,
-				  "description":"Verde Limão",
-				  "value":"Verde Limão",
-				  "valueRef":"#00ff00",
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "xDetail":{
-				  "id":"3700D58A6E13F0E5A26D026A0E133CE0",
-				  "oi":null,
-				  "version":0,
-				  "type":"TAMANHO",
-				  "subType":null,
-				  "description":"Tamanho(36-56)",
-				  "value":"44",
-				  "valueRef":null,
-				  "tags":null,
-				  "detailsBase":null
-			   },
-			   "enable":true,
-			   "price":300
+		$scope.result2 = [
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D589F4C540099D03026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "PP",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DA6BF00009C54026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "P",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7C2C90EE3F71026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "M",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DADEAF0EBC693026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57FD1673013431F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "GG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58EA2E40006908B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "XG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58ACCD5C0AB8687026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G1",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A28A6808C510B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G2",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58DE1B6E07B502C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G3",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D5D1FF0030BD7AF1026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G5",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7A09B0A3E71E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "UN",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "A81B847856AFB8F49FE0771A18054FB8",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "4",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "5B972F42D7A520E1B838D34C18CFE3CB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "6",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "25BE99FD9C15AE54AAF39A89B9171CCB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "8",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D774B1BCE0D33F7C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (34-46)",
+					"value": "34",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F358A704824F4026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "35",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C87CC30D37227026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "36",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F32CB5078A501026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "37",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C7D1DD01584D7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "38",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F2F6FF02D3135026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "39",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A516430F9160B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "40",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58FE06D109D3A21026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "42",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568300E609EE9DD026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Lilás",
+					"value": "Lilás",
+					"valueRef": "#B19CD9",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A6E13F0E5A26D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "44",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D589F4C540099D03026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "PP",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D589F4C540099D03026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "PP",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D589F4C540099D03026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "PP",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D589F4C540099D03026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "PP",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DA6BF00009C54026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "P",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DA6BF00009C54026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "P",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DA6BF00009C54026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "P",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DA6BF00009C54026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "P",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7C2C90EE3F71026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "M",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7C2C90EE3F71026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "M",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7C2C90EE3F71026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "M",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7C2C90EE3F71026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "M",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DADEAF0EBC693026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DADEAF0EBC693026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DADEAF0EBC693026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DADEAF0EBC693026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57FD1673013431F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "GG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57FD1673013431F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "GG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57FD1673013431F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "GG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57FD1673013431F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "GG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58EA2E40006908B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "XG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58EA2E40006908B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "XG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58EA2E40006908B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "XG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58EA2E40006908B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "XG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58ACCD5C0AB8687026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G1",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58ACCD5C0AB8687026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G1",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58ACCD5C0AB8687026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G1",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58ACCD5C0AB8687026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G1",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A28A6808C510B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G2",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A28A6808C510B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G2",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A28A6808C510B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G2",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A28A6808C510B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G2",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58DE1B6E07B502C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G3",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58DE1B6E07B502C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G3",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58DE1B6E07B502C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G3",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58DE1B6E07B502C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G3",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D5D1FF0030BD7AF1026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G5",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D5D1FF0030BD7AF1026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G5",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D5D1FF0030BD7AF1026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G5",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D5D1FF0030BD7AF1026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G5",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7A09B0A3E71E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "UN",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7A09B0A3E71E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "UN",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7A09B0A3E71E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "UN",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7A09B0A3E71E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "UN",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "A81B847856AFB8F49FE0771A18054FB8",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "4",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "A81B847856AFB8F49FE0771A18054FB8",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "4",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "A81B847856AFB8F49FE0771A18054FB8",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "4",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "A81B847856AFB8F49FE0771A18054FB8",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "4",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "5B972F42D7A520E1B838D34C18CFE3CB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "6",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "5B972F42D7A520E1B838D34C18CFE3CB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "6",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "5B972F42D7A520E1B838D34C18CFE3CB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "6",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "5B972F42D7A520E1B838D34C18CFE3CB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "6",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "25BE99FD9C15AE54AAF39A89B9171CCB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "8",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "25BE99FD9C15AE54AAF39A89B9171CCB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "8",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "25BE99FD9C15AE54AAF39A89B9171CCB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "8",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "25BE99FD9C15AE54AAF39A89B9171CCB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "8",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D774B1BCE0D33F7C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (34-46)",
+					"value": "34",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D774B1BCE0D33F7C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (34-46)",
+					"value": "34",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D774B1BCE0D33F7C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (34-46)",
+					"value": "34",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D774B1BCE0D33F7C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (34-46)",
+					"value": "34",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F358A704824F4026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "35",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F358A704824F4026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "35",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F358A704824F4026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "35",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F358A704824F4026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "35",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C87CC30D37227026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "36",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C87CC30D37227026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "36",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C87CC30D37227026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "36",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C87CC30D37227026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "36",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F32CB5078A501026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "37",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F32CB5078A501026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "37",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F32CB5078A501026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "37",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F32CB5078A501026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "37",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C7D1DD01584D7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "38",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C7D1DD01584D7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "38",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C7D1DD01584D7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "38",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C7D1DD01584D7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "38",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F2F6FF02D3135026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "39",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F2F6FF02D3135026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "39",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F2F6FF02D3135026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "39",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F2F6FF02D3135026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "39",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A516430F9160B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "40",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A516430F9160B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "40",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A516430F9160B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "40",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A516430F9160B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "40",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58FE06D109D3A21026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "42",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58FE06D109D3A21026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "42",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58FE06D109D3A21026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "42",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58FE06D109D3A21026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "42",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568316DF038D765026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Ocre",
+					"value": "Ocre",
+					"valueRef": "#cc7722",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A6E13F0E5A26D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "44",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56833DEF06C4C4A026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Couro",
+					"value": "Couro",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A6E13F0E5A26D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "44",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D568353E80220F72026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Pérola",
+					"value": "Pérola",
+					"valueRef": "#FEFFDD",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A6E13F0E5A26D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "44",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5682734C0267582026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Única",
+					"value": "Única",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A6E13F0E5A26D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "44",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D589F4C540099D03026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "PP",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D589F4C540099D03026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "PP",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D589F4C540099D03026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "PP",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D589F4C540099D03026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "PP",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DA6BF00009C54026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "P",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DA6BF00009C54026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "P",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DA6BF00009C54026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "P",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DA6BF00009C54026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "P",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7C2C90EE3F71026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "M",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7C2C90EE3F71026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "M",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7C2C90EE3F71026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "M",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7C2C90EE3F71026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "M",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DADEAF0EBC693026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DADEAF0EBC693026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DADEAF0EBC693026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DADEAF0EBC693026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57FD1673013431F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "GG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57FD1673013431F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "GG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57FD1673013431F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "GG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57FD1673013431F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "GG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58EA2E40006908B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "XG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58EA2E40006908B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "XG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58EA2E40006908B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "XG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58EA2E40006908B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "XG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58ACCD5C0AB8687026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G1",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58ACCD5C0AB8687026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G1",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58ACCD5C0AB8687026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G1",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58ACCD5C0AB8687026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G1",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A28A6808C510B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G2",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A28A6808C510B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G2",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A28A6808C510B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G2",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A28A6808C510B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G2",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58DE1B6E07B502C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G3",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58DE1B6E07B502C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G3",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58DE1B6E07B502C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G3",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58DE1B6E07B502C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G3",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D5D1FF0030BD7AF1026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G5",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D5D1FF0030BD7AF1026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G5",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D5D1FF0030BD7AF1026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G5",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D5D1FF0030BD7AF1026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G5",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7A09B0A3E71E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "UN",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7A09B0A3E71E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "UN",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7A09B0A3E71E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "UN",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7A09B0A3E71E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "UN",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "A81B847856AFB8F49FE0771A18054FB8",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "4",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "A81B847856AFB8F49FE0771A18054FB8",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "4",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "A81B847856AFB8F49FE0771A18054FB8",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "4",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "A81B847856AFB8F49FE0771A18054FB8",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "4",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "5B972F42D7A520E1B838D34C18CFE3CB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "6",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "5B972F42D7A520E1B838D34C18CFE3CB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "6",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "5B972F42D7A520E1B838D34C18CFE3CB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "6",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "5B972F42D7A520E1B838D34C18CFE3CB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "6",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "25BE99FD9C15AE54AAF39A89B9171CCB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "8",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "25BE99FD9C15AE54AAF39A89B9171CCB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "8",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "25BE99FD9C15AE54AAF39A89B9171CCB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "8",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "25BE99FD9C15AE54AAF39A89B9171CCB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "8",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D774B1BCE0D33F7C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (34-46)",
+					"value": "34",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D774B1BCE0D33F7C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (34-46)",
+					"value": "34",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D774B1BCE0D33F7C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (34-46)",
+					"value": "34",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D774B1BCE0D33F7C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (34-46)",
+					"value": "34",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F358A704824F4026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "35",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F358A704824F4026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "35",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F358A704824F4026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "35",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F358A704824F4026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "35",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C87CC30D37227026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "36",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C87CC30D37227026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "36",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C87CC30D37227026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "36",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C87CC30D37227026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "36",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F32CB5078A501026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "37",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F32CB5078A501026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "37",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F32CB5078A501026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "37",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F32CB5078A501026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "37",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C7D1DD01584D7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "38",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C7D1DD01584D7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "38",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C7D1DD01584D7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "38",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C7D1DD01584D7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "38",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F2F6FF02D3135026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "39",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F2F6FF02D3135026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "39",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F2F6FF02D3135026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "39",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F2F6FF02D3135026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "39",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A516430F9160B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "40",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A516430F9160B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "40",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A516430F9160B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "40",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A516430F9160B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "40",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58FE06D109D3A21026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "42",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58FE06D109D3A21026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "42",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58FE06D109D3A21026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "42",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58FE06D109D3A21026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "42",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683824B0CAFC88026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Vermelho",
+					"value": "Vermelho",
+					"valueRef": "#FF0000",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A6E13F0E5A26D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "44",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683A4790112BE7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Champagne",
+					"value": "Champagne",
+					"valueRef": "#C0C0AC",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A6E13F0E5A26D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "44",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D56836EC30B80037026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Amarelo",
+					"value": "Amarelo",
+					"valueRef": "#FFFF00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A6E13F0E5A26D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "44",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683B59003C6B8E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Azul navy",
+					"value": "Azul navy",
+					"valueRef": "#2C385D",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A6E13F0E5A26D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "44",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D589F4C540099D03026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "PP",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D589F4C540099D03026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "PP",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DA6BF00009C54026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "P",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DA6BF00009C54026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "P",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7C2C90EE3F71026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "M",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7C2C90EE3F71026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "M",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DADEAF0EBC693026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57DADEAF0EBC693026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57FD1673013431F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "GG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57FD1673013431F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "GG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58EA2E40006908B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "XG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58EA2E40006908B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "XG",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58ACCD5C0AB8687026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G1",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58ACCD5C0AB8687026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G1",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A28A6808C510B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G2",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A28A6808C510B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G2",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58DE1B6E07B502C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G3",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58DE1B6E07B502C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G3",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D5D1FF0030BD7AF1026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G5",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D5D1FF0030BD7AF1026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "G5",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7A09B0A3E71E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "UN",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D57D7A09B0A3E71E026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(UN-G5)",
+					"value": "UN",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "A81B847856AFB8F49FE0771A18054FB8",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "4",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "A81B847856AFB8F49FE0771A18054FB8",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "4",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "5B972F42D7A520E1B838D34C18CFE3CB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "6",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "5B972F42D7A520E1B838D34C18CFE3CB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "6",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "25BE99FD9C15AE54AAF39A89B9171CCB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "8",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "25BE99FD9C15AE54AAF39A89B9171CCB",
+					"oi": {
+						"value": "1034.1035.1036."
+					},
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": null,
+					"value": "8",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D774B1BCE0D33F7C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (34-46)",
+					"value": "34",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D774B1BCE0D33F7C026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (34-46)",
+					"value": "34",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F358A704824F4026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "35",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F358A704824F4026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "35",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C87CC30D37227026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "36",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C87CC30D37227026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "36",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F32CB5078A501026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "37",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F32CB5078A501026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "37",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C7D1DD01584D7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "38",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58C7D1DD01584D7026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "38",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F2F6FF02D3135026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "39",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D77F2F6FF02D3135026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "TAMANHO (SAPATOS)",
+					"value": "39",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A516430F9160B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "40",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A516430F9160B026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "40",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58FE06D109D3A21026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "42",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58FE06D109D3A21026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "42",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683CDFA028985D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Nude",
+					"value": "Nude",
+					"valueRef": "#ebc8b2",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A6E13F0E5A26D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "44",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
+			},
+			{
+				"yDetail": {
+					"id": "3700D5683DF1103DD33F026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "COR",
+					"subType": null,
+					"description": "Verde Limão",
+					"value": "Verde Limão",
+					"valueRef": "#00ff00",
+					"tags": null,
+					"detailsBase": null
+				},
+				"xDetail": {
+					"id": "3700D58A6E13F0E5A26D026A0E133CE0",
+					"oi": null,
+					"version": 0,
+					"type": "TAMANHO",
+					"subType": null,
+					"description": "Tamanho(36-56)",
+					"value": "44",
+					"valueRef": null,
+					"tags": null,
+					"detailsBase": null
+				},
+				"enable": true,
+				"price": 300
 			}
-		 ]
-		
+		]
+
 		$scope.editTeste = (x, y) => {
 			console.log(x, y)
 		}
