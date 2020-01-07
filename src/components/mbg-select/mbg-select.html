@@ -1,13 +1,13 @@
 <div class="mbg-select-wrapper"
-     steps-uid="{{ $ctrl.uid }}"
+     ng-init="$ctrl.onInitWrapper()"
      mbg-autocomplete-off>
-    <mbg-input-text ng-model="$ctrl.inputValue"
-                    ng-focus="$ctrl.onInputFocus()"
-                    ng-blur="$ctrl.onInputBlur()"
-                    placeholder="{{ $ctrl.placeholder }}"
-                    ng-disabled="$ctrl.ngDisabled"
-                    ng-keydown="$ctrl.onInputKeydown($event)"
-                    ng-change="$ctrl.onInputChange()"></mbg-input-text>
+    <mbg-input-text mbg-model="$ctrl.inputValue"
+                    mbg-focus="$ctrl.onInputFocus()"
+                    mbg-blur="$ctrl.onInputBlur()"
+                    mbg-placeholder="$ctrl.placeholder"
+                    mbg-disabled="$ctrl.ngDisabled"
+                    mbg-keyup="$ctrl.onInputKeydown($event)"
+                    mbg-change="$ctrl.onInputChange()"></mbg-input-text>
     <svg class="loading"
          ng-show="$ctrl.isLoading"
          version="1.1"
@@ -32,11 +32,11 @@
         </path>
     </svg>
     <i class="fa fa-caret-down mbg-icon-select"
-       ng-show="!$ctrl.ngModel && !$ctrl.isLoading"
+       ng-show="!$ctrl.modelValue && !$ctrl.isLoading"
        ng-click="$ctrl.clickArrow()"
        aria-hidden="true"></i>
     <i class="fa fa-times mbg-icon-select"
-       ng-show="$ctrl.ngModel && !$ctrl.isLoading"
+       ng-show="$ctrl.modelValue && !$ctrl.isLoading"
        aria-hidden="true"
        ng-click="$ctrl.clearNgModel(true)"></i>
     <ul class="mbg-select-list"
@@ -49,8 +49,8 @@
             ng-repeat="item in $ctrl.getData() track by $index">
             <div ng-if="$ctrl.transcludeTemplate"
                  mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
-            <div ng-if="!$ctrl.transcludeTemplate && $ctrl.labelValue">{{item[$ctrl.labelValue]}}</div>
-            <div ng-if="!$ctrl.transcludeTemplate && !$ctrl.labelValue">{{item}}</div>
+            <div ng-if="!$ctrl.transcludeTemplate && $ctrl.labelValue">{{::item[$ctrl.labelValue]}}</div>
+            <div ng-if="!$ctrl.transcludeTemplate && !$ctrl.labelValue">{{::item}}</div>
             <i title="Favoritar"
                ng-if="$ctrl.enableFavorite"
                ng-mousedown="$ctrl.favorite($event, item)"

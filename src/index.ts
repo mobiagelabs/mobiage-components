@@ -62,19 +62,172 @@ const module = angular
 			key: 'TESTE'
 		}
 
+		$scope.callcakteste = (e) => {
+			console.log(e)
+		}
+
 		$scope.testeMbgSelectList = [
 			{
 				name: 'Teste1',
 				key: 'TESTE2'
 			},
 			{
+				name: 'Teste2',
+				key: 'TESTE2'
+			},
+			{
 				name: 'Teste1',
 				key: 'TESTE2'
 			},
-			// {
-			// 	name: 'Teste1',
-			// 	key: 'TESTE2'
-			// },
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste2',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste2',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste2',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste2',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste2',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste2',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste2',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste2',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste2',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			{
+				name: 'Teste1',
+				key: 'TESTE2'
+			},
+			
 		]
 
 		$scope.testeee2 = () => {

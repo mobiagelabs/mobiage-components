@@ -1,12 +1,12 @@
 <div class="mbg-product-search-wrapper"
      uid="{{ $ctrl.uidComponent }}">
-    <mbg-input-text ng-model="$ctrl.inputValue"
-                    ng-focus="$ctrl.onInputFocus()"
-                    ng-blur="$ctrl.onInputBlur()"
+    <mbg-input-text mbg-model="$ctrl.inputValue"
+                    mbg-focus="$ctrl.onInputFocus()"
+                    mbg-blur="$ctrl.onInputBlur()"
                     enable-keyboard
                     placeholder="{{ $ctrl.placeholder }}"
-                    ng-keydown="$ctrl.onInputKeydown($event)"
-                    ng-change="$ctrl.onInputChange()"></mbg-input-text>
+                    mbg-keydown="$ctrl.onInputKeydown($event)"
+                    mbg-change="$ctrl.onInputChange()"></mbg-input-text>
     <svg class="loading"
          ng-show="$ctrl.isLoading"
          version="1.1"

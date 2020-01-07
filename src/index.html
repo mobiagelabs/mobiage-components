@@ -120,16 +120,13 @@
   <div class="container">
     <br><br><br>
 
-    <mbg-select ng-model="asdassaas"
+    <mbg-select mbg-model="asdassaas"
                 fetch="testeMbgSelectList"
                 label="name"
-                enable-add="true"
-                name="teste5"
-                enable-favorite="true">
+                placeholder="teste miranda">
     </mbg-select>
 
     <!-- <mbg-input-text mbg-model="nome"
-                    mbg-disabled="idade > 10"
                     placeholder="Uma input do mobiage"></mbg-input-text> -->
 
     <!-- <h3>{{ tedsakhbjsahbgdhjas }}</h3> -->
@@ -164,7 +161,7 @@
         </div>
       </mbg-row-content>
     </mbg-select-multi-list> -->
-    <!-- <mbg-input-text ng-model="nomeCompletoDoCliente"
+    <!-- <mbg-input-text mbg-model="nomeCompletoDoCliente"
                     mbg-error="!nomeCompletoDoCliente"
                     mbg-error-message="Precisamos saber o nome completo do cliente."></mbg-input-text> -->
 
@@ -214,23 +211,23 @@
 
       <pre>{{ selecteds | json }}</pre> <br><br><br> -->
 
-    <!-- <mbg-input-text ng-model="text2"
+    <!-- <mbg-input-text mbg-model="text2"
                       mbg-error="!text2"
                       mbg-error-when="inputErros"
                       mbg-error-trigger="hover"
                       mbg-error-message="Abacaxi são gostosos"></mbg-input-text> <br>
 
-      <mbg-input-text ng-model="text3"
+      <mbg-input-text mbg-model="text3"
                       mbg-error="!text3"
                       mbg-error-when="inputErros"
                       mbg-error-message="Abacaxi são gostosos"></mbg-input-text> <br>
 
-      <mbg-input-text ng-model="text4"
+      <mbg-input-text mbg-model="text4"
                       mbg-error="!text4"
                       mbg-error-when="inputErros"
                       mbg-error-message="Abacaxi são gostosos"></mbg-input-text> <br>
 
-      <mbg-input-text ng-model="text5"
+      <mbg-input-text mbg-model="text5"
                       mbg-error="!text5"
                       mbg-error-when="inputErros"
                       mbg-error-message="Abacaxi são gostosos"></mbg-input-text> <br> -->
@@ -319,7 +316,7 @@
     <br>
     <br> -->
 
-    <!-- <mbg-input-text ng-value="'dsdfsdf'"
+    <!-- <mbg-input-text mbg-value="'dsdfsdf'"
                     ng-model="locura"></mbg-input-text>
     {{locura}} -->
     <!-- <div class="row">
@@ -380,7 +377,7 @@
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <!-- <mbg-select ng-model="testeMbgSelect"
+    <!-- <mbg-select mbg-model="testeMbgSelect"
                 fetch="testeMbgSelectList"
                 label="name"
                 enable-add="true"
@@ -416,7 +413,7 @@
                 <label>Código de barras</label>
                 <i class="fa fa-car"
                    aria-hidden="true"></i>
-                <mbg-input-text ng-model="entity.code"
+                <mbg-input-text mbg-model="entity.code"
                                 id="barCode"
                                 ng-keydown="teste222($event)"></mbg-input-text>
               </div>
@@ -737,7 +734,7 @@
     <!-- <div class="panel panel-default">
       <div class="panel-heading">Text</div>
       <div class="panel-body">
-        <mbg-input-text ng-model="text"></mbg-input-text>
+        <mbg-input-text mbg-model="text"></mbg-input-text>
       </div>
     </div> -->
 
