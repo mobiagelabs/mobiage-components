@@ -27,7 +27,9 @@ class MbgChartLineController {
         if (serie) {
             serie.sync({
                 setValue: (value) => {
-                    chartInstance.series[index].setData(value)
+                    if (chartInstance.series && chartInstance.series[index] && chartInstance.series[index].setData) {
+                        chartInstance.series[index].setData(value)
+                    }
                     this.countUpdates++
                 }
             })
