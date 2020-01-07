@@ -1,6 +1,6 @@
 {
   "name": "@mobiage/components",
-  "version": "1.130.5",
+  "version": "1.132.1",
   "description": "@mobiage/components",
   "main": "src/components/index.ts",
   "scripts": {
@@ -34,6 +34,7 @@
     "jquery-maskmoney": "^3.0.2",
     "jquery-ui": "^1.12.1",
     "jquery-ui-bundle": "^1.12.1-migrate",
+    "lodash.get": "^4.4.2",
     "ng-easy-infinite-scroll": "^1.0.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-import": "^12.0.1",

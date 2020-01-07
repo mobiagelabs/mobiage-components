@@ -113,6 +113,9 @@
     <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard>
     <br><br><br><br><br><br><br>
 
+    <!-- {{testemoeny}}
+    <mbg-input-money ng-model="testemoeny"
+                     ng-keyup="testekey($event)"></mbg-input-money> -->
     <!-- <mbg-input-search placeholder="Quem você está procurando ?"
                       ng-model-options="{ debounce: 300 }"
                       ng-change="$ctrl.onSearchChange()"
@@ -234,7 +237,8 @@
       </div>
       <div class="col-md-4">
         <label>Single With Calendar</label>
-        <mbg-input-date ng-model="entity.nasc" calendar="true"></mbg-input-date>
+        <mbg-input-date ng-model="entity.nasc"
+                        calendar="true"></mbg-input-date>
       </div>
     </div>
 
@@ -244,19 +248,14 @@
       <div class="col-md-4">
         <label>Between</label>
         <mbg-input-date ng-model="entity.between"
+                        ng-change="testechange()"
                         placeholder-start="Ida"
                         placeholder-end="Volta"
                         between="true"
                         between-text=""
                         calendar="true"></mbg-input-date>
       </div>
-    </div>
-
-
-    <br><br><br>
-    <button ng-click="print()">foi</button>
-    <br><br>
-    {{ entity.between | json }} -->
+    </div> -->
 
     <!-- <mbg-connection-retry ping-url="https://api-hom.kigisistemas.com.br/mobiage-api/actuator/health">
     </mbg-connection-retry> -->
@@ -356,9 +355,15 @@
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <mbg-select ng-model="teste" fetch="getModelo(query)" label="name" placeholder="TESTEEEEE" enable-add="true"
-      name="teste5" callback-add="testeadd()" add-only-not-equal="true" enable-favorite="true">
-    </mbg-select>
+    <!-- <mbg-select ng-model="testeMbgSelect"
+                fetch="testeMbgSelectList"
+                label="name"
+                enable-add="true"
+                name="teste5"
+                callback-add="testeadd()"
+                add-only-not-equal="true"
+                enable-favorite="true">
+    </mbg-select> -->
 
     <!-- <br>
     <pre>{{teste | json}}</pre> -->
@@ -453,15 +458,23 @@
         placeholder="'Qual o modelodsadsadsaasd?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <!-- <mbg-product-grid
-      x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
-      y="{ key: 'COR', label: 'COR PRODUTO' }"
-      details="details"
-      ng-model="result"
-      input-label="'Devolver'"
-      enable-price="false"
-      enable-current-stock="true">
-    </mbg-product-grid> -->
+    <!-- <mbg-product-grid x="{ key: 'TAMANHO', label: 'TAMANHOS PRODUTO' }"
+                      y="{ key: 'COR', label: 'COR PRODUTO' }"
+                      details="details"
+                      ng-model="result2"
+                      enable-price="true">
+    </mbg-product-grid>
+    <br />
+    <pre>{{result | json}}</pre>
+    <br /> -->
+    <mbg-product-inline x="{ key: 'TAMANHO', label: 'TAMANHOS' }"
+                        y="{ key: 'COR', label: 'CORES' }"
+                        error-call-back-bar-code="errorBarCode(barCode)"
+                        details="details"
+                        ng-model="result2">
+    </mbg-product-inline>
+    <!-- <br />
+    <pre>{{result2 | json}}</pre> -->
 
     <!--
 
@@ -713,13 +726,12 @@
     <!-- <br> <br>
 
     <button ng-click="kkkkkjsadjhdjsah9()">Toogle Column</button>
-
-    <div class="container">
+    -->
+    <!-- <div class="container">
       <mbg-list list="produtos"
+                radio="true"
                 class="table-striped"
                 selected-values="testetttt"
-                checkbox="false"
-                checkbox-if="essaColunaPode($row)"
                 opened-rows="rowsOpen">
         <mbg-list-column name="product"
                          label="Produto"
@@ -733,9 +745,10 @@
         <mbg-list-column name="costValue"
                          label="Valor">
         </mbg-list-column>
-      </mbg-list> -->
-
-
+      </mbg-list>
+    </div>
+    {{testeradio}}
+    <mbg-radio ng-model="testeradio"></mbg-radio> -->
     <!-- <pre><code>{{ testetttt | json }}</code></pre> -->
     <!-- <div style="padding: 14px;">
     <mbg-input-checkbox ng-model="teste"
