@@ -3,13 +3,18 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="initial-scale=0.4, maximum-scale=1, user-scalable=no">
+  <meta name="viewport"
+        content="initial-scale=0.4, maximum-scale=1, user-scalable=no">
   <title>Document</title>
   <!-- Latest compiled and minified CSS -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
+        rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
   <style>
     :root {
       --primary: #00bbbd;
@@ -102,16 +107,36 @@
       font-family: 'Montserrat', sans-serif;
     }
   </style>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+        rel="stylesheet">
 </head>
 
 <body ng-controller="demoCtrl">
 
   <div class="container">
-    <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard>
-    <br><br><br><br><br><br><br>
+    <br><br><br>
+
+    <mbg-select ng-model="asdassaas"
+                fetch="testeMbgSelectList"
+                label="name"
+                enable-add="true"
+                name="teste5"
+                enable-favorite="true">
+    </mbg-select>
+
+    <!-- <mbg-input-text mbg-model="nome"
+                    mbg-disabled="idade > 10"
+                    placeholder="Uma input do mobiage"></mbg-input-text> -->
+
+    <!-- <h3>{{ tedsakhbjsahbgdhjas }}</h3> -->
+    <br><br><br>
+
+    <!-- <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard>
+    <br><br><br><br><br><br><br> -->
 
     <!-- {{testemoeny}}
     <mbg-input-money ng-model="testemoeny"
@@ -467,12 +492,12 @@
     <br />
     <pre>{{result | json}}</pre>
     <br /> -->
-    <mbg-product-inline x="{ key: 'TAMANHO', label: 'TAMANHOS' }"
+    <!-- <mbg-product-inline x="{ key: 'TAMANHO', label: 'TAMANHOS' }"
                         y="{ key: 'COR', label: 'CORES' }"
                         error-call-back-bar-code="errorBarCode(barCode)"
                         details="details"
                         ng-model="result2">
-    </mbg-product-inline>
+    </mbg-product-inline> -->
     <!-- <br />
     <pre>{{result2 | json}}</pre> -->
 
@@ -525,13 +550,13 @@
     </div> -->
 
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-4">
-        <!-- <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox> -->
+        <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox>
         <input type="text" mbg-input-money data-precision="2" ng-model="valor2" />
         <mbg-input-money ng-model="valor2" precision="4" enable-keyboard></mbg-input-money>
       </div>
-    </div>
+    </div> -->
 
     <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
     <!-- <mbg-radio ng-model="teste"></mbg-radio> -->

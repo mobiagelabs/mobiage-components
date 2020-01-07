@@ -50,6 +50,13 @@ const module = angular
 		// 	$scope.mostrarErros = true
 		// }, 3000)
 
+		$scope.tedsakhbjsahbgdhjas = `miranda`
+
+		$timeout(() => {
+			$scope.tedsakhbjsahbgdhjas = `mateus`
+			$scope.idade  = 11
+		}, 3000)
+
 		$scope.testeMbgSelect = {
 			name: 'Teste',
 			key: 'TESTE'
@@ -64,10 +71,10 @@ const module = angular
 				name: 'Teste1',
 				key: 'TESTE2'
 			},
-			{
-				name: 'Teste1',
-				key: 'TESTE2'
-			},
+			// {
+			// 	name: 'Teste1',
+			// 	key: 'TESTE2'
+			// },
 		]
 
 		$scope.testeee2 = () => {
@@ -81,7 +88,6 @@ const module = angular
 		$scope.testeLabel = 'name'
 
 		$timeout(() => {
-			console.log('ASPjdoiajsd')
 			$scope.testeLabel = 'key'
 		}, 5000)
 
