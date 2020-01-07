@@ -5,7 +5,7 @@ export default function CurrencyMaskDirective($mbgMasker, $timeout) {
         require: ['?ngModel'],
         link: function (scope, element, attrs, controllers) {
             var ngModel = controllers[0],
-                currency = !attrs.currency ? null : attrs.currency,
+                currency = !attrs.currency ? 'R$ ' : attrs.currency,
                 allowNegative = attrs.allowNegative === 'true',
                 allowZero = attrs.allowZero === 'true'
 

@@ -264,7 +264,7 @@ const module = angular
 			}
 		}
 
-		$scope.valor2 = -1500.00
+		$scope.valor2 = 0.1987
 
 		$scope.testezao = () => {
 			console.log($scope)

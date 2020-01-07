@@ -3,18 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="initial-scale=0.4, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="initial-scale=0.4, maximum-scale=1, user-scalable=no">
   <title>Document</title>
   <!-- Latest compiled and minified CSS -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
-        rel="stylesheet">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
   <style>
     :root {
       --primary: #00bbbd;
@@ -107,20 +102,18 @@
       font-family: 'Montserrat', sans-serif;
     }
   </style>
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-        rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body ng-controller="demoCtrl">
 
   <div class="container">
+    <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard>
     <br><br><br><br><br><br><br>
 
-    <mbg-input-search placeholder="Quem você está procurando ?"
+    <!-- <mbg-input-search placeholder="Quem você está procurando ?"
                       ng-model-options="{ debounce: 300 }"
                       ng-change="$ctrl.onSearchChange()"
                       ng-model="$ctrl.pagination.filter.text"
@@ -142,7 +135,7 @@
           <i ng-click="$c.testeteste($event)">click</i>
         </div>
       </mbg-row-content>
-    </mbg-select-multi-list>
+    </mbg-select-multi-list> -->
     <!-- <mbg-input-text ng-model="nomeCompletoDoCliente"
                     mbg-error="!nomeCompletoDoCliente"
                     mbg-error-message="Precisamos saber o nome completo do cliente."></mbg-input-text> -->
@@ -363,15 +356,8 @@
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
 
-    <mbg-select ng-model="teste"
-      fetch="getModelo(query)"
-      label="name"
-      placeholder="TESTEEEEE"
-      enable-add="true"
-      name="teste5"
-      callback-add="testeadd()"
-      add-only-not-equal="true"
-      enable-favorite="true">
+    <mbg-select ng-model="teste" fetch="getModelo(query)" label="name" placeholder="TESTEEEEE" enable-add="true"
+      name="teste5" callback-add="testeadd()" add-only-not-equal="true" enable-favorite="true">
     </mbg-select>
 
     <!-- <br>
@@ -526,12 +512,13 @@
     </div> -->
 
 
-    <!-- <div class="row">
+    <div class="row">
       <div class="col-md-4">
-       <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox>
-    <mbg-input-money ng-model="valor2"></mbg-input-money>
-         </div>
-    </div> -->
+        <!-- <mbg-input-checkbox ng-model="valor"></mbg-input-checkbox> -->
+        <input type="text" mbg-input-money data-precision="2" ng-model="valor2" />
+        <mbg-input-money ng-model="valor2" precision="4" enable-keyboard></mbg-input-money>
+      </div>
+    </div>
 
     <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
     <!-- <mbg-radio ng-model="teste"></mbg-radio> -->

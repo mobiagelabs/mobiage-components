@@ -12,10 +12,6 @@
            ng-keydown="$ctrl.ngKeydown({ $event })"
            ng-blur="$ctrl.ngBlur({ $event })"
            ng-focus="$ctrl.ngFocus({ $event })"
-           mbg-input-money
-           currency="R$ "
-           data-allow-zero="{{ $ctrl.props.allowZero }}"
-           data-precision="{{ $ctrl.props.precision }}"
-           data-allow-negative="{{ $ctrl.props.allowNegative }}"
+           ui-money-mask="{{ $ctrl.props.precision }}"
            placeholder="{{ $ctrl.props.placeholder }}" />
 </div>
