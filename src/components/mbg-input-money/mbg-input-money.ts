@@ -17,7 +17,7 @@ class MbgInputMoneyController {
             prefix: $attrs.prefix || 'R$ ',
             decimal: $attrs.decimal || ',',
             thousands: $attrs.decimal || '.',
-            precision: $attrs.precision || 2,
+            precision: this.$scope.$parent.$eval($attrs.precision) || 2,
             allowNegative: $attrs.allowNegative ? JSON.parse($attrs.allowNegative) : true,
             allowZero: $attrs.allowZero ? JSON.parse($attrs.allowZero) : false,
             allowEmpty: $attrs.allowEmpty ? JSON.parse($attrs.allowEmpty) : false,
@@ -45,7 +45,7 @@ const mbgInputMoney = {
         ngRequired: '=?',
         ngDisabled: '=?',
         ngBlur: '&?',
-        ngFocus: '&?',
+        ngFocus: '&?'
     },
     template,
     controller: MbgInputMoneyController,
