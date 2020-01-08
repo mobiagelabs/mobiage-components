@@ -161,6 +161,7 @@ class MbgSelectController {
     onInputBlur() {
         this.$timeout(() => {
             this.hasFocus = false
+            this.data = []
             this.checkPosition()
         })
         if (this.ngBlur) {
@@ -287,6 +288,7 @@ class MbgSelectController {
     }
 
     selectOption(item, isNew?: boolean) {
+        this.data = []
         this.executeCallback(isNew)
         this.updateModelValue(this.ngValue ? item[this.ngValue] : item)
         if (this.onSelect) {
