@@ -56,7 +56,7 @@ class MbgMultiSelectController {
                     this.ngModel.push(this.searchModel)
                 }
                 this.verifyScroll()
-                delete this.searchModel
+                this.$timeout(() => delete this.searchModel)
                 if (this.ngChange) {
                     this.ngChange()
                 }
