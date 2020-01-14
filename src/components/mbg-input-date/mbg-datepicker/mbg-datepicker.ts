@@ -16,7 +16,7 @@ export class MbgDatepicker {
         }
     }
 
-    link = (scope, ele, attrs, controllers) => {
+    link = (scope, ele, attrs, controllers, $timeout) => {
 
         $.fn.datepicker.languages['pt-BR'] = {
             format: 'dd/MM/yyyy',
@@ -32,7 +32,7 @@ export class MbgDatepicker {
         }
 
         $(ele[0]).blur(() => {
-            $(ele[0]).datepicker(`hide`)
+            $timeout(() => $(ele[0]).datepicker(`hide`))
         })
 
         $(ele[0]).datepicker({ language: 'pt-BR', date: scope.ngModel })
