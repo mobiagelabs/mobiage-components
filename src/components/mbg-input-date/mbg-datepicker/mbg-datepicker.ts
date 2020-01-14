@@ -32,7 +32,7 @@ export class MbgDatepicker {
         }
 
         $(ele[0]).blur(() => {
-            $timeout(() => $(ele[0]).datepicker(`hide`))
+            setTimeout(() => $(ele[0]).datepicker(`hide`), 100)
         })
 
         $(ele[0]).datepicker({ language: 'pt-BR', date: scope.ngModel })
