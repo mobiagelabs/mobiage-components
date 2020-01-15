@@ -60,6 +60,7 @@ class MbgSelectController {
     }
 
     $onDestroy() {
+        this.removeInBody()
         if (this.unObserve) {
             this.unObserve()
         }
