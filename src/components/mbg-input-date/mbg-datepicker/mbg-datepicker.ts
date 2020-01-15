@@ -31,10 +31,6 @@ export class MbgDatepicker {
             yearSuffix: ''
         }
 
-        $(ele[0]).blur(() => {
-            setTimeout(() => $(ele[0]).datepicker(`hide`), 100)
-        })
-
         $(ele[0]).datepicker({ language: 'pt-BR', date: scope.ngModel })
 
         $(ele[0]).on('pick.datepicker', function (e) {
