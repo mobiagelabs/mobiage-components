@@ -18,9 +18,9 @@ export class MbgKeyboard {
     $onInit() {
         const self = this
         this.createButtons()
-        this.onEventListener = (evt) => self.checkActiveElement(evt)
+        this.onEventListener = (evt) => this.$timeout(() => self.checkActiveElement(evt))
         document.addEventListener('click', this.onEventListener, false)
-        document.addEventListener('keydown', this.onEventListener, false)
+        document.addEventListener('keyup', this.onEventListener, false)
         window.addEventListener('focus', this.onEventListener, false)
         this.focusInitialElement()
         this.isMobileOrTablet = MbgDeviceCheck.isMobileOrTablet()
@@ -108,8 +108,8 @@ export class MbgKeyboard {
         if (!activeTempElement) {
             return
         }
+        this.beforeActiveElement()
         this.$timeout(() => {
-            this.beforeActiveElement()
             if (activeTempElement.closest('.mbg-input-wrapper').length === 1 && this.elementEnableVirtualKeyboard(activeTempElement)) {
                 this.hideNativeKeyboard(activeTempElement)
                 this.currentActiveElement = activeTempElement

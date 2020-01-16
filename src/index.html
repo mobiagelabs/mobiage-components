@@ -155,7 +155,7 @@
 
     <!-- <div class="row"> -->
     <!-- <div class="col-md-6"> -->
-    <label for=""
+    <!-- <label for=""
            style="font-size: 14px;
           color: var(--neutral1);
           margin-top: 15px;
@@ -178,7 +178,7 @@
                       enable-sort="false"
                       enable-add="true"
                       fetch="testedlsadkasjn()">
-    </mbg-multi-select>
+    </mbg-multi-select> -->
     <!-- </div> -->
     <!-- <div class="col-md-6">
           <mbg-input-file ng-model="mbginputfiles"></mbg-input-file>
@@ -307,20 +307,13 @@
     <!-- <mbg-input-text ng-value="'dsdfsdf'"
                     ng-model="locura"></mbg-input-text>
     {{locura}} -->
-    <!-- <div class="row">
+    <div class="row">
       <div class="col-md-6">
-        <mbg-product-search ng-model="teste"
-                            label="barCode"
-                            try-add="addItem(barCode, quantity)"
-                            auto-clear="false"
-                            fetch="getProductsDTO(query, page)">
-        </mbg-product-search>
+        <mbg-keyboard active-color="#0CBCBD"
+                      options="optionsKeyboard"></mbg-keyboard>
       </div>
-      <div class="col-md-6">
-        <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard>
-      </div>
-    </div> -->
-
+    </div>
+    <br><br><br><br><br>
     <!-- <mbg-pagination active-page="activePage"
                     page-size="10"
                     count="120000"
@@ -535,12 +528,29 @@
     </div> -->
 
 
-    <!-- <div class="row">
+    <div class="row">
       <div class="col-md-4">
-        <input type="text" mbg-input-money data-precision="2" ng-model="valor2" />
-        <mbg-input-money ng-model="valor2" precision="4" enable-keyboard></mbg-input-money>
+        <mbg-input-money ng-model="valor2"
+                         precision="4"
+                         enable-keyboard></mbg-input-money>
       </div>
-    </div> -->
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col-md-4">
+        <mbg-input-money ng-model="valor2"
+                         precision="4"
+                         enable-keyboard></mbg-input-money>
+      </div>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col-md-4">
+        <mbg-input-money ng-model="valor2"
+                         precision="4"
+                         enable-keyboard></mbg-input-money>
+      </div>
+    </div>
 
     <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
     <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
