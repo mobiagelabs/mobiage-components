@@ -307,13 +307,13 @@
     <!-- <mbg-input-text ng-value="'dsdfsdf'"
                     ng-model="locura"></mbg-input-text>
     {{locura}} -->
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-6">
         <mbg-keyboard active-color="#0CBCBD"
                       options="optionsKeyboard"></mbg-keyboard>
       </div>
     </div>
-    <br><br><br><br><br>
+    <br><br><br><br><br> -->
     <!-- <mbg-pagination active-page="activePage"
                     page-size="10"
                     count="120000"
@@ -357,19 +357,20 @@
                            capitalize="true"
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
+    <br><br><br><br>
 
-    <!-- <mbg-select ng-model="testeMbgSelect"
-                fetch="testeMbgSelectList"
+    <mbg-select ng-model="testeMbgSelect"
+                fetch="getProductsDTO(query)"
                 label="name"
                 enable-add="true"
                 name="teste5"
                 callback-add="testeadd()"
                 add-only-not-equal="true"
                 enable-favorite="true">
-    </mbg-select> -->
+    </mbg-select>
 
-    <!-- <br>
-    <pre>{{teste | json}}</pre> -->
+    <br>
+    <pre>{{testeMbgSelect | json}}</pre>
     <!-- <div style="max-width: 600px;">
       <mbg-address ng-model="address"></mbg-address>
     </div> -->
@@ -527,7 +528,7 @@
       ng-model="profileImage"></mbg-image-upload>
     </div> -->
 
-
+<!-- 
     <div class="row">
       <div class="col-md-4">
         <mbg-input-money ng-model="valor2"
@@ -550,7 +551,7 @@
                          precision="4"
                          enable-keyboard></mbg-input-money>
       </div>
-    </div>
+    </div> -->
 
     <!-- <mbg-radio ng-model="teste"></mbg-radio> -->
     <!-- <mbg-radio ng-model="teste"></mbg-radio> -->

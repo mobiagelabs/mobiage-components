@@ -29,6 +29,10 @@ class MbgSelectController {
     private position
     private ngDisabled: boolean
     private unObserve: any
+    private timeoutChange: any
+    private pressEnter
+    private searchFetch
+    private rejectFetch
 
     constructor(
         public $scope,
@@ -98,24 +102,40 @@ class MbgSelectController {
         this.onInputFocus(true)
         delete this.ngModel
         delete this.inputValue
+        this.pressEnter = false
     }
 
-    executeFetch(onExecute?: Function) {
+    getFetch = () => {
+        return new Promise((resolve) => {
+            let cancelled = false
+            this.searchFetch = (this.inputValue || '')
+            this.rejectFetch = () => { cancelled = true }
+            const response = this.fetch({ query: (this.inputValue || '') })
+            if (response && response.then) {
+                response.then((data) => {
+                    if (!cancelled) {
+                        resolve(data)
+                    }
+                })
+            } else {
+                if (!cancelled) {
+                    resolve(response)
+                }
+            }
+        })
+    }
+
+    async executeFetch(onExecute?: Function) {
         this.data = []
         this.isLoading = true
-        const response = this.fetch({ query: (this.inputValue || '') })
-        if (response && response.then) {
-            response.then((data) => {
-                this.afterFetchData(data)
-                if (onExecute) {
-                    onExecute(data)
-                }
-            })
-        } else {
-            this.afterFetchData(response)
+        try {
+            const data = await this.getFetch()
+            this.afterFetchData(data)
             if (onExecute) {
-                onExecute(response)
+                onExecute(data)
             }
+        } catch (e) {
+            // promise cancelled
         }
     }
 
@@ -123,6 +143,13 @@ class MbgSelectController {
         this.$timeout(() => {
             this.data = data
             this.isLoading = false
+            if (this.pressEnter) {
+                if (this.data[0]) {
+                    this.selectOption(this.data[0])
+                } else {
+                    this.inputValue = ''
+                }
+            }
         })
         this.$timeout(() => this.focusFirstOption(), 150)
     }
@@ -171,14 +198,16 @@ class MbgSelectController {
     }
 
     onInputChange() {
-        this.$timeout(() => {
+        if (this.timeoutChange) { this.$timeout.cancel(this.timeoutChange) }
+        this.timeoutChange = this.$timeout(() => {
             this.fetch ? this.executeFetch() : angular.noop()
-        })
+        }, 200)
     }
 
     clearNgModel(ignoreCallback?: boolean) {
         delete this.ngModel
         delete this.inputValue
+        this.pressEnter = false
         this.onInputFocus(ignoreCallback)
         if (this.onUnselect) {
             this.onUnselect()
@@ -189,12 +218,22 @@ class MbgSelectController {
         return angular.element(`[uid="${this.uid}"] li.focused`)
     }
 
+    cancelBeforePromise() {
+        if (this.rejectFetch) {
+            this.rejectFetch()
+            this.rejectFetch = null
+        }
+    }
+
     onInputKeydown(evt) {
+        this.data = []
         this.hasFocus = true
+        this.pressEnter = false
         switch (evt.keyCode) {
             case 13: // ENTER
                 evt.preventDefault()
                 evt.stopPropagation()
+                this.pressEnter = true
                 this.setModel()
                 this.hasFocus = false
                 break
@@ -208,6 +247,7 @@ class MbgSelectController {
                 this.setModel()
                 break
             case 8: // BACKSPACE
+                this.cancelBeforePromise()
                 this.$timeout(() => {
                     if (this.fetch) {
                         this.initializingModel = true
@@ -218,6 +258,8 @@ class MbgSelectController {
                     }
                 })
                 break
+            default:
+                this.cancelBeforePromise()
         }
     }
 

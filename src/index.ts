@@ -81,7 +81,6 @@ const module = angular
 		$scope.testeLabel = 'name'
 
 		$timeout(() => {
-			console.log('ASPjdoiajsd')
 			$scope.testeLabel = 'key'
 		}, 5000)
 
@@ -268,16 +267,20 @@ const module = angular
 		]//.map((s) => s.label)
 
 
-		const url = 'https://api-hom.mobiage.io/mobiage-api/api/v2/product-item/terminal?idPriceSheetType=MOBAAAC410AAA&gumgaToken=615L758E1571055003567C157105320585900O756.757.758.I&pageSize=6'
+		const url = 'https://api-hom2.mobiage.io/mobiage-api/api/v2/product-item/terminal?idPriceSheetType=MOBAAAC410AAA&gumgaToken=200001L200004E1579523188292C157952138829200O200002.200003.200004.I&pageSize=6'
 
-		$scope.getProductsDTO = (query = '', page) => {
-			return $http.get(url + '&search=' + query + '&page=' + page).then((resp) => {
-				resp.data.values = resp.data.values.map((t) => {
-					t.image = t.urlImage || `https://firebasestorage.googleapis.com/v0/b/mobiage-homologation.appspot.com/o/91d32d0d-1c27-7c2c-254b-85c1e139d32e?alt=media`
-					t.saleValue = t.value
-					return t
-				})
-				return resp.data
+		$scope.getProductsDTO = (query = '', page = 1) => {
+			return new Promise((resolve) => {
+				$timeout(() => {
+					$http.get(url + '&search=' + query + '&page=' + page).then((resp) => {
+						resp.data.values = resp.data.values.map((t) => {
+							t.image = t.urlImage || `https://firebasestorage.googleapis.com/v0/b/mobiage-homologation.appspot.com/o/91d32d0d-1c27-7c2c-254b-85c1e139d32e?alt=media`
+							t.saleValue = t.value
+							return t
+						})
+						resolve(resp.data.values)
+					})
+				}, 2000)
 			})
 		}
 
