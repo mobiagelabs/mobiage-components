@@ -59,6 +59,7 @@ import '@chenfengyuan/datepicker/dist/datepicker.css'
 import { appConfig } from '../config/app-config'
 import { mbgInputReceiveDayModule } from './mbg-input-receive-day'
 import { mbgLoadingModule } from './mbg-loading'
+import { mbgEditorModule } from './mbg-editor'
 
 window['Raphael'] = Raphael
 
@@ -120,7 +121,8 @@ const mbgComponentsModule = angular
     mbgLoadingModule,
     mbgInputFileModule,
     mbgSelectMultiListModule,
-    mbgProductInlineModule
+    mbgProductInlineModule,
+    mbgEditorModule,
   ])
   .config(appConfig)
   .service('mbgAlert', MbgAlert)

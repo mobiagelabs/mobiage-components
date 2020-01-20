@@ -113,11 +113,13 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
         rel="stylesheet">
+  <link href="https://cdn.syncfusion.com/ej2/material.css"
+        rel="stylesheet">
 </head>
 
 <body ng-controller="demoCtrl">
 
-  <div class="container">
+  <div class="">
     <!-- <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard>
     <br><br><br><br><br><br><br> -->
 
@@ -357,9 +359,11 @@
                            capitalize="true"
                            placeholder="'Qual o modelo?'"></mbg-input-step-item>
     </mbg-input-step> -->
-    <br><br><br><br>
 
-    <mbg-select ng-model="testeMbgSelect"
+
+    <mbg-editor></mbg-editor>
+
+    <!-- <mbg-select ng-model="testeMbgSelect"
                 fetch="getProductsDTO(query)"
                 label="name"
                 enable-add="true"
@@ -370,7 +374,7 @@
     </mbg-select>
 
     <br>
-    <pre>{{testeMbgSelect | json}}</pre>
+    <pre>{{testeMbgSelect | json}}</pre> -->
     <!-- <div style="max-width: 600px;">
       <mbg-address ng-model="address"></mbg-address>
     </div> -->
@@ -528,7 +532,7 @@
       ng-model="profileImage"></mbg-image-upload>
     </div> -->
 
-<!-- 
+    <!-- 
     <div class="row">
       <div class="col-md-4">
         <mbg-input-money ng-model="valor2"

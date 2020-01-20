@@ -8,4 +8,5 @@ declare module '*.html';
 declare module '*.scss';
 declare module 'angular';
 declare module '*.css';
+declare module '*.json';
 declare module '*.gif';

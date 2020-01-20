@@ -20,6 +20,10 @@
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/@chenfengyuan/datepicker/-/datepicker-1.0.9.tgz#6ba452e1b4b622d144645abb9d0b5f98a44fe487"
 
+"@ckeditor/ckeditor5-build-decoupled-document@^16.0.0":
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-decoupled-document/-/ckeditor5-build-decoupled-document-16.0.0.tgz#3684c9ac30dbe057c1d562e70495f32bc35a4150"
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
