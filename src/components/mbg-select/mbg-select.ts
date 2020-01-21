@@ -226,7 +226,6 @@ class MbgSelectController {
     }
 
     onInputKeydown(evt) {
-        this.data = []
         this.hasFocus = true
         this.pressEnter = false
         switch (evt.keyCode) {
@@ -320,6 +319,7 @@ class MbgSelectController {
             if (this.onSelect) {
                 this.onSelect({ value: this.ngModel })
             }
+            this.$timeout(() => this.data = [])
         })
     }
 
