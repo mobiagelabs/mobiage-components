@@ -292,7 +292,7 @@ const module = angular
 						})
 						resolve(resp.data.values)
 					})
-				}, 2000)
+				}, 500)
 			})
 		}
 
