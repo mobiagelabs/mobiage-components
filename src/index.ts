@@ -4,6 +4,7 @@ import * as angular from 'angular'
 import components from './components'
 import { initializeApp } from 'firebase/app'
 import './assets/angular-locale_pt-br.js'
+import * as dataDocument from './assets/data-default.json'
 import { MbgAlert } from './helpers/services/mbg-alert'
 import { MbgTypeAlert } from './helpers/enums/mbg-type-alert'
 import { MbgInputType } from './helpers/enums/mbg-input-type'
@@ -26,6 +27,17 @@ const module = angular
 		components,
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', 'mbgAlert', ($scope, $timeout, $http, mbgAlert: MbgAlert) => {
+
+		$scope.configDocument = {
+			document: dataDocument,
+			preview: true,
+			params: {
+				nomeEmpresa: 'Labs LTDA.'
+			},
+			onSave: (json) => {
+				console.log(json)
+			}
+		}
 
 		// mbgAlert.confirm({
 		// 	title: 'Salvar operação',
