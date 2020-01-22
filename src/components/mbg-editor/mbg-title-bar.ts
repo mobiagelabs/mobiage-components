@@ -8,13 +8,13 @@ export class TitleBar {
   private tileBarDiv: HTMLElement
   private documentTitle: HTMLElement
   private documentTitleContentEditor: HTMLElement
-  private export: DropDownButton
+  private export: Button
   private print: Button
   private open: Button
   private documentEditor: DocumentEditor
   private isRtl: boolean
 
-  constructor(element: HTMLElement, docEditor: DocumentEditor, isShareNeeded: Boolean, isRtl?: boolean) {
+  constructor(element: HTMLElement, docEditor: DocumentEditor, isShareNeeded: Boolean, isRtl?: boolean, public callbackOnSave?: Function) {
     this.tileBarDiv = element
     this.documentEditor = docEditor
     this.isRtl = isRtl
@@ -23,28 +23,20 @@ export class TitleBar {
   }
 
   private initializeTitleBar = (isShareNeeded: Boolean): void => {
-    let downloadText: string
-    let downloadToolTip: string
+    let saveText: string
+    let saveToolTip: string
     let printText: string
     let printToolTip: string
     let openText: string
     let documentTileText: string
 
-    if (!this.isRtl) {
-      downloadText = 'Download'
-      downloadToolTip = 'Download this document.'
-      printText = 'Print'
-      printToolTip = 'Print this document (Ctrl+P).'
-      openText = 'Open'
-      documentTileText = 'Document Name. Click or tap to rename this document.'
-    } else {
-      downloadText = 'تحميل'
-      downloadToolTip = 'تحميل هذا المستند'
-      printText = 'طباعه'
-      printToolTip = 'طباعه هذا المستند (Ctrl + P)'
-      openText = 'فتح'
-      documentTileText = 'اسم المستند. انقر أو اضغط لأعاده تسميه هذا المستند'
-    }
+    saveText = 'Salvar'
+    saveToolTip = 'Salvar o documento.'
+    printText = 'Print'
+    printToolTip = 'Print this document (Ctrl+P).'
+    openText = 'Open'
+    documentTileText = 'Document Name. Click or tap to rename this document.'
+
     // tslint:disable-next-line:max-line-length
     this.documentTitle = createElement('label', { id: 'documenteditor_title_name', styles: 'font-weight:400;text-overflow:ellipsis;white-space:pre;overflow:hidden;user-select:none;cursor:text' })
     let iconCss: string = 'e-de-padding-right'
@@ -65,12 +57,8 @@ export class TitleBar {
     // tslint:disable-next-line:max-line-length
     this.print = this.addButton('e-de-icon-Print ' + iconCss, printText, btnStyles, 'de-print', printToolTip, false) as Button
     this.open = this.addButton('e-de-icon-Open ' + iconCss, openText, btnStyles, 'de-open', openText, false) as Button
-    let items: ItemModel[] = [
-      { text: 'Microsoft Word (.docx)', id: 'word' },
-      { text: 'Syncfusion Document Text (.sfdt)', id: 'sfdt' },
-    ]
-    // tslint:disable-next-line:max-line-length
-    this.export = this.addButton('e-de-icon-Download ' + iconCss, downloadText, btnStyles, 'documenteditor-share', downloadToolTip, true, items) as DropDownButton
+   // tslint:disable-next-line:max-line-length
+    this.export = this.addButton('e-de-icon-Download ' + iconCss, saveText, btnStyles, 'documenteditor-share', saveToolTip, false) as Button
     if (!isShareNeeded) {
       this.export.element.style.display = 'none'
     } else {
@@ -85,6 +73,7 @@ export class TitleBar {
   }
   private wireEvents = (): void => {
     this.print.element.addEventListener('click', this.onPrint)
+    this.export.element.addEventListener('click', this.onSaveClick)
     this.open.element.addEventListener('click', (e: Event) => {
       if ((e.target as HTMLInputElement).id === 'de-open') {
         let fileUpload: HTMLInputElement = document.getElementById('uploadfileButton') as HTMLInputElement
@@ -132,7 +121,7 @@ export class TitleBar {
     button.setAttribute('title', tooltipText)
     if (isDropDown) {
       // tslint:disable-next-line:max-line-length
-      let dropButton: DropDownButton = new DropDownButton({ select: this.onExportClick, items: items, iconCss: iconClass, cssClass: 'e-caret-hide', content: btnText, open: (): void => { this.setTooltipForPopup() } }, button)
+      let dropButton: DropDownButton = new DropDownButton({ select: this.onSaveClick, items: items, iconCss: iconClass, cssClass: 'e-caret-hide', content: btnText, open: (): void => { this.setTooltipForPopup() } }, button)
       return dropButton
     } else {
       let ejButton: Button = new Button({ iconCss: iconClass, content: btnText }, button)
@@ -144,21 +133,14 @@ export class TitleBar {
     this.documentEditor.print()
   }
 
-  onExportClick = (args: MenuEventArgs): void => {
-    let value: string = args.item.id
-    switch (value) {
-      case 'word':
-        this.save('Docx')
-        break
-      case 'sfdt':
-        this.save('Sfdt')
-        break
-    }
-  }
-
-  save = (format: string): void => {
-    // tslint:disable-next-line:max-line-length
-    this.documentEditor.save(this.documentEditor.documentName === '' ? 'sample' : this.documentEditor.documentName, format as FormatType)
+  onSaveClick = (): void => {
+    this.documentEditor.saveAsBlob('Sfdt').then((sfdtBlob) => {
+      const fileReader = new FileReader()
+      fileReader.onload = (e) => {
+        this.callbackOnSave(fileReader.result)
+      }
+      fileReader.readAsText(sfdtBlob)
+    })
   }
 
 }
