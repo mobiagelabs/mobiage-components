@@ -67,6 +67,7 @@ import * as $ from 'jquery'
 import { MbgAlert } from '../helpers/services/mbg-alert'
 import { mbgSelectMultiListModule } from './mbg-select-multi-list'
 import { mbgProductInlineModule } from './mbg-product-inline'
+import { NgCountCharacter } from '../helpers/count-character/count-character'
 
 if (!window['$']) {
   window['$'] = $
@@ -132,6 +133,7 @@ const mbgComponentsModule = angular
   .directive('mbgOnScroll', () => new MbgOnScroll)
   .directive('mbgAutocompleteOff', () => new AutocompleteOff)
   .directive('mbgError', () => new MbgError)
+  .directive('mbgCountCharacter', () => new NgCountCharacter)
   .name
 
 export * from './mbg-image-upload'
