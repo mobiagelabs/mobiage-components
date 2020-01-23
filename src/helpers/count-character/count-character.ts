@@ -20,15 +20,15 @@ export class NgCountCharacter {
 
     link(scope, elm, attrs) {
         elm.addClass('count-character')
-        const element = getElement(elm)
+        const element = getElement()
         const onPast = (evt) => {
             this.$timeout(() => {
-                let inputElement = getElement(elm)
+                let inputElement = getElement()
                 if (inputElement) {
-                    const scope = angular.element(inputElement).scope()
+                    const scopeElement = angular.element(inputElement).scope()
                     const modelGetter = this.$parse(inputElement.getAttribute('ng-model'))
                     const modelSetter = modelGetter.assign
-                    modelSetter(scope, inputElement.value.substring(0, attrs.maxCharacter))
+                    modelSetter(scopeElement, inputElement.value.substring(0, attrs.maxCharacter))
                 }
             })
         }
@@ -41,7 +41,7 @@ export class NgCountCharacter {
         }
 
         function onKeyDown(evt) {
-            let inputElement = getElement(elm)
+            let inputElement = getElement()
             handleCount()
             if (inputElement.value.length >= attrs.maxCharacter && evt.keyCode !== 8) {
                 evt.stopPropagation()
@@ -53,7 +53,7 @@ export class NgCountCharacter {
             handleCount()
         }
 
-        function getElement(elm) {
+        function getElement() {
             if (elm.find('input').length > 0) {
                 return elm.find('input')[0]
             }
@@ -63,7 +63,7 @@ export class NgCountCharacter {
         }
 
         function handleCount() {
-            let inputElement = getElement(elm)
+            let inputElement = getElement()
             const value = inputElement && inputElement.value ? inputElement.value : ''
             if (attrs.maxCharacter !== undefined) {
                 elm.attr('count-character', `${value.length}/${attrs.maxCharacter}`)
