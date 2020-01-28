@@ -11,9 +11,14 @@ export namespace Capitalize {
             .toLowerCase()
             .replace(/  /g, '')
             .split(' ')
-            .map((w) => prepositions.filter((e) => e.toLowerCase() === w.toLowerCase()).length === 0
+            .map((w, index) => prepositions.filter((e) => e.toLowerCase() === w.toLowerCase()).length === 0
                 ? w.charAt(0).toUpperCase() + w.slice(1)
-                : w.toLowerCase())
+                : lowerCase(w, index))
             .join(' ')
+    }
+
+    const lowerCase = (string, index) => {
+        const lowerCaseString = (string || '').toLowerCase()
+        return index === 0 ? lowerCaseString.charAt(0).toUpperCase() + lowerCaseString.slice(1) : lowerCaseString
     }
 }
