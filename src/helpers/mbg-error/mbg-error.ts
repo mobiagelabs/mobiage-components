@@ -59,7 +59,7 @@ export class MbgError {
     const unWatchError = scope.$watch(attrs.mbgError, onChangeModelError)
     const unWatchWhen = scope.$watch(attrs.mbgErrorWhen, onChangeModelError)
     scope.$on('$destroy', () => {
-      if (formName) { formScope[formName].$setValidity(index + attrs.mbgError, true, window) }
+      if (formName && formScope[formName]) { formScope[formName].$setValidity(index + attrs.mbgError, true, window) }
       unWatchError()
       unWatchWhen()
     })
