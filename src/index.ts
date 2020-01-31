@@ -27,7 +27,6 @@ const module = angular
 		components,
 	])
 	.controller('demoCtrl', ['$scope', '$timeout', '$http', 'mbgAlert', ($scope, $timeout, $http, mbgAlert: MbgAlert) => {
-
 		$scope.configDocument = {
 			document: dataDocument,
 			preview: true,

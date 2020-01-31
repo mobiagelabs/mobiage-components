@@ -1,0 +1,76 @@
+<div class="mbg-select-multiple-wrapper"
+     steps-uid="{{ $ctrl.uid }}"
+     mbg-autocomplete-off>
+    <div class="mbg-select-multiple-scroll">
+        <mbg-input-text ng-model="$ctrl.inputValue"
+                        ng-focus="$ctrl.onInputFocus()"
+                        ng-blur="$ctrl.onInputBlur()"
+                        placeholder="{{ $ctrl.placeholder }}"
+                        ng-disabled="$ctrl.ngDisabled"
+                        ng-keydown="$ctrl.onInputKeydown($event)"
+                        ng-change="$ctrl.onInputChange()"></mbg-input-text>
+        <div class="items-selected">
+            <span>{{$ctrl.selectedItems}}</span>
+        </div>
+        <svg class="loading"
+             ng-show="$ctrl.isLoading"
+             version="1.1"
+             id="loader-1"
+             xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             x="0px"
+             y="0px"
+             width="40px"
+             height="40px"
+             viewBox="0 0 50 50"
+             style="enable-background:new 0 0 50 50;"
+             xml:space="preserve">
+            <path
+                  d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
+                <animateTransform attributeType="xml"
+                                  attributeName="transform"
+                                  type="rotate"
+                                  from="0 25 25"
+                                  to="360 25 25"
+                                  dur="0.6s"
+                                  repeatCount="indefinite" />
+            </path>
+        </svg>
+        <i class="fa fa-caret-down mbg-icon-select"
+           ng-show="$ctrl.ngModel.length === 0 && !$ctrl.isLoading"
+           ng-click="$ctrl.clickArrow()"
+           aria-hidden="true"></i>
+        <i class="fa fa-times mbg-icon-select"
+           ng-show="$ctrl.ngModel.length !== 0 && !$ctrl.isLoading"
+           aria-hidden="true"
+           ng-click="$ctrl.clearNgModel(true)"></i>
+        <ul class="mbg-select-multiple-list"
+            ng-click="$event.stopPropagation()"
+            mbg-extends-style=".mbg-select-multiple-wrapper[steps-uid='{{ $ctrl.uid }}']"
+            extends-style="max-width"
+            ng-class="{'active': ($ctrl.data.length > 0 || $ctrl.enableAdd)}"
+            ng-style="{ left: $ctrl.position.left, top: $ctrl.position.top }">
+            <li ng-show="$ctrl.data"
+                ng-mousedown="$ctrl.selectOption(item)"
+                ng-repeat="item in $ctrl.getData() track by $index">
+                <div ng-if="$ctrl.transcludeTemplate"
+                     mbg-dynamic-html="$ctrl.transcludeTemplate"></div>
+                <div ng-if="!$ctrl.transcludeTemplate && $ctrl.labelValue">
+                    <mbg-checkbox ng-model="item.selected"></mbg-checkbox><span>{{item[$ctrl.labelValue]}}</span>
+                </div>
+                <div ng-if="!$ctrl.transcludeTemplate && !$ctrl.labelValue">{{item}}</div>
+                <i title="Favoritar"
+                   ng-if="$ctrl.enableFavorite"
+                   ng-mousedown="$ctrl.favorite($event, item)"
+                   ng-class="{ 'fa fa-star-o': !$ctrl.isFavorite(item), 'fa fa-star': $ctrl.isFavorite(item) }"></i>
+            </li>
+            <li ng-if="$ctrl.addOnlyNotEqual ? ($ctrl.enableAdd && $ctrl.inputValue && $ctrl.isOnlyEqual()) : ($ctrl.enableAdd && $ctrl.inputValue)"
+                disable-animate
+                class="new-item"
+                ng-mousedown="$ctrl.labelValue ? $ctrl.selectOption({ [$ctrl.labelValue]: $ctrl.inputValue }, true) : $ctrl.selectOption($ctrl.inputValue, true)">
+                {{ $ctrl.inputValue }}
+                <span ng-hide="$ctrl.hiddenAddLabel">(novo)</span>
+            </li>
+        </ul>
+    </div>
+</div>
