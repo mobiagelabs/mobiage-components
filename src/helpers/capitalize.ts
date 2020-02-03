@@ -17,8 +17,8 @@ export namespace Capitalize {
             .join(' ')
     }
 
-    const lowerCase = (string, index) => {
-        const lowerCaseString = (string || '').toLowerCase()
+    const lowerCase = (str, index) => {
+        const lowerCaseString = (str || '').toLowerCase()
         return index === 0 ? lowerCaseString.charAt(0).toUpperCase() + lowerCaseString.slice(1) : lowerCaseString
     }
 }

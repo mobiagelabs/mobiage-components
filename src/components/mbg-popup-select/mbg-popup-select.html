@@ -1,0 +1,85 @@
+<div class="popup-select-wrapper">
+
+    <div class="popup-items">
+        <div class="style-item">
+            <div class="ng-details-wrapper">
+                <button class="chat-input-tool"
+                        ng-click="$ctrl.onButtonClick()">
+                    <svg xmlns:dc="http://purl.org/dc/elements/1.1/"
+                         xmlns:cc="http://creativecommons.org/ns#"
+                         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                         xmlns:svg="http://www.w3.org/2000/svg"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                         version="1.1"
+                         x="0px"
+                         y="0px"
+                         viewBox="0 0 100 100"
+                         style="width: 24px; height: 24px;">
+                        <g transform="translate(0,-952.36218)">
+                            <path d="m 50,977.36219 c -2.7615,0 -5,2.2386 -5,5 l 0,15 -15,0 c -2.7614,0 -5,2.23848 -5,5.00001 0,2.7615 2.2386,5 5,5 l 15,0 0,15 c 0,2.7614 2.2385,5 5,5 2.7615,0 5,-2.2386 5,-5 l 0,-15 15,0 c 2.7614,0 5,-2.2385 5,-5 0,-2.76153 -2.2386,-5.00001 -5,-5.00001 l -15,0 0,-15 c 0,-2.7614 -2.2385,-5 -5,-5 z"
+                                  style="text-indent:0;text-transform:none;direction:ltr;block-progression:tb;baseline-shift:baseline;color:#000000;enable-background:accumulate;"
+                                  fill="#666"
+                                  fill-opacity="1"
+                                  stroke="none"
+                                  marker="none"
+                                  visibility="visible"
+                                  display="inline"
+                                  overflow="visible" />
+                        </g>
+                    </svg>
+                </button>
+                <div class="intercom-composer-popover intercom-composer-details-popover"
+                     ng-class="{'active': $ctrl.open}">
+                    <div class="intercom-details-picker">
+                        <div class="intercom-composer-popover-header">
+                            <input class="intercom-composer-popover-input"
+                                   uid="{{$ctrl.uid}}"
+                                   placeholder="Pesquisa"
+                                   ng-model="$ctrl.inputValue"
+                                   ng-keyup="$ctrl.onInputChange($event)">
+                        </div>
+                        <div class="intercom-composer-popover-body-container">
+                            <div class="intercom-composer-popover-body">
+                                <div class="intercom-details-picker-groups">
+                                    <div class="intercom-details-picker-group"
+                                         ng-class="{'one-select': !$ctrl.multiSelect}">
+                                        <div class="intercom-details-picker-group-title">{{$ctrl.titlePopup}}</div>
+                                        <div class="content-details">
+                                            <span ng-repeat="item in $ctrl.data track by $index"
+                                                  ng-click="$ctrl.selectItem(item, $event)"
+                                                  class="intercom-details-picker-value"
+                                                  uib-tooltip="{{$ctrl.label ? item[$ctrl.label] : item}}"
+                                                  title="thumbs_up">
+                                                <div class="flex svg-icon" mbg-dynamic-html="item.svg" ng-if="item.svg"></div>
+                                                <span ng-if="!$ctrl.transcludeTemplate">{{item.value}}</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intercom-composer-popover-caret"></div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="$ctrl.transcludeTemplate"
+             ng-repeat="item in $ctrl.ngModel track by $index"
+             mbg-dynamic-html="$ctrl.transcludeTemplate">
+        </div>
+        <div class="style-item"
+             ng-if="!$ctrl.transcludeTemplate"
+             class="size-item"
+             ng-repeat="item in $ctrl.ngModel track by $index">
+            <span class="name">{{item.value}}</span>
+            <div class="box-remove"
+                 ng-click="$ctrl.removeItem(item)">
+                <div class="remove-item">
+                </div>
+                <span>Excluir</span>
+            </div>
+        </div>
+    </div>
+</div>

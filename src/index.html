@@ -106,6 +106,18 @@
       background-color: #f8f8f8;
       font-family: 'Montserrat', sans-serif;
     }
+
+    .teste-css {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--neutral3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      margin-bottom: 15px;
+    }
   </style>
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
@@ -121,11 +133,54 @@
 
   <div style="padding: 24px;">
     <div class="container">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <div class="row">
         <div class="col-md-12">
-
+          <mbg-popup-select title-popup="Gêneros"
+                            ng-model="testeitemss"
+                            label="name"
+                            on-select="addDetail(item)"
+                            fetch="fetchSizes(query)">
+            <template>
+              <div class="style-item">
+                <div mbg-dynamic-html="item.svg"></div>
+                <div class="box-remove"
+                     uib-tooltip="{{item[$ctrl.label]}}"
+                     ng-click="$ctrl.removeItem(item)">
+                  <div class="remove-item">
+                  </div>
+                  <span>Excluir</span>
+                </div>
+              </div>
+            </template>
+          </mbg-popup-select>
         </div>
       </div>
+      <br>
+      {{testeitemss}}
     </div>
     <!-- <mbg-keyboard active-color="#0CBCBD" options="optionsKeyboard"></mbg-keyboard>
     <br><br><br><br><br><br><br> -->
@@ -778,7 +833,7 @@
         </mbg-list-column>
       </mbg-list>
     </div> -->
-    <mbg-input-name ng-model="testeasdajsd"></mbg-input-name>
+    <!-- <mbg-input-name ng-model="testeasdajsd"></mbg-input-name> -->
     <!-- <pre><code>{{ testetttt | json }}</code></pre> -->
     <!-- <div style="padding: 14px;">
     <mbg-input-checkbox ng-model="teste"
@@ -786,6 +841,14 @@
   </div>
   {{teste}}
   </div> -->
+
+
+
+
+
+
+
+
 
   </div>
 </body>

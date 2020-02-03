@@ -68,6 +68,7 @@ import { MbgAlert } from '../helpers/services/mbg-alert'
 import { mbgSelectMultiListModule } from './mbg-select-multi-list'
 import { mbgProductInlineModule } from './mbg-product-inline'
 import { NgCountCharacter } from '../helpers/count-character/count-character'
+import { mbgPopupSelectModule } from './mbg-popup-select'
 
 if (!window['$']) {
   window['$'] = $
@@ -124,6 +125,7 @@ const mbgComponentsModule = angular
     mbgSelectMultiListModule,
     mbgProductInlineModule,
     mbgEditorModule,
+    mbgPopupSelectModule
   ])
   .config(appConfig)
   .service('mbgAlert', MbgAlert)

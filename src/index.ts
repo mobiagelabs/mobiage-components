@@ -6,10 +6,8 @@ import { initializeApp } from 'firebase/app'
 import './assets/angular-locale_pt-br.js'
 import * as dataDocument from './assets/data-default.json'
 import { MbgAlert } from './helpers/services/mbg-alert'
-import { MbgTypeAlert } from './helpers/enums/mbg-type-alert'
-import { MbgInputType } from './helpers/enums/mbg-input-type'
-import { Resolver } from 'dns'
-
+const sizeJson = require('./json/sizes.json')
+const genderJson = require('./json/gender.json')
 initializeApp({
 	apiKey: "AIzaSyBONcuLOKuFFlAjMOr04pYSnJhWCPtr3bU",
 	authDomain: "mobiage-n-chill.firebaseapp.com",
@@ -8529,6 +8527,13 @@ const module = angular
 			$scope.countBrands = (resp || []).length
 		})
 
+		$scope.fetchSizes = () => {
+			return genderJson
+		}
+
+		$scope.addDetail = (item) => {
+			console.log(item)
+		}
 
 		$scope.getModelo = (param = '') => {
 			return new Promise((resolve) => {
