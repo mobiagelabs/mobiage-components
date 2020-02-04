@@ -1,13 +1,12 @@
 mbg-popup-select {
   .popup-select-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
+
     * {
       outline: none;
       user-select: none;
     }
+
     .style-item {
       min-width: 44px;
       height: 44px;
@@ -21,11 +20,21 @@ mbg-popup-select {
       margin-bottom: 15px;
       position: relative;
       cursor: pointer;
+      align-items: center;
+      justify-content: center;
 
       > div {
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+
+      span {
+        .transclude-div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       }
 
       svg {

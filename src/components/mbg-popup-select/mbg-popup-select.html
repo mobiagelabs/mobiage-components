@@ -52,7 +52,9 @@
                                                   class="intercom-details-picker-value"
                                                   uib-tooltip="{{$ctrl.label ? item[$ctrl.label] : item}}"
                                                   title="thumbs_up">
-                                                <div class="flex svg-icon" mbg-dynamic-html="item.svg" ng-if="item.svg"></div>
+                                                <div class="flex svg-icon transclude-div"
+                                                     mbg-dynamic-html="item.svg"
+                                                     ng-if="item.svg"></div>
                                                 <span ng-if="!$ctrl.transcludeTemplate">{{item.value}}</span>
                                             </span>
                                         </div>
