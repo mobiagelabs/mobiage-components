@@ -1,6 +1,9 @@
 mbg-popup-select {
   .popup-select-wrapper {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    
     * {
       outline: none;
       user-select: none;

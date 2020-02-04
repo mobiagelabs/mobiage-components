@@ -182,12 +182,16 @@ class MbgPopupSelectController {
 				this.data.forEach((item, index) => {
 					if (!this.multiSelect) {
 						if (index === 0) {
+							if (this.onSelect) {
+								this.onSelect({ item })
+							}
 							this.ngModel.push(item)
-							this.onSelect({ item })
 							arrayRemove.push(item)
 						}
 					} else {
-						this.onSelect({ item })
+						if (this.onSelect) {
+							this.onSelect({ item })
+						}
 						this.ngModel.push(item)
 						arrayRemove.push(item)
 					}
@@ -207,10 +211,12 @@ class MbgPopupSelectController {
 	selectItem(item, evt) {
 		evt.stopPropagation()
 		evt.preventDefault()
-		if (this.onSelect && !this.disableEvent) {
+		if (!this.disableEvent) {
 			this.disableEvent = true
 			const indexData = this.data.findIndex((data) => angular.equals(item, data))
-			this.onSelect({ item })
+			if (this.onSelect) {
+				this.onSelect({ item })
+			}
 			this.ngModel.push(item)
 			this.$timeout(() => {
 				this.data.splice(indexData, 1)
