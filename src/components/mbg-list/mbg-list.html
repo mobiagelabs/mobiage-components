@@ -5,6 +5,7 @@
             <th class="width-48"
                 ng-if="$ctrl.checkbox">
                 <mbg-checkbox ng-model="$ctrl.checkAll"
+                              ng-show="$ctrl.rows.length > 0"
                               ng-change="$ctrl.toogleAll($ctrl.checkAll)"></mbg-checkbox>
             </th>
             <th class="width-48"

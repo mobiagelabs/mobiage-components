@@ -383,7 +383,8 @@ const mbgProductSearch = {
         autoClear: '=?',
         minLetter: '=?',
         placeholder: '@?',
-        disableStock: '=?'
+        disableStock: '=?',
+        hideValue: '=?',
     },
     controller: MbgProductSearchController,
     template,

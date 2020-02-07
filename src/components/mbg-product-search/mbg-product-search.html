@@ -49,7 +49,7 @@
                     <h2><b>Marca:</b> {{ item.brand }} | <b>Variação:</b> {{ item.variation }}</h2>
                 </div>
                 <div class="values-wrapper">
-                    <div class="price">
+                    <div class="price" ng-hide="$ctrl.hideValue">
                         <span>Preço: </span>
                         {{ (item.saleValue || 0) | currency: 'R$ ' }}
                     </div>
