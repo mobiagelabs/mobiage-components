@@ -36,9 +36,31 @@
     }
 
     .dropdown-menu {
+        padding: 0;
         margin-top: 10px;
         border: 1px solid #f5f5f5;
         box-shadow: 0px 0px 7px 0px rgba(0,0,0,.03);
+
+        .separator {
+          pointer-events: none;
+          position: relative;
+          display: flex;
+
+          a {
+            padding: 0px;
+          }
+
+          &:after {
+            content: '';
+            height: 0.1px;
+            width: 100%;
+            background-color: #e4e4e4;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-100%);
+          }
+        }
 
         &.left {
             transform: translateX(-100%);

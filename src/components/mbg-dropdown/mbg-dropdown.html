@@ -28,6 +28,7 @@
             uib-dropdown-menu
             aria-labelledby="simple-dropdown">
             <li class="options"
+                ng-class="{'separator': option.sep}"
                 ng-repeat="option in $ctrl.options">
                 <a href
                    ng-click="$ctrl.onClickOption(option)">

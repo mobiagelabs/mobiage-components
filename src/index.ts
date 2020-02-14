@@ -186,8 +186,17 @@ const module = angular
 					console.log('Teste')
 				}
 			},
+			{
+				sep: true
+			},
+			{
+				label: 'Lista de importações',
+				icon: 'fas fa-list-ul',
+				callback: () => {
+					console.log('Teste')
+				}
+			},
 		]
-
 		$scope.testedlsadkasjn = () => {
 			return [
 				'Fixo',
@@ -8533,6 +8542,10 @@ const module = angular
 
 		$scope.addDetail = (item) => {
 			console.log(item)
+		}
+
+		$scope.hhhsss = (evt) => {
+			console.log(evt)
 		}
 
 		$scope.getModelo = (param = '') => {

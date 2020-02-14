@@ -27,9 +27,9 @@ class MbgInputTextController {
         // console.log(this.$attrs.$attr.hasOwnProperty('enableKeyboard'))
     }
 
-    onChange() {
+    onChange($event) {
         if (this.ngChange) {
-            this.ngChange({})
+            this.ngChange({ $event })
         }
     }
 
