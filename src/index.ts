@@ -286,16 +286,24 @@ const module = angular
 		]//.map((s) => s.label)
 
 
-		const url = 'https://api-hom2.mobiage.io/mobiage-api/api/v2/product-item/terminal?idPriceSheetType=MOBAAAC410AAA&gumgaToken=200001L200004E1579523188292C157952138829200O200002.200003.200004.I&pageSize=6'
+		const url = 'https://api.kigisistemas.com.br/mobiage-api/api/v2/product-item/terminal?idPriceSheetType=MOBAAAC410AAA&inventoryOnly=false&lookAtStock=false&pageSize=12&gumgaToken=228L1362E1582910433476C158290863347600O1360.1361.1362.I'
 
 		$scope.getProductsDTO = (query = '', page = 1) => {
 			return new Promise((resolve) => {
 				$timeout(() => {
-					$http.get(url + '&search=' + query + '&page=' + page).then((resp) => {
+					$http.get(url + '&search=' + '' + '&page=' + page).then((resp) => {
 						resp.data.values = resp.data.values.map((t) => {
-							t.image = t.urlImage || `https://firebasestorage.googleapis.com/v0/b/mobiage-homologation.appspot.com/o/91d32d0d-1c27-7c2c-254b-85c1e139d32e?alt=media`
-							t.saleValue = t.value
-							return t
+							return {
+								name: t.name,
+								active: t.active,
+								brand: t.brand,
+								barCode: t.barCode,
+								image: t.urlImage,
+								saleValue: t.value,
+								stock: t.stock,
+								reference: t.reference,
+								variation: t.variation,
+							}
 						})
 						resolve(resp.data.values)
 					})

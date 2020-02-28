@@ -174,8 +174,8 @@ class MbgProductSearchController {
                 if (this.timeoutChange) { this.$timeout.cancel(this.timeoutChange) }
                 evt.preventDefault()
                 evt.stopPropagation()
-                this.data = []
                 this.afterEnterPress(oldHasFocus)
+                this.$timeout(() => this.data = [])
                 break
             case 38: // SETA CIMA
                 this.moveToUp()

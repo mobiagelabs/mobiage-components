@@ -130,10 +130,16 @@
 </head>
 
 <body ng-controller="demoCtrl">
-  <div style="padding: 200px;">
-    <mbg-dropdown options="optionsDropdown"
-                  label="Opções"></mbg-dropdown>
+  <div style="padding: 100px;">
+    <mbg-product-search ng-model="teste"
+                        label="barCode"
+                        try-add="addItem(barCode, quantity)"
+                        auto-clear="false"
+                        fetch="getProductsDTO(query, page)">
+    </mbg-product-search>
   </div>
+  <!-- <mbg-dropdown options="optionsDropdown"
+                  label="Opções"></mbg-dropdown> -->
   <!-- <mbg-input-text ng-model="asdasdasd"
                   ng-change="hhhsss($event)"></mbg-input-text> -->
 
